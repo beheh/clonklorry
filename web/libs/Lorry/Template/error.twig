@@ -1,0 +1,15 @@
+{% extends 'hero.twig' %}
+
+{% if title %}
+	{% if details %}
+		{% set hero = {'title' : title, 'content' : '<pre>' ~ details|escape ~ '</pre>' } %}
+	{% elseif message %}
+		{% set hero = {'title' : title, 'content' : message } %}
+	{% else %}
+		{% set hero = {'title' : title, 'content' : 'Nothing else to say.'|trans } %}
+	{% endif %}
+{% elseif message %}
+		{% set hero = {'title' : message, 'single' : 'Uh, something went wrong there. Sorry.'|trans } %}
+{% else %}
+		{% set hero = {'title' : 'Unknown error.'|trans, 'single' : 'Uh, something went wrong there. Sorry.'|trans } %}
+{% endif %}

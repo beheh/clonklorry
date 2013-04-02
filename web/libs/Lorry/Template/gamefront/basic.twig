@@ -1,0 +1,7 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+{% if heading %}<h1>{{ heading }}</h1>{% endif %}
+<p><a href="{{base}}welcome">{% trans %}Learn all about Clonk&hellip;{% endtrans %}</a></p>
+<p><a href="{{base}}clonkrage/addon">{% trans %}View the list of addons{% endtrans %}</a></p>
+{% endblock %}

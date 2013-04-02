@@ -1,0 +1,36 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+{% if heading %}<h1>{{ heading }}</h1>{% endif %}
+<p><a href="{{base}}welcome">{% trans %}Learn all about Clonk&hellip;{% endtrans %}</a></p>
+<p><a href="{{base}}clonkrage/addon">{% trans %}View the list of addons{% endtrans %}</a></p>
+<h2>Packs</h2>
+<ul>
+    <li><a href="">Hazard</a></li>
+    <li><a href="{{base}}clonkrage/cmc">Codename: Modern Combat</a></li>
+    <li><a href="">Metall & Magie</a></li>
+    <li><a href="">Turm der Verzweiflung</a></li>
+    <li><a href="">QuakeR</a></li>
+    <li><a href="">Stimmelsinseln</a></li>
+    <li><a href="">Etagenkampf</a></li>
+    <li><a href="">Wagon Fight</a></li>
+    <li><a href="">Hold your Colors</a></li>
+    <li><a href="">Kampf der Generationen</a></li>
+    <li><a href="">Clonk Infinity</a></li>
+    <li><a href="">Clonk Mars</a></li>
+    <li><a href="">Eke Reloaded</a></li>
+    <li><a href=""></a></li>
+</ul>
+<h2>Wettbewerbe</h2>
+<ul>
+	<li><a href="">Burgbau (CC)</a></li>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+</ul>
+<h2>Legacy</h2>
+<ul>
+    <li><a href="">First Aid Pack</a></li>
+    <li><a href="">Star Empires</a></li>
+    <li><a href="">InExantros + Patch</a></li>
+</ul>
+{% endblock %}

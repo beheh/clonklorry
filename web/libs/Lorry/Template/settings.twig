@@ -1,0 +1,61 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<h1>{%trans "Settings" %}</h1>
+<div class="row-fluid">
+	<div class="span4">
+		<h2>{% trans "Basic" %}</h2>
+		<label class="checkbox">
+			<input type="checkbox" value="">
+			Show addons for Clonk Rage on main page
+		</label>
+		<label class="checkbox">
+			<input type="checkbox" value="">
+			Show addons for OpenClonk on main page
+		</label>
+	</div>
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2>{% trans "Account" %}</h2>
+		<h4>Appearance</h4>
+		<label>Username: <input type="text" value="{{session.user}}" disabled></label>
+		<div class="alert">Please contact a moderator to change your name.</div>
+		<h4>Contact details</h4>
+		<label>E-mail-address: <input type="email" value=""></label>
+		<button type="submit" class="btn btn-primary">Confirm</button>
+		<p>&nbsp;</p>
+		<h4>Remove Account</h4>
+		<p><a href="#" data-toggle="collapse" data-target="#remove-confirm">Would you like to remove your account?</a></p>
+		<div class="collapse" id="remove-confirm">
+			<label>Please type "califragolicious" <input type="text"></label>
+			<div class="alert alert-error">
+				<strong>Warning!</strong> You will permanently loose control of all your uploads.
+			</div>
+			<button type="submit" class="btn btn-danger">Remove account</button>
+		</div>
+	</div>
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2>{% trans "Security" %}</h2>
+		<h4>{% trans %}Change your password{% endtrans %}</h4>
+		<form action="." method="post" class="form-horizontal">
+			<label>New Password <input type="password"></label>
+			<label>Confirm Password <input type="password"></label>
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+		<h4>{% trans %}Link your account{% endtrans %}</h4>
+		<p>
+			<a href="#" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">OpenID</a>
+			<a href="#" class="btn btn-google">Google</a>
+			<a href="#" class="btn btn-facebook">Facebook</a>
+			<a href="#" class="btn btn-twitter">Twitter</a>
+		</p>
+		<div class="collapse" id="link-openid">
+			<form action="." method="post" class="form-horizontal">
+				<label>OpenID-URL <input type="text"></label>
+				<button type="submit" class="btn btn-primary">Lnik</button>
+			</form>
+		</div>
+		</span>
+
+{% endblock %}

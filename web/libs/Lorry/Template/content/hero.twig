@@ -1,0 +1,6 @@
+<div class="hero-unit">
+	{% if hero.title %}<h1>{{ hero.title }}</h1>{% endif %}
+	{% if hero.single %}<p>{{ hero.single }}</p>{% endif %}
+	{% if hero.content %}{{ hero.content|raw }}{% endif %}
+	<p><a class="btn btn-primary btn-large" href="{{ base }}">{% trans "Return to home &raquo;"%}</a></p>
+</div>

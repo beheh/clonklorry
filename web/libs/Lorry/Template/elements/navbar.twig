@@ -1,0 +1,53 @@
+<div id="mainnav" class="navbar navbar-inverse navbar-fixed-top{% if navbarhidden%} hidden{% endif %}">
+    <div class="navbar-inner">
+		<div class="container-fluid">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="brand" href="{{base}}">{{name}}</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li{% if nav.0 == "clonkrage" %} class="active"{% endif %}><a href="{{base}}rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
+					<li{% if nav.0 == "openclonk" %} class="active"{% endif %}><a href="{{base}}openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
+					<li{% if nav.0 == "publish" %} class="active"{% endif %}><a href="{{base}}publish">{% trans 'Publish' %}</a></li>
+		    {% if 0 %}
+					<li{% if 0 %} class="active"{% endif %}><a href="{{base}}admin">{% trans 'Administration' %}</a></li>
+		    {% endif %}
+		    {% if 0 %}
+					<li{% if 0 %} class="active"{% endif %}><a href="{{base}}moderator">{% trans 'Moderation' %}</a></li>
+		    {% endif %}
+					<li class="dropdown{% if nav.0 == "search" %} active{% endif %}">
+						<a class="dropdown-toggle" data-toggle="dropdown" data-target=".search-collapse">
+							{% trans 'Search' %}
+							<b class="caret"></b>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+		    {% if session.authenticated %}
+						<li{% if nav.0 == "user" and nav.1|lower == session.user|lower %} class="active"{% endif %}><a href="{{base}}user/{{session.user}}">{{session.user}}</a></li>
+						<li{% if nav.0 == "settings" %} class="active"{% endif %}><a href="{{base}}settings">{% trans 'Settings' %}</a></li>
+						<li{% if nav.0 == "logout" %} class="active"{% endif %}><a href="{{base}}logout">{% trans 'Logout' %}</a></li>
+		    {% else %}
+						<li{% if nav.0 == "register" %} class="active"{% endif %}><a href="{{base}}register">{% trans 'Register' %}</a></li>
+						<li{% if nav.0 == "login" %} class="active"{% endif %}><a href="{{base}}login">{% trans 'Login' %}</a></li>
+		    {% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div class="search-collapse collapse">
+		<div class="container-fluid">
+			<form class="form-search" action="{{base}}search" method="get">
+				<input id="search-global" type="text" name="query" class="input-xlarge search-query">
+				<button type="submit" class="btn">{% trans 'Find' %}</button>
+				<a href="{{base}}search" class="">{% trans 'Advanced search' %}</a>
+				<a href="{{base}}search" class="">{% trans 'All users' %}</a>
+				<a href="{{base}}search" class="">{% trans 'All teams' %}</a>
+
+			</form>
+		</div>
+    </div>

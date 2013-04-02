@@ -1,0 +1,23 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<div class="center" id="introduction">
+    <h1>{% trans %}This is Lorry.{% endtrans %}</h1>
+    <p class="text-big">{% trans %}Lorry is the place to get the best addons for the game series Clonk.{% endtrans %}</p>
+    <p>
+		<a href="{{base}}about/clonk" class="btn btn-success btn-phone-block btn-large">{% trans %}Experience Clonk{% endtrans %}</a>
+		<a href="{{base}}?greet=0" class="btn btn-phone-block btn-large">{% trans %}Discover the addons{% endtrans %}</a>
+    </p>
+    <p class="text-sub pull">
+		<a href="{{base}}about/lorry">{% trans %}Learn more about Lorry&hellip;{% endtrans %}</a>
+	</p>
+</div>
+<script>
+$(document).ready(function() {
+window.setTimeout(function() {
+$('#mainnav').hide();
+$('#mainnav').removeClass('hidden');
+$('#mainnav').slideDown();
+}, 1000)});
+	</script>
+{% endblock %}
