@@ -1,9 +1,0 @@
-AddDefaultCharset utf-8
-Options -Indexes
-
-RewriteEngine on
-RewriteRule ^(([A-z0-9_-]+/)*[A-z0-9_-]+)/?$ index.php?_path=$1 [QSA]
-
-ErrorDocument 403 /error/forbidden
-ErrorDocument 404 /error/notfound
-ErrorDocument 500 /error/generic
