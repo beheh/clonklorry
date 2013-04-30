@@ -1,0 +1,11 @@
+{
+	"require": {
+		"twig/twig": "1.*",
+		"twig/extensions": "1.*",
+		"leafo/lessphp": "0.3.*",
+		"ircmaxell/password-compat": "1.*"
+	},
+	"autoload": {
+        "psr-0": {"Lorry": "src/"}
+    }
+}

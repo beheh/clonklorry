@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="{% trans "en" %}">
+{% include 'elements/head.twig' %}
+	<body>{% block body %}
+		{% include 'functions/navbar.twig' %}
+		<div class="container-fluid">
+		{% block content %}
+		{% endblock %}
+		{% include 'elements/footer.twig' %}
+		</div>
+	{% endblock %}
+	{% include 'elements/js.twig' %}
+	</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<div class="row-fluid">
+	<div class="span8">
+		<!--<div style="height: 400px; background-color: #ddd; padding: 50px;">
+			<h1 style="margin-top: 350px">CMC 1.5!</h1>
+		</div>!-->
+
+		<div id="featured-front" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#featured-front" data-slide-to="0" class="active"></li>
+				<li data-target="#featured-front" data-slide-to="1"></li>
+			</ol>
+			<div class="carousel-inner">
+				<!--<div class="active item">
+					<a href="{{base}}rage/addon/moderncombat">
+						<img src="{{base}}/img/cmc.png" alt>
+					</a>
+					<div class="carousel-caption">
+						<h4>Now available: Codename: Modern Combat R1.5</h4>
+						<p>The Hazard-based strategic shooter is back with its newest version. <a href="{{base}}rage/addon/moderncombat">Learn more&hellip;</a></p>
+                    </div>
+				</div>!-->
+				<div class="active item">
+					<a href="{{base}}rage/addon/infinity">
+						<img src="http://placehold.it/768x432" alt>
+					</a>
+					<div class="carousel-caption">
+						<h4>Soon on Lorry: Clonk Infinity</h4>
+						<p>Basefights in the skylands and georgious graphics: Clonk Infinity is nearing completion.</p>
+                    </div>
+				</div>
+			</div>
+			<a class="carousel-control left" href="#featured-front" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#featured-front" data-slide="next">&rsaquo;</a>
+		</div>
+		<h2>Some different, awesome and long title here</h2>
+	</div>
+	<div class="span4">
+		<hr class="visible-phone">
+		{% if __session %}
+			{% set username = __username %}
+			<h2>{% trans %}Welcome back!{% endtrans %}</h2>
+		{% else %}
+			<h2>{% trans %}Welcome to Lorry.{% endtrans %}</h2>
+		{% endif %}
+		<p class="text-big">{% trans %}Lorry is the place to find out about and get the best addons for the game series Clonk, and to discuss all about your favourites with the community.{% endtrans %}</p>
+		<p>
+			<a href="{{base}}about/clonk" class="btn btn-success">{% trans %}New to Clonk?{% endtrans %}</a>
+			<a href="{{base}}about/lorry" class="btn">{% trans %}About Lorry{% endtrans %}</a>
+		</p>
+		<hr>
+		<h3>Spotlight</h3>
+		<img src="http://clonkspot.org/images/logo.png" alt="clonkspot" style="height: 69px; width: 248px; margin-bottom: 12px;">
+		<p class="text-big">Clonkspot is a community platform introducing Clonk and features a blog and discussion board about various aspects of the games.</p>
+		<p>
+			<a href="http://clonkspot.org" class="btn btn-info">{% trans %}Visit clonkspot.org{% endtrans %}</a>
+			<a href="{{base}}about/community" class="btn">{% trans %}List of community sites{% endtrans %}</a>
+		</p>
+		<hr>
+		<h3>Pack der Woche</h3>
+		<ul>
+			<li>Lorry</li>
+			<li>Clonk Infinity</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

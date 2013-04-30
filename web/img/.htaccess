@@ -1,0 +1,2 @@
+# Keep images in this folder in cache for one month
+Header set Cache-Control "max-age=2592000"

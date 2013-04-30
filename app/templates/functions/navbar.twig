@@ -1,0 +1,30 @@
+<div id="mainnav" class="navbar navbar-inverse navbar-fixed-top{% if pathbarhidden %} hidden{% endif %}">
+    <div class="navbar-inner">
+		<div class="container-fluid">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="brand" href="{{base}}">{{name}}</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li{% if path.0 == "rage" %} class="active"{% endif %}><a href="{{base}}rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
+					<li{% if path.0 == "openclonk" %} class="active"{% endif %}><a href="{{base}}openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
+					<li{% if path.0 == "publish" %} class="active"{% endif %}><a href="{{base}}publish">{% trans 'Publish' %}</a></li>
+					{% if moderation %}<li{% if path.0 == "moderation" %} class="active"{% endif %}><a href="{{base}}moderate">{% trans 'Moderation' %}</a></li>{% endif %}
+					{% if administration %}<li {% if path.0 == "admin" %} class="active"{% endif %}><a href="{{base}}admin">{% trans 'Administration' %}</a></li>{% endif %}
+				</ul>
+				<ul class="nav pull-right">
+				{% if __session %}<li{% if path.0 == "user" and path.1|lower == __username|lower %} class="active"{% endif %}><a href="{{__profile}}">{{__username}}</a></li>
+						<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}settings">{% trans 'Settings' %}</a></li>
+						<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}logout">{% trans 'Logout' %}</a></li>
+		    {% else %}<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}register">{% trans 'Register' %}</a></li>
+						<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}login">{% trans 'Login' %}</a></li>{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="search-collapse collapse">
+</div>

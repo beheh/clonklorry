@@ -1,0 +1,55 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<div class="container" style="max-width: 770px;">
+	<h1>{{ title }}</h1>
+	{% if developer or team%}
+	<p class="pull-right author">
+		{% if developer %}
+			{% set developer = "<a href=\"\">" ~ developer ~ "</a>" %}
+			{% trans %}Developed by {{developer}}{% endtrans %}
+		{% elseif team %}
+			{% set team = "<a href=\"\">" ~ team ~ "</a>" %}
+		{% trans %}Developed by the {{team}}{% endtrans %}
+		{% endif %}
+	</p>
+	{% endif %}
+	<p>{% trans %}Version {{version}}, released on the {{releaseday}}{% endtrans %}</p>
+	<hr>
+	<div class="row-fluid">
+		<div class="span3">
+			<p class="" style="font-size: 0;">
+				<img src="{{base}}img/title.png" style="width: 100%; margin-bottom: 2%;">
+				<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
+				<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
+				<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 0;">
+			</p>
+			<p class="center hidden-desktop"><a href="#" data-toggle="collapse" data-target="#download">Show download</a></p>
+			<p class="center visible-desktop" id="download"><button class="btn btn-primary">Download</button> 70.3MB total</p>
+
+		</div>
+		<div class="span9">
+			<p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in.</p>
+			<p>Categories <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>
+		</div>
+	</div>
+	<hr>
+	<div class="row-fluid">
+		<div class="span8">
+			<h3>Rounds and Addons</h3>
+			<img src="" style="width: 150px; height: 105px;">
+			<img src="" style="width: 150px; height: 105px;">
+			<img src="" style="width: 150px; height: 105px;">
+		</div>
+		<div class="span4">
+			<h3>Community</h3>
+			<p>State: <span class="success">Active</span> [<a href="#" id="state">?</a>]</p>
+			<ul>
+				<li><a href="#">Project page</a></li>
+				<li><a href="#">Report a bug</a></li>
+				<li><a href="#">Interested in an update?</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<script src="{{base}}js/jquery.min.js"></script>
+<script src="{{base}}js/bootstrap.min.js"></script>
+<script src="{{base}}js/yepnope.min.js"></script>
+<script src="{{base}}js/lorry.js"></script>
+{% if scripts %}<script>
+	{% for script in scripts %}
+		{{ script | raw }}
+	{% endfor %}
+</script>
+{% endif %}<script>
+yepnope({
+    test: ('placeholder' in $('<input>')[0]),
+    nope: [
+            '{{base}}poly/placeholder_polyfill.min.css',
+            '{{base}}poly/placeholder_polyfill.jquery.min.combo.js'
+          ]
+});
+</script>

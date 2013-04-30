@@ -1,0 +1,16 @@
+AddDefaultCharset utf-8
+#Options -Indexes
+
+#Order deny,allow
+#deny from all
+#allow from 10.234.72.152
+#allow from 46.115.113.139
+#allow from ::1
+#allow from 192.168.1.1/24
+
+RewriteEngine on
+RewriteRule ^((([A-z0-9_-]+/)*[A-z0-9_-]+)/?)?$ app.php?__path=$1 [QSA]
+
+#ErrorDocument 403 /error/forbidden
+#ErrorDocument 404 /error/notfound
+#ErrorDocument 500 /error/generic

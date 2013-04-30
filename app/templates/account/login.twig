@@ -1,0 +1,42 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<h1 class="form-signin-heading">{%trans "Login" %}</h1>
+<div class="row-fluid">
+    <div class="span4">{% if message %}
+		<div class="alert {% if success %}alert-success{% else %}alert-error{% endif %}">{{ message }}</div>{% endif %}
+		<form class="form-login" method="post">
+			<label for="username"></label>
+			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{username}}"{% else %} autofocus{% endif %}>
+			<label for="password"></label>
+			<input type="password" class="input-block-level" name="password" id="password" placeholder="{% trans "Password" %}" {% if username %} autofocus{% endif %}>
+			<label class="checkbox">
+				<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
+			</label>
+			<button class="btn btn-large btn-primary" type="submit">{% trans "Login" %}</button>
+			{% if not showmail %}<a href="#login-email" class="btn btn-link" data-toggle="collapse" data-target="#login-email">{% if not success and message %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>{% endif %}
+		</form>
+		<hr>
+		<div id="login-email" class="collapse{% if showmail %} in{% endif %}">
+			<h4 id="reset">{% trans "Use your email account to log in:" %}</h4>
+			<form method="post" action="?login-email">
+				<label for="email"></label>
+				<input type="email" class="input-block-level" name="email" id="email" placeholder="{% trans "Email address" %}" required>
+				<button class="btn btn-success" type="submit">{% trans "Send one-time login" %}</button>
+			</form>
+			<hr>
+		</div>
+		<div class="social">
+			<h4>{% trans %}Or, select your login service:{% endtrans %}</h4>
+			{% include "functions/openid.twig "%}
+		</div>
+	</div>
+	<div class="span8">
+		<hr class="visible-phone">
+		<h4>{% trans %}Welcome back!{% endtrans %}</h4>
+		<p>{% trans %}Nice to see you again! Have you visited these other great Clonk sites yet?{% endtrans %}</p>
+		<p><a href="http://openclonk.org">openclonk.org</a> &middot; <a href="http://clonkspot.org">clonkspot.org</a> &middot; <a href="http://clonkspot.org">clonkforge.net</a></p>
+
+	</div>
+</div>
+{% endblock %}

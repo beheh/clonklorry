@@ -1,0 +1,52 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span12">
+		<h1>{% trans %}Release your addon{% endtrans %}</h1>
+		<hr>
+		<div class="row-fluid">
+			<div class="span12">
+				<h2>Codename: Modern Combat</h2>
+				<p class="alert alert-success">This release is ready to be published.</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row-fluid">
+			<div class="span6">
+				<h2>{% trans %}Release{% endtrans %}</h2>
+				<form method="post" action="">
+					<p>If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.</p>
+					<p>{% trans %}All downloads will immediately redirect to your uploaded version.{% endtrans %}</p>
+					<p class="alert alert-warning">Publishing a release is final. Any changes after releasing require a new release.</p>
+					<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
+					<div class="pull-right">
+						<label class="checkbox inline" style="margin-right: 20px;">
+							<input type="checkbox">
+							{% trans %}Confirm release{% endtrans %}
+						</label>
+						<button type="submit" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+					</div>
+				</form>
+			</div>
+			<hr class="visible-phone">
+			<div class="span6">
+				<h2>{% trans %}Scheduled release{% endtrans %}</h2>
+				<form method="post" action="">
+					<label for="datetime">{% trans "Date and time" %}</label>
+					<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{datetime}}" required>
+
+					<label class="checkbox">
+						<input type="checkbox">
+						Publish date and time before release
+					</label>
+
+					<p class="alert alert-info">{% trans %}You can cancel a scheduled release at any time before the automated release.{% endtrans %}</p>
+					<p>{% trans %}Your release will be automatically made vailabe to all players at the specified timestamp.{% endtrans %}</p>
+					<button type="submit" class="btn btn-large pull-right">{% trans %}Schedule Release{% endtrans %}</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

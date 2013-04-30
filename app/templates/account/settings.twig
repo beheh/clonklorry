@@ -1,0 +1,150 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<h1>{%trans "Settings" %}</h1>
+<div class="row-fluid">
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2>{% trans "Basic" %}</h2>
+		<h4 id="appearance">{% trans "Addons on main page" %}</h4>
+		<label class="checkbox">
+			<input type="checkbox" value="">
+			Show Clonk Rage on main page
+		</label>
+		<label class="checkbox">
+			<input type="checkbox" value="">
+			Show OpenClonk on main page
+		</label>
+	</div>
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2 id="account">{% trans "Account" %}</h2>
+		<h4 id="appearance">{% trans "Appearance" %}</h4>
+		<form method="post" action="?change-username" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="username">{% trans "Username" %}</label>
+				<div class="controls">
+					<input type="text" name="username" id="username" value="{{user.username}}" required disabled>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="alert pull-right">{% trans "Contact us to change your username." %}</div>
+			</div>
+		</form>
+		<form method="post" action="?change-social" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="clonkforge">{% trans "Clonkforge profile" %}</label>
+				<div class="controls">
+					<input type="url" name="clonkforge" id="clonkforge" value="{{user.clonkforge}}" placeholder="http://clonkforge.net/user.php?usr=">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="github">{% trans "GitHub name" %}</label>
+				<div class="controls">
+					<input type="text" name="github" id="github" value="{{user.github}}" placeholder="{{user.username}}">
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans "Change linked profiles" %}</button>
+				</div>
+			</div>
+		</form>
+		<h4 id="contact">{% trans "Contact details" %}</h4>
+		<form method="post" action="?change-email" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="email">{% trans "Email address" %}</label>
+				<div class="controls">
+					<input type="email" name="email" id="email" value="{{user.email}}" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans "Confirm email address" %}</button>
+				</div>
+			</div>
+		</form>
+		<h4 id="remove-account">{% trans "Remove account" %}</h4>
+		<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
+		<div class="collapse" id="remove-account-confirm">
+			<form method="post" action="?remove-account">
+				<div class="alert alert-error">
+					<strong>{% trans "Removing your account is final." %}</strong> {% trans "You will permanently loose control of all your uploads." %}
+				</div>
+				<label class="checkbox"><input type="checkbox"> {%trans "I have read and understood the warning." %}</label>
+				<button type="submit" class="btn btn-danger" disabled>{% trans "Permanently remove account"%}</button>
+			</form>
+		</div>
+	</div>
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2 id="security">{% trans "Security" %}</h2>
+		<h4 id="remote-logout">{% trans "Sessions" %}</h4>
+		{% if logout.message %}<div class="alert alert-{% if logout.success %}success{% else %}error{% endif %}">
+			{% if logout.title %}<strong>{{ logout.title }}</strong> {% endif %}{{ logout.message }}
+			</div>
+{% endif %}
+			<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
+			<div class="collapse" id="remote-logout-confirm">
+				<form method="post" action="?remote-logout">
+					<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
+				</form>
+			</div>
+			<h4 id="password">{% trans "Password" %}</h4>
+		{% if password.message %}
+			<div class="alert alert-{% if password.success %}success{% else %}error{% endif %}">
+			{% if password.title %}<strong>{{ password.title }}</strong> {% endif %}{{ password.message }}
+				</div>
+	{% endif %}
+				<form method="post" action="?change-password" class="form-horizontal">
+					{% if password.exists %}<div class="control-group">
+							<label class="control-label" for="password-current">{% trans "Current password" %}</label>
+							<div class="controls">
+								<input type="password" name="password-current" id="password-current">
+							</div>
+						</div>{% endif %}
+						<div class="control-group">
+							<label class="control-label" for="password-new">{% trans "New password" %}</label>
+							<div class="controls">
+								<input type="password" name="password-new" id="password-new">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="password-new-confirm">{% trans "Confirm password" %}</label>
+							<div class="controls">
+								<input type="password" name="password-new-confirm" id="password-new-confirm">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn btn-primary">{% if password.exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+							</div>
+						</div>
+					</form>
+					<h4 id="link">{% trans "Login services" %}</h4>
+					<p>
+			{% if link.openid == false and link.google == false %}
+							<a href="#link" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">{% trans "OpenID" %}</a>
+							<a href="?link=google&action=init" class="btn btn-google">{% trans "Google" %}</a>
+			{% endif %}
+			{% if link.facebook == false %}<a href="?link=facebook&action=init" class="btn btn-facebook">{% trans "Facebook" %}</a>{% endif %}
+			{% if link.twitter == false %}<a href="?link=twitter&action=init" class="btn btn-twitter">{% trans "Twitter" %}</a>{% endif %}
+						</p>
+						<div class="collapse" id="link-openid">
+							<form action="?link=openid&action=init" method="post" class="form-horizontal">
+								<label>{% trans "OpenID URL" %} <input type="text" name="openid-provider" required></label>
+								<button type="submit" class="btn btn-primary">{% trans "Link" %}</button>
+							</form>
+						</div>{% if link.message %}
+						<div class="alert alert-{% if link.success %}success{% else %}error{% endif %}">{% if link.title %}<strong>{{ link.title }}</strong> {% endif %}{{ link.message }}</div>
+		{% endif %}
+		{% if link.openid or link.google or link.facebook or link.twitter %}<h4 id="unlink">{% trans "Unlink" %}</h4>
+						<p>
+			{% if link.openid %}<a href="#link" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">{% trans "OpenID" %} &times;</a>{% endif %}
+			{% if link.google %}<a href="?openid=init-google" class="btn btn-google">{% trans "Google" %} &times;</a>{% endif %}
+			{% if link.facebook %}<a href="#link" class="btn btn-facebook">{% trans "Facebook" %} &times;</a>{% endif %}
+			{% if link.twitter %}<a href="#link" class="btn btn-twitter">{% trans "Twitter" %} &times;</a>{% endif %}
+							</p>{% endif %}
+						</div>
+					</div>
+{% endblock %}

@@ -1,1 +1,4 @@
-nbproject
+/nbproject/
+/app/config/lorry.php
+/web/css/lorry.css
+/web/css/lorry.min.css
