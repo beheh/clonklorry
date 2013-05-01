@@ -10,8 +10,8 @@ class Router extends Object {
 	 */
 	public function route() {
 		$path = 'index';
-		if(isset($_GET['__path']) && !empty($_GET['__path'])) {
-			$path = $_GET['__path'];
+		if(isset($_SERVER['PATH_INFO']) && !empty($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] != '/') {
+			$path = ltrim($_SERVER['PATH_INFO'], '/');
 			$path = preg_replace(array('|\.|', '|\0|'), '', $path);
 			$path = preg_replace(array('|_+|', '|/+|'), array('_', '/'), $path);
 		}

@@ -2,7 +2,9 @@ AddDefaultCharset utf-8
 #Options -Indexes
 
 RewriteEngine on
-RewriteRule ^((([A-z0-9_-]+/)*[A-z0-9_-]+)/?)?$ app.php?__path=$1 [QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond $1 !^(app\.php)
+RewriteRule ^(.*)$ app.php/$1 [L]
 
 #ErrorDocument 403 /error/forbidden
 #ErrorDocument 404 /error/notfound
