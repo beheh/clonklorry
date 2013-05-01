@@ -12,8 +12,8 @@ class Environment {
 		header_remove('X-Powered-By');
 		$router = new Router($this);
 
-		//cast the view based on the request
-		$view = $router->route();
+		//cast the presenter based on the request
+		$presenter = $router->route();
 
 		$this->twig->addGlobal('name', $this->config->name);
 		$this->twig->addGlobal('base', $this->config->base);
@@ -33,18 +33,18 @@ class Environment {
 			$this->twig->addGlobal('__moderator', $user->isModerator());
 		}
 
-		if($view) {
+		if($presenter) {
 			try {
-				//render out the view
-				$rendered = $view->display();
+				//render out the presenter
+				$rendered = $presenter->display();
 				if($rendered !== true) {
 					if(!empty($rendered)) {
 						echo $rendered;
 					} else {
 						if($this->config->debug) {
 							$error = $router->custom('error/debug');
-							$error->setTitle('No output from view "' . $view . '"');
-							$error->setMessage('<p>The view processed okay, but didn\'t return any result.</p>');
+							$error->setTitle('No output from presenter "' . $presenter . '"');
+							$error->setMessage('<p>The presenter processed okay, but didn\'t return any result.</p>');
 						} else {
 							$error = $router->custom('error/internal');
 						}
@@ -54,7 +54,7 @@ class Environment {
 			} catch(Exception $ex) {
 				if($this->config->debug) {
 					$error = $router->custom('error/debug');
-					$error->setTitle('Uncaught Exception in view "' . $view . '"');
+					$error->setTitle('Uncaught Exception in presenter "' . $presenter . '"');
 					$error->setDetails($ex);
 				} else {
 					$error = $router->custom('error/internal');
@@ -62,7 +62,7 @@ class Environment {
 				echo $error->display();
 			}
 		} else {
-			throw new Exception('fatal error: router didn\'t return view');
+			throw new Exception('fatal error: router didn\'t return presenter');
 		}
 	}
 

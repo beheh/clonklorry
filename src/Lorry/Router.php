@@ -5,7 +5,7 @@ namespace Lorry;
 class Router extends Object {
 
 	/**
-	 * Returns the view matching to the request, sanitazing the query.
+	 * Returns the presenter matching to the request, sanitazing the query.
 	 * @return Lorry_View
 	 */
 	public function route() {
@@ -19,9 +19,9 @@ class Router extends Object {
 	}
 
 	/**
-	 * Returns the specified view after checking for access and existence.
+	 * Returns the specified presenter after checking for access and existence.
 	 * @param string $which
-	 * @return Lorry_View
+	 * @return Lorry_Presenter
 	 */
 	public function custom($which) {
 
@@ -32,33 +32,33 @@ class Router extends Object {
 			$components[$key] = ucfirst($component);
 		}
 
-		$view = false;
+		$presenter = false;
 
 		//exactly the requested path
-		if($view = $this->castView(implode('\\', $components))) {
-			return $this->access($view);
+		if($presenter = $this->castPresenter(implode('\\', $components))) {
+			return $this->access($presenter);
 		}
 
 		//check if parent does wildcard
 		array_pop($components);
 
-		if($view = $this->castView(implode('\\', $components))) {
-			if($view->access()) {
-				if($view->wildcard($original[count($original) - 1])) {
+		if($presenter = $this->castPresenter(implode('\\', $components))) {
+			if($presenter->access()) {
+				if($presenter->wildcard($original[count($original) - 1])) {
 					//parent wildcards
-					return $view;
+					return $presenter;
 				}
 			} else {
-				return new Views\Error\Forbidden($this->lorry);
+				return new Presenters\Error\Forbidden($this->lorry);
 			}
-			$view = false;
+			$presenter = false;
 		}
 
 		//otherwise iterate upwards until forbidden or none left
-		while(count($components) && !$view) {
-			if($view = $this->castView(implode('\\', $components))) {
-				if(!$view->access()) {
-					return new Views\Error\Forbidden($this->lorry);
+		while(count($components) && !$presenter) {
+			if($presenter = $this->castPresenter(implode('\\', $components))) {
+				if(!$presenter->access()) {
+					return new Presenters\Error\Forbidden($this->lorry);
 				}
 				break;
 			}
@@ -67,20 +67,20 @@ class Router extends Object {
 		}
 
 		//reached top without match, nothing found
-		return new Views\Error\Notfound($this->lorry);
+		return new Presenters\Error\Notfound($this->lorry);
 	}
 
 	/**
 	 *
-	 * @param Lorry_View $view
-	 * @return Lorry_View
+	 * @param Lorry_Presenter $presenter
+	 * @return Lorry_Presenter
 	 */
-	protected function access(View $view) {
-		if($view->access()) {
-			return $view;
+	protected function access(Presenter $presenter) {
+		if($presenter->access()) {
+			return $presenter;
 		}
 
-		return new Views\Error\Forbidden($this->lorry);
+		return new Presenters\Error\Forbidden($this->lorry);
 	}
 
 	/**
@@ -95,10 +95,10 @@ class Router extends Object {
 	/**
 	 *
 	 * @param type $class
-	 * @return Lorry_View|boolean
+	 * @return Lorry_Presenter|boolean
 	 */
-	final private function castView($class) {
-		$class = '\\Lorry\\Views\\'.$class;
+	final private function castPresenter($class) {
+		$class = '\\Lorry\\Presenters\\'.$class;
 		if(class_exists($class)) {
 			return new $class($this->lorry);
 		}

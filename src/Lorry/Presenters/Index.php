@@ -1,10 +1,10 @@
 <?php
 
-namespace Lorry\Views;
+namespace Lorry\Presenters;
 
-use Lorry\View;
+use Lorry\Presenter;
 
-class Index extends View {
+class Index extends Presenter {
 
 	protected function allow() {
 		return true;

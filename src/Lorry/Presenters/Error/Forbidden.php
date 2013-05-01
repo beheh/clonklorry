@@ -1,9 +1,9 @@
 <?php
 
-namespace Lorry\Views\Error;
+namespace Lorry\Presenters\Error;
 
 use Lorry\Environment;
-use Lorry\Views\Error;
+use Lorry\Presenters\Error;
 
 class Forbidden extends Error {
 

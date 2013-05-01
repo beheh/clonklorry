@@ -4,7 +4,7 @@ namespace Lorry;
 
 use Lorry\Models\User;
 
-abstract class View extends Object {
+abstract class Presenter extends Object {
 
 	abstract protected function render();
 
@@ -34,7 +34,7 @@ abstract class View extends Object {
 	}
 
 	/**
-	 * Whether or not the current request is allowed to interact withthe view.
+	 * Whether or not the current request is allowed to interact with the presenter.
 	 * @return boolean
 	 */
 	final public function access() {
@@ -60,7 +60,7 @@ abstract class View extends Object {
 	}
 
 	/**
-	 * @TODO zu service?
+	 * @TODO service?
 	 * @param string $to
 	 */
 	final protected function redirect($to) {
