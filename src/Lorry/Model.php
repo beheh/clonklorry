@@ -2,7 +2,7 @@
 
 namespace Lorry;
 
-abstract class Model extends Object {
+abstract class Model {
 
 	private $table;
 	private $schema;
@@ -10,8 +10,8 @@ abstract class Model extends Object {
 	private $changes;
 	private $loaded;
 
-	public function __construct(Environment $lorry, $table, $rows) {
-		parent::__construct($lorry);
+	public function __construct($table, $rows) {
+		parent::__construct();
 
 		$this->loaded = false;
 
@@ -64,7 +64,7 @@ abstract class Model extends Object {
 		$this->ensureRow($row);
 
 		//@TODO
-		$row = $this->lorry->persistence->load($this, $row, $value);
+		//$row = $this->lorry->persistence->load($this, $row, $value);
 		if(empty($row)) {
 			return false;
 		}
@@ -128,9 +128,11 @@ abstract class Model extends Object {
 		if(empty($this->changes))
 			return true;
 		if($this->loaded) {
-			return $this->lorry->persistence->update($this, $this->changes);
+			//@TODO
+			//return $this->lorry->persistence->update($this, $this->changes);
 		} else {
-			return $this->lorry->persistence->save($this, $this->changes);
+			//@TODO
+			//return $this->lorry->persistence->save($this, $this->changes);
 		}
 	}
 
