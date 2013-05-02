@@ -2,6 +2,8 @@
 
 namespace Lorry;
 
+use \Exception;
+
 class Environment {
 
 	public function __construct() {
@@ -16,23 +18,23 @@ class Environment {
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-		/*$twig->addGlobal('name', $this->config->name);
-		$twig->addGlobal('base', $this->config->base);
-		$twig->addGlobal('path', $router->getRequestedPath());
-		$twig->addGlobal('current_year', date('Y'));
-		$twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">' . gettext('"Clonk" is a registered trademark of Matthes Bender') . '</a>');
-		if($this->config->debug) {
-			$this->twig->addGlobal('__notice', gettext('Development version.'));
-		}
-		$session = $this->session->authenticated();
-		$this->twig->addGlobal('__session', $session);
-		if($session) {
-			$user = $this->session->getUser();
-			$this->twig->addGlobal('__username', $user->getUsername());
-			$this->twig->addGlobal('__profile', $this->config->base . 'user/' . $user->getUsername());
-			$this->twig->addGlobal('__administrator', $user->isAdministrator());
-			$this->twig->addGlobal('__moderator', $user->isModerator());
-		}*/
+		/* $twig->addGlobal('name', $this->config->name);
+		  $twig->addGlobal('base', $this->config->base);
+		  $twig->addGlobal('path', $router->getRequestedPath());
+		  $twig->addGlobal('current_year', date('Y'));
+		  $twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">' . gettext('"Clonk" is a registered trademark of Matthes Bender') . '</a>');
+		  if($this->config->debug) {
+		  $this->twig->addGlobal('__notice', gettext('Development version.'));
+		  }
+		  $session = $this->session->authenticated();
+		  $this->twig->addGlobal('__session', $session);
+		  if($session) {
+		  $user = $this->session->getUser();
+		  $this->twig->addGlobal('__username', $user->getUsername());
+		  $this->twig->addGlobal('__profile', $this->config->base . 'user/' . $user->getUsername());
+		  $this->twig->addGlobal('__administrator', $user->isAdministrator());
+		  $this->twig->addGlobal('__moderator', $user->isModerator());
+		  } */
 
 
 		PresenterFactory::setConfig($config);
@@ -64,45 +66,51 @@ class Environment {
 			'/contact' => 'Site\Contact'
 		));
 
-		$presenter = Router::route();
+		try {
+			$presenter = Router::route();
+		} catch(Exception $ex) {
+			return PresenterFactory::build('Error\FileNotFound')->get();
+		}
 
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
 		if(!method_exists($presenter, $method)) {
 			header('HTTP/1.1 501 Not Implemented');
-			throw new \Exception('method not supported.');
+			return PresenterFactory::build('Error')->get();
 		}
+
 		call_user_func_array(array($presenter, $method), Router::getMatches());
 
-		/*if($presenter) {
-			try {
-				//render out the presenter
-				$rendered = $presenter->display();
-				if($rendered !== true) {
-					if(!empty($rendered)) {
-						echo $rendered;
-					} else {
-						if($this->config->debug) {
-							$error = $router->custom('error/debug');
-							$error->setTitle('No output from presenter "' . $presenter . '"');
-							$error->setMessage('<p>The presenter processed okay, but didn\'t return any result.</p>');
-						} else {
-							$error = $router->custom('error/internal');
-						}
-						echo $error->display();
-					}
-				}
-			} catch(Exception $ex) {
-				if($this->config->debug) {
-					$error = $router->custom('error/debug');
-					$error->setTitle('Uncaught Exception in presenter "' . $presenter . '"');
-					$error->setDetails($ex);
-				} else {
-					$error = $router->custom('error/internal');
-				}
-				echo $error->display();
-			}
-		} else {
-			throw new \Exception('fatal error: router didn\'t return presenter');
-		}*/
+		/* if($presenter) {
+		  try {
+		  //render out the presenter
+		  $rendered = $presenter->display();
+		  if($rendered !== true) {
+		  if(!empty($rendered)) {
+		  echo $rendered;
+		  } else {
+		  if($this->config->debug) {
+		  $error = $router->custom('error/debug');
+		  $error->setTitle('No output from presenter "' . $presenter . '"');
+		  $error->setMessage('<p>The presenter processed okay, but didn\'t return any result.</p>');
+		  } else {
+		  $error = $router->custom('error/internal');
+		  }
+		  echo $error->display();
+		  }
+		  }
+		  } catch(Exception $ex) {
+		  if($this->config->debug) {
+		  $error = $router->custom('error/debug');
+		  $error->setTitle('Uncaught Exception in presenter "' . $presenter . '"');
+		  $error->setDetails($ex);
+		  } else {
+		  $error = $router->custom('error/internal');
+		  }
+		  echo $error->display();
+		  }
+		  } else {
+		  throw new \Exception('fatal error: router didn\'t return presenter');
+		  } */
 	}
+
 }
