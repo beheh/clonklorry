@@ -48,7 +48,7 @@ class Environment {
 			'/publish/:alpha/:version/preview' => 'Addon\Overview',
 			'/moderate/approve' => '',
 			'/moderate/approve/:alpha' => '',
-			'/users/' => 'User\List',
+			'/users' => 'User\List',
 			'/users/:alpha' => 'User\Profile',
 			'/register' => 'Account\Register',
 			'/login' => 'Account\Login',
