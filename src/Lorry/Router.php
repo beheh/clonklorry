@@ -2,13 +2,11 @@
 
 namespace Lorry;
 
-class Router {
+abstract class Router {
 
-	private static $lorry;
 	private static $routes;
 
-	public function __construct(Environment $lorry) {
-		self::$lorry = $lorry;
+	public function __construct() {
 		self::$routes = array();
 	}
 
@@ -28,7 +26,7 @@ class Router {
 
 	/**
 	 * Returns the presenter matching to the request.
-	 * @return Lorry_View
+	 * @return \Lorry\Presenter
 	 */
 	public static function route() {
 		$path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';

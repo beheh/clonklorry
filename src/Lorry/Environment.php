@@ -9,10 +9,13 @@ class Environment {
 	}
 
 	public function handle() {
-		$router = new Router($this);
+		$config = new Config();
 
-		// preset twig variables for the template
-		$twig = new \Twig_Environment();
+		$loader = new \Twig_Loader_Filesystem('../app/templates');
+		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => false));
+		$twig->addExtension(new \Twig_Extension_Escaper(true));
+		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
+
 		/*$twig->addGlobal('name', $this->config->name);
 		$twig->addGlobal('base', $this->config->base);
 		$twig->addGlobal('path', $router->getRequestedPath());
@@ -30,11 +33,12 @@ class Environment {
 			$this->twig->addGlobal('__administrator', $user->isAdministrator());
 			$this->twig->addGlobal('__moderator', $user->isModerator());
 		}*/
-		$config = new Config();
+
+
 		PresenterFactory::setConfig($config);
 		PresenterFactory::setTwig($twig);
 
-		$router->setRoutes(array(
+		Router::setRoutes(array(
 			'/' => 'Site\Front',
 			'/addons' => 'Addon\List',
 			'/addons/:alpha' => 'Addon\Overview',
@@ -60,14 +64,14 @@ class Environment {
 			'/contact' => 'Site\Contact'
 		));
 
-		$presenter = $router->route();
+		$presenter = Router::route();
 
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
 		if(!method_exists($presenter, $method)) {
 			header('HTTP/1.1 501 Not Implemented');
 			throw new \Exception('method not supported.');
 		}
-		call_user_func_array(array($presenter, $method), $router->getMatches());
+		call_user_func_array(array($presenter, $method), Router::getMatches());
 
 		/*if($presenter) {
 			try {
