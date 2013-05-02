@@ -1,17 +1,12 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Account;
 
-/**
- * Description of Login
- *
- * @author Benedict
- */
-class Login {
-	//put your code here
+use \Lorry\Presenter;
+
+class Login extends Presenter {
+
+	public function get() {
+	}
+
 }
-
-?>

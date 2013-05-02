@@ -1,17 +1,9 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Addons;
 
-/**
- * Description of Release
- *
- * @author Benedict
- */
-class Release {
-	//put your code here
+use \Lorry\Presenter;
+
+class Release extends Presenter {
+
 }
-
-?>

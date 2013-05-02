@@ -1,17 +1,13 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Account;
 
-/**
- * Description of Logout
- *
- * @author Benedict
- */
-class Logout {
-	//put your code here
+use \Lorry\Presenter;
+
+class Logout extends Presenter {
+
+	public function get() {
+		$this->redirect();
+	}
+
 }
-
-?>

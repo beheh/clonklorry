@@ -11,5 +11,3 @@ class Download extends Presenter {
 	}
 
 }
-
-?>
