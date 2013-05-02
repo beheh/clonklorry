@@ -62,6 +62,10 @@ class Environment {
 		$presenter = $router->route();
 
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
+		if(!method_exists($presenter, $method)) {
+			header('HTTP/1.1 501 Not Implemented');
+			throw new \Exception('method not supported.');
+		}
 		call_user_func_array(array($presenter, $method), $router->getMatches());
 
 		/*if($presenter) {
