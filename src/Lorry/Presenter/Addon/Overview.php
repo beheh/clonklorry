@@ -11,5 +11,3 @@ class Overview extends Presenter {
 	}
 
 }
-
-?>
