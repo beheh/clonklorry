@@ -2,11 +2,16 @@
 
 namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
+use \Lorry\Presenter;
 
 class FileNotFound extends Presenter\Error {
-	public function get() {
-		echo 'File not found';
+
+	protected function getCode() {
+		return 404;
+	}
+
+	protected function getMessage() {
+		return 'File Not Found';
 	}
 
 }

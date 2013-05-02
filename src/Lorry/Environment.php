@@ -2,7 +2,9 @@
 
 namespace Lorry;
 
-use \Exception;
+use \Lorry\Exception\FileNotFoundException;
+use \Lorry\Exception\ForbiddenException;
+use \Lorry\Exception\NotImplementedException;
 
 class Environment {
 
@@ -66,19 +68,24 @@ class Environment {
 			'/contact' => 'Site\Contact'
 		));
 
-		try {
-			$presenter = Router::route();
-		} catch(Exception $ex) {
-			return PresenterFactory::build('Error\FileNotFound')->get();
-		}
-
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
-		if(!method_exists($presenter, $method)) {
-			header('HTTP/1.1 501 Not Implemented');
-			return PresenterFactory::build('Error')->get();
-		}
 
-		call_user_func_array(array($presenter, $method), Router::getMatches());
+		try {
+
+			$presenter = Router::route();
+
+			if(!method_exists($presenter, $method)) {
+				throw new NotImplementedException(get_class($presenter).'->'.$method.'()');
+			}
+
+			call_user_func_array(array($presenter, $method), Router::getMatches());
+		} catch(FileNotFoundException $exception) {
+			return PresenterFactory::build('Error\FileNotFound')->get($exception);
+		} catch(ForbiddenException $exception) {
+			return PresenterFactory::build('Error\FileNotFound')->get($exception);
+		} catch(NotImplementedException $exception) {
+			return PresenterFactory::build('Error\NotImplemented')->get($exception);
+		}
 
 		/* if($presenter) {
 		  try {

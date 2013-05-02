@@ -5,8 +5,13 @@ namespace Lorry\Presenter\Error;
 use Lorry\Presenter;
 
 class Forbidden extends Presenter\Error {
-	public function get() {
-		echo 'Forbidden';
+
+	protected function getCode() {
+		return 403;
+	}
+
+	protected function getMessage() {
+		return 'Forbidden';
 	}
 
 }

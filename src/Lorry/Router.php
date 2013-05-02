@@ -2,6 +2,8 @@
 
 namespace Lorry;
 
+use \Lorry\Exception\FileNotFoundException;
+
 abstract class Router {
 
 	private static $routes;
@@ -47,7 +49,7 @@ abstract class Router {
 			}
 		}
 
-		throw new \Exception('404');
+		throw new FileNotFoundException($path);
 	}
 
 }
