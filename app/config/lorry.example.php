@@ -1,6 +1,6 @@
 <?php
 $config['name'] = 'Lorry';
-$config['base'] = 'http://'.$_SERVER['SERVER_NAME'].'/';
+$config['base'] = 'http://'.$_SERVER['SERVER_NAME'];
 $config['debug'] = true;
 
 $config['clonkforge'] = 'http://clonkforge.net/user.php?usr=%s';
