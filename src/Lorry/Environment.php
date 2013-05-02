@@ -12,14 +12,21 @@ class Environment {
 		header_remove('X-Powered-By');
 		$router = new Router($this);
 
-		//cast the presenter based on the request
+		$router->setRoutes(array(
+			'/' => 'Storefront',
+			'/about' => '',
+			'/addon/:number/clonk' => 'Addon'
+		));
+
+		// cast the presenter based on the request
 		$presenter = $router->route();
 
+		// preset twig variables for the template
 		$this->twig->addGlobal('name', $this->config->name);
 		$this->twig->addGlobal('base', $this->config->base);
 		$this->twig->addGlobal('path', $router->getRequestedPath());
 		$this->twig->addGlobal('current_year', date('Y'));
-		$this->twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
+		$this->twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">' . gettext('"Clonk" is a registered trademark of Matthes Bender') . '</a>');
 		if($this->config->debug) {
 			$this->twig->addGlobal('__notice', gettext('Development version.'));
 		}
@@ -28,7 +35,7 @@ class Environment {
 		if($session) {
 			$user = $this->session->getUser();
 			$this->twig->addGlobal('__username', $user->getUsername());
-			$this->twig->addGlobal('__profile', $this->config->base.'user/'.$user->getUsername());
+			$this->twig->addGlobal('__profile', $this->config->base . 'user/' . $user->getUsername());
 			$this->twig->addGlobal('__administrator', $user->isAdministrator());
 			$this->twig->addGlobal('__moderator', $user->isModerator());
 		}
@@ -62,7 +69,7 @@ class Environment {
 				echo $error->display();
 			}
 		} else {
-			throw new Exception('fatal error: router didn\'t return presenter');
+			throw new \Exception('fatal error: router didn\'t return presenter');
 		}
 	}
 

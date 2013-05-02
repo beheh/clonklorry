@@ -5,29 +5,54 @@ namespace Lorry;
 class Router {
 
 	private static $lorry;
-	
+	private static $routes;
+
+
 	public function __construct(Environment $lorry) {
 		self::$lorry = $lorry;
+		self::$routes = array();
 	}
-	
-	private static $routes;
+
+	public static function addRoutes($route) {
+		self::$routes = array_merge($array1, self::$routes);
+	}
 
 	public static function setRoutes($routes) {
 		self::$routes = $routes;
 	}
 
+	/* Clonk ist ein normale */
+
 	/**
-	 * Returns the presenter matching to the request, sanitazing the query.
+	 * Returns the presenter matching to the request.
 	 * @return Lorry_View
 	 */
 	public static function route() {
-		$path = 'index';
-		if(isset($_SERVER['PATH_INFO']) && !empty($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] != '/') {
-			$path = ltrim($_SERVER['PATH_INFO'], '/');
-			$path = preg_replace(array('|\.|', '|\0|'), '', $path);
-			$path = preg_replace(array('|_+|', '|/+|'), array('_', '/'), $path);
-		}
-		return self::custom($path);
+		$presenter = false;
+		$regex_matches = false;
+		$path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
+		
+		if(isset(self::$routes[$path])) {
+			echo self::$routes[$path];
+		} else {
+		   $tokens = array(
+                ':string' => '([a-zA-Z]+)',
+                ':number' => '([0-9]+)',
+                ':alpha'  => '([a-zA-Z0-9-_]+)'
+            );
+            foreach (self::$routes as $pattern => $presenter_name) {
+                $pattern = strtr($pattern, $tokens);
+                if (preg_match('#^/?' . $pattern . '/?$#', $path, $matches)) {
+                    $presenter = $presenter_name;
+                    $regex_matches = $matches;
+                    break;
+                }
+            }
+        }
+		echo $presenter;
+		var_dump($matches);
+		exit();
+		//return self::custom($path);
 	}
 
 	/**
