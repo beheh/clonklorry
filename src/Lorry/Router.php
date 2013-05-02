@@ -7,7 +7,6 @@ class Router {
 	private static $lorry;
 	private static $routes;
 
-
 	public function __construct(Environment $lorry) {
 		self::$lorry = $lorry;
 		self::$routes = array();
@@ -21,125 +20,36 @@ class Router {
 		self::$routes = $routes;
 	}
 
-	/* Clonk ist ein normale */
+	private static $matches;
+
+	public static function getMatches() {
+		return self::$matches;
+	}
 
 	/**
 	 * Returns the presenter matching to the request.
 	 * @return Lorry_View
 	 */
 	public static function route() {
-		$presenter = false;
-		$regex_matches = false;
 		$path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
-		
-		if(isset(self::$routes[$path])) {
-			echo self::$routes[$path];
-		} else {
-		   $tokens = array(
-                ':string' => '([a-zA-Z]+)',
-                ':number' => '([0-9]+)',
-                ':alpha'  => '([a-zA-Z0-9-_]+)'
-            );
-            foreach (self::$routes as $pattern => $presenter_name) {
-                $pattern = strtr($pattern, $tokens);
-                if (preg_match('#^/?' . $pattern . '/?$#', $path, $matches)) {
-                    $presenter = $presenter_name;
-                    $regex_matches = $matches;
-                    break;
-                }
-            }
-        }
-		echo $presenter;
-		var_dump($matches);
-		exit();
-		//return self::custom($path);
-	}
 
-	/**
-	 * Returns the specified presenter after checking for access and existence.
-	 * @param string $which
-	 * @return Lorry_Presenter
-	 */
-	public static function custom($which) {
+		$tokens = array(
+			':string' => '([a-zA-Z]+)',
+			':number' => '([0-9]+)',
+			':alpha' => '([a-zA-Z0-9-_]+)',
+			':version' => '(([0-9]+\.)*[0-9]+(-[a-zA-Z0-9-_]+)?)'
+		);
 
-		//split the request
-		$original = explode('/', $which);
-		$components = array();
-		foreach($original as $key => $component) {
-			$components[$key] = ucfirst($component);
-		}
-
-		$presenter = false;
-
-		//exactly the requested path
-		if($presenter = self::castPresenter(implode('\\', $components))) {
-			return self::access($presenter);
-		}
-
-		//check if parent does wildcard
-		array_pop($components);
-
-		if($presenter = self::castPresenter(implode('\\', $components))) {
-			if($presenter->access()) {
-				if($presenter->wildcard($original[count($original) - 1])) {
-					//parent wildcards
-					return $presenter;
-				}
-			} else {
-				return new Presenters\Error\Forbidden(self::$lorry);
+		foreach(self::$routes as $pattern => $presenter) {
+			$pattern = strtr($pattern, $tokens);
+			if(preg_match('#^/?'.$pattern.'/?$#', $path, $matches)) {
+				unset($matches[0]);
+				self::$matches = $matches;
+				return PresenterFactory::build($presenter);
 			}
-			$presenter = false;
 		}
 
-		//otherwise iterate upwards until forbidden or none left
-		while(count($components) && !$presenter) {
-			if($presenter = self::castPresenter(implode('\\', $components))) {
-				if(!$presenter->access()) {
-					return new Presenters\Error\Forbidden(self::$lorry);
-				}
-				break;
-			}
-
-			array_pop($components);
-		}
-
-		//reached top without match, nothing found
-		return new Presenters\Error\Notfound(self::$lorry);
-	}
-
-	/**
-	 *
-	 * @param Lorry_Presenter $presenter
-	 * @return Lorry_Presenter
-	 */
-	protected static function access(Presenter $presenter) {
-		if($presenter->access()) {
-			return $presenter;
-		}
-
-		return new Presenters\Error\Forbidden(self::$lorry);
-	}
-
-	/**
-	 *
-	 * @return array
-	 */
-	public static function getRequestedPath() {
-		$path = isset($_GET['__path']) ? $_GET['__path'] : '';
-		return explode('/', strtolower($path));
-	}
-
-	/**
-	 *
-	 * @param type $class
-	 * @return Lorry_Presenter|boolean
-	 */
-	private static function castPresenter($class) {
-		$class = '\\Lorry\\Presenters\\'.$class;
-		if(class_exists($class)) {
-			return new $class(self::$lorry);
-		}
-		return false;
+		throw new \Exception('404');
 	}
 
 }

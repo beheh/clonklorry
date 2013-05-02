@@ -9,24 +9,15 @@ class Environment {
 	}
 
 	public function handle() {
-		header_remove('X-Powered-By');
 		$router = new Router($this);
 
-		$router->setRoutes(array(
-			'/' => 'Storefront',
-			'/about' => '',
-			'/addon/:number/clonk' => 'Addon'
-		));
-
-		// cast the presenter based on the request
-		$presenter = $router->route();
-
 		// preset twig variables for the template
-		$this->twig->addGlobal('name', $this->config->name);
-		$this->twig->addGlobal('base', $this->config->base);
-		$this->twig->addGlobal('path', $router->getRequestedPath());
-		$this->twig->addGlobal('current_year', date('Y'));
-		$this->twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">' . gettext('"Clonk" is a registered trademark of Matthes Bender') . '</a>');
+		$twig = new \Twig_Environment();
+		/*$twig->addGlobal('name', $this->config->name);
+		$twig->addGlobal('base', $this->config->base);
+		$twig->addGlobal('path', $router->getRequestedPath());
+		$twig->addGlobal('current_year', date('Y'));
+		$twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">' . gettext('"Clonk" is a registered trademark of Matthes Bender') . '</a>');
 		if($this->config->debug) {
 			$this->twig->addGlobal('__notice', gettext('Development version.'));
 		}
@@ -38,9 +29,42 @@ class Environment {
 			$this->twig->addGlobal('__profile', $this->config->base . 'user/' . $user->getUsername());
 			$this->twig->addGlobal('__administrator', $user->isAdministrator());
 			$this->twig->addGlobal('__moderator', $user->isModerator());
-		}
+		}*/
+		$config = new Config();
+		PresenterFactory::setConfig($config);
+		PresenterFactory::setTwig($twig);
 
-		if($presenter) {
+		$router->setRoutes(array(
+			'/' => 'Site\Front',
+			'/addon' => 'Addon\List',
+			'/addon/:alpha' => 'Addon\Overview',
+			'/addon/:alpha/:version' => 'Addon\Release',
+			'/download/:alpha' => 'Addon\Download',
+			'/download/:alpha/:version' => 'Addon\Download',
+			'/publish' => 'Publish\List',
+			'/publish/:alpha' => 'Publish\Addon',
+			'/publish/:alpha/:version' => 'Publish\Release',
+			'/publish/:alpha/:version/preview' => 'Addon\Overview',
+			'/moderate/approve' => '',
+			'/moderate/approve/:alpha' => '',
+			'/user/' => 'User\List',
+			'/user/:alpha' => 'User\Profile',
+			'/register' => 'Account\Register',
+			'/login' => 'Account\Login',
+			'/logout' => 'Account\Logout',
+			'/settings' => 'Accout\Settings',
+			'/about' => 'Site\About',
+			'/clonk' => 'Site\Clonk',
+			'/community' => 'Site\Community',
+			'/contact' => 'Site\Contact'
+		));
+
+		$presenter = $router->route();
+
+		$method = strtolower($_SERVER['REQUEST_METHOD']);
+		call_user_func_array(array($presenter, $method), $router->getMatches());
+
+		/*if($presenter) {
 			try {
 				//render out the presenter
 				$rendered = $presenter->display();
@@ -70,33 +94,6 @@ class Environment {
 			}
 		} else {
 			throw new \Exception('fatal error: router didn\'t return presenter');
-		}
+		}*/
 	}
-
-	private $services = array();
-
-	/**
-	 * @param $name string Class name of the service
-	 * @return Lorry_Service The service
-	 */
-	public function __get($name) {
-		$class_name = '\\Lorry\\Service\\' . ucfirst($name);
-		if(!isset($this->services[$name])) {
-			if(class_exists($class_name)) {
-				$this->services[$name] = new $class_name($this);
-			} else {
-				throw new \UnexpectedValueException('unknown service ' . $class_name);
-			}
-		}
-		return $this->services[$name];
-	}
-
-	public function getRootDir() {
-		return realpath(__DIR__ . '/../') . '/';
-	}
-
-	public function getVersion() {
-		return 'dev';
-	}
-
 }

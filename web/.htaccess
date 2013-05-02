@@ -3,8 +3,9 @@ AddDefaultCharset utf-8
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond $1 !^(app\.php)
-RewriteRule ^(.*)$ app.php/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.*)$ index.php/$1 [L]
 
 #ErrorDocument 403 /error/forbidden
 #ErrorDocument 404 /error/notfound
