@@ -2,12 +2,20 @@
 
 namespace Lorry;
 
+use \Exception;
+
 class Config {
+
+	const FILE = '../app/config/lorry.php';
 
 	private $config;
 
 	public function __construct() {
-		require '../app/config/lorry.php';
+		$config = array();
+		if(!file_exists(self::FILE)) {
+			throw new Exception('config file not found (at '.FILE.')');
+		}
+		require self::FILE;
 		$this->config = $config;
 	}
 
@@ -18,5 +26,3 @@ class Config {
 		return null;
 	}
 }
-
-?>
