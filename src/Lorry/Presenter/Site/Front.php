@@ -6,6 +6,6 @@ use Lorry\Presenter;
 
 class Front extends Presenter {
 	public function get() {
-		echo 'Hello, World!';
+		$this->twig->display('site/front.twig');
 	}
 }
