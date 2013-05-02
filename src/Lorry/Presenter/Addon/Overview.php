@@ -1,17 +1,15 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Addon;
 
-/**
- * Description of Overview
- *
- * @author Benedict
- */
-class Overview {
-	//put your code here
+use \Lorry\Presenter;
+
+class Overview extends Presenter {
+
+	public function get($addon, $release = 'latest') {
+		echo $addon.'-'.$release;
+	}
+
 }
 
 ?>
