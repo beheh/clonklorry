@@ -16,15 +16,18 @@ class Environment {
 		$config = new Config();
 
 		$loader = new \Twig_Loader_Filesystem('../app/templates');
-		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => false));
+		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-		/* $twig->addGlobal('name', $this->config->name);
-		  $twig->addGlobal('base', $this->config->base);
-		  $twig->addGlobal('path', $router->getRequestedPath());
+		$twig->addGlobal('brand', $config->get('brand'));
+		$twig->addGlobal('base', $config->get('base'));
+		$twig->addGlobal('site_notice', gettext('Development version.'));
+		$twig->addGlobal('site_copyright', '© '.date('Y'));
+		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
+
+		/*  $twig->addGlobal('path', $router->getRequestedPath());
 		  $twig->addGlobal('current_year', date('Y'));
-		  $twig->addGlobal('__trademark', '<a class="text" href="http://clonk.de">' . gettext('"Clonk" is a registered trademark of Matthes Bender') . '</a>');
 		  if($this->config->debug) {
 		  $this->twig->addGlobal('__notice', gettext('Development version.'));
 		  }

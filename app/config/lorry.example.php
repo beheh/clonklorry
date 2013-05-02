@@ -1,5 +1,5 @@
 <?php
-$config['name'] = 'Lorry';
+$config['brand'] = 'Lorry';
 $config['base'] = 'http://'.$_SERVER['SERVER_NAME'];
 $config['debug'] = true;
 
