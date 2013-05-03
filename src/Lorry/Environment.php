@@ -11,10 +11,6 @@ use \Lorry\Exception\NotImplementedException;
 
 class Environment {
 
-	public function __construct() {
-
-	}
-
 	public function handle() {
 		$config = new ConfigService();
 
@@ -40,22 +36,8 @@ class Environment {
 			$user = $session->getUser();
 			$twig->addGlobal('user_login', true);
 			$twig->addGlobal('user_name', $user->getUsername());
+			$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
 		}
-		
-		/*  $twig->addGlobal('path', $router->getRequestedPath());
-		  $twig->addGlobal('current_year', date('Y'));
-		  if($this->config->debug) {
-		  $this->twig->addGlobal('__notice', gettext('Development version.'));
-		  }
-		  $session = $this->session->authenticated();
-		  $this->twig->addGlobal('__session', $session);
-		  if($session) {
-		  $user = $this->session->getUser();
-		  $this->twig->addGlobal('__username', $user->getUsername());
-		  $this->twig->addGlobal('__profile', $this->config->base . 'user/' . $user->getUsername());
-		  $this->twig->addGlobal('__administrator', $user->isAdministrator());
-		  $this->twig->addGlobal('__moderator', $user->isModerator());
-		  } */
 
 		PresenterFactory::setConfig($config);
 		PresenterFactory::setTwig($twig);
@@ -109,38 +91,6 @@ class Environment {
 		} catch(NotImplementedException $exception) {
 			return PresenterFactory::build('Error\NotImplemented')->get($exception);
 		}
-
-		/* if($presenter) {
-		  try {
-		  //render out the presenter
-		  $rendered = $presenter->display();
-		  if($rendered !== true) {
-		  if(!empty($rendered)) {
-		  echo $rendered;
-		  } else {
-		  if($this->config->debug) {
-		  $error = $router->custom('error/debug');
-		  $error->setTitle('No output from presenter "' . $presenter . '"');
-		  $error->setMessage('<p>The presenter processed okay, but didn\'t return any result.</p>');
-		  } else {
-		  $error = $router->custom('error/internal');
-		  }
-		  echo $error->display();
-		  }
-		  }
-		  } catch(Exception $ex) {
-		  if($this->config->debug) {
-		  $error = $router->custom('error/debug');
-		  $error->setTitle('Uncaught Exception in presenter "' . $presenter . '"');
-		  $error->setDetails($ex);
-		  } else {
-		  $error = $router->custom('error/internal');
-		  }
-		  echo $error->display();
-		  }
-		  } else {
-		  throw new \Exception('fatal error: router didn\'t return presenter');
-		  } */
 	}
 
 }
