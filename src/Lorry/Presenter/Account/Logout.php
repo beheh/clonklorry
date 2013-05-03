@@ -2,12 +2,15 @@
 
 namespace Lorry\Presenter\Account;
 
-use \Lorry\Presenter;
+use Lorry\Presenter;
 
 class Logout extends Presenter {
 
 	public function get() {
-		$this->redirect();
+		if($this->session->authenticated()) {
+			$this->session->logout();
+		}
+		return $this->redirect('/');
 	}
 
 }
