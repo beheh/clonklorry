@@ -11,10 +11,13 @@ class Login extends Presenter {
 
 	public function get() {
 		if($this->session->authenticated()) {
-			return $this->redirect('/');
+			$this->redirect('/');
+			return;
 		}
 
-		$this->context['remember'] = true;
+		if(!isset($this->context['remember'])) {
+			$this->context['remember'] = true;
+		}
 		if(isset($_GET['by-email']) || isset($_COOKIE['lorry_login_email'])) {
 			$this->context['email'] = true;
 		}
@@ -31,9 +34,19 @@ class Login extends Presenter {
 				setcookie('lorry_login_email', '1', time() + 60 * 60 * 24 * 365, '/');
 			}
 		} else {
-			setcookie('lorry_login_email', '', 0, '/');
+			$user = ModelFactory::build('User')->byUsername(filter_input(INPUT_POST, 'username', FILTER_DEFAULT));
+			$remember = filter_input(INPUT_POST, 'remember', FILTER_VALIDATE_BOOLEAN);
+			$this->context['remember'] = $remember || false;
+			if($user) {
+				setcookie('lorry_login_email', '', 0, '/');
+				if($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
+					$this->session->start($user, $remember);
+					$this->redirect('/');
+					return;
+				}
+			}
 		}
-		return $this->get();
+		$this->get();
 	}
 
 }

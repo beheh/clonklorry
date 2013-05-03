@@ -41,9 +41,7 @@ class User extends Model {
 	}
 
 	public final function regenerateSecret() {
-		$secret = $this->lorry->security->castSecret();
-		if(!$secret)
-			return false;
+		$secret = base64_encode(openssl_random_pseudo_bytes(64));
 		return $this->setValue('secret', $secret);
 	}
 
@@ -52,13 +50,13 @@ class User extends Model {
 	}
 
 	public final function matchSecret($secret) {
+		if(empty($secret))
+			return false;
 		return $this->match('secret', $secret);
 	}
 
 	public final function setPassword($password) {
-		$hash = $this->lorry->security->hash($password);
-		if(!$hash)
-			return false;
+		$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
 		return $this->setValue('password', $hash);
 	}
 
@@ -67,7 +65,9 @@ class User extends Model {
 	}
 
 	public final function matchPassword($password) {
-		return $this->lorry->security->verify($password, $this->getValue('password'));
+		if(empty($password))
+			return false;
+		return password_verify($password, $this->getValue('password')) === true;
 	}
 
 	public final function isAdministrator() {

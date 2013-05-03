@@ -3,6 +3,7 @@
 namespace Lorry\Service;
 
 use Lorry\ModelFactory;
+use Lorry\Model\User;
 use Exception;
 
 class SessionService {
