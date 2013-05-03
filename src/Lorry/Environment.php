@@ -2,6 +2,9 @@
 
 namespace Lorry;
 
+use \Lorry\Service\ConfigService;
+use \Lorry\Service\PersistenceService;
+use \Lorry\Service\SessionService;
 use \Lorry\Exception\FileNotFoundException;
 use \Lorry\Exception\ForbiddenException;
 use \Lorry\Exception\NotImplementedException;
@@ -13,7 +16,7 @@ class Environment {
 	}
 
 	public function handle() {
-		$config = new Config();
+		$config = new ConfigService();
 
 		$loader = new \Twig_Loader_Filesystem('../app/templates');
 		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
@@ -41,9 +44,16 @@ class Environment {
 		  $this->twig->addGlobal('__moderator', $user->isModerator());
 		  } */
 
+		$persistence = new PersistenceService();
+		$persistence->setConfig($config);
+
+		ModelFactory::setPersistence($persistence);
+
+		$session = new SessionService();
 
 		PresenterFactory::setConfig($config);
 		PresenterFactory::setTwig($twig);
+		PresenterFactory::setSession($session);
 
 		Router::setRoutes(array(
 			'/' => 'Site\Front',
@@ -71,17 +81,22 @@ class Environment {
 			'/contact' => 'Site\Contact'
 		));
 
+		// determine the RESTful method
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
 
 		try {
 
+			// determine the controller
 			$presenter = Router::route();
 
+			// check if method is supported
 			if(!method_exists($presenter, $method)) {
 				throw new NotImplementedException(get_class($presenter).'->'.$method.'()');
 			}
 
+			// execute the RESTful method
 			call_user_func_array(array($presenter, $method), Router::getMatches());
+
 		} catch(FileNotFoundException $exception) {
 			return PresenterFactory::build('Error\FileNotFound')->get($exception);
 		} catch(ForbiddenException $exception) {

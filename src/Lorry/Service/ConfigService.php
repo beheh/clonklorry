@@ -1,10 +1,10 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Service;
 
 use \Exception;
 
-class Config {
+class ConfigService {
 
 	const FILE = '../app/config/lorry.php';
 

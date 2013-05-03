@@ -2,7 +2,17 @@
 
 namespace Lorry;
 
-abstract class Model {
+abstract class Model implements ModelInterface {
+
+	/**
+	 *
+	 * @var \Lorry\Persistence
+	 */
+	protected $persistence;
+
+	public function setPersistence(PersistenceService $persistence) {
+		$this->persistence = $persistence;
+	}
 
 	private $table;
 	private $schema;
@@ -63,8 +73,7 @@ abstract class Model {
 		$this->ensureUnloaded();
 		$this->ensureRow($row);
 
-		//@TODO
-		//$row = $this->lorry->persistence->load($this, $row, $value);
+		$row = $this->persistence->load($this, $row, $value);
 		if(empty($row)) {
 			return false;
 		}
@@ -101,7 +110,7 @@ abstract class Model {
 
 	protected final function ensureRow($row) {
 		if(!array_key_exists($row, $this->schema) && $row != 'id') {
-			throw new \InvalidArgumentException('row "' . $row . '" does not exist');
+			throw new \InvalidArgumentException('row "'.$row.'" does not exist');
 		}
 		return true;
 	}
@@ -128,11 +137,9 @@ abstract class Model {
 		if(empty($this->changes))
 			return true;
 		if($this->loaded) {
-			//@TODO
-			//return $this->lorry->persistence->update($this, $this->changes);
+			return $this->persistence->update($this, $this->changes);
 		} else {
-			//@TODO
-			//return $this->lorry->persistence->save($this, $this->changes);
+			return $this->persistence->save($this, $this->changes);
 		}
 	}
 

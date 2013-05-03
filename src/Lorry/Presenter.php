@@ -2,6 +2,7 @@
 
 namespace Lorry;
 
+use \Lorry\Service\ConfigService;
 use \Twig_Environment;
 
 class Presenter implements PresenterInterface {
@@ -12,7 +13,7 @@ class Presenter implements PresenterInterface {
 	 */
 	protected $config;
 
-	public function setConfig(Config $config) {
+	public function setConfig(ConfigService $config) {
 		$this->config = $config;
 	}
 
