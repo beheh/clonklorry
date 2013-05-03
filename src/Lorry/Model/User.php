@@ -1,14 +1,13 @@
 <?php
 
-namespace Lorry\Models;
+namespace Lorry\Model;
 
-use Lorry\Model;
-use Lorry\Environment;
+use \Lorry\Model;
 
 class User extends Model {
 
-	public function __construct(Environment $lorry) {
-		parent::__construct($lorry, 'user', array(
+	public function __construct() {
+		parent::__construct('user', array(
 			'username' => 'varchar(16)',
 			'secret' => 'varchar(255)',
 			'password' => 'varchar(255)',

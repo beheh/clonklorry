@@ -26,6 +26,7 @@ class ModelFactory {
 	 */
 	public static function build($model) {
 		$class = '\\Lorry\\Model\\'.$model;
+		echo $class;
 		if(!class_exists($class)) {
 			throw new Exception('unknown model');
 		}
@@ -33,7 +34,7 @@ class ModelFactory {
 		if(!$instance instanceof ModelInterface) {
 			throw new Exception('model does not implement interface');
 		}
-		$instance->setPersistence(self::$config);
+		$instance->setPersistence(self::$persistence);
 		return $instance;
 	}
 

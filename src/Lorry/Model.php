@@ -23,8 +23,6 @@ abstract class Model implements ModelInterface {
 	private $loaded;
 
 	public function __construct($table, $rows) {
-		parent::__construct();
-
 		$this->loaded = false;
 
 		$this->table = $table;
