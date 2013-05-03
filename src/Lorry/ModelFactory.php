@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use \Lorry\Service\PersistenceService;
+use \Exception;
 
 class ModelFactory {
 
@@ -30,7 +31,7 @@ class ModelFactory {
 		}
 		$instance = new $class();
 		if(!$instance instanceof ModelInterface) {
-			throw new Exception('presenter does not implement interface');
+			throw new Exception('model does not implement interface');
 		}
 		$instance->setPersistence(self::$config);
 		return $instance;

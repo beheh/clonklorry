@@ -2,11 +2,13 @@
 
 namespace Lorry;
 
+use Lorry\Service\PersistenceService;
+
 abstract class Model implements ModelInterface {
 
 	/**
 	 *
-	 * @var \Lorry\Persistence
+	 * @var \Lorry\Service\Persistence
 	 */
 	protected $persistence;
 
