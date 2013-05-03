@@ -3,18 +3,29 @@
 namespace Lorry;
 
 use \Lorry\Service\ConfigService;
+use \Lorry\Service\SessionService;
 use \Twig_Environment;
 
 class Presenter implements PresenterInterface {
 
 	/**
 	 *
-	 * @var \Lorry\Config
+	 * @var \Lorry\Service\ConfigService
 	 */
 	protected $config;
 
 	public function setConfig(ConfigService $config) {
 		$this->config = $config;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Service\SessionService
+	 */
+	protected $session;
+
+	public function setSession(SessionService $session) {
+		$this->session = $session;
 	}
 
 	/**

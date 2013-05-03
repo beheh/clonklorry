@@ -54,8 +54,9 @@ class PresenterFactory {
 		if(!$instance instanceof PresenterInterface) {
 			throw new Exception('presenter does not implement interface');
 		}
-		$instance->setTwig(self::$twig);
 		$instance->setConfig(self::$config);
+		$instance->setSession(self::$session);
+		$instance->setTwig(self::$twig);
 		return $instance;
 	}
 
