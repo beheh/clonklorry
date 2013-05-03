@@ -95,7 +95,7 @@ class User extends Model {
 	}
 
 	public function __toString() {
-		return $this->getUsername.'';
+		return $this->getUsername().'';
 	}
 
 }
