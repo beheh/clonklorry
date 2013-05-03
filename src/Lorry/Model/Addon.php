@@ -3,12 +3,11 @@
 namespace Lorry\Models;
 
 use Lorry\Model;
-use Lorry\Environment;
 
 class Addon extends Model {
 
-	public function __construct(Environment $lorry) {
-		parent::__construct($lorry, 'addon', array(
+	public function __construct() {
+		parent::__construct('addon', array(
 			'name' => 'string',
 			'title' => 'string',
 			'short' => 'string'));
