@@ -73,6 +73,11 @@ abstract class Model implements ModelInterface {
 		$this->ensureUnloaded();
 		$this->ensureRow($row);
 
+		// do not allow fetching based on empty values
+		if(empty($value)) {
+			return false;
+		}
+		
 		$row = $this->persistence->load($this, $row, $value);
 		if(empty($row)) {
 			return false;
