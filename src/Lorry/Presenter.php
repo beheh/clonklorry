@@ -21,7 +21,7 @@ class Presenter implements PresenterInterface {
 
 	/**
 	 *
-	 * @var \Lorry\Service\SessionService
+	 * @var \Lorry\Service\SecurityService
 	 */
 	protected $security;
 
