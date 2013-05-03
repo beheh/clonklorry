@@ -2,8 +2,8 @@
 
 namespace Lorry;
 
-use \Lorry\Service\PersistenceService;
-use \Exception;
+use Lorry\Service\PersistenceService;
+use Exception;
 
 class ModelFactory {
 
@@ -13,7 +13,7 @@ class ModelFactory {
 	 */
 	private static $persistence;
 
-	public static function setPersistence(PersistenceService $persistence) {
+	public static function setPersistenceService(PersistenceService $persistence) {
 		self::$persistence = $persistence;
 	}
 
@@ -33,7 +33,7 @@ class ModelFactory {
 		if(!$instance instanceof ModelInterface) {
 			throw new Exception('model does not implement interface');
 		}
-		$instance->setPersistence(self::$persistence);
+		$instance->setPersistenceService(self::$persistence);
 		return $instance;
 	}
 

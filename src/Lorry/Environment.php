@@ -2,12 +2,13 @@
 
 namespace Lorry;
 
-use \Lorry\Service\ConfigService;
-use \Lorry\Service\PersistenceService;
-use \Lorry\Service\SessionService;
-use \Lorry\Exception\FileNotFoundException;
-use \Lorry\Exception\ForbiddenException;
-use \Lorry\Exception\NotImplementedException;
+use Lorry\Service\ConfigService;
+use Lorry\Service\PersistenceService;
+use Lorry\Service\SecurityService;
+use Lorry\Service\SessionService;
+use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\ForbiddenException;
+use Lorry\Exception\NotImplementedException;
 
 class Environment {
 
@@ -15,9 +16,9 @@ class Environment {
 		$config = new ConfigService();
 
 		$persistence = new PersistenceService();
-		$persistence->setConfig($config);
+		$persistence->setConfigService($config);
 
-		ModelFactory::setPersistence($persistence);
+		ModelFactory::setPersistenceService($persistence);
 
 		$session = new SessionService();
 
@@ -28,6 +29,7 @@ class Environment {
 
 		$twig->addGlobal('brand', $config->get('brand'));
 		$twig->addGlobal('base', $config->get('base'));
+		$twig->addGlobal('filename', basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
 		$twig->addGlobal('site_notice', gettext('Development version.'));
 		$twig->addGlobal('site_copyright', '© '.date('Y'));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
@@ -39,9 +41,12 @@ class Environment {
 			$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
 		}
 
-		PresenterFactory::setConfig($config);
+		$security = new SecurityService();
+
+		PresenterFactory::setConfigService($config);
+		PresenterFactory::setSecurityService($security);
+		PresenterFactory::setSessionService($session);
 		PresenterFactory::setTwig($twig);
-		PresenterFactory::setSession($session);
 
 		Router::setRoutes(array(
 			'/' => 'Site\Front',

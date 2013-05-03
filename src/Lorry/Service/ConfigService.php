@@ -2,7 +2,7 @@
 
 namespace Lorry\Service;
 
-use \Exception;
+use Exception;
 
 class ConfigService {
 

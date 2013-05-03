@@ -2,8 +2,8 @@
 
 namespace Lorry;
 
-use \Lorry\Service\PersistenceService;
+use Lorry\Service\PersistenceService;
 
 interface ModelInterface {
-	public function setPersistence(PersistenceService $persistence);
+	public function setPersistenceService(PersistenceService $persistence);
 }

@@ -2,7 +2,7 @@
 
 namespace Lorry\Addons;
 
-use \Lorry\Presenter;
+use Lorry\Presenter;
 
 class Release extends Presenter {
 

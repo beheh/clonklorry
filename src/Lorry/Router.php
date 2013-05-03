@@ -2,7 +2,7 @@
 
 namespace Lorry;
 
-use \Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\FileNotFoundException;
 
 abstract class Router {
 

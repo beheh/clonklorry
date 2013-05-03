@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Error;
 
-use \Lorry\Presenter;
+use Lorry\Presenter;
 
 class FileNotFound extends Presenter\Error {
 

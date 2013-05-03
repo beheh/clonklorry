@@ -2,9 +2,10 @@
 
 namespace Lorry;
 
-use \Lorry\Service\ConfigService;
-use \Lorry\Service\SessionService;
-use \Twig_Environment;
+use Lorry\Service\ConfigService;
+use Lorry\Service\SecurityService;
+use Lorry\Service\SessionService;
+use Twig_Environment;
 
 class Presenter implements PresenterInterface {
 
@@ -14,8 +15,18 @@ class Presenter implements PresenterInterface {
 	 */
 	protected $config;
 
-	public function setConfig(ConfigService $config) {
+	public function setConfigService(ConfigService $config) {
 		$this->config = $config;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Service\SessionService
+	 */
+	protected $security;
+
+	public function setSecurityService(SecurityService $security) {
+		$this->security = $security;
 	}
 
 	/**
@@ -24,7 +35,7 @@ class Presenter implements PresenterInterface {
 	 */
 	protected $session;
 
-	public function setSession(SessionService $session) {
+	public function setSessionService(SessionService $session) {
 		$this->session = $session;
 	}
 
@@ -36,6 +47,13 @@ class Presenter implements PresenterInterface {
 
 	public function setTwig(Twig_Environment $twig) {
 		$this->twig = $twig;
+	}
+
+	/**
+	 * Default handling for post requests.
+	 */
+	public function post() {
+		call_user_func_array(array($this, 'get'), func_get_args());
 	}
 
 	/**

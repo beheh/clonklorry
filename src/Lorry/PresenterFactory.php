@@ -2,10 +2,11 @@
 
 namespace Lorry;
 
-use \Lorry\Service\ConfigService;
-use \Lorry\Service\SessionService;
-use \Twig_Environment;
-use \Exception;
+use Lorry\Service\ConfigService;
+use Lorry\Service\SecurityService;
+use Lorry\Service\SessionService;
+use Twig_Environment;
+use Exception;
 
 class PresenterFactory {
 
@@ -15,8 +16,28 @@ class PresenterFactory {
 	 */
 	private static $config;
 
-	public static function setConfig(ConfigService $config) {
+	public static function setConfigService(ConfigService $config) {
 		self::$config = $config;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Session
+	 */
+	private static $security;
+
+	public static function setSecurityService(SecurityService $security) {
+		self::$security = $security;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Session
+	 */
+	private static $session;
+
+	public static function setSessionService(SessionService $session) {
+		self::$session = $session;
 	}
 
 	/**
@@ -27,16 +48,6 @@ class PresenterFactory {
 
 	public static function setTwig(Twig_Environment $twig) {
 		self::$twig = $twig;
-	}
-
-	/**
-	 *
-	 * @var \Lorry\Session
-	 */
-	private static $session;
-
-	public static function setSession(SessionService $session) {
-		self::$session = $session;
 	}
 
 	/**
@@ -54,8 +65,9 @@ class PresenterFactory {
 		if(!$instance instanceof PresenterInterface) {
 			throw new Exception('presenter does not implement interface');
 		}
-		$instance->setConfig(self::$config);
-		$instance->setSession(self::$session);
+		$instance->setConfigService(self::$config);
+		$instance->setSessionService(self::$session);
+		$instance->setSecurityService(self::$security);
 		$instance->setTwig(self::$twig);
 		return $instance;
 	}

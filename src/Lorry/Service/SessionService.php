@@ -2,8 +2,8 @@
 
 namespace Lorry\Service;
 
-use \Lorry\ModelFactory;
-use \Exception;
+use Lorry\ModelFactory;
+use Exception;
 
 class SessionService {
 
@@ -13,7 +13,7 @@ class SessionService {
 	 */
 	protected $config;
 
-	public function setConfig(ConfigService $config) {
+	public function setConfigService(ConfigService $config) {
 		$this->config = $config;
 	}
 

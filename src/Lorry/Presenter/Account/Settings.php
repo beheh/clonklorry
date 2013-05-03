@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Account;
 
-use \Lorry\Presenter;
+use Lorry\Presenter;
 
 class Settings extends Presenter {
 

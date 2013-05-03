@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-use \Exception;
+use Exception;
 
 class NotImplementedException extends Exception {
 

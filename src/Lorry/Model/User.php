@@ -2,7 +2,7 @@
 
 namespace Lorry\Model;
 
-use \Lorry\Model;
+use Lorry\Model;
 
 class User extends Model {
 

@@ -2,8 +2,8 @@
 
 namespace Lorry\Presenter;
 
-use \Lorry\Presenter;
-use \Exception;
+use Lorry\Presenter;
+use Exception;
 
 class Error extends Presenter {
 

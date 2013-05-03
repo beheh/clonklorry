@@ -2,9 +2,9 @@
 
 namespace Lorry\Service;
 
-use \PDO;
-use \Exception;
-use \Lorry\Model;
+use PDO;
+use Exception;
+use Lorry\Model;
 
 class PersistenceService {
 
@@ -14,7 +14,7 @@ class PersistenceService {
 	 */
 	protected $config;
 
-	public function setConfig(ConfigService $config) {
+	public function setConfigService(ConfigService $config) {
 		$this->config = $config;
 	}
 

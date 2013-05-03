@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Addon;
 
-use \Lorry\Presenter;
+use Lorry\Presenter;
 
 class Overview extends Presenter {
 

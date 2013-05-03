@@ -12,7 +12,7 @@ abstract class Model implements ModelInterface {
 	 */
 	protected $persistence;
 
-	public function setPersistence(PersistenceService $persistence) {
+	public function setPersistenceService(PersistenceService $persistence) {
 		$this->persistence = $persistence;
 	}
 
