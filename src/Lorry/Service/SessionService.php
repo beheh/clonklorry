@@ -6,12 +6,12 @@ class SessionService {
 
 	/**
 	 *
-	 * @var \Lorry\Config
+	 * @var \Lorry\Service\Config
 	 */
-	private static $config;
+	protected $config;
 
-	public static function setConfig(ConfigService $config) {
-		self::$config = $config;
+	public function setConfig(ConfigService $config) {
+		$this->config = $config;
 	}
 
 }
