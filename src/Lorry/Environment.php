@@ -87,7 +87,7 @@ class Environment {
 		} catch(FileNotFoundException $exception) {
 			return PresenterFactory::build('Error\FileNotFound')->get($exception);
 		} catch(ForbiddenException $exception) {
-			return PresenterFactory::build('Error\FileNotFound')->get($exception);
+			return PresenterFactory::build('Error\Forbidden')->get($exception);
 		} catch(NotImplementedException $exception) {
 			return PresenterFactory::build('Error\NotImplemented')->get($exception);
 		}
