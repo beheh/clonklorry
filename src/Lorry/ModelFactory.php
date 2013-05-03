@@ -26,7 +26,6 @@ class ModelFactory {
 	 */
 	public static function build($model) {
 		$class = '\\Lorry\\Model\\'.$model;
-		echo $class;
 		if(!class_exists($class)) {
 			throw new Exception('unknown model');
 		}

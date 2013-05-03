@@ -18,6 +18,13 @@ class Environment {
 	public function handle() {
 		$config = new ConfigService();
 
+		$persistence = new PersistenceService();
+		$persistence->setConfig($config);
+
+		ModelFactory::setPersistence($persistence);
+
+		$session = new SessionService();
+
 		$loader = new \Twig_Loader_Filesystem('../app/templates');
 		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
@@ -29,6 +36,12 @@ class Environment {
 		$twig->addGlobal('site_copyright', '© '.date('Y'));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
 
+		if($session->authenticated()) {
+			$user = $session->getUser();
+			$twig->addGlobal('user_login', true);
+			$twig->addGlobal('user_name', $user->getUsername());
+		}
+		
 		/*  $twig->addGlobal('path', $router->getRequestedPath());
 		  $twig->addGlobal('current_year', date('Y'));
 		  if($this->config->debug) {
@@ -43,13 +56,6 @@ class Environment {
 		  $this->twig->addGlobal('__administrator', $user->isAdministrator());
 		  $this->twig->addGlobal('__moderator', $user->isModerator());
 		  } */
-
-		$persistence = new PersistenceService();
-		$persistence->setConfig($config);
-
-		ModelFactory::setPersistence($persistence);
-
-		$session = new SessionService();
 
 		PresenterFactory::setConfig($config);
 		PresenterFactory::setTwig($twig);
@@ -96,7 +102,6 @@ class Environment {
 
 			// execute the RESTful method
 			call_user_func_array(array($presenter, $method), Router::getMatches());
-
 		} catch(FileNotFoundException $exception) {
 			return PresenterFactory::build('Error\FileNotFound')->get($exception);
 		} catch(ForbiddenException $exception) {

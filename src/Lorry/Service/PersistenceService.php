@@ -36,8 +36,8 @@ class PersistenceService {
 		$this->ensureConnected();
 
 		//$cache = $this->lorry->cache->lookup(array($model->getTable(), $row, $value));
-		if($cache)
-			return $cache;
+		//if($cache)
+			//return $cache;
 
 		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE `'.$row.'` = :value LIMIT 1');
 		$statement->execute(array(':value' => $value));
