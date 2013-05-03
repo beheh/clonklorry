@@ -67,7 +67,7 @@ class Environment {
 			'/register' => 'Account\Register',
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',
-			'/settings' => 'Accout\Settings',
+			'/settings' => 'Account\Settings',
 			'/about' => 'Site\About',
 			'/clonk' => 'Site\Clonk',
 			'/community' => 'Site\Community',
