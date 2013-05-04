@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-04 22:12+0100\n"
-"PO-Revision-Date: 2013-05-04 22:12+0100\n"
+"POT-Creation-Date: 2013-05-04 22:16+0100\n"
+"PO-Revision-Date: 2013-05-04 22:17+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,15 @@ msgstr "Entwicklungsversion."
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:56
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:40
+msgid "Email address is unknown."
+msgstr "E-Mail-Adresse ist unbekannt."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:60
 msgid "Password is wrong."
 msgstr "Passwort ist falsch."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:60
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:64
 msgid "Username is unknown."
 msgstr "Benutzername ist unbekannt."
 
@@ -134,7 +138,7 @@ msgstr "%s bereits vergeben."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:49
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:122
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:113
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:123
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:67
 msgid "Email address"
 msgstr "E-Mail-Adresse"
@@ -796,7 +800,7 @@ msgid "Visit the OpenClonk forums"
 msgstr "OpenClonk-Forum"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:89
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:141
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:151
 msgid "Welcome back!"
 msgstr "Willkommen zurück!"
 
@@ -846,15 +850,15 @@ msgstr "Anmeldung per E-Mail&hellip;"
 msgid "Use your email account to log in:"
 msgstr "Nutze dein E-Mail-Konto zur Anmeldung:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:121
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:131
 msgid "Send one-time login"
 msgstr "Einmal-Anmeldung senden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:129
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:139
 msgid "Or, select your login service:"
 msgstr "Oder, wähle deinen Anmeldedienst aus:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:145
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:155
 msgid ""
 "Nice to see you again! Have you visited these other great Clonk sites yet?"
 msgstr ""
