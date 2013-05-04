@@ -13,7 +13,8 @@ class User extends Model {
 			'password' => 'varchar(255)',
 			'email' => 'varchar(255)',
 			'clonkforge' => 'int',
-			'github' => 'string'));
+			'github' => 'string',
+			'language' => 'varchar(5)'));
 	}
 
 	public function getUsername() {

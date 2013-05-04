@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use Lorry\Service\ConfigService;
+use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Twig_Environment;
@@ -18,6 +19,16 @@ class PresenterFactory {
 
 	public static function setConfigService(ConfigService $config) {
 		self::$config = $config;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Service\LocalisationService
+	 */
+	private static $localisation;
+
+	public static function setLocalisationService(LocalisationService $localisation) {
+		self::$localisation = $localisation;
 	}
 
 	/**
@@ -66,6 +77,7 @@ class PresenterFactory {
 			throw new Exception('presenter does not implement interface');
 		}
 		$instance->setConfigService(self::$config);
+		$instance->setLocalisationService(self::$localisation);
 		$instance->setSessionService(self::$session);
 		$instance->setSecurityService(self::$security);
 		$instance->setTwig(self::$twig);

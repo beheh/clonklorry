@@ -12,31 +12,50 @@ class LocalisationService {
 	 */
 	protected $session;
 
-	public function setConfigService(ConfigService $config) {
-		$this->config = $config;
+	public final function setSessionService(SessionService $session) {
+		$this->session = $session;
 	}
 
-	public function getAvailableLanguages() {
+	public final function getAvailableLanguages() {
 		return array('en-US', 'de-DE');
+	}
+
+	public final function verifyLanguage($language) {
+		if(in_array($language, $this->getAvailableLanguages())) {
+			return $language;
+		}
+		return false;
 	}
 
 	public function getDisplayLanguage() {
 		$available = $this->getAvailableLanguages();
 		if(isset($_COOKIE['lorry_language'])) {
-			if(in_array($_COOKIE['lorry_language'], $available)) {
-				return $_COOKIE['lorry_langauge'];
+			$language = $_COOKIE['lorry_language'];
+			if($this->verifyLanguage($language)) {
+				return $language;
+			} else {
+				setcookie('lorry_language', '', 0, '/');
 			}
 		}
 
-		$this->session->getUser()->getLanguage();
+		if($this->session->authenticated()) {
+			$language = $this->session->getUser()->getLanguage();
+			if($this->verifyLanguage($language)) {
+				setcookie('lorry_language', $language, time() + 60 * 60 * 24 * 365, '/');
+				return $language;
+			}
+		}
+
+		//http_negotiate_language($available);
+
+		return $available[0];
 	}
 
 	/**
 	 *
 	 */
 	public function localize() {
-		//$language = http_negotiate_language(array('en-US'));
-		$requested = 'de-DE';
+		$requested = $this->getDisplayLanguage();
 		header('Content-Language: '.$requested);
 
 		$language = str_replace('-', '_', $requested);
@@ -44,7 +63,7 @@ class LocalisationService {
 		setlocale(LC_ALL, $language);
 
 		$textdomain = 'lorryWeb-'.$language;
-		bindtextdomain($textdomain, $this->lorry->getRootDir().'../app/locale');
+		bindtextdomain($textdomain, '../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
 	}

@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use Lorry\Service\ConfigService;
+use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Twig_Environment;
@@ -17,6 +18,16 @@ class Presenter implements PresenterInterface {
 
 	public function setConfigService(ConfigService $config) {
 		$this->config = $config;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Service\LocalisationService
+	 */
+	protected $localisation;
+
+	public function setLocalisationService(LocalisationService $localisation) {
+		$this->localisation = $localisation;
 	}
 
 	/**

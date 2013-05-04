@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use Lorry\Service\ConfigService;
+use Lorry\Service\LocalisationService;
 use Lorry\Service\PersistenceService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
@@ -21,6 +22,10 @@ class Environment {
 		ModelFactory::setPersistenceService($persistence);
 
 		$session = new SessionService();
+
+		$localisation = new LocalisationService();
+		$localisation->setSessionService($session);
+		$localisation->localize();
 
 		$loader = new \Twig_Loader_Filesystem('../app/templates');
 		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
@@ -45,6 +50,7 @@ class Environment {
 		$security->setSessionService($session);
 
 		PresenterFactory::setConfigService($config);
+		PresenterFactory::setLocalisationService($localisation);
 		PresenterFactory::setSecurityService($security);
 		PresenterFactory::setSessionService($session);
 		PresenterFactory::setTwig($twig);
