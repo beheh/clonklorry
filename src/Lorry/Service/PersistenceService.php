@@ -4,6 +4,7 @@ namespace Lorry\Service;
 
 use PDO;
 use Exception;
+use PDOException;
 use Lorry\Model;
 
 class PersistenceService {
@@ -18,7 +19,6 @@ class PersistenceService {
 		$this->config = $config;
 	}
 
-
 	/**
 	 *
 	 * @var PDO
@@ -28,8 +28,13 @@ class PersistenceService {
 	public function ensureConnected() {
 		if($this->connection)
 			return true;
-		$this->connection = new PDO(
-		  $this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
+		try {
+			$this->connection = new PDO(
+			  $this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
+		} catch(PDOException $ex) {
+			// catch the pdo exception to prevent credential leaking
+			throw new Exception('could not connect to database');
+		}
 	}
 
 	public function load(Model $model, $row, $value) {
@@ -37,7 +42,7 @@ class PersistenceService {
 
 		//$cache = $this->lorry->cache->lookup(array($model->getTable(), $row, $value));
 		//if($cache)
-			//return $cache;
+		//return $cache;
 
 		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE `'.$row.'` = :value LIMIT 1');
 		$statement->execute(array(':value' => $value));
