@@ -12,7 +12,7 @@ class PresenterFactory {
 
 	/**
 	 *
-	 * @var \Lorry\Config
+	 * @var \Lorry\Service\ConfigService
 	 */
 	private static $config;
 
@@ -22,7 +22,7 @@ class PresenterFactory {
 
 	/**
 	 *
-	 * @var \Lorry\Session
+	 * @var \Lorry\Service\SecurityService
 	 */
 	private static $security;
 
@@ -32,7 +32,7 @@ class PresenterFactory {
 
 	/**
 	 *
-	 * @var \Lorry\Session
+	 * @var \Lorry\Service\SessionService
 	 */
 	private static $session;
 
