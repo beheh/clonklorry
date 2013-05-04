@@ -42,6 +42,7 @@ class Environment {
 		}
 
 		$security = new SecurityService();
+		$security->setSessionService($session);
 
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setSecurityService($security);
