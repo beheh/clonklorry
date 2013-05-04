@@ -7,6 +7,7 @@ use Lorry\Service\LocalisationService;
 use Lorry\Service\PersistenceService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
+use Lorry\Service\StyleService;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\NotImplementedException;
@@ -83,6 +84,10 @@ class Environment {
 
 		// determine the RESTful method
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
+
+		// recompile style if necessary
+		$style = new StyleService();
+		$style->compile();
 
 		try {
 
