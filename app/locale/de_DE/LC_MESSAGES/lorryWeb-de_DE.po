@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-04 22:38+0100\n"
-"PO-Revision-Date: 2013-05-04 22:38+0100\n"
+"POT-Creation-Date: 2013-05-04 23:05+0100\n"
+"PO-Revision-Date: 2013-05-04 23:05+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,10 @@ msgstr "Passwort ist falsch."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:64
 msgid "Username is unknown."
 msgstr "Benutzername ist unbekannt."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Game.php:19
+msgid "Addons for %game%"
+msgstr "Erweiterungen für %game%"
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Confirm.php:25
 msgid "Confirmation code invalid"
@@ -472,6 +476,7 @@ msgid "View your profile"
 msgstr "Betrachte dein Profil"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:108
+#: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:46
 msgid "Register now"
 msgstr "Jetzt registrieren"
 
@@ -512,7 +517,7 @@ msgid "idea &amp; development"
 msgstr "Idee & Entwicklung"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:32
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:91
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:92
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -838,9 +843,29 @@ msgstr "OpenID URL"
 msgid "Confirm"
 msgstr "Bestätigen"
 
+#: C:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:32
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:67
+#: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:35
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:38
+msgid "Your addons"
+msgstr "Deine Erweiterungen"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:42
+msgid "You have not created page for an addon yet. Get started now!"
+msgstr ""
+"Du hast noch keine Seite für eine Erweiterung angelegt. Lege jetzt eine an!"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:48
+msgid "Create a new addons page"
+msgstr "Neue Seite für Erweiterung erstellen"
+
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:32
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:83
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:123
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:124
+#: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:52
 msgid "Login"
 msgstr "Anmelden"
 
@@ -879,15 +904,11 @@ msgstr ""
 msgid "Users"
 msgstr "Benutzer"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:67
-msgid "Publish"
-msgstr "Veröffentlichen"
-
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:101
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:102
 msgid "Logout"
 msgstr "Abmelden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:113
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:114
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:32
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:87
 msgid "Register"
@@ -926,6 +947,15 @@ msgstr "Feedback senden"
 #: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:59
 msgid "Legal issues"
 msgstr "Rechtliches"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:39
+#, fuzzy
+msgid ""
+"After registering you can easily publish your addons here and distribute "
+"them via Lorry."
+msgstr ""
+"Nach deiner Registrierung kannst du deine Erweiterungen hier veröffentlichen "
+"und sie mit Lorry verfügbar machen."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:23
 msgid "Back to top"
@@ -1030,14 +1060,6 @@ msgstr "Dieser Benutzer hat noch nichts kommentiert."
 #~ msgid "Version %version%, released on the %releaseday%"
 #~ msgstr "Version %version%, veröffentlicht am %releaseday%"
 
-#~ msgid "You have not created page for an addon yet. Get started now!"
-#~ msgstr ""
-#~ "Du hast noch keine Seite für eine Erweiterung angelegt. Lege jetzt eine "
-#~ "an!"
-
-#~ msgid "Create a new addons page"
-#~ msgstr "Neue Seite für Erweiterung erstellen"
-
 #~ msgid "Contact"
 #~ msgstr "Kontakt"
 
@@ -1053,19 +1075,8 @@ msgstr "Dieser Benutzer hat noch nichts kommentiert."
 #~ msgid "Return to home &raquo;"
 #~ msgstr "Zurück zur Startseite &raquo;"
 
-#, fuzzy
-#~ msgid ""
-#~ "After registering you can easily publish your addons here and distribute "
-#~ "them via Lorry."
-#~ msgstr ""
-#~ "Nach deiner Registrierung kannst du deine Erweiterungen hier "
-#~ "veröffentlichen und sie mit Lorry verfügbar machen."
-
 #~ msgid "Basic"
 #~ msgstr "Allgemein"
-
-#~ msgid "Addons on main page"
-#~ msgstr "Erweiterungen auf der Startseite"
 
 #~ msgid "Current password"
 #~ msgstr "Aktuelles Passwort"

@@ -6,8 +6,12 @@ use Lorry\Presenter;
 
 class Overview extends Presenter {
 
-	public function get($addon, $release = 'latest') {
-		echo $addon.'-'.$release;
+	public function get($game, $addon, $release = 'latest') {
+		$game = ModelFactory::build('Game')->byShort($name);
+		if(!$game) {
+			throw new FileNotFoundException('game '.$game);
+		}
+		echo $addon.'-'.$release.' for '.$game;
 	}
 
 }

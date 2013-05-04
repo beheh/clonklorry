@@ -9,16 +9,19 @@
 			<a class="brand" href="{{base}}">{{brand}}</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li{% if path.0 == "rage" %} class="active"{% endif %}><a href="{{base}}/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
-					<li{% if path.0 == "openclonk" %} class="active"{% endif %}><a href="{{base}}/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
+					<li{% if path.0 == "addons" and path.1 == "rage" %} class="active"{% endif %}><a href="{{base}}/addons/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
+					<li{% if path.0 == "addons" and path.1 == "openclonk"  %} class="active"{% endif %}><a href="{{base}}/addons/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
 					<li{% if path.0 == "publish" %} class="active"{% endif %}><a href="{{base}}/publish">{% trans 'Publish' %}</a></li>
 				</ul>
 				<ul class="nav pull-right">
-				{% if user_login %}<li{% if path.0 == "user" and path.1|lower == user_login|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
-						<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
-						<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
-		    {% else %}<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
-						<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>{% endif %}
+				{% if user_login %}
+					<li{% if path.0 == "user" and path.1|lower == user_login|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
+					<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
+					<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
+				{% else %}
+					<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
+					<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
+				{% endif %}
 				</ul>
 			</div>
 		</div>
