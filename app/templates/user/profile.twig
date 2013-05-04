@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>{{ username }}</h1>
+<hr class="show-mobile">
 <div class="row-fluid">
 	<div class="span4">
 		<h2>{% trans "User" %}</h2>
@@ -43,8 +44,10 @@
 		{% endif %}
 	</div>
 	<div class="span8">
+		<hr class="show-mobile">
 		<h2>{% trans "Addons" %}</h2>
 		<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
+		<hr class="show-mobile">
 		<h2>{% trans "Comments" %}</h2>
 		<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
 	</div>

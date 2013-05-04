@@ -1,4 +1,4 @@
-<p>
+<p id="openid">
 	<a href="#" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">{% trans "OpenID" %}</a>
 	<a href="#" class="btn btn-google">{% trans "Google" %}</a>
 	<a href="#" class="btn btn-facebook">{% trans "Facebook" %}</a>
@@ -6,8 +6,8 @@
 </p>
 <div class="collapse" id="link-openid">
 	<form action="" method="post" class="form-inline">
-		<label for="openid"></label>
-		<input type="text" name="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
+		<input type="text" name="openid-provider" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
 		<button type="submit" class="btn btn-primary">{% trans %}Confirm{% endtrans %}</button>
+		<label for="openid-provider"></label>
 	</form>
 </div>
