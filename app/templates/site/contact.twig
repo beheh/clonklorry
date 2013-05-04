@@ -3,8 +3,8 @@
 {% block content %}
 <h1>{% trans "Contact us" %}</h1>
 <div class="row-fluid">
-    <div class="span8">
-		<h3>{% trans %}We &hearts; feedback{% endtrans %}</h3>
+    <div class="span7">
+		<h2>{% trans %}We &hearts; feedback{% endtrans %}</h2>
 		<p>{% trans %}We here are all fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
 		<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
 		<form method="post" class="form-contact">
@@ -12,19 +12,22 @@
 			<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 		</form>
     </div>
-    <div class="span4">
-		<h3>{% trans %}Legal issues{% endtrans %}</h3>
-		{% if __trademark %}
-		<p>{{__trademark|raw}}.</p>
+	<div class="span5">
+		<hr class="visible-phone">
+		<h2>{% trans %}Legal issues{% endtrans %}</h2>
+		{% if site_trademark %}
+		<p>{{ site_trademark|raw }}.</p>
 		{% endif %}
-		<p><span>If you have any legal issues please do not hesitate to contact us either via our feedback form <span class="hidden-phone">to the left</span><span class="visible-phone">above</span> or via <a href="mailto:">legal@clonklorry.de</a>.</span></p>
-		<p>That way we are able to quickly resolve to any problems that might occur or any content you feel might be infringing your rights.</p>
-		<h4>Responsible for the content</h4>
+		<p><span>If you have any legal issues please do not hesitate to contact us either via our feedback form <span class="hidden-phone">to the left</span><span class="visible-phone">above</span> or via <a href="mailto:">legal@example.com</a>.</span></p>
+		<p>{% trans %}That way we are able to quickly resolve to any problems that might occur or any content you feel might be infringing your rights.{% endtrans %}</p>
+		<p>{% trans %}We are not responsible for the content of outgoing links. User generated content does not necessarily reflect the views of the site owners.{% endtrans %}</p>
+		{% if site_contact %}
+		<hr>
+		<h4>{% trans %}Responsible for the content{% endtrans %}</h4>
 		<address>
-			<strong>Benedict Etzel</strong><br>
-			Am DFS-Campus 4<br>
-			D-63225 Langen<br>
+			{{ site_contact|raw }}
 		</address>
-    </div>
-</div>
+		{% endif %}
+		</div>
+	</div>
 {% endblock %}

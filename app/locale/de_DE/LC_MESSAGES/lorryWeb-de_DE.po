@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-05 01:09+0100\n"
-"PO-Revision-Date: 2013-05-05 01:10+0100\n"
+"POT-Creation-Date: 2013-05-05 01:22+0100\n"
+"PO-Revision-Date: 2013-05-05 01:23+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -566,9 +566,8 @@ msgid "Language"
 msgstr "Sprache"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:148
-#, fuzzy
 msgid "View the site in"
-msgstr "Alle Erweiterungen"
+msgstr "Betrachte die Seite auf"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:154
 msgid "English"
@@ -765,9 +764,8 @@ msgid ""
 msgstr ""
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:113
-#, fuzzy
 msgid "View the addons"
-msgstr "Alle Erweiterungen"
+msgstr "Betrachte die Erweiterungen"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:122
 msgid "Create new content for Clonk"
@@ -965,9 +963,28 @@ msgstr ""
 msgid "Send feedback"
 msgstr "Feedback senden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:59
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:60
 msgid "Legal issues"
 msgstr "Rechtliches"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:75
+msgid ""
+"That way we are able to quickly resolve to any problems that might occur or "
+"any content you feel might be infringing your rights."
+msgstr ""
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:79
+msgid ""
+"We are not responsible for the content of outgoing links. User generated "
+"content does not necessarily reflect the views of the site owners."
+msgstr ""
+"Wir sind nicht für den Inhalt von externen Links verantwortlich. "
+"Benutzergenerierter Inhalt muss nicht der Meinung der Seitenbetreiber "
+"entsprechen."
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:88
+msgid "Responsible for the content"
+msgstr "Verantwortlich für den Inhalt"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:39
 #, fuzzy
