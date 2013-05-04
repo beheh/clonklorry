@@ -25,9 +25,15 @@
 	</div>
 	<div class="span8">
 		<hr class="visible-phone">
+		<h4>{% trans %}What is this all about?{% endtrans %}</h4>
+		<p>
+			<a href="{{base}}/about" class="btn btn-success">{% trans %}About Lorry{% endtrans %}</a>
+			<a href="{{base}}/clonk" class="btn">{% trans %}New to Clonk?{% endtrans %}</a>
+		</p>
+		<hr>
 		<h4>{% trans %}Why should I register?{% endtrans %}</h4>
-		<p>{% trans %}After registering you can instantly upload your own scenarios, comment and vote.{% endtrans %}</p>
-		<p>{% trans %}You become part of a small but dedicated community, enjoying the game and devoting their time to it.{% endtrans %}</p>
+		<p>{% trans %}After registering you can instantly upload your own extensions, comment and vote on existing contributions.{% endtrans %}</p>
+		<p>{% trans %}You become part of a small and friendly community, enjoying the game and devoting their time to it.{% endtrans %}</p>
 	</div>
 </div>
 {% endblock %}
