@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-04 11:55+0100\n"
-"PO-Revision-Date: 2013-05-04 11:56+0100\n"
+"POT-Creation-Date: 2013-05-04 22:12+0100\n"
+"PO-Revision-Date: 2013-05-04 22:12+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,13 +16,21 @@ msgstr ""
 "X-Poedit-SearchPath-2: C:\\xampp\\htdocs\\lorry\\src\n"
 "X-Poedit-SearchPath-3: C:\\xampp\\htdocs\\lorry\\app\\cache\n"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Environment.php:33
+#: C:\xampp\htdocs\lorry\src/Lorry/Environment.php:38
 msgid "Development version."
 msgstr "Entwicklungsversion."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Environment.php:35
+#: C:\xampp\htdocs\lorry\src/Lorry/Environment.php:40
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:56
+msgid "Password is wrong."
+msgstr "Passwort ist falsch."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:60
+msgid "Username is unknown."
+msgstr "Benutzername ist unbekannt."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Confirm.php:25
 msgid "Confirmation code invalid"
@@ -89,7 +97,7 @@ msgstr "Du wurdest abgemeldet."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:25
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:44
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:49
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:56
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:52
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:54
 msgid "Username"
 msgstr "Benutzername"
@@ -126,7 +134,7 @@ msgstr "%s bereits vergeben."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:49
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:122
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:117
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:113
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:67
 msgid "Email address"
 msgstr "E-Mail-Adresse"
@@ -140,7 +148,7 @@ msgstr "%s wurde bereits registriert."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:73
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:76
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:210
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:69
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:65
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:78
 msgid "Password"
 msgstr "Passwort"
@@ -303,82 +311,82 @@ msgstr "%teamname%-Team"
 msgid "%day% of %month% %year%"
 msgstr "%day% %month% %year%"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:55
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:74
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:27
 msgid "January"
 msgstr "Januar"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:57
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:76
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:29
 msgid "February"
 msgstr "Februar"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:59
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:78
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:31
 msgid "March"
 msgstr "März"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:61
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:80
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:33
 msgid "April"
 msgstr "April"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:63
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:82
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:35
 msgid "May"
 msgstr "Mai"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:65
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:84
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:37
 msgid "June"
 msgstr "Juni"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:67
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:86
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:39
 msgid "July"
 msgstr "Juli"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:69
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:88
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:41
 msgid "August"
 msgstr "August"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:71
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:90
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:43
 msgid "September"
 msgstr "September"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:73
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:92
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:45
 msgid "October"
 msgstr "Oktober"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:75
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:94
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:47
 msgid "November"
 msgstr "November"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:77
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:96
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:49
 msgid "December"
 msgstr "Dezember"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:84
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:103
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:56
 msgid "1st"
 msgstr "1."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:86
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:105
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:58
 msgid "2nd"
 msgstr "2."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:88
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:107
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:60
 msgid "3rd"
 msgstr "3."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:90
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:109
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:62
 msgid "%n%th"
 msgstr "%n%."
@@ -788,7 +796,7 @@ msgid "Visit the OpenClonk forums"
 msgstr "OpenClonk-Forum"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:89
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:145
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:141
 msgid "Welcome back!"
 msgstr "Willkommen zurück!"
 
@@ -817,36 +825,36 @@ msgid "List of community sites"
 msgstr "Liste der Community-Seiten"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:32
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:87
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:83
 #: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:123
 msgid "Login"
 msgstr "Anmelden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:82
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:78
 msgid "Remember on this device"
 msgstr "Auf diesem Gerät merken"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:94
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:90
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:96
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:92
 msgid "Login via email&hellip;"
 msgstr "Anmeldung per E-Mail&hellip;"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:111
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:107
 msgid "Use your email account to log in:"
 msgstr "Nutze dein E-Mail-Konto zur Anmeldung:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:125
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:121
 msgid "Send one-time login"
 msgstr "Einmal-Anmeldung senden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:133
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:129
 msgid "Or, select your login service:"
 msgstr "Oder, wähle deinen Anmeldedienst aus:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:149
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:145
 msgid ""
 "Nice to see you again! Have you visited these other great Clonk sites yet?"
 msgstr ""

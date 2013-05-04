@@ -3,11 +3,13 @@
 {% block content %}
 <h1 class="form-signin-heading">{%trans "Login" %}</h1>
 <div class="row-fluid">
-    <div class="span4">{% if message %}
-		<div class="alert {% if success %}alert-success{% else %}alert-error{% endif %}">{{ message }}</div>{% endif %}
-		<form class="form-login" method="post" action="{{filename}}">
+    <div class="span4">
+		{% if login_error %}
+			<div class="alert alert-error">{{ login_error }}</div>
+		{% endif %}
+		<form class="form-login" method="post" action="{{ filename }}">
 			<label for="username"></label>
-			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{username}}"{% elseif not email_focus %} autofocus{% endif %}>
+			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% elseif not email_focus %} autofocus{% endif %}>
 			<label for="password"></label>
 			<input type="password" class="input-block-level" name="password" id="password" placeholder="{% trans "Password" %}" {% if username %} autofocus{% endif %}>
 			<label class="checkbox">
@@ -19,6 +21,9 @@
 		<hr>
 		<div id="by-email" class="collapse{% if email %} in{% endif %}">
 			<h4 id="reset">{% trans "Use your email account to log in:" %}</h4>
+			{% if email_error %}
+				<div class="alert alert-error">{{ email_error }}</div>
+			{% endif %}
 			<form method="post" action="?by-email">
 				<label for="email"></label>
 				<input type="email" class="input-block-level" name="email" id="email" placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
