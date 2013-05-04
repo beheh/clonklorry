@@ -16,7 +16,7 @@
 				<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
 			</label>
 			<button class="btn btn-large btn-primary" type="submit">{% trans "Login" %}</button>
-			{% if not email %}<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">{% if not success and message %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>{% endif %}
+			{% if not email %}<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">{% if username %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>{% endif %}
 		</form>
 		<hr>
 		<div id="by-email" class="collapse{% if email %} in{% endif %}">
