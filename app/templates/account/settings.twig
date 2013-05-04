@@ -7,7 +7,7 @@
 		<hr class="visible-phone">
 		<h2>{% trans "Profile" %}</h2>
 		<h4 id="appearance">{% trans "Appearance" %}</h4>
-		<form method="post" action="?change-username" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-username" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="username">{% trans "Username" %}</label>
 				<div class="controls">
@@ -19,7 +19,7 @@
 			</div>
 		</form>
 		<h4 id="profiles">{% trans "Linked profiles" %}</h4>
-		<form method="post" action="?change-social" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-social" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="clonkforge">{% trans "Clonk Forge profile" %}</label>
 				<div class="controls">
@@ -43,7 +43,7 @@
 		<hr class="visible-phone">
 		<h2 id="account">{% trans "Account" %}</h2>
 		<h4 id="contact">{% trans "Contact details" %}</h4>
-		<form method="post" action="?change-email" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-email" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="email">{% trans "Email address" %}</label>
 				<div class="controls">
@@ -57,7 +57,7 @@
 			</div>
 		</form>
 		<h4 id="language">{% trans "Language" %}</h4>
-		<form method="post" action="?change-social" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-language" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="language-setting">{% trans "View the site in" %}</label>
 				<div class="controls">
@@ -78,7 +78,7 @@
 		<h4 id="remove-account">{% trans "Remove account" %}</h4>
 		<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
 		<div class="collapse" id="remove-account-confirm">
-			<form method="post" action="?remove-account">
+			<form method="post" action="{{filename}}?remove-account">
 				<div class="alert alert-error">
 					<strong>{% trans "Removing your account is final." %}</strong> {% trans "You will permanently loose control of all your uploads." %}
 				</div>
@@ -97,7 +97,7 @@
 			{% if password.title %}<strong>{{ password.title }}</strong> {% endif %}{{ password.message }}
 			</div>
 	{% endif %}
-			<form method="post" action="?change-password" class="form-horizontal">
+			<form method="post" action="{{filename}}?change-password" class="form-horizontal">
 					{% if password.exists %}<div class="control-group">
 						<label class="control-label" for="password-old">{% trans "Old password" %}</label>
 						<div class="controls">
@@ -129,7 +129,7 @@
 {% endif %}
 					<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 					<div class="collapse" id="remote-logout-confirm">
-						<form method="post" action="?remote-logout">
+						<form method="post" action="{{filename}}?remote-logout">
 							<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
 						</form>
 					</div>
