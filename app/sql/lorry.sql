@@ -6,6 +6,7 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `clonkforge` int(11) DEFAULT NULL,
   `github` varchar(255) DEFAULT NULL,
+  `language` varchar(5) DEFAULT 'en-US',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
