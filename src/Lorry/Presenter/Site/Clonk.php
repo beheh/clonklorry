@@ -1,17 +1,13 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Site;
 
-/**
- * Description of Clonk
- *
- * @author Benedict
- */
-class Clonk {
-	//put your code here
+use Lorry\Presenter;
+
+class Clonk extends Presenter {
+
+	public function get() {
+		$this->twig->display('site/clonk.twig');
+	}
+
 }
-
-?>

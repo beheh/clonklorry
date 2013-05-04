@@ -59,17 +59,17 @@
 		<h4 id="language">{% trans "Language" %}</h4>
 		<form method="post" action="?change-social" class="form-horizontal">
 			<div class="control-group">
-				<label class="control-label" for="clonkforge">{% trans "View the site in" %}</label>
+				<label class="control-label" for="language">{% trans "View the site in" %}</label>
 				<div class="controls">
-					<select>
-						<option>English</option>
-						<option>German</option>
+					<select name="langauge" id="language">
+						<option>{% trans "English" %}</option>
+						<option>{% trans "German" %}</option>
 					</select>
 				</div>
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary">{% trans "Set language" %}</button>
+					<button type="submit" class="btn btn-primary">{% trans "Change language" %}</button>
 				</div>
 			</div>
 		</form>

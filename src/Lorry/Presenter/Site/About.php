@@ -1,17 +1,13 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Site;
 
-/**
- * Description of About
- *
- * @author Benedict
- */
-class About {
-	//put your code here
+use Lorry\Presenter;
+
+class About extends Presenter {
+
+	public function get() {
+		$this->twig->display('site/about.twig');
+	}
+
 }
-
-?>

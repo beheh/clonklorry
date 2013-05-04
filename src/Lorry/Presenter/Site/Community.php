@@ -1,17 +1,13 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Site;
 
-/**
- * Description of Community
- *
- * @author Benedict
- */
-class Community {
-	//put your code here
+use Lorry\Presenter;
+
+class Community extends Presenter {
+
+	public function get() {
+		$this->twig->display('site/community.twig');
+	}
+
 }
-
-?>

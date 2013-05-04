@@ -1,17 +1,17 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Lorry\Presenter\Site;
 
-/**
- * Description of Contact
- *
- * @author Benedict
- */
-class Contact {
-	//put your code here
+use Lorry\Presenter;
+
+class Contact extends Presenter {
+
+	public function get() {
+		$this->twig->display('site/contact.twig');
+	}
+
+	public function post() {
+		$this->get();
+	}
+
 }
-
-?>
