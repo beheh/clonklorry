@@ -10,3 +10,10 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `game` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `short` varchar(16) NOT NULL,
+  `name` varchar(16) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
