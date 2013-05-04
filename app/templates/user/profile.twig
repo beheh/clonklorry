@@ -12,7 +12,7 @@
 		{% if administrator %}<div class="alert alert-success">{% trans "This user is admin." %}</div>{% endif %}
 		{% if not administrator and moderator %}<div class="alert alert-success">{% trans "This user is moderator." %}</div>{% endif %}
 		{% if self %}
-			<a href="{{base}}settings" class="btn">{% trans "Settings" %}</a>
+			<a href="{{base}}/settings" class="btn">{% trans "Open settings" %}</a>
 		{% endif %}
 		{% if __administrator or (__moderator and moderator == false) %}
 			{% if not self %}

@@ -94,6 +94,14 @@ class User extends Model {
 		return $this->getValue('github');
 	}
 
+	public final function setLanguage($language) {
+		return $this->setValue('language', $language);
+	}
+
+	public final function getLanguage() {
+		return $this->getValue('language');
+	}
+
 	public function __toString() {
 		return $this->getUsername().'';
 	}

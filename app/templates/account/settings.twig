@@ -5,43 +5,31 @@
 <div class="row-fluid">
 	<div class="span4">
 		<hr class="visible-phone">
-		<h2>{% trans "Basic" %}</h2>
-		<h4 id="appearance">{% trans "Addons on main page" %}</h4>
-		<label class="checkbox">
-			<input type="checkbox" value="">
-			Show Clonk Rage on main page
-		</label>
-		<label class="checkbox">
-			<input type="checkbox" value="">
-			Show OpenClonk on main page
-		</label>
-	</div>
-	<div class="span4">
-		<hr class="visible-phone">
-		<h2 id="account">{% trans "Account" %}</h2>
+		<h2>{% trans "Profile" %}</h2>
 		<h4 id="appearance">{% trans "Appearance" %}</h4>
 		<form method="post" action="?change-username" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="username">{% trans "Username" %}</label>
 				<div class="controls">
-					<input type="text" name="username" id="username" value="{{user.username}}" required disabled>
+					<input type="text" name="username" id="username" value="{{username}}" required disabled>
 				</div>
 			</div>
 			<div class="control-group">
-				<div class="alert pull-right">{% trans "Contact us to change your username." %}</div>
+				<div class="alert">{% trans "Contact us to change your username." %}</div>
 			</div>
 		</form>
+		<h4 id="profiles">{% trans "Linked profiles" %}</h4>
 		<form method="post" action="?change-social" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="clonkforge">{% trans "Clonkforge profile" %}</label>
 				<div class="controls">
-					<input type="url" name="clonkforge" id="clonkforge" value="{{user.clonkforge}}" placeholder="http://clonkforge.net/user.php?usr=">
+					<input type="url" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_default}}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="github">{% trans "GitHub name" %}</label>
 				<div class="controls">
-					<input type="text" name="github" id="github" value="{{user.github}}" placeholder="{{user.username}}">
+					<input type="text" name="github" id="github" value="{{github}}" placeholder="{{username}}">
 				</div>
 			</div>
 			<div class="control-group">
@@ -50,17 +38,38 @@
 				</div>
 			</div>
 		</form>
+	</div>
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2 id="account">{% trans "Account" %}</h2>
 		<h4 id="contact">{% trans "Contact details" %}</h4>
 		<form method="post" action="?change-email" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="email">{% trans "Email address" %}</label>
 				<div class="controls">
-					<input type="email" name="email" id="email" value="{{user.email}}" required>
+					<input type="email" name="email" id="email" value="{{email}}" required>
 				</div>
 			</div>
 			<div class="control-group">
 				<div class="controls">
 					<button type="submit" class="btn btn-primary">{% trans "Confirm email address" %}</button>
+				</div>
+			</div>
+		</form>
+		<h4 id="language">{% trans "Language" %}</h4>
+		<form method="post" action="?change-social" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="clonkforge">{% trans "View the site in" %}</label>
+				<div class="controls">
+					<select>
+						<option>English</option>
+						<option>German</option>
+					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans "Set language" %}</button>
 				</div>
 			</div>
 		</form>
@@ -79,48 +88,49 @@
 	<div class="span4">
 		<hr class="visible-phone">
 		<h2 id="security">{% trans "Security" %}</h2>
-		<h4 id="remote-logout">{% trans "Sessions" %}</h4>
+
+		<h4 id="password">{% trans "Password" %}</h4>
+		{% if password.message %}
+		<div class="alert alert-{% if password.success %}success{% else %}error{% endif %}">
+			{% if password.title %}<strong>{{ password.title }}</strong> {% endif %}{{ password.message }}
+			</div>
+	{% endif %}
+			<form method="post" action="?change-password" class="form-horizontal">
+					{% if password.exists %}<div class="control-group">
+						<label class="control-label" for="password-old">{% trans "Old password" %}</label>
+						<div class="controls">
+							<input type="password" name="password-old" id="password-old">
+						</div>
+					</div>{% endif %}
+					<div class="control-group">
+						<label class="control-label" for="password-new">{% trans "New password" %}</label>
+						<div class="controls">
+							<input type="password" name="password-new" id="password-new">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password-new-confirm">{% trans "Confirm password" %}</label>
+						<div class="controls">
+							<input type="password" name="password-new-confirm" id="password-new-confirm">
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							<button type="submit" class="btn btn-primary">{% if password.exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+						</div>
+					</div>
+				</form>
+				<h4 id="remote-logout">{% trans "Sessions" %}</h4>
 		{% if logout.message %}<div class="alert alert-{% if logout.success %}success{% else %}error{% endif %}">
 			{% if logout.title %}<strong>{{ logout.title }}</strong> {% endif %}{{ logout.message }}
-			</div>
+					</div>
 {% endif %}
-			<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
-			<div class="collapse" id="remote-logout-confirm">
-				<form method="post" action="?remote-logout">
-					<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
-				</form>
-			</div>
-			<h4 id="password">{% trans "Password" %}</h4>
-		{% if password.message %}
-			<div class="alert alert-{% if password.success %}success{% else %}error{% endif %}">
-			{% if password.title %}<strong>{{ password.title }}</strong> {% endif %}{{ password.message }}
-				</div>
-	{% endif %}
-				<form method="post" action="?change-password" class="form-horizontal">
-					{% if password.exists %}<div class="control-group">
-							<label class="control-label" for="password-current">{% trans "Current password" %}</label>
-							<div class="controls">
-								<input type="password" name="password-current" id="password-current">
-							</div>
-						</div>{% endif %}
-						<div class="control-group">
-							<label class="control-label" for="password-new">{% trans "New password" %}</label>
-							<div class="controls">
-								<input type="password" name="password-new" id="password-new">
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="password-new-confirm">{% trans "Confirm password" %}</label>
-							<div class="controls">
-								<input type="password" name="password-new-confirm" id="password-new-confirm">
-							</div>
-						</div>
-						<div class="control-group">
-							<div class="controls">
-								<button type="submit" class="btn btn-primary">{% if password.exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
-							</div>
-						</div>
-					</form>
+					<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
+					<div class="collapse" id="remote-logout-confirm">
+						<form method="post" action="?remote-logout">
+							<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
+						</form>
+					</div>
 					<h4 id="link">{% trans "Login services" %}</h4>
 					<p>
 			{% if link.openid == false and link.google == false %}
