@@ -1,0 +1,36 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<h1>{% trans %}Create addon{% endtrans %}</h1>
+<div class="row-fluid">
+    <div class="span4">
+		<p class="alert alert-success">You can change any of the values later.</p>
+		<form method="post" action="" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="title">{% trans %}Full Title (without version){% endtrans %}</label>
+				<div class="controls">
+					<input type="text" name="title" id="title" value="{{title}}" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="title">{% trans %}Abbreviation (if any){% endtrans %}</label>
+				<div class="controls">
+					<input type="text" name="title" id="title" value="{{title}}" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="title">{% trans "Short title" %}</label>
+				<div class="controls">
+					<input type="text" name="title" id="title" value="{{title}}" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans "Create new addon" %}</button>
+				</div>
+			</div>
+		</form>
+
+    </div>
+</div>
+{% endblock %}

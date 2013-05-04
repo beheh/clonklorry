@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>{%trans "Settings" %}</h1>
-<div class="row-fluid">
+<div class="row-fluid" id="settings">
 	<div class="span4">
 		<hr class="visible-phone">
 		<h2>{% trans "Profile" %}</h2>
@@ -21,7 +21,7 @@
 		<h4 id="profiles">{% trans "Linked profiles" %}</h4>
 		<form method="post" action="?change-social" class="form-horizontal">
 			<div class="control-group">
-				<label class="control-label" for="clonkforge">{% trans "Clonkforge profile" %}</label>
+				<label class="control-label" for="clonkforge">{% trans "Clonk Forge profile" %}</label>
 				<div class="controls">
 					<input type="url" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_default}}">
 				</div>
@@ -34,7 +34,7 @@
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary">{% trans "Change linked profiles" %}</button>
+					<button type="submit" class="btn">{% trans "Change linked profiles" %}</button>
 				</div>
 			</div>
 		</form>
@@ -52,26 +52,28 @@
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary">{% trans "Confirm email address" %}</button>
+					<button type="submit" class="btn">{% trans "Confirm email address" %}</button>
 				</div>
 			</div>
 		</form>
 		<h4 id="language">{% trans "Language" %}</h4>
 		<form method="post" action="?change-social" class="form-horizontal">
 			<div class="control-group">
-				<label class="control-label" for="language">{% trans "View the site in" %}</label>
+				<label class="control-label" for="language-setting">{% trans "View the site in" %}</label>
 				<div class="controls">
-					<select name="langauge" id="language">
+					<select name="langauge" id="language-setting">
 						<option>{% trans "English" %}</option>
 						<option>{% trans "German" %}</option>
 					</select>
 				</div>
 			</div>
+			<noscript>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary">{% trans "Change language" %}</button>
+					<button type="submit" class="btn">{% trans "Change language" %}</button>
 				</div>
 			</div>
+			</noscript>
 		</form>
 		<h4 id="remove-account">{% trans "Remove account" %}</h4>
 		<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
@@ -116,7 +118,7 @@
 					</div>
 					<div class="control-group">
 						<div class="controls">
-							<button type="submit" class="btn btn-primary">{% if password.exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+							<button type="submit" class="btn">{% if password.exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
 						</div>
 					</div>
 				</form>

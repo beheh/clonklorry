@@ -58,7 +58,7 @@ class Environment {
 
 		Router::setRoutes(array(
 			'/' => 'Site\Front',
-			'/addons' => 'Addon\List',
+			'/addons' => 'Addon\Table',
 			'/addons/:alpha' => 'Addon\Game',
 			'/addons/:alpha/:alpha' => 'Addon\Overview',
 			'/addons/:alpha/:alpha/:version' => 'Addon\Release',
@@ -66,9 +66,10 @@ class Environment {
 			'/download/:alpha/:alpha' => 'Addon\Download',
 			'/download/:alpha/:alpha/:version' => 'Addon\Download',
 			'/publish' => 'Publish\Table',
-			'/publish/:alpha' => 'Publish\Addon',
-			'/publish/:alpha/:version' => 'Publish\Release',
-			'/publish/:alpha/:version/preview' => 'Addon\Overview',
+			'/publish/create' => 'Publish\Create',
+			'/publish/addons/:alpha' => 'Publish\Addon',
+			'/publish/addons/:alpha/:version' => 'Publish\Release',
+			'/publish/addons/:alpha/:version/preview' => 'Addon\Overview',
 			'/moderate/approve' => '',
 			'/moderate/approve/:alpha' => '',
 			'/users' => 'User\Table',
