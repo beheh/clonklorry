@@ -27,7 +27,7 @@ class Profile extends Presenter {
 		$context['profiles'] = array();
 		if($user->getClonkforge()) {
 			$context['profiles'][] = array(
-				'platform' => gettext('Clonkforge'),
+				'platform' => gettext('Clonk Forge'),
 				'username' => $user->getUsername(),
 				'url' => sprintf($this->config->get('clonkforge'), urlencode($user->getClonkforge())));
 		}
