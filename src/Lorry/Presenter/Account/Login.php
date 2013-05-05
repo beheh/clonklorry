@@ -19,7 +19,7 @@ class Login extends Presenter {
 			$this->context['remember'] = true;
 		}
 		if(isset($_GET['by-email']) || isset($_COOKIE['lorry_login_email'])) {
-			$this->context['email'] = true;
+			$this->context['email_visible'] = true;
 		}
 
 		$this->twig->display('account/login.twig', $this->context);
@@ -37,6 +37,7 @@ class Login extends Presenter {
 				// @TODO send mail token
 			} else {
 				// email is unknown
+				$this->context['email'] = $email;
 				$this->context['email_error'] = gettext('Email address is unknown.');
 			}
 		} else if(isset($_GET['openid'])) {
@@ -48,9 +49,12 @@ class Login extends Presenter {
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
 			$user = ModelFactory::build('User')->byUsername($username);
 			$remember = filter_input(INPUT_POST, 'remember', FILTER_VALIDATE_BOOLEAN);
+			// take username to next page
+			$this->context['username'] = $username;
 			// set remember checkmark to persist after post
 			$this->context['remember'] = $remember || false;
 			if($user) {
+				$this->context['username_exists'] = true;
 				if($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
 					// do not show email login by default
 					setcookie('lorry_login_email', '', 0, '/');
@@ -60,7 +64,6 @@ class Login extends Presenter {
 					return;
 				} else {
 					// password is incorrect
-					$this->context['username'] = $username;
 					$this->context['login_error'] = gettext('Password is wrong.');
 				}
 			} else {
