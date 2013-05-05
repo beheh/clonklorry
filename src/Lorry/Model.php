@@ -69,6 +69,15 @@ abstract class Model implements ModelInterface {
 		return $this->byValue('id', $id);
 	}
 
+	private $multiple = false;
+
+	public final function all() {
+		$this->ensureUnloaded();
+
+		$this->multiple = true;
+		return $this;
+	}
+
 	protected final function byValue($row, $value) {
 		$this->ensureUnloaded();
 		$this->ensureRow($row);
@@ -77,18 +86,33 @@ abstract class Model implements ModelInterface {
 		if(empty($value)) {
 			return false;
 		}
-		
-		$row = $this->persistence->load($this, $row, $value);
-		if(empty($row)) {
-			return false;
-		}
 
-		foreach($row as $key => $value) {
-			$this->values[$key] = $value;
-		}
+		if($this->multiple) {
+			$rows = $this->persistence->loadAll($this, $row, $value);
 
-		$this->loaded = true;
-		return $this;
+			if(empty($rows)) {
+				return false;
+			}
+
+			$instances = array();
+			foreach($rows as $row) {
+				$instance = clone $this;
+				$instance->unserialize($row);
+				$instances[] = $instance;
+			}
+
+			return $instances;
+		} else {
+			$row = $this->persistence->load($this, $row, $value);
+
+			if(empty($row)) {
+				return false;
+			}
+
+			$this->unserialize($row);
+
+			return $this;
+		}
 	}
 
 	protected final function match($row, $value) {
@@ -131,6 +155,20 @@ abstract class Model implements ModelInterface {
 		if($this->loaded) {
 			throw new \Exception('model has already been loaded');
 		}
+		return true;
+	}
+
+	public final function unserialize($row) {
+		if(empty($row)) {
+			return false;
+		}
+
+		foreach($row as $key => $value) {
+			$this->values[$key] = $value;
+		}
+
+		$this->loaded = true;
+
 		return true;
 	}
 

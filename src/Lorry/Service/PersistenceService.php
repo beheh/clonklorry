@@ -37,6 +37,19 @@ class PersistenceService {
 		}
 	}
 
+	public function loadAll(Model $model, $row, $value) {
+		$this->ensureConnected();
+
+		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE `'.$row.'` = :value');
+		$statement->execute(array(':value' => $value));
+		if($statement->errorCode() != PDO::ERR_NONE) {
+			throw new Exception(print_r($statement->errorInfo(), true));
+		}
+		$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+		return $rows;
+	}
+
 	public function load(Model $model, $row, $value) {
 		$this->ensureConnected();
 
@@ -46,10 +59,10 @@ class PersistenceService {
 
 		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE `'.$row.'` = :value LIMIT 1');
 		$statement->execute(array(':value' => $value));
-		if($statement->errorCode() != \PDO::ERR_NONE) {
+		if($statement->errorCode() != PDO::ERR_NONE) {
 			throw new Exception(print_r($statement->errorInfo(), true));
 		}
-		$rows = $statement->fetch(\PDO::FETCH_ASSOC);
+		$rows = $statement->fetch(PDO::FETCH_ASSOC);
 		//$this->lorry->cache->set(array($model->getTable(), $row, $value), $rows);
 
 		return $rows;
