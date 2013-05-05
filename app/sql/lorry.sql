@@ -1,3 +1,10 @@
+CREATE TABLE `game` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `short` varchar(16) NOT NULL,
+  `name` varchar(16) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL,
@@ -9,13 +16,6 @@ CREATE TABLE `user` (
   `language` varchar(5) DEFAULT 'en-US',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE `game` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `short` varchar(16) NOT NULL,
-  `name` varchar(16) NOT NULL,
-  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `comment` (
