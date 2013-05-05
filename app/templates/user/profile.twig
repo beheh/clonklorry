@@ -33,6 +33,7 @@
 			{% endif %}
 		{% endif %}
 		{% if profiles %}
+			<hr>
 			<h2>{% trans "Profiles" %}</h2>
 			<ul>
 			{% for profile in profiles %}
@@ -46,10 +47,26 @@
 	<div class="span8">
 		<hr class="visible-phone">
 		<h2>{% trans "Addons" %}</h2>
+		{% if addons %}
+		<ul>
+		{% for addon in addons %}
+			<li>{{ addon }}</li>
+		{% endfor %}
+		</ul>
+		{% else %}
 		<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
-		<hr class="visible-phone">
+		{% endif %}
+		<hr>
 		<h2>{% trans "Comments" %}</h2>
+		{% if comments %}
+		<ul>
+		{% for comment in comments %}
+			<li>{{ comment }}</li>
+		{% endfor %}
+		</ul>
+		{% else %}
 		<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
+		{% endif %}
 	</div>
 </div>
 {% endblock %}
