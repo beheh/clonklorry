@@ -78,6 +78,15 @@ abstract class Model implements ModelInterface {
 		return $this;
 	}
 
+	private $order_row = 'id';
+	private $order_descending = false;
+
+	public final function order($row, $descending = false) {
+		$this->order_row = $row;
+		$this->order_descending = $descending;
+		return $this;
+	}
+
 	protected final function byValue($row, $value) {
 		$this->ensureUnloaded();
 		$this->ensureRow($row);
@@ -88,7 +97,7 @@ abstract class Model implements ModelInterface {
 		}
 
 		if($this->multiple) {
-			$rows = $this->persistence->loadAll($this, $row, $value);
+			$rows = $this->persistence->loadAll($this, $row, $value, $this->order_row, $this->order_descending);
 
 			if(empty($rows)) {
 				return false;
@@ -103,7 +112,7 @@ abstract class Model implements ModelInterface {
 
 			return $instances;
 		} else {
-			$row = $this->persistence->load($this, $row, $value);
+			$row = $this->persistence->load($this, $row, $value, $this->order_row, $this->order_descending);
 
 			if(empty($row)) {
 				return false;
@@ -137,7 +146,7 @@ abstract class Model implements ModelInterface {
 		}
 	}
 
-	protected final function ensureRow($row) {
+	public final function ensureRow($row) {
 		if(!array_key_exists($row, $this->schema) && $row != 'id') {
 			throw new \InvalidArgumentException('row "'.$row.'" does not exist');
 		}

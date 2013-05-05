@@ -68,7 +68,17 @@ class LocalisationService {
 		textdomain($textdomain);
 	}
 
-	public static function namedMonth($month) {
+	const FORMAT_DATETIME = 1;
+
+	public function getFormat($format) {
+		switch($format) {
+			case self::FORMAT_DATETIME:
+				return gettext('d-m-Y H:i');
+				break;
+		}
+	}
+
+	public function namedMonth($month) {
 		switch($month) {
 			case 1:
 				return gettext('January');
@@ -97,7 +107,7 @@ class LocalisationService {
 		}
 	}
 
-	public static function countedNumber($number) {
+	public function countedNumber($number) {
 		switch($number) {
 			case 1:
 				return gettext('1st');

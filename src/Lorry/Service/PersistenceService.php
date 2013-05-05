@@ -37,10 +37,13 @@ class PersistenceService {
 		}
 	}
 
-	public function loadAll(Model $model, $row, $value) {
+	public function loadAll(Model $model, $row, $value, $orderby = 'id', $descending = false) {
 		$this->ensureConnected();
+		$model->ensureRow($orderby);
 
-		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE `'.$row.'` = :value');
+		$order = $descending ? 'DESC' : 'ASC';
+
+		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE `'.$row.'` = :value ORDER BY `'.$orderby.'` '.$order);
 		$statement->execute(array(':value' => $value));
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			throw new Exception(print_r($statement->errorInfo(), true));
@@ -50,7 +53,7 @@ class PersistenceService {
 		return $rows;
 	}
 
-	public function load(Model $model, $row, $value) {
+	public function load(Model $model, $row, $value, $orderby = 'id', $descending = false) {
 		$this->ensureConnected();
 
 		//$cache = $this->lorry->cache->lookup(array($model->getTable(), $row, $value));
