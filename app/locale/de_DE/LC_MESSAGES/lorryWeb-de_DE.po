@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-05 17:32+0100\n"
-"PO-Revision-Date: 2013-05-05 17:32+0100\n"
+"POT-Creation-Date: 2013-05-05 17:44+0100\n"
+"PO-Revision-Date: 2013-05-05 17:44+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "Benutzername ist unbekannt."
 msgid "Addons for %game%"
 msgstr "Erweiterungen für %game%"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/User/Profile.php:30
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/User/Profile.php:35
 msgid "Clonk Forge"
 msgstr "Clonk Forge"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/User/Profile.php:36
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/User/Profile.php:41
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/User.php:38
 msgid "GitHub"
 msgstr "GitHub"
@@ -322,82 +322,86 @@ msgstr "%teamname%-Team"
 msgid "%day% of %month% %year%"
 msgstr "%day% %month% %year%"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:74
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:76
+msgid "d-m-Y H:i"
+msgstr "d.m.Y H:i"
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:84
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:27
 msgid "January"
 msgstr "Januar"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:76
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:86
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:29
 msgid "February"
 msgstr "Februar"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:78
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:88
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:31
 msgid "March"
 msgstr "März"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:80
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:90
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:33
 msgid "April"
 msgstr "April"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:82
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:92
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:35
 msgid "May"
 msgstr "Mai"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:84
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:94
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:37
 msgid "June"
 msgstr "Juni"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:86
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:96
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:39
 msgid "July"
 msgstr "Juli"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:88
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:98
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:41
 msgid "August"
 msgstr "August"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:90
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:100
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:43
 msgid "September"
 msgstr "September"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:92
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:102
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:45
 msgid "October"
 msgstr "Oktober"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:94
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:104
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:47
 msgid "November"
 msgstr "November"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:96
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:106
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:49
 msgid "December"
 msgstr "Dezember"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:103
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:113
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:56
 msgid "1st"
 msgstr "1."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:105
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:115
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:58
 msgid "2nd"
 msgstr "2."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:107
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:117
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:60
 msgid "3rd"
 msgstr "3."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:109
+#: C:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:119
 #: C:\xampp\htdocs\lorry\src/Lorry/Service.old/Localisation.php:62
 msgid "%n%th"
 msgstr "%n%."
@@ -1065,7 +1069,7 @@ msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 msgid "Comments"
 msgstr "Kommentare"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:213
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:214
 msgid "This user has not commented yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
 

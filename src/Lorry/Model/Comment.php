@@ -33,6 +33,14 @@ class Comment extends Model {
 		return $this->getValue('content');
 	}
 
+	public function setTimestamp($timestamp) {
+		return $this->setValue('timestamp', $timestamp);
+	}
+
+	public function getTimestamp() {
+		return $this->getValue('timestamp');
+	}
+
 	public function __toString() {
 		return $this->getUsername().'';
 	}

@@ -5,6 +5,7 @@ namespace Lorry\Presenter\User;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Service\LocalisationService;
 
 class Profile extends Presenter {
 
@@ -17,12 +18,15 @@ class Profile extends Presenter {
 		$context['username'] = $user->getUsername();
 		$context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
-		$comments = ModelFactory::build('Comment')->all()->byOwner($user->getId());
+		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
 		$context['comments'] = array();
 		foreach($comments as $comment) {
-			$context['comments'][] = $comment->getContent();
+			$usercomment = array();
+			$usercomment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $comment->getTimestamp());
+			$usercomment['content'] = $comment->getContent();
+			$usercomment['url'] = $this->config->get('base');
+			$context['comments'][] = $usercomment;
 		}
-
 
 		$context['profiles'] = array();
 		if($user->getClonkforge()) {
