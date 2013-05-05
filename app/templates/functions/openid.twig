@@ -1,12 +1,12 @@
 <p id="openid">
-	<a href="#" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">{% trans "OpenID" %}</a>
-	<a href="#" class="btn btn-google">{% trans "Google" %}</a>
-	<a href="#" class="btn btn-facebook">{% trans "Facebook" %}</a>
-	<a href="#" class="btn btn-twitter">{% trans "Twitter" %}</a>
+	<a href="#by-openid" class="btn btn-openid" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
+	<a href="?openid=google" class="btn btn-google">{% trans "Google" %}</a>
+	<a href="?openid=facebook" class="btn btn-facebook">{% trans "Facebook" %}</a>
+	<a href="?openid=twiiter" class="btn btn-twitter">{% trans "Twitter" %}</a>
 </p>
-<div class="collapse" id="link-openid">
-	<form action="" method="post" class="form-inline">
-		<input type="text" name="openid-provider" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
+<div class="collapse" id="by-openid">
+	<form action="{{filename}}?openid=custom" method="post" class="form-inline">
+		<input type="url" name="openid-provider" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
 		<button type="submit" class="btn btn-primary">{% trans %}Confirm{% endtrans %}</button>
 		<label for="openid-provider"></label>
 	</form>

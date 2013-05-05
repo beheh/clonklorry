@@ -39,6 +39,10 @@ class Login extends Presenter {
 				// email is unknown
 				$this->context['email_error'] = gettext('Email address is unknown.');
 			}
+		} if(isset($_GET['openid'])) {
+			// login with openid
+			$openid = filter_input(INPUT_GET, 'openid');
+			// @TODO openid implementation
 		} else {
 			// login by username and password
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
