@@ -4,24 +4,18 @@
 <h1>{% trans %}Create addon{% endtrans %}</h1>
 <div class="row-fluid">
     <div class="span4">
-		<p class="alert alert-success">You can change any of the values later.</p>
+		<p class="alert alert-success">{% trans %}You can change any of the values later.{% endtrans %}</p>
 		<form method="post" action="" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="title">{% trans %}Full Title (without version){% endtrans %}</label>
 				<div class="controls">
-					<input type="text" name="title" id="title" value="{{title}}" required>
+					<input type="text" name="title" id="title" value="{{title}}" maxlength="32" required autofocus>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="title">{% trans %}Abbreviation (if any){% endtrans %}</label>
 				<div class="controls">
-					<input type="text" name="title" id="title" value="{{title}}" required>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="title">{% trans "Short title" %}</label>
-				<div class="controls">
-					<input type="text" name="title" id="title" value="{{title}}" required>
+					<input type="text" name="title" id="title" value="{{title}}" maxlength="6">
 				</div>
 			</div>
 			<div class="control-group">
