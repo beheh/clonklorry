@@ -126,7 +126,7 @@
 		{% if logout.message %}<div class="alert alert-{% if logout.success %}success{% else %}error{% endif %}">
 			{% if logout.title %}<strong>{{ logout.title }}</strong> {% endif %}{{ logout.message }}
 					</div>
-{% endif %}
+					{% endif %}
 					<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 					<div class="collapse" id="remote-logout-confirm">
 						<form method="post" action="{{filename}}?remote-logout">
@@ -134,29 +134,7 @@
 						</form>
 					</div>
 					<h4 id="link">{% trans "Login services" %}</h4>
-					<p>
-			{% if link.openid == false and link.google == false %}
-							<a href="#link" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">{% trans "OpenID" %}</a>
-							<a href="?link=google&action=init" class="btn btn-google">{% trans "Google" %}</a>
-			{% endif %}
-			{% if link.facebook == false %}<a href="?link=facebook&action=init" class="btn btn-facebook">{% trans "Facebook" %}</a>{% endif %}
-			{% if link.twitter == false %}<a href="?link=twitter&action=init" class="btn btn-twitter">{% trans "Twitter" %}</a>{% endif %}
-						</p>
-						<div class="collapse" id="link-openid">
-							<form action="?link=openid&action=init" method="post" class="form-horizontal">
-								<label>{% trans "OpenID URL" %} <input type="text" name="openid-provider" required></label>
-								<button type="submit" class="btn btn-primary">{% trans "Link" %}</button>
-							</form>
-						</div>{% if link.message %}
-						<div class="alert alert-{% if link.success %}success{% else %}error{% endif %}">{% if link.title %}<strong>{{ link.title }}</strong> {% endif %}{{ link.message }}</div>
-		{% endif %}
-		{% if link.openid or link.google or link.facebook or link.twitter %}<h4 id="unlink">{% trans "Unlink" %}</h4>
-						<p>
-			{% if link.openid %}<a href="#link" class="btn btn-openid" data-toggle="collapse" data-target="#link-openid">{% trans "OpenID" %} &times;</a>{% endif %}
-			{% if link.google %}<a href="?openid=init-google" class="btn btn-google">{% trans "Google" %} &times;</a>{% endif %}
-			{% if link.facebook %}<a href="#link" class="btn btn-facebook">{% trans "Facebook" %} &times;</a>{% endif %}
-			{% if link.twitter %}<a href="#link" class="btn btn-twitter">{% trans "Twitter" %} &times;</a>{% endif %}
-							</p>{% endif %}
-						</div>
-					</div>
+					{% include "functions/openid.twig "%}
+				</div>
+			</div>
 {% endblock %}
