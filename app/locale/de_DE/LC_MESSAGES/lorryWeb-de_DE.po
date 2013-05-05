@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
 "POT-Creation-Date: 2013-05-05 01:22+0100\n"
-"PO-Revision-Date: 2013-05-05 01:23+0100\n"
+"PO-Revision-Date: 2013-05-05 16:51+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -987,13 +987,12 @@ msgid "Responsible for the content"
 msgstr "Verantwortlich für den Inhalt"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:39
-#, fuzzy
 msgid ""
 "After registering you can easily publish your addons here and distribute "
 "them via Lorry."
 msgstr ""
-"Nach deiner Registrierung kannst du deine Erweiterungen hier veröffentlichen "
-"und sie mit Lorry verfügbar machen."
+"Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
+"und sie über Lorry verfügbar machen."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:23
 msgid "Back to top"
