@@ -27,11 +27,17 @@ class LocalisationService {
 		return false;
 	}
 
+	private $display_language = false;
+
 	public function getDisplayLanguage() {
+		if($this->display_language) {
+			return $this->display_language;
+		}
+
 		$available = $this->getAvailableLanguages();
 		if(isset($_COOKIE['lorry_language'])) {
 			$language = $_COOKIE['lorry_language'];
-			if($this->verifyLanguage($language)) {
+			if($this->setDisplayLanguage($language)) {
 				return $language;
 			} else {
 				setcookie('lorry_language', '', 0, '/');
@@ -40,15 +46,26 @@ class LocalisationService {
 
 		if($this->session->authenticated()) {
 			$language = $this->session->getUser()->getLanguage();
-			if($this->verifyLanguage($language)) {
-				setcookie('lorry_language', $language, time() + 60 * 60 * 24 * 365, '/');
+			if($this->setDisplayLanguage($language)) {
 				return $language;
 			}
 		}
 
 		//http_negotiate_language($available);
 
-		return $available[0];
+		$this->setDisplayLanguage($available[0]);
+		return $this->display_language;
+	}
+
+	public final function setDisplayLanguage($language) {
+		if($this->verifyLanguage($language)) {
+			$this->display_language = $language;
+			if(!isset($_COOKIE['lorry_language']) || $_COOKIE['lorry_language'] != $language) {
+				setcookie('lorry_language', $language, time() + 60 * 60 * 24 * 365, '/');
+			}
+			return true;
+		}
+		return false;
 	}
 
 	/**

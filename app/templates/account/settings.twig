@@ -61,9 +61,9 @@
 			<div class="control-group">
 				<label class="control-label" for="language-setting">{% trans "View the site in" %}</label>
 				<div class="controls">
-					<select name="langauge" id="language-setting">
-						<option>{% trans "English" %}</option>
-						<option>{% trans "German" %}</option>
+					<select name="language" id="language-setting">
+						<option value="en-US"{% if language == "en-US" %} selected{% endif %}>{% trans "English" %}</option>
+						<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
 					</select>
 				</div>
 			</div>
@@ -82,8 +82,8 @@
 				<div class="alert alert-error">
 					<strong>{% trans "Removing your account is final." %}</strong> {% trans "You will permanently loose control of all your uploads." %}
 				</div>
-				<label class="checkbox"><input type="checkbox"> {%trans "I have read and understood the warning." %}</label>
-				<button type="submit" class="btn btn-danger" disabled>{% trans "Permanently remove account"%}</button>
+				<label class="checkbox"><input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}</label>
+				<button type="submit" class="btn btn-danger" id="remove-button" disabled>{% trans "Permanently remove account"%}</button>
 			</form>
 		</div>
 	</div>
@@ -137,4 +137,24 @@
 					{% include "functions/openid.twig "%}
 				</div>
 			</div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+
+$(document).ready(function() {
+	$('#language-setting').change(function() {
+		$(this).closest('form').submit();
+	});
+
+	$('#remove-confirm').prop('checked', false);
+
+	$('#remove-confirm').change(function() {
+		if($(this).prop('checked')) {
+			$('#remove-button').prop('disabled', false);
+		} else {
+			$('#remove-button').prop('disabled', true);
+		}
+	});
+});
 {% endblock %}
