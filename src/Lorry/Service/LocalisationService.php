@@ -51,9 +51,12 @@ class LocalisationService {
 			}
 		}
 
-		//http_negotiate_language($available);
-
-		$this->setDisplayLanguage($available[0]);
+		if(function_exists('http_negotiate_language($available)')) {
+			$language = http_negotiate_language($available);
+		} else {
+			$language = $available[0];
+		}
+		$this->setDisplayLanguage($language);
 		return $this->display_language;
 	}
 
