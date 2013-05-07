@@ -29,8 +29,8 @@ abstract class Model implements ModelInterface {
 		$this->schema = $rows;
 
 		$this->values = array();
-		foreach($this->schema as $row) {
-			$this->values[$row] = null;
+		foreach($this->schema as $key => $row) {
+			$this->values[$key] = null;
 		}
 
 		$this->changes = array();
@@ -60,7 +60,7 @@ abstract class Model implements ModelInterface {
 	public final function getValue($name) {
 		$this->ensureLoaded();
 		$this->ensureRow($name);
-		if(isset($this->changes[$name]))
+		if(array_key_exists($name, $this->changes))
 			return $this->changes[$name];
 		return $this->values[$name];
 	}
@@ -128,6 +128,14 @@ abstract class Model implements ModelInterface {
 		$this->ensureLoaded();
 		$this->ensureRow($row);
 
+		if(array_key_exists($row, $this->change)) {
+			if($this->changes[$row] != $value) {
+				return false;
+			}
+
+			return true;
+		}
+
 		if($this->values[$row] != $value) {
 			return false;
 		}
@@ -172,12 +180,19 @@ abstract class Model implements ModelInterface {
 			return false;
 		}
 
+		$this->rollback();
+
 		foreach($row as $key => $value) {
 			$this->values[$key] = $value;
 		}
 
 		$this->loaded = true;
 
+		return true;
+	}
+
+	public final function rollback() {
+		$this->changes = array();
 		return true;
 	}
 
