@@ -33,6 +33,7 @@ class Settings extends Presenter {
 		if(isset($_GET['change-profiles'])) {
 			$save = true;
 
+			// Clonk Forge profile url
 			$clonkforge = trim(filter_input(INPUT_POST, 'clonkforge'));
 			$this->context['clonkforge'] = $clonkforge;
 			if(!empty($clonkforge)) {
@@ -50,7 +51,8 @@ class Settings extends Presenter {
 			}
 			$user->setClonkforge($clonkforge);
 
-			$github = filter_input(INPUT_POST, 'github');
+			// GitHub name
+			$github = trim(filter_input(INPUT_POST, 'github'));
 			$this->context['github'] = $github;
 			if(!empty($github)) {
 				// verify username
@@ -64,7 +66,7 @@ class Settings extends Presenter {
 			}
 			$user->setGithub($github);
 
-			if($save) {
+			if($user->modified() && $save) {
 				$user->save();
 				$this->success('profiles', gettext('Your linked profiles were changed.'));
 			}
