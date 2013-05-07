@@ -8,7 +8,7 @@ abstract class Model implements ModelInterface {
 
 	/**
 	 *
-	 * @var \Lorry\Service\Persistence
+	 * @var \Lorry\Service\PersistenceService
 	 */
 	protected $persistence;
 
@@ -100,7 +100,7 @@ abstract class Model implements ModelInterface {
 			$rows = $this->persistence->loadAll($this, $row, $value, $this->order_row, $this->order_descending);
 
 			if(empty($rows)) {
-				return false;
+				return array();
 			}
 
 			$instances = array();
