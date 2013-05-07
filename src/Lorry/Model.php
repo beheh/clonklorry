@@ -53,6 +53,7 @@ abstract class Model implements ModelInterface {
 	}
 
 	public final function setValue($name, $value) {
+		if($this->loaded && $this->values[$name] == $value) return true;
 		$this->changes[$name] = $this->ensureType($name, $value);
 		return true;
 	}
@@ -199,6 +200,17 @@ abstract class Model implements ModelInterface {
 
 
 	/**
+	 * Returns whether unsaved changes remain.
+	 * @return boolean True, if unsaved changes are present.
+	 */
+	public final function modified() {
+		if(!empty($this->changes)) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Unsets all changes since last load() or save()
 	 */
 	public final function rollback() {
@@ -210,13 +222,20 @@ abstract class Model implements ModelInterface {
 	 * @return boolean True, if all changes will be persistent
 	 */
 	public final function save() {
-		if(empty($this->changes))
+		if(!$this->modified())
 			return true;
 		if($this->loaded) {
-			return $this->persistence->update($this, $this->changes);
+			if(!$this->persistence->update($this, $this->changes)) {
+				return false;
+			}
 		} else {
-			return $this->persistence->save($this, $this->changes);
+			if(!$this->persistence->save($this, $this->changes)) {
+				return false;
+			}
 		}
+		$this->values = array_merge($this->values, $this->changes);
+		$this->rollback();
+		return true;
 	}
 
 }
