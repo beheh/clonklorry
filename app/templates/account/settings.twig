@@ -7,7 +7,7 @@
 		<hr class="visible-phone">
 		<h2>{% trans "Profile" %}</h2>
 		<h4 id="appearance">{% trans "Appearance" %}</h4>
-		<form method="post" action="{{filename}}?change-username" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-appearance" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="username">{% trans "Username" %}</label>
 				<div class="controls">
@@ -19,17 +19,18 @@
 			</div>
 		</form>
 		<h4 id="profiles">{% trans "Linked profiles" %}</h4>
-		<form method="post" action="{{filename}}?change-social" class="form-horizontal">
+		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
+		<form method="post" action="{{filename}}?change-profiles" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="clonkforge">{% trans "Clonk Forge profile" %}</label>
 				<div class="controls">
-					<input type="url" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_default}}">
+					<input type="url" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_placeholder}}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="github">{% trans "GitHub name" %}</label>
 				<div class="controls">
-					<input type="text" name="github" id="github" value="{{github}}" placeholder="{{username}}">
+					<input type="text" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
 				</div>
 			</div>
 			<div class="control-group">
@@ -43,11 +44,12 @@
 		<hr class="visible-phone">
 		<h2 id="account">{% trans "Account" %}</h2>
 		<h4 id="contact">{% trans "Contact details" %}</h4>
-		<form method="post" action="{{filename}}?change-email" class="form-horizontal">
+		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+		<form method="post" action="{{filename}}?change-contact" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="email">{% trans "Email address" %}</label>
 				<div class="controls">
-					<input type="email" name="email" id="email" value="{{email}}" required>
+					<input type="email" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
 				</div>
 			</div>
 			<div class="control-group">
@@ -121,10 +123,7 @@
 				</div>
 			</form>
 			<h4 id="remote-logout">{% trans "Sessions" %}</h4>
-	{% if logout.message %}<div class="alert alert-{% if logout.success %}success{% else %}error{% endif %}">
-		{% if logout.title %}<strong>{{ logout.title }}</strong> {% endif %}{{ logout.message }}
-				</div>
-				{% endif %}
+				{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
 				<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 				<div class="collapse" id="remote-logout-confirm">
 					<form method="post" action="{{filename}}?remote-logout">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-07 12:46+0100\n"
-"PO-Revision-Date: 2013-05-07 12:46+0100\n"
+"POT-Creation-Date: 2013-05-07 14:56+0100\n"
+"PO-Revision-Date: 2013-05-07 14:56+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,6 +11,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: -1,6,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\lorry\\src\n"
 "X-Poedit-SearchPath-1: D:\\xampp\\htdocs\\lorry\\app\\cache\n"
 "X-Poedit-SearchPath-2: C:\\xampp\\htdocs\\lorry\\src\n"
@@ -24,36 +25,48 @@ msgstr "Entwicklungsversion."
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:41
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:39
 msgid "Email address is unknown."
 msgstr "E-Mail-Adresse ist unbekannt."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:67
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:65
 msgid "Password is wrong."
 msgstr "Passwort ist falsch."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:71
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:69
 msgid "Username is unknown."
 msgstr "Benutzername ist unbekannt."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:52
-msgid "Password was changed."
-msgstr "Passwort wurde geändert."
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:45
+msgid "Invalid Clonk Forge profile."
+msgstr "Ungültiges Clonk Forge-Profil."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:54
-msgid "Password was set."
-msgstr "Passwort wurde gesetzt."
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:59
+msgid "Invalid GitHub name."
+msgstr "Ungültiger GitHub-Name."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:57
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:69
+msgid "Your linked profiles were changed."
+msgstr "Deine verknüpften Profile wurden geändert."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:97
+msgid "Your password was changed."
+msgstr "Dein Passwort wurde geändert."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:99
+msgid "Your password was set."
+msgstr "Dein Passwort wurde gesetzt."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:103
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:60
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:107
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Login.php:36
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Game.php:19
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Game.php:17
 msgid "Addons for %game%"
 msgstr "Erweiterungen für %game%"
 
@@ -127,7 +140,7 @@ msgstr "Du wurdest abgemeldet."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:25
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:44
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:53
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:52
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:46
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:54
 msgid "Username"
 msgstr "Benutzername"
@@ -163,8 +176,8 @@ msgid "%s already taken."
 msgstr "%s bereits vergeben."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:49
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:132
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:130
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:138
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:118
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:67
 msgid "Email address"
 msgstr "E-Mail-Adresse"
@@ -177,8 +190,8 @@ msgstr "%s wurde bereits registriert."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:70
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:73
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Register.php:76
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:236
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:66
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:246
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:60
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:78
 msgid "Password"
 msgstr "Passwort"
@@ -239,7 +252,7 @@ msgstr "%s konnte nicht gesetzt werden."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Settings.php:80
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Settings.php:83
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Settings.php:86
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:271
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:279
 msgid "New password"
 msgstr "Neues Passwort"
 
@@ -557,110 +570,110 @@ msgstr "Kontaktiere uns zur Änderung des Nutzernamens."
 msgid "Linked profiles"
 msgstr "Verknüpfte Profile"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:80
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:83
 msgid "Clonk Forge profile"
 msgstr "Clonk Forge-Profil"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:94
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:97
 msgid "GitHub name"
 msgstr "GitHub-Name"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:109
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:112
 msgid "Change linked profiles"
 msgstr "Verknüpfte Profile ändern"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:119
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:122
 msgid "Account"
 msgstr "Konto"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:123
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:126
 msgid "Contact details"
 msgstr "Kontaktdaten"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:145
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:155
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:152
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:162
 msgid "Language"
 msgstr "Sprache"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:161
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:171
 msgid "View site in"
 msgstr "Betrachte Seite auf"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:171
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:181
 msgid "English"
 msgstr "Englisch"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:179
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:189
 msgid "German"
 msgstr "Deutsch"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:189
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:199
 msgid "Change language"
 msgstr "Sprache ändern"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:197
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:207
 msgid "Remove account"
 msgstr "Konto entfernen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:201
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:211
 msgid "Would you like to remove your account?"
 msgstr "Möchtest du dein Konto entfernen?"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:211
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:221
 msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:213
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:223
 msgid "You will permanently loose control of all your uploaded addons."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine hochgeladenen Erweiterungen "
 "verlieren."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:218
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:228
 msgid "I have read and understood the warning."
 msgstr "Ich habe den Hinweis gelesen und verstanden."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:222
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:232
 msgid "Permanently remove account"
 msgstr "Konto permanent entfernen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:231
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:241
 msgid "Security"
 msgstr "Sicherheit"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:260
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:262
 msgid "Old password"
 msgstr "Altes Passwort"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:280
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:288
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:83
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:291
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:299
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:293
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:301
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:301
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:309
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:327
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:316
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:336
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:325
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:342
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:331
 msgid "Login services"
 msgstr "Anmeldedienste"
 
@@ -815,7 +828,7 @@ msgid "Create new addon"
 msgstr "Neue Erweiterung anlegen"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:89
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:158
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:146
 msgid "Welcome back!"
 msgstr "Willkommen zurück!"
 
@@ -879,37 +892,37 @@ msgid "You have not created an addon yet. Get started now!"
 msgstr "Du hast noch keine Erweiterung angelegt. Erstelle jetzt eine!"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:32
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:84
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:78
 #: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:124
 #: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:49
 msgid "Login"
 msgstr "Anmelden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:79
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:73
 msgid "Remember on this device"
 msgstr "Auf diesem Gerät merken"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:91
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:85
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:93
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:87
 msgid "Login via email&hellip;"
 msgstr "Anmeldung per E-Mail&hellip;"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:108
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:102
 msgid "Use your email account to log in:"
 msgstr "Nutze dein E-Mail-Konto zur Anmeldung:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:138
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:126
 msgid "Send one-time login"
 msgstr "Einmal-Anmeldung senden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:146
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:134
 msgid "Or, select your login service:"
 msgstr "Oder, wähle deinen Anmeldedienst aus:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:162
+#: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:150
 msgid ""
 "Nice to see you again! Have you visited these other great Clonk sites yet?"
 msgstr ""
@@ -1085,6 +1098,10 @@ msgstr "Kommentare"
 #: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:221
 msgid "This user has not commented yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
+
+#, fuzzy
+#~ msgid "Your passwords do not match."
+#~ msgstr "Passwörter stimmen nicht überein."
 
 #~ msgid "OpenID URL"
 #~ msgstr "OpenID-URL"

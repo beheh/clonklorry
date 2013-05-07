@@ -11,9 +11,12 @@ class Settings extends Presenter {
 		$user = $this->session->getUser();
 
 		$this->context['username'] = $user->getUsername();
-		$this->context['clonkforge'] = sprintf($this->config->get('clonkforge'), $user->getClonkforge());
+
+		$this->context['clonkforge'] = $user->getClonkforge() ? sprintf($this->config->get('clonkforge'), $user->getClonkforge()) : '';
 		$this->context['github'] = $user->getGithub();
 
+		$this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge'), 0);
+		$this->context['github_placeholder'] = $user->getUsername();
 
 		$this->context['email'] = $user->getEmail();
 		$this->context['language'] = $this->localisation->getDisplayLanguage();
@@ -26,6 +29,50 @@ class Settings extends Presenter {
 	public function post() {
 		$this->security->requireLogin();
 		$user = $this->session->getUser();
+
+		if(isset($_GET['change-profiles'])) {
+			$save = true;
+
+			$clonkforge = trim(filter_input(INPUT_POST, 'clonkforge'));
+			$this->context['clonkforge'] = $clonkforge;
+			if(!empty($clonkforge)) {
+				// verify profile url
+				$scanned = sscanf($clonkforge, $this->config->get('clonkforge'));
+				if(count($scanned) == 1 && is_numeric($scanned[0]) && $scanned[0] > 0) {
+					$clonkforge = $scanned[0];
+				} else {
+					$save = false;
+					$this->error('profiles', gettext('Invalid Clonk Forge profile.'));
+				}
+			} else {
+				// unset the profile url
+				$clonkforge = null;
+			}
+			$user->setClonkforge($clonkforge);
+
+			$github = filter_input(INPUT_POST, 'github');
+			$this->context['github'] = $github;
+			if(!empty($github)) {
+				// verify username
+				if(!preg_match('#^'.$this->config->get('github_name').'$#', $github)) {
+					$save = false;
+					$this->error('profiles', gettext('Invalid GitHub name.'));
+				}
+			} else {
+				// unset the username
+				$github = null;
+			}
+			$user->setGithub($github);
+
+			if($save) {
+				$user->save();
+				$this->success('profiles', gettext('Your linked profiles were changed.'));
+			}
+		}
+
+		if(isset($_GET['change-contact'])) {
+			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+		}
 
 		if(isset($_GET['change-language'])) {
 			$language = filter_input(INPUT_POST, 'language');
@@ -47,9 +94,9 @@ class Settings extends Presenter {
 					$user->setPassword($password_new);
 					$user->save();
 					if($has_password) {
-						$this->success('password', gettext('Password was changed.'));
+						$this->success('password', gettext('Your password was changed.'));
 					} else {
-						$this->success('password', gettext('Password was set.'));
+						$this->success('password', gettext('Your password was set.'));
 					}
 				} else {
 					$this->context['focus_password'] = true;
