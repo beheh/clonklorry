@@ -13,7 +13,7 @@ abstract class Router {
 	}
 
 	public static function addRoutes($route) {
-		self::$routes = array_merge($array1, self::$routes);
+		self::$routes = array_merge($route, self::$routes);
 	}
 
 	public static function setRoutes($routes) {
