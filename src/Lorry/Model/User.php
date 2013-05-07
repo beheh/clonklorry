@@ -57,12 +57,16 @@ class User extends Model {
 	}
 
 	public final function setPassword($password) {
-		$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+		if(!empty($password)) {
+			$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+		} else {
+			$hash = null;
+		}
 		return $this->setValue('password', $hash);
 	}
 
 	public final function hasPassword() {
-		return $this->getValue('password') != '';
+		return $this->getValue('password') != null;
 	}
 
 	public final function matchPassword($password) {
