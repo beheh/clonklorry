@@ -128,7 +128,7 @@ abstract class Model implements ModelInterface {
 		$this->ensureLoaded();
 		$this->ensureRow($row);
 
-		if(array_key_exists($row, $this->change)) {
+		if(array_key_exists($row, $this->changes)) {
 			if($this->changes[$row] != $value) {
 				return false;
 			}
@@ -175,8 +175,14 @@ abstract class Model implements ModelInterface {
 		return true;
 	}
 
+
+	/**
+	 * Loads the data into this model instance. Should only be called by the PersistenceService.
+	 * @param array $row
+	 * @return boolean True,
+	 */
 	public final function unserialize($row) {
-		if(empty($row)) {
+		if(empty($row) || !isset($row['id']) || !is_numeric($row['id'])) {
 			return false;
 		}
 
@@ -191,9 +197,12 @@ abstract class Model implements ModelInterface {
 		return true;
 	}
 
+
+	/**
+	 * Unsets all changes since last load() or save()
+	 */
 	public final function rollback() {
 		$this->changes = array();
-		return true;
 	}
 
 	/**
