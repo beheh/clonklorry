@@ -61,7 +61,7 @@
 			<div class="control-group">
 				<label class="control-label" for="language-setting">{% trans "View site in" %}</label>
 				<div class="controls">
-					<select name="language" id="language-setting">
+					<select name="language" id="language-setting" required>
 						<option value="en-US"{% if language == "en-US" %} selected{% endif %}>{% trans "English" %}</option>
 						<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
 					</select>
@@ -80,7 +80,7 @@
 		<div class="collapse" id="remove-account-confirm">
 			<form method="post" action="{{filename}}?remove-account">
 				<div class="alert alert-error">
-					<strong>{% trans "Removing your account is final." %}</strong> {% trans "You will permanently loose control of all your uploads." %}
+					<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
 				</div>
 				<label class="checkbox"><input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}</label>
 				<button type="submit" class="btn btn-danger" id="remove-button" disabled>{% trans "Permanently remove account"%}</button>
@@ -92,51 +92,49 @@
 		<h2 id="security">{% trans "Security" %}</h2>
 
 		<h4 id="password">{% trans "Password" %}</h4>
-		{% if password.message %}
-		<div class="alert alert-{% if password.success %}success{% else %}error{% endif %}">
-			{% if password.title %}<strong>{{ password.title }}</strong> {% endif %}{{ password.message }}
-			</div>
-	{% endif %}
+			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
 			<form method="post" action="{{filename}}?change-password" class="form-horizontal">
-					{% if password.exists %}<div class="control-group">
-						<label class="control-label" for="password-old">{% trans "Old password" %}</label>
-						<div class="controls">
-							<input type="password" name="password-old" id="password-old">
-						</div>
-					</div>{% endif %}
-					<div class="control-group">
-						<label class="control-label" for="password-new">{% trans "New password" %}</label>
-						<div class="controls">
-							<input type="password" name="password-new" id="password-new">
-						</div>
+				{% if password_exists %}
+				<div class="control-group">
+					<label class="control-label" for="password-old">{% trans "Old password" %}</label>
+					<div class="controls">
+						<input type="password" name="password-old" id="password-old" required{% if focus_password %} autofocus{% endif %}>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="password-new-confirm">{% trans "Confirm password" %}</label>
-						<div class="controls">
-							<input type="password" name="password-new-confirm" id="password-new-confirm">
-						</div>
-					</div>
-					<div class="control-group">
-						<div class="controls">
-							<button type="submit" class="btn">{% if password.exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
-						</div>
-					</div>
-				</form>
-				<h4 id="remote-logout">{% trans "Sessions" %}</h4>
-		{% if logout.message %}<div class="alert alert-{% if logout.success %}success{% else %}error{% endif %}">
-			{% if logout.title %}<strong>{{ logout.title }}</strong> {% endif %}{{ logout.message }}
-					</div>
-					{% endif %}
-					<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
-					<div class="collapse" id="remote-logout-confirm">
-						<form method="post" action="{{filename}}?remote-logout">
-							<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
-						</form>
-					</div>
-					<h4 id="link">{% trans "Login services" %}</h4>
-					{% include "functions/openid.twig "%}
 				</div>
+				{% endif %}
+				<div class="control-group">
+					<label class="control-label" for="password-new">{% trans "New password" %}</label>
+					<div class="controls">
+						<input type="password" name="password-new" id="password-new" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="password-confirm">{% trans "Confirm password" %}</label>
+					<div class="controls">
+						<input type="password" name="password-confirm" id="password-confirm" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+					</div>
+				</div>
+			</form>
+			<h4 id="remote-logout">{% trans "Sessions" %}</h4>
+	{% if logout.message %}<div class="alert alert-{% if logout.success %}success{% else %}error{% endif %}">
+		{% if logout.title %}<strong>{{ logout.title }}</strong> {% endif %}{{ logout.message }}
+				</div>
+				{% endif %}
+				<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
+				<div class="collapse" id="remote-logout-confirm">
+					<form method="post" action="{{filename}}?remote-logout">
+						<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
+					</form>
+				</div>
+				<h4 id="link">{% trans "Login services" %}</h4>
+				{% include "functions/openid.twig "%}
 			</div>
+		</div>
 {% endblock %}
 
 {% block javascript %}

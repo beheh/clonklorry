@@ -8,7 +8,7 @@ class Table extends Presenter {
 
 	public function get() {
 
-		$this->twig->display('user/table.twig');
+		$this->display('user/table.twig');
 	}
 
 }

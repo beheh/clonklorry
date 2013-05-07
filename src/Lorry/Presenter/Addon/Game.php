@@ -14,11 +14,9 @@ class Game extends Presenter {
 			throw new FileNotFoundException('game '.$game);
 		}
 
-		$context = array();
+		$this->context['addons_for_game'] = strtr(gettext('Addons for %game%'), array('%game%' => $game->getName()));
 
-		$context['addons_for_game'] = strtr(gettext('Addons for %game%'), array('%game%' => $game->getName()));
-
-		$this->twig->display('addon/game.twig', $context);
+		$this->display('addon/game.twig');
 	}
 
 }

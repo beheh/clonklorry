@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-06 12:24+0100\n"
-"PO-Revision-Date: 2013-05-06 12:25+0100\n"
+"POT-Creation-Date: 2013-05-07 12:46+0100\n"
+"PO-Revision-Date: 2013-05-07 12:46+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,23 @@ msgstr "Passwort ist falsch."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:71
 msgid "Username is unknown."
 msgstr "Benutzername ist unbekannt."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:52
+msgid "Password was changed."
+msgstr "Passwort wurde geändert."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:54
+msgid "Password was set."
+msgstr "Passwort wurde gesetzt."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:57
+msgid "Passwords do not match."
+msgstr "Passwörter stimmen nicht überein."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:60
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Login.php:36
+msgid "Password wrong."
+msgstr "Passwort falsch."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Game.php:19
 msgid "Addons for %game%"
@@ -77,10 +94,6 @@ msgstr "Hallo!"
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Index.php:23
 msgid "Nice to see you!"
 msgstr "Schön, dich zu sehen!"
-
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Login.php:36
-msgid "Password wrong."
-msgstr "Passwort falsch."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Login.php:40
 msgid "Unknown username."
@@ -226,7 +239,7 @@ msgstr "%s konnte nicht gesetzt werden."
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Settings.php:80
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Settings.php:83
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Settings.php:86
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:282
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:271
 msgid "New password"
 msgstr "Neues Passwort"
 
@@ -601,7 +614,7 @@ msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:213
-msgid "You will permanently loose control of all your uploads."
+msgid "You will permanently loose control of all your uploaded addons."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine hochgeladenen Erweiterungen "
 "verlieren."
@@ -618,36 +631,36 @@ msgstr "Konto permanent entfernen"
 msgid "Security"
 msgstr "Sicherheit"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:271
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:260
 msgid "Old password"
 msgstr "Altes Passwort"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:291
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:280
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:83
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:302
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:291
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:304
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:293
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:312
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:301
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:338
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:327
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:347
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:336
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:353
+#: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:342
 msgid "Login services"
 msgstr "Anmeldedienste"
 
@@ -1268,9 +1281,6 @@ msgstr "Dieser Benutzer hat noch nichts kommentiert."
 #, fuzzy
 #~ msgid "%s too long."
 #~ msgstr "Benutzername nicht gefunden."
-
-#~ msgid "Password too short."
-#~ msgstr "Passwort zu kurz."
 
 #~ msgid "Password invalid."
 #~ msgstr "Passwort ungültig."

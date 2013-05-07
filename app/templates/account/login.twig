@@ -4,9 +4,7 @@
 <h1 class="form-signin-heading">{%trans "Login" %}</h1>
 <div class="row-fluid">
     <div class="span4">
-		{% if login_error %}
-			<div class="alert alert-error">{{ login_error }}</div>
-		{% endif %}
+		{% include 'functions/alert.twig' with {'selector' : 'login'} %}
 		<form class="form-login" method="post" action="{{ filename }}">
 			<label for="username"></label>
 			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %}>
@@ -21,9 +19,7 @@
 		<hr>
 		<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
 			<h4 id="reset">{% trans "Use your email account to log in:" %}</h4>
-			{% if email_error %}
-				<div class="alert alert-error">{{ email_error }}</div>
-			{% endif %}
+			{% include 'functions/alert.twig' with {'selector' : 'email'} %}
 			<form method="post" action="?by-email">
 				<label for="email"></label>
 				<input type="email" class="input-block-level" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>

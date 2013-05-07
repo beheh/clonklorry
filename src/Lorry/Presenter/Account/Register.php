@@ -6,13 +6,11 @@ use Lorry\Presenter;
 
 class Register extends Presenter {
 
-	private $context = array();
-
 	public function get() {
 		if($this->session->authenticated()) {
 			return $this->redirect('/');
 		}
-		$this->twig->display('account/register.twig', $this->context);
+		$this->display('account/register.twig', $this->context);
 	}
 
 	public function post() {

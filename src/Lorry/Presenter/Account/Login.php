@@ -7,8 +7,6 @@ use Lorry\ModelFactory;
 
 class Login extends Presenter {
 
-	private $context = array();
-
 	public function get() {
 		if($this->session->authenticated()) {
 			$this->redirect('/');
@@ -22,7 +20,7 @@ class Login extends Presenter {
 			$this->context['email_visible'] = true;
 		}
 
-		$this->twig->display('account/login.twig', $this->context);
+		$this->display('account/login.twig', $this->context);
 	}
 
 	public function post() {
@@ -38,7 +36,7 @@ class Login extends Presenter {
 			} else {
 				// email is unknown
 				$this->context['email'] = $email;
-				$this->context['email_error'] = gettext('Email address is unknown.');
+				$this->error('email', gettext('Email address is unknown.'));
 			}
 		} else if(isset($_GET['openid'])) {
 			// login with openid
@@ -64,11 +62,11 @@ class Login extends Presenter {
 					return;
 				} else {
 					// password is incorrect
-					$this->context['login_error'] = gettext('Password is wrong.');
+					$this->error('login', gettext('Password is wrong.'));
 				}
 			} else {
 				// user does not exist
-				$this->context['login_error'] = gettext('Username is unknown.');
+				$this->error('login', gettext('Username is unknown.'));
 			}
 		}
 		$this->get();

@@ -15,34 +15,34 @@ class Profile extends Presenter {
 			throw new FileNotFoundException('user '.$username);
 		}
 
-		$context['username'] = $user->getUsername();
-		$context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
+		$this->context['username'] = $user->getUsername();
+		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
 		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
-		$context['comments'] = array();
+		$this->context['comments'] = array();
 		foreach($comments as $comment) {
 			$usercomment = array();
 			$usercomment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $comment->getTimestamp());
 			$usercomment['content'] = $comment->getContent();
 			$usercomment['url'] = $this->config->get('base');
-			$context['comments'][] = $usercomment;
+			$this->context['comments'][] = $usercomment;
 		}
 
-		$context['profiles'] = array();
+		$this->context['profiles'] = array();
 		if($user->getClonkforge()) {
-			$context['profiles'][] = array(
+			$this->context['profiles'][] = array(
 				'platform' => gettext('Clonk Forge'),
 				'username' => $user->getUsername(),
 				'url' => sprintf($this->config->get('clonkforge'), urlencode($user->getClonkforge())));
 		}
 		if($user->getGithub()) {
-			$context['profiles'][] = array(
+			$this->context['profiles'][] = array(
 				'platform' => gettext('GitHub'),
 				'username' => $user->getGithub(),
 				'url' => sprintf($this->config->get('github'), urlencode($user->getGithub())));
 		}
 
-		$this->twig->display('user/profile.twig', $context);
+		$this->display('user/profile.twig');
 	}
 
 }
