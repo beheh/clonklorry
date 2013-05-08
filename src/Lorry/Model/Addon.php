@@ -1,6 +1,6 @@
 <?php
 
-namespace Lorry\Models;
+namespace Lorry\Model;
 
 use Lorry\Model;
 
