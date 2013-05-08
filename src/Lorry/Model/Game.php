@@ -33,7 +33,7 @@ class Game extends Model {
 	}
 
 	public function __toString() {
-		return $this->getUsername().'';
+		return $this->getName().'';
 	}
 
 }
