@@ -5,7 +5,7 @@ namespace Lorry\Presenter\Publish;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 
-class Table extends Presenter {
+class Portal extends Presenter {
 
 	public function get() {
 		if($this->session->authenticated()) {
@@ -24,7 +24,7 @@ class Table extends Presenter {
 				$this->context['focus'] = 'title';
 			}
 
-			$this->display('publish/table.twig');
+			$this->display('publish/portal.twig');
 		} else {
 			$this->display('publish/greeter.twig');
 		}

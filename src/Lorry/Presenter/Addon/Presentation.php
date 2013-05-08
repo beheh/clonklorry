@@ -6,7 +6,7 @@ use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
-class Overview extends Presenter {
+class Presentation extends Presenter {
 
 	public function get($gamename, $addonname, $release = 'latest') {
 		$game = ModelFactory::build('Game')->byShort($gamename);
