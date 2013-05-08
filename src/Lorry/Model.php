@@ -53,7 +53,8 @@ abstract class Model implements ModelInterface {
 	}
 
 	public final function setValue($name, $value) {
-		if($this->loaded && $this->values[$name] == $value) return true;
+		if($this->loaded && $this->values[$name] == $value)
+			return true;
 		$this->changes[$name] = $this->ensureType($name, $value);
 		return true;
 	}
@@ -89,16 +90,33 @@ abstract class Model implements ModelInterface {
 	}
 
 	protected final function byValue($row, $value) {
-		$this->ensureUnloaded();
-		$this->ensureRow($row);
+		return $this->byValues(array($row => $value));
+	}
 
-		// do not allow fetching based on empty values
-		if(empty($value)) {
-			return false;
+	/**
+	 *
+	 * @param array $pairs
+	 */
+	protected final function byValues($pairs) {
+		$this->ensureUnloaded();
+		foreach($pairs as $row => $value) {
+			$this->ensureRow($row);
+			// do not allow empty values to search
+			if(empty($value)) {
+				if($this->multiple) {
+					return array();
+				} else {
+					return false;
+				}
+			}
 		}
 
 		if($this->multiple) {
-			$rows = $this->persistence->loadAll($this, $row, $value, $this->order_row, $this->order_descending);
+			if(empty($pairs)) {
+				return array();
+			}
+
+			$rows = $this->persistence->loadAll($this, $pairs, $this->order_row, $this->order_descending);
 
 			if(empty($rows)) {
 				return array();
@@ -113,7 +131,11 @@ abstract class Model implements ModelInterface {
 
 			return $instances;
 		} else {
-			$row = $this->persistence->load($this, $row, $value, $this->order_row, $this->order_descending);
+			if(empty($pairs)) {
+				return false;
+			}
+
+			$row = $this->persistence->load($this, $pairs, $this->order_row, $this->order_descending);
 
 			if(empty($row)) {
 				return false;
@@ -157,7 +179,7 @@ abstract class Model implements ModelInterface {
 
 	public final function ensureRow($row) {
 		if(!array_key_exists($row, $this->schema) && $row != 'id') {
-			throw new \InvalidArgumentException('row "'.$row.'" does not exist');
+			throw new \InvalidArgumentException('row "' . $row . '" does not exist');
 		}
 		return true;
 	}
@@ -175,7 +197,6 @@ abstract class Model implements ModelInterface {
 		}
 		return true;
 	}
-
 
 	/**
 	 * Loads the data into this model instance. Should only be called by the PersistenceService.
@@ -197,7 +218,6 @@ abstract class Model implements ModelInterface {
 
 		return true;
 	}
-
 
 	/**
 	 * Returns whether unsaved changes remain.
