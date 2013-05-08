@@ -16,7 +16,7 @@
 			{% if moderator %}<p class="alert alert-success">{% trans %}This user is moderator.{% endtrans %}</p>{% endif %}
 		{% endif %}
 		<h4>{% trans %}Information{% endtrans %}</h4>
-		<p>Benutzername: {{username}}.</p>
+		<p>{% trans %}Username{% endtrans %} {{username}}.</p>
 
 		{% if __administrator or (__moderator and moderator == false) %}
 			{% if not self %}
