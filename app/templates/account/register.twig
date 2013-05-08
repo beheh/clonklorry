@@ -3,8 +3,8 @@
 {% set title = 'Register'|trans %}
 
 {% block content %}
-<h1 class="form-register-heading">{{ title }}</h1>
-<div class="row-fluid">
+<h1>{{ title }}</h1>
+<div class="row-fluid" id="register">
     <div class="span4">
 		{% include 'functions/alert.twig' with {'selector' : 'register'} %}
 		<form class="form-register" method="post">

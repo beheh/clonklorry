@@ -19,6 +19,9 @@ class Profile extends Presenter {
 		$this->context['username'] = $user->getUsername();
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
+		$this->context['administrator'] = $user->getId() == 1; //@TODO
+		$this->context['moderator'] = false;
+
 		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
 		$this->context['comments'] = array();
 		foreach($comments as $comment) {

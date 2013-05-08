@@ -1,12 +1,55 @@
 {% extends 'root.twig' %}
 
+{% set title = 'Publish'|trans %}
+
 {% block content %}
-<h1>{% trans %}Publish{% endtrans %}</h1>
+<h1>{{ title }}</h1>
 <div class="row-fluid">
-	<div class="span12">
+	<div class="span4">
+		<hr class="visible-phone">
+		<h2>{% trans %}Create{% endtrans %}</h2>
+		<h4>{% trans %}Addon{% endtrans %}</h4>
+		<!--<p class="alert alert-success">{% trans %}You can change any of the values later.{% endtrans %}</p>!-->
+		<form method="post" action="" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="game">{% trans %}Game{% endtrans %}</label>
+				<div class="controls">
+					<select name="game" id="game" required{% if not games %} disabled{% endif %}>
+						<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
+						{% for game in games %}
+						<option value="{{ game.short }}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
+						{% else %}
+						<option>{% trans %}No game available{% endtrans %}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="title">{% trans %}Full Title{% endtrans %}</label>
+				<div class="controls">
+					<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %}>
+				</div>
+			</div>
+			<!--<div class="control-group">
+				<label class="control-label" for="short">{% trans %}Abbreviation{% endtrans %}</label>
+				<div class="controls">
+					<input type="text" name="short" id="short" value="{{short}}" maxlength="6">
+				</div>
+			</div>!-->
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans "Create new addon" %}</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="span8">
+		<hr class="visible-phone">
 		<h2>{% trans %}Your addons{% endtrans %}</h2>
-		<div class="alert alert-warning">{% trans %}You have not created an addon yet. Get started now!{% endtrans %}</div>
-		<a href="{{base}}/publish/create" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
+		<h4>{% trans %}Unreleased{% endtrans %}</h4>
+		<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
+		<h4>{% trans %}Released{% endtrans %}</h4>
+		<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
 	</div>
 </div>
 {% endblock %}

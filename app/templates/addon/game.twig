@@ -3,9 +3,11 @@
 {% block content %}
 <h1>{{ title }}</h1>
 {% if user_login %}
-	<a href="{{base}}/publish/create?for={{short}}" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
+	<a href="{{base}}/publish?for={{short}}" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
 	<hr>
 {% endif %}
+<h2>{{ game }}</h2>
+<h4><a href="#">{% trans %}By date{% endtrans %} &#9660;</a> | <a href="#">{% trans %}By name{% endtrans %} &#9660;</a> </h4>
 {% for addon in addons %}
 	<a href="{{ base }}/addons/{{short}}/{{addon.short}}">
 		<p class="addon">

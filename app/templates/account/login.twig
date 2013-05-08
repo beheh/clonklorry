@@ -3,8 +3,8 @@
 {% set title = 'Login'|trans %}
 
 {% block content %}
-<h1 class="form-signin-heading">{{ title }}</h1>
-<div class="row-fluid">
+<h1>{{ title }}</h1>
+<div class="row-fluid" id="login">
     <div class="span4">
 		{% include 'functions/alert.twig' with {'selector' : 'login'} %}
 		<form class="form-login" method="post" action="{{ filename }}">

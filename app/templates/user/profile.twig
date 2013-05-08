@@ -2,19 +2,22 @@
 
 {% block content %}
 <h1>{{ username }}</h1>
-<hr class="visible-phone">
 <div class="row-fluid">
 	<div class="span4">
-		<h2>{% trans "User" %}</h2>
-		{% if self %}
-		<div class="alert alert-info">{% trans "This is you." %}</div>
+		<hr class="visible-phone">
+		<h2>{% trans %}User{% endtrans %}</h2>
+		{% if banned %}
+			<h4>{% trans %}Banned{% endtrans %}</h4>
+			<p class="alert alert-error">{% trans %}This user is banned.{% endtrans %}</p>
 		{% endif %}
-		{% if banned %}<div class="alert alert-error">{% trans "This user is banned." %}</div>{% endif %}
-		{% if administrator %}<div class="alert alert-success">{% trans "This user is admin." %}</div>{% endif %}
-		{% if not administrator and moderator %}<div class="alert alert-success">{% trans "This user is moderator." %}</div>{% endif %}
-		{% if self %}
-			<a href="{{base}}/settings" class="btn">{% trans "Open settings" %}</a>
+		{% if administrator or moderator %}
+			<h4>{% trans %}Privilegien{% endtrans %}</h4>
+			{% if administrator %}<p class="alert alert-success">{% trans %}This user is administrator.{% endtrans %}</p>{% endif %}
+			{% if moderator %}<p class="alert alert-success">{% trans %}This user is moderator.{% endtrans %}</p>{% endif %}
 		{% endif %}
+		<h4>{% trans %}Information{% endtrans %}</h4>
+		<p>Benutzername: {{username}}.</p>
+
 		{% if __administrator or (__moderator and moderator == false) %}
 			{% if not self %}
 				<h2>{% trans "Moderation" %}</h2>
@@ -33,20 +36,17 @@
 			{% endif %}
 		{% endif %}
 		{% if profiles %}
-			<hr>
-			<h2>{% trans "Profiles" %}</h2>
+			<h4>{% trans %}Profiles{% endtrans %}</h4>
 			<ul>
-			{% for profile in profiles %}
-				{% set platform = profile.platform|e %}
-				{% set username = profile.username|e %}
-				<li><a href="{{profile.url}}">{% trans %}{{username}} on {{platform}}{% endtrans %}</a></li>
-			{% endfor %}
+				<li><a href="{{clonkforge}}">{% trans %}1{{username}} on the Clonk Forge{% endtrans %}</a></li>
+				<li><a href="{{github}}">{% trans %}1{{username}} on GitHub{% endtrans %}</a></li>
 			</ul>
 		{% endif %}
 	</div>
 	<div class="span8">
 		<hr class="visible-phone">
-		<h2>{% trans "Addons" %}</h2>
+		<h2>{% trans %}Activity{% endtrans %}</h2>
+		<h4>{% trans %}Addons{% endtrans %}</h4>
 		{% if addons %}
 		<ul>
 		{% for addon in addons %}
@@ -56,10 +56,9 @@
 		{% else %}
 		<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
 		{% endif %}
-		<hr>
-		<h2>{% trans "Comments" %}</h2>
-		<table>
+		<h4>{% trans %}Comments{% endtrans %}</h4>
 		{% if comments %}
+		<table>
 		{% for comment in comments %}
 			<tr class="comment">
 				<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
