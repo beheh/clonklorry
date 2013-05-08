@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-07 14:56+0100\n"
-"PO-Revision-Date: 2013-05-07 14:56+0100\n"
+"POT-Creation-Date: 2013-05-08 09:40+0100\n"
+"PO-Revision-Date: 2013-05-08 09:40+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,34 +37,38 @@ msgstr "Passwort ist falsch."
 msgid "Username is unknown."
 msgstr "Benutzername ist unbekannt."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:45
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:46
 msgid "Invalid Clonk Forge profile."
 msgstr "Ungültiges Clonk Forge-Profil."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:59
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:61
 msgid "Invalid GitHub name."
 msgstr "Ungültiger GitHub-Name."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:69
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:71
 msgid "Your linked profiles were changed."
 msgstr "Deine verknüpften Profile wurden geändert."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:97
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:99
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:99
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:101
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:103
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:105
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:107
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:109
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenters.old/Login.php:36
 msgid "Password wrong."
 msgstr "Passwort falsch."
+
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:114
+msgid "All other devices were logged out."
+msgstr "Alle anderen Geräte wurden abgemeldet."
 
 #: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Game.php:17
 msgid "Addons for %game%"

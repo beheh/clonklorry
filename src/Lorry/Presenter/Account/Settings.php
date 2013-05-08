@@ -110,6 +110,19 @@ class Settings extends Presenter {
 			}
 		}
 
+		if(isset($_GET['remote-logout'])) {
+			$this->success('remote-logout', gettext('All other devices were logged out.'));
+
+			$user->regenerateSecret();
+			$user->save();
+			$this->session->authenticate($user);
+			if($this->session->shouldRemember()) {
+				$this->session->remember();
+			} else {
+				$this->session->forget();
+			}
+		}
+
 		$this->get();
 	}
 
