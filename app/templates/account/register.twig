@@ -1,7 +1,9 @@
 {% extends 'root.twig' %}
 
+{% set title = 'Register'|trans %}
+
 {% block content %}
-<h1 class="form-register-heading">{% trans "Register" %}</h1>
+<h1 class="form-register-heading">{{ title }}</h1>
 <div class="row-fluid">
     <div class="span4">
 		{% include 'functions/alert.twig' with {'selector' : 'register'} %}

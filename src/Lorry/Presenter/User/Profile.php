@@ -15,6 +15,7 @@ class Profile extends Presenter {
 			throw new FileNotFoundException('user '.$username);
 		}
 
+		$this->context['title'] = $user->getUsername();
 		$this->context['username'] = $user->getUsername();
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 

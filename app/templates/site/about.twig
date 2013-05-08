@@ -1,7 +1,9 @@
 {% extends 'root.twig' %}
 
+{% set title = 'About Lorry'|trans %}
+
 {% block content %}
-<h1>{% trans "About Lorry" %}</h1>
+<h1>{{ title }}</h1>
 <p>{% trans %}The Lorry project was created from three basic concepts:{% endtrans %}</p>
 <div class="row-fluid">
     <div class="span4">
@@ -15,7 +17,7 @@
 		<h3>{% trans %}Distribution platform{% endtrans %}</h3>
 		<p>{% trans %}We want to provide Clonk players with a simple, clean interface to find and download the best addons and keep them up-to-date as they progress.{% endtrans %}</p>
 		<p>{% trans %}It should also serve as an archive, to enable players to go back and find forgotten gems of the past.{% endtrans %}</p>
-		<p><a href="{{base}}?greet=0" class="btn btn-primary">{% trans "Discover the addons" %}</a></p>
+		<p><a href="{{base}}" class="btn btn-primary">{% trans "Discover the addons" %}</a></p>
     </div>
     <div class="span4">
 		<hr class="visible-phone">

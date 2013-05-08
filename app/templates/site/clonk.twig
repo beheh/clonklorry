@@ -1,7 +1,9 @@
 {% extends 'root.twig' %}
 
+{% set title = 'Welcome to Clonk!'|trans %}
+
 {% block content %}
-<h1>{% trans %}Welcome to the world of Clonk!{% endtrans %}</h1>
+<h1>{{ title }}</h1>
 <p>{% trans %}Clonk is a unique 2.5-dimensional game and often referred to as a mix of "The Settlers" and "Lemmings": The core difference is the open addon format, transforming the game to anything you can imagine.{% endtrans %}</p>
 <hr>
 <div class="row-fluid">
