@@ -17,8 +17,8 @@ class Addon extends Model {
 		return $this->setValue('short', $short);
 	}
 
-	public function byShort($short) {
-		return $this->byValue('short', $short);
+	public function byShort($short, $game) {
+		return $this->byValues(array('short' => $short, 'game' => $game));
 	}
 
 	public function getShort() {

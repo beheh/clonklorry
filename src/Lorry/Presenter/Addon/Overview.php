@@ -8,12 +8,20 @@ use Lorry\Exception\FileNotFoundException;
 
 class Overview extends Presenter {
 
-	public function get($game, $addon, $release = 'latest') {
-		$game = ModelFactory::build('Game')->byShort($game);
+	public function get($gamename, $addonname, $release = 'latest') {
+		$game = ModelFactory::build('Game')->byShort($gamename);
 		if(!$game) {
 			throw new FileNotFoundException('game '.$game);
 		}
-		echo $addon.'-'.$release.' for '.$game;
+
+		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
+		if(!$addon) {
+			throw new FileNotFoundException('game '.$game);
+		}
+
+		$this->context['title'] = $addon->getTitle();
+
+		$this->display('addon/release.twig');
 	}
 
 }
