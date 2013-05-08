@@ -1,0 +1,10 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+	<div class="hero-unit">
+		{% if title %}<h1>{{ title }}</h1>{% endif %}
+		{% if description %}<p>{{ description }}</p>{% endif %}
+		{% if raw %}{{ raw|raw }}{% endif %}
+		<p><a class="btn btn-primary btn-large" href="{{ base }}">{% trans "Return to home &raquo;"%}</a></p>
+	</div>
+{% endblock %}

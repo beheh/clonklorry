@@ -11,7 +11,15 @@ class NotImplemented extends Presenter\Error {
 	}
 
 	protected function getMessage() {
-		return 'Not implemented';
+		return 'Not Implemented';
+	}
+
+	protected function getLocalizedMessage() {
+		return gettext('Not implemented');
+	}
+
+	protected function getLocalizedDescription() {
+		return gettext('The method you requested has not been implemented.');
 	}
 
 }

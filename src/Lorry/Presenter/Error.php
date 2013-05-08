@@ -15,8 +15,21 @@ class Error extends Presenter {
 		return 'Internal Server Error';
 	}
 
+	protected function getLocalizedMessage() {
+		return gettext('Internal server error');
+	}
+
+	protected function getLocalizedDescription() {
+		return gettext('The server encountered an internal error.');
+	}
+
 	public function get(Exception $exception) {
 		header('HTTP/1.1 '.$this->getCode().' '.$this->getMessage());
-		echo $this->getMessage();
+
+		$this->context['title'] = $this->getLocalizedMessage();
+		$this->context['description'] = $this->getLocalizedDescription();
+
+		$this->display('generic/hero.twig');
 	}
+
 }

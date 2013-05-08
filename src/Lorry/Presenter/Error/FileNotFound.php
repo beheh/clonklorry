@@ -14,4 +14,12 @@ class FileNotFound extends Presenter\Error {
 		return 'File Not Found';
 	}
 
+	protected function getLocalizedMessage() {
+		return gettext('File not found');
+	}
+
+	protected function getLocalizedDescription() {
+		return gettext('The file you requested could not be found.');
+	}
+
 }
