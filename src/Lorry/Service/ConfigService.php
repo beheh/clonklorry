@@ -13,7 +13,7 @@ class ConfigService {
 	public function __construct() {
 		$config = array();
 		if(!file_exists(self::FILE)) {
-			throw new Exception('config file not found (at '.FILE.')');
+			throw new Exception('config file not found (at '.self::FILE.')');
 		}
 		require self::FILE;
 		$this->config = $config;
