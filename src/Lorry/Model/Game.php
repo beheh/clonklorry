@@ -8,32 +8,32 @@ class Game extends Model {
 
 	public function __construct() {
 		parent::__construct('game', array(
-			'name' => 'varchar(16)',
-			'short' => 'varchar(16)'));
-	}
-
-	public function getName() {
-		return $this->getValue('name');
-	}
-
-	public function setName($name) {
-		return $this->setValue('name', $name);
-	}
-
-	public function getShort() {
-		return $this->getValue('short');
+			'short' => 'varchar(16)',
+			'title' => 'varchar(16)'));
 	}
 
 	public function setShort($short) {
 		return $this->setValue('short', $short);
 	}
 
-	public function byShort($name) {
-		return $this->byValue('short', $name);
+	public function byShort($short) {
+		return $this->byValue('short', $short);
+	}
+
+	public function getShort() {
+		return $this->getValue('short');
+	}
+
+	public function setTitle($title) {
+		return $this->setValue('title', $title);
+	}
+
+	public function getTitle() {
+		return $this->getValue('title');
 	}
 
 	public function __toString() {
-		return $this->getName().'';
+		return $this->getTitle() . '';
 	}
 
 }

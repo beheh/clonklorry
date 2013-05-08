@@ -8,26 +8,41 @@ class Addon extends Model {
 
 	public function __construct() {
 		parent::__construct('addon', array(
-			'name' => 'string',
+			'short' => 'string',
 			'title' => 'string',
-			'short' => 'string'));
+			'game' => 'int'));
 	}
 
-	public function getName() {
-		return $this->getValue('name');
+	public function setShort($short) {
+		return $this->setValue('short', $short);
+	}
+
+	public function byShort($short) {
+		return $this->byValue('short', $short);
+	}
+
+	public function getShort() {
+		return $this->getValue('short');
+	}
+
+	public function setTitle($title) {
+		return $this->setValue('title', $title);
 	}
 
 	public function getTitle() {
 		return $this->getValue('title');
 	}
 
-	public final function byName($name) {
-		return $this->byValue('name', $name);
+	public function setGame($game) {
+		return $this->setValue('game', $game);
 	}
 
-	public final function byShort($short) {
-		return $this->byValue('short', $short);
+	public function getGame() {
+		return $this->getValue('game');
+	}
+
+	public function __toString() {
+		return $this->getTitle() . '';
 	}
 
 }
-

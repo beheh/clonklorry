@@ -17,12 +17,12 @@ class Comment extends Model {
 		return $this->setValue('owner', $owner);
 	}
 
-	public function getOwner() {
-		return $this->getValue('owner');
-	}
-
 	public function byOwner($owner) {
 		return $this->byValue('owner', $owner);
+	}
+
+	public function getOwner() {
+		return $this->getValue('owner');
 	}
 
 	public function setContent($content) {
@@ -42,7 +42,7 @@ class Comment extends Model {
 	}
 
 	public function __toString() {
-		return $this->getUsername().'';
+		return $this->getUsername() . '';
 	}
 
 }
