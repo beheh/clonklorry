@@ -32,6 +32,10 @@ class Game extends Model {
 		return $this->getValue('title');
 	}
 
+	public function available() {
+		return $this->fetchAll();
+	}
+
 	public function __toString() {
 		return $this->getTitle() . '';
 	}

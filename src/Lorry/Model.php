@@ -89,6 +89,11 @@ abstract class Model implements ModelInterface {
 		return $this;
 	}
 
+	public final function any() {
+		$this->all();
+		return $this->byValues();
+	}
+
 	protected final function byValue($row, $value) {
 		return $this->byValues(array($row => $value));
 	}
@@ -97,7 +102,7 @@ abstract class Model implements ModelInterface {
 	 *
 	 * @param array $pairs
 	 */
-	protected final function byValues($pairs) {
+	protected final function byValues($pairs = array()) {
 		$this->ensureUnloaded();
 		foreach($pairs as $row => $value) {
 			$this->ensureRow($row);
@@ -112,10 +117,6 @@ abstract class Model implements ModelInterface {
 		}
 
 		if($this->multiple) {
-			if(empty($pairs)) {
-				return array();
-			}
-
 			$rows = $this->persistence->loadAll($this, $pairs, $this->order_row, $this->order_descending);
 
 			if(empty($rows)) {

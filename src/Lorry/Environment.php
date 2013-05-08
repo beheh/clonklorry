@@ -35,7 +35,7 @@ class Environment {
 
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
 		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
-		$twig->addGlobal('filename',  htmlspecialchars(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))));
+		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 		$twig->addGlobal('site_notice', gettext('Development version.'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');

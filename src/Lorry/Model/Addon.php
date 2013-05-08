@@ -37,12 +37,16 @@ class Addon extends Model {
 		return $this->setValue('game', $game);
 	}
 
+	public function byGame($game) {
+		return $this->byValue('game', $game);
+	}
+
 	public function getGame() {
 		return $this->getValue('game');
 	}
 
 	public function __toString() {
-		return $this->getTitle() . '';
+		return $this->getTitle().'';
 	}
 
 }

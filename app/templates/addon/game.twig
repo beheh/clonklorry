@@ -1,6 +1,18 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-<h1>{{addons_for_game}}</h1>
-
+<h1>{{ title }}</h1>
+{% if user_login %}
+	<a href="{{base}}/publish/create?for={{short}}" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
+	<hr>
+{% endif %}
+{% for addon in addons %}
+	<a href="{{ base }}/addons/{{short}}/{{addon.short}}">
+		<p class="addon">
+		{{ addon.title }}
+		</p>
+	</a>
+{% else %}
+	<p class="alert alert-warning">{% trans %}There are no addons available for this game.{% endtrans %}</p>
+{% endfor %}
 {% endblock %}

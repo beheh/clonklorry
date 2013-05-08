@@ -19,6 +19,19 @@
 				</div>
 			</div>
 			<div class="control-group">
+				<label class="control-label" for="title">{% trans %}Game title{% endtrans %}</label>
+				<div class="controls">
+					<select required{% if not games %} disabled{% endif %}>
+						<option value="">{% trans %}Choose a game&hellip;{% endtrans %}</option>
+						{% for game in games %}
+							<option value="{{ game.short }}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
+						{% else %}
+							<option>{% trans %}No game available{% endtrans %}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="control-group">
 				<div class="controls">
 					<button type="submit" class="btn btn-primary">{% trans "Create new addon" %}</button>
 				</div>

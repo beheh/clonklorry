@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-08 15:53+0100\n"
-"PO-Revision-Date: 2013-05-08 15:55+0100\n"
+"POT-Creation-Date: 2013-05-08 20:10+0100\n"
+"PO-Revision-Date: 2013-05-08 20:10+0100\n"
 "Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -449,6 +449,35 @@ msgstr "Alle anderen Geräte abmelden"
 msgid "Login services"
 msgstr "Anmeldedienste"
 
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:32
+msgid "Create addon"
+msgstr "Erweiterung anlegen"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:38
+msgid "You can change any of the values later."
+msgstr ""
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:44
+msgid "Full Title (without version)"
+msgstr "Vollständiger Titel (ohne Version)"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:56
+msgid "Abbreviation (if any)"
+msgstr "Abkürzung (falls vorhanden)"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:68
+msgid "Game title"
+msgstr "Spieltitel"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:92
+msgid "No games available"
+msgstr "Keine Spiele verfügbar"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:107
+#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:48
+msgid "Create new addon"
+msgstr "Neue Erweiterung anlegen"
+
 #: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:89
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:146
 msgid "Welcome back!"
@@ -516,10 +545,6 @@ msgstr "Deine Erweiterungen"
 msgid "You have not created an addon yet. Get started now!"
 msgstr "Du hast noch keine Erweiterung angelegt. Erstelle jetzt eine!"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:48
-msgid "Create new addon"
-msgstr "Neue Erweiterung anlegen"
-
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:32
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:78
 #: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:124
@@ -574,6 +599,10 @@ msgstr "Abmelden"
 #: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:77
 msgid "Register"
 msgstr "Registrieren"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:63
+msgid "There are no addons available for this game."
+msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:49
 msgid "Developed by %developer%"
@@ -816,9 +845,6 @@ msgstr "Zurück zur Startseite &raquo;"
 #~ msgid "Clonkforge"
 #~ msgstr "Clonkforge"
 
-#~ msgid "No debug information available."
-#~ msgstr "Keine Debug-Informationen verfügbar."
-
 #~ msgid "Access denied."
 #~ msgstr "Zugriff verweigert."
 
@@ -905,15 +931,6 @@ msgstr "Zurück zur Startseite &raquo;"
 
 #~ msgid "Visit the OpenClonk forums"
 #~ msgstr "OpenClonk-Forum"
-
-#~ msgid "Create addon"
-#~ msgstr "Erweiterung anlegen"
-
-#~ msgid "Full Title (without version)"
-#~ msgstr "Vollständiger Titel (ohne Version)"
-
-#~ msgid "Abbreviation (if any)"
-#~ msgstr "Abkürzung (falls vorhanden)"
 
 #~ msgid "Users"
 #~ msgstr "Benutzer"
@@ -1214,9 +1231,6 @@ msgstr "Zurück zur Startseite &raquo;"
 
 #~ msgid "Uh, something went wrong here. Sorry."
 #~ msgstr "Hm, da lief was schief. Sorry."
-
-#~ msgid "Pick a title:"
-#~ msgstr "Wähle einen Titel:"
 
 #~ msgid "Sign in"
 #~ msgstr "Einloggen"

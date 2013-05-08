@@ -2,7 +2,7 @@
 <html lang="{% trans "en" %}">
 	<head lang="{% trans "en" %}">
 		<meta charset="utf-8">
-		<title>{{brand}}</title>
+		<title>{% if title %}{{title}}{% else %}{{brand}}{% endif %}</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="{{base}}/img/favicon.ico" type="image/x-icon">

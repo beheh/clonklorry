@@ -14,7 +14,18 @@ class Game extends Presenter {
 			throw new FileNotFoundException('game '.$game);
 		}
 
-		$this->context['addons_for_game'] = strtr(gettext('Addons for %game%'), array('%game%' => $game->getTitle()));
+		$this->context['title'] = strtr(gettext('Addons for %game%'), array('%game%' => $game->getTitle()));
+		$this->context['short'] = $game->getShort();
+
+		$addons = ModelFactory::build('Addon')->all()->byGame($game->getId());
+		$this->context['addons'] = array();
+		foreach($addons as $addon) {
+			$this->context['addons'][] = array(
+				'title' => $addon->getTitle(),
+				'short' => $addon->getShort()
+			);
+		}
+
 
 		$this->display('addon/game.twig');
 	}

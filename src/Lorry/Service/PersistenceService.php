@@ -44,7 +44,10 @@ class PersistenceService {
 		$parameters = '';
 		$values = array();
 		foreach($pairs as $row => $value) {
-			if(!empty($values)) {
+			if(empty($values)) {
+				$parameters .= ' WHERE ';
+			}
+			else {
 				$parameters .= ' AND ';
 			}
 			$parameters .= '`'.$row.'` = :'.$row;
@@ -53,7 +56,7 @@ class PersistenceService {
 
 		$order = $descending ? 'DESC' : 'ASC';
 
-		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE '.$parameters.' ORDER BY `'.$orderby.'` '.$order);
+		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' ORDER BY `'.$orderby.'` '.$order);
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			throw new Exception(print_r($statement->errorInfo(), true));
@@ -69,14 +72,17 @@ class PersistenceService {
 		$parameters = '';
 		$values = array();
 		foreach($pairs as $row => $value) {
-			if(!empty($values)) {
+			if(empty($values)) {
+				$parameters .= ' WHERE ';
+			}
+			else {
 				$parameters .= ' AND ';
 			}
 			$parameters .= '`'.$row.'` = :'.$row;
 			$values[':'.$row] = $value;
 		}
 
-		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'` WHERE '.$parameters.' LIMIT 1');
+		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' LIMIT 1');
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			throw new Exception(print_r($statement->errorInfo(), true));
