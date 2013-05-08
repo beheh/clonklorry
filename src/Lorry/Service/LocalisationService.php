@@ -35,14 +35,6 @@ class LocalisationService {
 		}
 
 		$available = $this->getAvailableLanguages();
-		if(isset($_COOKIE['lorry_language'])) {
-			$language = $_COOKIE['lorry_language'];
-			if($this->setDisplayLanguage($language)) {
-				return $language;
-			} else {
-				setcookie('lorry_language', '', 0, '/');
-			}
-		}
 
 		if($this->session->authenticated()) {
 			$language = $this->session->getUser()->getLanguage();
@@ -51,13 +43,27 @@ class LocalisationService {
 			}
 		}
 
-		if(function_exists('http_negotiate_language($available)')) {
+		if(isset($_COOKIE['lorry_language'])) {
+			$language = $_COOKIE['lorry_language'];
+			if($this->setDisplayLanguage($language)) {
+				return $language;
+			} else {
+				$this->resetDisplayLanguage();
+			}
+		}
+
+		if(function_exists('http_negotiate_language')) {
 			$language = http_negotiate_language($available);
 		} else {
 			$language = $available[0];
 		}
 		$this->setDisplayLanguage($language);
 		return $this->display_language;
+	}
+
+	public final function resetDisplayLanguage() {
+		setcookie('lorry_language', '', 0, '/');
+		return true;
 	}
 
 	public final function setDisplayLanguage($language) {
@@ -71,10 +77,7 @@ class LocalisationService {
 		return false;
 	}
 
-	/**
-	 *
-	 */
-	public function localize() {
+	public final function localize() {
 		$requested = $this->getDisplayLanguage();
 		header('Content-Language: '.$requested);
 
@@ -90,7 +93,7 @@ class LocalisationService {
 
 	const FORMAT_DATETIME = 1;
 
-	public function getFormat($format) {
+	public final function getFormat($format) {
 		switch($format) {
 			case self::FORMAT_DATETIME:
 				return gettext('d-m-Y H:i');
@@ -98,7 +101,7 @@ class LocalisationService {
 		}
 	}
 
-	public function namedMonth($month) {
+	public final function namedMonth($month) {
 		switch($month) {
 			case 1:
 				return gettext('January');
@@ -127,7 +130,7 @@ class LocalisationService {
 		}
 	}
 
-	public function countedNumber($number) {
+	public final function countedNumber($number) {
 		switch($number) {
 			case 1:
 				return gettext('1st');
