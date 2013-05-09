@@ -15,7 +15,7 @@
 				</ul>
 				<ul class="nav pull-right">
 				{% if user_login %}
-					<li{% if path.0 == "user" and path.1|lower == user_login|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
+					<li{% if path.0 == "users" and path.1|lower == user_name|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
 					<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
 					<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
 				{% else %}
