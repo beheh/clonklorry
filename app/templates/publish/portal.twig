@@ -9,8 +9,8 @@
 		<hr class="visible-phone">
 		<h2>{% trans %}Create{% endtrans %}</h2>
 		<h4>{% trans %}Addon{% endtrans %}</h4>
-		<!--<p class="alert alert-success">{% trans %}You can change any of the values later.{% endtrans %}</p>!-->
-		<form method="post" action="" class="form-horizontal">
+		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
+		<form method="post" action="{{filename}}" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="game">{% trans %}Game{% endtrans %}</label>
 				<div class="controls">
@@ -30,15 +30,9 @@
 					<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %}>
 				</div>
 			</div>
-			<!--<div class="control-group">
-				<label class="control-label" for="short">{% trans %}Abbreviation{% endtrans %}</label>
-				<div class="controls">
-					<input type="text" name="short" id="short" value="{{short}}" maxlength="6">
-				</div>
-			</div>!-->
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary">{% trans "Create new addon" %}</button>
+					<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
 				</div>
 			</div>
 		</form>
