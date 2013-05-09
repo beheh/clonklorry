@@ -11,6 +11,7 @@ class Portal extends Presenter {
 
 	public function get() {
 		if($this->session->authenticated()) {
+			$this->security->requireLogin();
 
 			$games = ModelFactory::build('Game')->any();
 

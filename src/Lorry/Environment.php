@@ -48,6 +48,8 @@ class Environment {
 			$twig->addGlobal('user_login', true);
 			$twig->addGlobal('user_name', $user->getUsername());
 			$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
+			$twig->addGlobal('user_administrator', $user->isAdministrator());
+			$twig->addGlobal('user_moderator', $user->isModerator());
 		}
 
 		$security = new SecurityService();
@@ -73,6 +75,8 @@ class Environment {
 			'/publish/:alpha/:version' => 'Publish\Release',
 			'/users' => 'User\Table',
 			'/users/:alpha' => 'User\Profile',
+			'/admin' => 'Manage\Administration',
+			'/moderate' => 'Manage\Moderation',
 			'/register' => 'Account\Register',
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',

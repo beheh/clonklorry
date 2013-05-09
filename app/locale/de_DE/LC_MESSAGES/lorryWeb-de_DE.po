@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2013-05-09 18:35+0100\n"
-"PO-Revision-Date: 2013-05-09 18:36+0100\n"
+"POT-Creation-Date: 2013-05-09 19:04+0100\n"
+"PO-Revision-Date: 2013-05-09 19:05+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -47,35 +47,35 @@ msgstr "Passwort ist falsch."
 msgid "Username is unknown."
 msgstr "Benutzername ist unbekannt."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:46
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:47
 msgid "Invalid Clonk Forge profile."
 msgstr "Ungültiges Clonk Forge-Profil."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:61
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:62
 msgid "Invalid GitHub name."
 msgstr "Ungültiger GitHub-Name."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:71
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:72
 msgid "Your linked profiles were changed."
 msgstr "Deine verknüpften Profile wurden geändert."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:99
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:100
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:101
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:102
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:105
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:106
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:109
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:110
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:114
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:115
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -109,7 +109,7 @@ msgstr "Nicht implementiert"
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Publish/Portal.php:48
+#: C:\xampp\htdocs\lorry\src/Lorry/Presenter/Publish/Portal.php:49
 msgid "Invalid game."
 msgstr "Ungültiges Spiel."
 
@@ -308,7 +308,7 @@ msgid "idea &amp; development"
 msgstr "Idee & Entwicklung"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:26
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:92
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:119
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -664,6 +664,11 @@ msgstr "OpenID URL"
 msgid "Confirm"
 msgstr "Bestätigen"
 
+#: C:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:25
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:92
+msgid "Administration"
+msgstr "Administration"
+
 #: C:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:32
 #: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:67
 #: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:32
@@ -682,7 +687,7 @@ msgstr "Du hast noch keine Erweiterung angelegt. Lege jetzt eine an."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:25
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:80
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:124
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:151
 #: C:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:49
 msgid "Login"
 msgstr "Anmelden"
@@ -719,19 +724,27 @@ msgstr ""
 "besucht?"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/54/1a/6094ab55780455bbe13277967c43.php:32
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:147
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:50
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:148
 msgid "Addons"
 msgstr "Erweiterungen"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/5e/53/36570a387c19c91a4902ea26d4ee.php:32
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:44
 msgid "Users"
 msgstr "Benutzer"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:102
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:79
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:25
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:96
+msgid "Moderation"
+msgstr "Moderation"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:129
 msgid "Logout"
 msgstr "Abmelden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:114
+#: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:141
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:25
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:79
 msgid "Register"
@@ -811,6 +824,26 @@ msgstr ""
 msgid "There are no addons available for this game."
 msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
 
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:40
+msgid "Overview"
+msgstr "Übersicht"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:54
+msgid "Awaiting approval"
+msgstr "Warten auf Freischaltung"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:61
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:65
+msgid "Queue"
+msgstr "Warteschlange"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:70
+msgid "Completed"
+msgstr "Abgeschlossen"
+
 #: C:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:41
 msgid "Create"
 msgstr "Erstellen"
@@ -841,7 +874,7 @@ msgstr "Unveröffentlicht"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:141
 msgid "You have not created a new addon yet."
-msgstr "Du hast noch keine neue Erweiterung erstellt."
+msgstr "Du hast noch keine neue Erweiterung angelegt."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:145
 msgid "Released"
@@ -908,11 +941,10 @@ msgid "This user is banned."
 msgstr "Dieser Benutzer ist gebannt."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:59
-#, fuzzy
 msgid "Privilegien"
 msgstr "Privilegien"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:65
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:66
 msgid "This user is administrator."
 msgstr "Dieser Benutzer ist Administrator."
 
@@ -920,42 +952,37 @@ msgstr "Dieser Benutzer ist Administrator."
 msgid "This user is moderator."
 msgstr "Dieser Benutzer ist Moderator."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:80
-#, fuzzy
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:81
 msgid "Information"
-msgstr "Moderation"
+msgstr "Information"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:95
-msgid "Moderation"
-msgstr "Moderation"
-
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:119
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:120
 msgid "Profiles"
 msgstr "Profile"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:126
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:127
 #, fuzzy, php-format
 msgid "%username% on the Clonk Forge"
 msgstr "%username% auf dem Clonk Forge"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:132
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:133
 #, fuzzy, php-format
 msgid "%username% on GitHub"
 msgstr "%username% auf GitHub"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:143
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:144
 msgid "Activity"
 msgstr "Aktivität"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:174
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:175
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:180
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:181
 msgid "Comments"
 msgstr "Kommentare"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:216
+#: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:217
 msgid "This user has not commented yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
@@ -1180,17 +1207,11 @@ msgstr "Zurück zur Startseite &raquo;"
 #~ msgid "All addons"
 #~ msgstr "Alle Erweiterungen"
 
-#~ msgid "Contact"
-#~ msgstr "Kontakt"
-
 #~ msgid "Nothing else to say."
 #~ msgstr "Das war's."
 
 #~ msgid "Uh, something went wrong there. Sorry."
 #~ msgstr "Hm, da ist was schiefgelaufen. Sorry."
-
-#~ msgid "Administration"
-#~ msgstr "Administration"
 
 #~ msgid "Basic"
 #~ msgstr "Allgemein"

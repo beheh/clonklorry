@@ -8,6 +8,7 @@ class Settings extends Presenter {
 
 	public function get() {
 		$this->security->requireLogin();
+		
 		$user = $this->session->getUser();
 
 		$this->context['username'] = $user->getUsername();
