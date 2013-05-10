@@ -11,6 +11,9 @@ use Lorry\Service\StyleService;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\NotImplementedException;
+use Twig_Loader_Filesystem;
+use Twig_Environment;
+
 
 class Environment {
 
@@ -28,8 +31,8 @@ class Environment {
 		$localisation->setSessionService($session);
 		$localisation->localize();
 
-		$loader = new \Twig_Loader_Filesystem('../app/templates');
-		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
+		$loader = new Twig_Loader_Filesystem('../app/templates');
+		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
