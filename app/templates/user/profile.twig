@@ -26,9 +26,9 @@
 			<a href="" class="btn">{% trans %}Edit user{% endtrans %}</a>
 			<a href="#ban" data-toggle="collapse" data-target="#collapse-ban" class="btn btn-danger">{% trans %}Ban user{% endtrans %}</a>
 		</p>
-		<div id="collapse-ban" class="collapse">
+		<div id="collapse-ban" class="collapse{% if alerts.ban %} in{% endif %}">
 			<h4 id="ban">{% trans %}Ban user{% endtrans %}</h4>
-		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
+			{% include 'functions/alert.twig' with {'selector' : 'ban'} %}
 			<form method="post" action="{{filename}}?ban" class="form-horizontal">
 				<div class="control-group">
 					<label class="control-label" for="reason">{% trans "Reason" %}</label>
@@ -82,14 +82,14 @@
 		{% if comments %}
 				<table>
 		{% for comment in comments %}
-						<tr class="comment">
-							<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
-							<td>{{ comment.content }}</td>
-						</tr>
+					<tr class="comment">
+						<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
+						<td>{{ comment.content }}</td>
+					</tr>
 		{% endfor %}
-					</table>
+				</table>
 		{% else %}
-					<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
+				<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
 		{% endif %}
 				</div>
 			</div>
