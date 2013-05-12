@@ -10,7 +10,8 @@ class Register extends Presenter {
 		if($this->session->authenticated()) {
 			return $this->redirect('/');
 		}
-		$this->display('account/register.twig', $this->context);
+		
+		$this->display('account/register.twig');
 	}
 
 	public function post() {

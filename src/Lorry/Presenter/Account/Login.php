@@ -20,7 +20,7 @@ class Login extends Presenter {
 			$this->context['email_visible'] = true;
 		}
 
-		$this->display('account/login.twig', $this->context);
+		$this->display('account/login.twig');
 	}
 
 	public function post() {
