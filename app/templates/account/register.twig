@@ -9,11 +9,11 @@
 		{% include 'functions/alert.twig' with {'selector' : 'register'} %}
 		<form class="form-register" method="post">
 			<label for="username"></label>
-			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z_]+" title="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 letters long.{% endtrans %}" {% if username %} value="{{username}}"{% else %}autofocus{% endif %} required>
+			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z_]+" title="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 letters long.{% endtrans %}" {% if username %} value="{{username}}"{% endif %}{% if username_invalid or not username %}autofocus{% endif %} required>
 			<label for="email"></label>
-			<input type="email" class="input-block-level" name="email"  id="email" placeholder="{% trans "Email address" %}" title="{% trans %}We require your email address so that we can verify you if you should forget your login details.{% endtrans %}" {% if email%} value="{{email}}"{% endif %} required>
+			<input type="email" class="input-block-level" name="email" id="email" placeholder="{% trans "Email address" %}" title="{% trans %}We require your email address so that we can verify you if you should forget your login details.{% endtrans %}" {% if email%} value="{{email}}"{% endif %} required>
 			<label for="password"></label>
-			<input type="password" class="input-block-level" name="password"  id="password" placeholder="{% trans "Password" %}" title="{% trans %}You password is stored securely. We are unable to send you this password if you should forget it.{% endtrans %}" required>
+			<input type="password" class="input-block-level" name="password" id="password" placeholder="{% trans "Password" %}" title="{% trans %}You password is stored securely. We are unable to send you this password if you should forget it.{% endtrans %}" required>
 			<label for="password-repeat"></label>
 			<input type="password" class="input-block-level" name="password-repeat" id="password-repeat" placeholder="{%trans "Confirm password" %}" title="{% trans %}Please repeat your password to ensure you have spellt it correctly.{% endtrans %}" required>
 			<button class="btn btn-large btn-primary" type="submit">{% trans "Register" %}</button>

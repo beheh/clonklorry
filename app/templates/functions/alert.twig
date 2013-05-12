@@ -2,6 +2,6 @@
 {% if alert.message %}
 	{% if alert.type %}{% set alert = alert|merge({'type':' alert-' ~ alert.type}) %}{%endif%}
 	<p class="alert{{alert.type}}">
-		{{ alert.message }}
+		{{ alert.message|raw }}
 	</p>
 {% endif %}
