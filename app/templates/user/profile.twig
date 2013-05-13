@@ -17,25 +17,6 @@
 		{% elseif moderator %}
 		<p class="alert alert-success">{% trans %}This user is moderator.{% endtrans %}</p>
 		{% endif %}
-<<<<<<< HEAD
-		<h4>{% trans %}Information{% endtrans %}</h4>
-		<p>{% trans %}Username{% endtrans %} {{username}}.</p>
-
-		{% if __administrator or (__moderator and moderator == false) %}
-			{% if not self %}
-				<h2>{% trans "Moderation" %}</h2>
-					<div id="moderate">
-						<p>
-							<a href="#" data-toggle="collapse" data-target="#support" data-parent="#moderate" class="btn btn-success">Support</a>
-							<a href="#" data-toggle="collapse" data-target="#ban" data-parent="#moderate" class="btn btn-danger">Ban</a>
-						</p>
-						<div id="support" class="collapse">
-							<h2>Support</h2>
-						</div>
-						<div id="ban" class="collapse">
-							<h2>Ban</h2>
-						</div>
-=======
 		{% endif %}
 		<h4 id="information">{% trans %}Information{% endtrans %}</h4>
 		<p>Benutzername: {{username}}.</p>
@@ -64,7 +45,6 @@
 							<option value="1w">{% trans %}One Week{% endtrans %}</option>
 							<option value="infinite">{% trans %}Infinitely{% endtrans %}</option>
 						</select>
->>>>>>> f0221f3b9d60420ddb15ee70ce8a6d6b759c6304
 					</div>
 				</div>
 				<div class="control-group">
