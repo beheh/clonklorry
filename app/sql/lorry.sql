@@ -33,9 +33,10 @@ CREATE TABLE `comment` (
 
 CREATE TABLE `addon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `owner` int(11) NOT NULL,
   `short` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `game` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `short` (`short`)
+  UNIQUE KEY `short_game` (`short`,`game`)r
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

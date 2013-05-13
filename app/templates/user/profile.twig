@@ -72,25 +72,25 @@
 		{% if addons %}
 		<ul>
 		{% for addon in addons %}
-				<li>{{ addon }}</li>
+				<li><a href="{{ addon.url }}">{{ addon.title }}</a></li>
 		{% endfor %}
-				</ul>
+		</ul>
 		{% else %}
-				<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
+		<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
 		{% endif %}
-				<h4>{% trans %}Comments{% endtrans %}</h4>
+		<h4>{% trans %}Comments{% endtrans %}</h4>
 		{% if comments %}
-				<table>
+		<table>
 		{% for comment in comments %}
-					<tr class="comment">
-						<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
-						<td>{{ comment.content }}</td>
-					</tr>
+			<tr class="comment">
+				<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
+				<td>{{ comment.content }}</td>
+			</tr>
 		{% endfor %}
-				</table>
+		</table>
 		{% else %}
-				<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
+		<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
 		{% endif %}
-				</div>
-			</div>
+	</div>
+</div>
 {% endblock %}

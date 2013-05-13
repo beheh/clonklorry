@@ -22,16 +22,6 @@ class Profile extends Presenter {
 		$this->context['administrator'] = $user->isAdministrator();
 		$this->context['moderator'] = $user->isModerator();
 
-		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
-		$this->context['comments'] = array();
-		foreach($comments as $comment) {
-			$usercomment = array();
-			$usercomment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $comment->getTimestamp());
-			$usercomment['content'] = $comment->getContent();
-			$usercomment['url'] = $this->config->get('base');
-			$this->context['comments'][] = $usercomment;
-		}
-
 		$this->context['profiles'] = array();
 		if($user->getClonkforge()) {
 			$this->context['profiles'][] = array(
@@ -44,6 +34,29 @@ class Profile extends Presenter {
 				'platform' => gettext('GitHub'),
 				'username' => $user->getGithub(),
 				'url' => sprintf($this->config->get('github'), urlencode($user->getGithub())));
+		}
+
+		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
+		$this->context['addons'] = array();
+		foreach($addons as $addon) {
+			$user_addon = array();
+			$user_addon['title'] = $addon->getTitle();
+			$game = ModelFactory::build('Game')->byId($addon->getGame());
+			if($game) {
+				$user_addon['url'] = $this->config->get('base').'/addons/'.$game->getShort().'/'.$addon->getShort();
+			}
+			$this->context['addons'][] = $user_addon;
+		}
+
+
+		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
+		$this->context['comments'] = array();
+		foreach($comments as $comment) {
+			$user_comment = array();
+			$user_comment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $comment->getTimestamp());
+			$user_comment['content'] = $comment->getContent();
+			$user_comment['url'] = $this->config->get('base').'/comments/'.$comment->getId();
+			$this->context['comments'][] = $user_comment;
 		}
 
 		$this->display('user/profile.twig');

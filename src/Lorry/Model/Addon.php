@@ -8,9 +8,22 @@ class Addon extends Model {
 
 	public function __construct() {
 		parent::__construct('addon', array(
+			'owner' => 'string',
 			'short' => 'string',
 			'title' => 'string',
 			'game' => 'int'));
+	}
+
+	public function setOwner($owner) {
+		return $this->setValue('owner', $owner);
+	}
+
+	public function byOwner($owner) {
+		return $this->byValue('owner', $owner);
+	}
+
+	public function getOwner() {
+		return $this->getValue('owner');
 	}
 
 	public function setShort($short) {
