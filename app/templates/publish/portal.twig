@@ -10,7 +10,7 @@
 		<h2>{% trans %}Create{% endtrans %}</h2>
 		<h4>{% trans %}Addon{% endtrans %}</h4>
 		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
-		<form method="post" action="{{filename}}" class="form-horizontal">
+		<form method="post" action="{{filename}}" id="form-publish" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="game">{% trans %}Game{% endtrans %}</label>
 				<div class="controls">
@@ -46,4 +46,17 @@
 		<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+
+$(document).ready(function() {
+	$('#form-publish select').each(function() {
+		$(this).addClass('noerror')
+		var require = function() {$(this).removeClass('noerror');};
+		$(this).keydown(require);
+		$(this).blur(require);
+	});
+});
 {% endblock %}

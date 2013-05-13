@@ -97,7 +97,7 @@
 
 		<h4 id="password">{% trans "Password" %}</h4>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
-			<form method="post" action="{{filename}}?change-password" class="form-horizontal">
+			<form method="post" id="form-password" action="{{filename}}?change-password" class="form-horizontal">
 				{% if password_exists %}
 				<div class="control-group">
 					<label class="control-label" for="password-old">{% trans "Old password" %}</label>
@@ -142,6 +142,13 @@
 {{ parent() }}
 
 $(document).ready(function() {
+	$('#form-password input').each(function() {
+		$(this).addClass('noerror')
+		var require = function() {$(this).removeClass('noerror');};
+		$(this).keypress(require);
+		$(this).blur(require);
+	});
+
 	$('#language-setting').change(function() {
 		$(this).closest('form').submit();
 	});
