@@ -11,7 +11,7 @@
 		<p class="alert alert-error">{% trans %}This user is banned.{% endtrans %}</p>
 		{% endif %}
 		{% if administrator or moderator %}
-		<h4 id="privileges">{% trans %}Privilegien{% endtrans %}</h4>
+		<h4 id="privileges">{% trans %}Privileges{% endtrans %}</h4>
 		{% if administrator %}
 		<p class="alert alert-success">{% trans %}This user is administrator.{% endtrans %}</p>
 		{% elseif moderator %}
@@ -59,8 +59,8 @@
 		<div>
 			<h4>{% trans %}Profiles{% endtrans %}</h4>
 			<ul>
-				<li><a href="{{clonkforge}}">{% trans %}{{ username }} on the Clonk Forge{% endtrans %}</a></li>
-				<li><a href="{{github}}">{% trans %}{{ username }} on GitHub{% endtrans %}</a></li>
+				<li><a href="{{clonkforge}}">{% trans %}username on the Clonk Forge{% endtrans %}</a></li>
+				<li><a href="{{github}}">{% trans %}username on GitHub{% endtrans %}</a></li>
 			</ul>
 		</div>
 		{% endif %}
