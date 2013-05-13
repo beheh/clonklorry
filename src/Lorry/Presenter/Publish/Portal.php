@@ -12,6 +12,7 @@ class Portal extends Presenter {
 	public function get() {
 		if($this->session->authenticated()) {
 			$this->security->requireLogin();
+			$user = $this->session->getUser();
 
 			$games = ModelFactory::build('Game')->any();
 
@@ -32,6 +33,18 @@ class Portal extends Presenter {
 
 			if(isset($_GET['for'])) {
 				$this->context['focus'] = 'title';
+			}
+
+			$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
+			$this->context['addons_released'] = array();
+			foreach($addons as $addon) {
+				$user_addon = array();
+				$user_addon['title'] = $addon->getTitle();
+				$game = ModelFactory::build('Game')->byId($addon->getGame());
+				if($game) {
+					$user_addon['url'] = $this->config->get('base').'/addons/'.$game->getShort().'/'.$addon->getShort();
+				}
+				$this->context['addons_released'][] = $user_addon;
 			}
 
 			$this->display('publish/portal.twig');

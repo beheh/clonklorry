@@ -43,7 +43,15 @@
 		<h4>{% trans %}Unreleased{% endtrans %}</h4>
 		<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
 		<h4>{% trans %}Released{% endtrans %}</h4>
+		{% if addons_released %}
+		<ul>
+		{% for addon in addons_released %}
+				<li><a href="{{ addon.url }}">{{ addon.title }}</a></li>
+		{% endfor %}
+		</ul>
+		{% else %}
 		<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
+		{% endif %}
 	</div>
 </div>
 {% endblock %}
@@ -52,7 +60,7 @@
 {{ parent() }}
 
 $(document).ready(function() {
-	$('#form-publish select').each(function() {
+	$('#form-publish input, #form-publish select').each(function() {
 		$(this).addClass('noerror')
 		var require = function() {$(this).removeClass('noerror');};
 		$(this).keydown(require);
