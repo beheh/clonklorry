@@ -17,24 +17,74 @@ class User extends Model {
 			'language' => 'varchar(5)'));
 	}
 
-	public function getUsername() {
-		return $this->getValue('username');
-	}
+	const USERNAME_LENGTH_MIN = 3;
+	const USERNAME_LENGTH_MAX = 16;
+	const USERNAME_OK = 1;
+	const USERNAME_TOO_SHORT = 2;
+	const USERNAME_TOO_LONG = 3;
 
 	public function setUsername($username) {
-		return $this->setValue('username', $username);
+		if(strlen($username) < self::USERNAME_LENGTH_MIN) {
+			return self::USERNAME_TOO_SHORT;
+		}
+		if(strlen($username) > self::USERNAME_LENGTH_MAX) {
+			return self::USERNAME_TOO_LONG;
+		}
+		return $this->setValue('username', $username) && self::USERNAME_OK;
 	}
 
 	public final function byUsername($username) {
 		return $this->byValue('username', $username);
 	}
 
-	public function getEmail() {
-		return $this->getValue('email');
+	public function getUsername() {
+		return $this->getValue('username');
 	}
 
+	const PASSWORD_LENGTH_MIN = 8;
+	const PASSWORD_LENGTH_MAX = 256;
+	const PASSWORD_OK = 1;
+	const PASSWORD_TOO_SHORT = 2;
+	const PASSWORD_TOO_LONG = 3;
+
+	public final function setPassword($password) {
+		if(strlen($password) < self::PASSWORD_LENGTH_MIN) {
+			return self::PASSWORD_TOO_SHORT;
+		}
+		if(strlen($password) > self::PASSWORD_LENGTH_MAX) {
+			return self::PASSWORD_TOO_LONG;
+		}
+		if(!empty($password)) {
+			$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+		} else {
+			$hash = null;
+		}
+		return $this->setValue('password', $hash) && self::PASSWORD_OK;
+	}
+
+	public final function hasPassword() {
+		return $this->getValue('password') != null;
+	}
+
+	public final function matchPassword($password) {
+		if(empty($password))
+			return false;
+		return password_verify($password, $this->getValue('password')) === true;
+	}
+
+	const EMAIL_OK = 1;
+	const EMAIL_INVALID = 2;
+
 	public function setEmail($email) {
-		return $this->setValue('email', $email);
+		$email = filter_var($email, FILTER_VALIDATE_EMAIL);
+		if(!$email) {
+			return self::EMAIL_INVALID;
+		}
+		return $this->setValue('email', $email) && self::EMAIL_OK;
+	}
+
+	public function getEmail() {
+		return $this->getValue('email');
 	}
 
 	public final function byEmail($email) {
@@ -54,25 +104,6 @@ class User extends Model {
 		if(empty($secret))
 			return false;
 		return $this->match('secret', $secret);
-	}
-
-	public final function setPassword($password) {
-		if(!empty($password)) {
-			$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
-		} else {
-			$hash = null;
-		}
-		return $this->setValue('password', $hash);
-	}
-
-	public final function hasPassword() {
-		return $this->getValue('password') != null;
-	}
-
-	public final function matchPassword($password) {
-		if(empty($password))
-			return false;
-		return password_verify($password, $this->getValue('password')) === true;
 	}
 
 	public final function isAdministrator() {

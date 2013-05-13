@@ -19,6 +19,13 @@ class Login extends Presenter {
 		if(isset($_GET['by-email']) || isset($_COOKIE['lorry_login_email'])) {
 			$this->context['email_visible'] = true;
 		}
+		if(isset($_GET['registered'])) {
+			$this->context['username'] = $_GET['registered'];
+			if($_GET['registered']) {
+				$this->context['username_exists'] = true;
+			}
+			$this->success('login', gettext('Registration successful!'));
+		}
 
 		$this->display('account/login.twig');
 	}
@@ -36,7 +43,7 @@ class Login extends Presenter {
 			} else {
 				// email is unknown
 				$this->context['email'] = $email;
-				$this->error('email', gettext('Email address is unknown.'));
+				$this->error('email', gettext('Email address unknown.'));
 			}
 		} else if(isset($_GET['openid'])) {
 			// login with openid
@@ -62,11 +69,11 @@ class Login extends Presenter {
 					return;
 				} else {
 					// password is incorrect
-					$this->error('login', gettext('Password is wrong.'));
+					$this->error('login', gettext('Password wrong.'));
 				}
 			} else {
 				// user does not exist
-				$this->error('login', gettext('Username is unknown.'));
+				$this->error('login', gettext('Username unknown.'));
 			}
 		}
 		$this->get();

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-13 13:12+0100\n"
-"PO-Revision-Date: 2013-05-13 13:13+0100\n"
+"POT-Creation-Date: 2013-05-14 00:01+0100\n"
+"PO-Revision-Date: 2013-05-14 00:01+0100\n"
 "Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,56 +33,89 @@ msgstr "Interner Serverfehler"
 msgid "The server encountered an internal error."
 msgstr "Bei der Bearbeitung trat ein interner Serverfehler auf."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:39
-msgid "Email address is unknown."
-msgstr "E-Mail-Adresse ist unbekannt."
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:25
+msgid "Registration successful."
+msgstr "Registrierung erfolgreich."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:65
-msgid "Password is wrong."
-msgstr "Passwort ist falsch."
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:44
+msgid "Email address unknown."
+msgstr "E-Mail-Adresse unbekannt."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:69
-msgid "Username is unknown."
-msgstr "Benutzername ist unbekannt."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:32
-msgid "Username invalid."
-msgstr "Benutzername ungültig."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:36
-msgid "Email address is invalid."
-msgstr "E-Mail-Adresse ist ungültig."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:40
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:105
-msgid "Passwords do not match."
-msgstr "Passwörter stimmen nicht überein."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:46
-msgid "Invalid Clonk Forge profile."
-msgstr "Ungültiges Clonk Forge-Profil."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:61
-msgid "Invalid GitHub name."
-msgstr "Ungültiger GitHub-Name."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:71
-msgid "Your linked profiles were changed."
-msgstr "Deine verknüpften Profile wurden geändert."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:99
-msgid "Your password was changed."
-msgstr "Dein Passwort wurde geändert."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:101
-msgid "Your password was set."
-msgstr "Dein Passwort wurde gesetzt."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:109
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:70
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:110
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:114
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:74
+msgid "Username unknown."
+msgstr "Benutzername unbekannt."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:33
+msgid "Username already taken."
+msgstr "Benutzername bereits vergeben."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:39
+msgid "Username too short."
+msgstr "Benutzername zu kurz."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:42
+msgid "Username too long."
+msgstr "Benutzername zu lang."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:45
+msgid "Username invalid."
+msgstr "Benutzername ungültig."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:51
+msgid "Email address already used."
+msgstr "E-Mail-Adresse bereits verwendet."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:57
+msgid "Email address invalid."
+msgstr "E-Mail-Adresse ungültig."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:63
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:106
+msgid "Passwords do not match."
+msgstr "Passwörter stimmen nicht überein."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:69
+msgid "Password too short."
+msgstr "Passwort zu kurz."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:72
+msgid "Password too long."
+msgstr "Passwort zu lang."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:75
+msgid "Password invalid."
+msgstr "Passwort ungültig."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:86
+msgid "There was an error registering."
+msgstr "Fehler bei der Registrierung."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:47
+msgid "Invalid Clonk Forge profile."
+msgstr "Ungültiges Clonk Forge-Profil."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:62
+msgid "Invalid GitHub name."
+msgstr "Ungültiger GitHub-Name."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:72
+msgid "Your linked profiles were changed."
+msgstr "Deine verknüpften Profile wurden geändert."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:100
+msgid "Your password was changed."
+msgstr "Dein Passwort wurde geändert."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:102
+msgid "Your password was set."
+msgstr "Dein Passwort wurde gesetzt."
+
+#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:115
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -198,7 +231,7 @@ msgstr "%n%."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:25
 #: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:114
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:111
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:123
 msgid "About Lorry"
 msgstr "Über Lorry"
 
@@ -329,7 +362,7 @@ msgstr "Erscheinungsbild"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:55
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:49
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:46
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:49
 msgid "Username"
 msgstr "Benutzername"
 
@@ -363,7 +396,7 @@ msgstr "Kontaktdaten"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:140
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:121
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:59
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:65
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
@@ -423,7 +456,7 @@ msgstr "Sicherheit"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:248
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:63
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:70
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:78
 msgid "Password"
 msgstr "Passwort"
 
@@ -436,7 +469,7 @@ msgid "New password"
 msgstr "Neues Passwort"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:290
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:75
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:85
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
@@ -649,7 +682,7 @@ msgstr ""
 "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:108
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:117
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:129
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
@@ -817,8 +850,8 @@ msgid "Logout"
 msgstr "Abmelden"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:141
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:79
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:26
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:91
 msgid "Register"
 msgstr "Registrieren"
 
@@ -959,23 +992,53 @@ msgstr "Nach oben"
 msgid "About the project"
 msgstr "Über das Projekt"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:85
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:51
+msgid ""
+"Your username may contain letters, numbers and underscores and must be "
+"between 3 and 16 characters long."
+msgstr ""
+"Dein Benutzername kann Buchstaben, Zahlen und Unterstriche enthalten und "
+"muss zwischen 3 und 16 Zeichen lang sein."
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:67
+msgid ""
+"We require your email address so that we can verify you if you should forget "
+"your login details."
+msgstr ""
+"Wir benötigen deine E-Mail-Adresse damit wir dich verifizieren können, falls "
+"du deine Anmeldedaten vergisst."
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:80
+msgid ""
+"You password is stored securely. We require at least 8 characters for your "
+"security and are unable to send you this password if you should forget it."
+msgstr ""
+"Dein Passwort wird sicher gespeichert. Wir benötigen zu deiner Sicherheit "
+"mindestens 8 Zeichen und können dir dieses Passwort nicht zusenden falls du "
+"es vergessen solltest."
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:87
+msgid "Please repeat your password to ensure you have spellt it correctly."
+msgstr ""
+"Bitte wiederhole dein Passwort, um die richtige Schreibweise sicherzustellen."
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:97
 msgid "Already registered?"
 msgstr "Bereits registriert?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:92
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:104
 msgid "Alternatively use a login service:"
 msgstr "Alternativ nutze einen Anmeldedienst:"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:104
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:116
 msgid "What is this all about?"
 msgstr "Was ist das hier für eine Seite?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:123
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:135
 msgid "Why should I register?"
 msgstr "Warum sollte ich mich registrieren?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:127
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:139
 #, fuzzy
 msgid ""
 "After registering you can instantly upload your own extensions, comment and "
@@ -984,7 +1047,7 @@ msgstr ""
 "Nach deiner Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "und sie mit Lorry verfügbar machen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:131
+#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:143
 #, fuzzy
 msgid ""
 "You become part of a small and friendly community, enjoying the game and "
@@ -1142,6 +1205,9 @@ msgstr "Veröffentlichung planen"
 msgid "Return to home &raquo;"
 msgstr "Zurück zur Startseite &raquo;"
 
+#~ msgid "Password is wrong."
+#~ msgstr "Passwort ist falsch."
+
 #~ msgid "This is you."
 #~ msgstr "Das bist du."
 
@@ -1194,15 +1260,6 @@ msgstr "Zurück zur Startseite &raquo;"
 #~ msgid "You have been logged out."
 #~ msgstr "Du wurdest abgemeldet."
 
-#~ msgid "%s to short."
-#~ msgstr "%s zu kurz."
-
-#~ msgid "%s to long."
-#~ msgstr "%s zu lang."
-
-#~ msgid "%s already taken."
-#~ msgstr "%s bereits vergeben."
-
 #~ msgid "%s has already been registered."
 #~ msgstr "%s wurde bereits registriert."
 
@@ -1211,9 +1268,6 @@ msgstr "Zurück zur Startseite &raquo;"
 
 #~ msgid "Passwords don't match."
 #~ msgstr "Passwörter stimmen nicht überein."
-
-#~ msgid "Error registering."
-#~ msgstr "Fehler bei der Registrierung."
 
 #~ msgid "All other devices have been logged out."
 #~ msgstr "Alle anderen Geräte wurden abgemeldet."
@@ -1410,9 +1464,6 @@ msgstr "Zurück zur Startseite &raquo;"
 #~ msgid "Your password could not be set."
 #~ msgstr "Dein Passwort konnte nicht gesetzt werden."
 
-#~ msgid "New password too short."
-#~ msgstr "Neues Passwort zu kurz."
-
 #~ msgid "New password too simple."
 #~ msgstr "Neues Passwort zu einfach."
 
@@ -1422,9 +1473,6 @@ msgstr "Zurück zur Startseite &raquo;"
 #, fuzzy
 #~ msgid "%s too long."
 #~ msgstr "Benutzername nicht gefunden."
-
-#~ msgid "Password invalid."
-#~ msgstr "Passwort ungültig."
 
 #~ msgid "Learn all about Clonk&hellip;"
 #~ msgstr "Clonk kennenlernen&hellip;"
