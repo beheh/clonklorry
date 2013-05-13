@@ -9,20 +9,20 @@
 		{% include 'functions/alert.twig' with {'selector' : 'register'} %}
 		<form class="form-register" method="post">
 			<label for="username"></label>
-			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}" data-toggle="tooltip" title="first tooltip" {% if username%}value="{{username}}"{% else %}autofocus{% endif %} required>
+			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z_]+" title="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 letters long.{% endtrans %}" {% if username %} value="{{username}}"{% endif %}{% if username_invalid or not username %}autofocus{% endif %} required>
 			<label for="email"></label>
-			<input type="email" class="input-block-level" name="email"  id="email" placeholder="{% trans "Email address" %}"{% if email%} value="{{email}}"{% endif %} required>
+			<input type="email" class="input-block-level" name="email" id="email" placeholder="{% trans "Email address" %}" title="{% trans %}We require your email address so that we can verify you if you should forget your login details.{% endtrans %}" {% if email%} value="{{email}}"{% endif %} required>
 			<label for="password"></label>
-			<input type="password" class="input-block-level" name="password"  id="password" placeholder="{% trans "Password" %}" required>
+			<input type="password" class="input-block-level" name="password" id="password" placeholder="{% trans "Password" %}" title="{% trans %}You password is stored securely. We are unable to send you this password if you should forget it.{% endtrans %}" required>
 			<label for="password-repeat"></label>
-			<input type="password" class="input-block-level" name="password-repeat" id="password-repeat" placeholder="{%trans "Confirm password" %}" required>
+			<input type="password" class="input-block-level" name="password-repeat" id="password-repeat" placeholder="{%trans "Confirm password" %}" title="{% trans %}Please repeat your password to ensure you have spellt it correctly.{% endtrans %}" required>
 			<button class="btn btn-large btn-primary" type="submit">{% trans "Register" %}</button>
 			<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>
 		</form>
 		<hr>
 		<div class="social">
 			<h4>{% trans %}Alternatively use a login service:{% endtrans %}</h4>
-			{% include "functions/openid.twig "%}
+			{% include 'functions/openid.twig' %}
 		</div>
 	</div>
 	<div class="span8">
@@ -38,4 +38,23 @@
 		<p>{% trans %}You become part of a small and friendly community, enjoying the game and devoting their time to it.{% endtrans %}</p>
 	</div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+
+$(document).ready(function() {
+	var options = {placement:'bottom', trigger:'focus'};
+	$('.form-register input').each(function() {
+		$(this).tooltip(options);
+		$(this).addClass('noerror')
+		var require = function() {$(this).removeClass('noerror');};
+		$(this).keypress(require);
+		$(this).blur(require);
+	});
+	if($('#username').attr('autofocus')) {
+		// trigger the focus event for the tooltip
+		$('#username').focus();
+	}
+});
 {% endblock %}

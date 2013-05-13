@@ -22,4 +22,19 @@ class SecurityService {
 			throw new ForbiddenException();
 		}
 	}
+
+	public function requireModerator() {
+		$user = $this->session->getUser();
+		if(!$user || !$user->isModerator()) {
+			throw new ForbiddenException();
+		}
+	}
+
+	public function requireAdministrator() {
+		$user = $this->session->getUser();
+		if(!$user || !$user->isAdministrator()) {
+			throw new ForbiddenException();
+		}
+	}
+
 }

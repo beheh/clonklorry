@@ -26,12 +26,16 @@ abstract class Router {
 		return self::$matches;
 	}
 
+	public static function getPath() {
+		return isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
+	}
+
 	/**
 	 * Returns the presenter matching to the request.
 	 * @return \Lorry\Presenter
 	 */
 	public static function route() {
-		$path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
+		$path = self::getPath();
 
 		$tokens = array(
 			':string' => '([a-zA-Z]+)',

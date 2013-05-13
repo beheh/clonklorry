@@ -11,6 +11,9 @@ use Lorry\Service\StyleService;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\NotImplementedException;
+use Twig_Loader_Filesystem;
+use Twig_Environment;
+
 
 class Environment {
 
@@ -28,14 +31,16 @@ class Environment {
 		$localisation->setSessionService($session);
 		$localisation->localize();
 
-		$loader = new \Twig_Loader_Filesystem('../app/templates');
-		$twig = new \Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
+		$loader = new Twig_Loader_Filesystem('../app/templates');
+		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
 		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
+		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
+
 		$twig->addGlobal('site_notice', gettext('Development version.'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
@@ -46,6 +51,8 @@ class Environment {
 			$twig->addGlobal('user_login', true);
 			$twig->addGlobal('user_name', $user->getUsername());
 			$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
+			$twig->addGlobal('user_administrator', $user->isAdministrator());
+			$twig->addGlobal('user_moderator', $user->isModerator());
 		}
 
 		$security = new SecurityService();
@@ -71,6 +78,8 @@ class Environment {
 			'/publish/:alpha/:version' => 'Publish\Release',
 			'/users' => 'User\Table',
 			'/users/:alpha' => 'User\Profile',
+			'/admin' => 'Manage\Administration',
+			'/moderate' => 'Manage\Moderation',
 			'/register' => 'Account\Register',
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',

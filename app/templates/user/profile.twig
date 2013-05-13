@@ -7,14 +7,17 @@
 		<hr class="visible-phone">
 		<h2>{% trans %}User{% endtrans %}</h2>
 		{% if banned %}
-			<h4>{% trans %}Banned{% endtrans %}</h4>
-			<p class="alert alert-error">{% trans %}This user is banned.{% endtrans %}</p>
+		<h4 id="banned">{% trans %}Banned{% endtrans %}</h4>
+		<p class="alert alert-error">{% trans %}This user is banned.{% endtrans %}</p>
 		{% endif %}
 		{% if administrator or moderator %}
-			<h4>{% trans %}Privilegien{% endtrans %}</h4>
-			{% if administrator %}<p class="alert alert-success">{% trans %}This user is administrator.{% endtrans %}</p>{% endif %}
-			{% if moderator %}<p class="alert alert-success">{% trans %}This user is moderator.{% endtrans %}</p>{% endif %}
+		<h4 id="privileges">{% trans %}Privilegien{% endtrans %}</h4>
+		{% if administrator %}
+		<p class="alert alert-success">{% trans %}This user is administrator.{% endtrans %}</p>
+		{% elseif moderator %}
+		<p class="alert alert-success">{% trans %}This user is moderator.{% endtrans %}</p>
 		{% endif %}
+<<<<<<< HEAD
 		<h4>{% trans %}Information{% endtrans %}</h4>
 		<p>{% trans %}Username{% endtrans %} {{username}}.</p>
 
@@ -32,15 +35,54 @@
 						<div id="ban" class="collapse">
 							<h2>Ban</h2>
 						</div>
+=======
+		{% endif %}
+		<h4 id="information">{% trans %}Information{% endtrans %}</h4>
+		<p>Benutzername: {{username}}.</p>
+		{% if not self and user_administrator or (user_moderator and moderator == false) %}
+		<h4 id="moderate">{% trans %}Moderation{% endtrans %}</h4>
+		<p>
+			<a href="" class="btn">{% trans %}Edit user{% endtrans %}</a>
+			<a href="#ban" data-toggle="collapse" data-target="#collapse-ban" class="btn btn-danger">{% trans %}Ban user{% endtrans %}</a>
+		</p>
+		<div id="collapse-ban" class="collapse{% if alerts.ban %} in{% endif %}">
+			<h4 id="ban">{% trans %}Ban user{% endtrans %}</h4>
+			{% include 'functions/alert.twig' with {'selector' : 'ban'} %}
+			<form method="post" action="{{filename}}?ban" class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="reason">{% trans "Reason" %}</label>
+					<div class="controls">
+						<input type="text" name="reason" id="reason" value="{{ban_reason}}" required>
 					</div>
-			{% endif %}
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="duration">{% trans "Duration" %}</label>
+					<div class="controls">
+						<select name="duration" id="duration" required>
+							<option value="">{% trans %}Choose a duration&hellip;{% endtrans %}</option>
+							<option value="1d">{% trans %}One day{% endtrans %}</option>
+							<option value="1w">{% trans %}One Week{% endtrans %}</option>
+							<option value="infinite">{% trans %}Infinitely{% endtrans %}</option>
+						</select>
+>>>>>>> f0221f3b9d60420ddb15ee70ce8a6d6b759c6304
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-danger">{% trans %}Ban now{% endtrans %}</button>
+					</div>
+				</div>
+			</form>
+		</div>
 		{% endif %}
 		{% if profiles %}
+		<div>
 			<h4>{% trans %}Profiles{% endtrans %}</h4>
 			<ul>
-				<li><a href="{{clonkforge}}">{% trans %}1{{username}} on the Clonk Forge{% endtrans %}</a></li>
-				<li><a href="{{github}}">{% trans %}1{{username}} on GitHub{% endtrans %}</a></li>
+				<li><a href="{{clonkforge}}">{% trans %}{{ username }} on the Clonk Forge{% endtrans %}</a></li>
+				<li><a href="{{github}}">{% trans %}{{ username }} on GitHub{% endtrans %}</a></li>
 			</ul>
+		</div>
 		{% endif %}
 	</div>
 	<div class="span8">
@@ -50,25 +92,25 @@
 		{% if addons %}
 		<ul>
 		{% for addon in addons %}
-			<li>{{ addon }}</li>
+				<li>{{ addon }}</li>
 		{% endfor %}
-		</ul>
+				</ul>
 		{% else %}
-		<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
+				<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
 		{% endif %}
-		<h4>{% trans %}Comments{% endtrans %}</h4>
+				<h4>{% trans %}Comments{% endtrans %}</h4>
 		{% if comments %}
-		<table>
+				<table>
 		{% for comment in comments %}
-			<tr class="comment">
-				<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
-				<td>{{ comment.content }}</td>
-			</tr>
+					<tr class="comment">
+						<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
+						<td>{{ comment.content }}</td>
+					</tr>
 		{% endfor %}
-		</table>
+				</table>
 		{% else %}
-		<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
+				<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
 		{% endif %}
-	</div>
-</div>
+				</div>
+			</div>
 {% endblock %}
