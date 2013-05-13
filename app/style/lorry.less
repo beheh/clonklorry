@@ -29,12 +29,12 @@ input {
 #featured-front {
 	margin-top: 10px;
 	margin-right: 2px;
-}
 
-#featured-front .item img {
-	width: 768px;
-	height: 432px;
-	background-color: lightgray;
+	.item img {
+		width: 768px;
+		height: 432px;
+		background-color: lightgray;
+	}
 }
 
 @media (max-width: 1209px) {
@@ -123,7 +123,6 @@ a.hero-unit:hover {
 	color: red;
 }
 
-
 .addon  {
 	background-color: grey;
 	padding: 20px;
@@ -161,14 +160,14 @@ h2 + h4 {
 	}
 }
 
-.form-login, .form-register {
+#form-login, #form-register {
 	margin-top: 10px;
 	.checkbox {
 		margin-left: 1px;
 	}
 }
 
-.form-contact {
+#form-contact {
 	textarea {
 		width: 95%;
 		margin-left: 0;
@@ -190,20 +189,21 @@ h2 + h4 {
 	width: 100%;
 }
 
-.tooltip dl {
-	margin: 0;
-	paddin: 0;
-}
+.tooltip {
+	dl {
+	   margin: 0;
+	   paddin: 0;
+   }
 
-.tooltip dl dt {
-	float: left;
-}
+	dl dt {
+		float: left;
+	}
 
-.tooltip dl dd {
-	margin-left: 5em;
-	text-align: right;
+	dl dd {
+		margin-left: 5em;
+		text-align: right;
+	}
 }
-
 dl dd {
 	margin: 0px 0 10px 10px;
 }

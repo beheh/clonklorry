@@ -7,7 +7,7 @@
 <div class="row-fluid" id="register">
     <div class="span4">
 		{% include 'functions/alert.twig' with {'selector' : 'register'} %}
-		<form class="form-register" method="post">
+		<form id="form-register" method="post">
 			<label for="username"></label>
 			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z_]+" title="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 letters long.{% endtrans %}" {% if username %} value="{{username}}"{% endif %}{% if username_invalid or not username %}autofocus{% endif %} required>
 			<label for="email"></label>
@@ -45,7 +45,7 @@
 
 $(document).ready(function() {
 	var options = {placement:'bottom', trigger:'focus'};
-	$('.form-register input').each(function() {
+	$('#form-register input').each(function() {
 		$(this).tooltip(options);
 		$(this).addClass('noerror')
 		var require = function() {$(this).removeClass('noerror');};

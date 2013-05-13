@@ -9,7 +9,7 @@
 		<h2>{% trans %}We &hearts; feedback{% endtrans %}</h2>
 		<p>{% trans %}We here are all fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
 		<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
-		<form method="post" class="form-contact">
+		<form method="post" id="form-contact">
 			<textarea required></textarea>
 			<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 		</form>
@@ -32,4 +32,18 @@
 		{% endif %}
 		</div>
 	</div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+
+$(document).ready(function() {
+	var options = {placement:'bottom', trigger:'focus'};
+	$('#form-contact textarea').each(function() {
+		$(this).addClass('noerror')
+		var require = function() {$(this).removeClass('noerror');};
+		$(this).keypress(require);
+		$(this).blur(require);
+	});
+});
 {% endblock %}

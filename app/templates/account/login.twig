@@ -7,7 +7,7 @@
 <div class="row-fluid" id="login">
     <div class="span4">
 		{% include 'functions/alert.twig' with {'selector' : 'login'} %}
-		<form class="form-login" method="post" action="{{ filename }}">
+		<form id="form-login" method="post" action="{{ filename }}">
 			<label for="username"></label>
 			<input type="text" class="input-block-level" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
 			<label for="password"></label>
@@ -49,7 +49,7 @@
 {{ parent() }}
 
 $(document).ready(function() {
-	$('.form-login input').each(function() {
+	$('#form-login input').each(function() {
 		$(this).addClass('noerror')
 		var require = function() {$(this).removeClass('noerror');};
 		$(this).keypress(require);
