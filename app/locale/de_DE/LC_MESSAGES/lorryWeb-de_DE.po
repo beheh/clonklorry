@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-14 12:40+0100\n"
-"PO-Revision-Date: 2013-05-14 12:40+0100\n"
+"POT-Creation-Date: 2013-05-14 12:50+0100\n"
+"PO-Revision-Date: 2013-05-14 12:51+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -329,7 +329,7 @@ msgstr "Ressourcen"
 #: C:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:151
 #: C:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:155
 #: C:\xampp\htdocs\lorry\app\cache/twig/0a/a5/7d632a27286a73fa80ec464115ba.php:20
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:64
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:66
 #: C:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:25
 #: C:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:29
 msgid "en"
@@ -497,12 +497,11 @@ msgstr "Alle anderen Geräte abmelden"
 msgid "Login services"
 msgstr "Anmeldedienste"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:32
-#, fuzzy
-msgid "Welcome to the world of Clonk!"
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:25
+msgid "Welcome to Clonk!"
 msgstr "Willkommen bei Clonk!"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:36
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:38
 msgid ""
 "Clonk is a unique 2.5-dimensional game and often referred to as a mix of "
 "\"The Settlers\" and \"Lemmings\": The core difference is the open addon "
@@ -512,12 +511,12 @@ msgstr ""
 "„Die Siedler“ und „Lemmings“ bezeichnet: Der Kernunterschied ist das offene "
 "Erweiterungsformat, mit welchem das Spiel jede Form annehmen."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:43
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:45
 #: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:47
 msgid "Clonk Rage"
 msgstr "Clonk Rage"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:51
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:53
 msgid ""
 "The classic game with hundreds of community-built, high-quality addons. "
 "Magical wars, strategic shooters and futuristic settling: Clonk Rage has it "
@@ -527,7 +526,7 @@ msgstr ""
 "der Community. Magische Kriege, strategische Shooter und futuristisches "
 "Siedeln: das alles hat Clonk Rage."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:55
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:57
 msgid ""
 "Often the sheer selection is overwelming, so be sure to spread the word and "
 "vote for the addons you like."
@@ -535,21 +534,21 @@ msgstr ""
 "Oft ist die riesige Auswahl einfach überwältigend, erzähle daher anderen und "
 "stimme über die Erweiterungen ab, die dir gut gefallen."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:60
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:62
 msgid "Install Clonk Rage"
 msgstr "Clonk Rage installieren"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:66
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:94
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:68
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:96
 msgid "Visit the official site"
 msgstr "Offizielle Webseite"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:73
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:75
 #: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:57
 msgid "OpenClonk"
 msgstr "OpenClonk"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:81
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:83
 msgid ""
 "The opensource successor to the Clonk series, built by players and "
 "developers of the previous Clonk titles."
@@ -557,7 +556,7 @@ msgstr ""
 "Der quelloffene Nachfolger zur Clonk-Serie, entwickelt von Spieler und "
 "Entwicklern der vorherigen Clonk-Titel."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:85
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:87
 msgid ""
 "Although the addon selection is still limited, OpenClonk completely "
 "reimaginges a great part of the game and greatly refines the technology, now "
@@ -568,34 +567,34 @@ msgstr ""
 "Technologien: jetzt werden dreidimensionale Modelle innerhalb des Spiels "
 "unterstützt."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:90
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:92
 msgid "Install OpenClonk"
 msgstr "OpenClonk installieren"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:101
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:103
 msgid "&hellip;only just the beginning"
 msgstr "&hellip;alles nur der Anfang"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:105
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:107
 msgid ""
 "Clonk lives from its fans, with dedicated players creating high-quality "
 "addons."
 msgstr ""
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:109
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:111
 msgid ""
 "The series appeals to all ages alike and even though the Community originally"
 msgstr ""
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:113
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:115
 msgid "View the addons"
 msgstr "Betrachte die Erweiterungen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:122
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:124
 msgid "Create new content for Clonk"
 msgstr "Erschaffe neue Inhalte für Clonk"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:126
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:128
 msgid ""
 "The official game development of Clonk Rage is currently halted, therefore "
 "the community is creating an open source succesor - OpenClonk. Both games "
@@ -604,26 +603,26 @@ msgid ""
 "via Lorry, making it instantly available for any interested player."
 msgstr ""
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:133
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:135
 msgid "Publish your addon"
 msgstr "Veröffentliche deine Erweiterung"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:137
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:139
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:145
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:147
 msgid "Build the next Clonk"
 msgstr "Baue das nächste Clonk"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:149
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:151
 msgid ""
 "The OpenClonk project is constantly looking for developers to help out with "
 "the next iteration of Clonk. If you have moderate or even advanced C++-"
 "skills you should definitively be welcome in the team."
 msgstr ""
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:154
+#: C:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:156
 msgid "Visit the OpenClonk forums"
 msgstr "OpenClonk-Forum"
 
@@ -776,10 +775,15 @@ msgstr ""
 "besucht?"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/54/1a/6094ab55780455bbe13277967c43.php:32
+#: C:\xampp\htdocs\lorry\app\cache/twig/98/28/775d40173455a78412efa7df2a06.php:25
 #: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:50
 #: C:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:207
 msgid "Addons"
 msgstr "Erweiterungen"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/56/fd/5dfe9a4676ffb1f58df9602550b5.php:25
+msgid "Community"
+msgstr "Community"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/5e/53/36570a387c19c91a4902ea26d4ee.php:32
 #: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:44
@@ -802,17 +806,17 @@ msgstr "Abmelden"
 msgid "Register"
 msgstr "Registrieren"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:32
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:26
 #: C:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:46
 #: C:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:138
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:38
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:41
 msgid "We &hearts; feedback"
 msgstr "Wir &hearts; Feedback"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:42
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:45
 #, fuzzy
 msgid ""
 "We here are all fans of Clonk. We built this site as members of our "
@@ -821,7 +825,7 @@ msgstr ""
 "Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder der "
 "Community für „unser“ Spiel gebaut."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:46
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:49
 msgid ""
 "If you have any wishes or should encounter any problem, do not hesitate to "
 "contact us:"
@@ -829,21 +833,21 @@ msgstr ""
 "Falls du Wünsche hast oder bei dir irgendwelche Fehler auftreten, schick uns "
 "einfach eine Nachricht:"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:52
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:55
 msgid "Send feedback"
 msgstr "Feedback senden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:60
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:63
 msgid "Legal issues"
 msgstr "Rechtliches"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:75
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:78
 msgid ""
 "That way we are able to quickly resolve to any problems that might occur or "
 "any content you feel might be infringing your rights."
 msgstr ""
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:79
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:82
 msgid ""
 "We are not responsible for the content of outgoing links. User generated "
 "content does not necessarily reflect the views of the site owners."
@@ -852,7 +856,7 @@ msgstr ""
 "Benutzergenerierter Inhalt muss nicht der Meinung der Seitenbetreiber "
 "entsprechen."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:88
+#: C:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:91
 msgid "Responsible for the content"
 msgstr "Verantwortlich für den Inhalt"
 
@@ -863,6 +867,14 @@ msgid ""
 msgstr ""
 "Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "und sie über Lorry verfügbar machen."
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/98/28/775d40173455a78412efa7df2a06.php:38
+msgid "Choose a game:"
+msgstr "Wähle ein Spiel:"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/98/28/775d40173455a78412efa7df2a06.php:69
+msgid "No games available."
+msgstr "Keine Spiele verfügbar."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:54
 msgid "By date"
@@ -1108,9 +1120,6 @@ msgstr "Zurück zur Startseite &raquo;"
 #~ msgid "Game title"
 #~ msgstr "Spieltitel"
 
-#~ msgid "Choose a game&hellip;"
-#~ msgstr "Wähle ein Spiel&hellip;"
-
 #~ msgid "Abbreviation"
 #~ msgstr "Abkürzung"
 
@@ -1125,9 +1134,6 @@ msgstr "Zurück zur Startseite &raquo;"
 
 #~ msgid "Rounds and Addons"
 #~ msgstr "Runden und Erweiterungen"
-
-#~ msgid "Community"
-#~ msgstr "Community"
 
 #~ msgid "Project page"
 #~ msgstr "Projektseite"

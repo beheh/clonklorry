@@ -89,7 +89,7 @@ abstract class Model implements ModelInterface {
 		return $this;
 	}
 
-	public final function any() {
+	public final function byAnything() {
 		$this->all();
 		return $this->byValues();
 	}

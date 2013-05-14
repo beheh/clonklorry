@@ -1,0 +1,17 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Addons'|trans %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<p>{% trans %}Choose a game:{% endtrans %}</p>
+{% if games %}
+<ul>
+	{% for game in games %}
+	<li><a href="{{filename}}/{{ game.short }}">{{ game.title }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+<p class="alert alert-warning">{% trans %}No games available.{% endtrans %}</p>
+{% endif %}
+{% endblock %}

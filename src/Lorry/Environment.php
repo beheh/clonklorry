@@ -66,7 +66,7 @@ class Environment {
 
 		Router::setRoutes(array(
 			'/' => 'Site\Front',
-			'/addons' => 'Addon\Table',
+			'/addons' => 'Addon\Portal',
 			'/addons/:alpha' => 'Addon\Game',
 			'/addons/:alpha/:alpha' => 'Addon\Presentation',
 			'/addons/:alpha/:alpha/:version' => 'Addon\Release',

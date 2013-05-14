@@ -14,7 +14,7 @@ class Portal extends Presenter {
 			$this->security->requireLogin();
 			$user = $this->session->getUser();
 
-			$games = ModelFactory::build('Game')->any();
+			$games = ModelFactory::build('Game')->byAnything();
 
 			if(empty($this->selected)) {
 				if(isset($_GET['for'])) {
