@@ -11,12 +11,12 @@ class Presentation extends Presenter {
 	public function get($gamename, $addonname, $release = 'latest') {
 		$game = ModelFactory::build('Game')->byShort($gamename);
 		if(!$game) {
-			throw new FileNotFoundException('game '.$game);
+			throw new FileNotFoundException('game '.$gamename);
 		}
 
 		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
 		if(!$addon) {
-			throw new FileNotFoundException('game '.$game);
+			throw new FileNotFoundException('addon '.$addonname);
 		}
 
 		$this->context['title'] = $addon->getTitle();
