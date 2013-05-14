@@ -41,8 +41,4 @@ class Comment extends Model {
 		return $this->getValue('timestamp');
 	}
 
-	public function __toString() {
-		return $this->getUsername() . '';
-	}
-
 }
