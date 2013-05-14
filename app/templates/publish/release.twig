@@ -25,10 +25,9 @@
 					<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
 					<div class="pull-right">
 						<label class="checkbox inline" style="margin-right: 20px;">
-							<input type="checkbox">
-							{% trans %}Confirm release{% endtrans %}
+							<input type="checkbox" id="release-confirm"> {% trans %}Confirm release{% endtrans %}
 						</label>
-						<button type="submit" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+						<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
 					</div>
 				</form>
 			</div>
@@ -52,4 +51,18 @@
 		</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+
+$(document).ready(function() {
+	$('#release-confirm').change(function() {
+		if($(this).prop('checked')) {
+			$('#release-button').prop('disabled', false);
+		} else {
+			$('#release-button').prop('disabled', true);
+		}
+	});
+});
 {% endblock %}
