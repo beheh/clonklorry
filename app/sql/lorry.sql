@@ -38,5 +38,5 @@ CREATE TABLE `addon` (
   `title` varchar(255) NOT NULL,
   `game` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `short_game` (`short`,`game`)r
+  UNIQUE KEY `short_game` (`short`,`game`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
