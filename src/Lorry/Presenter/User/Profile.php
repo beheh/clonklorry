@@ -24,14 +24,12 @@ class Profile extends Presenter {
 
 		$this->context['profiles'] = array();
 		if($user->getClonkforge()) {
-			$this->context['profiles'][] = array(
-				'platform' => gettext('Clonk Forge'),
+			$this->context['clonforge'] = array(
 				'username' => $user->getUsername(),
 				'url' => sprintf($this->config->get('clonkforge'), urlencode($user->getClonkforge())));
 		}
 		if($user->getGithub()) {
-			$this->context['profiles'][] = array(
-				'platform' => gettext('GitHub'),
+			$this->context['github'] = array(
 				'username' => $user->getGithub(),
 				'url' => sprintf($this->config->get('github'), urlencode($user->getGithub())));
 		}

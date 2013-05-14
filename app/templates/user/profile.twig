@@ -1,7 +1,7 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-<h1>{{ username }}</h1>
+<h1>{{ title }}</h1>
 <div class="row-fluid">
 	<div class="span4">
 		<hr class="visible-phone">
@@ -55,12 +55,12 @@
 			</form>
 		</div>
 		{% endif %}
-		{% if profiles %}
+		{% if clonkforge or github %}
 		<div>
 			<h4>{% trans %}Profiles{% endtrans %}</h4>
 			<ul>
-				<li><a href="{{clonkforge}}">{% trans %}username on the Clonk Forge{% endtrans %}</a></li>
-				<li><a href="{{github}}">{% trans %}username on GitHub{% endtrans %}</a></li>
+				{% if clonkforge %}<li><a href="{{clonkforge.url}}">{% trans %}username on the Clonk Forge{% endtrans %}</a></li>{% endif %}
+				{% if github %}<li><a href="{{github.url}}">{% trans %}username on GitHub{% endtrans %}</a></li>{% endif %}
 			</ul>
 		</div>
 		{% endif %}

@@ -1,6 +1,12 @@
 {% extends 'root.twig' %}
 
-{% block content %}
-<h1>{% trans %}Users{% endtrans %}</h1>
+{% set title = 'Users'|trans %}
 
+{% block content %}
+<h1>{{ title }}</h1>
+<ul>
+{% for user in users %}
+	<li><a href="{{filename}}/{{user}}">{{ user }}</a></li>
+{% endfor %}
+</ul>
 {% endblock %}

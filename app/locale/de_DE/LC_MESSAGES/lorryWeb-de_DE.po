@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-14 12:50+0100\n"
-"PO-Revision-Date: 2013-05-14 12:51+0100\n"
+"POT-Creation-Date: 2013-05-14 13:00+0100\n"
+"PO-Revision-Date: 2013-05-14 15:03+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -230,7 +230,7 @@ msgid "%n%th"
 msgstr "%n%."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:25
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:114
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:131
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:123
 msgid "About Lorry"
 msgstr "Über Lorry"
@@ -649,16 +649,24 @@ msgstr "Abkürzung (falls vorhanden)"
 msgid "Create new addon"
 msgstr "Neue Erweiterung anlegen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:89
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:79
+msgid "New releases on Lorry"
+msgstr "Neue Veröffentlichungen auf Lorry"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:90
+msgid "There are no new releases."
+msgstr "Es gibt keine neuen Veröffentlichungen."
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:106
 #: C:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:149
 msgid "Welcome back!"
 msgstr "Willkommen zurück!"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:95
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:112
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:101
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:118
 #, fuzzy
 msgid ""
 "Lorry is the place to find out about and get the best addons for the game "
@@ -666,16 +674,16 @@ msgid ""
 msgstr ""
 "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:108
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:125
 #: C:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:129
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:124
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:141
 msgid "Visit clonkspot.org"
 msgstr ""
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:130
+#: C:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:147
 msgid "List of community sites"
 msgstr "Liste der Community-Seiten"
 
@@ -702,7 +710,7 @@ msgstr "Twitter"
 #: C:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:44
 #: C:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:44
 msgid "OpenID url"
-msgstr "OpenID URL"
+msgstr "OpenID-URL"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:48
 #: C:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:48
@@ -718,6 +726,10 @@ msgstr "Administration"
 #: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:40
 msgid "Overview"
 msgstr "Übersicht"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:46
+msgid "Front page"
+msgstr "Startseite"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:32
 #: C:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:67
@@ -890,19 +902,32 @@ msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:54
 msgid "Awaiting approval"
-msgstr "Erwarten Freigabe"
+msgstr "Erwartet Freigabe"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:61
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:58
+msgid "There are no addons in the approval queue."
+msgstr "Es sind keine Erweiterungen in der Warteschlange."
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:64
 msgid "Contact form"
 msgstr "Kontaktformular"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:65
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:68
 msgid "Queue"
 msgstr "Warteschlange"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:70
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:72
+msgid "There are no new messages in the queue."
+msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:76
 msgid "Completed"
 msgstr "Abgeschlossen"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:80
+#, fuzzy
+msgid "There are no completed messages."
+msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:42
 msgid "Create"

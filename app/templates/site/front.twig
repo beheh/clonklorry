@@ -35,7 +35,12 @@
 			<a class="carousel-control left" href="#featured-front" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right" href="#featured-front" data-slide="next">&rsaquo;</a>
 		</div>
-		<h2>Some different, awesome and long title here</h2>
+		<h3>{% trans %}New releases on Lorry{% endtrans %}</h3>
+		{% if false %}
+
+		{% else %}
+			<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
+		{% endif %}
 	</div>
 	<div class="span4">
 		<hr class="visible-phone">
@@ -59,7 +64,7 @@
 			<a href="{{base}}/community" class="btn">{% trans %}List of community sites{% endtrans %}</a>
 		</p>
 		<hr>
-		<h3>Pack der Woche</h3>
+		<h3>{% trans %}Addons of the week{% endtrans %}</h3>
 		<ul>
 			<li>Lorry</li>
 			<li>Clonk Infinity</li>
