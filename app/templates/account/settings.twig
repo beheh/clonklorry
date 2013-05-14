@@ -86,7 +86,9 @@
 				<div class="alert alert-error">
 					<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
 				</div>
-				<label class="checkbox"><input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}</label>
+				<label class="checkbox">
+					<input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}
+				</label>
 				<button type="submit" class="btn btn-danger" id="remove-button" disabled>{% trans "Permanently remove account"%}</button>
 			</form>
 		</div>
