@@ -53,17 +53,17 @@ abstract class Model implements ModelInterface {
 	}
 
 	public final function setValue($name, $value) {
-		if($this->loaded && $this->values[$name] == $value)
+		if($this->loaded && $this->values[$name] === $value)
 			return true;
 		$this->changes[$name] = $this->ensureType($name, $value);
 		return true;
 	}
 
 	public final function getValue($name) {
-		$this->ensureLoaded();
 		$this->ensureRow($name);
 		if(array_key_exists($name, $this->changes))
 			return $this->changes[$name];
+		$this->ensureLoaded();
 		return $this->values[$name];
 	}
 
@@ -256,6 +256,7 @@ abstract class Model implements ModelInterface {
 		}
 		$this->values = array_merge($this->values, $this->changes);
 		$this->rollback();
+		$this->loaded = true;
 		return true;
 	}
 

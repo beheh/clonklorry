@@ -67,6 +67,12 @@ abstract class Presenter implements PresenterInterface {
 		call_user_func_array(array($this, 'get'), func_get_args());
 	}
 
+	protected $context = array();
+
+	protected function display($template) {
+		$this->twig->display($template, $this->context);
+	}
+
 	protected function error($selector, $message) {
 		$this->alert($selector, $message, 'error');
 	}
@@ -84,12 +90,6 @@ abstract class Presenter implements PresenterInterface {
 			$this->context['alerts'] = array();
 		}
 		$this->context['alerts'][$selector] = array('message' => $message, 'type' => $type);
-	}
-
-	protected $context = array();
-
-	protected function display($template) {
-		$this->twig->display($template, $this->context);
 	}
 
 	/**

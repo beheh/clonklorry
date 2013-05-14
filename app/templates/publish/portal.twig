@@ -17,7 +17,7 @@
 					<select name="game" id="game" required{% if not games %} disabled{% endif %}>
 						<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
 						{% for game in games %}
-						<option value="{{ game.short }}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
+						<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
 						{% else %}
 						<option>{% trans %}No game available{% endtrans %}</option>
 						{% endfor %}

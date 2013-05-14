@@ -1,6 +1,23 @@
 {% extends 'root.twig' %}
 
-{% block base %}
-<h1>Test</h1>
+{% set title = 'Edit'|trans %}
 
+{% block content %}
+<h1>{% trans %}Edit your addon{% endtrans %}</h1>
+<div class="row-fluid">
+    <div class="span8">
+		<h2>{% trans %}Details{% endtrans %}</h2>
+		<form method="post" action="{{filename}}" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="title">{% trans "Title" %}</label>
+				<div class="controls">
+					<input type="text" name="title" id="username" value="{{addon_title}}" maxlength="32" required>
+				</div>
+			</div>
+		</form>
+	</div>
+    <div class="span4">
+		<h2>{% trans %}Releases{% endtrans %}</h2>
+	</div>
+</div>
 {% endblock %}

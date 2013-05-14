@@ -54,18 +54,41 @@ class Portal extends Presenter {
 	}
 
 	public function post() {
+		$this->security->requireLogin();
+		$user = $this->session->getUser();
+
+		$errors = array();
+
 		$game_short = filter_input(INPUT_POST, 'game');
 		$game = ModelFactory::build('Game')->byShort($game_short);
 		if($game) {
 			$this->selected = $game_short;
 		} else {
-			$this->error('create', gettext('Invalid game.'));
+			$errors[] = gettext('Invalid game.');
 		}
 
 		$title = filter_input(INPUT_POST, 'title');
+		$short = preg_replace('#[^a-z]#', '', strtolower($title));
 		$this->context['addon_title'] = $title;
 
-		$this->get();
+		$existing = ModelFactory::build('Addon')->byShort($short, $game->getId());
+		if($existing) {
+			$errors[] = gettext('Short name already exists.');
+		}
+
+		if(!$errors) {
+			$addon = ModelFactory::build('Addon');
+			$addon->setOwner($user->getId());
+			$addon->setTitle($title);
+			$addon->setShort($short);
+			$addon->setGame($game->getId());
+			$addon->save();
+
+			$this->redirect('/publish/'.$game->getShort().'/'.$addon->getShort());
+		} else {
+			$this->error('create', implode('<br>', $errors));
+			$this->get();
+		}
 	}
 
 }
