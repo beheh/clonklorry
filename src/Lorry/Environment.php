@@ -17,6 +17,9 @@ use Twig_Environment;
 
 class Environment {
 
+	/**
+	 * Handle an HTTP request.
+	 */
 	public function handle() {
 		$config = new ConfigService();
 
@@ -108,7 +111,8 @@ class Environment {
 			}
 
 			// execute the RESTful method
-			call_user_func_array(array($presenter, $method), Router::getMatches());
+			return call_user_func_array(array($presenter, $method), Router::getMatches());
+
 		} catch(FileNotFoundException $exception) {
 			return PresenterFactory::build('Error\FileNotFound')->get($exception);
 		} catch(ForbiddenException $exception) {
