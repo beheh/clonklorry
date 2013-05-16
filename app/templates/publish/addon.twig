@@ -1,12 +1,10 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Edit'|trans %}
-
 {% block content %}
-<h1>{% trans %}Edit your addon{% endtrans %}</h1>
+<h1>{{ addon_title }}</h1>
 <div class="row-fluid">
-    <div class="span8">
-		<h2>{% trans %}Details{% endtrans %}</h2>
+    <div class="span5">
+		<h2>{% trans %}Generic{% endtrans %}</h2>
 		<form method="post" action="{{filename}}" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="title">{% trans "Title" %}</label>
@@ -14,10 +12,37 @@
 					<input type="text" name="title" id="username" value="{{addon_title}}" maxlength="32" required>
 				</div>
 			</div>
+			<div class="control-group">
+				<label class="control-label" for="short">{% trans "Url" %}</label>
+				<div class="controls">
+					<input type="text" name="short" id="username" value="{{addon_short}}" maxlength="32" placeholder="{{addon_short_placeholder}}" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans %}Save{% endtrans %}</button>
+				</div>
+			</div>
 		</form>
 	</div>
-    <div class="span4">
-		<h2>{% trans %}Releases{% endtrans %}</h2>
+    <div class="span4 offset3">
+		<h2>{% trans %}Versions{% endtrans %}</h2>
+		<h4>{% trans %}New version{% endtrans %}</h4>
+		<form method="post" action="{{filename}}" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="version">{% trans "Version" %}</label>
+				<div class="controls">
+					<input type="text" name="version" id="version" value="" maxlength="16" required>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans %}Add version{% endtrans %}</button>
+				</div>
+			</div>
+		</form>
+		<h4>{% trans %}Existing releases{% endtrans %}</h4>
+		<div class="alert alert-warning">{% trans %}You have not created a release yet.{% endtrans %}</div>
 	</div>
 </div>
 {% endblock %}

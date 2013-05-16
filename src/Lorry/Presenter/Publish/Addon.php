@@ -22,8 +22,11 @@ class Addon extends Presenter {
 			throw new FileNotFoundException('addon '.$addonname);
 		}
 
-		$this->context['addon_title'] = $addon->getTitle();
+		$this->context['title'] = strtr(gettext('Edit %addon%'), array('%addon%' => $addon->getTitle()));
 
+		$this->context['addon_title'] = $addon->getTitle();
+		$this->context['addon_short'] = $addon->getShort();
+		$this->context['addon_short_placeholder'] = preg_replace('#[^a-z]#', '', strtolower($addon->getTitle()));
 
 		$this->display('publish/addon.twig');
 	}
