@@ -41,7 +41,7 @@ abstract class Router {
 			':string' => '([a-zA-Z]+)',
 			':number' => '([0-9]+)',
 			':alpha' => '([a-zA-Z0-9-_]+)',
-			':version' => '(([0-9]+\.)*[0-9]+(-[a-zA-Z0-9-_]+)?)'
+			':version' => '([a-zA-Z0-9-.]+)'
 		);
 
 		foreach(self::$routes as $pattern => $presenter) {
