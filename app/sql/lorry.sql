@@ -37,6 +37,7 @@ CREATE TABLE `addon` (
 	`short` varchar(255) NOT NULL,
 	`title` varchar(255) NOT NULL,
 	`game` int(11) NOT NULL,
+	`public` bit(1) NOT NULL DEFAULT b'0',
 	`description` text,
 	`website` varchar(255) DEFAULT NULL,
 	`bugtracker` varchar(255) DEFAULT NULL,
