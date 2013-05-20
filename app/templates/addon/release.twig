@@ -24,9 +24,17 @@
 				<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
 				<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 0;">
 			</p>
-			<p class="center hidden-desktop"><a href="#" data-toggle="collapse" data-target="#download">Show download</a></p>
-			<p class="center visible-desktop" id="download"><button class="btn btn-primary">Download</button> 70.3MB total</p>
-
+			<div class="visible-desktop" id="download">
+				<p class="center"><button class="btn btn-primary">Download</button> 70.3MB total</p>
+				{% if requirements %}
+				<p class="center">
+					Requires
+					{% for requirement in requirements %}
+						<a href="{{base}}/addons/{{requirement.game}}/{{requirement.short}}">{{ requirement.title }}</a>
+					{% endfor %}
+				</p>
+				{% endif %}
+			</div>
 		</div>
 		<div class="span9">
 			<p>{{addon_description}}</p>

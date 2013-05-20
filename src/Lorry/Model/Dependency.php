@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
+use Lorry\ModelFactory;
 
 class Dependency extends Model {
 
@@ -24,6 +25,10 @@ class Dependency extends Model {
 		return $this->getValue('addon');
 	}
 
+	public function fetchAddon() {
+		return ModelFactory::build('Addon')->byId($this->getAddon());
+	}
+
 	public function setRequired($required) {
 		return $this->setValue('required', $required);
 	}
@@ -34,6 +39,10 @@ class Dependency extends Model {
 
 	public function getRequired() {
 		return $this->getValue('required');
+	}
+
+	public function fetchRequired() {
+		return ModelFactory::build('Addon')->byId($this->getRequired());
 	}
 
 }

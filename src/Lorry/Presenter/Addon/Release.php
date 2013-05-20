@@ -37,6 +37,36 @@ class Release extends Presenter {
 		$this->context['addon_description'] = $addon->getDescription();
 		$this->context['release_description'] = $release->getDescription();
 
+		$this->context['dependencies'] = array();
+		$dependencies = $addon->fetchDependencies();
+		foreach($dependencies as $dependency) {
+			$dependency_addon = $dependency->fetchAddon();
+			if(!$dependency_addon)
+				continue;
+			$this->context['dependencies'][] = array('title' => $dependency_addon->getTitle(), 'short' => $dependency_addon->getShort());
+		}
+
+		$this->context['requirements'] = array();
+		$requirements = $addon->fetchRequirements();
+		foreach($requirements as $requirement) {
+			$requirement_addon = $requirement->fetchRequired();
+			if(!$requirement_addon) {
+				continue;
+			}
+			$game = $requirement_addon->fetchGame();
+
+			$this->context['requirements'][] = array(
+				'title' => $requirement_addon->getTitle(),
+				'short' => $requirement_addon->getShort(),
+				'game' => $game->getShort());
+		}
+
+		$this->context['releaseday'] = strtr(gettext('%day% of %month% %year%'), array(
+			'%day%' => $this->localisation->countedNumber('1'),
+			'%month%' => $this->localisation->namedMonth('1'),
+			'%year%' => '2013'));
+
+
 		$this->display('addon/release.twig');
 	}
 

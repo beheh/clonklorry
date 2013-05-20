@@ -38,8 +38,8 @@ class Release extends Model {
 		return $this->getValue('version');
 	}
 
-	public final function latest() {
-		throw new Exception('not yet implemented');
+	public final function latest($addon) {
+		return $this->order('timestamp', true)->byValue('addon', $addon);
 	}
 
 	public function setTimestamp($timestamp) {

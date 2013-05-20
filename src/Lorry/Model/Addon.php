@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
+use Lorry\ModelFactory;
 
 class Addon extends Model {
 
@@ -30,6 +31,10 @@ class Addon extends Model {
 
 	public function getOwner() {
 		return $this->getValue('owner');
+	}
+
+	public function fetchOwner() {
+		return ModelFactory::build('User')->byId($this->getOwner());
 	}
 
 	public function setShort($short) {
@@ -72,6 +77,10 @@ class Addon extends Model {
 		return $this->getValue('game');
 	}
 
+	public function fetchGame() {
+		return ModelFactory::build('Game')->byId($this->getGame());
+	}
+
 	public function setPublic($public) {
 		return $this->setValue('public', $public);
 	}
@@ -80,12 +89,20 @@ class Addon extends Model {
 		return $this->getValue('public');
 	}
 
-	public function setDescription($description){
+	public function setDescription($description) {
 		return $this->setValue('description', $description);
 	}
 
 	public function getDescription() {
 		return $this->getValue('description');
+	}
+
+	public function fetchRequirements() {
+		return ModelFactory::build('Dependency')->all()->byAddon($this->getId());
+	}
+
+	public function fetchDependencies() {
+		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
 	}
 
 	public function __toString() {
