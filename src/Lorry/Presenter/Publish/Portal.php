@@ -35,16 +35,22 @@ class Portal extends Presenter {
 				$this->context['focus'] = 'title';
 			}
 
-			$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
+			$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId(), true);
+			$this->context['addons_unreleased'] = array();
 			$this->context['addons_released'] = array();
 			foreach($addons as $addon) {
 				$user_addon = array();
 				$user_addon['title'] = $addon->getTitle();
 				$game = ModelFactory::build('Game')->byId($addon->getGame());
 				if($game) {
+					$user_addon['game'] = $game->getTitle();
 					$user_addon['url'] = $this->config->get('base').'/addons/'.$game->getShort().'/'.$addon->getShort();
 				}
-				$this->context['addons_released'][] = $user_addon;
+				if($addon->isPublic()) {
+					$this->context['addons_released'][] = $user_addon;
+				} else {
+					$this->context['addons_unreleased'][] = $user_addon;
+				}
 			}
 
 			$this->display('publish/portal.twig');

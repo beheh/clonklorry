@@ -11,15 +11,20 @@ class Addon extends Model {
 			'owner' => 'string',
 			'short' => 'string',
 			'title' => 'string',
-			'game' => 'int'));
+			'game' => 'int',
+			'public' => 'boolean'));
 	}
 
 	public function setOwner($owner) {
 		return $this->setValue('owner', $owner);
 	}
 
-	public function byOwner($owner) {
-		return $this->byValue('owner', $owner);
+	public function byOwner($owner, $private = false) {
+		$constraints = array('owner' => $owner);
+		if(!$private) {
+			$constraints['public'] = true;
+		}
+		return $this->byValues($constraints);
 	}
 
 	public function getOwner() {
@@ -30,8 +35,12 @@ class Addon extends Model {
 		return $this->setValue('short', $short);
 	}
 
-	public function byShort($short, $game) {
-		return $this->byValues(array('short' => $short, 'game' => $game));
+	public function byShort($short, $game, $private = false) {
+		$constraints = array('short' => $short, 'game' => $game);
+		if(!$private) {
+			$constraints['public'] = true;
+		}
+		return $this->byValues($constraints);
 	}
 
 	public function getShort() {
@@ -50,12 +59,24 @@ class Addon extends Model {
 		return $this->setValue('game', $game);
 	}
 
-	public function byGame($game) {
-		return $this->byValue('game', $game);
+	public function byGame($game, $private = false) {
+		$constraints = array('game' => $game);
+		if(!$private) {
+			$constraints['public'] = true;
+		}
+		return $this->byValues($constraints);
 	}
 
 	public function getGame() {
 		return $this->getValue('game');
+	}
+
+	public function setPublic($public) {
+		return $this->setValue('public', $public);
+	}
+
+	public function isPublic() {
+		return $this->getValue('public');
 	}
 
 	public function __toString() {

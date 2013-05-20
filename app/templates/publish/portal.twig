@@ -41,12 +41,20 @@
 		<hr class="visible-phone">
 		<h2>{% trans %}Your addons{% endtrans %}</h2>
 		<h4>{% trans %}Unreleased{% endtrans %}</h4>
+		{% if addons_unreleased %}
+		<ul>
+		{% for addon in addons_unreleased %}
+				<li><a href="{{ addon.url }}">{{ addon.title }}</a>{% if addon.game %} <em>({{addon.game}})</em>{% endif %}</li>
+		{% endfor %}
+		</ul>
+		{% else %}
 		<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
+		{% endif %}
 		<h4>{% trans %}Released{% endtrans %}</h4>
 		{% if addons_released %}
 		<ul>
 		{% for addon in addons_released %}
-				<li><a href="{{ addon.url }}">{{ addon.title }}</a></li>
+				<li><a href="{{ addon.url }}">{{ addon.title }}</a>{% if addon.game %} <em>({{addon.game}})</em>{% endif %}</li>
 		{% endfor %}
 		</ul>
 		{% else %}

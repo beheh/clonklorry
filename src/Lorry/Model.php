@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use Lorry\Service\PersistenceService;
+use Exception;
 
 abstract class Model implements ModelInterface {
 
@@ -95,6 +96,9 @@ abstract class Model implements ModelInterface {
 	}
 
 	protected final function byValue($row, $value) {
+		if(!is_string($row)) {
+			throw new Exception('invalid row name');
+		}
 		return $this->byValues(array($row => $value));
 	}
 
@@ -172,6 +176,8 @@ abstract class Model implements ModelInterface {
 		switch($this->schema[$row]) {
 			case 'int':
 				return intval($value);
+			case 'boolean':
+				return $value == true;
 			case 'string':
 			default:
 				return $value;
