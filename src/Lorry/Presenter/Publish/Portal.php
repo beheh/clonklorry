@@ -41,10 +41,11 @@ class Portal extends Presenter {
 			foreach($addons as $addon) {
 				$user_addon = array();
 				$user_addon['title'] = $addon->getTitle();
-				$game = ModelFactory::build('Game')->byId($addon->getGame());
+				$game = $addon->fetchGame();
 				if($game) {
 					$user_addon['game'] = $game->getTitle();
 					$user_addon['url'] = $this->config->get('base').'/addons/'.$game->getShort().'/'.$addon->getShort();
+					$user_addon['year'] = 2013;
 				}
 				if($addon->isPublic()) {
 					$this->context['addons_released'][] = $user_addon;

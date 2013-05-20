@@ -44,7 +44,7 @@
 		{% if addons_unreleased %}
 		<ul>
 		{% for addon in addons_unreleased %}
-				<li><a href="{{ addon.url }}">{{ addon.title }}</a>{% if addon.game %} <em>({{addon.game}})</em>{% endif %}</li>
+				<li><a href="{{addon.url}}">{{ addon.title }}</a>{% if addon.game %} <em>({{addon.game}})</em>{% endif %}</li>
 		{% endfor %}
 		</ul>
 		{% else %}
@@ -54,7 +54,12 @@
 		{% if addons_released %}
 		<ul>
 		{% for addon in addons_released %}
-				<li><a href="{{ addon.url }}">{{ addon.title }}</a>{% if addon.game %} <em>({{addon.game}})</em>{% endif %}</li>
+				<li>
+					<a href="{{ addon.url }}">{{ addon.title }}</a>
+					{% if addon.game %}
+						<em>({{addon.game}}, {{addon.year}})</em>
+					{% endif %}
+				</li>
 		{% endfor %}
 		</ul>
 		{% else %}
