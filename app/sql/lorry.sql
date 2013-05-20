@@ -51,7 +51,7 @@ CREATE TABLE `release` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `required` (
+CREATE TABLE `dependency` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`addon` int(11) NOT NULL,
 	`required` int(11) NOT NULL,
