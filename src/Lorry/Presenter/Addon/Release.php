@@ -71,7 +71,7 @@ class Release extends Presenter {
 		$this->context['website'] = $addon->getWebsite();
 		$this->context['bugtracker'] = $addon->getBugtracker();
 
-		$this->context['modify'] = $user && $addon->getOwner() == $user->getId();
+		$this->context['modify'] = $user && ($addon->getOwner() == $user->getId() || $user->isAdministrator());
 
 		$this->display('addon/release.twig');
 	}
