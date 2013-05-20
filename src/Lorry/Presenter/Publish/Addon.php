@@ -17,7 +17,7 @@ class Addon extends Presenter {
 			throw new FileNotFoundException('game '.$gamename);
 		}
 
-		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
+		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId(), true);
 		if(!$addon) {
 			throw new FileNotFoundException('addon '.$addonname);
 		}
@@ -29,6 +29,14 @@ class Addon extends Presenter {
 		$this->context['addon_short_placeholder'] = preg_replace('#[^a-z]#', '', strtolower($addon->getTitle()));
 
 		$this->display('publish/addon.twig');
+	}
+
+	public function post($gamename, $addonname) {
+		if(isset($_POST['change-details'])) {
+			
+		}
+
+		$this->get($gamename, $addonname);
 	}
 
 }

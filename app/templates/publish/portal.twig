@@ -44,7 +44,7 @@
 		{% if addons_unreleased %}
 		<ul>
 		{% for addon in addons_unreleased %}
-				<li><a href="{{addon.url}}">{{ addon.title }}</a>{% if addon.game %} <em>({{addon.game}})</em>{% endif %}</li>
+				<li><a href="{{base}}/publish/{{addon.game.short}}/{{addon.short}}">{{ addon.title }}</a> <em>({{addon.game.title}})</em></li>
 		{% endfor %}
 		</ul>
 		{% else %}

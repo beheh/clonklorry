@@ -16,7 +16,7 @@ abstract class Presenter implements PresenterInterface {
 	 */
 	protected $config;
 
-	public function setConfigService(ConfigService $config) {
+	public final function setConfigService(ConfigService $config) {
 		$this->config = $config;
 	}
 
@@ -26,7 +26,7 @@ abstract class Presenter implements PresenterInterface {
 	 */
 	protected $localisation;
 
-	public function setLocalisationService(LocalisationService $localisation) {
+	public final function setLocalisationService(LocalisationService $localisation) {
 		$this->localisation = $localisation;
 	}
 
@@ -36,7 +36,7 @@ abstract class Presenter implements PresenterInterface {
 	 */
 	protected $security;
 
-	public function setSecurityService(SecurityService $security) {
+	public final function setSecurityService(SecurityService $security) {
 		$this->security = $security;
 	}
 
@@ -46,7 +46,7 @@ abstract class Presenter implements PresenterInterface {
 	 */
 	protected $session;
 
-	public function setSessionService(SessionService $session) {
+	public final function setSessionService(SessionService $session) {
 		$this->session = $session;
 	}
 
@@ -56,7 +56,7 @@ abstract class Presenter implements PresenterInterface {
 	 */
 	private $twig;
 
-	public function setTwig(Twig_Environment $twig) {
+	public final function setTwig(Twig_Environment $twig) {
 		$this->twig = $twig;
 	}
 
@@ -69,23 +69,23 @@ abstract class Presenter implements PresenterInterface {
 
 	protected $context = array();
 
-	protected function display($template) {
+	protected final function display($template) {
 		$this->twig->display($template, $this->context);
 	}
 
-	protected function error($selector, $message) {
+	protected final function error($selector, $message) {
 		$this->alert($selector, $message, 'error');
 	}
 
-	protected function warning($selector, $message) {
+	protected final function warning($selector, $message) {
 		$this->alert($selector, $message, 'warning');
 	}
 
-	protected function success($selector, $message) {
+	protected final function success($selector, $message) {
 		$this->alert($selector, $message, 'success');
 	}
 
-	private function alert($selector, $message, $type) {
+	private final function alert($selector, $message, $type) {
 		if(!array_key_exists('alerts', $this->context)) {
 			$this->context['alerts'] = array();
 		}
@@ -96,7 +96,7 @@ abstract class Presenter implements PresenterInterface {
 	 * Sends a 301 Moved Permanently redirect.
 	 * @param string $location
 	 */
-	protected function redirect($location, $external = false) {
+	protected final function redirect($location, $external = false) {
 		if(!$external) {
 			$location = $this->config->get('base').$location;
 		}
