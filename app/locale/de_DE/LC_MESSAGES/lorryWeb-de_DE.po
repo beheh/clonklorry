@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry-web\n"
-"POT-Creation-Date: 2013-05-20 13:03+0100\n"
-"PO-Revision-Date: 2013-05-20 13:03+0100\n"
+"POT-Creation-Date: 2013-05-20 13:16+0100\n"
+"PO-Revision-Date: 2013-05-20 13:17+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -803,7 +803,7 @@ msgid "Addons"
 msgstr "Erweiterungen"
 
 #: C:\xampp\htdocs\lorry\app\cache/twig/56/fd/5dfe9a4676ffb1f58df9602550b5.php:25
-#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:146
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:170
 msgid "Community"
 msgstr "Community"
 
@@ -943,19 +943,27 @@ msgstr "Entwickelt vom %team%"
 msgid "Version %version%, released on the %releaseday%"
 msgstr "Version %version%, veröffentlicht am %releaseday%"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:137
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:77
+msgid "Edit this release"
+msgstr "Release bearbeiten"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:83
+msgid "Edit this addon"
+msgstr "Erweiterung bearbeiten"
+
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:161
 msgid "Rounds and Addons"
 msgstr "Runden und Erweiterungen"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:152
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:180
 msgid "Project page"
 msgstr "Projektseite"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:156
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:189
 msgid "Report a bug"
 msgstr "Einen Fehler melden"
 
-#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:160
+#: C:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:194
 msgid "Interested in an update?"
 msgstr ""
 
@@ -1276,9 +1284,6 @@ msgstr "Zurück zur Startseite &raquo;"
 
 #~ msgid "Add version"
 #~ msgstr "Version hinzufügen"
-
-#~ msgid "Existing releases"
-#~ msgstr "Angelegte Veröffentlichungen"
 
 #, fuzzy
 #~ msgid "You have not created a release yet."
