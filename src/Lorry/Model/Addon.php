@@ -14,7 +14,9 @@ class Addon extends Model {
 			'title' => 'string',
 			'game' => 'int',
 			'public' => 'boolean',
-			'description' => 'text'));
+			'description' => 'text',
+			'website' => 'url',
+			'bugtracker' => 'url'));
 	}
 
 	public function setOwner($owner) {
@@ -103,6 +105,22 @@ class Addon extends Model {
 
 	public function fetchDependencies() {
 		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
+	}
+
+	public function setWebsite($website) {
+		return $this->setValue('website', $website);
+	}
+
+	public function getWebsite() {
+		return $this->getValue('website');
+	}
+
+	public function setBugtracker($bugtracker) {
+		return $this->setValue('bugtracker', $bugtracker);
+	}
+
+	public function getBugtracker() {
+		return $this->getValue('bugtracker');
 	}
 
 	public function __toString() {

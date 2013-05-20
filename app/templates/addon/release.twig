@@ -6,7 +6,7 @@
 	{% if developer or team %}
 	<p class="pull-right author">
 		{% if developer %}
-			{% set developer = "<a href=\"\">" ~ developer ~ "</a>" %}
+			{% set developer = "<a href=\""~ base ~ "/users/" ~ developer ~"\">" ~ developer ~ "</a>" %}
 			{% trans %}Developed by {{developer}}{% endtrans %}
 		{% elseif team %}
 			{% set team = "<a href=\"\">" ~ team ~ "</a>" %}
@@ -54,8 +54,8 @@
 			<h3>{% trans %}Community{% endtrans %}</h3>
 			<p>State: <span class="success">Active</span> [<a href="#" id="state">?</a>]</p>
 			<ul>
-				<li><a href="#">{% trans %}Project page{% endtrans %}</a></li>
-				<li><a href="#">{% trans %}Report a bug{% endtrans %}</a></li>
+				{% if website %}<li><a href="{{website}}">{% trans %}Project page{% endtrans %}</a></li>{% endif %}
+				{% if bugtracker %}<li><a href="{{bugtracker}}">{% trans %}Report a bug{% endtrans %}</a></li>{% endif %}
 				<li><a href="#">{% trans %}Interested in an update?{% endtrans %}</a></li>
 			</ul>
 		</div>

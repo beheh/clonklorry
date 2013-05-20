@@ -66,6 +66,8 @@ class Release extends Presenter {
 			'%month%' => $this->localisation->namedMonth('1'),
 			'%year%' => '2013'));
 
+		$this->context['website'] = $addon->getWebsite();
+		$this->context['bugtracker'] = $addon->getBugtracker();
 
 		$this->display('addon/release.twig');
 	}
