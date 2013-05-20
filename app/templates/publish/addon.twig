@@ -5,7 +5,7 @@
 <div class="row-fluid">
     <div class="span5">
 		<h2>{% trans %}Generic{% endtrans %}</h2>
-		<form method="post" action="{{filename}}" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-details" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="title">{% trans "Title" %}</label>
 				<div class="controls">
@@ -26,9 +26,9 @@
 		</form>
 	</div>
     <div class="span4 offset3">
-		<h2>{% trans %}Versions{% endtrans %}</h2>
-		<h4>{% trans %}New version{% endtrans %}</h4>
-		<form method="post" action="{{filename}}?change-details" class="form-horizontal">
+		<h2>{% trans %}Releases{% endtrans %}</h2>
+		<h4>{% trans %}New release{% endtrans %}</h4>
+		<form method="post" action="{{filename}}?add-release" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="version">{% trans "Version" %}</label>
 				<div class="controls">
