@@ -2,7 +2,7 @@
 
 //$time = microtime();
 
-error_reporting(E_ALL | E_NOTICE);
+error_reporting(E_ALL & ~(E_STRICT));
 
 require '../vendor/autoload.php';
 
