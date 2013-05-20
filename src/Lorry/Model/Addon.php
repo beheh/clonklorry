@@ -12,7 +12,8 @@ class Addon extends Model {
 			'short' => 'string',
 			'title' => 'string',
 			'game' => 'int',
-			'public' => 'boolean'));
+			'public' => 'boolean',
+			'description' => 'text'));
 	}
 
 	public function setOwner($owner) {
@@ -77,6 +78,14 @@ class Addon extends Model {
 
 	public function isPublic() {
 		return $this->getValue('public');
+	}
+
+	public function setDescription($description){
+		return $this->setValue('description', $description);
+	}
+
+	public function getDescription() {
+		return $this->getValue('description');
 	}
 
 	public function __toString() {

@@ -71,7 +71,7 @@ class Environment {
 			'/' => 'Site\Front',
 			'/addons' => 'Addon\Portal',
 			'/addons/:alpha' => 'Addon\Game',
-			'/addons/:alpha/:alpha' => 'Addon\Presentation',
+			'/addons/:alpha/:alpha' => 'Addon\Release',
 			'/addons/:alpha/:alpha/:version' => 'Addon\Release',
 			'/download/' => 'Redirect\Front',
 			'/download/:alpha/:alpha' => 'Addon\Download',
