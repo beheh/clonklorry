@@ -37,6 +37,7 @@ CREATE TABLE `addon` (
 	`short` varchar(255) NOT NULL,
 	`title` varchar(255) NOT NULL,
 	`game` int(11) NOT NULL,
+	`description` text DEFAULT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `short_game` (`short`,`game`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -45,6 +46,14 @@ CREATE TABLE `release` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`addon` int(11) NOT NULL,
 	`version` varchar(255) NOT NULL,
-	`timestamp` int(11) NOT NULL,
+	`timestamp` int(11) DEFAULT NULL,
+	`description` text DEFAULT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `required` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`addon` int(11) NOT NULL,
+	`required` int(11) NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
