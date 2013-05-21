@@ -83,7 +83,7 @@ class LocalisationService {
 		putenv('LC_ALL='.$language);
 		setlocale(LC_ALL, $language.'.UTF-8');
 
-		$textdomain = 'lorryWeb-'.$language;
+		$textdomain = 'lorry-'.$language;
 		bindtextdomain($textdomain, '../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
