@@ -2,8 +2,6 @@
 
 namespace Lorry\Service;
 
-use Exception;
-
 class LocalisationService {
 
 	/**
@@ -83,7 +81,7 @@ class LocalisationService {
 
 		$language = str_replace('-', '_', $requested);
 		putenv('LC_ALL='.$language);
-		setlocale(LC_ALL, $language);
+		setlocale(LC_ALL, $language.'.UTF-8');
 
 		$textdomain = 'lorryWeb-'.$language;
 		bindtextdomain($textdomain, '../app/locale');
