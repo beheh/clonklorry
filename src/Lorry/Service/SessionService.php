@@ -55,9 +55,12 @@ class SessionService {
 	public final function remember() {
 		$this->ensureUser();
 		$secret = $this->user->getSecret();
-		if(!empty($secret)) {
-			setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
+		if(empty($secret)) {
+			$this->user->regenerateSecret();
+			$this->user->save();
+			$secret = $this->user->getSecret();
 		}
+		setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
 	}
 
 	public final function shouldRemember() {
