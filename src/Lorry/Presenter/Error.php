@@ -23,7 +23,7 @@ class Error extends Presenter {
 		return gettext('The server encountered an internal error.');
 	}
 
-	public function get(Exception $exception) {
+	public function get($exception = false) {
 		header('HTTP/1.1 '.$this->getCode().' '.$this->getMessage());
 
 		$this->context['title'] = $this->getLocalizedMessage();

@@ -32,7 +32,31 @@ class Addon extends Presenter {
 	}
 
 	public function post($gamename, $addonname) {
-		if(isset($_POST['change-details'])) {
+		if(isset($_GET['change-details'])) {
+			$title = filter_input(INPUT_POST, 'title');
+			$short = urlencode(filter_input(INPUT_POST, 'short'));
+
+			$game = ModelFactory::build('Game')->byShort($gamename);
+			if(!$game) {
+				throw new FileNotFoundException('game '.$gamename);
+			}
+
+			$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId(), true);
+			if(!$addon) {
+				throw new FileNotFoundException('addon '.$addonname);
+			}
+
+			$addon->setTitle($title);
+			$addon->setShort($short);
+
+			$addon->save();
+
+			if($short != $addonname) {
+				return $this->redirect($short, true);
+			}
+		}
+
+		if(isset($_GET['add-version'])) {
 			
 		}
 
