@@ -7,6 +7,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php)
 RewriteRule ^(.*)$ index.php/$1 [L]
 
-#ErrorDocument 403 /error/forbidden
-#ErrorDocument 404 /error/notfound
-#ErrorDocument 500 /error/generic
+ErrorDocument 403 error/forbidden
+ErrorDocument 404 error/notfound
