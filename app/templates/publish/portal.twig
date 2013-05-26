@@ -4,36 +4,47 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
+<div class="row-fluid">
+	<div class="span4">
 		<hr class="visible-phone">
-		<h4>{% trans %}New addon{% endtrans %}</h4>
+		<h2>{% trans %}Create{% endtrans %}</h2>
+		<h4>{% trans %}Addon{% endtrans %}</h4>
 		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
-		<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
-				<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %} placeholder="{% trans %}Full title{% endtrans %}">
-				<select name="game" id="game" required{% if not games %} disabled{% endif %}>
-					<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
-					{% for game in games %}
-					<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
-					{% else %}
-					<option>{% trans %}No game available{% endtrans %}</option>
-					{% endfor %}
-				</select>
-				<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
-				<label class="control-label" for="title"></label>
+		<form method="post" action="{{filename}}" id="form-publish" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="game">{% trans %}Game{% endtrans %}</label>
+				<div class="controls">
+					<select name="game" id="game" required{% if not games %} disabled{% endif %}>
+						<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
+						{% for game in games %}
+						<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
+						{% else %}
+						<option>{% trans %}No game available{% endtrans %}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="title">{% trans %}Full Title{% endtrans %}</label>
+				<div class="controls">
+					<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %}>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
+				</div>
+			</div>
 		</form>
+	</div>
+	<div class="span8">
 		<hr class="visible-phone">
+		<h2>{% trans %}Your addons{% endtrans %}</h2>
 		<h4>{% trans %}Unreleased{% endtrans %}</h4>
 		{% if addons_unreleased %}
-		<ul class="media-list addons">
+		<ul>
 		{% for addon in addons_unreleased %}
-			<li class="media">
-				<div class="pull-left">
-				 <img class="media-object" src="http://placehold.it/200x150">
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading">{{ addon.title }} <a href="{{base}}/addons/{{addon.game.short}}" class="muted">(<em>{{addon.game.title}}</em>)</a></h4>
-					<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a class="btn">{% trans %}Add release{% endtrans %}</a></p>
-				</div>
-			</li>
+				<li><a href="{{base}}/publish/{{addon.game.short}}/{{addon.short}}">{{ addon.title }}</a> <em>({{addon.game.title}})</em></li>
 		{% endfor %}
 		</ul>
 		{% else %}
@@ -41,33 +52,32 @@
 		{% endif %}
 		<h4>{% trans %}Released{% endtrans %}</h4>
 		{% if addons_released %}
-		<ul class="media-list addons">
+		<ul>
 		{% for addon in addons_released %}
-			<li class="media">
-				<a class="pull-left" href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">
-					<img class="media-object" src="http://placehold.it/200x150">
-				</a>
-				<div class="media-body">
-					<h4 class="media-heading">{{ addon.title }}<!-- <a href="{{base}}/addons/{{addon.game.short}}"><span class="label label-{{addon.game.short}}">{{addon.game.title}}</span></a>!--></h4>
-					<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a class="btn">{% trans %}Add release{% endtrans %}</a></p>
-				</div>
-			</li>
+				<li>
+					<a href="{{ addon.url }}">{{ addon.title }}</a>
+					{% if addon.game %}
+						<em>({{addon.game}}, {{addon.year}})</em>
+					{% endif %}
+				</li>
 		{% endfor %}
 		</ul>
 		{% else %}
-			<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
+		<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
 		{% endif %}
+	</div>
+</div>
 {% endblock %}
 
 {% block javascript %}
 {{ parent() }}
 
-	$(document).ready(function() {
+$(document).ready(function() {
 	$('#form-publish input, #form-publish select').each(function() {
-	$(this).addClass('noerror')
-	var require = function() {$(this).removeClass('noerror');};
-	$(this).keydown(require);
-	$(this).blur(require);
+		$(this).addClass('noerror')
+		var require = function() {$(this).removeClass('noerror');};
+		$(this).keydown(require);
+		$(this).blur(require);
 	});
-	});
+});
 {% endblock %}

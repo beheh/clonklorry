@@ -9,13 +9,13 @@
 			<div class="control-group">
 				<label class="control-label" for="title">{% trans "Title" %}</label>
 				<div class="controls">
-					<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required>
+					<input type="text" name="title" id="username" value="{{addon_title}}" maxlength="32" required>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="short">{% trans "Url" %}</label>
 				<div class="controls">
-					<input type="text" name="short" id="short" value="{{addon_short}}" maxlength="32" placeholder="{{addon_short_placeholder}}" required>
+					<input type="text" name="short" id="username" value="{{addon_short}}" maxlength="32" placeholder="{{addon_short_placeholder}}" required>
 				</div>
 			</div>
 			<div class="control-group">
@@ -23,11 +23,6 @@
 					<button type="submit" class="btn btn-primary">{% trans %}Change{% endtrans %}</button>
 				</div>
 			</div>
-		</form>
-		<h2>{% trans %}Description{% endtrans %}</h2>
-		<form method="post" action="{{filename}}?change-description">
-			<textarea></textarea>
-			<button type="submit" class="btn btn-primary">{% trans %}Change{% endtrans %}</button>
 		</form>
 	</div>
     <div class="span4 offset3">

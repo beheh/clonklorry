@@ -96,8 +96,8 @@ abstract class Presenter implements PresenterInterface {
 	 * Sends a 301 Moved Permanently redirect.
 	 * @param string $location
 	 */
-	protected final function redirect($location, $absolute = false) {
-		if(!$absolute) {
+	protected final function redirect($location, $external = false) {
+		if(!$external) {
 			$location = $this->config->get('base').$location;
 		}
 		header('HTTP/1.1 301 Moved Permanently');

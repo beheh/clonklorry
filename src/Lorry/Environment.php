@@ -14,6 +14,7 @@ use Lorry\Exception\NotImplementedException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
 
+
 class Environment {
 
 	/**
@@ -89,9 +90,7 @@ class Environment {
 			'/about' => 'Site\About',
 			'/clonk' => 'Site\Clonk',
 			'/community' => 'Site\Community',
-			'/contact' => 'Site\Contact',
-			'/error/forbidden' => 'Error\Forbidden',
-			'/error/notfound' => 'Error\NotFound',
+			'/contact' => 'Site\Contact'
 		));
 
 		// determine the RESTful method
@@ -113,6 +112,7 @@ class Environment {
 
 			// execute the RESTful method
 			return call_user_func_array(array($presenter, $method), Router::getMatches());
+
 		} catch(FileNotFoundException $exception) {
 			return PresenterFactory::build('Error\FileNotFound')->get($exception);
 		} catch(ForbiddenException $exception) {
