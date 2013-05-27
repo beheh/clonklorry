@@ -9,21 +9,21 @@
 		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
 		<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
 				<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %} placeholder="{% trans %}Full title{% endtrans %}">
-				<select name="game" id="game" required{% if not games %} disabled{% endif %}>
+				{% if games and games|length > 1%}<select name="game" id="game" required>
 					<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
 					{% for game in games %}
 					<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
 					{% else %}
 					<option>{% trans %}No game available{% endtrans %}</option>
 					{% endfor %}
-				</select>
+				</select>{% endif %}
 				<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
 				<label class="control-label" for="title"></label>
 		</form>
 		<hr class="visible-phone">
 		<h4>{% trans %}Unreleased{% endtrans %}</h4>
 		{% if addons_unreleased %}
-		<ul class="media-list addons">
+		<ul class="media-list addons-small">
 		{% for addon in addons_unreleased %}
 			<li class="media">
 				<div class="pull-left">
@@ -41,7 +41,7 @@
 		{% endif %}
 		<h4>{% trans %}Released{% endtrans %}</h4>
 		{% if addons_released %}
-		<ul class="media-list addons">
+		<ul class="media-list addons-small">
 		{% for addon in addons_released %}
 			<li class="media">
 				<a class="pull-left" href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">
