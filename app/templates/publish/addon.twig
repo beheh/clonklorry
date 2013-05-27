@@ -3,7 +3,7 @@
 {% block content %}
 <h1>{{ addon_title }}</h1>
 <div class="row-fluid">
-    <div class="span5">
+    <div class="span12">
 		<h2>{% trans %}Generic{% endtrans %}</h2>
 		<form method="post" action="{{filename}}?change-details" class="form-horizontal">
 			<div class="control-group">
@@ -19,6 +19,12 @@
 				</div>
 			</div>
 			<div class="control-group">
+				<label class="control-label" for="description">{% trans "Description" %}</label>
+				<div class="controls">
+					<textarea id="description"></textarea>
+				</div>
+			</div>
+			<div class="control-group">
 				<div class="controls">
 					<button type="submit" class="btn btn-primary">{% trans %}Change{% endtrans %}</button>
 				</div>
@@ -26,11 +32,8 @@
 		</form>
 		<h2>{% trans %}Description{% endtrans %}</h2>
 		<form method="post" action="{{filename}}?change-description">
-			<textarea></textarea>
-			<button type="submit" class="btn btn-primary">{% trans %}Change{% endtrans %}</button>
 		</form>
-	</div>
-    <div class="span4 offset3">
+		<hr class="visible-phone">
 		<h2>{% trans %}Releases{% endtrans %}</h2>
 		<h4>{% trans %}New release{% endtrans %}</h4>
 		<form method="post" action="{{filename}}?add-release" class="form-horizontal">

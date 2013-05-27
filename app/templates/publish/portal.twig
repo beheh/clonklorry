@@ -4,7 +4,10 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
+<div class="row-fluid">
+	<div class="span12">
 		<hr class="visible-phone">
+		<h2>{% trans %}Addons{% endtrans %}</h2>
 		<h4>{% trans %}New addon{% endtrans %}</h4>
 		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
 		<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
@@ -20,7 +23,6 @@
 				<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
 				<label class="control-label" for="title"></label>
 		</form>
-		<hr class="visible-phone">
 		<h4>{% trans %}Unreleased{% endtrans %}</h4>
 		{% if addons_unreleased %}
 		<ul class="media-list addons">
@@ -57,6 +59,8 @@
 		{% else %}
 			<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
 		{% endif %}
+	</div>
+</div>
 {% endblock %}
 
 {% block javascript %}
