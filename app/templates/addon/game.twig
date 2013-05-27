@@ -8,13 +8,23 @@
 {% endif %}
 <h2>{{ game }}</h2>
 <h4><a href="#">{% trans %}By date{% endtrans %} &#9660;</a> | <a href="#">{% trans %}By name{% endtrans %} &#9660;</a> </h4>
+
+{% if addons %}
+<ul class="media-list addons">
 {% for addon in addons %}
-	<a href="{{ base }}/addons/{{short}}/{{addon.short}}">
-		<p class="addon">
-		{{ addon.title }}
-		</p>
-	</a>
-{% else %}
-	<p class="alert alert-warning">{% trans %}There are no addons available for this game.{% endtrans %}</p>
+	<li class="media">
+		<div class="pull-left">
+		 <img class="media-object" src="http://placehold.it/200x150">
+		</div>
+		<div class="media-body">
+			<h4 class="media-heading">{{ addon.title }}</h4>
+			<p class="hidden-phone">Vor langer Zeit, als Clonk noch 8bit war, brachte Redwolf Design ein futuristisches Zusatzpack namens Hazard heraus. Mit diesem Pack spielte man bewaffnete Clonks in Raumstationen und durfte Aliens und Mitspieler mit abgefahrenen Waffen über den Haufen schießen.</p>
+			<p class="hidden-phone"><a href="#" class="btn btn-success">Download</a> <a href="#" class="btn">Show addons</a></p>
+		</div>
+	</li>
 {% endfor %}
+</ul>
+{% else %}
+<p class="alert alert-warning">{% trans %}There are no addons available for this game.{% endtrans %}</p>
+{% endif %}
 {% endblock %}
