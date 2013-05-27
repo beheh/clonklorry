@@ -33,12 +33,11 @@
 			<div class="span6">
 				<h2>{% trans %}Scheduled release{% endtrans %}</h2>
 				<form method="post" action="">
-					<label for="datetime">{% trans "Date and time" %}</label>
-					<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{datetime}}" required>
+					<label for="datetime">{% trans %}Date and time{% endtrans %}</label>
+					<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{current_datetime}}" required>
 
 					<label class="checkbox">
-						<input type="checkbox">
-						Publish date and time before release
+						<input type="checkbox">{% trans %}Make release date and time public{% endtrans %}
 					</label>
 
 					<p class="alert alert-info">{% trans %}You can cancel a scheduled release at any time before the automated release.{% endtrans %}</p>
