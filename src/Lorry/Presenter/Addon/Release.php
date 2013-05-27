@@ -33,6 +33,10 @@ class Release extends Presenter {
 		}
 
 		$this->context['title'] = $addon->getTitle();
+
+		$this->context['addon'] = array('title' => $addon->getTitle(), 'short' => $addon->getShort());
+		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
+
 		$this->context['developer'] = $owner->getUsername();
 		$this->context['version'] = $release->getVersion();
 
