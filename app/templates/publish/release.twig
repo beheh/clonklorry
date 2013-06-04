@@ -1,16 +1,51 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Release'|trans %}
+{% set title = 'Edit release'|trans %}
 
 {% block content %}
-<h1>{% trans %}Release addon{% endtrans %}</h1>
-<div class="row-fluid">
+<h1>{{title}}</h1>
+<ul class="breadcrumb">
+  <li><a href="#">Publish</a> <span class="divider">/</span></li>
+  <li><a href="#">Codename: Modern Combat</a> <span class="divider">/</span></li>
+  <li class="active">Release 1.5</li>
+</ul>
+ <div class="row-fluid">
     <div class="span12">
 		<div class="row-fluid">
 			<div class="span12">
 				<h2>Codename: Modern Combat</h2>
 				<p class="alert alert-success">This version is ready to be published.</p>
 				<p><a href="{{filename}}/.." class="btn">Edit</a></p>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<form method="post" action="{{filename}}?change-details" class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="version">{% trans "Version" %}</label>
+						<div class="controls">
+							<input type="text" name="version" id="title" value="{{addon_title}}" maxlength="32" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="description">{% trans "Addon description" %}</label>
+						<div class="controls">
+							<p>Lorem Ipsum Dolor Sit Amet and a long example text concerning different details.</p>
+							<p><a href="{{filename}}/..">Edit</a></p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="description">{% trans "Release description" %}</label>
+						<div class="controls">
+							<textarea id="description"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							<button type="submit" class="btn btn-primary">{% trans %}Change{% endtrans %}</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 		<div class="row-fluid">
