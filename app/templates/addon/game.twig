@@ -1,6 +1,7 @@
 {% extends 'root.twig' %}
 
 {% block content %}
+<img src="{{base}}/img/game/{{short}}.png" class="pull-right hidden-phone">
 <h1>{{ title }}</h1>
 {% if user_login %}
 	<a href="{{base}}/publish?for={{short}}" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
