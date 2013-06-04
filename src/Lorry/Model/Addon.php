@@ -99,14 +99,6 @@ class Addon extends Model {
 		return $this->getValue('description');
 	}
 
-	public function fetchRequirements() {
-		return ModelFactory::build('Dependency')->all()->byAddon($this->getId());
-	}
-
-	public function fetchDependencies() {
-		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
-	}
-
 	public function setWebsite($website) {
 		return $this->setValue('website', $website);
 	}

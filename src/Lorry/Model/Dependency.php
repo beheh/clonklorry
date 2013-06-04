@@ -9,24 +9,24 @@ class Dependency extends Model {
 
 	public function __construct() {
 		parent::__construct('dependency', array(
-			'addon' => 'int',
+			'release' => 'int',
 			'required' => 'int'));
 	}
 
-	public function setAddon($addon) {
-		return $this->setValue('addon', $addon);
+	public function setRelease($release) {
+		return $this->setValue('release', $release);
 	}
 
-	public function byAddon($addon) {
-		return $this->byValue('addon', $addon);
+	public function byRelease($release) {
+		return $this->byValue('release', $release);
 	}
 
-	public function getAddon() {
-		return $this->getValue('addon');
+	public function getRelease() {
+		return $this->getValue('release');
 	}
 
-	public function fetchAddon() {
-		return ModelFactory::build('Addon')->byId($this->getAddon());
+	public function fetchRelease() {
+		return ModelFactory::build('Release')->byId($this->getRelease());
 	}
 
 	public function setRequired($required) {
@@ -42,7 +42,7 @@ class Dependency extends Model {
 	}
 
 	public function fetchRequired() {
-		return ModelFactory::build('Addon')->byId($this->getRequired());
+		return ModelFactory::build('Release')->byId($this->getRequired());
 	}
 
 }

@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
+use Lorry\ModelFactory;
 
 class Release extends Model {
 
@@ -24,6 +25,10 @@ class Release extends Model {
 
 	public final function getAddon() {
 		return $this->getValue('addon');
+	}
+
+	public final function fetchAddon() {
+		return ModelFactory::build('Addon')->byId($this->getAddon());
 	}
 
 	public final function setVersion($version) {
@@ -56,6 +61,14 @@ class Release extends Model {
 
 	public function getDescription() {
 		return $this->getValue('description');
+	}
+
+	public function fetchRequirements() {
+		return ModelFactory::build('Dependency')->all()->byRelease($this->getId());
+	}
+
+	public function fetchDependencies() {
+		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
 	}
 
 }

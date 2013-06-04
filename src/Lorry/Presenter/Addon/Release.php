@@ -21,8 +21,6 @@ class Release extends Presenter {
 			throw new FileNotFoundException('addon '.$addonname);
 		}
 
-		$owner = ModelFactory::build('User')->byId($addon->getOwner());
-
 		if($version == 'latest') {
 			$release = ModelFactory::build('Release')->latest($addon->getId());
 		} else {
@@ -37,25 +35,35 @@ class Release extends Presenter {
 		$this->context['addon'] = array('title' => $addon->getTitle(), 'short' => $addon->getShort());
 		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
 
-		$this->context['developer'] = $owner->getUsername();
+
+		$owner = ModelFactory::build('User')->byId($addon->getOwner());
+
+		if($owner) {
+			$this->context['developer'] = $owner->getUsername();
+		}
 		$this->context['version'] = $release->getVersion();
 
 		$this->context['addon_description'] = $addon->getDescription();
 		$this->context['release_description'] = $release->getDescription();
 
 		$this->context['dependencies'] = array();
-		$dependencies = $addon->fetchDependencies();
+		$dependencies = $release->fetchDependencies();
 		foreach($dependencies as $dependency) {
-			$dependency_addon = $dependency->fetchAddon();
-			if(!$dependency_addon)
-				continue;
+			$dependency_release = $dependency->fetchRelease();
+			if(!$dependency_release) continue;
+			$dependency_addon = $dependency_release->fetchAddon();
+			if(!$dependency_addon) continue;
 			$this->context['dependencies'][] = array('title' => $dependency_addon->getTitle(), 'short' => $dependency_addon->getShort());
 		}
 
 		$this->context['requirements'] = array();
-		$requirements = $addon->fetchRequirements();
+		$requirements = $release->fetchRequirements();
 		foreach($requirements as $requirement) {
-			$requirement_addon = $requirement->fetchRequired();
+			$requirement_release = $requirement->fetchRequired();
+			if(!$requirement_release) {
+				continue;
+			}
+			$requirement_addon = $requirement_release->fetchAddon();
 			if(!$requirement_addon) {
 				continue;
 			}
