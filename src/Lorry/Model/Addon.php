@@ -81,8 +81,9 @@ class Addon extends Model {
 		return $this->getValue('abbreviation');
 	}
 
-	public function byAbbreviation($abbreviation) {
-		return $this->byValue('abbreviation', $abbreviation);
+	public function byAbbreviation($abbreviation, $game) {
+		$constraints = array('abbreviation' => $abbreviation, 'game' => $game, 'public' => true);
+		return $this->byValues($constraints);
 	}
 
 	public function setGame($game) {

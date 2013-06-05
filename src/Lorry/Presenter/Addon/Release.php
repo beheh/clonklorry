@@ -18,6 +18,10 @@ class Release extends Presenter {
 
 		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
 		if(!$addon) {
+			$addon = ModelFactory::build('Addon')->byAbbreviation($addonname, $game->getId());
+			if($addon) {
+				return $this->redirect('/addons/'.$game->getShort().'/'.$addon->getShort());
+			}
 			throw new FileNotFoundException('addon '.$addonname);
 		}
 
