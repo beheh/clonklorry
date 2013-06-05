@@ -7,8 +7,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<hr class="visible-phone">
-		<h2>{% trans %}Addons{% endtrans %}</h2>
-		<h4>{% trans %}New addon{% endtrans %}</h4>
+		<h2>{% trans %}New addon{% endtrans %}</h2>
 		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
 		<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
 				<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %} placeholder="{% trans %}Full title{% endtrans %}">
@@ -23,7 +22,12 @@
 				<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
 				<label class="control-label" for="title"></label>
 		</form>
-		<h4>{% trans %}Unreleased{% endtrans %}</h4>
+	</div>
+</div>
+<hr>
+<div class="row-fluid">
+	<div class="span6">
+		<h2>{% trans %}Unreleased{% endtrans %}</h2>
 		{% if addons_unreleased %}
 		<ul class="media-list addons-small">
 		{% for addon in addons_unreleased %}
@@ -42,7 +46,9 @@
 		{% else %}
 		<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
 		{% endif %}
-		<h4>{% trans %}Released{% endtrans %}</h4>
+	</div>
+	<div class="span6">
+		<h2>{% trans %}Released{% endtrans %}</h2>
 		{% if addons_released %}
 		<ul class="media-list addons-small">
 		{% for addon in addons_released %}
