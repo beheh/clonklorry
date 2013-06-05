@@ -11,6 +11,7 @@ class Addon extends Model {
 		parent::__construct('addon', array(
 			'owner' => 'string',
 			'short' => 'string',
+			'abbreviation' => 'string',
 			'title' => 'string',
 			'game' => 'int',
 			'public' => 'boolean',
@@ -39,7 +40,16 @@ class Addon extends Model {
 		return ModelFactory::build('User')->byId($this->getOwner());
 	}
 
+	const SHORT_LENGTH_MIN = 4;
+	const SHORT_LENGTH_MAX = 30;
+
 	public function setShort($short) {
+		if(strlen($short) < self::SHORT_LENGTH_MIN) {
+			return false;
+		}
+		if(strlen($short) > self::SHORT_LENGTH_MAX) {
+			return false;
+		}
 		return $this->setValue('short', $short);
 	}
 
@@ -61,6 +71,18 @@ class Addon extends Model {
 
 	public function getTitle() {
 		return $this->getValue('title');
+	}
+
+	public function setAbbreviation($abbreviation) {
+		return $this->setValue('abbreviation', $abbreviation);
+	}
+
+	public function getAbbreviation() {
+		return $this->getValue('abbreviation');
+	}
+
+	public function byAbbreviation($abbreviation) {
+		return $this->byValue('abbreviation', $abbreviation);
 	}
 
 	public function setGame($game) {
