@@ -27,6 +27,7 @@ class Addon extends Presenter {
 		$this->context['addon_title'] = $addon->getTitle();
 		$this->context['addon_short'] = $addon->getShort();
 		$this->context['addon_short_placeholder'] = preg_replace('#[^a-z]#', '', strtolower($addon->getTitle()));
+		$this->context['addon_abbreviation'] = $addon->getAbbreviation();
 
 		$this->display('publish/addon.twig');
 	}
@@ -35,6 +36,7 @@ class Addon extends Presenter {
 		if(isset($_GET['change-details'])) {
 			$title = filter_input(INPUT_POST, 'title');
 			$short = urlencode(filter_input(INPUT_POST, 'short'));
+			$abbreviation = filter_input(INPUT_POST, 'abbreviation');
 
 			$game = ModelFactory::build('Game')->byShort($gamename);
 			if(!$game) {
@@ -48,6 +50,7 @@ class Addon extends Presenter {
 
 			$addon->setTitle($title);
 			$addon->setShort($short);
+			$addon->setAbbreviation($abbreviation);
 
 			$addon->save();
 
@@ -57,7 +60,7 @@ class Addon extends Presenter {
 		}
 
 		if(isset($_GET['add-version'])) {
-			
+
 		}
 
 		$this->get($gamename, $addonname);
