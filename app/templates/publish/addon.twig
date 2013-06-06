@@ -63,7 +63,7 @@
 	</div>
 	<div class="span8">
 		<hr class="visible-phone">
-		<h2>Presentation</h2>
+		<h2>{% trans %}Presentation{% endtrans %}</h2>
 		<h4>{% trans %}Description{% endtrans %}</h4>
 		<form method="post" action="{{filename}}?change-description">
 			<div class="control-group">
@@ -102,10 +102,10 @@
 {{ parent() }}
 
 function addons(query, process) {
-	return ['Hazard', 'Clonk Infinity', 'Codename: Modern Combat'];
+	return {{addons_json|raw}};
 }
 
-var abbreviations = {cmc:'Codename: Modern Combat'};
+var abbreviations = '';
 
 /*function abbreviationMatcher(item) {
 	if(typeof abbreviations[this.query] !== 'undefined') {

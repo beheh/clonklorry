@@ -29,6 +29,16 @@ class Addon extends Presenter {
 		$this->context['addon_short_placeholder'] = preg_replace('#[^a-z]#', '', strtolower($addon->getTitle()));
 		$this->context['addon_abbreviation'] = $addon->getAbbreviation();
 
+		$dependency_addons = ModelFactory::build('Addon')->all()->byGame($game->getId());
+		$dependency_addonlist = array();
+		foreach($dependency_addons as $dependency_addon) {
+			if($dependency_addon->getId() == $addon->getId()) {
+				continue;
+			}
+			$dependency_addonlist[] = $dependency_addon->getTitle();
+		}
+		$this->context['addons_json'] = json_encode($dependency_addonlist);
+
 		$this->display('publish/addon.twig');
 	}
 
