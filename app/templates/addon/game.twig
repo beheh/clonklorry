@@ -3,14 +3,14 @@
 {% block content %}
 <img src="{{base}}/img/game/{{short}}.png" class="pull-right hidden-phone">
 <h1>{{ title }}</h1>
+<!--<p>Something awesome about this extremely epic game.</p>
 {% if user_login %}
 	<a href="{{base}}/publish?for={{short}}" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
 	<hr>
-{% endif %}
-<h2>{{ game }}</h2>
-<h4><a href="#">{% trans %}By date{% endtrans %} &#9660;</a> | <a href="#">{% trans %}By name{% endtrans %} &#9660;</a> </h4>
-
+{% endif %}!-->
+<h2>{% trans %}All addons{% endtrans %}</h2>
 {% if addons %}
+<div class="sort-bar">Sort <a href="#">{% trans %}by date{% endtrans %}</a> &#9660; | <a href="#">{% trans %}by name{% endtrans %}</a> | <a href="#">{% trans %}by rating{% endtrans %}</a></div>
 <ul class="media-list addons">
 {% for addon in addons %}
 	<li class="media">
