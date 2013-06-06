@@ -59,7 +59,7 @@
 				<div class="media-body">
 					<h4 class="media-heading heading-label">{{ addon.title }}</h4>
 					<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
-					<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a class="btn">{% trans %}Add release{% endtrans %}</a></p>
+					<p><a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}" class="btn btn-success">{% trans %}View addon page{% endtrans %}</a> <a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a class="btn">{% trans %}Add release{% endtrans %}</a></p>
 				</div>
 			</li>
 		{% endfor %}
