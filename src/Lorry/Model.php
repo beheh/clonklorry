@@ -3,6 +3,8 @@
 namespace Lorry;
 
 use Lorry\Service\PersistenceService;
+use Lorry\Exception\ModelValueInvalidException;
+use InvalidArgumentException;
 use Exception;
 
 abstract class Model implements ModelInterface {
@@ -54,16 +56,14 @@ abstract class Model implements ModelInterface {
 	}
 
 	public final function setValue($name, $value) {
-		if($this->loaded && $this->values[$name] === $value)
-			return true;
+		if($this->loaded && $this->values[$name] === $value) return true;
 		$this->changes[$name] = $this->ensureType($name, $value);
 		return true;
 	}
 
 	public final function getValue($name) {
 		$this->ensureRow($name);
-		if(array_key_exists($name, $this->changes))
-			return $this->changes[$name];
+		if(array_key_exists($name, $this->changes)) return $this->changes[$name];
 		$this->ensureLoaded();
 		return $this->values[$name];
 	}
@@ -186,21 +186,21 @@ abstract class Model implements ModelInterface {
 
 	public final function ensureRow($row) {
 		if(!array_key_exists($row, $this->schema) && $row != 'id') {
-			throw new \InvalidArgumentException('row "' . $row . '" does not exist');
+			throw new InvalidArgumentException('row "'.$row.'" does not exist');
 		}
 		return true;
 	}
 
 	public final function ensureLoaded() {
 		if(!$this->loaded) {
-			throw new \Exception('model has not been loaded');
+			throw new Exception('model has not been loaded');
 		}
 		return true;
 	}
 
 	public final function ensureUnloaded() {
 		if($this->loaded) {
-			throw new \Exception('model has already been loaded');
+			throw new Exception('model has already been loaded');
 		}
 		return true;
 	}
@@ -249,8 +249,7 @@ abstract class Model implements ModelInterface {
 	 * @return boolean True, if all changes will be persistent
 	 */
 	public final function save() {
-		if(!$this->modified())
-			return true;
+		if(!$this->modified()) return true;
 		if($this->loaded) {
 			if(!$this->persistence->update($this, $this->changes)) {
 				return false;
@@ -263,6 +262,36 @@ abstract class Model implements ModelInterface {
 		$this->values = array_merge($this->values, $this->changes);
 		$this->rollback();
 		$this->loaded = true;
+		return true;
+	}
+
+	/* Validation */
+
+	protected final function validateString($string, $minlength, $maxlength, $regexp = '') {
+		$string = (string) $string;
+		if(strlen($string) < $minlength) {
+			$error = gettext('too short');
+			return false;
+		}
+		if(strlen($string) > $maxlength) {
+			$error = gettext('too long');
+			return false;
+		}
+		if(!empty($regexp)) {
+			/* if(!preg_match($pattern, $subject)) {
+			  return false;
+			  } */
+		}
+		return true;
+	}
+
+	protected final function validateEmail($email) {
+		$email = (string) $email;
+
+		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$error = gettext('not a valid email address');
+		}
+
 		return true;
 	}
 

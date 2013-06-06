@@ -17,20 +17,9 @@ class User extends Model {
 			'language' => 'varchar(5)'));
 	}
 
-	const USERNAME_LENGTH_MIN = 3;
-	const USERNAME_LENGTH_MAX = 16;
-	const USERNAME_OK = 1;
-	const USERNAME_TOO_SHORT = 2;
-	const USERNAME_TOO_LONG = 3;
-
 	public function setUsername($username) {
-		if(strlen($username) < self::USERNAME_LENGTH_MIN) {
-			return self::USERNAME_TOO_SHORT;
-		}
-		if(strlen($username) > self::USERNAME_LENGTH_MAX) {
-			return self::USERNAME_TOO_LONG;
-		}
-		return $this->setValue('username', $username) && self::USERNAME_OK;
+		$this->validateString($username, 3, 16);
+		return $this->setValue('username', $username);
 	}
 
 	public final function byUsername($username) {
@@ -41,25 +30,14 @@ class User extends Model {
 		return $this->getValue('username');
 	}
 
-	const PASSWORD_LENGTH_MIN = 8;
-	const PASSWORD_LENGTH_MAX = 256;
-	const PASSWORD_OK = 1;
-	const PASSWORD_TOO_SHORT = 2;
-	const PASSWORD_TOO_LONG = 3;
-
 	public final function setPassword($password) {
-		if(strlen($password) < self::PASSWORD_LENGTH_MIN) {
-			return self::PASSWORD_TOO_SHORT;
-		}
-		if(strlen($password) > self::PASSWORD_LENGTH_MAX) {
-			return self::PASSWORD_TOO_LONG;
-		}
+		$this->validateString($password, 8, 255);
 		if(!empty($password)) {
 			$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
 		} else {
 			$hash = null;
 		}
-		return $this->setValue('password', $hash) && self::PASSWORD_OK;
+		return $this->setValue('password', $hash);
 	}
 
 	public final function hasPassword() {
@@ -72,15 +50,14 @@ class User extends Model {
 		return password_verify($password, $this->getValue('password')) === true;
 	}
 
-	const EMAIL_OK = 1;
-	const EMAIL_INVALID = 2;
-
 	public function setEmail($email) {
-		$email = filter_var($email, FILTER_VALIDATE_EMAIL);
+		$this->validateEmail($email);
+
+		/*$email = filter_var($email, FILTER_VALIDATE_EMAIL);
 		if(!$email) {
 			return self::EMAIL_INVALID;
-		}
-		return $this->setValue('email', $email) && self::EMAIL_OK;
+		}*/
+		return $this->setValue('email', $email);
 	}
 
 	public function getEmail() {

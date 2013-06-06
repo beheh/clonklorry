@@ -40,16 +40,8 @@ class Addon extends Model {
 		return ModelFactory::build('User')->byId($this->getOwner());
 	}
 
-	const SHORT_LENGTH_MIN = 4;
-	const SHORT_LENGTH_MAX = 30;
-
 	public function setShort($short) {
-		if(strlen($short) < self::SHORT_LENGTH_MIN) {
-			return false;
-		}
-		if(strlen($short) > self::SHORT_LENGTH_MAX) {
-			return false;
-		}
+		$this->validateString($short, 4, 30);
 		return $this->setValue('short', $short);
 	}
 
