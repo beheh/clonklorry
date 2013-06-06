@@ -4,13 +4,18 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
-<p>{% trans %}Choose a game:{% endtrans %}</p>
+<p>The clonk series consists of multiple titles.</p>
+<p><a href="{{base}}/clonk" class="btn btn-success">{% trans %}Learn all about Clonk{% endtrans %}</a></p>
+<hr>
 {% if games %}
-<ul>
+<div class="row-fluid">
 	{% for game in games %}
-	<li><a href="{{filename}}/{{ game.short }}">{{ game.title }}</a></li>
+	<div class="span4">
+		<h3>{{game.title}}</h3>
+		<a href="{{base}}/addons/{{game.short}}"><img src="{{base}}/img/game/{{game.short}}.png"></a>
+	</div>
 	{% endfor %}
-</ul>
+</div>
 {% else %}
 <p class="alert alert-warning">{% trans %}No games available.{% endtrans %}</p>
 {% endif %}
