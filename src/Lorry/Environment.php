@@ -76,6 +76,7 @@ class Environment {
 			'/download/:alpha/:alpha' => 'Addon\Download',
 			'/download/:alpha/:alpha/:version' => 'Addon\Download',
 			'/publish' => 'Publish\Portal',
+			'/publish/:alpha' => 'Publish\Game',
 			'/publish/:alpha/:alpha' => 'Publish\Addon',
 			'/publish/:alpha/:alpha/:version' => 'Publish\Release',
 			'/users' => 'User\Table',
