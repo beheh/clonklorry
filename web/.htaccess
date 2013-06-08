@@ -1,5 +1,5 @@
 AddDefaultCharset utf-8
-#Options -Indexes
+Options -Indexes
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
