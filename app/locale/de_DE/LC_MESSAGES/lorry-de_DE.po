@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2013-06-05 14:53+0100\n"
-"PO-Revision-Date: 2013-06-06 12:21+0100\n"
+"POT-Creation-Date: 2013-06-08 12:18+0100\n"
+"PO-Revision-Date: 2013-06-08 12:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de-DE\n"
@@ -20,17 +20,25 @@ msgstr ""
 "X-Poedit-SearchPath-4: /srv/http/lorry/src\n"
 "X-Poedit-SearchPath-5: /srv/http/lorry/app/cache\n"
 
-#: /srv/http/lorry/src/Lorry/Model.php:273
+#: /srv/http/lorry/src/Lorry/Model.php:281
 msgid "too short"
 msgstr "zu kurz"
 
-#: /srv/http/lorry/src/Lorry/Model.php:277
+#: /srv/http/lorry/src/Lorry/Model.php:284
 msgid "too long"
 msgstr "zu lang"
 
-#: /srv/http/lorry/src/Lorry/Model.php:292
+#: /srv/http/lorry/src/Lorry/Model.php:297
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
+
+#: /srv/http/lorry/src/Lorry/Model.php:305
+msgid "not a valid URL"
+msgstr "keine gültige URL"
+
+#: /srv/http/lorry/src/Lorry/Model.php:311
+msgid "not a valid number"
+msgstr "keine gültige Zahl"
 
 #: /srv/http/lorry/src/Lorry/Environment.php:46
 msgid "Development version."
@@ -116,48 +124,38 @@ msgstr "Interner Serverfehler"
 msgid "The server encountered an internal error."
 msgstr "Bei der Bearbeitung trat ein interner Serverfehler auf."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:33
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:34
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
 #: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:39
-msgid "Username too short."
-msgstr "Benutzername zu kurz."
+#, php-format
+msgid "Username is %s."
+msgstr "Benutzername ist %s."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:42
-msgid "Username too long."
-msgstr "Benutzername zu lang."
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:44
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:49
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:84
+#, php-format
+msgid "Email address is %s."
+msgstr "E-Mail-Adresse ist %s."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:45
-msgid "Username invalid."
-msgstr "Benutzername ungültig."
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:49
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:84
+msgid "invalid"
+msgstr "ungültig"
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:51
-msgid "Email address already used."
-msgstr "E-Mail-Adresse bereits verwendet."
-
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:57
-msgid "Email address invalid."
-msgstr "E-Mail-Adresse ungültig."
-
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:63
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:106
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:54
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:123
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:59
+#, php-format
+msgid "Password is %s."
+msgstr "Passwort ist %s."
+
 #: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:69
-msgid "Password too short."
-msgstr "Passwort zu kurz."
-
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:72
-msgid "Password too long."
-msgstr "Passwort zu lang."
-
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:75
-msgid "Password invalid."
-msgstr "Passwort ungültig."
-
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Register.php:86
 msgid "There was an error registering."
 msgstr "Fehler bei der Registrierung."
 
@@ -170,7 +168,7 @@ msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
 #: /srv/http/lorry/src/Lorry/Presenter/Account/Login.php:72
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:110
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:127
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -178,27 +176,31 @@ msgstr "Passwort falsch."
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:47
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:48
 msgid "Invalid Clonk Forge profile."
 msgstr "Ungültiges Clonk Forge-Profil."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:62
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:63
 msgid "Invalid GitHub name."
 msgstr "Ungültiger GitHub-Name."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:72
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:73
 msgid "Your linked profiles were changed."
 msgstr "Deine verknüpften Profile wurden geändert."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:100
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:89
+msgid "Contact details have been changed."
+msgstr "Kontaktdaten wurden geändert."
+
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:117
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:102
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:119
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:115
+#: /srv/http/lorry/src/Lorry/Presenter/Account/Settings.php:135
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -281,13 +283,13 @@ msgid "Unreleased"
 msgstr "Unveröffentlicht"
 
 #: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:154
-#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:227
+#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:235
 #: /srv/http/lorry/app/cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:26
 msgid "Edit addon"
 msgstr "Erweiterung bearbeiten"
 
 #: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:156
-#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:229
+#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:237
 msgid "Add release"
 msgstr "Release hinzufügen"
 
@@ -299,7 +301,12 @@ msgstr "Du hast noch keine neue Erweiterung erstellt."
 msgid "Released"
 msgstr "Veröffentlicht"
 
-#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:244
+#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:227
+#, fuzzy
+msgid "View addon page"
+msgstr "Seite für Erweiterung anlegen"
+
+#: /srv/http/lorry/app/cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:252
 msgid "You have not released an addon yet."
 msgstr "Du hast noch keine Erweiterung veröffentlicht."
 
@@ -394,11 +401,12 @@ msgstr "Registrieren"
 msgid "Login"
 msgstr "Anmelden"
 
-#: /srv/http/lorry/app/cache/twig/98/28/775d40173455a78412efa7df2a06.php:38
-msgid "Choose a game:"
-msgstr "Wähle ein Spiel:"
+#: /srv/http/lorry/app/cache/twig/98/28/775d40173455a78412efa7df2a06.php:41
+#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:58
+msgid "Learn all about Clonk"
+msgstr "Lerne Clonk kennen"
 
-#: /srv/http/lorry/app/cache/twig/98/28/775d40173455a78412efa7df2a06.php:69
+#: /srv/http/lorry/app/cache/twig/98/28/775d40173455a78412efa7df2a06.php:82
 msgid "No games available."
 msgstr "Keine Spiele verfügbar."
 
@@ -440,6 +448,7 @@ msgid "Rounds and Addons"
 msgstr "Runden und Erweiterungen"
 
 #: /srv/http/lorry/app/cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:180
+#: /srv/http/lorry/app/cache/twig/56/fd/5dfe9a4676ffb1f58df9602550b5.php:25
 msgid "Community"
 msgstr "Community"
 
@@ -546,8 +555,8 @@ msgid "Install Clonk Rage"
 msgstr "Clonk Rage installieren"
 
 #: /srv/http/lorry/app/cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:66
-#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:151
-#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:155
+#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:149
+#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:153
 #: /srv/http/lorry/app/cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:25
 #: /srv/http/lorry/app/cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:29
 msgid "en"
@@ -968,10 +977,6 @@ msgid ""
 "database of addons and to help them get right into the game."
 msgstr ""
 
-#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:58
-msgid "Learn all about Clonk"
-msgstr "Lerne Clonk kennen"
-
 #: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:65
 msgid "Distribution platform"
 msgstr "Downloadplattform"
@@ -1032,15 +1037,15 @@ msgstr "Technologien"
 msgid "Resources"
 msgstr "Ressourcen"
 
-#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:165
+#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:163
 msgid "People"
 msgstr "Personen"
 
-#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:171
+#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:169
 msgid "early feedback and thoughts"
 msgstr "frühes Feedback und Vorschläge"
 
-#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:183
+#: /srv/http/lorry/app/cache/twig/04/f1/9af84681428cfd72f58205efa110.php:181
 msgid "idea &amp; development"
 msgstr "Idee & Entwicklung"
 
@@ -1061,15 +1066,24 @@ msgstr "Kontaktiere uns"
 msgid "Create new addon"
 msgstr "Neue Erweiterung anlegen"
 
-#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:61
-msgid "By date"
+#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:59
+msgid "All addons"
+msgstr "Alle Erweiterungen"
+
+#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:66
+msgid "by date"
 msgstr ""
 
-#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:63
-msgid "By name"
+#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:68
+#, fuzzy
+msgid "by name"
+msgstr "GitHub-Name"
+
+#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:70
+msgid "by rating"
 msgstr ""
 
-#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:101
+#: /srv/http/lorry/app/cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:103
 msgid "There are no addons available for this game."
 msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
 
@@ -1317,6 +1331,30 @@ msgstr "Release bearbeiten"
 msgid "You have not created a release yet."
 msgstr "Du hast noch keine neue Erweiterung erstellt."
 
+#~ msgid "Email address already used."
+#~ msgstr "E-Mail-Adresse bereits verwendet."
+
+#~ msgid "Username too long."
+#~ msgstr "Benutzername zu lang."
+
+#~ msgid "Username invalid."
+#~ msgstr "Benutzername ungültig."
+
+#~ msgid "Email address invalid."
+#~ msgstr "E-Mail-Adresse ungültig."
+
+#~ msgid "Password too short."
+#~ msgstr "Passwort zu kurz."
+
+#~ msgid "Password too long."
+#~ msgstr "Passwort zu lang."
+
+#~ msgid "Password invalid."
+#~ msgstr "Passwort ungültig."
+
+#~ msgid "Choose a game:"
+#~ msgstr "Wähle ein Spiel:"
+
 #~ msgid "Full Title (without version)"
 #~ msgstr "Vollständiger Titel (ohne Version)"
 
@@ -1368,9 +1406,6 @@ msgstr "Du hast noch keine neue Erweiterung erstellt."
 
 #~ msgid "GitHub"
 #~ msgstr "GitHub"
-
-#~ msgid "Password is wrong."
-#~ msgstr "Passwort ist falsch."
 
 #~ msgid "This is you."
 #~ msgstr "Das bist du."
@@ -1511,12 +1546,6 @@ msgstr "Du hast noch keine neue Erweiterung erstellt."
 
 #~ msgid "Unlink"
 #~ msgstr "Verknüpfung entfernen"
-
-#~ msgid "Create addon page"
-#~ msgstr "Seite für Erweiterung anlegen"
-
-#~ msgid "All addons"
-#~ msgstr "Alle Erweiterungen"
 
 #~ msgid "Nothing else to say."
 #~ msgstr "Das war's."

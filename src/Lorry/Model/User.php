@@ -52,11 +52,6 @@ class User extends Model {
 
 	public function setEmail($email) {
 		$this->validateEmail($email);
-
-		/*$email = filter_var($email, FILTER_VALIDATE_EMAIL);
-		if(!$email) {
-			return self::EMAIL_INVALID;
-		}*/
 		return $this->setValue('email', $email);
 	}
 
@@ -92,6 +87,7 @@ class User extends Model {
 	}
 
 	public final function setClonkforge($clonkforge) {
+		$this->validateNumber($clonkforge);
 		return $this->setValue('clonkforge', intval($clonkforge));
 	}
 
@@ -100,6 +96,7 @@ class User extends Model {
 	}
 
 	public final function setGithub($github) {
+		$this->validateString($github, 1, 255);
 		return $this->setValue('github', $github);
 	}
 
@@ -108,6 +105,7 @@ class User extends Model {
 	}
 
 	public final function setLanguage($language) {
+		$this->validateLanguage($language);
 		return $this->setValue('language', $language);
 	}
 

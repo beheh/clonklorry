@@ -5,6 +5,7 @@ namespace Lorry\Presenter\Account;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Model\User;
+use Lorry\Exception\ModelValueInvalidException;
 
 class Register extends Presenter {
 
@@ -32,48 +33,30 @@ class Register extends Presenter {
 		if(ModelFactory::build('User')->byUsername($username)) {
 			$errors[] = gettext('Username already taken.');
 		} else {
-			switch($user->setUsername($username)) {
-				case User::USERNAME_OK:
-					break;
-				case User::USERNAME_TOO_SHORT:
-					$errors[] = gettext('Username too short.');
-					break;
-				case User::USERNAME_TOO_LONG:
-					$errors[] = gettext('Username too long.');
-					break;
-				default:
-					$errors[] = gettext('Username invalid.');
-					break;
+			try {
+				$user->setUsername($username);
+			} catch(ModelValueInvalidException $e) {
+				$errors[] = sprintf(gettext('Username is %s.'), $e->getMessage());
 			}
 		}
 
 		if($email && ModelFactory::build('User')->byEmail($email)) {
-			$errors[] = gettext('Email address already used.');
+			$errors[] = sprintf(gettext('Email address is %s.'), sprintf('already used'));
 		} else {
-			switch($user->setEmail($email)) {
-				case User::EMAIL_OK:
-					break;
-				default:
-					$errors[] = gettext('Email address invalid.');
-					break;
+			try {
+				$user->setEmail($email);
+			} catch(ModelValueInvalidException $e) {
+				$errors[] = sprintf(gettext('Email address is %s.'), gettext('invalid'));
 			}
 		}
 
 		if($password !== $password_repeat) {
 			$errors[] = gettext('Passwords do not match.');
 		} else {
-			switch($user->setPassword($password)) {
-				case User::PASSWORD_OK:
-					break;
-				case User::PASSWORD_TOO_SHORT:
-					$errors[] = gettext('Password too short.');
-					break;
-				case User::PASSWORD_TOO_LONG:
-					$errors[] = gettext('Password too long.');
-					break;
-				default:
-					$errors[] = gettext('Password invalid.');
-					break;
+			try {
+				$user->setPassword($password);
+			} catch(ModelValueInvalidException $e) {
+				$errors[] = sprintf(gettext('Password is %s.'), $e->getMessage());
 			}
 		}
 

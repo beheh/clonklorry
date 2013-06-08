@@ -267,32 +267,53 @@ abstract class Model implements ModelInterface {
 
 	/* Validation */
 
+	/**
+	 *
+	 * @param type $string The string to validate
+	 * @param type $minlength The minimum length of the string
+	 * @param type $maxlength The maximum length of the string
+	 * @param type $regexp The (optional) regexp to match the string agains
+	 * @throws ModelValueInvalidException
+	 */
 	protected final function validateString($string, $minlength, $maxlength, $regexp = '') {
 		$string = (string) $string;
 		if(strlen($string) < $minlength) {
-			$error = gettext('too short');
-			return false;
+			throw new ModelValueInvalidException(gettext('too short'));
 		}
 		if(strlen($string) > $maxlength) {
-			$error = gettext('too long');
-			return false;
+			throw new ModelValueInvalidException(gettext('too long'));
 		}
 		if(!empty($regexp)) {
 			/* if(!preg_match($pattern, $subject)) {
-			  return false;
+			  throw new ModelValueInvalidException(gettext('not in a valid format'));
 			  } */
 		}
-		return true;
 	}
 
 	protected final function validateEmail($email) {
 		$email = (string) $email;
 
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$error = gettext('not a valid email address');
+			throw new ModelValueInvalidException(gettext('not a valid email address'));
 		}
+	}
 
-		return true;
+	protected final function validateUrl($url) {
+		$url = (string) $url;
+
+		if(!filter_var($url, FILTER_VALIDATE_URL)) {
+			throw new ModelValueInvalidException(gettext('not a valid URL'));
+		}
+	}
+
+	protected final function validateNumber($number) {
+		if(!is_int($number)) {
+			throw new ModelValueInvalidException(gettext('not a valid number'));
+		}
+	}
+
+	protected final function validateLanguage($language) {
+		$this->validateString($language, 5, 5);
 	}
 
 }
