@@ -58,6 +58,7 @@ class Addon extends Model {
 	}
 
 	public function setTitle($title) {
+		$this->validateString($title, 3, 50);
 		return $this->setValue('title', $title);
 	}
 
@@ -66,6 +67,7 @@ class Addon extends Model {
 	}
 
 	public function setAbbreviation($abbreviation) {
+		$this->validateString($title, 2, 6);
 		return $this->setValue('abbreviation', $abbreviation);
 	}
 
