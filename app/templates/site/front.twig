@@ -37,8 +37,20 @@
 			<a class="carousel-control right" href="#featured-front" data-slide="next">&rsaquo;</a>
 		</div>
 		<h3>{% trans %}New releases on Lorry{% endtrans %}</h3>
-		{% if false %}
-
+		{% if new_addons %}
+			<ul class="media-list addons-small">
+			{% for addon in new_addons %}
+				<li class="media">
+					<div class="pull-left">
+					 <img class="media-object" src="http://placehold.it/200x150">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading heading-label">{{ addon.title }} v{{ addon.version }}</h4>
+						<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
+					</div>
+				</li>
+			{% endfor %}
+			</ul>
 		{% else %}
 			<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
 		{% endif %}
