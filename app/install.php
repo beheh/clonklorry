@@ -35,3 +35,4 @@ if(!$fail) {
 } else {
 	echo 'some checks failed, environment incompatible';
 }
+echo PHP_EOL;
