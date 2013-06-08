@@ -9,7 +9,7 @@ The application requires a web server with at least PHP>5.3 and the extensions j
 
 A database and the corresponding PHP PDO-extension should also be available. Lorry was developed and tested with an up-to-date MySQL installation.
 
-All requirements can be checked by executing the standalone file `install.php` in the application root.
+All requirements can be checked by executing the standalone file `install.php` in the /app directory.
 
 
 Deployment
@@ -19,5 +19,7 @@ To deploy the application, clone the source and point your webserver to the web/
 Lorry uses composer for dependency management, so simply execute a `composer install` in the root application directory to install all required libraries.
 
 The sql schema in /app/sql/lorry.sql needs to executed in your database. At some point later in development this might be done automatically when installing.
+
+In /web/.htaccess you might have to add a RewriteBase with the base of the web directory, depending on your server configuration.
 
 You also need to set up the main configuration file, which the application expects at `app/config/lorry.php`. You can copy the existing `lorry.example.php` in the same directory and modify the values.
