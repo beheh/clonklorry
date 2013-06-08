@@ -78,9 +78,10 @@ class Portal extends Presenter {
 		$short = preg_replace('#[^a-z]#', '', strtolower($title));
 		$this->context['addon_title'] = $title;
 
-		$existing = ModelFactory::build('Addon')->byShort($short, $game->getId());
-		if($existing) {
-			$errors[] = gettext('Short name already exists.');
+		if($game) {
+			if(ModelFactory::build('Addon')->byShort($short, $game->getId())) {
+				$errors[] = gettext('Short name already exists.');
+			}
 		}
 
 		if(!$errors) {
