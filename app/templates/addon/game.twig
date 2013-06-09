@@ -10,7 +10,11 @@
 {% endif %}!-->
 <h2>{% trans %}All addons{% endtrans %}</h2>
 {% if addons %}
-<div class="sort-bar">Sort <a href="#">{% trans %}by date{% endtrans %}</a> &#9660; | <a href="#">{% trans %}by name{% endtrans %}</a> | <a href="#">{% trans %}by rating{% endtrans %}</a></div>
+<div class="sort-bar">Sort 
+	<a href="{{filename}}?sort=date{% if sort == 'date' and not reverse %}&reverse=1{% endif %}">{% trans %}by date{% endtrans %}</a>{% if sort == 'date' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
+	<a href="{{filename}}?sort=title{% if sort == 'title' and not reverse %}&reverse=1{% endif %}">{% trans %}by name{% endtrans %}</a>{% if sort == 'title' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
+	<a href="{{filename}}?sort=rating{% if sort == 'rating' and not reverse %}&reverse=1{% endif %}">{% trans %}by rating{% endtrans %}</a>{% if sort == 'rating' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %}
+</div>
 <ul class="media-list addons">
 {% for addon in addons %}
 	<li class="media">
