@@ -4,7 +4,6 @@ namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
-use Lorry\Model\User;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Register extends Presenter {
