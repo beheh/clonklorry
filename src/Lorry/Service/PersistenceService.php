@@ -14,9 +14,11 @@ class PersistenceService {
 	 * @var \Lorry\Service\Config
 	 */
 	protected $config;
+	protected $cache;
 
 	public function setConfigService(ConfigService $config) {
 		$this->config = $config;
+		$this->cache = array();
 	}
 
 	/**

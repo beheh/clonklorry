@@ -18,7 +18,9 @@ class Game extends Presenter {
 		$this->context['game'] = strtr(gettext('Addons for %game%'), array('%game%' => $game->getTitle()));
 		$this->context['short'] = $game->getShort();
 
-		$addons = ModelFactory::build('Addon')->all()->byGame($game->getId());
+		$query = ModelFactory::build('Addon')->all();
+		$query = $query->order('updated', true);
+		$addons = $query->byGame($game->getId());
 		$this->context['addons'] = array();
 		foreach($addons as $addon) {
 			$this->context['addons'][] = array(

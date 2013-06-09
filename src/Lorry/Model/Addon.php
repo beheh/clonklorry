@@ -15,6 +15,7 @@ class Addon extends Model {
 			'title' => 'string',
 			'game' => 'int',
 			'public' => 'boolean',
+			'updated' => 'int',
 			'description' => 'text',
 			'website' => 'url',
 			'bugtracker' => 'url'));
@@ -110,7 +111,17 @@ class Addon extends Model {
 		return $this->getValue('public');
 	}
 
+	public function setUpdated($updated) {
+		$this->validateNumber($updated);
+		return $this->setValue('updated', $updated);
+	}
+
+	public function getUpdated() {
+		return $this->getValue('updated');
+	}
+
 	public function setDescription($description) {
+		$this->validateString($description, 0, 4096);
 		return $this->setValue('description', $description);
 	}
 
@@ -119,6 +130,9 @@ class Addon extends Model {
 	}
 
 	public function setWebsite($website) {
+		if($website) {
+			$this->validateUrl($website);
+		}
 		return $this->setValue('website', $website);
 	}
 
@@ -127,6 +141,9 @@ class Addon extends Model {
 	}
 
 	public function setBugtracker($bugtracker) {
+		if($bugtracker) {
+			$this->validateUrl($bugtracker);
+		}
 		return $this->setValue('bugtracker', $bugtracker);
 	}
 
