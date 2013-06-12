@@ -87,7 +87,7 @@ class User extends Model {
 	}
 
 	public final function setClonkforge($clonkforge) {
-		if($github) {
+		if($clonkforge) {
 			$this->validateNumber($clonkforge);
 		}
 		return $this->setValue('clonkforge', intval($clonkforge));
