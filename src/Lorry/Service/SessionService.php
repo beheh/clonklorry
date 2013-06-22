@@ -32,14 +32,10 @@ class SessionService {
 		}
 		$this->authenticate($user);
 		if($remember == true) {
-			try {
-				$this->remember();
-			} catch(Exception $ex) {
-				if($this->config->get('debug')) {
-					throw $ex;
-				}
+			$this->remember();
+			if(isset($_COOKIE['lorry_login'])) {
+				setcookie('lorry_forget', '', 0, '/');
 			}
-			setcookie('lorry_forget', '', 0, '/');
 		} else {
 			setcookie('lorry_forget', '1', time() + 60 * 60 * 24 * 365, '/');
 		}
@@ -48,18 +44,15 @@ class SessionService {
 
 	public final function authenticate(User $user) {
 		$this->ensureSession();
+		$this->ensureSecret($user);
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
 	}
 
 	public final function remember() {
 		$this->ensureUser();
+		$this->ensureSecret($this->user);
 		$secret = $this->user->getSecret();
-		if(empty($secret)) {
-			$this->user->regenerateSecret();
-			$this->user->save();
-			$secret = $this->user->getSecret();
-		}
 		setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
 	}
 
@@ -72,7 +65,7 @@ class SessionService {
 
 	public final function authenticated() {
 		if(!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
-			return false;
+				return false;
 		$this->ensureUser();
 		return $this->user !== false;
 	}
@@ -120,6 +113,13 @@ class SessionService {
 			}
 		}
 		return true;
+	}
+
+	protected final function ensureSecret(User $user) {
+		if($user->getSecret() == null) {
+			$user->regenerateSecret();
+			$user->save();
+		}
 	}
 
 	protected final function ensureSession() {
