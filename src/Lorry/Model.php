@@ -2,12 +2,23 @@
 
 namespace Lorry;
 
+use Lorry\Service\ConfigService;
 use Lorry\Service\PersistenceService;
 use Lorry\Exception\ModelValueInvalidException;
 use InvalidArgumentException;
 use Exception;
 
 abstract class Model implements ModelInterface {
+
+	/**
+	 *
+	 * @var \Lorry\Service\ConfigService
+	 */
+	protected $config;
+
+	public function setConfigService(ConfigService $config) {
+		$this->config = $config;
+	}
 
 	/**
 	 *

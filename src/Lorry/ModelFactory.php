@@ -2,10 +2,21 @@
 
 namespace Lorry;
 
+use Lorry\Service\ConfigService;
 use Lorry\Service\PersistenceService;
 use Exception;
 
 class ModelFactory {
+
+	/**
+	 *
+	 * @var \Lorry\Config
+	 */
+	private static $config;
+
+	public static function setConfigService(ConfigService $config) {
+		self::$config = $config;
+	}
 
 	/**
 	 *
@@ -16,7 +27,6 @@ class ModelFactory {
 	public static function setPersistenceService(PersistenceService $persistence) {
 		self::$persistence = $persistence;
 	}
-
 
 	/**
 	 *
@@ -33,6 +43,7 @@ class ModelFactory {
 		if(!$instance instanceof ModelInterface) {
 			throw new Exception('model does not implement interface');
 		}
+		$instance->setConfigService(self::$config);
 		$instance->setPersistenceService(self::$persistence);
 		return $instance;
 	}
