@@ -31,6 +31,7 @@ class SessionService {
 			throw new Exception('user is not loaded or does not exist');
 		}
 		$this->authenticate($user);
+		$this->identify();
 		if($remember == true) {
 			$this->remember();
 			if(isset($_COOKIE['lorry_login'])) {
@@ -42,11 +43,23 @@ class SessionService {
 		return true;
 	}
 
-	public final function authenticate(User $user) {
+	protected final function authenticate(User $user) {
 		$this->ensureSession();
 		$this->ensureSecret($user);
+		$this->user = $user;
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
+		$_SESSION['identified'] = false; // whether the user has personally identifed via password, as opposed to login cookie
+	}
+
+	public final function identify() {
+		$this->ensureSession();
+		$_SESSION['identified'] = true;
+	}
+
+	public final function identified() {
+		$this->ensureSession();
+		return isset($_SESSION['identified']);
 	}
 
 	public final function remember() {
@@ -92,20 +105,20 @@ class SessionService {
 			return true;
 		}
 		if(isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
-			$this->user = ModelFactory::build('User')->byId($_SESSION['user']);
-			if($this->user->getSecret() != $_SESSION['secret']) {
-				$this->user = false;
+			$user = ModelFactory::build('User')->byId($_SESSION['user']);
+			if($user->getSecret() == $_SESSION['secret']) {
+				$this->user = $user;
 			}
-			if($this->user === false) {
+			else {
 				$this->logout();
 			}
 		} else if(isset($_COOKIE['lorry_login'])) {
-			$this->user = false;
+			$user = false;
 			$login = explode('$', $_COOKIE['lorry_login']);
 			if(count($login) == 3 && is_numeric($login[1])) {
 				$user = ModelFactory::build('User')->byId($login[1]);
 				if($user && !empty($login[2]) && $user->matchSecret($login[2])) {
-					$this->user = $user;
+					$this->authenticate($user);
 				}
 			}
 			if($this->user === false) {
@@ -120,6 +133,7 @@ class SessionService {
 			$user->regenerateSecret();
 			$user->save();
 		}
+		return true;
 	}
 
 	protected final function ensureSession() {
