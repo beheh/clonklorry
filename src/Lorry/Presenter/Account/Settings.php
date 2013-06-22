@@ -14,8 +14,12 @@ class Settings extends Presenter {
 
 		$this->context['username'] = $user->getUsername();
 
-		$this->context['clonkforge'] = $user->getClonkforge() ? sprintf($this->config->get('clonkforge'), $user->getClonkforge()) : '';
-		$this->context['github'] = $user->getGithub();
+		if(!isset($this->context['clonkforge'])) {
+			$this->context['clonkforge'] = $user->getClonkforgeUrl();
+		}
+		if(!isset($this->context['github'])) {
+			$this->context['github'] = $user->getGithub();
+		}
 
 		$this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge'), 0);
 		$this->context['github_placeholder'] = $user->getUsername();
@@ -33,42 +37,29 @@ class Settings extends Presenter {
 		$user = $this->session->getUser();
 
 		if(isset($_GET['change-profiles'])) {
-			$save = true;
+			$error = false;
 
 			// Clonk Forge profile url
 			$clonkforge = trim(filter_input(INPUT_POST, 'clonkforge'));
 			$this->context['clonkforge'] = $clonkforge;
-			if(!empty($clonkforge)) {
-				// verify profile url
-				$scanned = sscanf($clonkforge, $this->config->get('clonkforge'));
-				if(count($scanned) == 1 && is_numeric($scanned[0]) && $scanned[0] > 0) {
-					$clonkforge = $scanned[0];
-				} else {
-					$save = false;
-					$this->error('profiles', gettext('Invalid Clonk Forge profile.'));
-				}
-			} else {
-				// unset the profile url
-				$clonkforge = null;
+			try {
+				$user->setClonkforgeUrl($clonkforge);
+			} catch(ModelValueInvalidException $e) {
+				$this->error('profiles', sprintf(gettext('Clonk Forge profile url is %s.'), gettext('invalid')));
+				$error = true;
 			}
-			$user->setClonkforge($clonkforge);
 
 			// GitHub name
 			$github = trim(filter_input(INPUT_POST, 'github'));
 			$this->context['github'] = $github;
-			if(!empty($github)) {
-				// verify username
-				if(!preg_match('#^'.$this->config->get('github_name').'$#', $github)) {
-					$save = false;
-					$this->error('profiles', gettext('Invalid GitHub name.'));
-				}
-			} else {
-				// unset the username
-				$github = null;
+			try {
+				$user->setGithub($github);
+			} catch(ModelValueInvalidException $e) {
+				$this->error('profiles', sprintf(gettext('GitHub name is %s.'), gettext('invalid')));
+				$error = true;
 			}
-			$user->setGithub($github);
 
-			if($user->modified() && $save) {
+			if($user->modified() && !$error) {
 				$user->save();
 				$this->success('profiles', gettext('Your linked profiles were changed.'));
 			}
@@ -87,11 +78,9 @@ class Settings extends Presenter {
 			if(empty($errors)) {
 				$user->save();
 				$this->success('contact', gettext('Contact details have been changed.'));
-			}
-			else {
+			} else {
 				$this->error('contact', implode('<br>', $errors));
 			}
-
 		}
 
 		if(isset($_GET['change-language'])) {
