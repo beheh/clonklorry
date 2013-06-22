@@ -59,7 +59,7 @@ class SessionService {
 
 	public final function identified() {
 		$this->ensureSession();
-		return isset($_SESSION['identified']);
+		return isset($_SESSION['identified']) && $_SESSION['identified'] == true;
 	}
 
 	public final function remember() {
