@@ -69,7 +69,7 @@ class Addon extends Model {
 
 	public function setAbbreviation($abbreviation) {
 		if($abbreviation) {
-			$this->validateString($title, 2, 6);
+			$this->validateString($abbreviation, 2, 6);
 		}
 		return $this->setValue('abbreviation', $abbreviation);
 	}
