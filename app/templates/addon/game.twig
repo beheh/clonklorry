@@ -37,9 +37,9 @@
 {% endfor %}
 </ul>
 {% else %}
-{% set create_an_addon_text = 'create an addon'|trans	%}
-{% set create_an_addon = '<a href="' ~ base ~ '/publish/?for='~ short ~ '">' ~ create_an_addon_text ~ '</a>' %}
-<p><strong>{% trans %}Would you like to {{create_an_addon}} for this game?{% endtrans %}</strong></p>
+{% set create_addon_text = 'create a new addon'|trans	%}
+{% set create_addon = '<a href="' ~ base ~ '/publish/?for='~ short ~ '">' ~ create_addon_text ~ '</a>' %}
+<p><strong>{% trans %}Would you like to {{created_addon}} for this game?{% endtrans %}</strong></p>
 <p class="alert alert-warning">{% trans %}There are no addons available for this game.{% endtrans %}</p>
 {% endif %}
 {% endblock %}
