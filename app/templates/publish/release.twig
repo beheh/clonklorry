@@ -4,10 +4,9 @@
 
 {% block content %}
 <h1>{{title}}</h1>
-<ul class="breadcrumb">
-  <li><a href="#">Publish</a> <span class="divider">/</span></li>
-  <li><a href="#">Codename: Modern Combat</a> <span class="divider">/</span></li>
-  <li class="active">Release 1.5</li>
+<ul class="nav nav-tabs">
+  <li><a href="{{base}}/publish/{{game_short}}/{{addon_short}}">{{addon_title}}</a></li>
+  <li class="active"><a href="{{filename}}">Release 1.0</a></li>
 </ul>
  <div class="row-fluid">
     <div class="span12">
