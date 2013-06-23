@@ -11,6 +11,7 @@ use Lorry\Service\StyleService;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\NotImplementedException;
+use Lorry\Exception\OutputCompleteException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
 use Exception;
@@ -122,7 +123,6 @@ class Environment {
 		$style->compile();
 
 		try {
-
 			// determine the controller
 			$presenter = Router::route();
 
@@ -139,6 +139,8 @@ class Environment {
 			return PresenterFactory::build('Error\Forbidden')->get($exception);
 		} catch(NotImplementedException $exception) {
 			return PresenterFactory::build('Error\NotImplemented')->get($exception);
+		} catch(OutputCompleteException $exception) {
+			// allow output to complete prematurely
 		}
 	}
 
