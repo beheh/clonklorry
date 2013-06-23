@@ -9,8 +9,8 @@ class Settings extends Presenter {
 
 	public function get() {
 
-		$this->offerIdentification();
-		$this->security->requireIdentification();
+		//$this->offerIdentification();
+		//$this->security->requireIdentification();
 
 		$user = $this->session->getUser();
 
@@ -35,7 +35,7 @@ class Settings extends Presenter {
 	}
 
 	public function post() {
-		$this->security->requireIdentification();
+		//$this->security->requireIdentification();
 
 		$user = $this->session->getUser();
 
