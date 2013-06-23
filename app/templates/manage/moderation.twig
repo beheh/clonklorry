@@ -8,6 +8,8 @@
 	<div class="span4">
 		<h2>{% trans %}Overview{% endtrans %}</h2>
 		<h4>{% trans %}Users{% endtrans %}</h4>
+		<a href="{{base}}/users" class="btn btn-primary">Show all users</a>
+		<a href="{{base}}/users" class="btn">Show bans</a>
 	</div>
 	<div class="span4">
 		<h2>{% trans %}Addons{% endtrans %}</h2>
@@ -18,8 +20,6 @@
 		<h2>{% trans %}Contact form{% endtrans %}</h2>
 		<h4>{% trans %}Queue{% endtrans %}</h4>
 		<p class="alert alert-warning">{% trans %}There are no new messages in the queue.{% endtrans %}</p>
-		<h4>{% trans %}Completed{% endtrans %}</h4>
-		<p class="alert alert-warning">{% trans %}There are no completed messages.{% endtrans %}</p>
 	</div>
 </div>
 {% endblock %}
