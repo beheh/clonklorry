@@ -31,35 +31,47 @@ class SessionService {
 			throw new Exception('user is not loaded or does not exist');
 		}
 		$this->authenticate($user);
+		$this->identify();
 		if($remember == true) {
-			try {
-				$this->remember();
-			} catch(Exception $ex) {
-				if($this->config->get('debug')) {
-					throw $ex;
-				}
+			$this->remember();
+			if(isset($_COOKIE['lorry_login'])) {
+				setcookie('lorry_forget', '', 0, '/');
 			}
-			setcookie('lorry_forget', '', 0, '/');
 		} else {
 			setcookie('lorry_forget', '1', time() + 60 * 60 * 24 * 365, '/');
 		}
 		return true;
 	}
 
-	public final function authenticate(User $user) {
+	protected final function authenticate(User $user) {
 		$this->ensureSession();
+		$this->ensureSecret($user);
+		$this->user = $user;
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
+		$_SESSION['identified'] = false; // whether the user has personally identifed via password, as opposed to login cookie
+	}
+
+	public final function identify() {
+		$this->ensureSession();
+		$_SESSION['identified'] = true;
+	}
+
+	public final function identified() {
+		$this->ensureSession();
+		$this->ensureUser();
+		if(isset($_POST['password'])) {
+			if($this->user->matchPassword($_POST['password'])) {
+				$this->identify();
+			}
+		}
+		return isset($_SESSION['identified']) && $_SESSION['identified'] == true;
 	}
 
 	public final function remember() {
 		$this->ensureUser();
+		$this->ensureSecret($this->user);
 		$secret = $this->user->getSecret();
-		if(empty($secret)) {
-			$this->user->regenerateSecret();
-			$this->user->save();
-			$secret = $this->user->getSecret();
-		}
 		setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
 	}
 
@@ -72,7 +84,7 @@ class SessionService {
 
 	public final function authenticated() {
 		if(!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
-			return false;
+				return false;
 		$this->ensureUser();
 		return $this->user !== false;
 	}
@@ -99,25 +111,33 @@ class SessionService {
 			return true;
 		}
 		if(isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
-			$this->user = ModelFactory::build('User')->byId($_SESSION['user']);
-			if($this->user->getSecret() != $_SESSION['secret']) {
-				$this->user = false;
+			$user = ModelFactory::build('User')->byId($_SESSION['user']);
+			if($user->getSecret() == $_SESSION['secret']) {
+				$this->user = $user;
 			}
-			if($this->user === false) {
+			else {
 				$this->logout();
 			}
 		} else if(isset($_COOKIE['lorry_login'])) {
-			$this->user = false;
+			$user = false;
 			$login = explode('$', $_COOKIE['lorry_login']);
 			if(count($login) == 3 && is_numeric($login[1])) {
 				$user = ModelFactory::build('User')->byId($login[1]);
 				if($user && !empty($login[2]) && $user->matchSecret($login[2])) {
-					$this->user = $user;
+					$this->authenticate($user);
 				}
 			}
 			if($this->user === false) {
 				$this->logout();
 			}
+		}
+		return true;
+	}
+
+	protected final function ensureSecret(User $user) {
+		if($user->getSecret() == null) {
+			$user->regenerateSecret();
+			$user->save();
 		}
 		return true;
 	}

@@ -4,22 +4,15 @@
 
 {% block content %}
 <h1>{{title}}</h1>
-<ul class="breadcrumb">
-  <li><a href="#">Publish</a> <span class="divider">/</span></li>
-  <li><a href="#">Codename: Modern Combat</a> <span class="divider">/</span></li>
-  <li class="active">Release 1.5</li>
+<ul class="nav nav-tabs">
+	<li><a href="{{base}}/publish/{{game.short}}/{{addon.short}}">{{addon.title}}</a></li>
+	<li class="active"><a href="{{filename}}">Release 1.0</a></li>
 </ul>
- <div class="row-fluid">
+<div class="row-fluid">
     <div class="span12">
 		<div class="row-fluid">
-			<div class="span12">
-				<h2>Codename: Modern Combat</h2>
-				<p class="alert alert-success">This version is ready to be published.</p>
-				<p><a href="{{filename}}/.." class="btn">Edit</a></p>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
+			<div class="span8">
+				<h2>Presentation</h2>
 				<form method="post" action="{{filename}}?change-details" class="form-horizontal">
 					<div class="control-group">
 						<label class="control-label" for="version">{% trans "Version" %}</label>
@@ -30,31 +23,51 @@
 					<div class="control-group">
 						<label class="control-label" for="description">{% trans "Addon description" %}</label>
 						<div class="controls">
-							<p>Lorem Ipsum Dolor Sit Amet and a long example text concerning different details.</p>
+							<p>{{ addon.description }}</p>
 							<p><a href="{{filename}}/..">Edit</a></p>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="description">{% trans "Release description" %}</label>
 						<div class="controls">
-							<textarea id="description"></textarea>
+							<textarea id="description">{{ release.description }}</textarea>
 						</div>
 					</div>
 					<div class="control-group">
 						<div class="controls">
-							<button type="submit" class="btn btn-primary">{% trans %}Change{% endtrans %}</button>
+							<button type="submit" class="btn">{% trans %}Change presentation{% endtrans %}</button>
 						</div>
 					</div>
 				</form>
 			</div>
+			<div class="span4">
+				<h2>{% if not release.approved or release.released %}{% trans %}Status{% endtrans %}{% else %}{% trans %}Release{% endtrans %}{% endif %}</h2>
+				{% if release.released %}
+				<p class="alert alert-success">This version was published on {{release.date}} at {{release.time}}.</p>
+				{% else %}
+					{% if release.approved %}
+					<p class="alert alert-success">This version is ready to be released.</p>
+					{% else %}
+					<p class="alert alert-warning">This version requires approval before release.</p>
+					<p>{% trans %}We would like to check the quality of this addon before it goes public to keep the quality of content high.{% endtrans %}</p>
+					<p>{% trans %}If you want, we can release this version for you as soon as we approve it.{% endtrans %}</p>
+					<p>{% trans %}Otherwise you will be able to release whenever you want after this version is approved.{% endtrans %}<p>
+					<label class="checkbox inline" style="margin-right: 20px;">
+						<input type="checkbox" id="release-confirm"> {% trans %}Release immediately{% endtrans %}
+					</label>
+					<a href="" class="btn btn-primary">{% trans %}Request approval{% endtrans %}</a>
+					{% endif %}
+				{% endif %}
+			</div>
 		</div>
+		{% if not release.released and release.approved %}
 		<div class="row-fluid">
 			<div class="span6">
 				<h2>{% trans %}Release{% endtrans %}</h2>
 				<form method="post" action="">
-					<p>If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.</p>
+					<p>{% trans %}If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.{% endtrans %}</p>
 					<p>{% trans %}All downloads will immediately redirect to your uploaded version.{% endtrans %}</p>
-					<p class="alert alert-warning">Publishing a release is final. Any changes after releasing require a new release.</p>
+					<p class="alert alert-warning">{% trans %}Publishing a release is final. Any changes after releasing require a new release.{% endtrans %}</p>
 					<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
 					<div class="pull-right">
 						<label class="checkbox inline" style="margin-right: 20px;">
@@ -81,6 +94,7 @@
 				</form>
 			</div>
 		</div>
+		{% endif %}
 	</div>
 </div>
 {% endblock %}
@@ -89,12 +103,12 @@
 {{ parent() }}
 
 $(document).ready(function() {
-	$('#release-confirm').change(function() {
-		if($(this).prop('checked')) {
-			$('#release-button').prop('disabled', false);
-		} else {
-			$('#release-button').prop('disabled', true);
-		}
-	});
+$('#release-confirm').change(function() {
+if($(this).prop('checked')) {
+$('#release-button').prop('disabled', false);
+} else {
+$('#release-button').prop('disabled', true);
+}
+});
 });
 {% endblock %}

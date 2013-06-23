@@ -2,34 +2,44 @@
 
 {% block content %}
 <img src="{{base}}/img/game/{{short}}.png" class="pull-right hidden-phone">
-<h1>{{ title }}</h1>
-<!--<p>Something awesome about this extremely epic game.</p>
-{% if user_login %}
-	<a href="{{base}}/publish?for={{short}}" class="btn btn-success">{% trans %}Create new addon{% endtrans %}</a>
-	<hr>
-{% endif %}!-->
-<h2>{% trans %}All addons{% endtrans %}</h2>
+<h1 style="">{{ title }}</h1>
 {% if addons %}
-<div class="sort-bar">Sort 
+<div class="sort-bar">{% trans %}Sort{% endtrans %}
 	<a href="{{filename}}?sort=date{% if sort == 'date' and not reverse %}&reverse=1{% endif %}">{% trans %}by date{% endtrans %}</a>{% if sort == 'date' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
 	<a href="{{filename}}?sort=title{% if sort == 'title' and not reverse %}&reverse=1{% endif %}">{% trans %}by name{% endtrans %}</a>{% if sort == 'title' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
 	<a href="{{filename}}?sort=rating{% if sort == 'rating' and not reverse %}&reverse=1{% endif %}">{% trans %}by rating{% endtrans %}</a>{% if sort == 'rating' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %}
+	or <a href="{{base}}/publish/?for={{short}}">create a new addon</a> for this game.
 </div>
 <ul class="media-list addons">
 {% for addon in addons %}
 	<li class="media">
 		<div class="pull-left">
-		 <img class="media-object" src="http://placehold.it/200x150">
+			<a href="{{filename}}/{{addon.short}}">
+				<img class="media-object" src="http://placehold.it/200x150">
+			</a>
 		</div>
 		<div class="media-body">
-			<h4 class="media-heading">{{ addon.title }}</h4>
-			<p class="hidden-phone">Vor langer Zeit, als Clonk noch 8bit war, brachte Redwolf Design ein futuristisches Zusatzpack namens Hazard heraus. Mit diesem Pack spielte man bewaffnete Clonks in Raumstationen und durfte Aliens und Mitspieler mit abgefahrenen Waffen über den Haufen schießen.</p>
-			<p class="hidden-phone"><a href="#" class="btn btn-success">Download</a> <a href="#" class="btn">Show addons</a></p>
+			<h4 class="media-heading"><a href="{{filename}}/{{addon.short}}">{{ addon.title }}</a></h4>
+			<p class="hidden-phone">
+				{% if addon.description %}
+					{{addon.description}}
+				{% else %}
+					<em>{% trans %}This addon has no description.{% endtrans %}</em>
+				{% endif %}
+			</p>
+			<p class="hidden-phone">
+				<a href="{{filename}}/{{addon.short}}" class="btn">{% trans %}Addon page{% endtrans %}</a>
+				<a href="{{base}}/download/{{short}}/{{addon.short}}" class="btn btn-primary">{% trans %}Download{% endtrans %}</a>
+				<!--<a href="#" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a>!-->
+			</p>
 		</div>
 	</li>
 {% endfor %}
 </ul>
 {% else %}
+{% set create_an_addon_text = 'create an addon'|trans	%}
+{% set create_an_addon = '<a href="' ~ base ~ '/publish/?for='~ short ~ '">' ~ create_an_addon_text ~ '</a>' %}
+<p><strong>{% trans %}Would you like to {{create_an_addon}} for this game?{% endtrans %}</strong></p>
 <p class="alert alert-warning">{% trans %}There are no addons available for this game.{% endtrans %}</p>
 {% endif %}
 {% endblock %}

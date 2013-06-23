@@ -10,7 +10,7 @@
 		<p>{% trans %}We here are all fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
 		<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
 		<form method="post" id="form-contact">
-			<textarea required></textarea>
+			<textarea required rows="6"></textarea>
 			<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 			{% if by %}
 				{% set sender = by|escape('html') %}

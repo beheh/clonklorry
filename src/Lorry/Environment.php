@@ -11,20 +11,40 @@ use Lorry\Service\StyleService;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\NotImplementedException;
+use Lorry\Exception\OutputCompleteException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
+use Exception;
 
 class Environment {
 
 	/**
 	 * Handle an HTTP request.
 	 */
-	public function handle() {
+	public function requestHandle() {
 		$config = new ConfigService();
+
+		try {
+			$this->handle($config);
+		} catch(Exception $e) {
+			header('HTTP/1.1 500 Internal Server Error');
+			header('Content-Type: text/plain');
+			if($config && $config->get('debug')) {
+				echo 'An internal error occured: '.$e->getMessage().PHP_EOL;
+				echo PHP_EOL.$e->getTraceAsString();
+			} else {
+				echo 'An internal error occured.'.PHP_EOL;
+				echo 'We have been notified and will be looking into this.';
+			}
+		}
+	}
+
+	protected function handle(ConfigService $config) {
 
 		$persistence = new PersistenceService();
 		$persistence->setConfigService($config);
 
+		ModelFactory::setConfigService($config);
 		ModelFactory::setPersistenceService($persistence);
 
 		$session = new SessionService();
@@ -103,7 +123,6 @@ class Environment {
 		$style->compile();
 
 		try {
-
 			// determine the controller
 			$presenter = Router::route();
 
@@ -120,6 +139,8 @@ class Environment {
 			return PresenterFactory::build('Error\Forbidden')->get($exception);
 		} catch(NotImplementedException $exception) {
 			return PresenterFactory::build('Error\NotImplemented')->get($exception);
+		} catch(OutputCompleteException $exception) {
+			// allow output to complete prematurely
 		}
 	}
 

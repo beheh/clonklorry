@@ -7,10 +7,16 @@ use Lorry\Presenter;
 class Administration extends Presenter {
 
 	public function get() {
-		$this->security->requireLogin();
+		$this->offerIdentification();
 		$this->security->requireAdministrator();
 
 		$this->display('manage/administration.twig');
+	}
+
+	public function post() {
+		$this->security->requireAdministrator();
+
+		return $this->get();
 	}
 
 }

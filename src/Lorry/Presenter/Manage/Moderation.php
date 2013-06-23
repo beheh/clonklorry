@@ -7,10 +7,16 @@ use Lorry\Presenter;
 class Moderation extends Presenter {
 
 	public function get() {
-		$this->security->requireLogin();
+		$this->offerIdentification();
 		$this->security->requireModerator();
 
 		$this->display('manage/moderation.twig');
+	}
+
+	public function post() {
+		$this->security->requireModerator();
+
+		return $this->get();
 	}
 
 }

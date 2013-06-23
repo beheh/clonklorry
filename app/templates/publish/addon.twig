@@ -4,15 +4,17 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
-<ul class="breadcrumb">
-	<li><a href="#">Publish</a> <span class="divider">/</span></li>
-	<li class="active">Codename: Modern Combat</li>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#">{{addon_title}}</a>
+  </li>
+  <li><a href="{{filename}}/1.0">Release 1.0</a></li>
 </ul>
 <div class="row-fluid">
     <div class="span4">
 		<hr class="visible-phone">
 		<h2>{% trans %}Addon{% endtrans %}</h2>
-		<h4>{% trans %}Basic{% endtrans %}</h4>
+		<h4>{% trans %}Details{% endtrans %}</h4>
 		<form method="post" action="{{filename}}?change-details" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="title">{% trans "Title" %}</label>
@@ -34,7 +36,7 @@
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn">{% trans %}Change{% endtrans %}</button>
+					<button type="submit" class="btn">{% trans %}Change details{% endtrans %}</button>
 				</div>
 			</div>
 		</form>
@@ -64,20 +66,31 @@
 	<div class="span8">
 		<hr class="visible-phone">
 		<h2>{% trans %}Presentation{% endtrans %}</h2>
-		<h4>{% trans %}Description{% endtrans %}</h4>
+		<h4>{% trans %}Summary{% endtrans %}</h4>
 		<form method="post" action="{{filename}}?change-description">
 			<div class="control-group">
-				<textarea id="description" style="width: 100%; height: 200px;"></textarea>
+				<textarea id="description" style="width: 100%;" rows="2"></textarea>
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn">{% trans %}Save description{% endtrans %}</button>
+					<button type="submit" class="btn">{% trans %}Change summary{% endtrans %}</button>
+				</div>
+			</div>
+		</form>
+		<h4>{% trans %}Description{% endtrans %}</h4>
+		<form method="post" action="{{filename}}?change-description">
+			<div class="control-group">
+				<textarea id="description" style="width: 100%;" rows="8"></textarea>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn">{% trans %}Change description{% endtrans %}</button>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
-<h2>{% trans %}Releases{% endtrans %}</h2>
+<!--<h2>{% trans %}Releases{% endtrans %}</h2>
 <h4>{% trans %}New release{% endtrans %}</h4>
 <form method="post" action="{{filename}}?add-release" class="form-horizontal">
 	<div class="control-group">
@@ -93,7 +106,7 @@
 	</div>
 </form>
 <h4>{% trans %}Existing releases{% endtrans %}</h4>
-<div class="alert alert-warning">{% trans %}You have not created a release yet.{% endtrans %}</div>
+<div class="alert alert-warning">{% trans %}You have not created a release yet.{% endtrans %}</div>!-->
 {% endblock %}
 
 {% block javascript %}

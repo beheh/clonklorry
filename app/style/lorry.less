@@ -26,6 +26,18 @@ input {
 	max-width: 100%;
 }
 
+textarea {
+	resize: vertical;
+}
+
+select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
 #featured-front {
 	margin-top: 10px;
 	margin-right: 2px;
@@ -148,6 +160,10 @@ a.hero-unit:hover {
 
 h4 {
 	margin-top: 40px;
+
+	a, a:hover {
+		color: inherit;
+	}
 }
 
 h2 + h4 {
@@ -172,8 +188,6 @@ h2 + h4 {
 		width: 95%;
 		margin-left: 0;
 		margin-right: 0;
-		min-height: 120px;
-		resize: vertical;
 	}
 }
 
@@ -262,6 +276,21 @@ input.noerror:focus:invalid:focus, textarea.noerror:focus:invalid:focus, select.
 	.hero-unit h3,
 	.hero-unit h4 {
 		overflow: hidden;
+	}
+	.form-inline {
+		margin-bottom: 0;
+
+		input, select {
+			width: 100%;
+			margin-bottom: 12px;
+		}
+
+		input {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 13px 6px;
+		}
 	}
 	.btn, form .btn-large, textarea {
 		display: block;

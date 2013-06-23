@@ -6,6 +6,7 @@ use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
+use Lorry\Exception\OutputCompleteException;
 use Twig_Environment;
 
 abstract class Presenter implements PresenterInterface {
@@ -102,6 +103,16 @@ abstract class Presenter implements PresenterInterface {
 		}
 		header('HTTP/1.1 301 Moved Permanently');
 		header('Location: '.$location);
+	}
+
+	/**
+	 * Offers the
+	 */
+	protected final function offerIdentification() {
+		if($this->session->identified()) return false;
+		$this->display('account/identify.twig');
+		throw new OutputCompleteException;
+		return true;
 	}
 
 }

@@ -43,7 +43,8 @@ class Game extends Presenter {
 		foreach($addons as $addon) {
 			$this->context['addons'][] = array(
 				'title' => $addon->getTitle(),
-				'short' => $addon->getShort()
+				'short' => $addon->getShort(),
+				'description' => $addon->getDescription(),
 			);
 		}
 

@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
+use Lorry\Exception\ModelValueInvalidException;
 
 class User extends Model {
 
@@ -45,8 +46,7 @@ class User extends Model {
 	}
 
 	public final function matchPassword($password) {
-		if(empty($password))
-			return false;
+		if(empty($password)) return false;
 		return password_verify($password, $this->getValue('password')) === true;
 	}
 
@@ -73,8 +73,7 @@ class User extends Model {
 	}
 
 	public final function matchSecret($secret) {
-		if(empty($secret))
-			return false;
+		if(empty($secret)) return false;
 		return $this->match('secret', $secret);
 	}
 
@@ -86,9 +85,27 @@ class User extends Model {
 		return $this->getId() == 1;
 	}
 
+	public final function setClonkforgeUrl($clonkforge) {
+		if($clonkforge) {
+			$this->validateUrl($clonkforge);
+			$scanned = sscanf($clonkforge, $this->config->get('clonkforge'));
+			if(count($scanned) != 1) {
+				throw new ModelValueInvalidException(gettext('not a matching Clonk Forge URL'));
+			}
+		}
+		try {
+			return $this->setClonkforge($scanned[0]);
+		} catch(ModelValueInvalidException $e) {
+			throw new ModelValueInvalidException(gettext('not a valid Clonk Forge URL'));
+		}
+	}
+
 	public final function setClonkforge($clonkforge) {
-		if($github) {
+		if($clonkforge) {
 			$this->validateNumber($clonkforge);
+			if($clonkforge < 1) {
+				throw new ModelValueInvalidException(gettext('not a valid Clonk Forge profile id'));
+			}
 		}
 		return $this->setValue('clonkforge', intval($clonkforge));
 	}
@@ -97,9 +114,20 @@ class User extends Model {
 		return $this->getValue('clonkforge');
 	}
 
+	public final function getClonkforgeUrl() {
+		$clonkforge = $this->getClonkforge();
+		if($clonkforge) {
+			return sprintf($this->config->get('clonkforge'), $this->getClonkforge());
+		}
+		return '';
+	}
+
 	public final function setGithub($github) {
 		if($github) {
 			$this->validateString($github, 1, 255);
+			if(!preg_match('#^'.$this->config->get('github_name').'$#', $github)) {
+				throw new ModelValueInvalidException(gettext('not a valid GitHub name'));
+			}
 		}
 		return $this->setValue('github', $github);
 	}

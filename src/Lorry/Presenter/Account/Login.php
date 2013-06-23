@@ -62,7 +62,9 @@ class Login extends Presenter {
 				$this->context['username_exists'] = true;
 				if($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
 					// do not show email login by default
-					setcookie('lorry_login_email', '', 0, '/');
+					if(isset($_COOKIE['lorry_login_email'])) {
+						setcookie('lorry_login_email', '', 0, '/');
+					}
 					// log user in
 					$this->session->start($user, $remember);
 					$this->redirect('/');

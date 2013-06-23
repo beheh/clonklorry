@@ -6,8 +6,8 @@ use Lorry\Presenter;
 
 class Download extends Presenter {
 
-	public function get($addon, $release = 'latest') {
-		echo $addon.'-'.$release;
+	public function get($gamename, $addonname, $version = 'latest') {
+		echo 'download for '.$gamename.'/'.$addonname.'-'.$version;
 	}
 
 }

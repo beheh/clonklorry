@@ -23,7 +23,15 @@ class SecurityService {
 		}
 	}
 
+	public function requireIdentification() {
+		$this->requireLogin();
+		if(!$this->session->identified()) {
+			throw new ForbiddenException();
+		}
+	}
+
 	public function requireModerator() {
+		$this->requireIdentification();
 		$user = $this->session->getUser();
 		if(!$user || !$user->isModerator()) {
 			throw new ForbiddenException();
@@ -31,6 +39,7 @@ class SecurityService {
 	}
 
 	public function requireAdministrator() {
+		$this->requireIdentification();
 		$user = $this->session->getUser();
 		if(!$user || !$user->isAdministrator()) {
 			throw new ForbiddenException();
