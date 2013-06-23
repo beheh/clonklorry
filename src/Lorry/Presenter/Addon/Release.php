@@ -9,8 +9,6 @@ use Lorry\Exception\FileNotFoundException;
 class Release extends Presenter {
 
 	public function get($gamename, $addonname, $version = 'latest') {
-		$user = $this->session->getUser();
-
 		$game = ModelFactory::build('Game')->byShort($gamename);
 		if(!$game) {
 			throw new FileNotFoundException('game '.$gamename);
@@ -87,7 +85,12 @@ class Release extends Presenter {
 		$this->context['website'] = $addon->getWebsite();
 		$this->context['bugtracker'] = $addon->getBugtracker();
 
-		$this->context['modify'] = $user && ($addon->getOwner() == $user->getId() || $user->isAdministrator());
+		$modify = false;
+		if($this->session->authenticated()) {
+			$user = $this->session->getUser();
+			$modify = $addon->getOwner() == $user->getId() || $user->isAdministrator();
+		}
+		$this->context['modify'] = $modify;
 
 		$this->display('addon/release.twig');
 	}
