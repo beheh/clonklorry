@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2013-06-23 20:39+0100\n"
-"PO-Revision-Date: 2013-06-23 21:19+0100\n"
+"PO-Revision-Date: 2013-06-23 23:36+0100\n"
 "Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
 "Language-Team: \n"
 "Language: de-DE\n"
@@ -53,19 +53,16 @@ msgid "not a matching Clonk Forge URL"
 msgstr ""
 
 #: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:99
-#, fuzzy
 msgid "not a valid Clonk Forge URL"
-msgstr "keine gültige URL"
+msgstr "keine gültige Clonk Forge URL"
 
 #: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:107
-#, fuzzy
 msgid "not a valid Clonk Forge profile id"
-msgstr "Ungültiges Clonk Forge-Profil."
+msgstr "keine gültige ClonkForge Profil-ID"
 
 #: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:129
-#, fuzzy
 msgid "not a valid GitHub name"
-msgstr "Ungültiger GitHub-Name."
+msgstr "kein gültiger GitHub-Name"
 
 #: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error.php:19
 msgid "Internal server error"
@@ -716,9 +713,8 @@ msgstr "Neue Veröffentlichungen auf Lorry"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:146
 #: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:148
-#, fuzzy
 msgid "This addon has no description."
-msgstr "Beschreibung"
+msgstr "Diese Erweiterung hat keine Beschreibung."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:165
 msgid "There are no new releases."
@@ -941,9 +937,8 @@ msgid "Short"
 msgstr "Kurzer Titel"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:106
-#, fuzzy
 msgid "Change details"
-msgstr "Kontaktdaten"
+msgstr "Details ändern"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:113
 msgid "Dependencies"
@@ -971,18 +966,16 @@ msgid "Summary"
 msgstr "Zusammenfassung"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:177
-#, fuzzy
 msgid "Change summary"
-msgstr "Sprache ändern"
+msgstr "Zusammenfassung ändern"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:184
 msgid "Description"
 msgstr "Beschreibung"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:201
-#, fuzzy
 msgid "Change description"
-msgstr "Beschreibung"
+msgstr "Beschreibung ändern"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:210
 msgid "Releases"
@@ -1143,7 +1136,7 @@ msgstr "Einen Fehler melden"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:228
 msgid "Interested in an update?"
-msgstr ""
+msgstr "An einem Update interessiert?"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/b2/1f/d415077bb92bca06129a0f343ab6.php:26
 msgid "Identification required"
