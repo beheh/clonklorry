@@ -41,8 +41,14 @@
 			</div>
 		</div>
 		<div class="span9">
-			<p>{{addon_description}}</p>
-			<p>{{release_description}}</p>
+			{% if addon_description %}
+				<p>{{ addon_description }}</p>
+			{% else %}
+				<p><em>This addon has no description.</em></p>
+			{% endif %}
+			{% if release_description %}
+				<p>{{ release_description }}</p>
+			{% endif %}
 			<p>Categories <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>
 		</div>
 	</div>
