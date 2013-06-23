@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2013-06-23 23:44+0100\n"
-"PO-Revision-Date: 2013-06-23 23:45+0100\n"
+"POT-Creation-Date: 2013-06-23 23:54+0100\n"
+"PO-Revision-Date: 2013-06-23 23:54+0100\n"
 "Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
 "Language-Team: \n"
 "Language: de-DE\n"
@@ -273,7 +273,7 @@ msgid "%n%th"
 msgstr "%n%."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:206
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:207
 #: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:124
 msgid "About Lorry"
 msgstr "Über Lorry"
@@ -712,25 +712,32 @@ msgstr "Neue Erweiterung anlegen"
 msgid "New releases on Lorry"
 msgstr "Neue Veröffentlichungen auf Lorry"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:146
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:85
+msgid "New releases"
+msgstr "Neue Veröffentlichungen"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:148
 #: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:148
 msgid "This addon has no description."
 msgstr "Diese Erweiterung hat keine Beschreibung."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:165
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:167
 msgid "There are no new releases."
 msgstr "Es gibt keine neuen Veröffentlichungen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:181
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:149
-msgid "Welcome back!"
-msgstr "Willkommen zurück!"
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:180
+msgid "Welcome back."
+msgstr "Willkommen zurück."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:187
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:186
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:193
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:188
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:194
 #, fuzzy
 msgid ""
 "Lorry is the place to find out about and get the best addons for the game "
@@ -738,20 +745,20 @@ msgid ""
 msgstr ""
 "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:200
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:201
 #: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:130
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:216
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:217
 msgid "Visit clonkspot.org"
 msgstr ""
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:222
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:223
 msgid "List of community sites"
 msgstr "Liste der Community-Seiten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:228
+#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:229
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
 
@@ -893,6 +900,10 @@ msgstr "Einmal-Anmeldung senden"
 msgid "Or, select your login service:"
 msgstr "Oder, wähle deinen Anmeldedienst aus:"
 
+#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:149
+msgid "Welcome back!"
+msgstr "Willkommen zurück!"
+
 #: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:153
 msgid ""
 "Nice to see you again! Have you visited these other great Clonk sites yet?"
@@ -1006,7 +1017,7 @@ msgstr "Du hast noch keine neue Erweiterung erstellt."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:26
 #: D:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:46
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:167
+#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:165
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
@@ -1035,17 +1046,21 @@ msgstr ""
 msgid "Send feedback"
 msgstr "Feedback senden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:63
+#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:65
+msgid "Sending as %sender%."
+msgstr ""
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:76
 msgid "Legal issues"
 msgstr "Rechtliches"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:78
+#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:91
 msgid ""
 "That way we are able to quickly resolve to any problems that might occur or "
 "any content you feel might be infringing your rights."
 msgstr ""
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:82
+#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:95
 msgid ""
 "We are not responsible for the content of outgoing links. User generated "
 "content does not necessarily reflect the views of the site owners."
@@ -1054,7 +1069,7 @@ msgstr ""
 "Benutzergenerierter Inhalt muss nicht der Meinung der Seitenbetreiber "
 "entsprechen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:91
+#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:104
 msgid "Responsible for the content"
 msgstr "Verantwortlich für den Inhalt"
 
@@ -1195,7 +1210,7 @@ msgid "Back to top"
 msgstr "Nach oben"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:42
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:159
+#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:157
 msgid "About the project"
 msgstr "Über das Projekt"
 
@@ -1416,13 +1431,12 @@ msgstr "Veröffentlichung planen"
 msgid "Return to home"
 msgstr "Zurück zur Startseite"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:157
-msgid "About"
-msgstr "Über"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:165
+#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:163
 msgid "Contact"
 msgstr "Kontakt"
+
+#~ msgid "About"
+#~ msgstr "Über"
 
 #~ msgid "Completed"
 #~ msgstr "Abgeschlossen"
