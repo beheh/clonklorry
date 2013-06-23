@@ -23,6 +23,13 @@ class SecurityService {
 		}
 	}
 
+	public function requireIdentification() {
+		$this->requireLogin();
+		if(!$this->session->identified()) {
+			throw new ForbiddenException();
+		}
+	}
+
 	public function requireModerator() {
 		$this->requireLogin();
 		$user = $this->session->getUser();

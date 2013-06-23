@@ -59,6 +59,12 @@ class SessionService {
 
 	public final function identified() {
 		$this->ensureSession();
+		$this->ensureUser();
+		if(isset($_POST['password'])) {
+			if($this->user->matchPassword($_POST['password'])) {
+				$this->identify();
+			}
+		}
 		return isset($_SESSION['identified']) && $_SESSION['identified'] == true;
 	}
 
