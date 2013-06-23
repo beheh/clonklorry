@@ -1,20 +1,18 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Identify'|trans %}
+{% set title = 'Identification required'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<div class="row-fluid" id="login">
-    <div class="span4">
-		{% include 'functions/alert.twig' with {'selector' : 'identify'} %}
-		<p>{% trans %}We need to confirm your identity for your own security.{% endtrans %}</p>
-		<form id="form-identify" method="post" action="{{ filename }}">
-			<label for="password"></label>
-			<input type="password" class="input-block-level" name="password" id="password" placeholder="{% trans "Password" %}" autofocus required>
-			<button class="btn btn-large btn-primary" type="submit">{% trans "Confirm" %}</button>
-		</form>
-	</div>
+<div class="hero-unit">
+	<h1>{{ title }}</h1>
+	<p>{% trans %}Please enter your password to confirm your identity.{% endtrans %}</p>
+	<form id="form-identify" method="post" class="form-inline" action="{{ filename }}">
+		<input type="password" name="password" id="password" placeholder="{% trans "Password" %}" autofocus required>
+		<button class="btn btn-primary" type="submit">{% trans "Confirm" %}</button>
+	</form>
 </div>
+
+{% include 'functions/alert.twig' with {'selector' : 'identify'} %}
 {% endblock %}
 
 {% block javascript %}
