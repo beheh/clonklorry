@@ -14,6 +14,7 @@ class Administration extends Presenter {
 	}
 
 	public function post() {
+		$this->offerIdentification();
 		$this->security->requireAdministrator();
 
 		return $this->get();

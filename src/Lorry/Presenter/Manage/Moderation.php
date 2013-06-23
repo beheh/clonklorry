@@ -14,6 +14,7 @@ class Moderation extends Presenter {
 	}
 
 	public function post() {
+		$this->offerIdentification();
 		$this->security->requireModerator();
 
 		return $this->get();
