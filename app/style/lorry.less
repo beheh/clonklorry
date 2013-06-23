@@ -26,6 +26,14 @@ input {
 	max-width: 100%;
 }
 
+select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
 #featured-front {
 	margin-top: 10px;
 	margin-right: 2px;
@@ -265,6 +273,21 @@ input.noerror:focus:invalid:focus, textarea.noerror:focus:invalid:focus, select.
 	.hero-unit h3,
 	.hero-unit h4 {
 		overflow: hidden;
+	}
+	.form-inline {
+		margin-bottom: 0;
+
+		input, select {
+			width: 100%;
+			margin-bottom: 12px;
+		}
+
+		input {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 13px 6px;
+		}
 	}
 	.btn, form .btn-large, textarea {
 		display: block;
