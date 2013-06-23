@@ -8,12 +8,8 @@ use Lorry\Exception\ModelValueInvalidException;
 class Settings extends Presenter {
 
 	public function get() {
-		$this->security->requireLogin();
-		//$this->ensureIdentified();
-		if(!$this->session->identified()) {
-			$this->display('account/identify.twig');
-			return;
-		}
+
+		$this->offerIdentification();
 		$this->security->requireIdentification();
 
 		$user = $this->session->getUser();
@@ -39,9 +35,8 @@ class Settings extends Presenter {
 	}
 
 	public function post() {
-		$this->security->requireLogin();
-		//$this->ensureIdentified();
 		$this->security->requireIdentification();
+
 		$user = $this->session->getUser();
 
 		if(isset($_GET['change-profiles'])) {
