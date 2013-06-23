@@ -22,7 +22,11 @@
 		<footer>
 			<p class="visible-phone">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
 			{% if site_notice %}<p><strong>{{site_notice}}</strong></p>{% endif %}
-			<p class=""><a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}<span class="muted"> · <a class="text" href="{{base}}/about">{% trans "About the project" %}</a> · <a class="text" href="{{base}}/contact">{% trans "Contact us" %}</a><span class="hidden-phone">{% if site_trademark %} · {{site_trademark|raw}}{% endif %}</span></span>.</p>
+			<p>
+				<a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}
+				<span class="muted"> ·
+					<a class="text" href="{{base}}/about">{% trans "About the project" %}</a>
+					· <a class="text" href="{{base}}/contact"><span class="visible-phone">{% trans "Contact" %}</span><span class="hidden-phone">{% trans "Contact us" %}</span></a><span class="hidden-phone">{% if site_trademark %} · {{site_trademark|raw}}{% endif %}</span></span>.</p>
 		</footer>
 	</div>
 	{% endblock %}
