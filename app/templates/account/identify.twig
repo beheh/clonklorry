@@ -5,7 +5,7 @@
 {% block content %}
 <div class="hero-unit">
 	<h1>{{ title }}</h1>
-	<p>{% trans %}Please enter your password to confirm your identity.{% endtrans %}</p>
+	<p>{% trans %}Please enter your password to confirm your identity:{% endtrans %}</p>
 	<form id="form-identify" method="post" class="form-inline" action="{{ filename }}">
 		<input type="password" name="password" id="password" placeholder="{% trans "Password" %}" autofocus required>
 		<button class="btn btn-primary" type="submit">{% trans "Confirm" %}</button>
