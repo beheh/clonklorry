@@ -24,6 +24,7 @@ class SecurityService {
 	}
 
 	public function requireModerator() {
+		$this->requireLogin();
 		$user = $this->session->getUser();
 		if(!$user || !$user->isModerator()) {
 			throw new ForbiddenException();
@@ -31,6 +32,7 @@ class SecurityService {
 	}
 
 	public function requireAdministrator() {
+		$this->requireLogin();
 		$user = $this->session->getUser();
 		if(!$user || !$user->isAdministrator()) {
 			throw new ForbiddenException();
