@@ -17,19 +17,42 @@ class Release extends Presenter {
 			throw new FileNotFoundException('game '.$gamename);
 		}
 
-		$this->context['game_short'] = $game->getShort();
+		$this->context['game'] = array(
+			'short' => $game->getShort(),
+			'title' => $game->getTitle());
 
 		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId(), true);
 		if(!$addon) {
 			throw new FileNotFoundException('addon '.$addonname);
 		}
 
-		$this->context['addon_title'] = $addon->getTitle();
-		$this->context['addon_short'] = $addon->getShort();
-		$this->context['addon_abbreviation'] = $addon->getAbbreviation();
+		$release = ModelFactory::build('Release')->byVersion($version, $addon->getId());
+		if(!$release) {
+			throw new FileNotFoundException('release '.$version);
+		}
+
+		$this->context['addon'] = array(
+			'title' => $addon->getTitle(),
+			'short' => $addon->getShort(),
+			'abbrevation' => $addon->getAbbreviation(),
+			'description' => $addon->getDescription()
+		);
+
+		$this->context['release'] = array(
+			'version' => $release->getVersion(),
+			'description' => $release->getDescription(),
+			'release' => false
+		);
+
+		$timestamp = $release->getTimestamp();
+		if(time() >= $timestamp) {
+			$this->context['release']['release'] = true;
+			$this->context['release']['date'] = date('d-m-Y', $timestamp);
+			$this->context['release']['time'] = date('H:i', $timestamp);
+		}
 
 		$datetime = new DateTime('tomorrow 12:00');
-		$this->context['datetime'] =  $datetime->format('Y-m-d\TH:i:s');
+		$this->context['datetime'] = $datetime->format('Y-m-d\TH:i:s');
 		$datetime = new DateTime();
 		$this->context['current_datetime'] = $datetime->format('Y-m-d\TH:i:s');
 		$this->display('publish/release.twig');
