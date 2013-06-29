@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2013-06-23 23:54+0100\n"
-"PO-Revision-Date: 2013-06-23 23:54+0100\n"
+"POT-Creation-Date: 2013-06-30 00:02+0100\n"
+"PO-Revision-Date: 2013-06-30 00:03+0100\n"
 "Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
 "Language-Team: \n"
 "Language: de-DE\n"
@@ -678,7 +678,7 @@ msgstr "Erweiterung anlegen"
 #: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:40
 #: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:49
 msgid "You can change any of the values later."
-msgstr ""
+msgstr "Du kannst jeden der Werte später ändern."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:46
 msgid "Full Title (without version)"
@@ -718,6 +718,7 @@ msgstr "Neue Veröffentlichungen"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:148
 #: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:148
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:175
 msgid "This addon has no description."
 msgstr "Diese Erweiterung hat keine Beschreibung."
 
@@ -804,7 +805,7 @@ msgstr "Übersicht"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:44
 msgid "Management"
-msgstr ""
+msgstr "Verwaltung"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:54
 msgid "Front page"
@@ -962,6 +963,8 @@ msgstr "Abhängigkeiten"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:131
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:223
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:77
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:163
 msgid "Version"
 msgstr "Version"
 
@@ -1048,7 +1051,7 @@ msgstr "Feedback senden"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:65
 msgid "Sending as %sender%."
-msgstr ""
+msgstr "Sende als %sender%."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:76
 msgid "Legal issues"
@@ -1139,23 +1142,27 @@ msgstr "Erweiterung bearbeiten"
 msgid "Edit this release"
 msgstr "Diesen Release bearbeiten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:195
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:190
+msgid "Categories"
+msgstr "Kategorien"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:199
 msgid "Rounds and Addons"
 msgstr "Runden und Erweiterungen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:204
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:208
 msgid "Community"
 msgstr "Community"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:214
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:218
 msgid "Project page"
 msgstr "Projektseite"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:223
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:227
 msgid "Report a bug"
 msgstr "Einen Fehler melden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:228
+#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:232
 msgid "Interested in an update?"
 msgstr "An einem Update interessiert?"
 
@@ -1374,48 +1381,109 @@ msgid "This user has not commented yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:53
+#, fuzzy
+msgid "Edit release"
+msgstr "Release bearbeiten"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:89
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:175
+#, fuzzy
+msgid "Addon description"
+msgstr "Beschreibung ändern"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:105
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:191
+#, fuzzy
+msgid "Release description"
+msgstr "Erweiterung veröffentlichen"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:118
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:204
+#, fuzzy
+msgid "Change presentation"
+msgstr "Präsentation"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:214
+msgid "Status"
+msgstr "Status"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:216
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:277
 msgid "Release"
 msgstr "Release"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:35
-msgid "Release addon"
-msgstr "Erweiterung veröffentlichen"
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:241
+msgid ""
+"We would like to check the quality of this addon before it goes public to "
+"keep the quality of content high."
+msgstr ""
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:59
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:245
+msgid ""
+"If you want, we can release this version for you as soon as we approve it."
+msgstr ""
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:249
+msgid ""
+"Otherwise you will be able to release whenever you want after this version "
+"is approved."
+msgstr ""
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:254
+msgid "Release immediately"
+msgstr "Sofort veröffentlichen"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:259
+#, fuzzy
+msgid "Request approval"
+msgstr "Erwartet Freigabe"
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:282
+msgid ""
+"If you would like to get your newest creation to the community as soon as "
+"possible you can instantly release your latest version."
+msgstr ""
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:286
 msgid "All downloads will immediately redirect to your uploaded version."
 msgstr "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:64
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:290
+msgid ""
+"Publishing a release is final. Any changes after releasing require a new "
+"release."
+msgstr ""
+
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:294
 msgid "Your release will be instantly available to all players."
 msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:70
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:300
 msgid "Confirm release"
 msgstr "Veröffentlichung bestätigen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:75
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:305
 msgid "Release now"
 msgstr "Jetzt veröffentlichen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:84
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:314
 msgid "Scheduled release"
 msgstr "Geplanter Release"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:89
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:319
 msgid "Date and time"
 msgstr "Datum und Zeit"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:101
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:331
 msgid "Make release date and time public"
 msgstr "Releasedatum und -zeit veröffentlichen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:107
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:337
 msgid ""
 "You can cancel a scheduled release at any time before the automated release."
 msgstr ""
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:111
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:341
 msgid ""
 "Your release will be automatically made vailabe to all players at the "
 "specified timestamp."
@@ -1423,7 +1491,7 @@ msgstr ""
 "Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
 "verfügbar gemacht."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:115
+#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:345
 msgid "Schedule Release"
 msgstr "Veröffentlichung planen"
 
@@ -1434,6 +1502,9 @@ msgstr "Zurück zur Startseite"
 #: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:163
 msgid "Contact"
 msgstr "Kontakt"
+
+#~ msgid "Release addon"
+#~ msgstr "Erweiterung veröffentlichen"
 
 #~ msgid "About"
 #~ msgstr "Über"
@@ -1450,14 +1521,6 @@ msgstr "Kontakt"
 
 #~ msgid "No games available."
 #~ msgstr "Keine Spiele verfügbar."
-
-#, fuzzy
-#~ msgid "Edit release"
-#~ msgstr "Release bearbeiten"
-
-#, fuzzy
-#~ msgid "Release description"
-#~ msgstr "Erweiterung veröffentlichen"
 
 #~ msgid "Change"
 #~ msgstr "Ändern"
