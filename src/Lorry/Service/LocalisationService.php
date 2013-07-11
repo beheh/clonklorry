@@ -61,6 +61,7 @@ class LocalisationService {
 				}
 			}
 		}
+		
 		$this->setDisplayLanguage($language);
 		return $this->display_language;
 	}
