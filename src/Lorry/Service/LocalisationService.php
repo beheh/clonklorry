@@ -54,6 +54,12 @@ class LocalisationService {
 			$language = http_negotiate_language($available);
 		} else {
 			$language = $available[0];
+			$accept = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+			foreach($available as $i => $current) {
+				if(strpos($accept, $current) === 0) {
+					$language = $available[$i];
+				}
+			}
 		}
 		$this->setDisplayLanguage($language);
 		return $this->display_language;
