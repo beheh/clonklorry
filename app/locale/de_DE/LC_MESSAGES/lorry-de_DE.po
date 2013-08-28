@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2013-06-30 00:02+0100\n"
-"PO-Revision-Date: 2013-06-30 00:03+0100\n"
+"POT-Creation-Date: 2013-08-28 12:52+0100\n"
+"PO-Revision-Date: 2013-08-28 12:59+0100\n"
 "Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
 "Language-Team: \n"
 "Language: de-DE\n"
@@ -204,71 +204,71 @@ msgstr "Ungültiges Spiel."
 msgid "Short name already exists."
 msgstr "Benutzername bereits vergeben."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:97
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:104
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:105
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:112
 msgid "January"
 msgstr "Januar"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:107
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:114
 msgid "February"
 msgstr "Februar"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:109
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:116
 msgid "March"
 msgstr "März"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:111
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:118
 msgid "April"
 msgstr "April"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:113
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:120
 msgid "May"
 msgstr "Mai"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:115
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:122
 msgid "June"
 msgstr "Juni"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:117
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:124
 msgid "July"
 msgstr "Juli"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:119
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:126
 msgid "August"
 msgstr "August"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:121
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:128
 msgid "September"
 msgstr "September"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:123
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:130
 msgid "October"
 msgstr "Oktober"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:125
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:132
 msgid "November"
 msgstr "November"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:127
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:134
 msgid "December"
 msgstr "Dezember"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:134
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:141
 msgid "1st"
 msgstr "1."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:136
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:143
 msgid "2nd"
 msgstr "2."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:138
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:145
 msgid "3rd"
 msgstr "3."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:140
+#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:147
 msgid "%n%th"
 msgstr "%n%."
 
@@ -299,6 +299,8 @@ msgid ""
 "This site is for new players to learn all about Clonk, to discover the huge "
 "database of addons and to help them get right into the game."
 msgstr ""
+"Auf dieser Seite können neue Spieler alles über Clonk lernen, die riesige "
+"Auswahl an Erweiterungen finden und einfach in das Spiel einsteigen."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:58
 msgid "Learn all about Clonk"
@@ -322,6 +324,8 @@ msgid ""
 "It should also serve as an archive, to enable players to go back and find "
 "forgotten gems of the past."
 msgstr ""
+"Gleichzeitig soll sie als ein Archiv dienen, damit Spielern alte und gut "
+"gemachte Erweiterungen wiederfinden können."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:79
 msgid "Discover the addons"
@@ -343,6 +347,8 @@ msgid ""
 "We want to share our own creations easily and give the addon developers our "
 "important feedback."
 msgstr ""
+"Wir wollen unsere Arbeit einfach teilen und den Entwicklern der "
+"Erweiterungen unser wichtiges Feedback geben."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:102
 msgid "View your profile"
@@ -624,6 +630,8 @@ msgid ""
 "Clonk lives from its fans, with dedicated players creating high-quality "
 "addons."
 msgstr ""
+"Clonk lebt von den Fans, mit hochqualitativen Erweiterungen von "
+"passionierten Spielern."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:111
 msgid ""
@@ -1114,9 +1122,9 @@ msgid "create a new addon"
 msgstr "neue Erweiterung anlegen"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:195
-#, fuzzy, php-format
+#, php-format
 msgid "Would you like to %created_addon% for this game?"
-msgstr "Möchtest du dein Konto entfernen?"
+msgstr ""
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:199
 msgid "There are no addons available for this game."
@@ -1399,9 +1407,8 @@ msgstr "Erweiterung veröffentlichen"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:118
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:204
-#, fuzzy
 msgid "Change presentation"
-msgstr "Präsentation"
+msgstr "Präsentation ändern"
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:214
 msgid "Status"
@@ -1417,17 +1424,23 @@ msgid ""
 "We would like to check the quality of this addon before it goes public to "
 "keep the quality of content high."
 msgstr ""
+"Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
+"Gesamtqualität hoch zu halten."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:245
 msgid ""
 "If you want, we can release this version for you as soon as we approve it."
 msgstr ""
+"Falls du möchtest, können wir diese Version für dich veröffentlichen sobald "
+"wir sie überprüft haben."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:249
 msgid ""
 "Otherwise you will be able to release whenever you want after this version "
 "is approved."
 msgstr ""
+"Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
+"überprüft wurde."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:254
 msgid "Release immediately"
@@ -1453,6 +1466,8 @@ msgid ""
 "Publishing a release is final. Any changes after releasing require a new "
 "release."
 msgstr ""
+"Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
+"erfordert einen neuen Release."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:294
 msgid "Your release will be instantly available to all players."
@@ -1482,6 +1497,8 @@ msgstr "Releasedatum und -zeit veröffentlichen"
 msgid ""
 "You can cancel a scheduled release at any time before the automated release."
 msgstr ""
+"Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
+"Veröffentlichung abbrechen."
 
 #: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:341
 msgid ""
