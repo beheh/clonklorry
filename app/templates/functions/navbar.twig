@@ -1,4 +1,39 @@
-<div id="mainnav" class="navbar navbar-inverse navbar-fixed-top{% if pathbarhidden %} hidden{% endif %}">
+<nav id="mainnav" class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{base}}">{{brand}}</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+		<li{% if path.0 == "addons" and path.1 == "rage" %} class="active"{% endif %}><a href="{{base}}/addons/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
+		<li{% if path.0 == "addons" and path.1 == "openclonk"  %} class="active"{% endif %}><a href="{{base}}/addons/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
+		<li{% if path.0 == "publish" %} class="active"{% endif %}><a href="{{base}}/publish">{% trans 'Publish' %}</a></li>
+		{% if user_moderator %}<li{% if path.0 == "moderate" %} class="active"{% endif %}><a href="{{base}}/moderate">{% trans 'Moderation' %}</a></li>{% endif %}
+		{% if user_administrator %}<li{% if path.0 == "admin" %} class="active"{% endif %}><a href="{{base}}/admin">{% trans 'Administration' %}</a></li>{% endif %}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if user_login %}
+		<li{% if path.0 == "users" and path.1|lower == user_name|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
+		<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
+		<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
+	{% else %}
+		<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
+		<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
+	{% endif %}
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+
+<!--<div id="mainnav" class="navbar navbar-inverse navbar-fixed-top{% if pathbarhidden %} hidden{% endif %}">
     <div class="navbar-inner">
 		<div class="container-fluid">
 			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -30,4 +65,4 @@
 	</div>
 </div>
 <div class="search-collapse collapse">
-</div>
+</div>!-->

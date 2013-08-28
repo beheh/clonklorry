@@ -1,8 +1,8 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-<div class="row-fluid">
-	<div class="span8">
+<div class="row">
+	<div class="col-md-8">
 		<!--<div style="height: 400px; background-color: #ddd; padding: 50px;">
 			<h1 style="margin-top: 350px">CMC 1.5!</h1>
 		</div>!-->
@@ -62,7 +62,7 @@
 			<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
 		{% endif %}
 	</div>
-	<div class="span4">
+	<div class="col-md-4">
 		<hr class="visible-phone">
 		{% if user_login %}
 			<h2>{% trans %}Welcome back.{% endtrans %}</h2>
