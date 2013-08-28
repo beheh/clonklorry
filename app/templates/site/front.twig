@@ -22,7 +22,7 @@
 						<p>The Hazard-based strategic shooter is back with its newest version. <a href="{{base}}rage/addon/moderncombat">Learn more&hellip;</a></p>
                     </div>
 				</div>!-->
-				<div class="active item">
+				<div class="item active">
 					<a href="http://clonkforge.net/pr.php?pr=1454">
 						<img src="{{base}}/img/infinity.png" alt="Clonk Infinity">
 					</a>
@@ -33,12 +33,16 @@
                     </div>
 				</div>
 			</div>
-			<a class="carousel-control left" href="#featured-front" data-slide="prev">&lsaquo;</a>
-			<a class="carousel-control right" href="#featured-front" data-slide="next">&rsaquo;</a>
+			<a class="left carousel-control" href="#featured-front" data-slide="prev">
+				<span class="icon-prev"></span>
+			</a>
+			<a class="right carousel-control" href="#featured-front" data-slide="next">
+				<span class="icon-next"></span>
+			</a>
 		</div>
 		<h3><span class="hidden-phone">{% trans %}New releases on Lorry{% endtrans %}</span><span class="visible-phone">{% trans %}New releases{% endtrans %}</span></h3>
 		{% if new_addons %}
-			<ul class="media-list addons-small">
+		<ul class="media-list addons-small">
 			{% for addon in new_addons %}
 				<li class="media">
 					<div class="pull-left">
@@ -53,41 +57,41 @@
 							{% else %}
 								<em>{% trans %}This addon has no description.{% endtrans %}</em>
 							{% endif %}
-						</p>
-					</div>
-				</li>
+							</p>
+						</div>
+					</li>
 			{% endfor %}
-			</ul>
+				</ul>
 		{% else %}
-			<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
+				<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
 		{% endif %}
-	</div>
-	<div class="col-md-4">
-		<hr class="visible-phone">
+			</div>
+			<div class="col-md-4">
+				<hr class="visible-phone">
 		{% if user_login %}
-			<h2>{% trans %}Welcome back.{% endtrans %}</h2>
+				<h2>{% trans %}Welcome back.{% endtrans %}</h2>
 		{% else %}
-			<h2><span class="hidden-phone">{% trans %}Welcome to Lorry.{% endtrans %}</span><span class="visible-phone">{% trans %}Welcome{% endtrans %}</span></h2>
+				<h2><span class="hidden-phone">{% trans %}Welcome to Lorry.{% endtrans %}</span><span class="visible-phone">{% trans %}Welcome{% endtrans %}</span></h2>
 		{% endif %}
-		<p class="text-big">{% trans %}Lorry is the place to find out about and get the best addons for the game series Clonk, and to discuss all about your favourites with the community.{% endtrans %}</p>
-		<p>
-			<a href="{{base}}/clonk" class="btn btn-success">{% trans %}New to Clonk?{% endtrans %}</a>
-			<a href="{{base}}/about" class="btn">{% trans %}About Lorry{% endtrans %}</a>
-		</p>
-		<hr>
-		<h3>Spotlight</h3>
-		<img src="http://clonkspot.org/images/logo.png" alt="clonkspot" style="height: 69px; width: 248px; margin-bottom: 12px;">
-		<p class="text-big">Clonkspot is a community platform introducing Clonk and features a blog and discussion board about various aspects of the games.</p>
-		<p>
-			<a href="http://clonkspot.org" class="btn btn-info">{% trans %}Visit clonkspot.org{% endtrans %}</a>
-			<a href="{{base}}/community" class="btn">{% trans %}List of community sites{% endtrans %}</a>
-		</p>
-		<hr>
-		<h3>{% trans %}Addons of the week{% endtrans %}</h3>
-		<ul>
-			<li>Lorry</li>
-			<li>Clonk Infinity</li>
-		</ul>
-	</div>
-</div>
+				<p class="text-big">{% trans %}Lorry is the place to find out about and get the best addons for the game series Clonk, and to discuss all about your favourites with the community.{% endtrans %}</p>
+				<p>
+					<a href="{{base}}/clonk" class="btn btn-success">{% trans %}New to Clonk?{% endtrans %}</a>
+					<a href="{{base}}/about" class="btn">{% trans %}About Lorry{% endtrans %}</a>
+				</p>
+				<hr>
+				<h3>Spotlight</h3>
+				<img src="http://clonkspot.org/images/logo.png" alt="clonkspot" style="height: 69px; width: 248px; margin-bottom: 12px;">
+				<p class="text-big">Clonkspot is a community platform introducing Clonk and features a blog and discussion board about various aspects of the games.</p>
+				<p>
+					<a href="http://clonkspot.org" class="btn btn-info">{% trans %}Visit clonkspot.org{% endtrans %}</a>
+					<a href="{{base}}/community" class="btn">{% trans %}List of community sites{% endtrans %}</a>
+				</p>
+				<hr>
+				<h3>{% trans %}Addons of the week{% endtrans %}</h3>
+				<ul>
+					<li>Lorry</li>
+					<li>Clonk Infinity</li>
+				</ul>
+			</div>
+		</div>
 {% endblock %}
