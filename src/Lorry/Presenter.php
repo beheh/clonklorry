@@ -74,12 +74,16 @@ abstract class Presenter implements PresenterInterface {
 		$this->twig->display($template, $this->context);
 	}
 
-	protected final function error($selector, $message) {
-		$this->alert($selector, $message, 'error');
+	protected final function info($selector, $message) {
+		$this->alert($selector, $message, 'info');
 	}
 
 	protected final function warning($selector, $message) {
 		$this->alert($selector, $message, 'warning');
+	}
+
+	protected final function error($selector, $message) {
+		$this->alert($selector, $message, 'danger');
 	}
 
 	protected final function success($selector, $message) {
