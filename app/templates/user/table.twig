@@ -3,7 +3,9 @@
 {% set title = 'Users'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
+<div class="page-header">
+	<h1>{{ title }}</h1>
+</div>
 <ul>
 {% for user in users %}
 	<li><a href="{{filename}}/{{user}}">{{ user }}</a></li>

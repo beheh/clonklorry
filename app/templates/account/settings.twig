@@ -3,13 +3,14 @@
 {% set title = 'Settings'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<div class="row-fluid" id="settings">
-	<div class="span4">
-		<hr class="visible-phone">
+<div class="page-header">
+	<h1>{{ title }}</h1>
+</div>
+<div class="row" id="settings">
+	<div class="col-md-4">
 		<h2>{% trans "Profile" %}</h2>
-		<h4 id="appearance">{% trans "Appearance" %}</h4>
-		<form method="post" action="{{filename}}?change-appearance" class="form-horizontal">
+		<h3 id="appearance">{% trans "Appearance" %}</h3>
+		<form method="post" action="{{filename}}?change-appearance" class="form-horizontal" role=form">
 			<div class="control-group">
 				<label class="control-label" for="username">{% trans "Username" %}</label>
 				<div class="controls">
@@ -17,12 +18,12 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<div class="alert">{% trans "Contact us to change your username." %}</div>
+				<div class="alert alert-warning">{% trans "Contact us to change your username." %}</div>
 			</div>
 		</form>
-		<h4 id="profiles">{% trans "Linked profiles" %}</h4>
+		<h3 id="profiles">{% trans "Linked profiles" %}</h3>
 		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
-		<form method="post" action="{{filename}}?change-profiles" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-profiles" class="form-horizontal" role=form">
 			<div class="control-group">
 				<label class="control-label" for="clonkforge">{% trans "Clonk Forge profile" %}</label>
 				<div class="controls">
@@ -37,17 +38,17 @@
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn">{% trans "Change linked profiles" %}</button>
+					<button type="submit" class="btn btn-default">{% trans "Change linked profiles" %}</button>
 				</div>
 			</div>
 		</form>
 	</div>
-	<div class="span4">
-		<hr class="visible-phone">
+	<div class="col-md-4">
+
 		<h2 id="account">{% trans "Account" %}</h2>
-		<h4 id="contact">{% trans "Contact details" %}</h4>
+		<h3 id="contact">{% trans "Contact details" %}</h3>
 		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-		<form method="post" action="{{filename}}?change-contact" class="form-horizontal">
+		<form method="post" action="{{filename}}?change-contact" class="form-horizontal" role=form">
 			<div class="control-group">
 				<label class="control-label" for="email">{% trans "Email address" %}</label>
 				<div class="controls">
@@ -56,12 +57,12 @@
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn">{% trans "Confirm email address" %}</button>
+					<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
 				</div>
 			</div>
 		</form>
-		<h4 id="language">{% trans "Language" %}</h4>
-		<form method="post" action="{{filename}}?change-language" class="form-horizontal">
+		<h3 id="language">{% trans "Language" %}</h3>
+		<form method="post" action="{{filename}}?change-language" class="form-horizontal" role=form">
 			<div class="control-group">
 				<label class="control-label" for="language-setting">{% trans "View site in" %}</label>
 				<div class="controls">
@@ -74,16 +75,16 @@
 			<noscript>
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn">{% trans "Change language" %}</button>
+					<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
 				</div>
 			</div>
 			</noscript>
 		</form>
-		<h4 id="remove-account">{% trans "Remove account" %}</h4>
+		<h3 id="remove-account">{% trans "Remove account" %}</h3>
 		<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
 		<div class="collapse" id="remove-account-confirm">
 			<form method="post" action="{{filename}}?remove-account">
-				<div class="alert alert-error">
+				<div class="alert alert-danger">
 					<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
 				</div>
 				<label class="checkbox">
@@ -93,13 +94,13 @@
 			</form>
 		</div>
 	</div>
-	<div class="span4">
-		<hr class="visible-phone">
+	<div class="col-md-4">
+
 		<h2 id="security">{% trans "Security" %}</h2>
 
-		<h4 id="password">{% trans "Password" %}</h4>
+		<h3 id="password">{% trans "Password" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
-			<form method="post" id="form-password" action="{{filename}}?change-password" class="form-horizontal">
+			<form method="post" id="form-password" action="{{filename}}?change-password" class="form-horizontal" role=form">
 				{% if password_exists %}
 				<div class="control-group">
 					<label class="control-label" for="password-old">{% trans "Old password" %}</label>
@@ -122,15 +123,15 @@
 				</div>
 				<div class="control-group">
 					<div class="controls">
-						<button type="submit" class="btn">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+						<button type="submit" class="btn btn-default">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
 					</div>
 				</div>
 			</form>
-			<h4 id="remote-logout">{% trans "Sessions" %}</h4>
+			<h3 id="remote-logout">{% trans "Sessions" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
 				<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 				<div class="collapse" id="remote-logout-confirm">
-					<form method="post" action="{{filename}}?remote-logout">
+					<form method="post" action="{{filename}}?remote-logout" role=form">
 						<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
 					</form>
 				</div>

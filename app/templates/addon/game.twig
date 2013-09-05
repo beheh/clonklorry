@@ -2,7 +2,9 @@
 
 {% block content %}
 <img src="{{base}}/img/game/{{short}}.png" class="pull-right hidden-phone">
-<h1 style="">{{ title }}</h1>
+<div class="page-header">
+	<h1>{{ title }}</h1>
+</div>
 {% if addons %}
 <div class="sort-bar">{% trans %}Sort{% endtrans %}
 	<a href="{{filename}}?sort=date{% if sort == 'date' and not reverse %}&reverse=1{% endif %}">{% trans %}by date{% endtrans %}</a>{% if sort == 'date' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |

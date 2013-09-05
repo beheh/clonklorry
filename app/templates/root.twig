@@ -18,39 +18,39 @@
 		<div class="container">
 		{% block content %}
 		{% endblock %}
-		<hr>
-		<footer>
-			<p class="visible-xs">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
+			<hr>
+			<footer>
+				<p class="visible-xs">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
 			{% if site_notice %}<p><strong>{{site_notice}}</strong></p>{% endif %}
-			<p>
-				<a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}
-				<span class="muted"> ·
-					<a class="text" href="{{base}}/about">{% trans "About the project" %}</a>
-					· <a class="text" href="{{base}}/contact"><span class="visible-xs">{% trans "Contact" %}</span><span class="hidden-phone">{% trans "Contact us" %}</span></a><span class="hidden-phone">{% if site_trademark %} · {{site_trademark|raw}}{% endif %}</span></span>.</p>
-		</footer>
-	</div>
+				<p>
+					<a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}
+					<span class="muted"> ·
+						<a class="text" href="{{base}}/about">{% trans "About the project" %}</a>
+						· <a class="text" href="{{base}}/contact"><span class="visible-xs">{% trans "Contact" %}</span><span class="hidden-phone">{% trans "Contact us" %}</span></a><span class="hidden-phone">{% if site_trademark %} · {{site_trademark|raw}}{% endif %}</span></span>.</p>
+			</footer>
+		</div>
 	{% endblock %}
-	<script src="{{base}}/js/jquery.min.js"></script>
-	<script src="{{base}}/js/bootstrap.min.js"></script>
-	<script src="{{base}}/js/yepnope.min.js"></script>
-	<script src="{{base}}/js/lorry.js"></script>
-	<script>{% block javascript %}{% endblock %}</script>
-	<!--<script>yepnope({
-		test: ('placeholder' in $('<input>')[0]),
-		nope: [
-				'{{base}}/poly/placeholder_polyfill.min.css',
-				'{{base}}/poly/placeholder_polyfill.jquery.min.combo.js'
-			  ]
-	});</script>!-->
-	<script>(function() {
-			if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-				var msViewportStyle = document.createElement("style");
-				msViewportStyle.appendChild(
-					document.createTextNode("@-ms-viewport{width:auto!important}")
-				);
-				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-			}
-		})();
-	</script>
+		<script src="{{base}}/js/jquery.min.js"></script>
+		<script src="{{base}}/js/bootstrap.min.js"></script>
+		<script src="{{base}}/js/yepnope.min.js"></script>
+		<script src="{{base}}/js/lorry.js"></script>
+		<script>{% block javascript %}{% endblock %}</script>
+		<!--<script>yepnope({
+			test: ('placeholder' in $('<input>')[0]),
+			nope: [
+					'{{base}}/poly/placeholder_polyfill.min.css',
+					'{{base}}/poly/placeholder_polyfill.jquery.min.combo.js'
+				  ]
+		});</script>!-->
+		<script>(function() {
+				if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+					var msViewportStyle = document.createElement("style");
+					msViewportStyle.appendChild(
+							document.createTextNode("@-ms-viewport{width:auto!important}")
+							);
+					document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+				}
+			})();
+		</script>
 	</body>
 </html>

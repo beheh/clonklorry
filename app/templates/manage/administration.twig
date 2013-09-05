@@ -3,17 +3,19 @@
 {% set title = 'Administration'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<div class="row-fluid">
-	<div class="span4">
+<div class="page-header">
+	<h1>{{ title }}</h1>
+</div>
+<div class="row">
+	<div class="col-md-4">
 		<h2>{% trans %}Overview{% endtrans %}</h2>
-		<h4>{% trans %}Management{% endtrans %}</h4>
+		<h3>{% trans %}Management{% endtrans %}</h3>
 		<a href="{{base}}/users?filter=moderator" class="btn btn-primary">Show moderators</a>
 	</div>
-	<div class="span4">
+	<div class="col-md-4">
 		<h2>{% trans %}Front page{% endtrans %}</h2>
-		<h4>Carousel</h4>
-		<h4>Spotlight</h4>
+		<h3>Carousel</h3>
+		<h3>Spotlight</h3>
 	</div>
 </div>
 {% endblock %}

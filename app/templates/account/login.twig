@@ -9,61 +9,61 @@
 <div class="row" id="login">
     <div class="col-md-4">
 		{% include 'functions/alert.twig' with {'selector' : 'login'} %}
-			<form id="form-login" method="post" action="{{ filename }}" role="form">
-				<div class="form-group">
-					<label for="username">{% trans "Username" %}</label>
-					<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
-				</div>
-				<div class="form-group">
-					<label for="password">{% trans "Password" %}</label>
-					<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" {% if username and username_exists %} autofocus{% endif %} required>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
-					</label>
-				</div>
-				<button class="btn btn-large btn-primary" type="submit">{% trans "Login" %}</button>
+		<form id="form-login" method="post" action="{{ filename }}" role="form">
+			<div class="form-group">
+				<label for="username">{% trans "Username" %}</label>
+				<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
+			</div>
+			<div class="form-group">
+				<label for="password">{% trans "Password" %}</label>
+				<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" {% if username and username_exists %} autofocus{% endif %} required>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
+				</label>
+			</div>
+			<button class="btn btn-large btn-primary" type="submit">{% trans "Login" %}</button>
 			{% if not email %}<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">{% if username %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>{% endif %}
+		</form>
+		<hr>
+		<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
+			<h4 id="reset">{% trans "Use your email account to log in:" %}</h4>
+			{% include 'functions/alert.twig' with {'selector' : 'email'} %}
+			<form method="post" action="?by-email" role="form">
+				<div class="form-group">
+					<label for="email">{% trans "Email address" %}</label>
+					<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
+				</div>
+				<button class="btn btn-success" type="submit">{% trans "Send one-time login" %}</button>
 			</form>
 			<hr>
-			<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
-				<h4 id="reset">{% trans "Use your email account to log in:" %}</h4>
-			{% include 'functions/alert.twig' with {'selector' : 'email'} %}
-				<form method="post" action="?by-email" role="form">
-					<div class="form-group">
-						<label for="email">{% trans "Email address" %}</label>
-						<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
-					</div>
-					<button class="btn btn-success" type="submit">{% trans "Send one-time login" %}</button>
-				</form>
-				<hr>
-			</div>
-			<div class="social">
-				<h4>{% trans %}Or, select your login service:{% endtrans %}</h4>
-			{% include 'functions/openid.twig' %}
-			</div>
 		</div>
-		<div class="col-md-8">
-			<hr class="visible-xs">
-			<h4>{% trans %}Welcome back!{% endtrans %}</h4>
-			<p>{% trans %}Nice to see you again! Have you visited these other great Clonk sites yet?{% endtrans %}</p>
-			<p><a href="http://openclonk.org">openclonk.org</a> &middot; <a href="http://clonkspot.org">clonkspot.org</a> &middot; <a href="http://clonkspot.org">clonkforge.net</a></p>
-
+		<div class="social">
+			<h4>{% trans %}Or, select your login service:{% endtrans %}</h4>
+			{% include 'functions/openid.twig' %}
 		</div>
 	</div>
+	<div class="col-md-8">
+		<hr class="visible-xs">
+		<h4>{% trans %}Welcome back!{% endtrans %}</h4>
+		<p>{% trans %}Nice to see you again! Have you visited these other great Clonk sites yet?{% endtrans %}</p>
+		<p><a href="http://openclonk.org">openclonk.org</a> &middot; <a href="http://clonkspot.org">clonkspot.org</a> &middot; <a href="http://clonkspot.org">clonkforge.net</a></p>
+
+	</div>
+</div>
 {% endblock %}
 
 
 {% block javascript %}
 {{ parent() }}
 
-	$(document).ready(function() {
-	$('#form-login input').each(function() {
-	$(this).addClass('noerror')
-	var require = function() {$(this).removeClass('noerror');};
-	$(this).keypress(require);
-	$(this).blur(require);
-	});
-	});
+$(document).ready(function() {
+$('#form-login input').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keypress(require);
+$(this).blur(require);
+});
+});
 {% endblock %}
