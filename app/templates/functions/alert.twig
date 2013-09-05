@@ -1,7 +1,7 @@
 {% set alert = attribute(alerts, selector) %}
 {% if alert.message %}
 	{% if alert.type %}{% set alert = alert|merge({'type':' alert-' ~ alert.type}) %}{%endif%}
-	<p class="alert{{alert.type}}">
+	<div class="alert{{alert.type}}">
 		{{ alert.message|raw }}
-	</p>
+	</div>
 {% endif %}
