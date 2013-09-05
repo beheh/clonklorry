@@ -1,7 +1,7 @@
 <p id="openid">
-	<a href="#by-openid" class="btn btn-openid" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
-	<a href="?openid=google" class="btn btn-google">{% trans "Google" %}</a>
-	<a href="?openid=facebook" class="btn btn-facebook">{% trans "Facebook" %}</a>
+	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
+	<a href="?openid=google" class="btn btn-danger">{% trans "Google" %}</a>
+	<a href="?openid=facebook" class="btn btn-primary">{% trans "Facebook" %}</a>
 </p>
 <div class="collapse" id="by-openid">
 	<form action="{{filename}}?openid=custom" method="post" class="form-inline">
