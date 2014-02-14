@@ -55,7 +55,7 @@ class Environment {
 		$localisation->localize();
 
 		$loader = new Twig_Loader_Filesystem('../app/templates');
-		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
+		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => $config->get('debug')));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
