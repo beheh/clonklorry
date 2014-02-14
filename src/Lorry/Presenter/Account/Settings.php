@@ -8,9 +8,7 @@ use Lorry\Exception\ModelValueInvalidException;
 class Settings extends Presenter {
 
 	public function get() {
-
-		//$this->offerIdentification();
-		//$this->security->requireIdentification();
+		$this->security->requireLogin();
 
 		$user = $this->session->getUser();
 
@@ -35,7 +33,7 @@ class Settings extends Presenter {
 	}
 
 	public function post() {
-		//$this->security->requireIdentification();
+		$this->security->requireLogin();
 
 		$user = $this->session->getUser();
 
