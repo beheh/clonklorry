@@ -3,85 +3,86 @@
 {% set title = 'Settings'|trans %}
 
 {% block content %}
-<div class="page-header">
-	<h1>{{ title }}</h1>
-</div>
-<div class="row" id="settings">
-	<div class="col-md-4">
-		<h2>{% trans "Profile" %}</h2>
-		<h3 id="appearance">{% trans "Appearance" %}</h3>
-		<form role=form" method="post" action="{{filename}}?change-appearance">
-			<div class="form-group">
-				<label for="username">{% trans "Username" %}</label>
-				<input type="text" class="form-control" name="username" id="username" value="{{username}}" required disabled>
-			</div>
-			<div class="form-group">
-				<div class="alert alert-warning">{% trans "Contact us to change your username." %}</div>
-			</div>
-		</form>
-		<h3 id="profiles">{% trans "Linked profiles" %}</h3>
-		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
-		<form role=form" method="post" action="{{filename}}?change-profiles">
-			<div class="form-group">
-                            <label for="clonkforge">{% trans "Clonk Forge profile" %}</label>
-                            <input type="url" class="form-control" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_placeholder}}">
-			</div>
-			<div class="form-group">
-				<label for="github">{% trans "GitHub name" %}</label>
-				<input type="text" class="form-control" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
-			</div>
-			<div class="form-group">
-				<button type="submit" class="btn btn-default">{% trans "Change linked profiles" %}</button>
-			</div>
-		</form>
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
 	</div>
-	<div class="col-md-4">
-		<h2 id="account">{% trans "Account" %}</h2>
-		<h3 id="contact">{% trans "Contact details" %}</h3>
-		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-		<form role=form" method="post" action="{{filename}}?change-contact">
-			<div class="form-group">
-				<label for="email">{% trans "Email address" %}</label>
-				<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
-			</div>
-			<div class="form-group">
-				<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
-			</div>
-		</form>
-		<h3 id="language">{% trans "Language" %}</h3>
-		<form role=form" method="post" action="{{filename}}?change-language">
-			<div class="form-group">
-				<label for="language-setting">{% trans "View site in" %}</label>
-				<select name="language" id="language-setting" required>
-					<option value="en-US"{% if language == "en-US" %} selected{% endif %}>{% trans "English" %}</option>
-					<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
-				</select>
-			</div>
-			<noscript>
-			<div class="form-group">
-				<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
-			</div>
-			</noscript>
-		</form>
-		<h3 id="remove-account">{% trans "Remove account" %}</h3>
-		<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
-		<div class="collapse" id="remove-account-confirm">
-			<form role="form" method="post" action="{{filename}}?remove-account">
-				<div class="alert alert-danger">
-					<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
+	<div class="row">
+		<div class="col-md-4">
+			<h2>{% trans "Profile" %}</h2>
+			<h3 id="appearance">{% trans "Appearance" %}</h3>
+			<form role=form" method="post" action="{{filename}}?change-appearance">
+				<div class="form-group">
+					<label for="username">{% trans "Username" %}</label>
+					<input type="text" class="form-control" name="username" id="username" value="{{username}}" required disabled>
 				</div>
-				<label class="checkbox">
-					<input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}
-				</label>
-				<button type="submit" class="btn btn-danger" id="remove-button" disabled>{% trans "Permanently remove account"%}</button>
+				<div class="form-group">
+					<div class="alert alert-warning">{% trans "Contact us to change your username." %}</div>
+				</div>
+			</form>
+			<h3 id="profiles">{% trans "Linked profiles" %}</h3>
+		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
+			<form role=form" method="post" action="{{filename}}?change-profiles">
+				<div class="form-group">
+					<label for="clonkforge">{% trans "Clonk Forge profile" %}</label>
+					<input type="url" class="form-control" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_placeholder}}">
+				</div>
+				<div class="form-group">
+					<label for="github">{% trans "GitHub name" %}</label>
+					<input type="text" class="form-control" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default">{% trans "Change linked profiles" %}</button>
+				</div>
 			</form>
 		</div>
-	</div>
-	<div class="col-md-4">
+		<div class="col-md-4">
+			<h2 id="account">{% trans "Account" %}</h2>
+			<h3 id="contact">{% trans "Contact details" %}</h3>
+		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+			<form role=form" method="post" action="{{filename}}?change-contact">
+				<div class="form-group">
+					<label for="email">{% trans "Email address" %}</label>
+					<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
+				</div>
+			</form>
+			<h3 id="language">{% trans "Language" %}</h3>
+			<form role=form" method="post" action="{{filename}}?change-language">
+				<div class="form-group">
+					<label for="language-setting">{% trans "View site in" %}</label>
+					<select name="language" id="language-setting" required>
+						<option value="en-US"{% if language == "en-US" %} selected{% endif %}>{% trans "English" %}</option>
+						<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
+					</select>
+				</div>
+				<noscript>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
+				</div>
+				</noscript>
+			</form>
+			<h3 id="remove-account">{% trans "Remove account" %}</h3>
+			<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
+			<div class="collapse" id="remove-account-confirm">
+				<form role="form" method="post" action="{{filename}}?remove-account">
+					<div class="alert alert-danger">
+						<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
+					</div>
+					<label class="checkbox">
+						<input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}
+					</label>
+					<button type="submit" class="btn btn-danger" id="remove-button" disabled>{% trans "Permanently remove account"%}</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-4">
 
-		<h2 id="security">{% trans "Security" %}</h2>
+			<h2 id="security">{% trans "Security" %}</h2>
 
-		<h3 id="password">{% trans "Password" %}</h3>
+			<h3 id="password">{% trans "Password" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
 			<form role=form" method="post" id="form-password" action="{{filename}}?change-password">
 				{% if password_exists %}
@@ -104,41 +105,42 @@
 			</form>
 			<h3 id="remote-logout">{% trans "Sessions" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
-				<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
-				<div class="collapse" id="remote-logout-confirm">
-					<form method="post" action="{{filename}}?remote-logout" role=form">
-						<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
-					</form>
-				</div>
-				<h4 id="link">{% trans "Login services" %}</h4>
-				{% include 'functions/openid.twig' %}
+			<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
+			<div class="collapse" id="remote-logout-confirm">
+				<form method="post" action="{{filename}}?remote-logout" role=form">
+					<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
+				</form>
 			</div>
+			<h4 id="link">{% trans "Login services" %}</h4>
+				{% include 'functions/openid.twig' %}
 		</div>
+	</div>
+</div>
 {% endblock %}
 
 {% block javascript %}
 {{ parent() }}
 
 $(document).ready(function() {
-	$('#form-password input').each(function() {
-		$(this).addClass('noerror')
-		var require = function() {$(this).removeClass('noerror');};
-		$(this).keypress(require);
-		$(this).blur(require);
-	});
+$('#form-password input').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keypress(require);
+$(this).blur(require);
+});
 
-	$('#language-setting').change(function() {
-		$(this).closest('form').submit();
-	});
+$('#language-setting').change(function() {
+$(this).closest('form').submit();
+});
 
-	$('#remove-confirm').prop('checked', false);
+$('#remove-confirm').prop('checked', false);
 
-	$('#remove-confirm').change(function() {
-		if($(this).prop('checked')) {
-			$('#remove-button').prop('disabled', false);
-		} else {
-			$('#remove-button').prop('disabled', true);
-		}
-	});
+$('#remove-confirm').change(function() {
+if($(this).prop('checked')) {
+$('#remove-button').prop('disabled', false);
+} else {
+$('#remove-button').prop('disabled', true);
+}
+});
 });
 {% endblock %}
