@@ -3,70 +3,77 @@
 {% set title = 'Publish'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<div class="row-fluid">
-	<div class="span12">
-		<hr class="visible-phone">
-		<h2>{% trans %}New addon{% endtrans %}</h2>
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h2>{% trans %}New addon{% endtrans %}</h2>
 		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
-		<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
-				<input type="text" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %} placeholder="{% trans %}Full title{% endtrans %}">
-				{% if games and games|length > 1%}<select name="game" id="game" required>
-					<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
+			<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
+				<div class="form-group">
+					<label for="title" class="sr-only">{% trans %}Full title{% endtrans %}</label>
+					<input type="text" class="form-control" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %} placeholder="{% trans %}Full title{% endtrans %}">
+				</div>
+				<div class="form-group">
+				{% if games and games|length > 1%}<select class="form-control" name="game" id="game" required>
+						<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
 					{% for game in games %}
-					<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
+						<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
 					{% else %}
-					<option>{% trans %}No game available{% endtrans %}</option>
+						<option>{% trans %}No game available{% endtrans %}</option>
 					{% endfor %}
-				</select>{% endif %}
+					</select>{% endif %}
+				</div>
 				<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
-				<label class="control-label" for="title"></label>
-		</form>
+			</form>
+		</div>
 	</div>
-</div>
-<hr>
-<div class="row-fluid">
-	<div class="span6">
-		<h2>{% trans %}Unreleased{% endtrans %}</h2>
+	<hr>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>{% trans %}Unreleased{% endtrans %}</h2>
 		{% if addons_unreleased %}
-		<ul class="media-list addons-small">
+			<ul class="media-list addons-small">
 		{% for addon in addons_unreleased %}
-			<li class="media">
-				<div class="pull-left">
-					<img class="media-object" src="http://placehold.it/200x150">
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading heading-label">{{ addon.title }}</h4>
-					<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
-					<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a></p>
-				</div>
-			</li>
+				<li class="media">
+					<div class="pull-left">
+						<img class="media-object" src="http://placehold.it/200x150">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading heading-label">{{ addon.title }}</h4>
+						<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
+						<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a></p>
+					</div>
+				</li>
 		{% endfor %}
-		</ul>
+			</ul>
 		{% else %}
-		<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
+			<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
 		{% endif %}
-	</div>
-	<div class="span6">
-		<h2>{% trans %}Released{% endtrans %}</h2>
+		</div>
+		<div class="col-md-6">
+			<h2>{% trans %}Released{% endtrans %}</h2>
 		{% if addons_released %}
-		<ul class="media-list addons-small">
+			<ul class="media-list addons-small">
 		{% for addon in addons_released %}
-			<li class="media">
-				<a class="pull-left" href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">
-					<img class="media-object" src="http://placehold.it/200x150">
-				</a>
-				<div class="media-body">
-					<h4 class="media-heading heading-label"><a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{{ addon.title }}</a></h4>
-					<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
-					<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}" class="btn">{% trans %}View addon page{% endtrans %}</a></p>
-				</div>
-			</li>
+				<li class="media">
+					<a class="pull-left" href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">
+						<img class="media-object" src="http://placehold.it/200x150">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading heading-label"><a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{{ addon.title }}</a></h4>
+						<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
+						<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}" class="btn">{% trans %}View addon page{% endtrans %}</a></p>
+					</div>
+				</li>
 		{% endfor %}
-		</ul>
+			</ul>
 		{% else %}
 			<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
 		{% endif %}
+		</div>
 	</div>
 </div>
 {% endblock %}
@@ -74,12 +81,12 @@
 {% block javascript %}
 {{ parent() }}
 
-	$(document).ready(function() {
-	$('#form-publish input, #form-publish select').each(function() {
-	$(this).addClass('noerror')
-	var require = function() {$(this).removeClass('noerror');};
-	$(this).keydown(require);
-	$(this).blur(require);
-	});
-	});
+$(document).ready(function() {
+$('#form-publish input, #form-publish select').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keydown(require);
+$(this).blur(require);
+});
+});
 {% endblock %}

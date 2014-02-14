@@ -3,51 +3,54 @@
 {% set title = 'Contact us'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<div class="row-fluid">
-    <div class="span7">
-		<h2>{% trans %}We &hearts; feedback{% endtrans %}</h2>
-		<p>{% trans %}We here are all fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
-		<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
-		<form method="post" id="form-contact">
-			<textarea required rows="6"></textarea>
-			<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-7">
+			<h2>{% trans %}We &hearts; feedback{% endtrans %}</h2>
+			<p>{% trans %}We here are all fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
+			<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
+			<form method="post" id="form-contact">
+				<textarea required rows="6"></textarea>
+				<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 			{% if by %}
 				{% set sender = by|escape('html') %}
 				<span class="btn btn-link" disabled>{% trans %}Sending as {{sender}}.{% endtrans %}</span>
 			{% endif %}
-		</form>
-    </div>
-	<div class="span5">
-		<hr class="visible-phone">
-		<h2>{% trans %}Legal issues{% endtrans %}</h2>
+			</form>
+		</div>
+		<div class="col-md-5">
+			<h2>{% trans %}Legal issues{% endtrans %}</h2>
 		{% if site_trademark %}
-		<p>{{ site_trademark|raw }}.</p>
+			<p>{{ site_trademark|raw }}.</p>
 		{% endif %}
-		<p><span>If you have any legal issues please do not hesitate to contact us either via our feedback form <span class="hidden-phone">to the left</span><span class="visible-phone">above</span> or via <a href="mailto:">legal@example.com</a>.</span></p>
-		<p>{% trans %}That way we are able to quickly resolve to any problems that might occur or any content you feel might be infringing your rights.{% endtrans %}</p>
-		<p>{% trans %}We are not responsible for the content of outgoing links. User generated content does not necessarily reflect the views of the site owners.{% endtrans %}</p>
+			<p><span>If you have any legal issues please do not hesitate to contact us either via our feedback form <span class="hidden-phone">to the left</span><span class="visible-phone">above</span> or via <a href="mailto:">legal@example.com</a>.</span></p>
+			<p>{% trans %}That way we are able to quickly resolve to any problems that might occur or any content you feel might be infringing your rights.{% endtrans %}</p>
+			<p>{% trans %}We are not responsible for the content of outgoing links. User generated content does not necessarily reflect the views of the site owners.{% endtrans %}</p>
 		{% if site_contact %}
-		<hr>
-		<h4>{% trans %}Responsible for the content{% endtrans %}</h4>
-		<address>
+			<hr>
+			<h3>{% trans %}Responsible for the content{% endtrans %}</h3>
+			<address>
 			{{ site_contact|raw }}
-		</address>
+			</address>
 		{% endif %}
 		</div>
 	</div>
+</div>
 {% endblock %}
 
 {% block javascript %}
 {{ parent() }}
 
 $(document).ready(function() {
-	var options = {placement:'bottom', trigger:'focus'};
-	$('#form-contact textarea').each(function() {
-		$(this).addClass('noerror')
-		var require = function() {$(this).removeClass('noerror');};
-		$(this).keypress(require);
-		$(this).blur(require);
-	});
+var options = {placement:'bottom', trigger:'focus'};
+$('#form-contact textarea').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keypress(require);
+$(this).blur(require);
+});
 });
 {% endblock %}

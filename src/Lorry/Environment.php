@@ -26,12 +26,13 @@ class Environment {
 
 		try {
 			$this->handle($config);
-		} catch(Exception $e) {
+		} catch (Exception $e) {
 			header('HTTP/1.1 500 Internal Server Error');
 			header('Content-Type: text/plain');
-			if($config && $config->get('debug')) {
-				echo 'An internal error occured: '.$e->getMessage().PHP_EOL;
-				echo PHP_EOL.$e->getTraceAsString();
+			if ($config && $config->get('debug')) {
+				echo 'An internal error occured: '.$e->getMessage().PHP_EOL.PHP_EOL;
+				echo 'Stack trace:'.PHP_EOL.$e->getTraceAsString().PHP_EOL.PHP_EOL;
+				echo 'Lorry platform in debug mode.';
 			} else {
 				echo 'An internal error occured.'.PHP_EOL;
 				echo 'We have been notified and will be looking into this.';
@@ -54,7 +55,7 @@ class Environment {
 		$localisation->localize();
 
 		$loader = new Twig_Loader_Filesystem('../app/templates');
-		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => true));
+		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => $config->get('debug')));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
@@ -63,12 +64,12 @@ class Environment {
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 
-		$twig->addGlobal('site_notice', gettext('Development version.'));
+		//$twig->addGlobal('site_notice', '');
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
 		$twig->addGlobal('site_contact', $config->get('contact'));
 
-		if($session->authenticated()) {
+		if ($session->authenticated()) {
 			$user = $session->getUser();
 			$twig->addGlobal('user_login', true);
 			$twig->addGlobal('user_name', $user->getUsername());
@@ -120,6 +121,7 @@ class Environment {
 
 		// recompile style if necessary
 		$style = new StyleService();
+		$style->setConfigService($config);
 		$style->compile();
 
 		try {
@@ -127,19 +129,19 @@ class Environment {
 			$presenter = Router::route();
 
 			// check if method is supported
-			if(!method_exists($presenter, $method)) {
+			if (!method_exists($presenter, $method)) {
 				throw new NotImplementedException(get_class($presenter).'->'.$method.'()');
 			}
 
 			// execute the RESTful method
 			return call_user_func_array(array($presenter, $method), Router::getMatches());
-		} catch(FileNotFoundException $exception) {
+		} catch (FileNotFoundException $exception) {
 			return PresenterFactory::build('Error\FileNotFound')->get($exception);
-		} catch(ForbiddenException $exception) {
+		} catch (ForbiddenException $exception) {
 			return PresenterFactory::build('Error\Forbidden')->get($exception);
-		} catch(NotImplementedException $exception) {
+		} catch (NotImplementedException $exception) {
 			return PresenterFactory::build('Error\NotImplemented')->get($exception);
-		} catch(OutputCompleteException $exception) {
+		} catch (OutputCompleteException $exception) {
 			// allow output to complete prematurely
 		}
 	}

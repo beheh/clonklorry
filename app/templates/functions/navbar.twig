@@ -1,33 +1,33 @@
-<div id="mainnav" class="navbar navbar-inverse navbar-fixed-top{% if pathbarhidden %} hidden{% endif %}">
-    <div class="navbar-inner">
-		<div class="container-fluid">
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<nav id="mainnav" class="navbar navbar-inverse navbar-static-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="{{base}}">{{brand}}</a>
-			<div class="nav-collapse collapse">
-				<ul class="nav">
-					<li{% if path.0 == "addons" and path.1 == "rage" %} class="active"{% endif %}><a href="{{base}}/addons/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
-					<li{% if path.0 == "addons" and path.1 == "openclonk"  %} class="active"{% endif %}><a href="{{base}}/addons/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
-					<li{% if path.0 == "publish" %} class="active"{% endif %}><a href="{{base}}/publish">{% trans 'Publish' %}</a></li>
-					{% if user_moderator %}<li{% if path.0 == "moderate" %} class="active"{% endif %}><a href="{{base}}/moderate">{% trans 'Moderation' %}</a></li>{% endif %}
-					{% if user_administrator %}<li{% if path.0 == "admin" %} class="active"{% endif %}><a href="{{base}}/admin">{% trans 'Administration' %}</a></li>{% endif %}
-				</ul>
-				<ul class="nav pull-right">
-				{% if user_login %}
-					<li{% if path.0 == "users" and path.1|lower == user_name|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
-					<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
-					<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
-				{% else %}
-					<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
-					<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
-				{% endif %}
-				</ul>
-			</div>
+			<a class="navbar-brand" href="{{base}}">{{brand}}</a>
+		</div>
+
+		<div class="collapse navbar-collapse main-navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li{% if path.0 == "addons" and path.1 == "rage" %} class="active"{% endif %}><a href="{{base}}/addons/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
+				<li{% if path.0 == "addons" and path.1 == "openclonk"  %} class="active"{% endif %}><a href="{{base}}/addons/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
+				<li{% if path.0 == "publish" %} class="active"{% endif %}><a href="{{base}}/publish">{% trans 'Publish' %}</a></li>
+		{% if user_moderator %}<li{% if path.0 == "moderate" %} class="active"{% endif %}><a href="{{base}}/moderate">{% trans 'Moderation' %}</a></li>{% endif %}
+		{% if user_administrator %}<li{% if path.0 == "admin" %} class="active"{% endif %}><a href="{{base}}/admin">{% trans 'Administration' %}</a></li>{% endif %}
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+      {% if user_login %}
+				<li{% if path.0 == "users" and path.1|lower == user_name|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
+				<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
+				<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
+	{% else %}
+				<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
+				<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
+	{% endif %}
+			</ul>
 		</div>
 	</div>
-</div>
-<div class="search-collapse collapse">
-</div>
+</nav>

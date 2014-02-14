@@ -3,14 +3,19 @@
 {% set title = 'Identification required'|trans %}
 
 {% block content %}
-<div class="hero-unit">
-	<h1>{{ title }}</h1>
-	<p>{% trans %}Please enter your password to confirm your identity:{% endtrans %}</p>
-	{% include 'functions/alert.twig' with {'selector' : 'identify'} %}
-	<form id="form-identify" method="post" class="form-inline" action="{{ filename }}">
-		<input type="password" name="password" id="password" placeholder="{% trans "Password" %}" autofocus required>
-		<button class="btn btn-primary" type="submit">{% trans "Confirm" %}</button>
-	</form>
+<div class="jumbotron" id="identify">
+	<div class="container">
+		<h1>{{ title }}</h1>
+		<p>{% trans %}Please enter your password to confirm your identity:{% endtrans %}</p>
+		{% include 'functions/alert.twig' with {'selector' : 'identify'} %}
+		<form method="post" class="form-inline" action="{{ filename }}" role="form">
+			<div class="form-group">
+				<label class="sr-only" for="password">{% trans "Password" %}</label>
+				<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" autofocus required>
+			</div>
+			<button type="submit" class="btn btn-primary">{% trans "Confirm" %}</button>
+		</form>
+	</div>
 </div>
 
 {% endblock %}
@@ -19,11 +24,11 @@
 {{ parent() }}
 
 $(document).ready(function() {
-	$('#form-identify input').each(function() {
-		$(this).addClass('noerror')
-		var require = function() {$(this).removeClass('noerror');};
-		$(this).keypress(require);
-		$(this).blur(require);
-	});
+$('#form-identify input').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keypress(require);
+$(this).blur(require);
+});
 });
 {% endblock %}
