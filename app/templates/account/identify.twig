@@ -24,11 +24,11 @@
 {{ parent() }}
 
 $(document).ready(function() {
-	$('#form-identify input').each(function() {
-		$(this).addClass('noerror')
-		var require = function() {$(this).removeClass('noerror');};
-		$(this).keypress(require);
-		$(this).blur(require);
-	});
+$('#form-identify input').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keypress(require);
+$(this).blur(require);
+});
 });
 {% endblock %}

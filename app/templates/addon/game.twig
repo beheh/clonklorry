@@ -41,10 +41,13 @@
 {% endfor %}
 	</ul>
 {% else %}
-{% set create_addon_text = 'create a new addon'|trans	%}
-{% set create_addon = '<a href="' ~ base ~ '/publish/?for='~ short ~ '">' ~ create_addon_text ~ '</a>' %}
-	<p><strong>{% trans %}Would you like to {{created_addon}} for this game?{% endtrans %}</strong></p>
-	<p class="alert alert-warning">{% trans %}There are no addons available for this game.{% endtrans %}</p>
+</div>
+<div class="jumbotron">
+	<div class="container">
+		<h1>No addons available yet</h1>
+		<p>{% trans %}There are no addons available for this game yet.{% endtrans %}</p>
+		<p><a href="{{base}}/publish" class="btn btn-info">Visit the publishing portal</a></p>
 {% endif %}
+	</div>
 </div>
 {% endblock %}
