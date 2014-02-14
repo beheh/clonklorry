@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-02-15 00:50+0100\n"
-"PO-Revision-Date: 2014-02-15 00:51+0100\n"
+"POT-Creation-Date: 2014-02-15 00:53+0100\n"
+"PO-Revision-Date: 2014-02-15 00:53+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -294,7 +294,7 @@ msgstr "Diese Erweiterung hat keine Beschreibung."
 #: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:93
 #, fuzzy
 msgid "Release description"
-msgstr "Diesen Release bearbeiten"
+msgstr "Beschreibung"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:106
 msgid "Change presentation"
@@ -503,7 +503,7 @@ msgstr "Version hinzufügen"
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:232
 #, fuzzy
 msgid "Existing releases"
-msgstr "Neue Veröffentlichungen"
+msgstr "Veröffentlichungen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:236
 #, fuzzy
@@ -1024,8 +1024,8 @@ msgid "Download"
 msgstr "Download"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:200
-msgid "No addons available yet"
-msgstr "Noch keine Erweiterungen verfügbar"
+msgid "No addons available"
+msgstr "Keine Erweiterungen verfügbar"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:204
 msgid "There are no addons available for this game yet."
@@ -1034,7 +1034,7 @@ msgstr "Für dieses Spiel sind noch keine Erweiterungen verfügbar."
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:210
 #, fuzzy
 msgid "Visit the publishing portal"
-msgstr "Veröffentlichungsportal öffnen"
+msgstr "Offizielle Webseite"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:66
 #: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:25
