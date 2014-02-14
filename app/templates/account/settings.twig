@@ -10,80 +10,63 @@
 	<div class="col-md-4">
 		<h2>{% trans "Profile" %}</h2>
 		<h3 id="appearance">{% trans "Appearance" %}</h3>
-		<form method="post" action="{{filename}}?change-appearance" class="form-horizontal" role=form">
-			<div class="control-group">
-				<label class="control-label" for="username">{% trans "Username" %}</label>
-				<div class="controls">
-					<input type="text" name="username" id="username" value="{{username}}" required disabled>
-				</div>
+		<form role=form" method="post" action="{{filename}}?change-appearance">
+			<div class="form-group">
+				<label for="username">{% trans "Username" %}</label>
+				<input type="text" class="form-control" name="username" id="username" value="{{username}}" required disabled>
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<div class="alert alert-warning">{% trans "Contact us to change your username." %}</div>
 			</div>
 		</form>
 		<h3 id="profiles">{% trans "Linked profiles" %}</h3>
 		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
-		<form method="post" action="{{filename}}?change-profiles" class="form-horizontal" role=form">
-			<div class="control-group">
-				<label class="control-label" for="clonkforge">{% trans "Clonk Forge profile" %}</label>
-				<div class="controls">
-					<input type="url" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_placeholder}}">
-				</div>
+		<form role=form" method="post" action="{{filename}}?change-profiles">
+			<div class="form-group">
+                            <label for="clonkforge">{% trans "Clonk Forge profile" %}</label>
+                            <input type="url" class="form-control" name="clonkforge" id="clonkforge" value="{{clonkforge}}" placeholder="{{clonkforge_placeholder}}">
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="github">{% trans "GitHub name" %}</label>
-				<div class="controls">
-					<input type="text" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
-				</div>
+			<div class="form-group">
+				<label for="github">{% trans "GitHub name" %}</label>
+				<input type="text" class="form-control" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
 			</div>
-			<div class="control-group">
-				<div class="controls">
-					<button type="submit" class="btn btn-default">{% trans "Change linked profiles" %}</button>
-				</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">{% trans "Change linked profiles" %}</button>
 			</div>
 		</form>
 	</div>
 	<div class="col-md-4">
-
 		<h2 id="account">{% trans "Account" %}</h2>
 		<h3 id="contact">{% trans "Contact details" %}</h3>
 		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-		<form method="post" action="{{filename}}?change-contact" class="form-horizontal" role=form">
-			<div class="control-group">
-				<label class="control-label" for="email">{% trans "Email address" %}</label>
-				<div class="controls">
-					<input type="email" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
-				</div>
+		<form role=form" method="post" action="{{filename}}?change-contact">
+			<div class="form-group">
+				<label for="email">{% trans "Email address" %}</label>
+				<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
 			</div>
-			<div class="control-group">
-				<div class="controls">
-					<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
-				</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
 			</div>
 		</form>
 		<h3 id="language">{% trans "Language" %}</h3>
-		<form method="post" action="{{filename}}?change-language" class="form-horizontal" role=form">
-			<div class="control-group">
-				<label class="control-label" for="language-setting">{% trans "View site in" %}</label>
-				<div class="controls">
-					<select name="language" id="language-setting" required>
-						<option value="en-US"{% if language == "en-US" %} selected{% endif %}>{% trans "English" %}</option>
-						<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
-					</select>
-				</div>
+		<form role=form" method="post" action="{{filename}}?change-language">
+			<div class="form-group">
+				<label for="language-setting">{% trans "View site in" %}</label>
+				<select name="language" id="language-setting" required>
+					<option value="en-US"{% if language == "en-US" %} selected{% endif %}>{% trans "English" %}</option>
+					<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
+				</select>
 			</div>
 			<noscript>
-			<div class="control-group">
-				<div class="controls">
-					<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
-				</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
 			</div>
 			</noscript>
 		</form>
 		<h3 id="remove-account">{% trans "Remove account" %}</h3>
 		<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>
 		<div class="collapse" id="remove-account-confirm">
-			<form method="post" action="{{filename}}?remove-account">
+			<form role="form" method="post" action="{{filename}}?remove-account">
 				<div class="alert alert-danger">
 					<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
 				</div>
@@ -100,31 +83,23 @@
 
 		<h3 id="password">{% trans "Password" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
-			<form method="post" id="form-password" action="{{filename}}?change-password" class="form-horizontal" role=form">
+			<form role=form" method="post" id="form-password" action="{{filename}}?change-password">
 				{% if password_exists %}
-				<div class="control-group">
-					<label class="control-label" for="password-old">{% trans "Old password" %}</label>
-					<div class="controls">
-						<input type="password" name="password-old" id="password-old" required{% if focus_password %} autofocus{% endif %}>
-					</div>
+				<div class="form-group">
+					<label for="password-old">{% trans "Old password" %}</label>
+					<input type="password" class="form-control" name="password-old" id="password-old" required{% if focus_password %} autofocus{% endif %}>
 				</div>
 				{% endif %}
-				<div class="control-group">
-					<label class="control-label" for="password-new">{% trans "New password" %}</label>
-					<div class="controls">
-						<input type="password" name="password-new" id="password-new" required>
-					</div>
+				<div class="form-group">
+					<label for="password-new">{% trans "New password" %}</label>
+					<input type="password" class="form-control" name="password-new" id="password-new" required>
 				</div>
-				<div class="control-group">
-					<label class="control-label" for="password-confirm">{% trans "Confirm password" %}</label>
-					<div class="controls">
-						<input type="password" name="password-confirm" id="password-confirm" required>
-					</div>
+				<div class="form-group">
+					<label for="password-confirm">{% trans "Confirm password" %}</label>
+					<input type="password" class="form-control" name="password-confirm" id="password-confirm" required>
 				</div>
-				<div class="control-group">
-					<div class="controls">
-						<button type="submit" class="btn btn-default">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
-					</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
 				</div>
 			</form>
 			<h3 id="remote-logout">{% trans "Sessions" %}</h3>
