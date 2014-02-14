@@ -3,11 +3,11 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{{ title }} <small>{% if administrator %}{% trans %}Administrator{% endtrans %}{% elseif moderator %}{% trans %}Moderator{% endtrans %}{% else %}{% trans %}User{% endtrans %}{% endif %}</small></h1>		
+		<h1>{{ title }} <small>{% if administrator %}{% trans %}Administrator{% endtrans %}{% elseif moderator %}{% trans %}Moderator{% endtrans %}{% else %}{% trans %}User{% endtrans %}{% endif %}</small></h1>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-
+		<h2>{% trans %}Profile{% endtrans %}</h2>
 		{% if not self and user_administrator or (user_moderator and moderator == false) %}
 			<h2 id="moderate">{% trans %}Moderation{% endtrans %}</h2>
 			<p>
@@ -41,8 +41,8 @@
 			<div>
 				<h3>{% trans %}Profiles{% endtrans %}</h3>
 				<ul>
-				{% if clonkforge %}<li><a href="{{clonkforge.url}}">{% trans %}username on the Clonk Forge{% endtrans %}</a></li>{% endif %}
-				{% if github %}<li><a href="{{github.url}}">{% trans %}username on GitHub{% endtrans %}</a></li>{% endif %}
+				{% if clonkforge %}<li><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
+				{% if github %}<li><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
 				</ul>
 			</div>
 		{% endif %}
