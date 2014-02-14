@@ -11,7 +11,6 @@
 		<meta property="og:title" content="{{title|default(brand)}}">
 		<meta property="og:image" content="{{base}}/img/logo.png">
 		<meta property="og:site_name" content="{{brand}}">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	</head>
 	<body>{% block body %}
 		{% include 'functions/navbar.twig' %}
@@ -32,16 +31,8 @@
 	{% endblock %}
 		<script src="{{base}}/js/jquery.min.js"></script>
 		<script src="{{base}}/js/bootstrap.min.js"></script>
-		<script src="{{base}}/js/yepnope.min.js"></script>
 		<script src="{{base}}/js/lorry.js"></script>
 		<script>{% block javascript %}{% endblock %}</script>
-		<!--<script>yepnope({
-			test: ('placeholder' in $('<input>')[0]),
-			nope: [
-					'{{base}}/poly/placeholder_polyfill.min.css',
-					'{{base}}/poly/placeholder_polyfill.jquery.min.combo.js'
-				  ]
-		});</script>!-->
 		<script>(function() {
 				if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
 					var msViewportStyle = document.createElement("style");
