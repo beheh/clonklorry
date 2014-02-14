@@ -121,6 +121,7 @@ class Environment {
 
 		// recompile style if necessary
 		$style = new StyleService();
+		$style->setConfigService($config);
 		$style->compile();
 
 		try {
