@@ -1,1235 +1,769 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2013-08-28 12:52+0100\n"
-"PO-Revision-Date: 2013-08-28 12:59+0100\n"
-"Last-Translator: Benedict Etzel <benedict.etzel@gmail.com>\n"
+"POT-Creation-Date: 2014-02-14 16:07+0100\n"
+"PO-Revision-Date: 2014-02-14 16:07+0100\n"
+"Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
-"Language: de-DE\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;trans\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-Bookmarks: -1,6,-1,-1,-1,-1,-1,-1,-1,-1\n"
-"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\lorry\\src\n"
-"X-Poedit-SearchPath-1: D:\\xampp\\htdocs\\lorry\\app\\cache\n"
-"X-Poedit-SearchPath-2: C:\\xampp\\htdocs\\lorry\\src\n"
-"X-Poedit-SearchPath-3: C:\\xampp\\htdocs\\lorry\\app\\cache\n"
-"X-Poedit-SearchPath-4: /srv/http/lorry/src\n"
-"X-Poedit-SearchPath-5: /srv/http/lorry/app/cache\n"
+"X-Poedit-SearchPath-0: /home/benedict/public_html/lorry/app/cache\n"
+"X-Poedit-SearchPath-1: /home/benedict/NetBeansProjects/Lorry/src\n"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Environment.php:66
-msgid "Development version."
-msgstr "Entwicklungsversion."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Environment.php:68
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Environment.php:69
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model.php:292
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model.php:292
 msgid "too short"
 msgstr "zu kurz"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model.php:295
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model.php:295
 msgid "too long"
 msgstr "zu lang"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model.php:308
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model.php:308
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model.php:316
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model.php:316
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model.php:322
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model.php:322
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter.php:114
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:74
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:119
-msgid "Password wrong."
-msgstr "Passwort falsch."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:93
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model/User.php:93
+#, fuzzy
 msgid "not a matching Clonk Forge URL"
-msgstr ""
+msgstr "keine gültige Clonk Forge URL"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:99
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model/User.php:99
 msgid "not a valid Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:107
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model/User.php:107
 msgid "not a valid Clonk Forge profile id"
 msgstr "keine gültige ClonkForge Profil-ID"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Model/User.php:129
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Model/User.php:129
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error.php:19
-msgid "Internal server error"
-msgstr "Interner Serverfehler"
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter.php:118
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Login.php:74
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:117
+msgid "Password wrong."
+msgstr "Passwort falsch."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error.php:23
-msgid "The server encountered an internal error."
-msgstr "Bei der Bearbeitung trat ein interner Serverfehler auf."
-
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:27
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Login.php:27
 msgid "Registration successful!"
 msgstr "Registrierung erfolgreich!"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:46
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Login.php:46
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Login.php:78
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Login.php:78
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:33
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:33
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:38
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:38
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:43
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:48
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:78
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:43
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:48
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:76
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:48
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:51
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:61
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:78
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:48
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:49
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:59
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:76
 msgid "invalid"
 msgstr "ungültig"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:53
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:115
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:53
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:113
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:58
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:58
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Register.php:68
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Register.php:68
 msgid "There was an error registering."
 msgstr "Fehler bei der Registrierung."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:51
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:49
 #, fuzzy, php-format
 msgid "Clonk Forge profile url is %s."
-msgstr "Clonk Forge-Profil"
+msgstr "keine gültige Clonk Forge URL"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:61
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:59
 #, fuzzy, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:67
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:65
 msgid "Your linked profiles were changed."
 msgstr "Deine verknüpften Profile wurden geändert."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:83
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:81
 msgid "Contact details have been changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:109
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:107
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:111
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:109
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Account/Settings.php:127
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Account/Settings.php:125
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Game.php:18
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Addon/Game.php:18
 msgid "Addons for %game%"
 msgstr "Erweiterungen für %game%"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Addon/Release.php:80
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Addon/Release.php:80
 msgid "%day% of %month% %year%"
 msgstr "%day% %month% %year%"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error/FileNotFound.php:18
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error.php:19
+msgid "Internal server error"
+msgstr "Interner Serverfehler"
+
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error.php:23
+msgid "The server encountered an internal error."
+msgstr "Bei der Bearbeitung trat ein interner Serverfehler auf."
+
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error/FileNotFound.php:18
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error/FileNotFound.php:22
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error/FileNotFound.php:22
 msgid "The file you requested could not be found."
 msgstr "Die von dir angeforderte Datei konnte nicht gefunden werden."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error/Forbidden.php:18
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error/Forbidden.php:18
 msgid "Forbidden"
 msgstr "Zugriff verweigert"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error/Forbidden.php:22
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error/Forbidden.php:22
 msgid "You do not have the permissions necessary to access this document."
 msgstr ""
 "Du verfügst nicht über die notwendigen Berechtigungen zum Zugriff auf dieses "
 "Dokument."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error/NotImplemented.php:18
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error/NotImplemented.php:18
 msgid "Not implemented"
 msgstr "Nicht implementiert"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Error/NotImplemented.php:22
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Error/NotImplemented.php:22
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Publish/Addon.php:25
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Publish/Addon.php:25
 msgid "Edit %addon%"
 msgstr "%addon% bearbeiten"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Publish/Portal.php:74
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Publish/Portal.php:74
 msgid "Invalid game."
 msgstr "Ungültiges Spiel."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Presenter/Publish/Portal.php:83
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/Publish/Portal.php:83
 #, fuzzy
 msgid "Short name already exists."
 msgstr "Benutzername bereits vergeben."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:104
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/User/Profile.php:28
+#, php-format
+msgid "%s on the ClonkForge"
+msgstr "%s auf der ClonkForge"
+
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Presenter/User/Profile.php:33
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s auf GitHub"
+
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:104
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:112
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:112
 msgid "January"
 msgstr "Januar"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:114
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:114
 msgid "February"
 msgstr "Februar"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:116
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:116
 msgid "March"
 msgstr "März"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:118
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:118
 msgid "April"
 msgstr "April"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:120
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:120
 msgid "May"
 msgstr "Mai"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:122
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:122
 msgid "June"
 msgstr "Juni"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:124
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:124
 msgid "July"
 msgstr "Juli"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:126
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:126
 msgid "August"
 msgstr "August"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:128
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:128
 msgid "September"
 msgstr "September"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:130
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:130
 msgid "October"
 msgstr "Oktober"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:132
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:132
 msgid "November"
 msgstr "November"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:134
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:134
 msgid "December"
 msgstr "Dezember"
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:141
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:141
 msgid "1st"
 msgstr "1."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:143
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:143
 msgid "2nd"
 msgstr "2."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:145
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:145
 msgid "3rd"
 msgstr "3."
 
-#: D:\xampp\htdocs\lorry\src/Lorry/Service/LocalisationService.php:147
+#: /home/benedict/NetBeansProjects/Lorry/src/Lorry/Service/LocalisationService.php:147
 msgid "%n%th"
 msgstr "%n%."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:207
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:124
-msgid "About Lorry"
-msgstr "Über Lorry"
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:26
+msgid "Identification required"
+msgstr "Identifikation erforderlich"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:38
-msgid "The Lorry project was created from three basic concepts:"
-msgstr "Das Lorry-Projekt entstand aus drei grundlegenden Konzepten:"
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:42
+msgid "Please enter your password to confirm your identity:"
+msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:44
-msgid "Fan page"
-msgstr "Fanseite"
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:54
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:58
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:236
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:72
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:76
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:93
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:97
+msgid "Password"
+msgstr "Passwort"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:48
-msgid ""
-"We're here as the fans of Clonk. We built this site as members of the "
-"community for \"our\" game."
-msgstr ""
-"Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder der "
-"Community für „unser“ Spiel gebaut."
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:63
+#: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:50
+msgid "Confirm"
+msgstr "Bestätigen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:52
-msgid ""
-"This site is for new players to learn all about Clonk, to discover the huge "
-"database of addons and to help them get right into the game."
-msgstr ""
-"Auf dieser Seite können neue Spieler alles über Clonk lernen, die riesige "
-"Auswahl an Erweiterungen finden und einfach in das Spiel einsteigen."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:58
-msgid "Learn all about Clonk"
-msgstr "Lerne Clonk kennen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:65
-msgid "Distribution platform"
-msgstr "Downloadplattform"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:69
-msgid ""
-"We want to provide Clonk players with a simple, clean interface to find and "
-"download the best addons and keep them up-to-date as they progress."
-msgstr ""
-"Wir möchten Clonkspielern ein simples und übersichtliches Interfaces zur "
-"Verfügung stellen, damit sie die besten Erweiterungen finden können und sie "
-"während der Entwicklung immer auf dem neuesten Stand sind."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:73
-msgid ""
-"It should also serve as an archive, to enable players to go back and find "
-"forgotten gems of the past."
-msgstr ""
-"Gleichzeitig soll sie als ein Archiv dienen, damit Spielern alte und gut "
-"gemachte Erweiterungen wiederfinden können."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:79
-msgid "Discover the addons"
-msgstr "Alle Erweiterungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:86
-msgid "Online community"
-msgstr "Online-Community"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:90
-msgid ""
-"The official Clonk site is not really up to date anymore and fails to "
-"highlight one of the best features of Clonk as such: the awesome Community "
-"and its creations."
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:94
-msgid ""
-"We want to share our own creations easily and give the addon developers our "
-"important feedback."
-msgstr ""
-"Wir wollen unsere Arbeit einfach teilen und den Entwicklern der "
-"Erweiterungen unser wichtiges Feedback geben."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:102
-msgid "View your profile"
-msgstr "Betrachte dein Profil"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:110
-#: D:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:45
-msgid "Register now"
-msgstr "Jetzt registrieren"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:119
-msgid ""
-"This project was only made possible with a number of technologies and free "
-"resources:"
-msgstr ""
-"Dieses Projekt ist nur dank zahlreicher Technologien und freier Ressourcen "
-"möglich geworden:"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:125
-msgid "Technologies"
-msgstr "Technologien"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:142
-msgid "Resources"
-msgstr "Ressourcen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:149
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:153
-#: D:\xampp\htdocs\lorry\app\cache/twig/0a/a5/7d632a27286a73fa80ec464115ba.php:20
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:66
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:29
-msgid "en"
-msgstr "de"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:163
-msgid "People"
-msgstr "Personen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:169
-msgid "early feedback and thoughts"
-msgstr "frühes Feedback und Vorschläge"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/04/f1/9af84681428cfd72f58205efa110.php:181
-msgid "idea &amp; development"
-msgstr "Idee & Entwicklung"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:119
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:118
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:42
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:45
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:50
 msgid "Profile"
 msgstr "Profil"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:46
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:49
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:55
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:49
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:49
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:58
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:53
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:57
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:53
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:57
 msgid "Username"
 msgstr "Benutzername"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:67
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:68
 msgid "Contact us to change your username."
 msgstr "Kontaktiere uns zur Änderung des Nutzernamens."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:73
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:74
 msgid "Linked profiles"
 msgstr "Verknüpfte Profile"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:85
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:86
 msgid "Clonk Forge profile"
 msgstr "Clonk Forge-Profil"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:99
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:98
 msgid "GitHub name"
 msgstr "GitHub-Name"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:114
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:110
 msgid "Change linked profiles"
 msgstr "Verknüpfte Profile ändern"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:124
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:118
 msgid "Account"
 msgstr "Konto"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:128
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:122
 msgid "Contact details"
 msgstr "Kontaktdaten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:140
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:121
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:66
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:134
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:131
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:141
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:75
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:79
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:157
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:148
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:164
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:154
 msgid "Language"
 msgstr "Sprache"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:173
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:163
 msgid "View site in"
 msgstr "Betrachte Seite auf"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:183
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:172
 msgid "English"
 msgstr "Englisch"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:191
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:180
 msgid "German"
 msgstr "Deutsch"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:201
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:188
 msgid "Change language"
 msgstr "Sprache ändern"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:209
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:195
 msgid "Remove account"
 msgstr "Konto entfernen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:213
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:199
 msgid "Would you like to remove your account?"
 msgstr "Möchtest du dein Konto entfernen?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:223
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:209
 msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:225
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:211
 msgid "You will permanently loose control of all your uploaded addons."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine hochgeladenen Erweiterungen "
 "verlieren."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:231
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:217
 msgid "I have read and understood the warning."
 msgstr "Ich habe den Hinweis gelesen und verstanden."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:236
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:222
 msgid "Permanently remove account"
 msgstr "Konto permanent entfernen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:245
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:231
 msgid "Security"
 msgstr "Sicherheit"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:250
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:63
-#: D:\xampp\htdocs\lorry\app\cache/twig/b2/1f/d415077bb92bca06129a0f343ab6.php:52
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:79
-msgid "Password"
-msgstr "Passwort"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:266
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:252
 msgid "Old password"
 msgstr "Altes Passwort"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:283
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:267
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:292
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:86
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:274
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:105
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:109
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:303
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:282
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:305
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:284
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:313
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:291
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:320
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:298
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:329
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:307
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/0e/6c/dcf1866dfb24ed5615c6a4f7d5f9.php:335
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:313
 msgid "Login services"
 msgstr "Anmeldedienste"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:25
-msgid "Welcome to Clonk!"
-msgstr "Willkommen bei Clonk!"
+#: /home/benedict/public_html/lorry/app/cache/twig/4b/11/dc682df005ae1259ba536ba624db6b2020296a747b99cb5beaafeba6eeca.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:48
+msgid "Users"
+msgstr "Benutzer"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:38
-msgid ""
-"Clonk is a unique 2.5-dimensional game and often referred to as a mix of "
-"\"The Settlers\" and \"Lemmings\": The core difference is the open addon "
-"format, transforming the game to anything you can imagine."
-msgstr ""
-"Clonk ist ein 2,5-dimensionales Spiel und wird oft als eine Mischung aus "
-"„Die Siedler“ und „Lemmings“ bezeichnet: Der Kernunterschied ist das offene "
-"Erweiterungsformat, mit welchem das Spiel jede Form annehmen."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:45
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:47
-msgid "Clonk Rage"
-msgstr "Clonk Rage"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:53
-msgid ""
-"The classic game with hundreds of community-built, high-quality addons. "
-"Magical wars, strategic shooters and futuristic settling: Clonk Rage has it "
-"all."
-msgstr ""
-"Das klassische Spiel mit hunderten von hochqualitativen Erweiterungen aus "
-"der Community. Magische Kriege, strategische Shooter und futuristisches "
-"Siedeln: das alles hat Clonk Rage."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:57
-msgid ""
-"Often the sheer selection is overwelming, so be sure to spread the word and "
-"vote for the addons you like."
-msgstr ""
-"Oft ist die riesige Auswahl einfach überwältigend, erzähle daher anderen und "
-"stimme über die Erweiterungen ab, die dir gut gefallen."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:62
-msgid "Install Clonk Rage"
-msgstr "Clonk Rage installieren"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:68
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:96
-msgid "Visit the official site"
-msgstr "Offizielle Webseite"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:75
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:57
-msgid "OpenClonk"
-msgstr "OpenClonk"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:83
-msgid ""
-"The opensource successor to the Clonk series, built by players and "
-"developers of the previous Clonk titles."
-msgstr ""
-"Der quelloffene Nachfolger zur Clonk-Serie, entwickelt von Spieler und "
-"Entwicklern der vorherigen Clonk-Titel."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:87
-msgid ""
-"Although the addon selection is still limited, OpenClonk completely "
-"reimaginges a great part of the game and greatly refines the technology, now "
-"supporting three-dimensional models within the game."
-msgstr ""
-"Obwohl die Erweiterungsauswahl noch sehr beschränkt ist erfindet OpenClonk "
-"einen Großteil des Spieles komplett neu und nutzt überarbeitete "
-"Technologien: jetzt werden dreidimensionale Modelle innerhalb des Spiels "
-"unterstützt."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:92
-msgid "Install OpenClonk"
-msgstr "OpenClonk installieren"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:103
-msgid "&hellip;only just the beginning"
-msgstr "&hellip;alles nur der Anfang"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:107
-msgid ""
-"Clonk lives from its fans, with dedicated players creating high-quality "
-"addons."
-msgstr ""
-"Clonk lebt von den Fans, mit hochqualitativen Erweiterungen von "
-"passionierten Spielern."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:111
-msgid ""
-"The series appeals to all ages alike and even though the Community originally"
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:115
-msgid "View the addons"
-msgstr "Betrachte die Erweiterungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:124
-msgid "Create new content for Clonk"
-msgstr "Erschaffe neue Inhalte für Clonk"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:128
-msgid ""
-"The official game development of Clonk Rage is currently halted, therefore "
-"the community is creating an open source succesor - OpenClonk. Both games "
-"are different and alike, but the majority of all addons have been created "
-"for Clonk Rage. Once you've created something awesome you can distribute it "
-"via Lorry, making it instantly available for any interested player."
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:135
-msgid "Publish your addon"
-msgstr "Veröffentliche deine Erweiterung"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:139
-msgid "Learn more"
-msgstr "Mehr erfahren"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:147
-msgid "Build the next Clonk"
-msgstr "Baue das nächste Clonk"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:151
-msgid ""
-"The OpenClonk project is constantly looking for developers to help out with "
-"the next iteration of Clonk. If you have moderate or even advanced C++-"
-"skills you should definitively be welcome in the team."
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/1f/dc/a818b447ff546b8755f8b7228584.php:156
-msgid "Visit the OpenClonk forums"
-msgstr "OpenClonk-Forum"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:32
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:103
-msgid "Create addon"
-msgstr "Erweiterung anlegen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:40
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:49
-msgid "You can change any of the values later."
-msgstr "Du kannst jeden der Werte später ändern."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:46
-msgid "Full Title (without version)"
-msgstr "Vollständiger Titel (ohne Version)"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:58
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:93
-msgid "Abbreviation (if any)"
-msgstr "Abkürzung (falls vorhanden)"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:70
-msgid "Game title"
-msgstr "Spieltitel"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:81
-msgid "Choose a game&hellip;"
-msgstr "Wähle ein Spiel&hellip;"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:105
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:90
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:91
-msgid "No game available"
-msgstr "Keine Spiel verfügbar"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/25/4f/a9f5d6f507b421c6414aa4c38417.php:120
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:133
-msgid "Create new addon"
-msgstr "Neue Erweiterung anlegen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:83
-msgid "New releases on Lorry"
-msgstr "Neue Veröffentlichungen auf Lorry"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:85
-msgid "New releases"
-msgstr "Neue Veröffentlichungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:148
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:148
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:175
-msgid "This addon has no description."
-msgstr "Diese Erweiterung hat keine Beschreibung."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:167
-msgid "There are no new releases."
-msgstr "Es gibt keine neuen Veröffentlichungen."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:180
-msgid "Welcome back."
-msgstr "Willkommen zurück."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:186
-msgid "Welcome to Lorry."
-msgstr "Willkommen bei Lorry."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:188
-msgid "Welcome"
-msgstr "Willkommen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:194
-#, fuzzy
-msgid ""
-"Lorry is the place to find out about and get the best addons for the game "
-"series Clonk, and to discuss all about your favourites with the community."
-msgstr ""
-"Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:201
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:130
-msgid "New to Clonk?"
-msgstr "Neu bei Clonk?"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:217
-msgid "Visit clonkspot.org"
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:223
-msgid "List of community sites"
-msgstr "Liste der Community-Seiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/29/4a/cb4174f112d5cf0276e0c5a35a16.php:229
-msgid "Addons of the week"
-msgstr "Erweiterungen der Woche"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:22
-#: D:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:22
-msgid "OpenID"
-msgstr "OpenID"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:26
-msgid "Google"
-msgstr "Google"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:30
-#: D:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:30
-msgid "Facebook"
-msgstr "Facebook"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:34
-msgid "Twitter"
-msgstr "Twitter"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:44
-#: D:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:40
-msgid "OpenID url"
-msgstr "OpenID-URL"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/2f/21/c836b6a5ef87cd32357b0055b699.php:48
-#: D:\xampp\htdocs\lorry\app\cache/twig/8d/0b/cc4360caf6a3d50de143ca0e56d3.php:44
-#: D:\xampp\htdocs\lorry\app\cache/twig/b2/1f/d415077bb92bca06129a0f343ab6.php:56
-msgid "Confirm"
-msgstr "Bestätigen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:92
+#: /home/benedict/public_html/lorry/app/cache/twig/62/b7/96a919c8910965d6b494d35ee3d1c6de4f0717febac7aecbcba98a39af8d.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:91
 msgid "Administration"
 msgstr "Administration"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:40
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:40
+#: /home/benedict/public_html/lorry/app/cache/twig/62/b7/96a919c8910965d6b494d35ee3d1c6de4f0717febac7aecbcba98a39af8d.php:44
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:44
 msgid "Overview"
 msgstr "Übersicht"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:44
+#: /home/benedict/public_html/lorry/app/cache/twig/62/b7/96a919c8910965d6b494d35ee3d1c6de4f0717febac7aecbcba98a39af8d.php:48
 msgid "Management"
 msgstr "Verwaltung"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/34/81/af8762a47b3f06657e1a2009664a.php:54
+#: /home/benedict/public_html/lorry/app/cache/twig/62/b7/96a919c8910965d6b494d35ee3d1c6de4f0717febac7aecbcba98a39af8d.php:58
 msgid "Front page"
 msgstr "Startseite"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:67
-#: D:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:34
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:50
+msgid "Sort"
+msgstr "Sortieren"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:59
+msgid "by date"
+msgstr "nach Datum"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:78
+msgid "by name"
+msgstr "nach Name"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:97
+msgid "by rating"
+msgstr "nach Bewertung"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:153
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:138
+msgid "This addon has no description."
+msgstr "Diese Erweiterung hat keine Beschreibung."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:166
+msgid "Addon page"
+msgstr "Erweiterungsseite"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:176
+msgid "Download"
+msgstr "Download"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:180
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:165
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:242
+msgid "Edit addon"
+msgstr "Erweiterung bearbeiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:195
+#, fuzzy
+msgid "create a new addon"
+msgstr "Erweiterung anlegen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:200
+#, php-format
+msgid "Would you like to %created_addon% for this game?"
+msgstr ""
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:204
+msgid "There are no addons available for this game."
+msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:46
+msgid "Clonk Rage"
+msgstr "Clonk Rage"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:56
+msgid "OpenClonk"
+msgstr "OpenClonk"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:66
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:26
 msgid "Publish"
 msgstr "Veröffentlichen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:41
-msgid "Create"
-msgstr "Erstellen"
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:78
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:57
+msgid "Moderation"
+msgstr "Moderation"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:45
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:54
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:122
-msgid "Addon"
-msgstr "Erweiterung"
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:128
+msgid "Logout"
+msgstr "Abmelden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:55
-msgid "Game"
-msgstr "Spiel"
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:140
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:116
+msgid "Register"
+msgstr "Registrieren"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:66
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:67
-msgid "Select a game&hellip;"
-msgstr "Wähle ein Spiel&hellip;"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:104
-msgid "Full Title"
-msgstr "Vollständiger Titel"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:120
-msgid "Abbreviation"
-msgstr "Abkürzung"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:143
-msgid "Your addons"
-msgstr "Deine Erweiterungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:147
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:114
-msgid "Unreleased"
-msgstr "Unveröffentlicht"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:151
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:169
-msgid "You have not created a new addon yet."
-msgstr "Du hast noch keine neue Erweiterung erstellt."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:155
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:178
-msgid "Released"
-msgstr "Veröffentlicht"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/40/06/6570bda12150630cf5ce911954e1.php:159
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:254
-msgid "You have not released an addon yet."
-msgstr "Du hast noch keine Erweiterung veröffentlicht."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:81
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:151
-#: D:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:51
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:150
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:97
 msgid "Login"
 msgstr "Anmelden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:76
+#: /home/benedict/public_html/lorry/app/cache/twig/9a/35/8f08a34db3aafd6b9fc3ebf20f6ea9a92c7a4f3b9b77f25cbf0cba849e7d.php:56
+msgid "Return to home"
+msgstr "Zurück zur Startseite"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:62
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:172
+msgid "Addons"
+msgstr "Erweiterungen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:66
+msgid "Awaiting approval"
+msgstr "Erwartet Freigabe"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:70
+msgid "There are no addons in the approval queue."
+msgstr "Es sind keine Erweiterungen in der Warteschlange."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:76
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:80
+msgid "Queue"
+msgstr "Warteschlange"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:84
+msgid "There are no new messages in the queue."
+msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:38
+msgid "Administrator"
+msgstr "Administrator"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:40
+msgid "Moderator"
+msgstr "Moderator"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:42
+msgid "User"
+msgstr "Benutzer"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:62
+msgid "Edit user"
+msgstr "Benutzer bearbeiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:66
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:77
+msgid "Ban user"
+msgstr "Benutzer bannen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:89
+msgid "Reason"
+msgstr "Grund"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:99
+msgid "Duration"
+msgstr "Dauer"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:104
+msgid "Choose a duration&hellip;"
+msgstr "Wähle eine Dauer&hellip;"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:108
+msgid "One day"
+msgstr "Ein Tag"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:112
+msgid "One Week"
+msgstr "Eine Woche"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:116
+msgid "Infinitely"
+msgstr "Unbegrenzt"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:123
+msgid "Ban now"
+msgstr "Jetzt bannen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:137
+msgid "Profiles"
+msgstr "Profile"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:168
+msgid "Activity"
+msgstr "Aktivität"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:201
+msgid "This user has not released any addons yet."
+msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:207
+msgid "Comments"
+msgstr "Kommentare"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:243
+msgid "This user has not commented yet."
+msgstr "Dieser Benutzer hat noch nichts kommentiert."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:22
+msgid "OpenID"
+msgstr "OpenID"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:26
+msgid "Google"
+msgstr "Google"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:30
+msgid "Facebook"
+msgstr "Facebook"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:41
+#: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:45
+msgid "OpenID url"
+msgstr "OpenID-URL"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:29
+msgid "en"
+msgstr "de"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:124
+msgid "Back to top"
+msgstr "Nach oben"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:136
+msgid "About us"
+msgstr "Über uns"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:140
+msgid "Contact"
+msgstr "Kontakt"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:91
 msgid "Remember on this device"
 msgstr "Auf diesem Gerät merken"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:88
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:104
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:90
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:106
 msgid "Login via email&hellip;"
 msgstr "Anmeldung per E-Mail&hellip;"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:105
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:121
 msgid "Use your email account to log in:"
 msgstr "Nutze dein E-Mail-Konto zur Anmeldung:"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:129
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:150
 msgid "Send one-time login"
 msgstr "Einmal-Anmeldung senden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:137
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:158
 msgid "Or, select your login service:"
 msgstr "Oder, wähle deinen Anmeldedienst aus:"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:149
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:170
 msgid "Welcome back!"
 msgstr "Willkommen zurück!"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/43/84/d5b8f0c0181d6d52df03724ec075.php:153
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:174
 msgid ""
 "Nice to see you again! Have you visited these other great Clonk sites yet?"
 msgstr ""
 "Schön dich wieder zu sehen! Hast du diese anderen tollen Clonkseiten schon "
 "besucht?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/5e/53/36570a387c19c91a4902ea26d4ee.php:32
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:44
-msgid "Users"
-msgstr "Benutzer"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:79
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:25
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:92
-msgid "Moderation"
-msgstr "Moderation"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:129
-msgid "Logout"
-msgstr "Abmelden"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/7a/81/a81862377711f71383f446614d3e.php:141
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:92
-msgid "Register"
-msgstr "Registrieren"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:175
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:154
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:231
-msgid "Edit addon"
-msgstr "Erweiterung bearbeiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:58
-msgid "Details"
-msgstr "Details"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:67
-msgid "Title"
-msgstr "Titel"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:79
-#, fuzzy
-msgid "Short"
-msgstr "Kurzer Titel"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:106
-msgid "Change details"
-msgstr "Details ändern"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:113
-msgid "Dependencies"
-msgstr "Abhängigkeiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:131
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:223
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:77
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:163
-msgid "Version"
-msgstr "Version"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:137
-msgid "Select an addon&hellip;"
-msgstr "Wähle eine Erweiterung&hellip;"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:146
-msgid "Add dependency"
-msgstr "Abhängigkeit hinzufügen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:156
-msgid "Presentation"
-msgstr "Präsentation"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:160
-msgid "Summary"
-msgstr "Zusammenfassung"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:177
-msgid "Change summary"
-msgstr "Zusammenfassung ändern"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:184
-msgid "Description"
-msgstr "Beschreibung"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:201
-msgid "Change description"
-msgstr "Beschreibung ändern"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:210
-msgid "Releases"
-msgstr "Veröffentlichungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:214
-msgid "New release"
-msgstr "Neuer Release"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:233
-msgid "Add version"
-msgstr "Version hinzufügen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:240
-#, fuzzy
-msgid "Existing releases"
-msgstr "Release bearbeiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/80/2ee37f1c9f9b728080af6a5d08a2.php:244
-#, fuzzy
-msgid "You have not created a release yet."
-msgstr "Du hast noch keine neue Erweiterung erstellt."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:26
-#: D:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:46
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:165
-msgid "Contact us"
-msgstr "Kontaktiere uns"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:41
-msgid "We &hearts; feedback"
-msgstr "Wir &hearts; Feedback"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:45
-#, fuzzy
-msgid ""
-"We here are all fans of Clonk. We built this site as members of our "
-"community for the game and want to do our best."
-msgstr ""
-"Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder der "
-"Community für „unser“ Spiel gebaut."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:49
-msgid ""
-"If you have any wishes or should encounter any problem, do not hesitate to "
-"contact us:"
-msgstr ""
-"Falls du Wünsche hast oder bei dir irgendwelche Fehler auftreten, schick uns "
-"einfach eine Nachricht:"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:55
-msgid "Send feedback"
-msgstr "Feedback senden"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:65
-msgid "Sending as %sender%."
-msgstr "Sende als %sender%."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:76
-msgid "Legal issues"
-msgstr "Rechtliches"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:91
-msgid ""
-"That way we are able to quickly resolve to any problems that might occur or "
-"any content you feel might be infringing your rights."
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:95
-msgid ""
-"We are not responsible for the content of outgoing links. User generated "
-"content does not necessarily reflect the views of the site owners."
-msgstr ""
-"Wir sind nicht für den Inhalt von externen Links verantwortlich. "
-"Benutzergenerierter Inhalt muss nicht der Meinung der Seitenbetreiber "
-"entsprechen."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/93/f2/eca26a05d4927098bb7d8f01f807.php:104
-msgid "Responsible for the content"
-msgstr "Verantwortlich für den Inhalt"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/95/17/156b60afac1d838e3ad10e7b7fe1.php:38
-msgid ""
-"After registering you can easily publish your addons here and distribute "
-"them via Lorry."
-msgstr ""
-"Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
-"und sie über Lorry verfügbar machen."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:45
-msgid "Sort"
-msgstr "Sortieren"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:54
-msgid "by date"
-msgstr "nach Datum"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:73
-msgid "by name"
-msgstr "nach Name"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:92
-msgid "by rating"
-msgstr "nach Bewertung"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:161
-msgid "Addon page"
-msgstr "Erweiterungsseite"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:171
-msgid "Download"
-msgstr "Download"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:190
-#, fuzzy
-msgid "create a new addon"
-msgstr "neue Erweiterung anlegen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:195
-#, php-format
-msgid "Would you like to %created_addon% for this game?"
-msgstr ""
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/9e/29/2ae3a1aa0580276cf6d78f37be54.php:199
-msgid "There are no addons available for this game."
-msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:49
-msgid "Developed by %developer%"
-msgstr "Entwickelt von %developer%"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:58
-msgid "Developed by the %team%"
-msgstr "Entwickelt vom %team%"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:68
-msgid "Version %version%, released on the %releaseday%"
-msgstr "Version %version%, veröffentlicht am %releaseday%"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:81
-msgid "Edit this addon"
-msgstr "Erweiterung bearbeiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:93
-msgid "Edit this release"
-msgstr "Diesen Release bearbeiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:190
-msgid "Categories"
-msgstr "Kategorien"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:199
-msgid "Rounds and Addons"
-msgstr "Runden und Erweiterungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:208
-msgid "Community"
-msgstr "Community"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:218
-msgid "Project page"
-msgstr "Projektseite"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:227
-msgid "Report a bug"
-msgstr "Einen Fehler melden"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/a4/7c/0691dfce8a22f59c3fb37e7498f9.php:232
-msgid "Interested in an update?"
-msgstr "An einem Update interessiert?"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b2/1f/d415077bb92bca06129a0f343ab6.php:26
-msgid "Identification required"
-msgstr "Identifikation erforderlich"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b2/1f/d415077bb92bca06129a0f343ab6.php:41
-msgid "Please enter your password to confirm your identity:"
-msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:58
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:214
-msgid "Addons"
-msgstr "Erweiterungen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:62
-msgid "Awaiting approval"
-msgstr "Erwartet Freigabe"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:66
-msgid "There are no addons in the approval queue."
-msgstr "Es sind keine Erweiterungen in der Warteschlange."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:72
-msgid "Contact form"
-msgstr "Kontaktformular"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:76
-msgid "Queue"
-msgstr "Warteschlange"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/b8/45/4e694239660d3fee6b43cb654525.php:80
-msgid "There are no new messages in the queue."
-msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:42
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:45
 msgid "New addon"
 msgstr "Neue Erweiterung"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:59
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:57
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:67
 msgid "Full title"
 msgstr "Vollständiger Titel"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/c0/4e/b3808ff7a8ab62fb6dae4ed2b830.php:239
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:77
+msgid "Select a game&hellip;"
+msgstr "Wähle ein Spiel&hellip;"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:101
+msgid "No game available"
+msgstr "Keine Spiel verfügbar"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:115
+msgid "Create addon"
+msgstr "Erweiterung anlegen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:125
+msgid "Unreleased"
+msgstr "Unveröffentlicht"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:180
+msgid "You have not created a new addon yet."
+msgstr "Du hast noch keine neue Erweiterung erstellt."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:189
+msgid "Released"
+msgstr "Veröffentlicht"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:250
 msgid "View addon page"
 msgstr "Erweiterungsseite betrachten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:23
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:133
-msgid "Back to top"
-msgstr "Nach oben"
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:265
+msgid "You have not released an addon yet."
+msgstr "Du hast noch keine Erweiterung veröffentlicht."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/c3/b9/f0f770523970135cf2a17f3404bc.php:42
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:157
-msgid "About the project"
-msgstr "Über das Projekt"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:51
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:59
 msgid ""
 "Your username may contain letters, numbers and underscores and must be "
 "between 3 and 16 characters long."
@@ -1237,7 +771,7 @@ msgstr ""
 "Dein Benutzername kann Buchstaben, Zahlen und Unterstriche enthalten und "
 "muss zwischen 3 und 16 Zeichen lang sein."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:68
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:81
 msgid ""
 "We require your email address so that we can verify you if you should forget "
 "your login details."
@@ -1245,7 +779,7 @@ msgstr ""
 "Wir benötigen deine E-Mail-Adresse damit wir dich verifizieren können, falls "
 "du deine Anmeldedaten vergisst."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:81
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:99
 msgid ""
 "You password is stored securely. We require at least 8 characters for your "
 "security and are unable to send you this password if you should forget it."
@@ -1254,28 +788,38 @@ msgstr ""
 "mindestens 8 Zeichen und können dir dieses Passwort nicht zusenden falls du "
 "es vergessen solltest."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:88
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:111
 msgid "Please repeat your password to ensure you have spellt it correctly."
 msgstr ""
 "Bitte wiederhole dein Passwort, um die richtige Schreibweise sicherzustellen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:98
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:122
 msgid "Already registered?"
 msgstr "Bereits registriert?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:105
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:129
 msgid "Alternatively use a login service:"
 msgstr "Alternativ nutze einen Anmeldedienst:"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:117
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:141
 msgid "What is this all about?"
 msgstr "Was ist das hier für eine Seite?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:136
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:148
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:196
+msgid "About Lorry"
+msgstr "Über Lorry"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:154
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:190
+msgid "New to Clonk?"
+msgstr "Neu bei Clonk?"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:160
 msgid "Why should I register?"
 msgstr "Warum sollte ich mich registrieren?"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:140
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:164
 #, fuzzy
 msgid ""
 "After registering you can instantly upload your own extensions, comment and "
@@ -1284,7 +828,7 @@ msgstr ""
 "Nach deiner Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "und sie mit Lorry verfügbar machen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ce/3e/01536525fa8a3679cc59f7ad426b.php:144
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:168
 #, fuzzy
 msgid ""
 "You become part of a small and friendly community, enjoying the game and "
@@ -1293,238 +837,511 @@ msgstr ""
 "Du wirst Teil einer kleinen und freundlichen Community die Spaß am Spiel hat "
 "und ihre Zeit hineininvestiert."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:39
-msgid "User"
-msgstr "Benutzer"
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:73
+msgid "New releases on Lorry"
+msgstr "Neue Veröffentlichungen auf Lorry"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:46
-msgid "Banned"
-msgstr "Gebannt"
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:75
+msgid "New releases"
+msgstr "Neue Veröffentlichungen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:50
-msgid "This user is banned."
-msgstr "Dieser Benutzer ist gebannt."
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:157
+msgid "There are no new releases."
+msgstr "Es gibt keine neuen Veröffentlichungen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:59
-msgid "Privileges"
-msgstr "Privilegien"
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:169
+msgid "Welcome back."
+msgstr "Willkommen zurück."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:66
-msgid "This user is administrator."
-msgstr "Dieser Benutzer ist Administrator."
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:175
+msgid "Welcome to Lorry."
+msgstr "Willkommen bei Lorry."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:72
-msgid "This user is moderator."
-msgstr "Dieser Benutzer ist Moderator."
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:177
+msgid "Welcome"
+msgstr "Willkommen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:81
-msgid "Information"
-msgstr "Informationen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:97
-msgid "Edit user"
-msgstr "Benutzer bearbeiten"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:101
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:112
-msgid "Ban user"
-msgstr "Benutzer bannen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:124
-msgid "Reason"
-msgstr "Grund"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:136
-msgid "Duration"
-msgstr "Dauer"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:142
-msgid "Choose a duration&hellip;"
-msgstr "Wähle eine Dauer&hellip;"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:146
-msgid "One day"
-msgstr "Ein Tag"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:150
-msgid "One Week"
-msgstr "Eine Woche"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:154
-msgid "Infinitely"
-msgstr "Unbegrenzt"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:163
-msgid "Ban now"
-msgstr "Jetzt bannen"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:178
-msgid "Profiles"
-msgstr "Profile"
-
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:187
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:183
 #, fuzzy
-msgid "username on the Clonk Forge"
-msgstr " %username% auf dem Clonk Forge"
+msgid ""
+"Lorry is the place to find out about and get the best addons for the game "
+"series Clonk, and to discuss all about your favourites with the community."
+msgstr ""
+"Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:196
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:205
+msgid "Visit clonkspot.org"
+msgstr ""
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:211
+msgid "List of community sites"
+msgstr "Liste der Community-Seiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:217
+msgid "Addons of the week"
+msgstr "Erweiterungen der Woche"
+
+#~ msgid "Development version."
+#~ msgstr "Entwicklungsversion."
+
+#~ msgid "The Lorry project was created from three basic concepts:"
+#~ msgstr "Das Lorry-Projekt entstand aus drei grundlegenden Konzepten:"
+
+#~ msgid "Fan page"
+#~ msgstr "Fanseite"
+
+#~ msgid ""
+#~ "We're here as the fans of Clonk. We built this site as members of the "
+#~ "community for \"our\" game."
+#~ msgstr ""
+#~ "Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder "
+#~ "der Community für „unser“ Spiel gebaut."
+
+#~ msgid ""
+#~ "This site is for new players to learn all about Clonk, to discover the "
+#~ "huge database of addons and to help them get right into the game."
+#~ msgstr ""
+#~ "Auf dieser Seite können neue Spieler alles über Clonk lernen, die riesige "
+#~ "Auswahl an Erweiterungen finden und einfach in das Spiel einsteigen."
+
+#~ msgid "Learn all about Clonk"
+#~ msgstr "Lerne Clonk kennen"
+
+#~ msgid "Distribution platform"
+#~ msgstr "Downloadplattform"
+
+#~ msgid ""
+#~ "We want to provide Clonk players with a simple, clean interface to find "
+#~ "and download the best addons and keep them up-to-date as they progress."
+#~ msgstr ""
+#~ "Wir möchten Clonkspielern ein simples und übersichtliches Interfaces zur "
+#~ "Verfügung stellen, damit sie die besten Erweiterungen finden können und "
+#~ "sie während der Entwicklung immer auf dem neuesten Stand sind."
+
+#~ msgid ""
+#~ "It should also serve as an archive, to enable players to go back and find "
+#~ "forgotten gems of the past."
+#~ msgstr ""
+#~ "Gleichzeitig soll sie als ein Archiv dienen, damit Spielern alte und gut "
+#~ "gemachte Erweiterungen wiederfinden können."
+
+#~ msgid "Discover the addons"
+#~ msgstr "Alle Erweiterungen"
+
+#~ msgid "Online community"
+#~ msgstr "Online-Community"
+
+#~ msgid ""
+#~ "We want to share our own creations easily and give the addon developers "
+#~ "our important feedback."
+#~ msgstr ""
+#~ "Wir wollen unsere Arbeit einfach teilen und den Entwicklern der "
+#~ "Erweiterungen unser wichtiges Feedback geben."
+
+#~ msgid "View your profile"
+#~ msgstr "Betrachte dein Profil"
+
+#~ msgid "Register now"
+#~ msgstr "Jetzt registrieren"
+
+#~ msgid ""
+#~ "This project was only made possible with a number of technologies and "
+#~ "free resources:"
+#~ msgstr ""
+#~ "Dieses Projekt ist nur dank zahlreicher Technologien und freier "
+#~ "Ressourcen möglich geworden:"
+
+#~ msgid "Technologies"
+#~ msgstr "Technologien"
+
+#~ msgid "Resources"
+#~ msgstr "Ressourcen"
+
+#~ msgid "People"
+#~ msgstr "Personen"
+
+#~ msgid "early feedback and thoughts"
+#~ msgstr "frühes Feedback und Vorschläge"
+
+#~ msgid "idea &amp; development"
+#~ msgstr "Idee & Entwicklung"
+
+#~ msgid "Welcome to Clonk!"
+#~ msgstr "Willkommen bei Clonk!"
+
+#~ msgid ""
+#~ "Clonk is a unique 2.5-dimensional game and often referred to as a mix of "
+#~ "\"The Settlers\" and \"Lemmings\": The core difference is the open addon "
+#~ "format, transforming the game to anything you can imagine."
+#~ msgstr ""
+#~ "Clonk ist ein 2,5-dimensionales Spiel und wird oft als eine Mischung aus "
+#~ "„Die Siedler“ und „Lemmings“ bezeichnet: Der Kernunterschied ist das "
+#~ "offene Erweiterungsformat, mit welchem das Spiel jede Form annehmen."
+
+#~ msgid ""
+#~ "The classic game with hundreds of community-built, high-quality addons. "
+#~ "Magical wars, strategic shooters and futuristic settling: Clonk Rage has "
+#~ "it all."
+#~ msgstr ""
+#~ "Das klassische Spiel mit hunderten von hochqualitativen Erweiterungen aus "
+#~ "der Community. Magische Kriege, strategische Shooter und futuristisches "
+#~ "Siedeln: das alles hat Clonk Rage."
+
+#~ msgid ""
+#~ "Often the sheer selection is overwelming, so be sure to spread the word "
+#~ "and vote for the addons you like."
+#~ msgstr ""
+#~ "Oft ist die riesige Auswahl einfach überwältigend, erzähle daher anderen "
+#~ "und stimme über die Erweiterungen ab, die dir gut gefallen."
+
+#~ msgid "Install Clonk Rage"
+#~ msgstr "Clonk Rage installieren"
+
+#~ msgid "Visit the official site"
+#~ msgstr "Offizielle Webseite"
+
+#~ msgid ""
+#~ "The opensource successor to the Clonk series, built by players and "
+#~ "developers of the previous Clonk titles."
+#~ msgstr ""
+#~ "Der quelloffene Nachfolger zur Clonk-Serie, entwickelt von Spieler und "
+#~ "Entwicklern der vorherigen Clonk-Titel."
+
+#~ msgid ""
+#~ "Although the addon selection is still limited, OpenClonk completely "
+#~ "reimaginges a great part of the game and greatly refines the technology, "
+#~ "now supporting three-dimensional models within the game."
+#~ msgstr ""
+#~ "Obwohl die Erweiterungsauswahl noch sehr beschränkt ist erfindet "
+#~ "OpenClonk einen Großteil des Spieles komplett neu und nutzt überarbeitete "
+#~ "Technologien: jetzt werden dreidimensionale Modelle innerhalb des Spiels "
+#~ "unterstützt."
+
+#~ msgid "Install OpenClonk"
+#~ msgstr "OpenClonk installieren"
+
+#~ msgid "&hellip;only just the beginning"
+#~ msgstr "&hellip;alles nur der Anfang"
+
+#~ msgid ""
+#~ "Clonk lives from its fans, with dedicated players creating high-quality "
+#~ "addons."
+#~ msgstr ""
+#~ "Clonk lebt von den Fans, mit hochqualitativen Erweiterungen von "
+#~ "passionierten Spielern."
+
+#~ msgid "View the addons"
+#~ msgstr "Betrachte die Erweiterungen"
+
+#~ msgid "Create new content for Clonk"
+#~ msgstr "Erschaffe neue Inhalte für Clonk"
+
+#~ msgid "Publish your addon"
+#~ msgstr "Veröffentliche deine Erweiterung"
+
+#~ msgid "Learn more"
+#~ msgstr "Mehr erfahren"
+
+#~ msgid "Build the next Clonk"
+#~ msgstr "Baue das nächste Clonk"
+
+#~ msgid "Visit the OpenClonk forums"
+#~ msgstr "OpenClonk-Forum"
+
+#~ msgid "You can change any of the values later."
+#~ msgstr "Du kannst jeden der Werte später ändern."
+
+#~ msgid "Full Title (without version)"
+#~ msgstr "Vollständiger Titel (ohne Version)"
+
+#~ msgid "Abbreviation (if any)"
+#~ msgstr "Abkürzung (falls vorhanden)"
+
+#~ msgid "Game title"
+#~ msgstr "Spieltitel"
+
+#~ msgid "Choose a game&hellip;"
+#~ msgstr "Wähle ein Spiel&hellip;"
+
+#~ msgid "Create new addon"
+#~ msgstr "Neue Erweiterung anlegen"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Create"
+#~ msgstr "Erstellen"
+
+#~ msgid "Addon"
+#~ msgstr "Erweiterung"
+
+#~ msgid "Game"
+#~ msgstr "Spiel"
+
+#~ msgid "Full Title"
+#~ msgstr "Vollständiger Titel"
+
+#~ msgid "Abbreviation"
+#~ msgstr "Abkürzung"
+
+#~ msgid "Your addons"
+#~ msgstr "Deine Erweiterungen"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
 #, fuzzy
-msgid "username on GitHub"
-msgstr " %username% auf GitHub"
+#~ msgid "Short"
+#~ msgstr "Kurzer Titel"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:210
-msgid "Activity"
-msgstr "Aktivität"
+#~ msgid "Change details"
+#~ msgstr "Details ändern"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:243
-msgid "This user has not released any addons yet."
-msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
+#~ msgid "Dependencies"
+#~ msgstr "Abhängigkeiten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:249
-msgid "Comments"
-msgstr "Kommentare"
+#~ msgid "Version"
+#~ msgstr "Version"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/d3/1d/11f63657e54ab3f424b43cea76dd.php:285
-msgid "This user has not commented yet."
-msgstr "Dieser Benutzer hat noch nichts kommentiert."
+#~ msgid "Select an addon&hellip;"
+#~ msgstr "Wähle eine Erweiterung&hellip;"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:26
+#~ msgid "Add dependency"
+#~ msgstr "Abhängigkeit hinzufügen"
+
+#~ msgid "Presentation"
+#~ msgstr "Präsentation"
+
+#~ msgid "Summary"
+#~ msgstr "Zusammenfassung"
+
+#~ msgid "Change summary"
+#~ msgstr "Zusammenfassung ändern"
+
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Change description"
+#~ msgstr "Beschreibung ändern"
+
+#~ msgid "Releases"
+#~ msgstr "Veröffentlichungen"
+
+#~ msgid "New release"
+#~ msgstr "Neuer Release"
+
+#~ msgid "Add version"
+#~ msgstr "Version hinzufügen"
+
 #, fuzzy
-msgid "Edit release"
-msgstr "Release bearbeiten"
+#~ msgid "Existing releases"
+#~ msgstr "Release bearbeiten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:89
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:175
 #, fuzzy
-msgid "Addon description"
-msgstr "Beschreibung ändern"
+#~ msgid "You have not created a release yet."
+#~ msgstr "Du hast noch keine neue Erweiterung erstellt."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:105
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:191
+#~ msgid "Contact us"
+#~ msgstr "Kontaktiere uns"
+
+#~ msgid "We &hearts; feedback"
+#~ msgstr "Wir &hearts; Feedback"
+
 #, fuzzy
-msgid "Release description"
-msgstr "Erweiterung veröffentlichen"
+#~ msgid ""
+#~ "We here are all fans of Clonk. We built this site as members of our "
+#~ "community for the game and want to do our best."
+#~ msgstr ""
+#~ "Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder "
+#~ "der Community für „unser“ Spiel gebaut."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:118
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:204
-msgid "Change presentation"
-msgstr "Präsentation ändern"
+#~ msgid ""
+#~ "If you have any wishes or should encounter any problem, do not hesitate "
+#~ "to contact us:"
+#~ msgstr ""
+#~ "Falls du Wünsche hast oder bei dir irgendwelche Fehler auftreten, schick "
+#~ "uns einfach eine Nachricht:"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:214
-msgid "Status"
-msgstr "Status"
+#~ msgid "Send feedback"
+#~ msgstr "Feedback senden"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:216
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:277
-msgid "Release"
-msgstr "Release"
+#~ msgid "Sending as %sender%."
+#~ msgstr "Sende als %sender%."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:241
-msgid ""
-"We would like to check the quality of this addon before it goes public to "
-"keep the quality of content high."
-msgstr ""
-"Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
-"Gesamtqualität hoch zu halten."
+#~ msgid "Legal issues"
+#~ msgstr "Rechtliches"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:245
-msgid ""
-"If you want, we can release this version for you as soon as we approve it."
-msgstr ""
-"Falls du möchtest, können wir diese Version für dich veröffentlichen sobald "
-"wir sie überprüft haben."
+#~ msgid ""
+#~ "We are not responsible for the content of outgoing links. User generated "
+#~ "content does not necessarily reflect the views of the site owners."
+#~ msgstr ""
+#~ "Wir sind nicht für den Inhalt von externen Links verantwortlich. "
+#~ "Benutzergenerierter Inhalt muss nicht der Meinung der Seitenbetreiber "
+#~ "entsprechen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:249
-msgid ""
-"Otherwise you will be able to release whenever you want after this version "
-"is approved."
-msgstr ""
-"Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
-"überprüft wurde."
+#~ msgid "Responsible for the content"
+#~ msgstr "Verantwortlich für den Inhalt"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:254
-msgid "Release immediately"
-msgstr "Sofort veröffentlichen"
+#~ msgid ""
+#~ "After registering you can easily publish your addons here and distribute "
+#~ "them via Lorry."
+#~ msgstr ""
+#~ "Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
+#~ "und sie über Lorry verfügbar machen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:259
+#~ msgid "Developed by %developer%"
+#~ msgstr "Entwickelt von %developer%"
+
+#~ msgid "Developed by the %team%"
+#~ msgstr "Entwickelt vom %team%"
+
+#~ msgid "Version %version%, released on the %releaseday%"
+#~ msgstr "Version %version%, veröffentlicht am %releaseday%"
+
+#~ msgid "Edit this addon"
+#~ msgstr "Erweiterung bearbeiten"
+
+#~ msgid "Edit this release"
+#~ msgstr "Diesen Release bearbeiten"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorien"
+
+#~ msgid "Rounds and Addons"
+#~ msgstr "Runden und Erweiterungen"
+
+#~ msgid "Community"
+#~ msgstr "Community"
+
+#~ msgid "Project page"
+#~ msgstr "Projektseite"
+
+#~ msgid "Report a bug"
+#~ msgstr "Einen Fehler melden"
+
+#~ msgid "Interested in an update?"
+#~ msgstr "An einem Update interessiert?"
+
+#~ msgid "About the project"
+#~ msgstr "Über das Projekt"
+
+#~ msgid "Banned"
+#~ msgstr "Gebannt"
+
+#~ msgid "This user is banned."
+#~ msgstr "Dieser Benutzer ist gebannt."
+
+#~ msgid "Privileges"
+#~ msgstr "Privilegien"
+
+#~ msgid "This user is administrator."
+#~ msgstr "Dieser Benutzer ist Administrator."
+
+#~ msgid "This user is moderator."
+#~ msgstr "Dieser Benutzer ist Moderator."
+
+#~ msgid "Information"
+#~ msgstr "Informationen"
+
 #, fuzzy
-msgid "Request approval"
-msgstr "Erwartet Freigabe"
+#~ msgid "Edit release"
+#~ msgstr "Release bearbeiten"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:282
-msgid ""
-"If you would like to get your newest creation to the community as soon as "
-"possible you can instantly release your latest version."
-msgstr ""
+#, fuzzy
+#~ msgid "Addon description"
+#~ msgstr "Beschreibung ändern"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:286
-msgid "All downloads will immediately redirect to your uploaded version."
-msgstr "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
+#, fuzzy
+#~ msgid "Release description"
+#~ msgstr "Erweiterung veröffentlichen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:290
-msgid ""
-"Publishing a release is final. Any changes after releasing require a new "
-"release."
-msgstr ""
-"Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
-"erfordert einen neuen Release."
+#~ msgid "Change presentation"
+#~ msgstr "Präsentation ändern"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:294
-msgid "Your release will be instantly available to all players."
-msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
+#~ msgid "Status"
+#~ msgstr "Status"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:300
-msgid "Confirm release"
-msgstr "Veröffentlichung bestätigen"
+#~ msgid "Release"
+#~ msgstr "Release"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:305
-msgid "Release now"
-msgstr "Jetzt veröffentlichen"
+#~ msgid ""
+#~ "We would like to check the quality of this addon before it goes public to "
+#~ "keep the quality of content high."
+#~ msgstr ""
+#~ "Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
+#~ "Gesamtqualität hoch zu halten."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:314
-msgid "Scheduled release"
-msgstr "Geplanter Release"
+#~ msgid ""
+#~ "If you want, we can release this version for you as soon as we approve it."
+#~ msgstr ""
+#~ "Falls du möchtest, können wir diese Version für dich veröffentlichen "
+#~ "sobald wir sie überprüft haben."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:319
-msgid "Date and time"
-msgstr "Datum und Zeit"
+#~ msgid ""
+#~ "Otherwise you will be able to release whenever you want after this "
+#~ "version is approved."
+#~ msgstr ""
+#~ "Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
+#~ "überprüft wurde."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:331
-msgid "Make release date and time public"
-msgstr "Releasedatum und -zeit veröffentlichen"
+#~ msgid "Release immediately"
+#~ msgstr "Sofort veröffentlichen"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:337
-msgid ""
-"You can cancel a scheduled release at any time before the automated release."
-msgstr ""
-"Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
-"Veröffentlichung abbrechen."
+#, fuzzy
+#~ msgid "Request approval"
+#~ msgstr "Erwartet Freigabe"
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:341
-msgid ""
-"Your release will be automatically made vailabe to all players at the "
-"specified timestamp."
-msgstr ""
-"Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
-"verfügbar gemacht."
+#~ msgid "All downloads will immediately redirect to your uploaded version."
+#~ msgstr ""
+#~ "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/e0/39/c045ec199200b215ea66f36e76e7.php:345
-msgid "Schedule Release"
-msgstr "Veröffentlichung planen"
+#~ msgid ""
+#~ "Publishing a release is final. Any changes after releasing require a new "
+#~ "release."
+#~ msgstr ""
+#~ "Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
+#~ "erfordert einen neuen Release."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/ed/2d/17ece62fae36452a3fcf0b8d90d0.php:55
-msgid "Return to home"
-msgstr "Zurück zur Startseite"
+#~ msgid "Your release will be instantly available to all players."
+#~ msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
 
-#: D:\xampp\htdocs\lorry\app\cache/twig/f6/b8/00f0045a4726ebee0da16dc4113f.php:163
-msgid "Contact"
-msgstr "Kontakt"
+#~ msgid "Confirm release"
+#~ msgstr "Veröffentlichung bestätigen"
+
+#~ msgid "Release now"
+#~ msgstr "Jetzt veröffentlichen"
+
+#~ msgid "Scheduled release"
+#~ msgstr "Geplanter Release"
+
+#~ msgid "Date and time"
+#~ msgstr "Datum und Zeit"
+
+#~ msgid "Make release date and time public"
+#~ msgstr "Releasedatum und -zeit veröffentlichen"
+
+#~ msgid ""
+#~ "You can cancel a scheduled release at any time before the automated "
+#~ "release."
+#~ msgstr ""
+#~ "Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
+#~ "Veröffentlichung abbrechen."
+
+#~ msgid ""
+#~ "Your release will be automatically made vailabe to all players at the "
+#~ "specified timestamp."
+#~ msgstr ""
+#~ "Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
+#~ "verfügbar gemacht."
+
+#~ msgid "Schedule Release"
+#~ msgstr "Veröffentlichung planen"
 
 #~ msgid "Release addon"
 #~ msgstr "Erweiterung veröffentlichen"
-
-#~ msgid "About"
-#~ msgstr "Über"
 
 #~ msgid "Completed"
 #~ msgstr "Abgeschlossen"
