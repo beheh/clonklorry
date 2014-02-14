@@ -3,73 +3,75 @@
 {% set title = 'About Lorry'|trans %}
 
 {% block content %}
-<div class="page-header">
-	<h1>{{ title }}</h1>
-</div>
-<p>{% trans %}The Lorry project was created from three basic concepts:{% endtrans %}</p>
-<div class="row">
-    <div class="col-md-4">
-		<h3>{% trans %}Fan page{% endtrans %}</h3>
-		<p>{% trans %}We're here as the fans of Clonk. We built this site as members of the community for "our" game.{% endtrans %}</p>
-		<p>{% trans %}This site is for new players to learn all about Clonk, to discover the huge database of addons and to help them get right into the game.{% endtrans %}</p>
-		<p><a href="{{base}}/clonk" class="btn btn-primary">{% trans "Learn all about Clonk" %}</a></p>
-    </div>
-    <div class="col-md-4">
-		<hr class="visible-xs">
-		<h3>{% trans %}Distribution platform{% endtrans %}</h3>
-		<p>{% trans %}We want to provide Clonk players with a simple, clean interface to find and download the best addons and keep them up-to-date as they progress.{% endtrans %}</p>
-		<p>{% trans %}It should also serve as an archive, to enable players to go back and find forgotten gems of the past.{% endtrans %}</p>
-		<p><a href="{{base}}" class="btn btn-primary">{% trans "Discover the addons" %}</a></p>
-    </div>
-    <div class="col-md-4">
-		<hr class="visible-xs">
-		<h3>{% trans %}Online community{% endtrans %}</h3>
-		<p>{% trans %}The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk as such: the awesome Community and its creations.{% endtrans %}</p>
-		<p>{% trans %}We want to share our own creations easily and give the addon developers our important feedback.{% endtrans %}</p>
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
+	</div>
+	<p>{% trans %}The Lorry project was created from three basic concepts:{% endtrans %}</p>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>{% trans %}Fan page{% endtrans %}</h3>
+			<p>{% trans %}We're here as the fans of Clonk. We built this site as members of the community for "our" game.{% endtrans %}</p>
+			<p>{% trans %}This site is for new players to learn all about Clonk, to discover the huge database of addons and to help them get right into the game.{% endtrans %}</p>
+			<p><a href="{{base}}/clonk" class="btn btn-primary">{% trans "Learn all about Clonk" %}</a></p>
+		</div>
+		<div class="col-md-4">
+			<hr class="visible-xs">
+			<h3>{% trans %}Distribution platform{% endtrans %}</h3>
+			<p>{% trans %}We want to provide Clonk players with a simple, clean interface to find and download the best addons and keep them up-to-date as they progress.{% endtrans %}</p>
+			<p>{% trans %}It should also serve as an archive, to enable players to go back and find forgotten gems of the past.{% endtrans %}</p>
+			<p><a href="{{base}}" class="btn btn-primary">{% trans "Discover the addons" %}</a></p>
+		</div>
+		<div class="col-md-4">
+			<hr class="visible-xs">
+			<h3>{% trans %}Online community{% endtrans %}</h3>
+			<p>{% trans %}The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk as such: the awesome Community and its creations.{% endtrans %}</p>
+			<p>{% trans %}We want to share our own creations easily and give the addon developers our important feedback.{% endtrans %}</p>
 		{% if session %}<p><a href="{{profile}}" class="btn btn-primary">{% trans "View your profile"%}</a></p>
 		{% else %}<p><a href="{{base}}/register" class="btn btn-primary">{% trans "Register now"%}</a></p>{% endif %}
+		</div>
 	</div>
-</div>
-<hr>
-<p>{% trans %}This project was only made possible with a number of technologies and free resources:{% endtrans %}</p>
-<div class="row">
-	<div class="col-md-4">
-		<h3>{% trans "Technologies" %}</h3>
-		<dl>
-			<dt><a href="http://php.net">PHP</a></dt>
-			<dd>by the <a href="http://php.net/credits.php">PHP Group</a>,</dd>
-			<dt><a href="http://twig.sensiolabs.org">Twig</a></dt>
-			<dd>by <a href="http://fabien.potencier.org/">Fabien Potencier</a> and his <a href="http://sensiolabs.com/">SensioLabs</a>,</dd>
-			<dt><a href="http://lesscss.org/">LESS CSS</a></dt>
-			<dd>using <a href="http://leafo.net/lessphp/">lessphp</a> built by <a href="http://twitter.com/fat">@moonscript</a>,</dd>
-			<dt><a href="http://twitter.github.com/bootstrap">Bootstrap</a></dt>
-			<dd>by <a href="http://twitter.com/mda">@mda</a> and <a href="http://twitter.com/fat">@fat</a>.</dd>
-		</dl>
-	</div>
-	<div class="col-md-4">
-		<hr class="visible-xs">
-		<h3>{% trans "Resources" %}</h3>
-		<dl>
-			<dt><a href="http://subtlepatterns.com/debut-light/">Debut Light</a>  <span class="muted">(background)</span></dt>
-			<dd>by <a href="http://lukemcdonald.com/">Luke McDonald</a> via <a href="http://subtlepatterns.com/">Subtle Patterns</a>,</dd>
-			<dt><a href="http://www.clonk.de/cr.php?lng={% trans "en" %}">Clonk Rage logo</a></dt>
-			<dd>with <a href="http://www.clonk.de/forum/en/topic_show.pl?pid=11760#pid11760">friendly permission</a> from <a href="http://www.clonk.de/redwolf.php?lng={% trans "en" %}">RedWolfDesign</a>,</dd>
-			<dt><a href="http://git.openclonk.org/openclonk-resources.git/blob/HEAD:/graphics/OpenClonkLogo.xcf">OpenClonk logo</a></dt>
-			<dd>by "<a href="http://forum.openclonk.org/user_info.pl?uid=37">MrBeast</a>" at <a href="http://openclonk.org/">openclonk.org</a>.</dd>
-		</dl>
-	</div>
-	<div class="col-md-4">
-		<hr class="visible-xs">
-		<h3>{% trans "People" %}</h3>
-		<dl>
-			<dt><a href="http://clonkspot.org/">Clonkspot community</a></dt>
-			<dd>{% trans %}early feedback and thoughts{% endtrans %},</dd>
-			<br>
-			<div class="head">
-				<dt><a href="https://beheh.de"><img src="{{base}}/img/benedict.png">Benedict Etzel</a> <span class="muted">(<a href="{{base}}/users/B_E" class="muted">B_E</a>)</span></dt>
-				<dd>{% trans %}idea &amp; development{% endtrans %}.</dd>
-			</div>
-		</dl>
+	<hr>
+	<p>{% trans %}This project was only made possible with a number of technologies and free resources:{% endtrans %}</p>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>{% trans "Technologies" %}</h3>
+			<dl>
+				<dt><a href="http://php.net">PHP</a></dt>
+				<dd>by the <a href="http://php.net/credits.php">PHP Group</a>,</dd>
+				<dt><a href="http://twig.sensiolabs.org">Twig</a></dt>
+				<dd>by <a href="http://fabien.potencier.org/">Fabien Potencier</a> and his <a href="http://sensiolabs.com/">SensioLabs</a>,</dd>
+				<dt><a href="http://lesscss.org/">LESS CSS</a></dt>
+				<dd>using <a href="http://leafo.net/lessphp/">lessphp</a> built by <a href="http://twitter.com/fat">@moonscript</a>,</dd>
+				<dt><a href="http://twitter.github.com/bootstrap">Bootstrap</a></dt>
+				<dd>by <a href="http://twitter.com/mda">@mda</a> and <a href="http://twitter.com/fat">@fat</a>.</dd>
+			</dl>
+		</div>
+		<div class="col-md-4">
+			<hr class="visible-xs">
+			<h3>{% trans "Resources" %}</h3>
+			<dl>
+				<dt><a href="http://subtlepatterns.com/debut-light/">Debut Light</a>  <span class="muted">(background)</span></dt>
+				<dd>by <a href="http://lukemcdonald.com/">Luke McDonald</a> via <a href="http://subtlepatterns.com/">Subtle Patterns</a>,</dd>
+				<dt><a href="http://www.clonk.de/cr.php?lng={% trans "en" %}">Clonk Rage logo</a></dt>
+				<dd>with <a href="http://www.clonk.de/forum/en/topic_show.pl?pid=11760#pid11760">friendly permission</a> from <a href="http://www.clonk.de/redwolf.php?lng={% trans "en" %}">RedWolfDesign</a>,</dd>
+				<dt><a href="http://git.openclonk.org/openclonk-resources.git/blob/HEAD:/graphics/OpenClonkLogo.xcf">OpenClonk logo</a></dt>
+				<dd>by "<a href="http://forum.openclonk.org/user_info.pl?uid=37">MrBeast</a>" at <a href="http://openclonk.org/">openclonk.org</a>.</dd>
+			</dl>
+		</div>
+		<div class="col-md-4">
+			<hr class="visible-xs">
+			<h3>{% trans "People" %}</h3>
+			<dl>
+				<dt><a href="http://clonkspot.org/">Clonkspot community</a></dt>
+				<dd>{% trans %}early feedback and thoughts{% endtrans %},</dd>
+				<br>
+				<div class="head">
+					<dt><a href="https://beheh.de"><img src="{{base}}/img/benedict.png">Benedict Etzel</a> <span class="muted">(<a href="{{base}}/users/B_E" class="muted">B_E</a>)</span></dt>
+					<dd>{% trans %}idea &amp; development{% endtrans %}.</dd>
+				</div>
+			</dl>
+		</div>
 	</div>
 </div>
 {% endblock %}
