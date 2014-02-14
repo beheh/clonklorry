@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-02-14 16:18+0100\n"
-"PO-Revision-Date: 2014-02-14 16:19+0100\n"
+"POT-Creation-Date: 2014-02-15 00:50+0100\n"
+"PO-Revision-Date: 2014-02-15 00:51+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -275,6 +275,133 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:26
+#, fuzzy
+msgid "Edit release"
+msgstr "Diesen Release bearbeiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:65
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:130
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:215
+msgid "Version"
+msgstr "Version"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:77
+#, fuzzy
+msgid "Addon description"
+msgstr "Diese Erweiterung hat keine Beschreibung."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:93
+#, fuzzy
+msgid "Release description"
+msgstr "Diesen Release bearbeiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:106
+msgid "Change presentation"
+msgstr "Präsentation ändern"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:116
+msgid "Status"
+msgstr "Status"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:118
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:179
+msgid "Release"
+msgstr "Release"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:143
+msgid ""
+"We would like to check the quality of this addon before it goes public to "
+"keep the quality of content high."
+msgstr ""
+"Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
+"Gesamtqualität hoch zu halten."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:147
+msgid ""
+"If you want, we can release this version for you as soon as we approve it."
+msgstr ""
+"Falls du möchtest, können wir diese Version für dich veröffentlichen sobald "
+"wir sie überprüft haben."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:151
+msgid ""
+"Otherwise you will be able to release whenever you want after this version "
+"is approved."
+msgstr ""
+"Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
+"überprüft wurde."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:156
+msgid "Release immediately"
+msgstr "Sofort veröffentlichen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:161
+#, fuzzy
+msgid "Request approval"
+msgstr "Erwartet Freigabe"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:184
+msgid ""
+"If you would like to get your newest creation to the community as soon as "
+"possible you can instantly release your latest version."
+msgstr ""
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:188
+msgid "All downloads will immediately redirect to your uploaded version."
+msgstr "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:192
+msgid ""
+"Publishing a release is final. Any changes after releasing require a new "
+"release."
+msgstr ""
+"Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
+"erfordert einen neuen Release."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:196
+msgid "Your release will be instantly available to all players."
+msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:202
+msgid "Confirm release"
+msgstr "Veröffentlichung bestätigen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:207
+msgid "Release now"
+msgstr "Jetzt veröffentlichen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:216
+msgid "Scheduled release"
+msgstr "Geplanter Release"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:221
+msgid "Date and time"
+msgstr "Datum und Zeit"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:233
+msgid "Make release date and time public"
+msgstr "Releasedatum und -zeit veröffentlichen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:239
+msgid ""
+"You can cancel a scheduled release at any time before the automated release."
+msgstr ""
+"Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
+"Veröffentlichung abbrechen."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:243
+msgid ""
+"Your release will be automatically made vailabe to all players at the "
+"specified timestamp."
+msgstr ""
+"Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
+"verfügbar gemacht."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:247
+msgid "Schedule Release"
+msgstr "Veröffentlichung planen"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:26
 msgid "Identification required"
 msgstr "Identifikation erforderlich"
@@ -297,6 +424,91 @@ msgstr "Passwort"
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:50
 msgid "Confirm"
 msgstr "Bestätigen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:180
+msgid "Edit addon"
+msgstr "Erweiterung bearbeiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:53
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:121
+msgid "Addon"
+msgstr "Erweiterung"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:57
+msgid "Details"
+msgstr "Details"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:66
+msgid "Title"
+msgstr "Titel"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:78
+#, fuzzy
+msgid "Short"
+msgstr "zu kurz"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:92
+msgid "Abbreviation (if any)"
+msgstr "Abkürzung (falls vorhanden)"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:105
+msgid "Change details"
+msgstr "Details ändern"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:112
+msgid "Dependencies"
+msgstr "Abhängigkeiten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:136
+msgid "Select an addon&hellip;"
+msgstr "Wähle eine Erweiterung&hellip;"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:145
+msgid "Add dependency"
+msgstr "Abhängigkeit hinzufügen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:155
+msgid "Presentation"
+msgstr "Präsentation"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:159
+msgid "Summary"
+msgstr "Zusammenfassung"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:172
+msgid "Change summary"
+msgstr "Zusammenfassung ändern"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:179
+msgid "Description"
+msgstr "Beschreibung"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:192
+msgid "Change description"
+msgstr "Beschreibung ändern"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:202
+msgid "Releases"
+msgstr "Veröffentlichungen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:206
+msgid "New release"
+msgstr "Neuer Release"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:225
+msgid "Add version"
+msgstr "Version hinzufügen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:232
+#, fuzzy
+msgid "Existing releases"
+msgstr "Neue Veröffentlichungen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:236
+#, fuzzy
+msgid "You have not created a release yet."
+msgstr "Du hast noch keine neue Erweiterung erstellt."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/2d/a9/c1cd5e1813c232e88b23f3561aeab642cd23d87d2b6fa5be0fd54c3cecfe.php:25
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:148
@@ -811,28 +1023,21 @@ msgstr "Erweiterungsseite"
 msgid "Download"
 msgstr "Download"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:180
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:165
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:242
-msgid "Edit addon"
-msgstr "Erweiterung bearbeiten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:195
-#, fuzzy
-msgid "create a new addon"
-msgstr "Erweiterung anlegen"
-
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:200
-#, php-format
-msgid "Would you like to %created_addon% for this game?"
-msgstr ""
+msgid "No addons available yet"
+msgstr "Noch keine Erweiterungen verfügbar"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:204
-msgid "There are no addons available for this game."
-msgstr "Es sind keine Erweiterungen für dieses Spiel verfügbar."
+msgid "There are no addons available for this game yet."
+msgstr "Für dieses Spiel sind noch keine Erweiterungen verfügbar."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:210
+#, fuzzy
+msgid "Visit the publishing portal"
+msgstr "Veröffentlichungsportal öffnen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:66
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:25
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:25
 msgid "Publish"
 msgstr "Veröffentlichen"
@@ -1066,47 +1271,6 @@ msgstr ""
 "Schön dich wieder zu sehen! Hast du diese anderen tollen Clonkseiten schon "
 "besucht?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:45
-msgid "New addon"
-msgstr "Neue Erweiterung"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:57
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:67
-msgid "Full title"
-msgstr "Vollständiger Titel"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:77
-msgid "Select a game&hellip;"
-msgstr "Wähle ein Spiel&hellip;"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:101
-msgid "No game available"
-msgstr "Keine Spiel verfügbar"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:115
-msgid "Create addon"
-msgstr "Erweiterung anlegen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:125
-msgid "Unreleased"
-msgstr "Unveröffentlicht"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:180
-msgid "You have not created a new addon yet."
-msgstr "Du hast noch keine neue Erweiterung erstellt."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:189
-msgid "Released"
-msgstr "Veröffentlicht"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:250
-msgid "View addon page"
-msgstr "Erweiterungsseite betrachten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:265
-msgid "You have not released an addon yet."
-msgstr "Du hast noch keine Erweiterung veröffentlicht."
-
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:44
 msgid ""
 "After registering you can easily publish your addons here and distribute "
@@ -1217,8 +1381,9 @@ msgstr ""
 "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:205
+#, fuzzy
 msgid "Visit clonkspot.org"
-msgstr ""
+msgstr "Offizielle Webseite"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:211
 msgid "List of community sites"
@@ -1228,6 +1393,40 @@ msgstr "Liste der Community-Seiten"
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
 
+#, fuzzy
+#~ msgid "create a new addon"
+#~ msgstr "Erweiterung anlegen"
+
+#~ msgid "New addon"
+#~ msgstr "Neue Erweiterung"
+
+#~ msgid "Full title"
+#~ msgstr "Vollständiger Titel"
+
+#~ msgid "Select a game&hellip;"
+#~ msgstr "Wähle ein Spiel&hellip;"
+
+#~ msgid "No game available"
+#~ msgstr "Keine Spiel verfügbar"
+
+#~ msgid "Create addon"
+#~ msgstr "Erweiterung anlegen"
+
+#~ msgid "Unreleased"
+#~ msgstr "Unveröffentlicht"
+
+#~ msgid "You have not created a new addon yet."
+#~ msgstr "Du hast noch keine neue Erweiterung erstellt."
+
+#~ msgid "Released"
+#~ msgstr "Veröffentlicht"
+
+#~ msgid "View addon page"
+#~ msgstr "Erweiterungsseite betrachten"
+
+#~ msgid "You have not released an addon yet."
+#~ msgstr "Du hast noch keine Erweiterung veröffentlicht."
+
 #~ msgid "Development version."
 #~ msgstr "Entwicklungsversion."
 
@@ -1236,9 +1435,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Full Title (without version)"
 #~ msgstr "Vollständiger Titel (ohne Version)"
-
-#~ msgid "Abbreviation (if any)"
-#~ msgstr "Abkürzung (falls vorhanden)"
 
 #~ msgid "Game title"
 #~ msgstr "Spieltitel"
@@ -1255,9 +1451,6 @@ msgstr "Erweiterungen der Woche"
 #~ msgid "Create"
 #~ msgstr "Erstellen"
 
-#~ msgid "Addon"
-#~ msgstr "Erweiterung"
-
 #~ msgid "Game"
 #~ msgstr "Spiel"
 
@@ -1269,63 +1462,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Your addons"
 #~ msgstr "Deine Erweiterungen"
-
-#~ msgid "Details"
-#~ msgstr "Details"
-
-#~ msgid "Title"
-#~ msgstr "Titel"
-
-#, fuzzy
-#~ msgid "Short"
-#~ msgstr "Kurzer Titel"
-
-#~ msgid "Change details"
-#~ msgstr "Details ändern"
-
-#~ msgid "Dependencies"
-#~ msgstr "Abhängigkeiten"
-
-#~ msgid "Version"
-#~ msgstr "Version"
-
-#~ msgid "Select an addon&hellip;"
-#~ msgstr "Wähle eine Erweiterung&hellip;"
-
-#~ msgid "Add dependency"
-#~ msgstr "Abhängigkeit hinzufügen"
-
-#~ msgid "Presentation"
-#~ msgstr "Präsentation"
-
-#~ msgid "Summary"
-#~ msgstr "Zusammenfassung"
-
-#~ msgid "Change summary"
-#~ msgstr "Zusammenfassung ändern"
-
-#~ msgid "Description"
-#~ msgstr "Beschreibung"
-
-#~ msgid "Change description"
-#~ msgstr "Beschreibung ändern"
-
-#~ msgid "Releases"
-#~ msgstr "Veröffentlichungen"
-
-#~ msgid "New release"
-#~ msgstr "Neuer Release"
-
-#~ msgid "Add version"
-#~ msgstr "Version hinzufügen"
-
-#, fuzzy
-#~ msgid "Existing releases"
-#~ msgstr "Release bearbeiten"
-
-#, fuzzy
-#~ msgid "You have not created a release yet."
-#~ msgstr "Du hast noch keine neue Erweiterung erstellt."
 
 #~ msgid "About the project"
 #~ msgstr "Über das Projekt"
@@ -1348,100 +1484,6 @@ msgstr "Erweiterungen der Woche"
 #~ msgid "Information"
 #~ msgstr "Informationen"
 
-#, fuzzy
-#~ msgid "Edit release"
-#~ msgstr "Release bearbeiten"
-
-#, fuzzy
-#~ msgid "Addon description"
-#~ msgstr "Beschreibung ändern"
-
-#, fuzzy
-#~ msgid "Release description"
-#~ msgstr "Erweiterung veröffentlichen"
-
-#~ msgid "Change presentation"
-#~ msgstr "Präsentation ändern"
-
-#~ msgid "Status"
-#~ msgstr "Status"
-
-#~ msgid "Release"
-#~ msgstr "Release"
-
-#~ msgid ""
-#~ "We would like to check the quality of this addon before it goes public to "
-#~ "keep the quality of content high."
-#~ msgstr ""
-#~ "Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
-#~ "Gesamtqualität hoch zu halten."
-
-#~ msgid ""
-#~ "If you want, we can release this version for you as soon as we approve it."
-#~ msgstr ""
-#~ "Falls du möchtest, können wir diese Version für dich veröffentlichen "
-#~ "sobald wir sie überprüft haben."
-
-#~ msgid ""
-#~ "Otherwise you will be able to release whenever you want after this "
-#~ "version is approved."
-#~ msgstr ""
-#~ "Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
-#~ "überprüft wurde."
-
-#~ msgid "Release immediately"
-#~ msgstr "Sofort veröffentlichen"
-
-#, fuzzy
-#~ msgid "Request approval"
-#~ msgstr "Erwartet Freigabe"
-
-#~ msgid "All downloads will immediately redirect to your uploaded version."
-#~ msgstr ""
-#~ "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
-
-#~ msgid ""
-#~ "Publishing a release is final. Any changes after releasing require a new "
-#~ "release."
-#~ msgstr ""
-#~ "Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
-#~ "erfordert einen neuen Release."
-
-#~ msgid "Your release will be instantly available to all players."
-#~ msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
-
-#~ msgid "Confirm release"
-#~ msgstr "Veröffentlichung bestätigen"
-
-#~ msgid "Release now"
-#~ msgstr "Jetzt veröffentlichen"
-
-#~ msgid "Scheduled release"
-#~ msgstr "Geplanter Release"
-
-#~ msgid "Date and time"
-#~ msgstr "Datum und Zeit"
-
-#~ msgid "Make release date and time public"
-#~ msgstr "Releasedatum und -zeit veröffentlichen"
-
-#~ msgid ""
-#~ "You can cancel a scheduled release at any time before the automated "
-#~ "release."
-#~ msgstr ""
-#~ "Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
-#~ "Veröffentlichung abbrechen."
-
-#~ msgid ""
-#~ "Your release will be automatically made vailabe to all players at the "
-#~ "specified timestamp."
-#~ msgstr ""
-#~ "Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
-#~ "verfügbar gemacht."
-
-#~ msgid "Schedule Release"
-#~ msgstr "Veröffentlichung planen"
-
 #~ msgid "Release addon"
 #~ msgstr "Erweiterung veröffentlichen"
 
@@ -1454,9 +1496,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Add release"
 #~ msgstr "Release hinzufügen"
-
-#~ msgid "No games available."
-#~ msgstr "Keine Spiele verfügbar."
 
 #~ msgid "Change"
 #~ msgstr "Ändern"
@@ -1667,9 +1706,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Current password"
 #~ msgstr "Aktuelles Passwort"
-
-#~ msgid "Visit the OpenClonk forum"
-#~ msgstr "Besuche das OpenClonk-Forum"
 
 #~ msgid "Lorry"
 #~ msgstr "Lorry"
