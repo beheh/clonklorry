@@ -16,7 +16,7 @@
 		{% include 'functions/navbar.twig' %}
 		{% if site_notice %}
 		<div id="site-notice" class="jumbotron alert-danger">
-			<div class="container">		
+			<div class="container">
 		{{site_notice}}
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 		<div class="container">
 			<footer>
 				<p class="visible-xs">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
-				<p><a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}<span class="muted"> · <a class="text" href="{{base}}/about">{% trans "About us" %}</a> · <a class="text" href="{{base}}/contact"><span>{% trans "Contact" %}</span></a></span></p>
+				<p><a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}<span class=""> · <a class="text" href="{{base}}/about">{% trans "About us" %}</a> · <a class="text" href="{{base}}/contact"><span>{% trans "Contact" %}</span></a></span></p>
 			</footer>
 		</div>
 	{% endblock %}
