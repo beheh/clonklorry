@@ -1,8 +1,8 @@
 {
 	"require": {
-		"twig/twig": "1.12.*",
+		"twig/twig": "1.15.*",
 		"twig/extensions": "1.*",
-		"leafo/lessphp": "0.3.*",
+		"leafo/lessphp": "0.4.*",
 		"ircmaxell/password-compat": "1.*"
 	},
 	"autoload": {
