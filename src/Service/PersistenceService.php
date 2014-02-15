@@ -52,8 +52,8 @@ class PersistenceService {
 			else {
 				$parameters .= ' AND ';
 			}
-			$parameters .= '`'.$row.'` = :'.$row;
-			$values[':'.$row] = $value;
+			$parameters .= '`'.$row.'` = ?';
+			$values[] = $value;
 		}
 
 		$order = $descending ? 'DESC' : 'ASC';
@@ -80,8 +80,8 @@ class PersistenceService {
 			else {
 				$parameters .= ' AND ';
 			}
-			$parameters .= '`'.$row.'` = :'.$row;
-			$values[':'.$row] = $value;
+			$parameters .= '`'.$row.'` = ?';
+			$values[] = $value;
 		}
 
 		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' LIMIT 1');
@@ -103,11 +103,11 @@ class PersistenceService {
 		foreach($changes as $row => $change) {
 			if(!empty($values))
 				$sets .= ', ';
-			$sets .= '`'.$row.'` = :'.$row;
-			$values[':'.$row] = $change;
+			$sets .= '`'.$row.'` = ?';
+			$values[] = $change;
 		}
-		$values['id'] = $model->getId();
-		$query = $this->connection->prepare('UPDATE `'.$model->getTable().'` SET '.$sets.' WHERE `id` = :id');
+		$values[] = $model->getId();
+		$query = $this->connection->prepare('UPDATE `'.$model->getTable().'` SET '.$sets.' WHERE `id` = ?');
 		$query->execute($values);
 		if($query->errorCode() !== '00000') {
 			throw new Exception(print_r($query->errorInfo(), true));
@@ -128,8 +128,8 @@ class PersistenceService {
 				$valuenames .= ', ';
 			}
 			$keys .= '`'.$key.'`';
-			$valuenames .= ':'.$key;
-			$contents[':'.$key] = $value;
+			$valuenames .= '?';
+			$contents[] = $value;
 		}
 		$query = $this->connection->prepare('INSERT INTO `'.$model->getTable().'` ('.$keys.') VALUES ('.$valuenames.')');
 		$query->execute($contents);
