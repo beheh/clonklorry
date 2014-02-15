@@ -1,6 +1,6 @@
 <p id="oauth">
 	{% if oauth.openid %}
-	<a href="?remove-oauth=openid{{state}}#oauth" class="btn btn-default">{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
+	<a href="?remove-oauth=openid&state={{state}}#oauth" class="btn btn-default">{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
 	{% else %}
 	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
 	{% endif %}
