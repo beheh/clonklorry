@@ -66,7 +66,7 @@ class Login extends Presenter {
 						setcookie('lorry_login_email', '', 0, '/');
 					}
 					// log user in
-					$this->session->start($user, $remember);
+					$this->session->start($user, $remember, true);
 					$this->redirect('/');
 					return;
 				} else {

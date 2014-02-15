@@ -26,13 +26,15 @@ class SessionService {
 		session_name('lorry_session');
 	}
 
-	public final function start(User $user, $remember = false) {
+	public final function start(User $user, $remember = false, $identify = false) {
 		$this->ensureSession();
 		if(!$user->isLoaded()) {
 			throw new Exception('user is not loaded or does not exist');
 		}
 		$this->authenticate($user);
-		$this->identify();
+		if($identify) {
+			$this->identify();
+		}
 		if($remember == true) {
 			$this->remember();
 			if(isset($_COOKIE['lorry_login'])) {
