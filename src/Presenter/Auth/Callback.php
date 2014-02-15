@@ -66,7 +66,7 @@ class Callback extends Presenter {
 
 			if($user != null) {
 				$this->session->start($user, true);
-				$this->redirect('/');
+				$this->redirect('/#');
 			} else {
 				$email = $response['auth']['info']['email'];
 				// save details to session
