@@ -7,7 +7,7 @@
 	<form role="form" action="{{filename}}?oauth=openid" method="post" class="form-inline">
 		<div class="form-group">
 			<label class="sr-only" for="openid-provider">{% trans %}OpenID url{% endtrans %}</label>
-			<input type="url" class="form-control" name="openid-provider" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
+			<input type="url" class="form-control" name="openid-identity" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
 		</div>
 		<button type="submit" class="btn btn-primary">{% trans %}Confirm{% endtrans %}</button>
 	</form>

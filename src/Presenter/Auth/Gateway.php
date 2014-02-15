@@ -14,6 +14,9 @@ class Gateway extends Presenter {
 			$state = $this->session->generateState();
 			$config['Strategy']['Google']['state'] = $state;
 			$config['Strategy']['Facebook']['state'] = $state;
+			if(isset($_GET['identity'])) {
+				$config['Strategy']['OpenID']['identity'] = filter_input(INPUT_GET, 'identity', FILTER_VALIDATE_URL);
+			}
 		}
 		if($this->session->authenticated()) {
 			$config['Strategy']['Google']['login_hint'] = $this->session->getUser()->getEmail();

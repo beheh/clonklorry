@@ -3,6 +3,10 @@
 	"repositories": [
 		{
 			"type": "vcs",
+			"url": "https://github.com/beheh/openid"
+		},
+		{
+			"type": "vcs",
 			"url": "https://github.com/beheh/google"
 		}
 	],
@@ -11,7 +15,7 @@
 		"twig/extensions": "1.*",
 		"leafo/lessphp": "*",
 		"ircmaxell/password-compat": "*",
-		"opauth/openid": "*",
+		"opauth/openid": "dev-beheh",
 		"opauth/facebook": "*",
 		"opauth/google": "dev-beheh"
 	},

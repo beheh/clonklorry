@@ -6,6 +6,10 @@ $config = array(
 	'callback_transport' => 'session',
 	'security_salt' => '',
 	'Strategy' => array(
+		'OpenID' => array(
+			'required' => array('contact/email'),
+			'optional' => array()
+		),
 		'Google' => array(
 			'client_id' => 'YOUR_CLIENT_ID',
 			'client_secret' => 'YOUR_CLIENT_SECRET',

@@ -210,7 +210,11 @@ class SessionService {
 		if(!in_array($provider, self::$OAUTH_PROVIDERS)) {
 			throw new FileNotFoundException();
 		}
-		return '/auth/gateway/'.$provider;
+		$gateway = '/auth/gateway/'.$provider;
+		if($provider == 'openid') {
+			$gateway .= '?identity='.filter_input(INPUT_POST, 'openid-identity');
+		}
+		return $gateway;
 	}
 
 }
