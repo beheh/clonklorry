@@ -58,17 +58,3 @@
 	</div>
 </div>
 {% endblock %}
-
-
-{% block javascript %}
-{{ parent() }}
-
-$(document).ready(function() {
-$('#form-login input').each(function() {
-$(this).addClass('noerror')
-var require = function() {$(this).removeClass('noerror');};
-$(this).keypress(require);
-$(this).blur(require);
-});
-});
-{% endblock %}

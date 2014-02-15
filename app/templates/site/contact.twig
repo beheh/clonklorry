@@ -42,17 +42,3 @@
 	</div>
 </div>
 {% endblock %}
-
-{% block javascript %}
-{{ parent() }}
-
-$(document).ready(function() {
-var options = {placement:'bottom', trigger:'focus'};
-$('#form-contact textarea').each(function() {
-$(this).addClass('noerror')
-var require = function() {$(this).removeClass('noerror');};
-$(this).keypress(require);
-$(this).blur(require);
-});
-});
-{% endblock %}
