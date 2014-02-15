@@ -3,7 +3,6 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<img src="{{base}}/img/game/{{short}}.png" class="pull-right hidden-xs">
 		<h1>{{ title }}</h1>
 		<div class="clearfix"></div>
 	</div>
@@ -44,6 +43,7 @@
 </div>
 <div class="jumbotron">
 	<div class="container">
+		<a href="#"><img src="{{base}}/img/game/{{short}}.png" class="pull-right jumbo-image hidden-xs"></a>
 		<h1>{% trans %}No addons available{% endtrans %}</h1>
 		<p>{% trans %}There are no addons available for this game yet.{% endtrans %}</p>
 		<p><a href="{{base}}/publish" class="btn btn-info">{% trans %}Visit the publishing portal{% endtrans %}</a></p>
