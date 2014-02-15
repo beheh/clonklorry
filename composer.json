@@ -6,6 +6,8 @@
 		"ircmaxell/password-compat": "1.*"
 	},
 	"autoload": {
-        "psr-0": {"Lorry": "src/"}
+        "psr-4": {
+			"Lorry\\": "src/"
+		}
     }
 }
