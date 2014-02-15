@@ -3,55 +3,56 @@
 {% set title = 'Welcome to Clonk!'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<p>{% trans %}Clonk is a unique 2.5-dimensional game and often referred to as a mix of "The Settlers" and "Lemmings": The core difference is the open addon format, transforming the game to anything you can imagine.{% endtrans %}</p>
-<hr>
-<div class="row-fluid">
-    <div class="span4">
-		<h3>{% trans %}Clonk Rage{% endtrans %}</h3>
-		<p><img src="{{base}}/img/game/rage.png"></p>
-		<p>{% trans %}The classic game with hundreds of community-built, high-quality addons. Magical wars, strategic shooters and futuristic settling: Clonk Rage has it all.{% endtrans %}</p>
-		<p>{% trans %}Often the sheer selection is overwelming, so be sure to spread the word and vote for the addons you like.{% endtrans %}</p>
-		<p>
-			<a href="#" class="btn btn-primary">{% trans %}Install Clonk Rage{% endtrans %}</a>
-			<a href="http://www.clonk.de?lng={% trans 'en' %}" class="btn">{% trans %}Visit the official site{% endtrans %}</a>
-		</p>
-    </div>
-    <div class="span4">
-		<h3>{% trans %}OpenClonk{% endtrans %}</h3>
-		<p><img src="{{base}}/img/game/openclonk.png"></p>
-		<p>{% trans %}The opensource successor to the Clonk series, built by players and developers of the previous Clonk titles.{% endtrans %}</p>
-		<p>{% trans %}Although the addon selection is still limited, OpenClonk completely reimaginges a great part of the game and greatly refines the technology, now supporting three-dimensional models within the game.{% endtrans %}</p>
-		<p>
-			<a href="#" class="btn btn-primary">{% trans %}Install OpenClonk{% endtrans %}</a>
-			<a href="http://www.openclonk.org" class="btn">{% trans %}Visit the official site{% endtrans %}</a>
-		</p>
-    </div>
-    <div class="span4">
-		<h3>{% trans %}&hellip;only just the beginning{% endtrans %}</h3>
-		<p>{% trans %}Clonk lives from its fans, with dedicated players creating high-quality addons.{% endtrans %}</p>
-		<p>{% trans %}The series appeals to all ages alike and even though the Community originally {% endtrans %}</p>
-		<a href="#" class="btn">{% trans %}View the addons{% endtrans %}</a>
-    </div>
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
+	</div>
+	<p>{% trans %}Clonk is a unique 2.5-dimensional game and often referred to as a mix of "The Settlers" and "Lemmings": The core difference is the open addon format, transforming the game to anything you can imagine.{% endtrans %}</p>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>{% trans %}Clonk Rage{% endtrans %}</h3>
+			<p><img src="{{base}}/img/game/rage.png"></p>
+			<p>{% trans %}The classic game with hundreds of community-built, high-quality addons. Magical wars, strategic shooters and futuristic settling: Clonk Rage has it all.{% endtrans %}</p>
+			<p>{% trans %}Often the sheer selection is overwelming, so be sure to spread the word and vote for the addons you like.{% endtrans %}</p>
+			<p>
+				<a href="#" class="btn btn-primary">{% trans %}Install Clonk Rage{% endtrans %}</a>
+				<a href="http://www.clonk.de?lng={% trans 'en' %}" class="btn btn-default">{% trans %}Visit the official site{% endtrans %}</a>
+			</p>
+		</div>
+		<div class="col-md-4">
+			<h3>{% trans %}OpenClonk{% endtrans %}</h3>
+			<p><img src="{{base}}/img/game/openclonk.png"></p>
+			<p>{% trans %}The opensource successor to the Clonk series, built by players and developers of the previous Clonk titles.{% endtrans %}</p>
+			<p>{% trans %}Although the addon selection is still limited, OpenClonk completely reimaginges a great part of the game and greatly refines the technology, now supporting three-dimensional models within the game.{% endtrans %}</p>
+			<p>
+				<a href="#" class="btn btn-primary">{% trans %}Install OpenClonk{% endtrans %}</a>
+				<a href="http://www.openclonk.org" class="btn btn-default">{% trans %}Visit the official site{% endtrans %}</a>
+			</p>
+		</div>
+		<div class="col-md-4">
+			<h3>{% trans %}&hellip;only just the beginning{% endtrans %}</h3>
+			<p>{% trans %}Clonk lives from its fans, with dedicated players creating high-quality addons.{% endtrans %}</p>
+			<p>{% trans %}The series appeals to all ages alike.{% endtrans %}</p>
+			<a href="#" class="btn">{% trans %}View the addons{% endtrans %}</a>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-8">
+			<h2>{% trans %}Create new content for Clonk{% endtrans %}</h2>
+			<p>{% trans %}The official game development of Clonk Rage has halted, therefore the community is creating an open source succesor - OpenClonk.{% endtrans %}</p>
+			<p>{% trans %}Both games are different and alike, but the majority of all addons have been created for Clonk Rage. Once you've created something awesome you can distribute it via Lorry, making it instantly available for any interested player.{% endtrans %}</p>
+			<p>
+				<a href="{{base}}/publish" class="btn btn-info">{% trans %}Visit the publishing portal{% endtrans %}</a>
+			</p>
+		</div>
+		<div class="col-md-4">
+			<h2>{% trans %}Build the next Clonk{% endtrans %}</h2>
+			<p>{% trans %}The OpenClonk project is constantly looking for developers to help out with the next iteration of Clonk. If you have moderate or even advanced C++-skills you should definitively be welcome in the team.{% endtrans %}</p>
+			<p>
+				<a href="http://wiki.openclonk.org/w/Development" class="btn btn-info">{% trans %}Visit the OpenClonk wiki{% endtrans %}</a>
+			</p>
+		</div>
+	</div>
 </div>
-<hr>
-<div class="row-fluid">
-    <div class="span8">
-		<h2>{% trans %}Create new content for Clonk{% endtrans %}</h2>
-		<p>{% trans %}The official game development of Clonk Rage is currently halted, therefore the community is creating an open source succesor - OpenClonk. Both games are different and alike, but the majority of all addons have been created for Clonk Rage. Once you've created something awesome you can distribute it via Lorry, making it instantly available for any interested player.{% endtrans %}</p>
-		<p>
-			<a href="{{base}}/publish/index.html" class="btn btn-success">{% trans "Publish your addon" %}</a>
-			<a href="#" class="btn">{% trans %}Learn more{% endtrans %}</a>
-		</p>
-    </div>
-    <div class="span4">
-		<hr class="hidden-desktop">
-		<h2>{% trans %}Build the next Clonk{% endtrans %}</h2>
-		<p>{% trans %}The OpenClonk project is constantly looking for developers to help out with the next iteration of Clonk. If you have moderate or even advanced C++-skills you should definitively be welcome in the team.{% endtrans %}</p>
-		<p>
-			<a href="http://forum.openclonk.org" class="btn btn-info">{% trans %}Visit the OpenClonk forums{% endtrans %}</a>
-		</p>
-    </div>
-</div>
-<hr>
 {% endblock %}
