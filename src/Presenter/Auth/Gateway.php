@@ -11,7 +11,9 @@ class Gateway extends Presenter {
 		require '../app/config/opauth.php';
 		$current_state = $this->session->getState();
 		if(!isset($_GET['state']) || !$current_state || $_GET['state'] != $current_state) {
-			$config['Strategy']['Google']['state'] = $this->session->generateState();
+			$state = $this->session->generateState();
+			$config['Strategy']['Google']['state'] = $state;
+			$config['Strategy']['Facebook']['state'] = $state;
 		}
 		if($this->session->authenticated()) {
 			$config['Strategy']['Google']['login_hint'] = $this->session->getUser()->getEmail();
