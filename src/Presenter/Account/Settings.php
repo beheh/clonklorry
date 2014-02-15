@@ -135,6 +135,7 @@ class Settings extends Presenter {
 				if($password_new === $password_confirm) {
 					$user->setPassword($password_new);
 					$user->save();
+					$this->session->identify();
 					if($has_password) {
 						$this->success('password', gettext('Your password was changed.'));
 					} else {
