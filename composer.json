@@ -1,17 +1,23 @@
 {
-	"type" : "project",
+	"type": "project",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/beheh/google"
+		}
+	],
 	"require": {
-		"twig/twig": "1.15.*",
+		"twig/twig": "1.*",
 		"twig/extensions": "1.*",
-		"leafo/lessphp": "0.4.*",
-		"ircmaxell/password-compat": "1.*",
-		"opauth/openid": "0.1.*",
-		"opauth/facebook": "0.2.*",
-		"opauth/google": "0.2.*"
+		"leafo/lessphp": "*",
+		"ircmaxell/password-compat": "*",
+		"opauth/openid": "*",
+		"opauth/facebook": "*",
+		"opauth/google": "dev-beheh"
 	},
 	"autoload": {
-        "psr-4": {
+		"psr-4": {
 			"Lorry\\": "src/"
 		}
-    }
+	}
 }

@@ -1,5 +1,6 @@
 /nbproject/
 /app/config/lorry.php
+/app/config/opauth.php
 /web/css/lorry.css
 /web/css/lorry.min.css
 composer.lock

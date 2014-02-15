@@ -88,10 +88,44 @@ class SessionService {
 		return $this->user !== false;
 	}
 
+	public final function castState() {
+		$state = bin2hex(openssl_random_pseudo_bytes(16));
+		return $state;
+	}
+
+	public final function getState() {
+		if(!isset($_SESSION['state'])) {
+			return false;
+		}
+		return $_SESSION['state'];
+	}
+
+	public final function clearState() {
+		unset($_SESSION['state']);
+	}
+
+	public final function generateState() {
+		$state = $this->castState();
+		$_SESSION['state'] = $state;
+		return $state;
+	}
+
+	public final function verifyState($state) {
+		if(!isset($_SESSION['state'])) {
+			return false;
+		}
+		$original_state = $_SESSION['state'];
+		$this->clearState();
+		if($state != $original_state) {
+			return false;
+		}
+		return true;
+	}
+
 	/**
 	 *
 	 * @return \Lorry\Model\User
-	 * @throws Exception
+	 * @throws Exceptions
 	 */
 	public final function getUser() {
 		if(!$this->authenticated()) {
@@ -113,8 +147,7 @@ class SessionService {
 			$user = ModelFactory::build('User')->byId($_SESSION['user']);
 			if($user->getSecret() == $_SESSION['secret']) {
 				$this->user = $user;
-			}
-			else {
+			} else {
 				$this->logout();
 			}
 		} else if(isset($_COOKIE['lorry_login'])) {
