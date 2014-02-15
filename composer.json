@@ -3,7 +3,10 @@
 		"twig/twig": "1.15.*",
 		"twig/extensions": "1.*",
 		"leafo/lessphp": "0.4.*",
-		"ircmaxell/password-compat": "1.*"
+		"ircmaxell/password-compat": "1.*",
+		"opauth/openid": "0.1.*",
+		"opauth/facebook": "0.2.*",
+		"opauth/google": "0.2.*"
 	},
 	"autoload": {
         "psr-4": {
