@@ -13,6 +13,10 @@ class Register extends Presenter {
 			return $this->redirect('/');
 		}
 
+		if(isset($_GET['oauth'])) {
+			return $this->redirect($this->session->handleOauth());
+		}
+
 		$this->display('account/register.twig');
 	}
 

@@ -4,7 +4,8 @@ namespace Lorry\Service;
 
 use Lorry\ModelFactory;
 use Lorry\Model\User;
-use Exception;
+use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception;
 
 class SessionService {
 
@@ -200,6 +201,16 @@ class SessionService {
 		}
 		setcookie('lorry_session', '', 0, '/');
 		return true;
+	}
+
+	private static $OAUTH_PROVIDERS = array('openid', 'google', 'facebook');
+
+	public final function handleOauth() {
+		$provider = filter_input(INPUT_GET, 'oauth');
+		if(!in_array($provider, self::$OAUTH_PROVIDERS)) {
+			throw new FileNotFoundException();
+		}
+		return '/auth/gateway/'.$provider;
 	}
 
 }

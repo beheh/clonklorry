@@ -1,13 +1,13 @@
 <p id="openid">
 	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
-	<a href="?openid=google" class="btn btn-danger">{% trans "Google" %}</a>
-	<a href="?openid=facebook" class="btn btn-primary">{% trans "Facebook" %}</a>
+	<a href="?oauth=google" class="btn btn-danger">{% trans "Google" %}</a>
+	<a href="?oauth=facebook" class="btn btn-primary">{% trans "Facebook" %}</a>
 </p>
 <div class="collapse" id="by-openid">
-	<form role="form" action="{{filename}}?openid=custom" method="post" class="form-inline">
+	<form role="form" action="{{filename}}?oauth=openid" method="post" class="form-inline">
 		<div class="form-group">
 			<label class="sr-only" for="openid-provider">{% trans %}OpenID url{% endtrans %}</label>
-			<input type="url" class="form-control" name="openid-provider" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>			
+			<input type="url" class="form-control" name="openid-provider" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
 		</div>
 		<button type="submit" class="btn btn-primary">{% trans %}Confirm{% endtrans %}</button>
 	</form>
