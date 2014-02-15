@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-02-15 23:19+0100\n"
-"PO-Revision-Date: 2014-02-15 23:20+0100\n"
+"POT-Creation-Date: 2014-02-15 23:42+0100\n"
+"PO-Revision-Date: 2014-02-15 23:43+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -59,7 +59,7 @@ msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter.php:124
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Login.php:74
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:146
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:158
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -86,24 +86,25 @@ msgstr "Benutzername ist %s."
 
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:48
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:53
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:105
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:112
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:53
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:78
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:88
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:105
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:85
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:95
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:112
 msgid "invalid"
 msgstr "ungültig"
 
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:58
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:142
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:154
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:63
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:150
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -120,37 +121,41 @@ msgstr "Mit Anmeldedienst verbunden.\t"
 msgid "Authentification with login service failed."
 msgstr "Authentifizierung bei Anmeldedienst fehlgeschlagen."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:34
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:35
 msgid "Removed login service."
 msgstr "Anmeldedienst entfernt."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:78
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:38
+msgid "Can't remove last login service."
+msgstr "Kann letzten Anmeldedienst nicht entfernen."
+
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:85
 #, fuzzy, php-format
 msgid "Clonk Forge profile url is %s."
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:88
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:95
 #, fuzzy, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:94
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:101
 msgid "Your linked profiles were changed."
 msgstr "Deine verknüpften Profile wurden geändert."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:110
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:117
 msgid "Contact details have been changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:136
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:145
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:138
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:147
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:154
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:166
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -786,33 +791,33 @@ msgstr "Altes Passwort"
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:274
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:279
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:108
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:112
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:282
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:287
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:284
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:289
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:291
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:296
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:298
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:303
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:307
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:312
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:313
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:318
 msgid "Login services"
 msgstr "Anmeldedienste"
 

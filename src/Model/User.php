@@ -171,6 +171,10 @@ class User extends Model {
 	}
 
 	public final function setOauth($provider, $uid) {
+		if(!$uid && !$this->hasPassword() && !$this->hasRemainingOauth($provider)) {
+			// dissallow last oauth to be removed without a password
+			throw new ModelValueInvalidException('the last remaining login method');
+		}
 		switch($provider) {
 			case 'openid':
 				return $this->setValue('oauth-openid', $uid);
@@ -183,6 +187,20 @@ class User extends Model {
 				break;
 		}
 		throw new ModelValueInvalidException('not a valid OAuth provider');
+	}
+
+	protected final function hasRemainingOauth($except) {
+		$providers = array('openid', 'google', 'facebook');
+		$provider_count = 0;
+		foreach($providers as $provider) {
+			if($provider == $except) {
+				continue;
+			}
+			if($this->getValue('oauth-'.$provider) != null) {
+				$provider_count++;
+			}
+		}
+		return $provider_count > 0;
 	}
 
 	public final function setLanguage($language) {

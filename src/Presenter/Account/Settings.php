@@ -30,9 +30,13 @@ class Settings extends Presenter {
 		if(isset($_GET['remove-oauth'])) {
 			$this->security->requireValidState();
 
-			$user->setOauth(filter_input(INPUT_GET, 'remove-oauth'), null);
-			$this->success('oauth', gettext('Removed login service.'));
-			$user->save();
+			try {
+				$user->setOauth(filter_input(INPUT_GET, 'remove-oauth'), null);
+				$this->success('oauth', gettext('Removed login service.'));
+				$user->save();
+			} catch(ModelValueInvalidException $ex) {
+				$this->error('oauth', gettext('Can\'t remove last login service.'));
+			}
 		}
 
 		$this->context['username'] = $user->getUsername();
@@ -133,13 +137,17 @@ class Settings extends Presenter {
 			$password_confirm = filter_input(INPUT_POST, 'password-confirm');
 			if(!$has_password || $user->matchPassword($password_old)) {
 				if($password_new === $password_confirm) {
-					$user->setPassword($password_new);
-					$user->save();
-					$this->session->identify();
-					if($has_password) {
-						$this->success('password', gettext('Your password was changed.'));
-					} else {
-						$this->success('password', gettext('Your password was set.'));
+					try {
+						$user->setPassword($password_new);
+						$user->save();
+						$this->session->identify();
+						if($has_password) {
+							$this->success('password', gettext('Your password was changed.'));
+						} else {
+							$this->success('password', gettext('Your password was set.'));
+						}
+					} catch(ModelValueInvalidException $ex) {
+						$this->error('password', sprintf(gettext('Password is %s.'), $ex->getMessage()));
 					}
 				} else {
 					$this->context['focus_password'] = true;
