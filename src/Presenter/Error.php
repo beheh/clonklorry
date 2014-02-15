@@ -28,6 +28,9 @@ class Error extends Presenter {
 
 		$this->context['title'] = $this->getLocalizedMessage();
 		$this->context['description'] = $this->getLocalizedDescription();
+		if($this->config->get('debug')) {
+			$this->context['raw'] = '<pre>'.$exception->getMessage().'<br><br>'.$exception->getTraceAsString().'</pre>';
+		}
 
 		$this->display('generic/hero.twig');
 	}
