@@ -28,7 +28,7 @@ class Error extends Presenter {
 
 		$this->context['title'] = $this->getLocalizedMessage();
 		$this->context['description'] = $this->getLocalizedDescription();
-		if($this->config->get('debug') && get_class($this) == 'Lorry\Error	') {
+		if($this->config->get('debug') && get_class($this) == 'Lorry\Presenter\Error') {
 			$this->context['raw'] = '<pre>'.$exception->getMessage().'<br><br>'.$exception->getTraceAsString().'</pre>';
 		}
 
