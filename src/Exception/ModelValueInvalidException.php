@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Exception;
+use Lorry\Exception;
 
 class ModelValueInvalidException extends Exception {
 }

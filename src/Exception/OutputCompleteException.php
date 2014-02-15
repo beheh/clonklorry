@@ -2,8 +2,10 @@
 
 namespace Lorry\Exception;
 
-use Exception;
+use Lorry\Exception;
 
 class OutputCompleteException extends Exception {
-
+	public function getPresenter() {
+		return '';
+	}
 }

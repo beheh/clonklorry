@@ -68,10 +68,10 @@ class PresenterFactory {
 	 * @throws Exception
 	 */
 	public static function build($presenter) {
-		$class = '\\Lorry\\Presenter\\'.$presenter;
-		if(!class_exists($class)) {
+		if(!self::valid($presenter)) {
 			throw new Exception('unknown presenter');
 		}
+		$class = '\\Lorry\\Presenter\\'.$presenter;
 		$instance = new $class();
 		if(!$instance instanceof PresenterInterface) {
 			throw new Exception('presenter does not implement interface');
@@ -82,6 +82,15 @@ class PresenterFactory {
 		$instance->setSecurityService(self::$security);
 		$instance->setTwig(self::$twig);
 		return $instance;
+	}
+
+	/**
+	 * Validates the existence of the presenter
+	 * @param string $presenter
+	 * @return boolean True, if the presenter exists
+	 */
+	public static function valid($presenter) {
+		return class_exists('\\Lorry\\Presenter\\'.$presenter);
 	}
 
 }

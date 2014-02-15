@@ -14,7 +14,7 @@ use Lorry\Exception\NotImplementedException;
 use Lorry\Exception\OutputCompleteException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
-use Exception;
+use Exception as PHPException;
 
 class Environment {
 
@@ -26,11 +26,14 @@ class Environment {
 
 		try {
 			$this->handle($config);
-		} catch (Exception $e) {
+		} catch(PHPException $e) {
 			header('HTTP/1.1 500 Internal Server Error');
 			header('Content-Type: text/plain');
-			if ($config && $config->get('debug')) {
-				echo 'An internal error occured: '.$e->getMessage().PHP_EOL.PHP_EOL;
+			if($config && $config->get('debug')) {
+				echo 'An internal error occured: '.get_class($e).PHP_EOL.PHP_EOL;
+				if($e->getMessage()) {
+					echo 'Message: '.$e->getMessage().PHP_EOL.PHP_EOL;
+				}
 				echo 'Stack trace:'.PHP_EOL.$e->getTraceAsString().PHP_EOL.PHP_EOL;
 				echo 'Lorry platform in debug mode.';
 			} else {
@@ -69,7 +72,7 @@ class Environment {
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
 		$twig->addGlobal('site_contact', $config->get('contact'));
 
-		if ($session->authenticated()) {
+		if($session->authenticated()) {
 			$user = $session->getUser();
 			$twig->addGlobal('user_login', true);
 			$twig->addGlobal('user_name', $user->getUsername());
@@ -108,6 +111,10 @@ class Environment {
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',
 			'/settings' => 'Account\Settings',
+			'/auth/gateway/facebook' => 'Auth\Gateway',
+			'/auth/gateway/google' => 'Auth\Gateway',
+			'/auth/gateway/google/oauth2callback' => 'Auth\Gateway',
+			'/auth/callback' => 'Auth\Callback',
 			'/about' => 'Site\About',
 			'/clonk' => 'Site\Clonk',
 			'/community' => 'Site\Community',
@@ -129,20 +136,17 @@ class Environment {
 			$presenter = Router::route();
 
 			// check if method is supported
-			if (!method_exists($presenter, $method)) {
+			if(!method_exists($presenter, $method)) {
 				throw new NotImplementedException(get_class($presenter).'->'.$method.'()');
 			}
 
 			// execute the RESTful method
 			return call_user_func_array(array($presenter, $method), Router::getMatches());
-		} catch (FileNotFoundException $exception) {
-			return PresenterFactory::build('Error\FileNotFound')->get($exception);
-		} catch (ForbiddenException $exception) {
-			return PresenterFactory::build('Error\Forbidden')->get($exception);
-		} catch (NotImplementedException $exception) {
-			return PresenterFactory::build('Error\NotImplemented')->get($exception);
-		} catch (OutputCompleteException $exception) {
-			// allow output to complete prematurely
+		} catch(Exception $exception) {
+			$presenter = $exception->getPresenter();
+			if(PresenterFactory::valid($presenter)) {
+				return PresenterFactory::build($exception->getPresenter())->get($exception);
+			}
 		}
 	}
 
