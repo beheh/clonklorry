@@ -19,25 +19,32 @@
 					<label for="email">{% trans "Email address" %}</label>
 					<input type="email" class="form-control" name="email" id="email" placeholder="{% trans "Email address" %}" title="{% trans %}We require your email address so that we can verify you if you should forget your login details.{% endtrans %}" {% if email%}value="{{email}}" {% endif %}required>
 				</div>
-				<div class="form-group">
+				{% if not oauth %}<div class="form-group">
 					<label for="password">{% trans "Password" %}</label>
 					<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" title="{% trans %}You password is stored securely. We require at least 8 characters for your security and are unable to send you this password if you should forget it.{% endtrans %}" required>
 				</div>
 				<div class="form-group">
 					<label for="password-repeat">{% trans "Confirm password" %}</label>
 					<input type="password" class="form-control" name="password-repeat" id="password-repeat" placeholder="{% trans "Confirm password" %}" title="{% trans %}Please repeat your password to ensure you have spellt it correctly.{% endtrans %}" required>
-				</div>
+				</div>{% endif %}
 				<button class="btn btn-large btn-success" type="submit">{% trans "Register" %}</button>
-				<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>
+				{% if not oauth %}<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>{% endif %}
 			</form>
 			<hr>
 			<div class="social">
+			{% if not oauth %}
 				<h4>{% trans %}Alternatively use a login service:{% endtrans %}</h4>
-			{% include 'functions/oauth.twig' %}
+				{% include 'functions/oauth.twig' %}
+			{% else %}
+				{% set provider = 'Google'%}
+				<h4>{% trans %}{{provider}} authentification successful	{% endtrans %}</h4>
+				<p>{% trans %}You can log in using {{provider}} in future. {% endtrans %}</p>
+			{% endif %}
 			</div>
 		</div>
 		<div class="col-md-8">
 			<hr class="visible-xs">
+			{% if not oauth %}
 			<h2>{% trans %}This is Lorry.{% endtrans %}</h2>
 			<p>{% trans %}Lorry is a fan page, distribution platform and online community for players of Clonk games.{% endtrans %}</p>
 			<p>
@@ -45,9 +52,12 @@
 				<a href="{{base}}/clonk" class="btn btn-default">{% trans %}New to Clonk?{% endtrans %}</a>
 			</p>
 			<hr>
-			<h3>{% trans %}Why should I register?{% endtrans %}</h4>
-				<p>{% trans %}After registering you can upload your own addons as well as comment and vote on existing contributions.{% endtrans %}</p>
-				<p>{% trans %}You'll become part of a small and friendly community, enjoying the game and devoting their time to it.{% endtrans %}</p>
+			<h3>{% trans %}Why should I register?{% endtrans %}</h3>
+			<p>{% trans %}After registering you can upload your own addons as well as comment and vote on existing contributions.{% endtrans %}</p>
+			<p>{% trans %}You'll become part of a small and friendly community, enjoying the game and devoting their time to it.{% endtrans %}</p>
+			{% else %}
+			<h2>{% trans %}Welcome to Lorry.{% endtrans %}</h2>
+			{% endif %}
 		</div>
 	</div>
 </div>

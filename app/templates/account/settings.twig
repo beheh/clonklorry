@@ -111,7 +111,8 @@
 					<button type="submit" class="btn btn-info">{% trans "Log out all other devices" %}</button>
 				</form>
 			</div>
-			<h4 id="link">{% trans "Login services" %}</h4>
+			<h4 id="oauth">{% trans "Login services" %}</h4>
+			{% include 'functions/alert.twig' with {'selector' : 'oauth'} %}
 			{% include 'functions/oauth.twig' %}
 		</div>
 	</div>

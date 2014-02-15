@@ -1,9 +1,13 @@
 <p id="openid">
+	{% if 0 %}
+	<a href="?remove-oauth=openid" class="btn btn-default">{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
+	{% else %}
 	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
-	<a href="?oauth=google" class="btn btn-danger">{% trans "Google" %}</a>
-	<a href="?oauth=facebook" class="btn btn-primary">{% trans "Facebook" %}</a>
+	{% endif %}
+	<a href="?{% if 0 %}remove-{% endif %}oauth=google" class="btn btn-danger">{% trans "Google" %}{% if 0 %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
+	<a href="?{% if 0 %}remove-{% endif %}oauth=facebook" class="btn btn-primary">{% trans "Facebook" %}{% if 0 %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 </p>
-<div class="collapse" id="by-openid">
+{% if not 0 %}<div class="collapse" id="by-openid">
 	<form role="form" action="{{filename}}?oauth=openid" method="post" class="form-inline">
 		<div class="form-group">
 			<label class="sr-only" for="openid-provider">{% trans %}OpenID url{% endtrans %}</label>
@@ -11,4 +15,4 @@
 		</div>
 		<button type="submit" class="btn btn-primary">{% trans %}Confirm{% endtrans %}</button>
 	</form>
-</div>
+</div>{% endif %}

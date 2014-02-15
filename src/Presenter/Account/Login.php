@@ -49,11 +49,7 @@ class Login extends Presenter {
 				$this->context['email'] = $email;
 				$this->error('email', gettext('Email address unknown.'));
 			}
-		} else if(isset($_GET['openid'])) {
-			// login with openid
-			$openid = filter_input(INPUT_GET, 'openid');
-			// @TODO openid implementation
-		} else {
+		} else  {
 			// login by username and password
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
 			$user = ModelFactory::build('User')->byUsername($username);

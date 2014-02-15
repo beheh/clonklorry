@@ -33,6 +33,19 @@ class Settings extends Presenter {
 
 		$this->context['password_exists'] = $user->hasPassword();
 
+
+		if(isset($_GET['update-oauth'])) {
+			switch(filter_input(INPUT_GET, 'update-oauth')) {
+				case 'success':
+				$this->success('oauth', gettext('Authentification successful.'));
+					break;
+				case 'failed':
+					$this->error('oauth', gettext('Authentification failed.'));
+					break;
+			}
+		}
+
+
 		$this->display('account/settings.twig');
 	}
 

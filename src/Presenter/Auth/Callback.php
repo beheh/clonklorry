@@ -32,17 +32,42 @@ class Callback extends Presenter {
 				break;
 		}
 
-		if(array_key_exists('error', $response)) {
-			throw new AuthentificationFailedException('Response contained error field');
+		try {
+			if(array_key_exists('error', $response)) {
+				throw new AuthentificationFailedException('Response contained error field');
+			}
+			if(empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
+				throw new AuthentificationFailedException('Missing fields in auth response');
+			}
+			if(!$opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
+				throw new AuthentificationFailedException('Invalid auth response: '.$reason);
+			}
+		} catch(AuthentificationFailedException $exception) {
+			if($this->session->authenticated()) {
+				$this->redirect('/settings?update-oauth=failed#oauth');
+				return;
+			}
+			throw $exception;
 		}
-		if(empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
-			throw new AuthentificationFailedException('Missing fields in auth response');
-		}
-		if(!$opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
-			throw new AuthentificationFailedException('Invalid auth response: '.$reason);
-		}
+
 		if($this->session->authenticated()) {
-			$this->redirect('/settings');
+			// we now trust provider and user
+			$user = $this->session->getUser();
+
+			//$user->setProvider('google', '123123123123');
+
+			$this->redirect('/settings?update-oauth=success#oauth');
+		} else {
+			// grab user with openid data fitting
+			//$user = $this->->byOauth('google', '123123123123');
+			$user = false;
+
+			if($user != null) {
+				$this->redirect('/');
+			} else {
+				// none found -> registration?
+				$this->redirect('/register');
+			}
 		}
 	}
 
