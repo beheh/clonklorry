@@ -51,6 +51,9 @@ class Settings extends Presenter {
 		$this->context['language'] = $this->localisation->getDisplayLanguage();
 
 		$this->context['password_exists'] = $user->hasPassword();
+		if(isset($_GET['add-password']) && !$user->hasPassword()) {
+			$this->context['focus_password_new'] = true;
+		}
 
 		$oauth = array('openid', 'google', 'facebook');
 		$this->context['oauth'] = array();

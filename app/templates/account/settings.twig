@@ -93,7 +93,7 @@
 				{% endif %}
 				<div class="form-group">
 					<label for="password-new">{% trans "New password" %}</label>
-					<input type="password" class="form-control" name="password-new" id="password-new" required>
+					<input type="password" class="form-control" name="password-new" id="password-new" required{% if focus_password_new %} autofocus{% endif %}>
 				</div>
 				<div class="form-group">
 					<label for="password-confirm">{% trans "Confirm password" %}</label>

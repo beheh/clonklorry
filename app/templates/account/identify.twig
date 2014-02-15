@@ -6,6 +6,7 @@
 <div class="jumbotron" id="identify">
 	<div class="container">
 		<h1>{{ title }}</h1>
+		{% if password %}
 		<p>{% trans %}Please enter your password to confirm your identity:{% endtrans %}</p>
 		{% include 'functions/alert.twig' with {'selector' : 'identify'} %}
 		<form method="post" class="form-inline" action="{{ filename }}" role="form">
@@ -15,6 +16,10 @@
 			</div>
 			<button type="submit" class="btn btn-primary">{% trans "Confirm" %}</button>
 		</form>
+		{% else %}
+		<p>{% trans %}We would like to verify your identity independent of your login service in future. Please add a secure password to continue.{% endtrans %}</p>
+		<p><a href="{{base}}/settings?add-password#password" class="btn btn-primary">{% trans %}Settings{% endtrans %}</a></p>
+		{% endif %}
 	</div>
 </div>
 

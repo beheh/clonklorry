@@ -113,9 +113,17 @@ abstract class Presenter implements PresenterInterface {
 	 * Offers the
 	 */
 	protected final function offerIdentification() {
-		if(!$this->session->authenticated()) return false;
-		if($this->session->identified()) return false;
-		if(isset($_POST['password'])) $this->error('identify', gettext('Password wrong.'));
+		if(!$this->session->authenticated() || $this->session->identified()) {
+			return;
+		}
+		$user = $this->session->getUser();
+		$this->context['password'] = false;
+		if($user->hasPassword()) {
+			$this->context['password'] = true;
+			if(isset($_POST['password'])) {
+				$this->error('identify', gettext('Password wrong.'));
+			}
+		}
 		$this->display('account/identify.twig');
 		throw new OutputCompleteException;
 	}
