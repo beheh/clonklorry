@@ -6,9 +6,14 @@ $config = array(
 	'callback_transport' => 'session',
 	'security_salt' => '',
 	'Strategy' => array(
+		'Facebook' => array(
+			'app_id' => 'YOUR_APP_ID',
+			'app_secret' => 'YOUR_APP_SECRET',
+			'scope' => 'email'
+		),
 		'Google' => array(
-			'client_id' => '',
-			'client_secret' => '',
+			'client_id' => 'YOUR_CLIENT_ID',
+			'client_secret' => 'YOUR_CLIENT_SECRET',
 			'scope' => 'openid email'
 		)
 	),
