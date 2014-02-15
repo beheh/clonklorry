@@ -27,7 +27,11 @@ abstract class Router {
 	}
 
 	public static function getPath() {
-		return isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
+		$path = filter_input(INPUT_SERVER, 'PATH_INFO');
+		if(!$path) {
+			$path = '/';
+		}
+		return $path;
 	}
 
 	/**
