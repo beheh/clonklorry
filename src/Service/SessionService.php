@@ -44,6 +44,13 @@ class SessionService {
 		return true;
 	}
 
+	public final function refresh() {
+		$this->ensureSession();
+		$this->ensureUser();
+		$this->ensureSecret($this->user);
+		$_SESSION['secret'] = $this->user->getSecret();
+	}
+
 	protected final function authenticate(User $user) {
 		$this->ensureSession();
 		$this->ensureSecret($user);
