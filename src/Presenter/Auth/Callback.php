@@ -34,14 +34,15 @@ class Callback extends Presenter {
 
 		if(array_key_exists('error', $response)) {
 			throw new AuthentificationFailedException('Response contained error field');
-		} else {
-			if(empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
-				throw new AuthentificationFailedException('Missing fields in auth response');
-			} elseif(!$opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
-				throw new AuthentificationFailedException('Invalid auth response: '.$reason);
-			} else {
-				print_r($response);
-			}
+		}
+		if(empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
+			throw new AuthentificationFailedException('Missing fields in auth response');
+		}
+		if(!$opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
+			throw new AuthentificationFailedException('Invalid auth response: '.$reason);
+		}
+		if($this->session->authenticated()) {
+			$this->redirect('/settings');
 		}
 	}
 
