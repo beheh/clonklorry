@@ -16,6 +16,25 @@ class Settings extends Presenter {
 
 		$user = $this->session->getUser();
 
+		if(isset($_GET['update-oauth'])) {
+			switch(filter_input(INPUT_GET, 'update-oauth')) {
+				case 'success':
+					$this->success('oauth', gettext('Connected with login service.'));
+					break;
+				case 'failed':
+					$this->error('oauth', gettext('Authentification with login service failed.'));
+					break;
+			}
+		}
+
+		if(isset($_GET['remove-oauth'])) {
+			$this->security->requireValidState();
+
+			$user->setOauth(filter_input(INPUT_GET, 'remove-oauth'), null);
+			$this->success('oauth', gettext('Removed login service.'));
+			$user->save();
+		}
+
 		$this->context['username'] = $user->getUsername();
 
 		if(!isset($this->context['clonkforge'])) {
@@ -33,18 +52,11 @@ class Settings extends Presenter {
 
 		$this->context['password_exists'] = $user->hasPassword();
 
-
-		if(isset($_GET['update-oauth'])) {
-			switch(filter_input(INPUT_GET, 'update-oauth')) {
-				case 'success':
-				$this->success('oauth', gettext('Authentification successful.'));
-					break;
-				case 'failed':
-					$this->error('oauth', gettext('Authentification failed.'));
-					break;
-			}
+		$oauth = array('openid', 'google', 'facebook');
+		$this->context['oauth'] = array();
+		foreach($oauth as $provider) {
+			$this->context['oauth'][$provider] = $user->hasOauth($provider);
 		}
-
 
 		$this->display('account/settings.twig');
 	}

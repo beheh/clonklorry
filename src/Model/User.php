@@ -4,18 +4,22 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 use Lorry\Exception\ModelValueInvalidException;
+use Exception;
 
 class User extends Model {
 
 	public function __construct() {
 		parent::__construct('user', array(
-			'username' => 'varchar(16)',
-			'secret' => 'varchar(255)',
-			'password' => 'varchar(255)',
-			'email' => 'varchar(255)',
+			'username' => 'string(3,16)',
+			'secret' => 'string(255)',
+			'password' => 'string(255)',
+			'email' => 'string(255)',
 			'clonkforge' => 'int',
 			'github' => 'string',
-			'language' => 'varchar(5)'));
+			'language' => 'string(5,5)',
+			'oauth-openid' => 'string(255)',
+			'oauth-google' => 'string(255)',
+			'oauth-facebook' => 'string(255)'));
 	}
 
 	public function setUsername($username) {
@@ -134,6 +138,51 @@ class User extends Model {
 
 	public final function getGithub() {
 		return $this->getValue('github');
+	}
+
+	public final function hasOauth($provider) {
+		switch($provider) {
+			case 'openid':
+				return $this->getValue('oauth-openid') != null;
+				break;
+			case 'google':
+				return $this->getValue('oauth-google') != null;
+				break;
+			case 'facebook':
+				return $this->getValue('oauth-facebook') != null;
+				break;
+		}
+		throw new Exception('invalid OAuth provider');
+	}
+
+	public final function byOauth($provider, $uid) {
+		switch($provider) {
+			case 'openid':
+				return $this->byValue('oauth-openid', $uid);
+				break;
+			case 'google':
+				return $this->byValue('oauth-google', $uid);
+				break;
+			case 'facebook':
+				return $this->byValue('oauth-facebook', $uid);
+				break;
+		}
+		throw new Exception('invalid OAuth provider');
+	}
+
+	public final function setOauth($provider, $uid) {
+		switch($provider) {
+			case 'openid':
+				return $this->setValue('oauth-openid', $uid);
+				break;
+			case 'google':
+				return $this->setValue('oauth-google', $uid);
+				break;
+			case 'facebook':
+				return $this->setValue('oauth-facebook', $uid);
+				break;
+		}
+		throw new ModelValueInvalidException('not a valid OAuth provider');
 	}
 
 	public final function setLanguage($language) {

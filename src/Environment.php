@@ -79,6 +79,7 @@ class Environment {
 			$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
 			$twig->addGlobal('user_administrator', $user->isAdministrator());
 			$twig->addGlobal('user_moderator', $user->isModerator());
+			$twig->addGlobal('state', $session->getState());
 		}
 
 		$security = new SecurityService();

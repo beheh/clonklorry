@@ -3,6 +3,7 @@
 namespace Lorry\Presenter\Auth;
 
 use Lorry\Presenter;
+use Lorry\ModelFactory;
 use Lorry\Exception\AuthentificationFailedException;
 use Opauth;
 
@@ -12,7 +13,6 @@ class Callback extends Presenter {
 		require '../app/config/opauth.php';
 		$config['Strategy']['Google']['state'] = $this->session->getState();
 		$opauth = new Opauth($config, false);
-		$this->session->clearState();
 
 		$response = null;
 
@@ -50,21 +50,28 @@ class Callback extends Presenter {
 			throw $exception;
 		}
 
+		$provider = strtolower($response['auth']['provider']);
+		$uid = $response['auth']['uid'];
+
 		if($this->session->authenticated()) {
 			// we now trust provider and user
 			$user = $this->session->getUser();
-
-			//$user->setProvider('google', '123123123123');
+			$user->setOauth($provider, $uid);
+			$user->save();
 
 			$this->redirect('/settings?update-oauth=success#oauth');
 		} else {
 			// grab user with openid data fitting
-			//$user = $this->->byOauth('google', '123123123123');
-			$user = false;
+			$user = ModelFactory::build('User')->byOauth($provider, $uid);
 
 			if($user != null) {
+				$this->session->start($user, true);
 				$this->redirect('/');
 			} else {
+				$email = $response['auth']['info']['email'];
+				// save details to session
+				print_r($response);
+				throw new \Lorry\Exception\OutputCompleteException();
 				// none found -> registration?
 				$this->redirect('/register');
 			}

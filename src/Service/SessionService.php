@@ -96,23 +96,26 @@ class SessionService {
 		return $this->user !== false;
 	}
 
-	public final function castState() {
+	protected final function castState() {
 		$state = bin2hex(openssl_random_pseudo_bytes(16));
 		return $state;
 	}
 
-	public final function getState() {
-		if(!isset($_SESSION['state'])) {
-			return false;
+	protected final function ensureState() {
+		$this->ensureSession();
+		if(!isset($_SESSION['state']) || !$_SESSION['state']) {
+			$this->regenerateState();
 		}
+		return true;
+	}
+
+	public final function getState() {
+		$this->ensureState();
 		return $_SESSION['state'];
 	}
 
-	public final function clearState() {
-		unset($_SESSION['state']);
-	}
-
-	public final function generateState() {
+	public final function regenerateState() {
+		$this->ensureSession();
 		$state = $this->castState();
 		$_SESSION['state'] = $state;
 		return $state;
@@ -123,7 +126,6 @@ class SessionService {
 			return false;
 		}
 		$original_state = $_SESSION['state'];
-		$this->clearState();
 		if($state != $original_state) {
 			return false;
 		}

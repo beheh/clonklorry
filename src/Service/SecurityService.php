@@ -46,4 +46,15 @@ class SecurityService {
 		}
 	}
 
+	public function requireValidState() {
+		$this->requireLogin();
+		$state = filter_input(INPUT_GET, 'state');
+		if(!$state) {
+			$state = filter_input(INPUT_POST, 'state');
+		}
+		if(!$this->session->verifyState($state)) {
+			throw new ForbiddenException();
+		}
+	}
+
 }
