@@ -10,6 +10,10 @@ class Settings extends Presenter {
 	public function get() {
 		$this->security->requireLogin();
 
+		if(isset($_GET['oauth'])) {
+			return $this->redirect($this->session->handleOauth());
+		}
+
 		$user = $this->session->getUser();
 
 		$this->context['username'] = $user->getUsername();

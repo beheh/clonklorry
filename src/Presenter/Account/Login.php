@@ -13,6 +13,10 @@ class Login extends Presenter {
 			return;
 		}
 
+		if(isset($_GET['oauth'])) {
+			return $this->redirect($this->session->handleOauth());
+		}
+
 		if(!isset($this->context['remember']) && $this->session->shouldRemember()) {
 			$this->context['remember'] = true;
 		}
