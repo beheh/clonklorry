@@ -7,10 +7,20 @@
 	<div class="page-header">
 		<h1>{{ title }}</h1>
 	</div>
+	{% if users %}
 	<ul>
-{% for user in users %}
+		{% for user in users %}
 		<li><a href="{{filename}}/{{user}}">{{ user }}</a></li>
-{% endfor %}
+		{% endfor %}
 	</ul>
 </div>
+	{% else %}
+</div>
+<div class="jumbotron">
+	<div class="container">
+		<h1>{% trans %}No matching users{% endtrans %}</h1>
+		<p>{% trans %}No user currently matches your filtering critera.{% endtrans %}</p>
+	</div>
+</div>
+	{% endif %}
 {% endblock %}

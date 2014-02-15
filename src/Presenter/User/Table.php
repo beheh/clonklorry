@@ -4,6 +4,7 @@ namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Exception\FileNotFoundException;
 
 class Table extends Presenter {
 
@@ -14,18 +15,22 @@ class Table extends Presenter {
 		$users = ModelFactory::build('User');
 
 		$filter = filter_input(INPUT_GET, 'filter');
-		switch($filter) {
-			case 'bans':
-				$this->security->requireModerator();
-				//@TODO filter bans
-				break;
-			case 'moderators':
-				$this->security->requireAdministrator();
-				//@TODO filter privileges
-				break;
-			default:
-				$users = $users->byAnything();
-				break;
+		if($filter) {
+			switch($filter) {
+				case 'bans':
+					$this->security->requireModerator();
+					//@TODO filter bans
+					break;
+				case 'moderators':
+					$this->security->requireAdministrator();
+					//@TODO filter privileges
+					break;
+				default:
+					throw new FileNotFoundException();
+					break;
+			}
+		} else {
+			$users = $users->byAnything();
 		}
 		foreach($users as $user) {
 			$this->context['users'][] = $user->getUsername();
