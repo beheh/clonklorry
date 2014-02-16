@@ -157,7 +157,7 @@ class SessionService {
 		}
 		if(isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
 			$user = ModelFactory::build('User')->byId($_SESSION['user']);
-			if($user->getSecret() == $_SESSION['secret']) {
+			if($user && $user->getSecret() == $_SESSION['secret']) {
 				$this->user = $user;
 			} else {
 				$this->logout();
