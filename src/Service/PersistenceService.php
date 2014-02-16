@@ -136,7 +136,7 @@ class PersistenceService {
 		if($query->errorCode() !== '00000') {
 			throw new Exception(print_r($query->errorInfo(), true));
 		}
-		return $query->rowCount() == 1;
+		return $this->connection->lastInsertId();
 	}
 
 }

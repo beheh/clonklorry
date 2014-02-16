@@ -266,11 +266,13 @@ abstract class Model implements ModelInterface {
 				return false;
 			}
 		} else {
-			if(!$this->persistence->save($this, $this->changes)) {
+			$id = $this->persistence->save($this, $this->changes);
+			if(!$id) {
 				return false;
 			}
+			$this->changes['id'] = $id;
 		}
-		$this->values = array_merge($this->values, $this->changes);
+		$this->values = array_merge($this->values, $this->changes);;
 		$this->rollback();
 		$this->loaded = true;
 		return true;
