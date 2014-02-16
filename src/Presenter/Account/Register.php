@@ -16,7 +16,20 @@ class Register extends Presenter {
 		if(isset($_GET['oauth'])) {
 			return $this->redirect($this->session->handleOauth());
 		}
+
+		if(isset($_GET['cancel'])) {
+			unset($_SESSION['register_oauth']);
+		}
+
 		$this->context['oauth'] = false;
+		if(isset($_SESSION['register_oauth'])) {
+			$register = $_SESSION['register_oauth'];
+
+			$this->context['email'] = $register['email'];
+			$this->context['provider'] = $register['provider'];
+
+			$this->context['oauth'] = true;
+		}
 
 		$this->display('account/register.twig');
 	}
@@ -32,6 +45,11 @@ class Register extends Presenter {
 
 		$errors = array();
 
+		$oauth = false;
+		if(isset($_SESSION['register_oauth']) && filter_input(INPUT_POST, 'use-oauth')) {
+			$oauth = $_SESSION['register_oauth'];
+		}
+
 		$user = ModelFactory::build('User');
 
 		if(ModelFactory::build('User')->byUsername($username)) {
@@ -45,7 +63,7 @@ class Register extends Presenter {
 		}
 
 		if($email && ModelFactory::build('User')->byEmail($email)) {
-			$errors[] = sprintf(gettext('Email address is %s.'), sprintf('already used'));
+			$errors[] = sprintf(gettext('Email address already used.'));
 		} else {
 			try {
 				$user->setEmail($email);
@@ -54,21 +72,31 @@ class Register extends Presenter {
 			}
 		}
 
-		if($password !== $password_repeat) {
-			$errors[] = gettext('Passwords do not match.');
-		} else {
-			try {
-				$user->setPassword($password);
-			} catch(ModelValueInvalidException $e) {
-				$errors[] = sprintf(gettext('Password is %s.'), $e->getMessage());
+		if(!$oauth) {
+			if($password !== $password_repeat) {
+				$errors[] = gettext('Passwords do not match.');
+			} else {
+				try {
+					$user->setPassword($password);
+				} catch(ModelValueInvalidException $e) {
+					$errors[] = sprintf(gettext('Password is %s.'), $e->getMessage());
+				}
 			}
+		} else {
+			$user->setOauth(strtolower($oauth['provider']), $oauth['uid']);
 		}
 
 		$user->setLanguage($this->localisation->getDisplayLanguage());
 
 		if(empty($errors)) {
 			if($user->save()) {
-				$this->redirect('/login?registered='.urlencode($username));
+				if($oauth) {
+					$this->session->start($user, true);
+					$this->redirect('/');
+					return;
+				} else {
+					$this->redirect('/login?registered='.urlencode($username));
+				}
 			} else {
 				$this->error('register', gettext('There was an error registering.'));
 			}

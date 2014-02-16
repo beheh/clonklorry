@@ -13,6 +13,7 @@ class Callback extends Presenter {
 		require '../app/config/opauth.php';
 		$config['Strategy']['Google']['state'] = $this->session->getState();
 		$opauth = new Opauth($config, false);
+		unset($_SESSION['register_oauth']);
 
 		$response = null;
 
@@ -50,30 +51,34 @@ class Callback extends Presenter {
 			throw $exception;
 		}
 
-		$provider = strtolower($response['auth']['provider']);
+		$provider = $response['auth']['provider'];
 		$uid = $response['auth']['uid'];
 
 		if($this->session->authenticated()) {
 			// we now trust provider and user
 			$user = $this->session->getUser();
-			$user->setOauth($provider, $uid);
+			$user->setOauth(strtolower($provider), $uid);
 			$user->save();
 
 			$this->redirect('/settings?update-oauth=success#oauth');
 		} else {
 			// grab user with openid data fitting
-			$user = ModelFactory::build('User')->byOauth($provider, $uid);
+			$user = ModelFactory::build('User')->byOauth(strtolower($provider), $uid);
+			$email = $response['auth']['info']['email'];
 
 			if($user != null) {
 				$this->session->start($user, true);
 				$this->redirect('/#');
 			} else {
-				$email = $response['auth']['info']['email'];
-				// save details to session
-				print_r($response);
-				throw new \Lorry\Exception\OutputCompleteException();
-				// none found -> registration?
-				$this->redirect('/register');
+				$user = ModelFactory::build('User')->byEmail($email);
+				if($user != null) {
+					$this->redirect('/login?unknown-oauth#');
+					return;
+				}
+
+				// if no user matches register new user
+				$_SESSION['register_oauth'] = array('provider' => $provider, 'uid' => $uid, 'email' => $email);
+				$this->redirect('/register#');
 			}
 		}
 	}

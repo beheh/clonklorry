@@ -30,6 +30,10 @@ class Login extends Presenter {
 			}
 			$this->success('login', gettext('Registration successful!'));
 		}
+		if(isset($_GET['unknown-oauth'])) {
+			$this->warning('login', gettext('Sign in to link this login service to your account.'));
+		}
+
 
 		$this->display('account/login.twig');
 	}

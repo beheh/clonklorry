@@ -26,9 +26,16 @@
 				<div class="form-group">
 					<label for="password-repeat">{% trans "Confirm password" %}</label>
 					<input type="password" class="form-control" name="password-repeat" id="password-repeat" placeholder="{% trans "Confirm password" %}" title="{% trans %}Please repeat your password to ensure you have spellt it correctly.{% endtrans %}" required>
-				</div>{% endif %}
+				</div>
+				{% else %}
+				<input type="hidden" name="use-oauth" value="1">
+				{% endif %}
 				<button class="btn btn-large btn-success" type="submit">{% trans "Register" %}</button>
-				{% if not oauth %}<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>{% endif %}
+				{% if oauth %}
+				<a href="{{base}}/register?cancel" class="btn btn-default">{% trans "Cancel" %}</a>
+				{% else %}
+				<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>
+				{% endif %}
 			</form>
 			<hr>
 			<div class="social">
@@ -36,7 +43,6 @@
 				<h4>{% trans %}Alternatively use a login service:{% endtrans %}</h4>
 				{% include 'functions/oauth.twig' %}
 			{% else %}
-				{% set provider = 'Google'%}
 				<h4>{% trans %}{{provider}} authentification successful	{% endtrans %}</h4>
 				<p>{% trans %}You can log in using {{provider}} in future. {% endtrans %}</p>
 			{% endif %}
