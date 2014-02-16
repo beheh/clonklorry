@@ -106,6 +106,7 @@ class Environment {
 			'/publish/:alpha/:alpha/:version' => 'Publish\Release',
 			'/users' => 'User\Table',
 			'/users/:alpha' => 'User\Profile',
+			'/users/:alpha/edit' => 'User\Edit',
 			'/admin' => 'Manage\Administration',
 			'/moderate' => 'Manage\Moderation',
 			'/register' => 'Account\Register',

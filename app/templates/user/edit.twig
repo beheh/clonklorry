@@ -1,0 +1,75 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }} <a href="{{base}}/users/{{username}}"><small>{{username}}</small></a></h1>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<h2>{% trans "Account" %}</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<form role=form" method="post" action="{{filename}}?change-appearance">
+						<div class="form-group">
+							<div class="form-group">
+								<label for="username">{% trans "Username" %}</label>
+								<input type="text" class="form-control" name="username" id="username" value="{{username}}" required>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-default">{% trans "Change username" %}</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+					<form role=form" method="post" action="{{filename}}?change-contact">
+						<div class="form-group">
+							<label for="email">{% trans "Email address" %}</label>
+							<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		{% if not self %}
+		<div class="col-md-4">
+			<h2 id="security">{% trans "Support" %}</h2>
+			<p><a href="" class="btn btn-default">Reset password</a> <a href="" class="btn btn-default">Reset login services</a></p>
+			<p><a href="" class="btn btn-danger">Remove account</a></p>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+
+$(document).ready(function() {
+$('#form-password input').each(function() {
+$(this).addClass('noerror')
+var require = function() {$(this).removeClass('noerror');};
+$(this).keypress(require);
+$(this).blur(require);
+});
+
+$('#language-setting').change(function() {
+$(this).closest('form').submit();
+});
+
+$('#remove-confirm').prop('checked', false);
+
+$('#remove-confirm').change(function() {
+if($(this).prop('checked')) {
+$('#remove-button').prop('disabled', false);
+} else {
+$('#remove-button').prop('disabled', true);
+}
+});
+});
+{% endblock %}
