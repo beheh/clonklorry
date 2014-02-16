@@ -8,10 +8,7 @@ use Lorry\Service\PersistenceService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Lorry\Service\StyleService;
-use Lorry\Exception\FileNotFoundException;
-use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\NotImplementedException;
-use Lorry\Exception\OutputCompleteException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
 use Exception as PHPException;
@@ -64,6 +61,7 @@ class Environment {
 
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
 		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
+		$twig->addGlobal('component', htmlspecialchars($config->get('base')).'/components/lorry');
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 

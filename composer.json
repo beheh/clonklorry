@@ -3,11 +3,11 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/beheh/openid"
+      "url": "git@github.com:beheh/openid.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/beheh/google"
+      "url": "git@github.com:beheh/google.git"
     }
   ],
   "require": {
@@ -16,11 +16,16 @@
     "leafo/lessphp": "*",
     "opauth/openid": "dev-beheh",
     "opauth/facebook": "*",
-    "opauth/google": "dev-beheh"
+    "opauth/google": "dev-beheh",
+    "components/jquery": "2.*",
+    "components/bootstrap": "3.*"
   },
   "autoload": {
     "psr-4": {
       "Lorry\\": "src/"
     }
+  },
+  "config": {
+    "component-dir": "web/components"
   }
 }

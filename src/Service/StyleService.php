@@ -19,14 +19,14 @@ class StyleService {
 	public function compile() {
 		$lessc = new lessc();
 		if($this->config->get('debug')) {
-			$lessc->checkedCompile('../app/style/lorry.less', '../web/css/lorry.css');
+			$lessc->checkedCompile('../app/style/lorry.less', '../web/components/lorry/css/lorry.css');
 		} else {
 			if(file_exists('../web/css/lorry.css')) {
 				unlink('../web/css/lorry.css');
 			}
 		}
 		$lessc->setFormatter('compressed');
-		$lessc->checkedCompile('../app/style/lorry.less', '../web/css/lorry.min.css');
+		$lessc->checkedCompile('../app/style/lorry.less', '../web/components/lorry/css/lorry.min.css');
 	}
 
 }
