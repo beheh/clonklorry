@@ -1,27 +1,26 @@
 {
-	"type": "project",
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/beheh/openid"
-		},
-		{
-			"type": "vcs",
-			"url": "https://github.com/beheh/google"
-		}
-	],
-	"require": {
-		"twig/twig": "1.*",
-		"twig/extensions": "1.*",
-		"leafo/lessphp": "*",
-		"ircmaxell/password-compat": "*",
-		"opauth/openid": "dev-beheh",
-		"opauth/facebook": "*",
-		"opauth/google": "dev-beheh"
-	},
-	"autoload": {
-		"psr-4": {
-			"Lorry\\": "src/"
-		}
-	}
+  "type": "project",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/beheh/openid"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/beheh/google"
+    }
+  ],
+  "require": {
+    "twig/twig": "1.*",
+    "twig/extensions": "1.*",
+    "leafo/lessphp": "*",
+    "opauth/openid": "dev-beheh",
+    "opauth/facebook": "*",
+    "opauth/google": "dev-beheh"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lorry\\": "src/"
+    }
+  }
 }

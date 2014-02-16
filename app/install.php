@@ -3,7 +3,7 @@
 $fail = false;
 
 echo 'checking php version... ';
-if(version_compare(PHP_VERSION, '5.3.0', '>')) {
+if(version_compare(PHP_VERSION, '5.5.0', '>')) {
 	echo 'compatible';
 } else {
 	$fail = true;
