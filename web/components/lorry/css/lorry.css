@@ -1,0 +1,80 @@
+body {
+  background-image: url('../img/debut_light.png');
+  min-height: 100%;
+}
+a.text {
+  color: inherit;
+}
+.carousel-caption h3 {
+  font-size: 1.2em;
+}
+#mainnav {
+  margin-bottom: 0px;
+}
+.container#front {
+  margin-top: 40px;
+}
+#front .carousel {
+  height: 417px;
+}
+footer {
+  margin-top: 20px;
+}
+footer span,
+footer span a {
+  display: inline;
+}
+#site-notice {
+  padding: 15px;
+  margin-bottom: 0px;
+}
+.jumbotron {
+  padding: 30px 0 50px 0;
+}
+.jumbotron h1 {
+  font-size: 30px;
+  line-height: 1.1;
+}
+#identify.jumbotron {
+  margin-top: 40px;
+  padding: 25px 0 50px 0;
+}
+#identify .alert {
+  font-size: 0.8em;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+}
+.head img {
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+}
+.jumbo-image {
+  margin-top: 20px;
+}
+.head:hover img {
+  -webkit-transform: rotateY(360deg);
+}
+dt {
+  margin-top: 8px;
+}
+/* IE fixes */
+@-webkit-viewport {
+  width: device-width;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}

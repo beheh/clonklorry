@@ -13,7 +13,6 @@
   "require": {
     "twig/twig": "1.*",
     "twig/extensions": "1.*",
-    "leafo/lessphp": "*",
     "opauth/openid": "dev-beheh",
     "opauth/facebook": "*",
     "opauth/google": "dev-beheh",

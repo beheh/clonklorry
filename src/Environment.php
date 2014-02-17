@@ -7,7 +7,6 @@ use Lorry\Service\LocalisationService;
 use Lorry\Service\PersistenceService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
-use Lorry\Service\StyleService;
 use Lorry\Exception\NotImplementedException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
@@ -128,11 +127,6 @@ class Environment {
 
 		// determine the RESTful method
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
-
-		// recompile style if necessary
-		$style = new StyleService();
-		$style->setConfigService($config);
-		$style->compile();
 
 		try {
 			// determine the controller
