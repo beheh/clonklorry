@@ -70,6 +70,7 @@ class Settings extends Presenter {
 
 	public function post() {
 		$this->security->requireLogin();
+		$this->security->requireValidState();
 
 		$user = $this->session->getUser();
 
