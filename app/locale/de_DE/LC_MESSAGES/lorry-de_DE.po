@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2014-02-16 11:29+0100\n"
-"PO-Revision-Date: 2014-02-16 11:30+0100\n"
+"PO-Revision-Date: 2014-02-17 22:12+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1418,7 +1418,7 @@ msgstr "Neue Erweiterung anlegen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:47
 msgid "This is the publishing portal"
-msgstr "Dies ist das Veröffentlichungsportalt"
+msgstr "Dies ist das Veröffentlichungsportal"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:51
 msgid ""
