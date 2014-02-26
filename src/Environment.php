@@ -60,7 +60,7 @@ class Environment {
 
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
 		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
-		$twig->addGlobal('component', htmlspecialchars($config->get('base')).'/components/lorry');
+		$twig->addGlobal('resources', htmlspecialchars($config->get('base').'/resources'));
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 
@@ -110,13 +110,13 @@ class Environment {
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',
 			'/settings' => 'Account\Settings',
-			'/auth/gateway/openid' => 'Auth\Gateway',
-			'/auth/gateway/openid' => 'Auth\Gateway',
-			'/auth/gateway/facebook' => 'Auth\Gateway',
-			'/auth/gateway/facebook/int_callback' => 'Auth\Gateway',
-			'/auth/gateway/google' => 'Auth\Gateway',
-			'/auth/gateway/google/oauth2callback' => 'Auth\Gateway',
-			'/auth/callback' => 'Auth\Callback',
+//			'/auth/gateway/openid' => 'Auth\Gateway',
+//			'/auth/gateway/openid' => 'Auth\Gateway',
+//			'/auth/gateway/facebook' => 'Auth\Gateway',
+//			'/auth/gateway/facebook/int_callback' => 'Auth\Gateway',
+//			'/auth/gateway/google' => 'Auth\Gateway',
+//			'/auth/gateway/google/oauth2callback' => 'Auth\Gateway',
+//			'/auth/callback' => 'Auth\Callback',
 			'/about' => 'Site\About',
 			'/clonk' => 'Site\Clonk',
 			'/community' => 'Site\Community',

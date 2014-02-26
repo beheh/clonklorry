@@ -10,8 +10,3 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 
 ErrorDocument 403 error/forbidden
 ErrorDocument 404 error/notfound
-
-<Files ~ ".gitignore$">
-	Order allow,deny
-	Deny from all
-</Files>

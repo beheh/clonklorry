@@ -12,12 +12,7 @@
   ],
   "require": {
     "twig/twig": "1.*",
-    "twig/extensions": "1.*",
-    "opauth/openid": "dev-beheh",
-    "opauth/facebook": "*",
-    "opauth/google": "dev-beheh",
-    "components/jquery": "2.*",
-    "components/bootstrap": "3.*"
+    "twig/extensions": "1.*"
   },
   "autoload": {
     "psr-4": {
