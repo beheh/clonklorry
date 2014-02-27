@@ -8,11 +8,18 @@
 		<h1>{{ title }}</h1>
 	</div>
 	{% if users %}
-	<ul>
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr><th>{% trans "Username" %}</th></tr>
+			</thead>
+			<tbody>
 		{% for user in users %}
-		<li><a href="{{filename}}/{{user}}">{{ user }}</a></li>
+			<tr><td><a href="{{filename}}/{{user}}"><strong>{{ user }}</strong></a></td></tr>
 		{% endfor %}
-	</ul>
+			</tbody>
+		</table>
+	</div>
 </div>
 	{% else %}
 </div>
