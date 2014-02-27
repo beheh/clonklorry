@@ -149,6 +149,10 @@ fieldset[disabled] .btn-facebook.active {
   color: #3b5998;
   background-color: #ffffff;
 }
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+}
 /* IE fixes */
 @-webkit-viewport {
   width: device-width;

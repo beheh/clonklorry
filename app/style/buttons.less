@@ -1,9 +1,11 @@
+@import 'bootstrap/mixins.less';
+
 @btn-google-color: #fff;
 @btn-google-bg: #dd4b39;
 @btn-google-border: darken(@btn-google-bg, 5%);
 
 .btn-google {
-  .button-variant(@btn-google-color; @btn-google-bg; @btn-google-border);
+	.button-variant(@btn-google-color; @btn-google-bg; @btn-google-border);
 }
 
 @btn-facebook-color: #fff;
@@ -11,5 +13,9 @@
 @btn-facebook-border: darken(@btn-facebook-bg, 5%);
 
 .btn-facebook {
-  .button-variant(@btn-facebook-color; @btn-facebook-bg; @btn-facebook-border);
+	.button-variant(@btn-facebook-color; @btn-facebook-bg; @btn-facebook-border);
+}
+
+.btn:active:focus, .btn.active:focus {
+	outline: none;
 }
