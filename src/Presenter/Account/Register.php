@@ -27,6 +27,7 @@ class Register extends Presenter {
 
 			$this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
+			$this->context['username_focus'] = true;
 
 			$this->context['oauth'] = true;
 		}
@@ -54,6 +55,7 @@ class Register extends Presenter {
 
 		if(ModelFactory::build('User')->byUsername($username)) {
 			$errors[] = gettext('Username already taken.');
+			$this->context['username_focus'] = true;
 		} else {
 			try {
 				$user->setUsername($username);

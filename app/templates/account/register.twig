@@ -13,7 +13,7 @@
 			<form id="form-register" action="{{filename}}" method="post" role="form">
 				<div class="form-group">
 					<label for="username">{% trans "Username" %}</label>
-					<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z0-9_]+" data-content="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 characters long.{% endtrans %}" {% if username %} value="{{username}}" {% endif %}maxlength="16" {% if username_invalid %}autofocus {% endif %}required>
+					<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z0-9_]+" data-content="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 characters long.{% endtrans %}" {% if username %} value="{{username}}" {% endif %}maxlength="16" {% if username_focus %}autofocus {% endif %}required>
 				</div>
 				<div class="form-group">
 					<label for="email">{% trans "Email address" %}</label>
@@ -73,13 +73,13 @@
 {{ parent() }}
 
 $(document).ready(function() {
-	var options = {placement:'top', trigger:'focus', container: '#form-register'};
-	$('#form-register input').each(function() {
-		$(this).popover(options);
-		if($('#username').attr('autofocus')) {
-			// trigger the focus event for the tooltip
-			$('#username').focus();
-		}
-	});
+var options = {placement:'top', trigger:'focus', container: '#form-register'};
+$('#form-register input').each(function() {
+$(this).popover(options);
+if($('#username').attr('autofocus')) {
+// trigger the focus event for the tooltip
+$('#username').focus();
+}
+});
 });
 {% endblock %}
