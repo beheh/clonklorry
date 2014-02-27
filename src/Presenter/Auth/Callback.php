@@ -7,8 +7,8 @@ use Lorry\ModelFactory;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
 use LightOpenID;
-use OAuth2\Client\Provider\Google;
-use OAuth2\Client\Provider\Facebook;
+use League\OAuth2\Client\Provider\Google;
+use League\OAuth2\Client\Provider\Facebook;
 
 class Callback extends Presenter {
 

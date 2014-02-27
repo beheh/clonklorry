@@ -7,8 +7,8 @@ use Lorry\Presenter;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
 use LightOpenID;
-use OAuth2\Client\Provider\Google;
-use OAuth2\Client\Provider\Facebook;
+use League\OAuth2\Client\Provider\Google;
+use League\OAuth2\Client\Provider\Facebook;
 
 class Gateway extends Presenter {
 
@@ -25,7 +25,7 @@ class Gateway extends Presenter {
 					$openid->realm = $this->config->get('base');
 					$openid->required = array('contact/email');
 					$openid->optional = array('namePerson/friendly');
-					$openid->returnUrl = $this->config->get('base') . '/auth/callback/openid';
+					$openid->returnUrl = $this->config->get('base').'/auth/callback/openid';
 					$this->redirect($openid->authUrl(), true);
 				} catch(ErrorException $ex) {
 					throw new AuthentificationFailedException();
@@ -38,7 +38,11 @@ class Gateway extends Presenter {
 					'redirectUri' => $this->config->get('base').'/auth/callback/google'
 				));
 				$google->scopes = array('profile', 'email');
-				$google->authorize();
+				$custom = '';
+				if($login_hint) {
+					$custom .= '&login_hint='.$login_hint;
+				}
+				return $this->redirect($google->getAuthorizationUrl().$custom, true);
 				break;
 			case 'facebook':
 				$facebook = new Facebook(array(
