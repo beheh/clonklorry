@@ -139,6 +139,8 @@ class Environment {
 			if(PresenterFactory::valid($presenter)) {
 				return PresenterFactory::build($exception->getPresenter())->get($exception);
 			}
+		} catch(\Exception $exception) {
+			return PresenterFactory::build('Error')->get($exception);
 		}
 	}
 
