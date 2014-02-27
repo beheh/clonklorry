@@ -43,7 +43,7 @@ class Callback extends Presenter {
 					$oauth_provider = new Google(array(
 						'clientId' => $this->config->get('oauth/google-id'),
 						'clientSecret' => $this->config->get('oauth/google-secret'),
-						'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/google'
+						'redirectUri' => $this->config->get('base').'/auth/callback/google'
 					));
 					break;
 				case 'facebook':
@@ -51,7 +51,7 @@ class Callback extends Presenter {
 					$oauth_provider = new Facebook(array(
 						'clientId' => $this->config->get('oauth/facebook-id'),
 						'clientSecret' => $this->config->get('oauth/facebook-secret'),
-						'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/facebook'
+						'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
 					));
 					break;
 				default:

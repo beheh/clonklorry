@@ -35,7 +35,7 @@ class Gateway extends Presenter {
 				$google = new Google(array(
 					'clientId' => $this->config->get('oauth/google-id'),
 					'clientSecret' => $this->config->get('oauth/google-secret'),
-					'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/google'
+					'redirectUri' => $this->config->get('base').'/auth/callback/google'
 				));
 				$google->scopes = array('profile', 'email');
 				$google->authorize();
@@ -44,7 +44,7 @@ class Gateway extends Presenter {
 				$facebook = new Facebook(array(
 					'clientId' => $this->config->get('oauth/facebook-id'),
 					'clientSecret' => $this->config->get('oauth/facebook-secret'),
-					'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/facebook'
+					'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
 				));
 				$facebook->scopes = array('basic_info', 'email');
 				$facebook->authorize();
