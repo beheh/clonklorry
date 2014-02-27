@@ -62,7 +62,11 @@ class Callback extends Presenter {
 			if($oauth_provider) {
 				if(isset($_GET['error'])) {
 					if($_GET['error'] == 'access_denied') {
-						return $this->redirect('/register');
+						if($this->session->authenticated()) {
+							return $this->redirect('/settings#oauth');
+						} else {
+							return $this->redirect('/register');
+						}
 					}
 					throw new AuthentificationFailedException($_GET['error']);
 				}
