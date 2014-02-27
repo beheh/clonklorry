@@ -1,0 +1,13 @@
+{% extends 'email/base.twig' %}
+
+{% block content %}
+You requested your email address to be changed to .
+
+In order to fully use your account you need to activate this new email address.
+Please visit {{url}} to activate your address.
+
+If this should not work, please enter the following code at {{manual_url}}:
+
+{{code}}
+
+{% endblock %}

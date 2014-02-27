@@ -109,6 +109,7 @@ class Environment {
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',
 			'/settings' => 'Account\Settings',
+			'/activate' => 'Account\Activate',
 			'/auth/gateway/:alpha' => 'Auth\Gateway',
 			'/auth/callback/:alpha' => 'Auth\Callback',
 			'/about' => 'Site\About',

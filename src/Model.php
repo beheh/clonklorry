@@ -242,10 +242,7 @@ abstract class Model implements ModelInterface {
 	 * @return boolean True, if unsaved changes are present.
 	 */
 	public final function modified() {
-		if(!empty($this->changes)) {
-			return true;
-		}
-		return false;
+		return !empty($this->changes);
 	}
 
 	/**

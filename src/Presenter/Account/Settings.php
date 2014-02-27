@@ -52,6 +52,7 @@ class Settings extends Presenter {
 		$this->context['github_placeholder'] = $user->getUsername();
 
 		$this->context['email'] = $user->getEmail();
+		$this->context['activated'] = $user->isActivated();
 		$this->context['language'] = $this->localisation->getDisplayLanguage();
 
 		$this->context['password_exists'] = $user->hasPassword();
@@ -113,9 +114,9 @@ class Settings extends Presenter {
 				$errors[] = sprintf(gettext('Email address is %s.'), gettext('invalid'));
 			}
 
-			if(empty($errors)) {
+			if($user->modified() && empty($errors)) {
 				$user->save();
-				$this->success('contact', gettext('Contact details have been changed.'));
+				$this->warning('contact', gettext('Contact details have been changed. We sent you an email for you to confirm the new address.'));
 			} else {
 				$this->error('contact', implode('<br>', $errors));
 			}

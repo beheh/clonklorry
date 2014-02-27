@@ -14,6 +14,7 @@ class User extends Model {
 			'secret' => 'string(255)',
 			'password' => 'string(255)',
 			'email' => 'string(255)',
+			'activated' => 'boolean',
 			'clonkforge' => 'int',
 			'github' => 'string',
 			'language' => 'string(5,5)',
@@ -50,13 +51,20 @@ class User extends Model {
 	}
 
 	public final function matchPassword($password) {
-		if(empty($password)) return false;
+		if(empty($password))
+			return false;
 		return password_verify($password, $this->getValue('password')) === true;
 	}
 
 	public function setEmail($email) {
 		$this->validateEmail($email);
-		return $this->setValue('email', $email);
+		if($this->setValue('email', $email)) {
+			if(!$this->modified()) {
+				return true;
+			}
+			return $this->setValue('activated', false);
+		}
+		return false;
 	}
 
 	public function getEmail() {
@@ -65,6 +73,14 @@ class User extends Model {
 
 	public final function byEmail($email) {
 		return $this->byValue('email', $email);
+	}
+
+	public final function isActivated() {
+		return $this->getValue('activated');
+	}
+
+	public final function activate() {
+		return $this->setValue('activated', true);
 	}
 
 	public final function regenerateSecret() {
@@ -77,7 +93,8 @@ class User extends Model {
 	}
 
 	public final function matchSecret($secret) {
-		if(empty($secret)) return false;
+		if(empty($secret))
+			return false;
 		return $this->match('secret', $secret);
 	}
 

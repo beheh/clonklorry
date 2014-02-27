@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-02-16 11:29+0100\n"
-"PO-Revision-Date: 2014-02-17 22:12+0100\n"
+"POT-Creation-Date: 2014-02-27 20:50+0100\n"
+"PO-Revision-Date: 2014-02-27 20:50+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,50 +16,50 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/benedict/public_html/lorry/app/cache\n"
 "X-Poedit-SearchPath-1: /home/benedict/NetBeansProjects/Lorry/src\n"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Environment.php:72
+#: /home/benedict/NetBeansProjects/Lorry/src/Environment.php:68
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:294
+#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:291
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:297
+#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:294
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:310
+#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:307
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:318
+#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:315
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:324
+#: /home/benedict/NetBeansProjects/Lorry/src/Model.php:321
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:97
+#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:114
 #, fuzzy
 msgid "not a matching Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:103
+#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:120
 msgid "not a valid Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:111
+#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:128
 msgid "not a valid Clonk Forge profile id"
 msgstr "keine gültige ClonkForge Profil-ID"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:133
+#: /home/benedict/NetBeansProjects/Lorry/src/Model/User.php:150
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter.php:124
 #: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Login.php:78
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:158
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:160
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -79,45 +79,45 @@ msgstr "E-Mail-Adresse unbekannt."
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:52
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:57
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:57
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:63
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:62
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:68
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:67
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:112
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:73
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:114
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:67
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:85
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:95
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:112
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:73
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:87
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:97
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:114
 msgid "invalid"
 msgstr "ungültig"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:73
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:154
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:79
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:156
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:78
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:150
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:84
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:152
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:97
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Register.php:103
 msgid "There was an error registering."
 msgstr "Fehler bei der Registrierung."
 
@@ -137,33 +137,37 @@ msgstr "Anmeldedienst entfernt."
 msgid "Can't remove last login service."
 msgstr "Kann letzten Anmeldedienst nicht entfernen."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:85
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:87
 #, fuzzy, php-format
 msgid "Clonk Forge profile url is %s."
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:95
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:97
 #, fuzzy, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name"
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:101
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:103
 msgid "Your linked profiles were changed."
 msgstr "Deine verknüpften Profile wurden geändert."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:117
-msgid "Contact details have been changed."
-msgstr "Kontaktdaten wurden geändert."
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:119
+msgid ""
+"Contact details have been changed. We sent you an email for you to confirm "
+"the new address."
+msgstr ""
+"Kontaktdaten geändert. Wir haben dir eine E-Mail gesendet, um die neue "
+"Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:145
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:147
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:147
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:149
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:166
+#: /home/benedict/NetBeansProjects/Lorry/src/Presenter/Account/Settings.php:168
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -315,133 +319,6 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:26
-#, fuzzy
-msgid "Edit release"
-msgstr "Diesen Release bearbeiten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:65
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:130
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:215
-msgid "Version"
-msgstr "Version"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:77
-#, fuzzy
-msgid "Addon description"
-msgstr "Diese Erweiterung hat keine Beschreibung."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:93
-#, fuzzy
-msgid "Release description"
-msgstr "Beschreibung"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:106
-msgid "Change presentation"
-msgstr "Präsentation ändern"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:116
-msgid "Status"
-msgstr "Status"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:118
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:179
-msgid "Release"
-msgstr "Release"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:143
-msgid ""
-"We would like to check the quality of this addon before it goes public to "
-"keep the quality of content high."
-msgstr ""
-"Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
-"Gesamtqualität hoch zu halten."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:147
-msgid ""
-"If you want, we can release this version for you as soon as we approve it."
-msgstr ""
-"Falls du möchtest, können wir diese Version für dich veröffentlichen sobald "
-"wir sie überprüft haben."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:151
-msgid ""
-"Otherwise you will be able to release whenever you want after this version "
-"is approved."
-msgstr ""
-"Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
-"überprüft wurde."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:156
-msgid "Release immediately"
-msgstr "Sofort veröffentlichen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:161
-#, fuzzy
-msgid "Request approval"
-msgstr "Erwartet Freigabe"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:184
-msgid ""
-"If you would like to get your newest creation to the community as soon as "
-"possible you can instantly release your latest version."
-msgstr ""
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:188
-msgid "All downloads will immediately redirect to your uploaded version."
-msgstr "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:192
-msgid ""
-"Publishing a release is final. Any changes after releasing require a new "
-"release."
-msgstr ""
-"Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
-"erfordert einen neuen Release."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:196
-msgid "Your release will be instantly available to all players."
-msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:202
-msgid "Confirm release"
-msgstr "Veröffentlichung bestätigen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:207
-msgid "Release now"
-msgstr "Jetzt veröffentlichen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:216
-msgid "Scheduled release"
-msgstr "Geplanter Release"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:221
-msgid "Date and time"
-msgstr "Datum und Zeit"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:233
-msgid "Make release date and time public"
-msgstr "Releasedatum und -zeit veröffentlichen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:239
-msgid ""
-"You can cancel a scheduled release at any time before the automated release."
-msgstr ""
-"Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
-"Veröffentlichung abbrechen."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:243
-msgid ""
-"Your release will be automatically made vailabe to all players at the "
-"specified timestamp."
-msgstr ""
-"Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
-"verfügbar gemacht."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:247
-msgid "Schedule Release"
-msgstr "Veröffentlichung planen"
-
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:26
 msgid "Identification required"
 msgstr "Identifikation erforderlich"
@@ -452,7 +329,7 @@ msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:57
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:61
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:236
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:272
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:71
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:75
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:96
@@ -461,7 +338,7 @@ msgid "Password"
 msgstr "Passwort"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:66
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:90
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:100
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:50
 msgid "Confirm"
 msgstr "Bestätigen"
@@ -482,66 +359,71 @@ msgstr "Einstellungen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:26
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:176
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:164
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:241
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:165
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:242
 msgid "Edit addon"
 msgstr "Erweiterung bearbeiten"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:53
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:121
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:54
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:122
 msgid "Addon"
 msgstr "Erweiterung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:57
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:58
 msgid "Details"
 msgstr "Details"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:66
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:67
 msgid "Title"
 msgstr "Titel"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:78
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:79
 #, fuzzy
 msgid "Short"
 msgstr "zu kurz"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:92
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:93
 msgid "Abbreviation (if any)"
 msgstr "Abkürzung (falls vorhanden)"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:105
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:106
 msgid "Change details"
 msgstr "Details ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:112
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:113
 msgid "Dependencies"
 msgstr "Abhängigkeiten"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:136
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:131
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:215
+msgid "Version"
+msgstr "Version"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:137
 msgid "Select an addon&hellip;"
 msgstr "Wähle eine Erweiterung&hellip;"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:145
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:146
 msgid "Add dependency"
 msgstr "Abhängigkeit hinzufügen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:155
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:156
 msgid "Presentation"
 msgstr "Präsentation"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:159
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:160
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:172
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:173
 msgid "Change summary"
 msgstr "Zusammenfassung ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:179
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:180
 msgid "Description"
 msgstr "Beschreibung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:192
+#: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:193
 msgid "Change description"
 msgstr "Beschreibung ändern"
 
@@ -568,7 +450,7 @@ msgid "You have not created a release yet."
 msgstr "Du hast noch keine neue Erweiterung erstellt."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/2d/a9/c1cd5e1813c232e88b23f3561aeab642cd23d87d2b6fa5be0fd54c3cecfe.php:25
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:194
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:192
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:196
 msgid "About Lorry"
 msgstr "Über Lorry"
@@ -700,8 +582,7 @@ msgstr "Profil"
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:58
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:61
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:54
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:52
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:56
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:53
@@ -709,37 +590,35 @@ msgstr "Erscheinungsbild"
 msgid "Username"
 msgstr "Benutzername"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:68
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:64
 msgid "Contact us to change your username."
 msgstr "Kontaktiere uns zur Änderung des Nutzernamens."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:74
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:69
 msgid "Linked profiles"
 msgstr "Verknüpfte Profile"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:86
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:85
 msgid "Clonk Forge profile"
 msgstr "Clonk Forge-Profil"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:98
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:97
 msgid "GitHub name"
 msgstr "GitHub-Name"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:110
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:109
 msgid "Change linked profiles"
 msgstr "Verknüpfte Profile ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:118
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:49
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:117
 msgid "Account"
 msgstr "Konto"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:122
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:121
 msgid "Contact details"
 msgstr "Kontaktdaten"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:134
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:88
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:137
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:130
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:140
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:75
@@ -747,96 +626,107 @@ msgstr "Kontaktdaten"
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:148
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:102
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:154
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:154
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:160
+msgid "Change email address"
+msgstr "E-Mail-Adresse ändern"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:164
+msgid "No confirmation email?"
+msgstr "Keine Bestätigungsmail?"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:176
+msgid "You need to confirm your email address."
+msgstr "Deine E-Mail-Adresse muss bestätigt werden."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:182
 msgid "Language"
 msgstr "Sprache"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:163
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:195
 msgid "View site in"
 msgstr "Betrachte Seite auf"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:172
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:204
 msgid "English"
 msgstr "Englisch"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:180
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:212
 msgid "German"
 msgstr "Deutsch"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:188
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:220
 msgid "Change language"
 msgstr "Sprache ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:195
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:227
 msgid "Remove account"
 msgstr "Konto entfernen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:199
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:231
 msgid "Would you like to remove your account?"
 msgstr "Möchtest du dein Konto entfernen?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:209
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:245
 msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:211
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:247
 msgid "You will permanently loose control of all your uploaded addons."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine hochgeladenen Erweiterungen "
 "verlieren."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:217
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:253
 msgid "I have read and understood the warning."
 msgstr "Ich habe den Hinweis gelesen und verstanden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:222
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:258
 msgid "Permanently remove account"
 msgstr "Konto permanent entfernen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:231
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:267
 msgid "Security"
 msgstr "Sicherheit"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:252
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:292
 msgid "Old password"
 msgstr "Altes Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:267
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:307
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:279
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:319
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:108
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:112
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:287
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:327
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:289
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:329
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:296
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:336
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:303
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:343
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:312
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:356
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:318
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:362
 msgid "Login services"
 msgstr "Anmeldedienste"
 
@@ -846,18 +736,18 @@ msgstr "Anmeldedienste"
 msgid "OpenID"
 msgstr "OpenID"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:48
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:49
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:26
 msgid "Google"
 msgstr "Google"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:64
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:66
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:30
 msgid "Facebook"
 msgstr "Facebook"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:81
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:85
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:91
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:95
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:41
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:45
 msgid "OpenID url"
@@ -865,35 +755,27 @@ msgstr "OpenID-URL"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/4b/11/dc682df005ae1259ba536ba624db6b2020296a747b99cb5beaafeba6eeca.php:25
 #: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:48
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:54
 msgid "Users"
 msgstr "Benutzer"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4b/11/dc682df005ae1259ba536ba624db6b2020296a747b99cb5beaafeba6eeca.php:74
-msgid "No matching users"
-msgstr "Keine passenden Benutzer"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/4b/11/dc682df005ae1259ba536ba624db6b2020296a747b99cb5beaafeba6eeca.php:78
-msgid "No user currently matches your filtering critera."
-msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:26
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:44
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:45
 msgid "We &hearts; feedback"
 msgstr "Wir &hearts; Feedback"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:48
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:49
+#, fuzzy
 msgid ""
-"We here are fans of Clonk. We built this site as members of our community "
-"for the game and want to do our best."
+"We here are all fans of Clonk. We built this site as members of our "
+"community for the game and want to do our best."
 msgstr ""
 "Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder der "
 "Community für das Spiel gebaut und möchten unser Bestes geben."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:52
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:53
 msgid ""
 "If you have any wishes or should encounter any problem, do not hesitate to "
 "contact us:"
@@ -901,25 +783,26 @@ msgstr ""
 "Falls du Wünsche hast oder bei dir irgendwelche Fehler auftreten, schick uns "
 "einfach eine Nachricht:"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:60
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:59
 msgid "Send feedback"
 msgstr "Feedback senden"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:70
-msgid "Will be sent as \"%sender%\"."
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:69
+#, fuzzy
+msgid "Sending as %sender%."
 msgstr "Wird als „%sender%” gesendet."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:80
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:79
 msgid "Legal issues"
 msgstr "Rechtliches"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:95
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:94
 msgid ""
 "That way we are able to quickly resolve to any problems that might occur or "
 "any content you feel might be infringing your rights."
 msgstr ""
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:99
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:98
 msgid ""
 "We are not responsible for the content of outgoing links. User generated "
 "content does not necessarily reflect the views of the site owners."
@@ -928,7 +811,7 @@ msgstr ""
 "Benutzergenerierter Inhalt muss nicht der Meinung der Seitenbetreiber "
 "entsprechen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:108
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:107
 msgid "Responsible for the content"
 msgstr "Verantwortlich für den Inhalt"
 
@@ -1082,14 +965,6 @@ msgstr ""
 msgid "Visit the OpenClonk wiki"
 msgstr "OpenClonk-Wiki öffnen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:71
-msgid "Change username"
-msgstr "Benutzername ändern"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:116
-msgid "Support"
-msgstr "Support"
-
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:37
 msgid "Game"
 msgstr "Spiel\t"
@@ -1111,7 +986,6 @@ msgid "by rating"
 msgstr "nach Bewertung"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:149
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:178
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:138
 msgid "This addon has no description."
 msgstr "Diese Erweiterung hat keine Beschreibung."
@@ -1133,7 +1007,7 @@ msgid "There are no addons available for this game yet."
 msgstr "Für dieses Spiel sind noch keine Erweiterungen verfügbar."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:66
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:26
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:25
 msgid "Publish"
 msgstr "Veröffentlichen"
@@ -1150,7 +1024,7 @@ msgstr "Abmelden"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:140
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:26
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:125
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:123
 msgid "Register"
 msgstr "Registrieren"
 
@@ -1165,28 +1039,29 @@ msgstr "Anmelden"
 msgid "Return to home"
 msgstr "Zurück zur Startseite"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:60
-msgid "Banned"
-msgstr "Gebannt"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:66
-msgid "Queues"
-msgstr "Warteschlangen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:70
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:62
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:174
 msgid "Addons"
 msgstr "Erweiterungen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:74
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:66
+msgid "Awaiting approval"
+msgstr "Erwartet Freigabe"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:70
 msgid "There are no addons in the approval queue."
 msgstr "Es sind keine Erweiterungen in der Warteschlange."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:78
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:76
 msgid "Contact form"
 msgstr "Kontaktformular"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:82
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:80
+#, fuzzy
+msgid "Queue"
+msgstr "Warteschlangen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:84
 msgid "There are no new messages in the queue."
 msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
 
@@ -1255,51 +1130,6 @@ msgstr "Kommentare"
 msgid "This user has not commented yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:53
-msgid "Developed by %developer%"
-msgstr "Entwickelt von %developer%"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:62
-msgid "Developed by the %team%"
-msgstr "Entwickelt vom %team%"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:72
-msgid "Version %version%, released on the %releaseday%"
-msgstr "Version %version%, veröffentlicht am %releaseday%"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:85
-msgid "Edit this addon"
-msgstr "Erweiterung bearbeiten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:97
-msgid "Edit this release"
-msgstr "Diesen Release bearbeiten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:193
-msgid "Categories"
-msgstr "Kategorien"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:199
-#: /home/benedict/public_html/lorry/app/cache/twig/e3/83/87911c79059dda5b7542d652c01066274ddab31d15450fc495b700255c3c.php:25
-msgid "Community"
-msgstr "Community"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:209
-msgid "Project page"
-msgstr "Projektseite"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:218
-msgid "Report a bug"
-msgstr "Einen Fehler melden"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:223
-msgid "Interested in an update?"
-msgstr "An einem Update interessiert?"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:233
-msgid "Rounds and Addons"
-msgstr "Runden und Erweiterungen"
-
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:124
 msgid "Back to top"
 msgstr "Nach oben"
@@ -1359,62 +1189,46 @@ msgstr ""
 "Eine Registrierung benötigt nur wenige Momente und ermöglicht es dir, an der "
 "Clonk-Community teilzunehmen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:44
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:45
 msgid "New addon"
 msgstr "Neue Erweiterung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:56
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:66
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:57
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:67
 msgid "Full title"
 msgstr "Vollständiger Titel"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:76
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:77
 msgid "Select a game&hellip;"
 msgstr "Wähle ein Spiel&hellip;"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:100
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:101
 msgid "No game available"
 msgstr "Keine Spiel verfügbar"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:114
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:115
 msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:124
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:125
 msgid "Unreleased"
 msgstr "Unveröffentlicht"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:179
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:180
 msgid "You have not created a new addon yet."
 msgstr "Du hast noch keine neue Erweiterung erstellt."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:188
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:189
 msgid "Released"
 msgstr "Veröffentlicht"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:249
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:250
 msgid "View addon page"
 msgstr "Erweiterungsseite betrachten"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:264
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:265
 msgid "You have not released an addon yet."
 msgstr "Du hast noch keine Erweiterung veröffentlicht."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:284
-msgid "Welcome to the publishing portal!"
-msgstr "Willkommen beim Veröffentlichungsportal!"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:288
-msgid ""
-"Here you can publish your addons and make them available to your fans. Click "
-"the button below to get started."
-msgstr ""
-"Hier kannst du deine Erweiterungen veröffentlichungen und sie deinen Fans "
-"zugänglich machen. Klicke auf den untenliegenden Knopf, um zu beginnen."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:292
-msgid "Create a new addon"
-msgstr "Neue Erweiterung anlegen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:47
 msgid "This is the publishing portal"
@@ -1453,36 +1267,31 @@ msgstr ""
 "mindestens 8 Zeichen und können dir dieses Passwort nicht zusenden falls du "
 "es vergessen solltest."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:114
-msgid "Please repeat your password to ensure you have spellt it correctly."
-msgstr ""
-"Bitte wiederhole dein Passwort, um die richtige Schreibweise sicherzustellen."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:134
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:132
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:142
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:140
 msgid "Already registered?"
 msgstr "Bereits registriert?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:155
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:153
 msgid "Alternatively use a login service:"
 msgstr "Alternativ nutze einen Anmeldedienst:"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:165
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:163
 msgid "%provider% authentification successful"
 msgstr "%provider%-Authentifizierung erfolgreich"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:169
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:167
 msgid "You can log in using %provider% in future."
 msgstr "Du kannst dich in Zukunft via %provider% anmelden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:183
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:181
 msgid "This is Lorry."
 msgstr "Das hier ist Lorry."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:187
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:185
 msgid ""
 "Lorry is a fan page, distribution platform and online community for players "
 "of Clonk games."
@@ -1490,16 +1299,16 @@ msgstr ""
 "Lorry ist eine Fanseite, Downloadplattform und Online-Community für Spieler "
 "der Clonk-Spiele."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:200
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:198
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:190
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:206
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:204
 msgid "Why should I register?"
 msgstr "Warum sollte ich mich registrieren?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:210
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:208
 msgid ""
 "After registering you can upload your own addons as well as comment and vote "
 "on existing contributions."
@@ -1507,7 +1316,7 @@ msgstr ""
 "Nach deiner Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "sowie bestehende Beiträge kommentieren und bewerten."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:214
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:212
 msgid ""
 "You'll become part of a small and friendly community, enjoying the game and "
 "devoting their time to it."
@@ -1515,7 +1324,7 @@ msgstr ""
 "Du wirst Teil einer kleinen und freundlichen Community die Spaß am Spiel hat "
 "und ihre Zeit hineininvestiert."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:220
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:218
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:175
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
@@ -1560,11 +1369,174 @@ msgstr "Liste der Community-Seiten"
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
 
+#~ msgid "Resend confirmation"
+#~ msgstr "Bestätigung senden"
+
+#~ msgid "Contact details have been changed."
+#~ msgstr "Kontaktdaten wurden geändert."
+
+#, fuzzy
+#~ msgid "Edit release"
+#~ msgstr "Diesen Release bearbeiten"
+
+#, fuzzy
+#~ msgid "Addon description"
+#~ msgstr "Diese Erweiterung hat keine Beschreibung."
+
+#, fuzzy
+#~ msgid "Release description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Change presentation"
+#~ msgstr "Präsentation ändern"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Release"
+#~ msgstr "Release"
+
+#~ msgid ""
+#~ "We would like to check the quality of this addon before it goes public to "
+#~ "keep the quality of content high."
+#~ msgstr ""
+#~ "Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
+#~ "Gesamtqualität hoch zu halten."
+
+#~ msgid ""
+#~ "If you want, we can release this version for you as soon as we approve it."
+#~ msgstr ""
+#~ "Falls du möchtest, können wir diese Version für dich veröffentlichen "
+#~ "sobald wir sie überprüft haben."
+
+#~ msgid ""
+#~ "Otherwise you will be able to release whenever you want after this "
+#~ "version is approved."
+#~ msgstr ""
+#~ "Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
+#~ "überprüft wurde."
+
+#~ msgid "Release immediately"
+#~ msgstr "Sofort veröffentlichen"
+
+#, fuzzy
+#~ msgid "Request approval"
+#~ msgstr "Erwartet Freigabe"
+
+#~ msgid "All downloads will immediately redirect to your uploaded version."
+#~ msgstr ""
+#~ "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
+
+#~ msgid ""
+#~ "Publishing a release is final. Any changes after releasing require a new "
+#~ "release."
+#~ msgstr ""
+#~ "Die Veröffentlichung ist final. Jede Änderung nach der Veröffentlichung "
+#~ "erfordert einen neuen Release."
+
+#~ msgid "Your release will be instantly available to all players."
+#~ msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
+
+#~ msgid "Confirm release"
+#~ msgstr "Veröffentlichung bestätigen"
+
+#~ msgid "Release now"
+#~ msgstr "Jetzt veröffentlichen"
+
+#~ msgid "Scheduled release"
+#~ msgstr "Geplanter Release"
+
+#~ msgid "Date and time"
+#~ msgstr "Datum und Zeit"
+
+#~ msgid "Make release date and time public"
+#~ msgstr "Releasedatum und -zeit veröffentlichen"
+
+#~ msgid ""
+#~ "You can cancel a scheduled release at any time before the automated "
+#~ "release."
+#~ msgstr ""
+#~ "Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
+#~ "Veröffentlichung abbrechen."
+
+#~ msgid ""
+#~ "Your release will be automatically made vailabe to all players at the "
+#~ "specified timestamp."
+#~ msgstr ""
+#~ "Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
+#~ "verfügbar gemacht."
+
+#~ msgid "Schedule Release"
+#~ msgstr "Veröffentlichung planen"
+
+#~ msgid "No matching users"
+#~ msgstr "Keine passenden Benutzer"
+
+#~ msgid "No user currently matches your filtering critera."
+#~ msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
+
+#~ msgid "Change username"
+#~ msgstr "Benutzername ändern"
+
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgid "Banned"
+#~ msgstr "Gebannt"
+
+#~ msgid "Developed by %developer%"
+#~ msgstr "Entwickelt von %developer%"
+
+#~ msgid "Developed by the %team%"
+#~ msgstr "Entwickelt vom %team%"
+
+#~ msgid "Version %version%, released on the %releaseday%"
+#~ msgstr "Version %version%, veröffentlicht am %releaseday%"
+
+#~ msgid "Edit this addon"
+#~ msgstr "Erweiterung bearbeiten"
+
+#~ msgid "Edit this release"
+#~ msgstr "Diesen Release bearbeiten"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorien"
+
+#~ msgid "Community"
+#~ msgstr "Community"
+
+#~ msgid "Project page"
+#~ msgstr "Projektseite"
+
+#~ msgid "Report a bug"
+#~ msgstr "Einen Fehler melden"
+
+#~ msgid "Interested in an update?"
+#~ msgstr "An einem Update interessiert?"
+
+#~ msgid "Rounds and Addons"
+#~ msgstr "Runden und Erweiterungen"
+
+#~ msgid "Welcome to the publishing portal!"
+#~ msgstr "Willkommen beim Veröffentlichungsportal!"
+
+#~ msgid ""
+#~ "Here you can publish your addons and make them available to your fans. "
+#~ "Click the button below to get started."
+#~ msgstr ""
+#~ "Hier kannst du deine Erweiterungen veröffentlichungen und sie deinen Fans "
+#~ "zugänglich machen. Klicke auf den untenliegenden Knopf, um zu beginnen."
+
+#~ msgid "Create a new addon"
+#~ msgstr "Neue Erweiterung anlegen"
+
+#~ msgid "Please repeat your password to ensure you have spellt it correctly."
+#~ msgstr ""
+#~ "Bitte wiederhole dein Passwort, um die richtige Schreibweise "
+#~ "sicherzustellen."
+
 #~ msgid "Bans"
 #~ msgstr "Banns"
-
-#~ msgid "Awaiting approval"
-#~ msgstr "Erwartet Freigabe"
 
 #~ msgid "Added login service."
 #~ msgstr "Anmeldedienst hinzugefügt."
@@ -1631,9 +1603,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "This user is moderator."
 #~ msgstr "Dieser Benutzer ist Moderator."
-
-#~ msgid "Information"
-#~ msgstr "Informationen"
 
 #~ msgid "Release addon"
 #~ msgstr "Erweiterung veröffentlichen"
@@ -1714,9 +1683,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "This user is admin."
 #~ msgstr "Dieser Benutzer ist Administrator."
-
-#~ msgid "Confirmation code invalid"
-#~ msgstr "Bestätigungsschlüssel ungültig"
 
 #~ msgid ""
 #~ "Your email address could not be confirmed. You have either already been "
@@ -1890,9 +1856,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Learn more about Lorry&hellip;"
 #~ msgstr "Mehr über Lorry erfahren&hellip;"
-
-#~ msgid "Log in with your email address"
-#~ msgstr "E-Mail-Adresse zur Anmeldung nutzen"
 
 #~ msgid ""
 #~ "Lorry tries to implement the concepts of three main ideas, each equally "
