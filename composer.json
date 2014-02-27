@@ -1,25 +1,17 @@
 {
-  "type": "project",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:beheh/openid.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:beheh/google.git"
-    }
-  ],
-  "require": {
-    "twig/twig": "1.*",
-    "twig/extensions": "1.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Lorry\\": "src/"
-    }
-  },
-  "config": {
-    "component-dir": "web/components"
-  }
+	"type": "project",
+	"require": {
+		"twig/twig": "1.*",
+		"twig/extensions": "1.*",
+		"lightopenid/lightopenid": "0.7.*",
+		"league/oauth2-client": "0.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Lorry\\": "src/"
+		}
+	},
+	"config": {
+		"component-dir": "web/components"
+	}
 }

@@ -5,43 +5,85 @@ namespace Lorry\Presenter\Auth;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\AuthentificationFailedException;
-use Opauth;
+use Lorry\Exception\FileNotFoundException;
+use LightOpenID;
+use OAuth2\Client\Provider\Google;
+use OAuth2\Client\Provider\Facebook;
 
 class Callback extends Presenter {
 
-	public function get() {
-		require '../app/config/opauth.php';
-		$config['Strategy']['Google']['state'] = $this->session->getState();
-		$opauth = new Opauth($config, false);
-		unset($_SESSION['register_oauth']);
+	public function get($provider) {
 
-		$response = null;
+		//session_start();
+		//unset($_SESSION['register_oauth']);
 
-		switch($opauth->env['callback_transport']) {
-			case 'session':
-				$response = isset($_SESSION['opauth']) ? $_SESSION['opauth'] : array();
-				unset($_SESSION['opauth']);
-				break;
-			case 'post':
-				$response = isset($_POST['opauth']) ? unserialize(base64_decode($_POST['opauth'])) : array();
-				break;
-			case 'get':
-				$response = isset($_GET['opauth']) ? unserialize(base64_decode($_GET['opauth'])) : array();
-				break;
-			default:
-				throw new AuthentificationFailedException('Unsupported callback transport');
-				break;
-		}
+		$oauth_provider = null;
+
+		$uid = null;
+		$nickname = null;
+		$email = null;
 
 		try {
-			if(array_key_exists('error', $response)) {
-				throw new AuthentificationFailedException('Response contained error field');
+			switch($provider) {
+				case 'openid':
+					$provider_title = 'OpenID';
+					$openid = new LightOpenID('localhost');
+					if($openid->mode == 'cancel') {
+						return $this->redirect('/register');
+					}
+					if(!$openid->validate()) {
+						throw new AuthentificationFailedException('openid validation failed');
+					}
+					$attributes = $openid->getAttributes();
+					$uid = $openid->identity;
+					$email = $attributes['contact/email'];
+					break;
+				case 'google':
+					$provider_title = 'Google';
+					$oauth_provider = new Google(array(
+						'clientId' => $this->config->get('oauth/google-id'),
+						'clientSecret' => $this->config->get('oauth/google-secret'),
+						'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/google'
+					));
+					break;
+				case 'facebook':
+					$provider_title = 'Facebook';
+					$oauth_provider = new Facebook(array(
+						'clientId' => $this->config->get('oauth/facebook-id'),
+						'clientSecret' => $this->config->get('oauth/facebook-secret'),
+						'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/facebook'
+					));
+					break;
+				default:
+					throw new FileNotFoundException;
+					break;
 			}
-			if(empty($response['auth']) || empty($response['timestamp']) || empty($response['signature']) || empty($response['auth']['provider']) || empty($response['auth']['uid'])) {
-				throw new AuthentificationFailedException('Missing fields in auth response');
+
+			if($oauth_provider) {
+				if(isset($_GET['error'])) {
+					if($_GET['error'] == 'access_denied') {
+						return $this->redirect('/register');
+					}
+					throw new AuthentificationFailedException($_GET['error']);
+				}
+
+				try {
+					$token = $oauth_provider->getAccessToken('authorization_code', array('code' => filter_input(INPUT_GET, 'code')));
+				} catch(\Exception $ex) {
+					throw new AuthentificationFailedException('could net get access token');
+				}
+				if(!$token) {
+					echo $token;
+					throw new AuthentificationFailedException('invalid code');
+				}
+				$profile = $oauth_provider->getUserDetails($token);
+				$uid = $profile->uid;
+				$nickname = $profile->nickname;
+				$email = $profile->email;
 			}
-			if(!$opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
-				throw new AuthentificationFailedException('Invalid auth response: '.$reason);
+
+			if(!$uid) {
+				throw new AuthentificationFailedException('no user id provided');
 			}
 		} catch(AuthentificationFailedException $exception) {
 			if($this->session->authenticated()) {
@@ -51,20 +93,16 @@ class Callback extends Presenter {
 			throw $exception;
 		}
 
-		$provider = $response['auth']['provider'];
-		$uid = $response['auth']['uid'];
-
 		if($this->session->authenticated()) {
 			// we now trust provider and user
 			$user = $this->session->getUser();
-			$user->setOauth(strtolower($provider), $uid);
+			$user->setOauth($provider, $uid);
 			$user->save();
 
 			$this->redirect('/settings?update-oauth=success#oauth');
 		} else {
 			// grab user with openid data fitting
-			$user = ModelFactory::build('User')->byOauth(strtolower($provider), $uid);
-			$email = $response['auth']['info']['email'];
+			$user = ModelFactory::build('User')->byOauth($provider, $uid);
 
 			if($user != null) {
 				$this->session->start($user, true);
@@ -77,7 +115,7 @@ class Callback extends Presenter {
 				}
 
 				// if no user matches register new user
-				$_SESSION['register_oauth'] = array('provider' => $provider, 'uid' => $uid, 'email' => $email);
+				$_SESSION['register_oauth'] = array('provider' => $provider_title, 'uid' => $uid, 'username' => $nickname, 'email' => $email);
 				$this->redirect('/register#');
 			}
 		}

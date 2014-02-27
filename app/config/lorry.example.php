@@ -1,4 +1,5 @@
 <?php
+
 $config['brand'] = 'Lorry';
 $config['base'] = 'http://'.$_SERVER['SERVER_NAME'];
 $config['debug'] = true;
@@ -12,3 +13,9 @@ $config['contact'] = '<strong>Full name</strong>';
 $config['database/dsn'] = 'mysql:host=127.0.0.1;dbname=lorry';
 $config['database/username'] = 'lorry';
 $config['database/password'] = '';
+
+$config['oauth/google-id'] = 'CLIENT_ID';
+$config['oauth/google-secret'] = 'CLIENT_SECRET';
+
+$config['oauth/facebook-id'] = 'CLIENT_ID';
+$config['oauth/facebook-secret'] = 'CLIENT_SECRET';

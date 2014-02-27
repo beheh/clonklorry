@@ -2,26 +2,57 @@
 
 namespace Lorry\Presenter\Auth;
 
+use ErrorException;
 use Lorry\Presenter;
-use Opauth;
+use Lorry\Exception\AuthentificationFailedException;
+use Lorry\Exception\FileNotFoundException;
+use LightOpenID;
+use OAuth2\Client\Provider\Google;
+use OAuth2\Client\Provider\Facebook;
 
 class Gateway extends Presenter {
 
-	public function get() {
-		require '../app/config/opauth.php';
-		$current_state = $this->session->getState();
-		if(!isset($_GET['state']) || !$current_state || $_GET['state'] != $current_state) {
-			$state = $this->session->regenerateState();
-			$config['Strategy']['Google']['state'] = $state;
-			$config['Strategy']['Facebook']['state'] = $state;
-			if(isset($_GET['identity'])) {
-				$config['Strategy']['OpenID']['identity'] = filter_input(INPUT_GET, 'identity', FILTER_VALIDATE_URL);
-			}
-		}
+	public function get($provider) {
+
 		if($this->session->authenticated()) {
-			$config['Strategy']['Google']['login_hint'] = $this->session->getUser()->getEmail();
+			$login_hint = $this->session->getUser()->getEmail();
 		}
-		new Opauth($config);
+		switch($provider) {
+			case 'openid':
+				try {
+					$openid = new LightOpenID('localhost');
+					$openid->identity = filter_input(INPUT_GET, 'identity', FILTER_VALIDATE_URL);
+					$openid->realm = $this->config->get('base');
+					$openid->required = array('contact/email');
+					$openid->optional = array('namePerson/friendly');
+					$openid->returnUrl = $this->config->get('base') . '/auth/callback/openid';
+					$this->redirect($openid->authUrl(), true);
+				} catch(ErrorException $ex) {
+					throw new AuthentificationFailedException();
+				}
+				break;
+			case 'google':
+				$google = new Google(array(
+					'clientId' => $this->config->get('oauth/google-id'),
+					'clientSecret' => $this->config->get('oauth/google-secret'),
+					'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/google'
+				));
+				$google->scopes = array('profile', 'email');
+				$google->authorize();
+				break;
+			case 'facebook':
+				$facebook = new Facebook(array(
+					'clientId' => $this->config->get('oauth/facebook-id'),
+					'clientSecret' => $this->config->get('oauth/facebook-secret'),
+					'redirectUri' => 'http://localhost/~benedict/lorry/web/auth/callback/facebook'
+				));
+				$facebook->scopes = array('basic_info', 'email');
+				$facebook->authorize();
+				break;
+			default:
+				throw new FileNotFoundException();
+				break;
+		}
 	}
 
 }

@@ -10,7 +10,6 @@ use Lorry\Service\SessionService;
 use Lorry\Exception\NotImplementedException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
-use Exception as PHPException;
 
 class Environment {
 
@@ -22,7 +21,7 @@ class Environment {
 
 		try {
 			$this->handle($config);
-		} catch(PHPException $e) {
+		} catch(\Exception $e) {
 			header('HTTP/1.1 500 Internal Server Error');
 			header('Content-Type: text/plain');
 			if($config && $config->get('debug')) {
@@ -110,13 +109,8 @@ class Environment {
 			'/login' => 'Account\Login',
 			'/logout' => 'Account\Logout',
 			'/settings' => 'Account\Settings',
-//			'/auth/gateway/openid' => 'Auth\Gateway',
-//			'/auth/gateway/openid' => 'Auth\Gateway',
-//			'/auth/gateway/facebook' => 'Auth\Gateway',
-//			'/auth/gateway/facebook/int_callback' => 'Auth\Gateway',
-//			'/auth/gateway/google' => 'Auth\Gateway',
-//			'/auth/gateway/google/oauth2callback' => 'Auth\Gateway',
-//			'/auth/callback' => 'Auth\Callback',
+			'/auth/gateway/:alpha' => 'Auth\Gateway',
+			'/auth/callback/:alpha' => 'Auth\Callback',
 			'/about' => 'Site\About',
 			'/clonk' => 'Site\Clonk',
 			'/community' => 'Site\Community',
