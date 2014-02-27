@@ -45,6 +45,9 @@ class Game extends Presenter {
 				'title' => $addon->getTitle(),
 				'short' => $addon->getShort(),
 				'description' => $addon->getDescription(),
+				//'game' => array('name' => $game->getTitle(),
+				//				'color' => $game->getColor(),
+				//				'url' => $this->config->get('base').'/addons/'.$game->getShort())
 			);
 		}
 

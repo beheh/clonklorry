@@ -67,6 +67,12 @@ footer span a {
 dt {
   margin-top: 8px;
 }
+.media-heading {
+  display: inline-block;
+}
+.media-heading + .badge {
+  vertical-align: text-bottom;
+}
 .btn-google {
   color: #ffffff;
   background-color: #dd4b39;
