@@ -134,14 +134,6 @@
 {% block javascript %}
 {{ parent() }}
 
-$(document).ready(function() {
-$('#form-password input').each(function() {
-$(this).addClass('noerror')
-var require = function() {$(this).removeClass('noerror');};
-$(this).keypress(require);
-$(this).blur(require);
-});
-
 $('#language-setting').change(function() {
 $(this).closest('form').submit();
 });
@@ -154,6 +146,5 @@ $('#remove-button').prop('disabled', false);
 } else {
 $('#remove-button').prop('disabled', true);
 }
-});
 });
 {% endblock %}

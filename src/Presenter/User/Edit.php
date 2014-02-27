@@ -16,6 +16,7 @@ class Edit extends Presenter {
 
 		$this->context['title'] = gettext('Edit user');
 		$this->context['username'] = $user->getUsername();
+		$this->context['email'] = $user->getEmail();
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
 		$this->context['administrator'] = $user->isAdministrator();
