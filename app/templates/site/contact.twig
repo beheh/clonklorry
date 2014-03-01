@@ -28,8 +28,8 @@
 		{% if site_trademark %}
 			<p>{{ site_trademark|raw }}.</p>
 		{% endif %}
-			<p><span>If you have any legal issues please do not hesitate to contact us either via our feedback form <span class="hidden-phone">to the left</span><span class="visible-phone">above</span> or via <a href="mailto:">legal@example.com</a>.</span></p>
-			<p>{% trans %}That way we are able to quickly resolve to any problems that might occur or any content you feel might be infringing your rights.{% endtrans %}</p>
+			{% set legalmail = "<a href=\"mailto:" ~ legal_address ~ "\">" ~ legal_address ~ "</a>" %}
+			<p>{% trans %}If you have any legal issues please do not hesitate to contact us either via our feedback form or via {{legalmail}}. That way we are able to quickly resolve to any problems that might occur or remove any content which infringes your rights.{% endtrans %}</p>
 			<p>{% trans %}We are not responsible for the content of outgoing links. User generated content does not necessarily reflect the views of the site owners.{% endtrans %}</p>
 		{% if site_contact %}
 			<hr>

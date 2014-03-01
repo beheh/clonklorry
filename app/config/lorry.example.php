@@ -9,6 +9,7 @@ $config['github'] = 'https://github.com/%s';
 $config['github_name'] = '([a-zA-Z0-9][a-zA-Z0-9-]*)';
 
 $config['contact'] = '<strong>Full name</strong>';
+$config['legal_mail'] = 'legal@example.com';
 
 $config['database/dsn'] = 'mysql:host=127.0.0.1;dbname=lorry';
 $config['database/username'] = 'lorry';
