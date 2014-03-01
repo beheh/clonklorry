@@ -100,7 +100,7 @@ class Settings extends Presenter {
 
 			if($user->modified() && !$error) {
 				$user->save();
-				$this->success('profiles', gettext('Your linked profiles were changed.'));
+				$this->success('profiles', gettext('Your links were changed.'));
 			}
 		}
 

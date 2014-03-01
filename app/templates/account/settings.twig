@@ -18,7 +18,7 @@
 			<div class="form-group">
 				<div class="alert alert-info">{% trans "Contact us to change your username." %}</div>
 			</div>
-			<h3 id="profiles">{% trans "Linked profiles" %}</h3>
+			<h3 id="profiles">{% trans "Links" %}</h3>
 		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
 			<form role=form" method="post" action="{{filename}}?change-profiles">
 				<input type="hidden" name="state" value="{{state}}">
