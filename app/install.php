@@ -12,7 +12,7 @@ if(version_compare(PHP_VERSION, '5.5.0', '>')) {
 echo ' ('.PHP_VERSION.')'.PHP_EOL;
 
 echo 'checking extensions... ';
-$extensions = array('json', 'gettext', 'pdo', 'http', 'openssl');
+$extensions = array('json', 'gettext', 'pdo', 'http', 'openssl', 'curl');
 $loaded = 0;
 foreach($extensions as $extension) {
 	if(extension_loaded($extension)) {

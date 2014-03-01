@@ -5,7 +5,7 @@ A website to host and showcase released Clonk addons and their required packages
 
 Requirements
 ------------
-The application requires a web server with at least PHP>=5.5 and the extensions json, pecl_http, openssl and gettext. Running the application with missing extensions might be possible to some extent, but is not supported or encouraged.
+The application requires a web server with at least PHP>=5.5 and the extensions json, pecl_http, openssl, gettext and curl. Running the application with missing extensions might be possible to some extent, but is not supported or encouraged.
 
 A database and the corresponding PHP PDO-extension should also be available. Lorry was developed and tested with an up-to-date MySQL installation.
 
