@@ -8,6 +8,10 @@ use Lorry\ModelFactory;
 class Login extends Presenter {
 
 	public function get() {
+		if(isset($_SESSION['register_oauth'])) {
+			unset($_SESSION['register_oauth']);
+		}
+
 		if($this->session->authenticated()) {
 			$this->redirect('/');
 			return;
@@ -53,7 +57,7 @@ class Login extends Presenter {
 				$this->context['email'] = $email;
 				$this->error('email', gettext('Email address unknown.'));
 			}
-		} else  {
+		} else {
 			// login by username and password
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
 			$user = ModelFactory::build('User')->byUsername($username);

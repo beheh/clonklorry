@@ -14,8 +14,10 @@ class Callback extends Presenter {
 
 	public function get($provider) {
 
-		//session_start();
-		//unset($_SESSION['register_oauth']);
+		session_start();
+		if(isset($_SESSION['register_oauth'])) {
+			unset($_SESSION['register_oauth']);
+		}
 
 		$oauth_provider = null;
 
