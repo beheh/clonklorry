@@ -37,7 +37,7 @@ class SessionService {
 		}
 		if($remember == true) {
 			$this->remember();
-			if(isset($_COOKIE['lorry_login'])) {
+			if(isset($_COOKIE['lorry_forget'])) {
 				setcookie('lorry_forget', '', 0, '/');
 			}
 		} else {
