@@ -36,7 +36,7 @@ class Callback extends Presenter {
 					}
 					$attributes = $openid->getAttributes();
 					$uid = $openid->identity;
-					if(isset($attributes['contact/emali'])) {
+					if(isset($attributes['contact/email'])) {
 						$email = $attributes['contact/email'];
 					}
 					break;
