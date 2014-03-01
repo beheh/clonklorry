@@ -2,6 +2,7 @@
 
 $config['brand'] = 'Lorry';
 $config['base'] = 'http://'.$_SERVER['SERVER_NAME'];
+$config['notice'] = 'fail';
 $config['debug'] = true;
 
 $config['clonkforge'] = 'http://clonkforge.net/user.php?usr=%d';
