@@ -30,8 +30,7 @@ class PersistenceService {
 	public function ensureConnected() {
 		if($this->connection) return true;
 		try {
-			$this->connection = new PDO(
-					$this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
+			$this->connection = new PDO($this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
 		} catch(PDOException $ex) {
 			// catch the pdo exception to prevent credential leaking
 			throw new Exception('could not connect to database ('.$ex->getMessage().')');
@@ -59,7 +58,8 @@ class PersistenceService {
 		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' ORDER BY `'.$orderby.'` '.$order);
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
-			throw new Exception(print_r($statement->errorInfo(), true));
+			$errorinfo = $statement->errorInfo();
+			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -84,7 +84,8 @@ class PersistenceService {
 		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters);
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
-			throw new Exception(print_r($statement->errorInfo(), true));
+			$errorinfo = $statement->errorInfo();
+			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		if(count($results) > 1) {
@@ -110,8 +111,9 @@ class PersistenceService {
 		$values[] = $model->getId();
 		$query = $this->connection->prepare('UPDATE `'.$model->getTable().'` SET '.$sets.' WHERE `id` = ?');
 		$query->execute($values);
-		if($query->errorCode() !== '00000') {
-			throw new Exception(print_r($query->errorInfo(), true));
+		if($query->errorCode() != PDO::ERR_NONE) {
+			$errorinfo = $statement->errorInfo();
+			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $query->rowCount() == 1;
 	}
@@ -134,8 +136,9 @@ class PersistenceService {
 		}
 		$query = $this->connection->prepare('INSERT INTO `'.$model->getTable().'` ('.$keys.') VALUES ('.$valuenames.')');
 		$query->execute($contents);
-		if($query->errorCode() !== '00000') {
-			throw new Exception(print_r($query->errorInfo(), true));
+		if($query->errorCode() != PDO::ERR_NONE) {
+			$errorinfo = $statement->errorInfo();
+			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
 	}
