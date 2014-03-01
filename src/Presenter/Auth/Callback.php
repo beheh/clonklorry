@@ -93,19 +93,24 @@ class Callback extends Presenter {
 			}
 		} catch(AuthentificationFailedException $exception) {
 			if($this->session->authenticated()) {
-				$this->redirect('/settings?update-oauth=failed#oauth');
-				return;
+				return $this->redirect('/settings?update-oauth=failed#oauth');
 			}
 			throw $exception;
 		}
 
 		if($this->session->authenticated()) {
+			// test, if other user has already used this uid
+			$test_user = ModelFactory::build('User')->byOauth($provider, $uid);
+			if($test_user) {
+				return $this->redirect('/settings?update-oauth=duplicate#oauth');
+			}
+
 			// we now trust provider and user
 			$user = $this->session->getUser();
 			$user->setOauth($provider, $uid);
 			$user->save();
 
-			$this->redirect('/settings?update-oauth=success#oauth');
+			return $this->redirect('/settings?update-oauth=success#oauth');
 		} else {
 			// grab user with openid data fitting
 			$user = ModelFactory::build('User')->byOauth($provider, $uid);

@@ -21,6 +21,9 @@ class Settings extends Presenter {
 				case 'success':
 					$this->success('oauth', gettext('Connected with login service.'));
 					break;
+				case 'duplicate':
+					$this->error('oauth', gettext('Login service is already linked to another account.'));
+					break;
 				case 'failed':
 					$this->error('oauth', gettext('Authentification with login service failed.'));
 					break;
