@@ -27,12 +27,12 @@ class Callback extends Presenter {
 			switch($provider) {
 				case 'openid':
 					$provider_title = 'OpenID';
-					$openid = new LightOpenID('localhost');
+					$openid = new LightOpenID($this->config->get('base'));
 					if($openid->mode == 'cancel') {
 						return $this->redirect('/register');
 					}
 					if(!$openid->validate()) {
-						throw new AuthentificationFailedException('openid validation failed');
+						throw new AuthentificationFailedException('OpenID validation failed (mode is'.$openid->mode.')');
 					}
 					$attributes = $openid->getAttributes();
 					$uid = $openid->identity;

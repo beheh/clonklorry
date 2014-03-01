@@ -20,7 +20,7 @@ class Gateway extends Presenter {
 		switch($provider) {
 			case 'openid':
 				try {
-					$openid = new LightOpenID('localhost');
+					$openid = new LightOpenID($this->config->get('base'));
 					$openid->identity = filter_input(INPUT_GET, 'identity', FILTER_VALIDATE_URL);
 					$openid->realm = $this->config->get('base');
 					$openid->required = array('contact/email');
