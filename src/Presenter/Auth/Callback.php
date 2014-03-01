@@ -36,7 +36,9 @@ class Callback extends Presenter {
 					}
 					$attributes = $openid->getAttributes();
 					$uid = $openid->identity;
-					$email = $attributes['contact/email'];
+					if(isset($attributes['contact/emali'])) {
+						$email = $attributes['contact/email'];
+					}
 					break;
 				case 'google':
 					$provider_title = 'Google';
