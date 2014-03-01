@@ -107,6 +107,7 @@ class User extends Model {
 	}
 
 	public final function setClonkforgeUrl($clonkforge) {
+		$scanned = array('');
 		if($clonkforge) {
 			$this->validateUrl($clonkforge);
 			$scanned = sscanf($clonkforge, $this->config->get('clonkforge'));
