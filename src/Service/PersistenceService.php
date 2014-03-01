@@ -28,14 +28,13 @@ class PersistenceService {
 	private $connection = null;
 
 	public function ensureConnected() {
-		if($this->connection)
-			return true;
+		if($this->connection) return true;
 		try {
 			$this->connection = new PDO(
 					$this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
 		} catch(PDOException $ex) {
 			// catch the pdo exception to prevent credential leaking
-			throw new Exception('could not connect to database ('. $ex->getMessage().')');
+			throw new Exception('could not connect to database ('.$ex->getMessage().')');
 		}
 	}
 
@@ -48,8 +47,7 @@ class PersistenceService {
 		foreach($pairs as $row => $value) {
 			if(empty($values)) {
 				$parameters .= ' WHERE ';
-			}
-			else {
+			} else {
 				$parameters .= ' AND ';
 			}
 			$parameters .= '`'.$row.'` = ?';
@@ -76,22 +74,26 @@ class PersistenceService {
 		foreach($pairs as $row => $value) {
 			if(empty($values)) {
 				$parameters .= ' WHERE ';
-			}
-			else {
+			} else {
 				$parameters .= ' AND ';
 			}
 			$parameters .= '`'.$row.'` = ?';
 			$values[] = $value;
 		}
 
-		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' LIMIT 1');
+		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters);
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			throw new Exception(print_r($statement->errorInfo(), true));
 		}
-		$rows = $statement->fetch(PDO::FETCH_ASSOC);
+		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+		if(count($results) > 1) {
+			throw new Exception('result ambiguity: expected unique identifier');
+		} else if(count($results) == 1) {
+			return $results[0];
+		}
 
-		return $rows;
+		return;
 	}
 
 	public function update(Model $model, $changes) {
@@ -101,8 +103,7 @@ class PersistenceService {
 		$values = array();
 		$sets = '';
 		foreach($changes as $row => $change) {
-			if(!empty($values))
-				$sets .= ', ';
+			if(!empty($values)) $sets .= ', ';
 			$sets .= '`'.$row.'` = ?';
 			$values[] = $change;
 		}
