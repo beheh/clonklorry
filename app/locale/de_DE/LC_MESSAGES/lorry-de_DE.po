@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-01 13:03+0100\n"
-"PO-Revision-Date: 2014-03-01 13:03+0100\n"
+"POT-Creation-Date: 2014-03-01 14:44+0100\n"
+"PO-Revision-Date: 2014-03-01 14:45+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -58,7 +58,7 @@ msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:124
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Login.php:78
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:160
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:163
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -93,25 +93,25 @@ msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:114
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:117
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:87
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:97
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:114
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:90
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:100
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:117
 msgid "invalid"
 msgstr "ungültig"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:79
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:156
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:159
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:84
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:152
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:155
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -122,35 +122,39 @@ msgstr "Fehler bei der Registrierung."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:22
 msgid "Connected with login service."
-msgstr "Mit Anmeldedienst verbunden.\t"
+msgstr "Mit Anmeldedienst verbunden."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:25
+msgid "Login service is already linked to another account."
+msgstr "Anmeldedienst bereits mit anderem Konto verknüpft."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:28
 msgid "Authentification with login service failed."
 msgstr "Authentifizierung bei Anmeldedienst fehlgeschlagen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:35
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:38
 msgid "Removed login service."
 msgstr "Anmeldedienst entfernt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:38
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:41
 msgid "Can't remove last login service."
 msgstr "Kann letzten Anmeldedienst nicht entfernen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:87
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:90
 #, php-format
 msgid "Clonk Forge profile url is %s."
 msgstr "Clonk Forge Profil-URL ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:97
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:100
 #, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:103
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:106
 msgid "Your links were changed."
 msgstr "Deine Links wurden geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:119
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
 msgid ""
 "Contact details have been changed. We sent you an email for you to confirm "
 "the new address."
@@ -158,15 +162,15 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben dir eine E-Mail gesendet, um die neue "
 "Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:147
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:150
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:149
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:152
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:168
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:171
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
