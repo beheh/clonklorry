@@ -55,14 +55,18 @@ footer span a {
   float: left;
   margin-top: 5px;
   margin-right: 10px;
-  -webkit-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
 }
 .jumbo-image {
   margin-top: 20px;
 }
 .head:hover img {
   -webkit-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  transform: rotateY(360deg);
 }
 dt {
   margin-top: 8px;
