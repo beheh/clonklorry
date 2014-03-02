@@ -3,20 +3,29 @@
 {% set title = 'Addons'|trans %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<p>The clonk series consists of multiple titles.</p>
-<p><a href="{{base}}/clonk" class="btn btn-success">{% trans %}Learn all about Clonk{% endtrans %}</a></p>
-<hr>
-{% if games %}
-<div class="row-fluid">
-	{% for game in games %}
-	<div class="span4">
-		<h3>{{game.title}}</h3>
-		<a href="{{base}}/addons/{{game.short}}"><img src="{{base}}/img/game/{{game.short}}.png"></a>
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
 	</div>
+	{% if games %}
+	<div class="row">
+	{% for game in games %}
+		<div class="col-md-4">
+			<h3>{{game.title}}</h3>
+			<p><img src="{{resources}}/custom/game/{{game.short}}.png" alt="{{game.title}}"></p>
+			<p><a href="{{base}}/addons/{{game.short}}" class="btn btn-primary">{% trans %}View the addons{% endtrans %}</a></p>
+		</div>
 	{% endfor %}
+	</div>
 </div>
 {% else %}
-<p class="alert alert-warning">{% trans %}No games available.{% endtrans %}</p>
+</div>
+<div class="jumbotron">
+	<div class="container">
+		<a href="#"><img src="{{resources}}/custom/game/{{short}}.png" class="pull-right jumbo-image hidden-xs"></a>
+		<h1>{% trans %}No games available{% endtrans %}</h1>
+	</div>
+</div>
 {% endif %}
+</div>
 {% endblock %}
