@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2014-03-11 22:25+0100\n"
-"PO-Revision-Date: 2014-03-11 22:25+0100\n"
+"PO-Revision-Date: 2014-03-11 22:38+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -983,7 +983,7 @@ msgstr ""
 #: /home/benedict/public_html/lorry/app/cache/twig/67/1b/f8a8e523b8f7d7ef2b79301aa4af87deced5464e79fcb0f4eb9e73721995.php:142
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:172
 msgid "Visit the publishing portal"
-msgstr "Veröffentlichungsportal öffnen"
+msgstr "Zum Veröffentlichungsportal"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/67/1b/f8a8e523b8f7d7ef2b79301aa4af87deced5464e79fcb0f4eb9e73721995.php:149
 msgid "Build the next Clonk"
