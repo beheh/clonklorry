@@ -6,6 +6,7 @@ use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
+use Lorry\Service\MailService;
 use Twig_Environment;
 use Exception;
 
@@ -53,6 +54,16 @@ class PresenterFactory {
 
 	/**
 	 *
+	 * @var \Lorry\Service\MailService
+	 */
+	private static $mail;
+
+	public static function setMailService(MailService $mail) {
+		self::$mail = $mail;
+	}
+	
+	/**
+	 *
 	 * @var \Twig_Environment
 	 */
 	private static $twig;
@@ -80,6 +91,7 @@ class PresenterFactory {
 		$instance->setLocalisationService(self::$localisation);
 		$instance->setSessionService(self::$session);
 		$instance->setSecurityService(self::$security);
+		$instance->setMailService(self::$mail);
 		$instance->setTwig(self::$twig);
 		return $instance;
 	}

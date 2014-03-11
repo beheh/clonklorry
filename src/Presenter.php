@@ -6,6 +6,7 @@ use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
+use Lorry\Service\MailService;
 use Lorry\Exception\OutputCompleteException;
 use Twig_Environment;
 
@@ -49,6 +50,16 @@ abstract class Presenter implements PresenterInterface {
 
 	public final function setSessionService(SessionService $session) {
 		$this->session = $session;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Service\MailService
+	 */
+	protected $mail;
+
+	public final function setMailService(MailService $mail) {
+		$this->mail = $mail;
 	}
 
 	/**

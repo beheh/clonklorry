@@ -7,6 +7,7 @@ use Lorry\Service\LocalisationService;
 use Lorry\Service\PersistenceService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
+use Lorry\Service\MailService;
 use Lorry\Exception\NotImplementedException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
@@ -81,10 +82,13 @@ class Environment {
 		$security = new SecurityService();
 		$security->setSessionService($session);
 
+		$mail = new MailService($config);
+		
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);
 		PresenterFactory::setSecurityService($security);
 		PresenterFactory::setSessionService($session);
+		PresenterFactory::setMailService($mail);
 		PresenterFactory::setTwig($twig);
 
 		Router::setRoutes(array(
