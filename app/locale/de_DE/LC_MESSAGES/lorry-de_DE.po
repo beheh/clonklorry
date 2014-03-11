@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-11 21:58+0100\n"
-"PO-Revision-Date: 2014-03-11 21:58+0100\n"
+"POT-Creation-Date: 2014-03-11 22:25+0100\n"
+"PO-Revision-Date: 2014-03-11 22:25+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/benedict/public_html/lorry/app/cache\n"
 "X-Poedit-SearchPath-1: /home/benedict/NetBeansProjects/lorry/src\n"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Environment.php:68
+#: /home/benedict/NetBeansProjects/lorry/src/Environment.php:69
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
@@ -56,7 +56,7 @@ msgstr "keine gültige ClonkForge Profil-ID"
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:124
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:135
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Login.php:82
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:163
 msgid "Password wrong."
@@ -237,9 +237,13 @@ msgstr "Ungültiges Spiel."
 msgid "Short name already exists."
 msgstr "E-Mail-Adresse existiert bereits."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:26
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:44
 msgid "Your message was sent. Thank you for your feedback."
 msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:47
+msgid "Sorry, your feedback couldn't be sent."
+msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:17
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:64
@@ -1970,9 +1974,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Your password could not be changed."
 #~ msgstr "Dein Passwort konnte nicht geändert werden."
-
-#~ msgid "Your password could not be set."
-#~ msgstr "Dein Passwort konnte nicht gesetzt werden."
 
 #~ msgid "New password too simple."
 #~ msgstr "Neues Passwort zu einfach."

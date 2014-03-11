@@ -23,8 +23,7 @@ class Contact extends Presenter {
 	}
 
 	public function post() {
-		$this->success('contact', gettext('Your message was sent. Thank you for your feedback.'));
-
+		
 		$user = false;
 		if($this->session->authenticated()) {
 			$user = $this->session->getUser();
@@ -37,9 +36,16 @@ class Contact extends Presenter {
 
 		$message = $this->mail->create()
 				->setSubject('Feedback from '.$by)
+				->setFrom($this->config->get('legal_mail'))
 				->setTo($this->config->get('legal_mail'))
 				->setBody(filter_input(INPUT_POST, 'feedback'));
-		$this->mail->send($message);
+		$result = $this->mail->send($message);
+		if($result) {
+			$this->success('contact', gettext('Your message was sent. Thank you for your feedback.'));
+		}
+		else {
+			$this->error('contact', gettext('Sorry, your feedback couldn\'t be sent.'));
+		}
 		
 		$this->get();
 	}
