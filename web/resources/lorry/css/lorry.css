@@ -77,6 +77,9 @@ dt {
 .media-heading + .badge {
   vertical-align: text-bottom;
 }
+.contact-form {
+  resize: vertical;
+}
 .btn-google {
   color: #ffffff;
   background-color: #dd4b39;

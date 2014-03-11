@@ -23,6 +23,24 @@ class Contact extends Presenter {
 	}
 
 	public function post() {
+		$this->success('contact', gettext('Your message was sent. Thank you for your feedback.'));
+
+		$user = false;
+		if($this->session->authenticated()) {
+			$user = $this->session->getUser();
+		}
+		if($user) {
+			$by = $user->getUsername();
+		} else {
+			$by = $_SERVER['REMOTE_ADDR'];
+		}
+
+		$message = $this->mail->create()
+				->setSubject('Feedback from '.$by)
+				->setTo($this->config->get('legal_mail'))
+				->setBody(filter_input(INPUT_POST, 'feedback'));
+		$this->mail->send($message);
+		
 		$this->get();
 	}
 
