@@ -1,0 +1,9 @@
+{% extends 'email/base.twig' %}
+
+{% block content %}
+<p>Feedback sent by {{user}}:</p>
+
+<blockquote>
+	<p>"{{feedback}}"</p>
+</blockquote>
+{% endblock %}
