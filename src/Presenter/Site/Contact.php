@@ -34,11 +34,10 @@ class Contact extends Presenter {
 			$by = $_SERVER['REMOTE_ADDR'];
 		}
 
-		$message = $this->mail->create()
-				->setSubject('Feedback from '.$by)
-				->setFrom($this->config->get('legal_mail'))
-				->setTo($this->config->get('legal_mail'))
-				->setBody(filter_input(INPUT_POST, 'feedback'));
+		$feedback = nl2br(htmlspecialchars(filter_input(INPUT_POST, 'feedback', FILTER_SANITIZE_STRING)));
+		$message = $this->mail->prepare('feedback.twig', array('user' => $by, 'feedback' => $feedback));
+		$message->setSubject('Feedback from '.$by);
+		$message->setTo($this->config->get('legal_mail'));
 		
 		if($user && $user->isActivated()) {
 			$message->setReplyTo($user->getEmail());

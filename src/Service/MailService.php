@@ -2,9 +2,10 @@
 
 namespace Lorry\Service;
 
+use Twig_Environment;
 use Swift_Mailer;
 use Swift_Message;
-use Swift_MailTransport;
+use Swift_SmtpTransport;
 
 class MailService {
 
@@ -18,6 +19,17 @@ class MailService {
 		$this->config = $config;
 	}
 
+	
+	/**
+	 *
+	 * @var \Twig_Environment
+	 */
+	protected $twig;
+
+	public function setTwig(Twig_Environment $twig) {
+		$this->twig = $twig;
+	}
+	
 	/**
 	 *
 	 * @var \Swift_Mailer;
@@ -28,16 +40,25 @@ class MailService {
 		if($this->mailer) {
 			return true;
 		}
-		$this->mailer = new Swift_Mailer(Swift_MailTransport::newInstance());
+		$transport = Swift_SmtpTransport::newInstance($this->config->get('mail/smtp-host'), $this->config->get('mail/smtp-port'), $this->config->get('mail/smtp-encryption'))
+				->setUsername($this->config->get('mail/username'))
+				->setPassword($this->config->get('mail/password'));
+		$this->mailer = new Swift_Mailer($transport);
 		return true;
 	}
-
-	public function create() {
+	
+	public function prepare($template, $context = array()) {
 		$this->ensureMailer();
-		return Swift_Message::newInstance();
+		$body = $this->twig->render('email/'.$template, $context);
+		$message = Swift_Message::newInstance()
+				->setFrom($this->config->get('mail/from'))
+				->setBody(strip_tags($body))
+				->addPart($body, 'text/html');
+		return $message;
 	}
 	
-	public function send(Swift_Message $message) {
+	public function send($message) {
+		$this->ensureMailer();
 		return $this->mailer->send($message);
 	}
 
