@@ -82,7 +82,8 @@ class Environment {
 		$security = new SecurityService();
 		$security->setSessionService($session);
 
-		$mail = new MailService($config);
+		$mail = new MailService();
+		$mail->setConfigService($config);
 		
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);
