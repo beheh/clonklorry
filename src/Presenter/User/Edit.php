@@ -23,8 +23,10 @@ class Edit extends Presenter {
 
 		$this->context['title'] = gettext('Edit user');
 
+		$this->context['username'] = $user->getUsername();
 		$new_username = filter_input(INPUT_POST, 'username');
-		$this->context['username'] = $new_username ? $new_username : $user->getUsername();
+		$this->context['username_edit'] = $new_username ? $new_username : $user->getUsername();
+
 		$this->context['email'] = $user->getEmail();
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
