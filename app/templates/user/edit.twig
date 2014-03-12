@@ -10,7 +10,9 @@
 			<h2>{% trans "Account" %}</h2>
 			<div class="row">
 				<div class="col-md-6">
+					{% include 'functions/alert.twig' with {'selector' : 'username'} %}
 					<form role=form" method="post" action="{{filename}}?change-appearance">
+						<input type="hidden" name="state" value="{{state}}">
 						<div class="form-group">
 							<div class="form-group">
 								<label for="username">{% trans "Username" %}</label>
@@ -25,6 +27,7 @@
 				<div class="col-md-6">
 		{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
 					<form role=form" method="post" action="{{filename}}?change-contact">
+						<input type="hidden" name="state" value="{{state}}">
 						<div class="form-group">
 							<label for="email">{% trans "Email address" %}</label>
 							<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
@@ -40,8 +43,8 @@
 		<div class="col-md-4">
 			<h2 id="security">{% trans "Support" %}</h2>
 			<label class="checkbox"><input type="checkbox" id="support-confirm"> {% trans %}Please confirm this user should be moderated.{% endtrans %}</label>
-			<a href="" class="btn btn-default btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>
-			<a href="" class="btn btn-default btn-block support-button" disabled="">{% trans %}Reset login services{% endtrans %}</a>
+			<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>
+			<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset login services{% endtrans %}</a>
 			{% if user_administrator %}
 			<label class="checkbox"><input type="checkbox" id="remove-confirm"> {% trans %}Please confirm this user should be removed.{% endtrans %}</label>
 			<button type="submit" class="btn btn-danger btn-block" id="remove-button" disabled="">Konto permanent entfernen</button>
@@ -66,9 +69,9 @@ $('#remove-confirm').prop('checked', false);
 
 $('#remove-confirm').change(function() {
 if($(this).prop('checked')) {
-$('#remove-button').prop('disabled', false);
+$('#remove-button').removeAttr('disabled');
 } else {
-$('#remove-button').prop('disabled', true);
+$('#remove-button').attr('disabled', true);
 }
 });
 
@@ -77,13 +80,9 @@ $('#support-confirm').prop('checked', false);
 
 $('#support-confirm').change(function() {
 	if($(this).prop('checked')) {
-		$('.support-button').each(function() {
-			$(this).prop('disabled', false);
-		});
+		$('.support-button').removeAttr('disabled');
 	} else {
-		$('.support-button').each(function() {
-			$(this).prop('disabled', true);
-		});
+		$('.support-button').attr('disabled', true);
 	}
 });
 {% endblock %}
