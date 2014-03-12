@@ -1,10 +1,10 @@
 <li class="media">
-	<a href="{{filename}}/{{addon.short}}" class="pull-left">
+	<a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}" class="pull-left">
 		<img class="media-object" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACgUlEQVR4Xu2Y24t5URTHl7sHGqVEwhNDvHhwe3Epf7bBC5mEcs29FOVFuSTCmNYqmplffpmzm99vdNYuD+d09lp7fdflk61YLBZnkPFSsABcAdwCPANkPAOBhyBTgCnAFGAKMAVkrABjkDHIGGQMMgZlDAH+M8QYZAwyBhmDjEHGoIwVEMbgbDaD8XgM+/0eDAYDPD8/w9PT01XSw+EAhUIBjscjpNPpu6T+CZu3HAsJMJ/PodFogM/no+Cr1SqYTCYIBoNXf71eDyaTCT3fI8BP2Pyb6kICVCoVWC6XkEqlQKFQ/OFnt9uRKNvt9irAarWCcrlMgoXDYTifz/D6+krfhEIh6Pf737Z5V1nd+EhIgHw+D0qlkoJBIcxmM1WDRqMhd81mk961Wq1PFXCpCq/XS60xGAzA5XKB2+0GqTaliiAkQCaTIb+BQADe3t6g3W6DzWYDv98P6/WanjHLLy8vnwQ4nU5QKpUoeNyn1WohGo2CSqUCqTb/uQB48Gw2S36xBbCUMXuY/UQiAbVaDZxOJ1XAJaiPM2A0GgH+cDkcDhqeojaliCBUARgwZjGZTNIMyOVylM14PH4N+uuhUAQkQ7FYpIzjfhQvFouBXq8nEaXYlBI87hES4NLLmD2dTgf1eh3sdjvNgY/rawV0Oh2YTqfUKhhst9sFq9VKrSTV5n8RAEt2OBwCchuzaLFYwOPxgFqtvikADkukgNFohEgkcqXAZrMhCuD779qUGrxwBYg4/i17hVrgtwQhcg4WgG+E+EaIb4T4Rkhkij76XqYAU4ApwBRgCjz6JBc5P1OAKcAUYAowBUSm6KPvZQowBZgCTAGmwKNPcpHzMwXkToF3+L9Rn3dfT94AAAAASUVORK5CYII=">
 	</a>
 	<div class="media-body">
-		<h4 class="media-heading">{{ addon.title }}</h4>		
-		{% if addon.game %}<a href="{{addon.game.url}}" class="badge" style="background-color: {{addon.game.color}}">{{addon.game.name}}</a>{% endif %}
-		<p>Test</p>
+		<h4 class="media-heading">{{ addon.title }}</h4>
+		{% if addon.game %}<a href="{{base}}/addons/{{addon.game.short}}" class="badge" style="background-color: {{addon.game.color}}">{{addon.game.title}}</a>{% endif %}
+		<p>{{addon.description}}</p>
 	</div>
 </li>
