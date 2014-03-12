@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-12 01:11+0100\n"
-"PO-Revision-Date: 2014-03-12 01:11+0100\n"
+"POT-Creation-Date: 2014-03-12 01:19+0100\n"
+"PO-Revision-Date: 2014-03-12 01:25+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -58,7 +58,7 @@ msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:135
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Login.php:82
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:167
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:166
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -106,12 +106,12 @@ msgid "invalid"
 msgstr "ungültig"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:79
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:163
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:162
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:84
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:159
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:158
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -154,11 +154,7 @@ msgstr "GitHub-Name ist %s."
 msgid "Your links were changed."
 msgstr "Deine Links wurden geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:123
-msgid "Email address verification"
-msgstr "Verifizierung der E-Mail-Adresse"
-
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:126
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:125
 msgid ""
 "Contact details have been changed. We sent you an email for you to confirm "
 "the new address."
@@ -166,15 +162,15 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben dir eine E-Mail gesendet, um die neue "
 "Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:154
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:153
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:156
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:155
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:175
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:174
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -241,11 +237,11 @@ msgstr "Ungültiges Spiel."
 msgid "Short name already exists."
 msgstr "E-Mail-Adresse existiert bereits."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:48
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:47
 msgid "Your message was sent. Thank you for your feedback."
 msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:50
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:49
 msgid "Sorry, your feedback couldn't be sent."
 msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 
@@ -749,11 +745,16 @@ msgstr "Alle anderen Geräte abmelden"
 msgid "Login services"
 msgstr "Anmeldedienste"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:34
+#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:33
+#, php-format
+msgid "%brand% email address verification"
+msgstr "Verifizierung der E-Mail-Adresse bei %brand%"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:41
 msgid "You requested your email address to be changed to %email%."
 msgstr "Du hast eine Änderung deiner E-Mail-Addresse zu %email% beantragt."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:39
+#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:46
 msgid ""
 "In order to fully use your account you need to activate this new email "
 "address."
@@ -761,7 +762,7 @@ msgstr ""
 "Um dein Konto vollständig nutzen zu können musst du diese neue E-Mail-"
 "Adresse aktivieren."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:43
+#: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:50
 msgid "Please open %url% to activate your address."
 msgstr "Bitte öffne %url% um deine Addresse zu bestätigen."
 
@@ -1093,6 +1094,11 @@ msgstr "Keine Erweiterungen verfügbar"
 #: /home/benedict/public_html/lorry/app/cache/twig/78/75/82461af1b2a306689171743117160d82375814083aa5e2546f5fd55e646b.php:164
 msgid "There are no addons available for this game yet."
 msgstr "Für dieses Spiel sind noch keine Erweiterungen verfügbar."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/7d/9f/8d2b40d8fa6b0035da01be47196df1f37d8bffa0c78c7d48727849d0555c.php:31
+#, php-format
+msgid "%brand% site feedback"
+msgstr "%brand% Seitenfeedback"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:25
 msgid "Toggle navigation"

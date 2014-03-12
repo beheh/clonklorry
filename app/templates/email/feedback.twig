@@ -1,6 +1,8 @@
 {% extends 'email/base.twig' %}
 
-{% block content %}
+{% block subject %}{% trans %}{{brand}} site feedback{% endtrans %}{% endblock %}
+
+{% block body %}
 <p>Feedback sent by {{user}}:</p>
 
 <blockquote>

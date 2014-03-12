@@ -49,9 +49,11 @@ class MailService {
 	
 	public function prepare($template, $context = array()) {
 		$this->ensureMailer();
-		$body = $this->twig->render('email/'.$template, $context);
+		$template = $this->twig->loadTemplate('email/'.$template);
+		$body = $template->render($context);
 		$message = Swift_Message::newInstance()
 				->setFrom($this->config->get('mail/from'))
+				->setSubject($template->renderBlock('subject', array_merge(array('brand' => $this->config->get('brand')), $context)))
 				->setBody(strip_tags($body))
 				->addPart($body, 'text/html');
 		return $message;

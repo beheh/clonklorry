@@ -1,8 +1,10 @@
 {% extends 'email/base.twig' %}
 
+{% block subject %}{% trans %}{{brand}} email address verification{% endtrans %}{% endblock %}
+
 {% set url = '<a href="' ~ url ~ '">' ~ url ~ '</a>' %}
 
-{% block content %}
+{% block body %}
 <p>{% trans %}You requested your email address to be changed to {{email}}.{% endtrans %}</p>
 
 <p>{% trans %}In order to fully use your account you need to activate this new email address.{% endtrans %}<br>
