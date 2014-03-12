@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-12 01:19+0100\n"
-"PO-Revision-Date: 2014-03-12 01:25+0100\n"
+"POT-Creation-Date: 2014-03-12 01:35+0100\n"
+"PO-Revision-Date: 2014-03-12 01:35+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -151,8 +151,8 @@ msgid "GitHub name is %s."
 msgstr "GitHub-Name ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:106
-msgid "Your links were changed."
-msgstr "Deine Links wurden geändert."
+msgid "Your links were saved."
+msgstr "Deine Links wurden gespeichert."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:125
 msgid ""
@@ -619,8 +619,8 @@ msgid "GitHub name"
 msgstr "GitHub-Name"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:109
-msgid "Change linked profiles"
-msgstr "Verknüpfte Profile ändern"
+msgid "Save links"
+msgstr "Links speichern"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:117
 #: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:49
@@ -1121,7 +1121,7 @@ msgid "Logout"
 msgstr "Abmelden"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:143
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:38
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:123
 msgid "Register"
 msgstr "Registrieren"
@@ -1485,6 +1485,9 @@ msgstr "Liste der Community-Seiten"
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:217
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
+
+#~ msgid "Change linked profiles"
+#~ msgstr "Verknüpfte Profile ändern"
 
 #~ msgid "Username changed from \"%s\" to \"%s\""
 #~ msgstr "Benutzername geändert von \"%s\" nach \"%s\""
