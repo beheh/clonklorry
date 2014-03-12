@@ -19,6 +19,7 @@ class Front extends Presenter {
 				'version' => $release->getVersion(),
 				'game' => array(
 					'title' => $game->getTitle(),
+					'color' => $game->getColor(),
 					'short' => $game->getShort())
 			);
 		}
