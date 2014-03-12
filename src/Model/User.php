@@ -114,7 +114,7 @@ class User extends Model {
 		if($clonkforge) {
 			$this->validateUrl($clonkforge);
 			$scanned = sscanf($clonkforge, $this->config->get('clonkforge'));
-			if(count($scanned) != 1) {
+			if(count($scanned) != 1 || empty($scanned[0])) {
 				throw new ModelValueInvalidException(gettext('not a matching Clonk Forge URL'));
 			}
 		}
