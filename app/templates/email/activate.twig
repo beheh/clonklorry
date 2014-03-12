@@ -1,13 +1,11 @@
 {% extends 'email/base.twig' %}
 
+{% set url = '<a href="' ~ url ~ '">' ~ url ~ '</a>' %}
+
 {% block content %}
-You requested your email address to be changed to .
+<p>{% trans %}You requested your email address to be changed to {{email}}.{% endtrans %}</p>
 
-In order to fully use your account you need to activate this new email address.
-Please visit {{url}} to activate your address.
-
-If this should not work, please enter the following code at {{manual_url}}:
-
-{{code}}
+<p>{% trans %}In order to fully use your account you need to activate this new email address.{% endtrans %}<br>
+{% trans %}Please open {{url}} to activate your address.{% endtrans %}</p>
 
 {% endblock %}

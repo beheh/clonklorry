@@ -10,6 +10,7 @@ class Activate extends Presenter {
 		$user = $this->session->getUser();
 		$user->activate();
 		$user->save();
+		$this->redirect('/settings');
 	}
 
 }
