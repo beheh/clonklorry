@@ -84,7 +84,13 @@
 					<label class="checkbox">
 						<input type="checkbox" id="remove-confirm"> {%trans "I have read and understood the warning." %}
 					</label>
-					<button type="submit" class="btn btn-danger" id="remove-button" disabled>{% trans "Permanently remove account"%}</button>
+					<div class="form-group">
+						<label for="password">{% trans "Password" %}</label>
+						<input type="password" class="form-control remove-form-element" name="password" required disabled>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-danger remove-form-element" disabled>{% trans "Permanently remove account"%}</button>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -135,16 +141,16 @@
 {{ parent() }}
 
 $('#language-setting').change(function() {
-$(this).closest('form').submit();
+	$(this).closest('form').submit();
 });
 
 $('#remove-confirm').prop('checked', false);
 
 $('#remove-confirm').change(function() {
-if($(this).prop('checked')) {
-$('#remove-button').prop('disabled', false);
-} else {
-$('#remove-button').prop('disabled', true);
-}
+	if($(this).prop('checked')) {
+		$('.remove-form-element').removeAttr('disabled');
+	} else {
+		$('.remove-form-element').attr('disabled', true);
+	}
 });
 {% endblock %}
