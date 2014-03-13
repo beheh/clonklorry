@@ -84,7 +84,6 @@ class Environment {
 
 		$mail = new MailService();
 		$mail->setConfigService($config);
-		$mail->setTwig($twig);
 		
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);
@@ -92,6 +91,12 @@ class Environment {
 		PresenterFactory::setSessionService($session);
 		PresenterFactory::setMailService($mail);
 		PresenterFactory::setTwig($twig);
+		
+		EmailFactory::setConfigService($config);
+		EmailFactory::setLocalisationService($localisation);
+		EmailFactory::setSecurityService($security);
+		EmailFactory::setSessionService($session);
+		EmailFactory::setTwig($twig);
 
 		Router::setRoutes(array(
 			'/' => 'Site\Front',

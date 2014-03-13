@@ -2,7 +2,8 @@
 
 namespace Lorry\Service;
 
-use Twig_Environment;
+use Lorry\Email;
+use Lorry\EmailFactory;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
@@ -19,17 +20,6 @@ class MailService {
 		$this->config = $config;
 	}
 
-	
-	/**
-	 *
-	 * @var \Twig_Environment
-	 */
-	protected $twig;
-
-	public function setTwig(Twig_Environment $twig) {
-		$this->twig = $twig;
-	}
-	
 	/**
 	 *
 	 * @var \Swift_Mailer;
@@ -46,22 +36,33 @@ class MailService {
 		$this->mailer = new Swift_Mailer($transport);
 		return true;
 	}
-	
-	public function prepare($template, $context = array()) {
+
+	public function send(Email $email) {
 		$this->ensureMailer();
-		$template = $this->twig->loadTemplate('email/'.$template);
-		$body = $template->render($context);
+		
+		$email->write();
+		
+		$body = $email->getMessage();
+		
 		$message = Swift_Message::newInstance()
 				->setFrom($this->config->get('mail/from'))
-				->setSubject($template->renderBlock('subject', array_merge(array('brand' => $this->config->get('brand')), $context)))
+				->setTo($email->getRecipent())
+				->setSubject($email->getSubject())
 				->setBody(strip_tags($body))
 				->addPart($body, 'text/html');
-		return $message;
-	}
-	
-	public function send($message) {
-		$this->ensureMailer();
-		return $this->mailer->send($message);
+		
+		$replyto = $email->getReplyTo();
+		if($replyto) {
+			$message->setReplyTo($replyto);
+		}
+		
+		$this->mailer->send($message);
 	}
 
+	public function sendActivation(\Lorry\Model\User $user, $url) {
+		$activation = EmailFactory::build('Activate');
+		$activation->setRecipent($user->getEmail());
+		$activation->setUrl($url);
+		$this->send($activation);
+	}
 }

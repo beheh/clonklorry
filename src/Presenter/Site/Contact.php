@@ -3,6 +3,7 @@
 namespace Lorry\Presenter\Site;
 
 use Lorry\Presenter;
+use Lorry\EmailFactory;
 
 class Contact extends Presenter {
 
@@ -34,16 +35,18 @@ class Contact extends Presenter {
 			$by = $_SERVER['REMOTE_ADDR'];
 		}
 
-		$feedback = nl2br(htmlspecialchars(filter_input(INPUT_POST, 'feedback', FILTER_SANITIZE_STRING)));
-		$message = $this->mail->prepare('feedback.twig', array('user' => $by, 'feedback' => $feedback));
-		$message->setTo($this->config->get('legal_mail'));
+		$text = nl2br(htmlspecialchars(filter_input(INPUT_POST, 'feedback', FILTER_SANITIZE_STRING)));
+
+		$feedback = EmailFactory::build('Feedback');
+
 		if($user && $user->isActivated()) {
-			$message->setReplyTo($user->getEmail());
+			$feedback->setReplyTo($user->getEmail());
 		}
 
-		$result = $this->mail->send($message);
-		
-		if($result) {
+		$feedback->setSender($by);
+		$feedback->setFeedback($text);
+
+		if($this->mail->send($feedback)) {
 			$this->success('contact', gettext('Your message was sent. Thank you for your feedback.'));
 		} else {
 			$this->error('contact', gettext('Sorry, your feedback couldn\'t be sent.'));

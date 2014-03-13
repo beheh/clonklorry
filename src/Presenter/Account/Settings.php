@@ -119,9 +119,8 @@ class Settings extends Presenter {
 
 			if($user->modified() && empty($errors)) {
 				$user->save();
-				$message = $this->mail->prepare('activate.twig', array('email' => $email, 'url' => $this->config->get('base').'/activate'));
-				$message->setTo($email);
-				$this->mail->send($message);
+				
+				$this->mail->sendActivation($user, $this->config->get('base').'/activate');
 				$this->warning('contact', gettext('Contact details have been changed. We sent you an email for you to confirm the new address.'));
 			} else {
 				$this->error('contact', implode('<br>', $errors));
