@@ -70,10 +70,10 @@ class Edit extends Presenter {
 		}
 
 		$new_username = trim(filter_input(INPUT_POST, 'username'));
-		$this->context['username_edit'] = $new_username;
 		
 		if(isset($_GET['change-username']) && $username != $new_username) {
-
+			$this->context['username_edit'] = $new_username;
+			
 			if(ModelFactory::build('User')->byUsername($new_username)) {
 				$errors[] = gettext('Username already taken.');
 			} else {
