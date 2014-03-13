@@ -84,6 +84,7 @@ class Environment {
 
 		$mail = new MailService();
 		$mail->setConfigService($config);
+		$mail->setLocalisationService($localisation);
 		
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);

@@ -22,6 +22,16 @@ class MailService {
 
 	/**
 	 *
+	 * @var \Lorry\Service\LocalisationService
+	 */
+	protected $localisation;
+
+	public function setLocalisationService(LocalisationService $localisation) {
+		$this->localisation = $localisation;
+	}
+
+	/**
+	 *
 	 * @var \Swift_Mailer;
 	 */
 	protected $mailer;
@@ -37,32 +47,35 @@ class MailService {
 		return true;
 	}
 
-	public function send(Email $email) {
+	public function send(Email $email, $language = false) {
 		$this->ensureMailer();
-		
+
+		$this->localisation->silentLocalize($language);
 		$email->write();
-		
+		$this->localisation->resetLocalize();
+
 		$body = $email->getMessage();
-		
+
 		$message = Swift_Message::newInstance()
 				->setFrom($this->config->get('mail/from'))
 				->setTo($email->getRecipent())
 				->setSubject($email->getSubject())
 				->setBody(strip_tags($body))
 				->addPart($body, 'text/html');
-		
+
 		$replyto = $email->getReplyTo();
 		if($replyto) {
 			$message->setReplyTo($replyto);
 		}
-		
-		$this->mailer->send($message);
+
+		return $this->mailer->send($message);
 	}
 
 	public function sendActivation(\Lorry\Model\User $user, $url) {
 		$activation = EmailFactory::build('Activate');
 		$activation->setRecipent($user->getEmail());
 		$activation->setUrl($url);
-		$this->send($activation);
+		return $this->send($activation, $user->getLanguage());
 	}
+
 }
