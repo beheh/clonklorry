@@ -7,7 +7,9 @@ use Lorry\Presenter;
 class Create extends Presenter {
 
 	public function get() {
-		$this->context[] = 
+		if(!$this->session->authenticated()) {
+			return $this->redirect('/publish');
+		}
 		
 		$this->display('publish/create.twig');
 	}
