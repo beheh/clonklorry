@@ -118,10 +118,15 @@ class Settings extends Presenter {
 			}
 
 			if($user->modified() && empty($errors)) {
-				$user->save();
-				
-				$this->mail->sendActivation($user, $this->config->get('base').'/activate');
-				$this->warning('contact', gettext('Contact details have been changed. We sent you an email for you to confirm the new address.'));
+
+				$user->save();				
+
+				if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
+					$this->warning('contact', gettext('Contact details have been changed. We sent you an email for you to confirm the new address.'));
+				}
+				else {
+					$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Try resending one later.'));
+				}
 			} else {
 				$this->error('contact', implode('<br>', $errors));
 			}

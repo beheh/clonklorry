@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-13 20:05+0100\n"
-"PO-Revision-Date: 2014-03-13 20:05+0100\n"
+"POT-Creation-Date: 2014-03-13 22:19+0100\n"
+"PO-Revision-Date: 2014-03-13 22:20+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -64,9 +64,9 @@ msgstr "keine gültige ClonkForge Profil-ID"
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:135
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:152
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Login.php:82
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:166
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:170
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -87,12 +87,12 @@ msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:57
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:69
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:71
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:63
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:74
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:76
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
@@ -109,12 +109,12 @@ msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:79
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:162
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:166
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:84
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:158
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:162
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -165,15 +165,23 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben dir eine E-Mail gesendet, um die neue "
 "Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:153
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:128
+msgid ""
+"Contact details were changed, but we couldn't send you an email to confirm. "
+"Try resending one later."
+msgstr ""
+"Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung "
+"senden. Versuche es später erneut."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:157
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:155
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:159
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:174
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:178
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -240,101 +248,101 @@ msgstr "Ungültiges Spiel."
 msgid "Short name already exists."
 msgstr "E-Mail-Adresse existiert bereits."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:47
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:50
 msgid "Your message was sent. Thank you for your feedback."
 msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:49
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:52
 msgid "Sorry, your feedback couldn't be sent."
 msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:24
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:25
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:89
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:39
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:40
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:28
 #, php-format
 msgid "%s on the ClonkForge"
 msgstr "%s auf der ClonkForge"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:44
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:45
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:33
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s auf GitHub"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:83
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:85
 #, fuzzy
 msgid "Username could not be changed."
 msgstr "%s konnte nicht geändert werden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:104
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:130
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:112
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:138
 msgid "January"
 msgstr "Januar"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:114
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:140
 msgid "February"
 msgstr "Februar"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:116
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:142
 msgid "March"
 msgstr "März"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:118
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:144
 msgid "April"
 msgstr "April"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:120
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:146
 msgid "May"
 msgstr "Mai"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:122
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:148
 msgid "June"
 msgstr "Juni"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:124
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:150
 msgid "July"
 msgstr "Juli"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:126
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:152
 msgid "August"
 msgstr "August"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:128
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:154
 msgid "September"
 msgstr "September"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:130
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:156
 msgid "October"
 msgstr "Oktober"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:132
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:158
 msgid "November"
 msgstr "November"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:134
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:160
 msgid "December"
 msgstr "Dezember"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:141
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:167
 msgid "1st"
 msgstr "1."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:143
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:169
 msgid "2nd"
 msgstr "2."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:145
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:171
 msgid "3rd"
 msgstr "3."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:147
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:173
 msgid "%n%th"
 msgstr "%n%."
 
@@ -346,8 +354,8 @@ msgstr "Identifikation erforderlich"
 msgid "Please enter your password to confirm your identity:"
 msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:57
-#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:61
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:65
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:69
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:275
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:295
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:74
@@ -357,13 +365,13 @@ msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
 msgid "Password"
 msgstr "Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:66
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:74
 #: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:100
 #: /home/benedict/public_html/lorry/app/cache/twig/bf/86/3a232df6675adeb78441bef3b66094f726025db0de76972e6ad7fbd731ec.php:50
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:73
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:81
 msgid ""
 "We would like to verify your identity independent of your login service in "
 "future. Please add a secure password to continue."
@@ -371,7 +379,7 @@ msgstr ""
 "Wir möchten deine Identität in Zukunft unabhängig von deinem Anmeldedienst "
 "verifizieren. Bitte füge ein sicheres Passwort hinzu, um fortzufahren."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:79
+#: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:87
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:26
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:121
 msgid "Settings"
@@ -829,7 +837,7 @@ msgstr "Hallo,"
 msgid "Sent by %brand%"
 msgstr "Von %brand% gesendet"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:39
+#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:46
 #, fuzzy
 msgid "No content available."
 msgstr "Keine Erweiterungen verfügbar"
