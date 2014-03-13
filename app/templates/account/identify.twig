@@ -9,7 +9,9 @@
 		{% if password %}
 		<p>{% trans %}Please enter your password to confirm your identity:{% endtrans %}</p>
 		{% include 'functions/alert.twig' with {'selector' : 'identify'} %}
-		<form method="post" class="form-inline" action="{{ filename }}" role="form">
+		<form method="post" class="form-inline" action="{{base}}/identify" role="form">
+			<input type="hidden" name="state" value="{{state}}">
+			<input type="hidden" name="return" value="{{return}}">
 			<div class="form-group">
 				<label class="sr-only" for="password">{% trans "Password" %}</label>
 				<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" autofocus required>

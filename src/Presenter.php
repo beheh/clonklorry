@@ -137,12 +137,14 @@ abstract class Presenter implements PresenterInterface {
 			return;
 		}
 		$user = $this->session->getUser();
-		if(isset($_POST['password'])) {
-			if($user->matchPassword(filter_input(INPUT_POST, 'password'))) {
-				$this->session->identify();
-				return $this->reload();
-			}
+		
+		if(isset($_POST['return'])) {
+			$this->context['return'] = filter_input(INPUT_POST, 'return');			
 		}
+		else {
+			$this->context['return'] = Router::getPath();
+		}
+				
 		$this->context['password'] = false;
 		if($user->hasPassword()) {
 			$this->context['password'] = true;
