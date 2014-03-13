@@ -184,6 +184,7 @@ abstract class Model implements ModelInterface {
 
 	protected final function ensureType($row, $value) {
 		$this->ensureRow($row);
+		if($row == 'id') return $value;
 		switch($this->schema[$row]) {
 			case 'int':
 				return intval($value);
@@ -229,7 +230,7 @@ abstract class Model implements ModelInterface {
 		$this->rollback();
 
 		foreach($row as $key => $value) {
-			$this->values[$key] = $value;
+			$this->values[$key] = $this->ensureType($key, $value);
 		}
 
 		$this->loaded = true;
