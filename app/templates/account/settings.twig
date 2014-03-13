@@ -16,7 +16,11 @@
 				<input type="text" class="form-control" name="username" id="username" value="{{username}}" required disabled>
 			</div>
 			<div class="form-group">
-				<div class="alert alert-info">{% trans "Contact us to change your username." %}</div>
+				{% if user_administrator %}
+				<a href="{{base}}/users/{{user_name}}/edit" class="btn btn-default">{% trans %}Edit own user{% endtrans %}</a>
+				{% else %}
+				<div class="alert alert-info">{% trans %}Contact us to change your username.{% endtrans %}</div>
+				{% endif %}
 			</div>
 			<h3 id="profiles">{% trans "Links" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
