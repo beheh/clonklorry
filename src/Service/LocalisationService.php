@@ -103,6 +103,9 @@ class LocalisationService {
 		if($language == $this->current_language) {
 			return true;
 		}
+		if(!$this->verifyLanguage($language)) {
+			return false;
+		}
 			
 		$language = str_replace('-', '_', $language);
 		putenv('LC_ALL='.$language);
