@@ -5,6 +5,7 @@ namespace Lorry\Service;
 use Lorry\ModelFactory;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\OutputCompleteException;
 use Lorry\Exception;
 
 class SessionService {
@@ -69,11 +70,6 @@ class SessionService {
 
 	public final function identified() {
 		$this->ensureUser();
-		if(isset($_POST['password'])) {
-			if($this->user->matchPassword($_POST['password'])) {
-				$this->identify();
-			}
-		}
 		return isset($_SESSION['identified']) && $_SESSION['identified'] == true;
 	}
 

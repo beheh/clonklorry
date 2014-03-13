@@ -8,6 +8,7 @@ use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Lorry\Service\MailService;
 use Lorry\Exception\OutputCompleteException;
+use Lorry\Router;
 use Twig_Environment;
 
 abstract class Presenter implements PresenterInterface {
@@ -118,16 +119,30 @@ abstract class Presenter implements PresenterInterface {
 		}
 		header('HTTP/1.1 301 Moved Permanently');
 		header('Location: '.$location);
+		throw new OutputCompleteException;
 	}
 
 	/**
-	 * Offers the
+	 * Sends a 301 Moved Permanently redirect to the current url.
+	 */
+	protected final function reload() {
+		return $this->redirect(Router::getPath());
+	}
+
+	/**
+	 * Offers the user to identify his session.
 	 */
 	protected final function offerIdentification() {
 		if(!$this->session->authenticated() || $this->session->identified()) {
 			return;
 		}
 		$user = $this->session->getUser();
+		if(isset($_POST['password'])) {
+			if($user->matchPassword(filter_input(INPUT_POST, 'password'))) {
+				$this->session->identify();
+				return $this->reload();
+			}
+		}
 		$this->context['password'] = false;
 		if($user->hasPassword()) {
 			$this->context['password'] = true;
