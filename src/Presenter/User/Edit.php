@@ -10,6 +10,7 @@ use Lorry\Exception\ModelValueInvalidException;
 class Edit extends Presenter {
 
 	public function get($username) {
+		$this->offerIdentification();
 		$this->security->requireModerator();
 
 		$user = ModelFactory::build('User')->byUsername($username);
@@ -49,6 +50,7 @@ class Edit extends Presenter {
 	}
 
 	public function post($username) {
+		$this->offerIdentification();
 		$this->security->requireModerator();
 		$this->security->requireValidState();
 
@@ -63,25 +65,28 @@ class Edit extends Presenter {
 
 		$new_username = trim(filter_input(INPUT_POST, 'username'));
 
-		if(ModelFactory::build('User')->byUsername($new_username)) {
-			$errors[] = gettext('Username already taken.');
-		} else {
-			try {
-				$user->setUsername($new_username);
-			} catch(ModelValueInvalidException $e) {
-				$errors[] = sprintf(gettext('Username is %s.'), $e->getMessage());
-			}
-		}
-
-		if(empty($errors)) {
-			if($user->save()) {
-				$this->redirect('/users/'.$new_username.'/edit/');
-				return;
+		if(isset($_GET['change-username']) && $username != $new_username) {
+			
+			if(ModelFactory::build('User')->byUsername($new_username)) {
+				$errors[] = gettext('Username already taken.');
 			} else {
-				$this->error(gettext('Username could not be changed.'));
+				try {
+					$user->setUsername($new_username);
+				} catch(ModelValueInvalidException $e) {
+					$errors[] = sprintf(gettext('Username is %s.'), $e->getMessage());
+				}
 			}
-		} else {
-			$this->error('username', implode('<br>', $errors));
+
+			if(empty($errors)) {
+				if($user->modified() && $user->save()) {
+					$this->redirect('/users/'.$new_username.'/edit?change-username');
+					return;
+				} else {
+					$this->error(gettext('Username could not be changed.'));
+				}
+			} else {
+				$this->error('username', implode('<br>', $errors));
+			}
 		}
 
 		$this->get($username);
