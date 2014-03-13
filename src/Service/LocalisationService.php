@@ -61,7 +61,7 @@ class LocalisationService {
 				}
 			}
 		}
-		
+
 		$this->setDisplayLanguage($language);
 		return $this->display_language;
 	}
@@ -82,11 +82,29 @@ class LocalisationService {
 		return false;
 	}
 
+	private $localized = false;
+	
 	public final function localize() {
+		if($this->localized) {
+			return false;
+		}
+			
 		$requested = $this->getDisplayLanguage();
 		header('Content-Language: '.$requested);
+		
+		$this->localized = true;
+		
+		return $this->silentLocalize($requested);
+	}
 
-		$language = str_replace('-', '_', $requested);
+	private $current_language = false;
+	
+	public final function silentLocalize($language) {
+		if($language == $this->current_language) {
+			return true;
+		}
+			
+		$language = str_replace('-', '_', $language);
 		putenv('LC_ALL='.$language);
 		setlocale(LC_ALL, $language.'.UTF-8');
 
@@ -94,8 +112,16 @@ class LocalisationService {
 		bindtextdomain($textdomain, '../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
+		
+		$this->current_language = $language;
+		
+		return true;
 	}
 
+	public final function resetLocalize() {
+		return $this->silentLocalize($this->getDisplayLanguage());
+	}
+	
 	const FORMAT_DATETIME = 1;
 
 	public final function getFormat($format) {
