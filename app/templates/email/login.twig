@@ -1,7 +1,9 @@
 {% extends 'email/base.twig' %}
 
-{% block content %}
-You (or somebody else) requested a one-time login for your account.
+{% block subject %}{% trans %}Login{% endtrans %}{% endblock %}
 
-<a href="">http://example.com/example.com</a>.
+{% block body %}
+<p>{% trans %}You (or somebody else) requested a one-time login for your account.{% endtrans %}</p>
+
+
 {% endblock %}
