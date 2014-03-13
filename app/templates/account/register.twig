@@ -1,11 +1,13 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Register'|trans %}
+{% set title %}
+{% trans %}Register at {{brand}}{% endtrans %}
+{% endset %}
 
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{{ title }}</h1>
+		<h1>{% trans 'Register' %}</h1>
 	</div>
 	<div class="row" id="register">
 		<div class="col-md-4">
