@@ -25,10 +25,16 @@ class Edit extends Presenter {
 		$this->context['title'] = gettext('Edit user');
 
 		$this->context['username'] = $user->getUsername();
-		$new_username = filter_input(INPUT_POST, 'username');
-		$this->context['username_edit'] = $new_username ? $new_username : $user->getUsername();
+		if(!isset($this->context['username_edit'])) {
+			$this->context['username_edit'] = $user->getUsername();
+		}
 
-		$this->context['email'] = $user->getEmail();
+		$this->context['email'] = isset($_POST['email']) ? filter_input(INPUT_POST, 'email') : $user->getEmail();
+
+		if(!isset($this->context['require_activation'])) {
+			$this->context['require_activation'] = true;
+		}
+		
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
 		$this->context['administrator'] = $user->isAdministrator();
@@ -64,9 +70,10 @@ class Edit extends Presenter {
 		}
 
 		$new_username = trim(filter_input(INPUT_POST, 'username'));
-
+		$this->context['username_edit'] = $new_username;
+		
 		if(isset($_GET['change-username']) && $username != $new_username) {
-			
+
 			if(ModelFactory::build('User')->byUsername($new_username)) {
 				$errors[] = gettext('Username already taken.');
 			} else {
@@ -86,6 +93,47 @@ class Edit extends Presenter {
 				}
 			} else {
 				$this->error('username', implode('<br>', $errors));
+			}
+		}
+
+		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+		$this->context['email'] = $email;
+
+		$require_activation = filter_input(INPUT_POST, 'require-activation', FILTER_VALIDATE_BOOLEAN) ? true : false;
+		$this->context['require_activation'] = $require_activation;
+		
+		if(isset($_GET['change-contact']) && $email != $user->getEmail()) {
+			$errors = array();
+			
+			if(ModelFactory::build('User')->byEmail($email)) {
+				$errors[] = gettext('Email address already used.');
+			} else {
+				try {
+					$user->setEmail($email);
+				} catch(ModelValueInvalidException $e) {
+					$errors[] = sprintf(gettext('Email address is %s.'), gettext('invalid'));
+				}
+			}
+
+			if($user->modified() && empty($errors)) {
+
+				if(!$require_activation) {
+					$user->activate();
+				}
+
+				$user->save();
+
+				if($require_activation) {
+					if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
+						$this->warning('contact', gettext('Contact details were changed. We sent an email to the user to confirm this new address.'));
+					} else {
+						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send the user an email.'));
+					}
+				} else {
+					$this->success('contact', gettext('Contact details were changed.'));
+				}
+			} else {
+				$this->error('contact', implode('<br>', $errors));
 			}
 		}
 

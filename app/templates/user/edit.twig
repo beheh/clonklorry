@@ -32,8 +32,13 @@
 							<label for="email">{% trans "Email address" %}</label>
 							<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
 						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="require-activation" value="yes"{% if require_activation %} checked{% endif %}> {% trans %}Require user activation{% endtrans %}
+							</label>
+						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
+							<button type="submit" class="btn btn-default">{% trans "Change email address" %}</button>
 						</div>
 					</form>
 				</div>
@@ -79,10 +84,10 @@ $('#remove-button').attr('disabled', true);
 $('#support-confirm').prop('checked', false);
 
 $('#support-confirm').change(function() {
-	if($(this).prop('checked')) {
-		$('.support-button').removeAttr('disabled');
-	} else {
-		$('.support-button').attr('disabled', true);
-	}
+if($(this).prop('checked')) {
+$('.support-button').removeAttr('disabled');
+} else {
+$('.support-button').attr('disabled', true);
+}
 });
 {% endblock %}

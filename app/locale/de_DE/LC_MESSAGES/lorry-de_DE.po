@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-13 22:19+0100\n"
-"PO-Revision-Date: 2014-03-13 22:20+0100\n"
+"POT-Creation-Date: 2014-03-13 22:40+0100\n"
+"PO-Revision-Date: 2014-03-13 22:42+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -45,6 +45,7 @@ msgstr "keine gültige Zahl"
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:90
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:100
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:117
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:99
 msgid "invalid"
 msgstr "ungültig"
 
@@ -104,6 +105,7 @@ msgstr "E-Mail-Adresse bereits genutzt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:117
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:99
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
@@ -159,8 +161,8 @@ msgstr "Deine Links wurden gespeichert."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:125
 msgid ""
-"Contact details have been changed. We sent you an email for you to confirm "
-"the new address."
+"Contact details were changed. We sent you an email for you to confirm the "
+"new address."
 msgstr ""
 "Kontaktdaten geändert. Wir haben dir eine E-Mail gesendet, um die neue "
 "Adresse zu bestätigen."
@@ -278,71 +280,88 @@ msgstr "%s auf GitHub"
 msgid "Username could not be changed."
 msgstr "%s konnte nicht geändert werden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:130
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:114
+msgid ""
+"Contact details were changed. We sent an email to the user to confirm this "
+"new address."
+msgstr ""
+"Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
+"diese neue Adresse zu bestätigen."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
+msgid "Contact details were changed, but we couldn't send the user an email."
+msgstr ""
+"Kontaktdaten geändert, wir konnten dem Nutzer jedoch keine E-Mail senden."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:119
+msgid "Contact details were changed."
+msgstr "Kontaktdaten wurden geändert."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:133
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:138
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:141
 msgid "January"
 msgstr "Januar"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:140
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:143
 msgid "February"
 msgstr "Februar"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:142
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:145
 msgid "March"
 msgstr "März"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:144
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:147
 msgid "April"
 msgstr "April"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:146
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:149
 msgid "May"
 msgstr "Mai"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:148
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:151
 msgid "June"
 msgstr "Juni"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:150
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:153
 msgid "July"
 msgstr "Juli"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:152
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:155
 msgid "August"
 msgstr "August"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:154
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:157
 msgid "September"
 msgstr "September"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:156
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:159
 msgid "October"
 msgstr "Oktober"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:158
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:161
 msgid "November"
 msgstr "November"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:160
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:163
 msgid "December"
 msgstr "Dezember"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:167
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:170
 msgid "1st"
 msgstr "1."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:169
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:172
 msgid "2nd"
 msgstr "2."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:171
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:174
 msgid "3rd"
 msgstr "3."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:173
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:176
 msgid "%n%th"
 msgstr "%n%."
 
@@ -667,11 +686,11 @@ msgid "Email address"
 msgstr "E-Mail-Adresse"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:170
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:113
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:176
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:125
 msgid "Change email address"
 msgstr "E-Mail-Adresse ändern"
 
@@ -1068,31 +1087,35 @@ msgstr "OpenClonk-Wiki öffnen"
 msgid "Change username"
 msgstr "Benutzername ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:127
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:118
+msgid "Require user activation"
+msgstr "Nutzer muss Adresse aktivieren"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:139
 msgid "Support"
 msgstr "Support"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:131
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:143
 msgid "Please confirm this user should be moderated."
 msgstr "Bitte bestätige, dass dieser Nutzer moderiert werden soll."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:135
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:147
 msgid "Reset password"
 msgstr "Password zurücksetzen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:139
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:151
 msgid "Reset login services"
 msgstr "Anmeldedienste zurücksetzen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:146
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:158
 msgid "Please confirm this user should be removed."
 msgstr "Bitte bestätige, dass dieser Nutzer entfernt werden soll."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:161
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:173
 msgid "Moderation protocol"
 msgstr "Moderationsprotokoll"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:165
+#: /home/benedict/public_html/lorry/app/cache/twig/78/1f/f2f08801dbb6299523b6e85552096cdc5c2a17d0339dce2acc54e525d81f.php:177
 msgid "This account has not been moderated in the past."
 msgstr "Dieses Konto wurde noch nicht moderiert."
 
@@ -1570,9 +1593,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Awaiting approval"
 #~ msgstr "Erwartet Freigabe"
-
-#~ msgid "Contact details have been changed."
-#~ msgstr "Kontaktdaten wurden geändert."
 
 #, fuzzy
 #~ msgid "Edit release"

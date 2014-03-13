@@ -54,8 +54,11 @@ class Settings extends Presenter {
 		$this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge'), 0);
 		$this->context['github_placeholder'] = $user->getUsername();
 
-		$this->context['email'] = $user->getEmail();
+		if(!isset($this->context['email'])) {
+			$this->context['email'] = $user->getEmail();
+		}
 		$this->context['activated'] = $user->isActivated();
+		
 		$this->context['language'] = $this->localisation->getDisplayLanguage();
 
 		$this->context['password_exists'] = $user->hasPassword();
@@ -111,6 +114,8 @@ class Settings extends Presenter {
 			$errors = array();
 
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+			$this->context['email'] = $email;
+
 			try {
 				$user->setEmail($email);
 			} catch(ModelValueInvalidException $e) {
@@ -119,12 +124,11 @@ class Settings extends Presenter {
 
 			if($user->modified() && empty($errors)) {
 
-				$user->save();				
+				$user->save();
 
 				if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
-					$this->warning('contact', gettext('Contact details have been changed. We sent you an email for you to confirm the new address.'));
-				}
-				else {
+					$this->warning('contact', gettext('Contact details were changed. We sent you an email for you to confirm the new address.'));
+				} else {
 					$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Try resending one later.'));
 				}
 			} else {
