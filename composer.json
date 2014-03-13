@@ -3,9 +3,9 @@
 	"require": {
 		"twig/twig": "1.*",
 		"twig/extensions": "1.*",
+		"swiftmailer/swiftmailer": "v5.0.3",
 		"lightopenid/lightopenid": "0.7.*",
-		"league/oauth2-client": "dev-master",
-		"swiftmailer/swiftmailer": "v5.0.3"
+		"league/oauth2-client": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
