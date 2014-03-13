@@ -54,10 +54,9 @@
 					<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
 					{% else %}
 					<button type="submit" class="btn btn-default">{% trans "Change email address" %}</button>
-					<a href="#" class="btn btn-warning">{% trans "Resend confirmation" %}</a>
+					<button type="submit" class="btn btn-warning" name="resend">{% trans "Resend confirmation" %}</button>
 					{% endif %}
 				</div>
-			</form>
 			{% if not activated %}
 			<div class="alert alert-warning">{% trans %}You need to confirm your email address.{% endtrans %}</div>
 			{% endif %}

@@ -58,7 +58,7 @@ class Settings extends Presenter {
 			$this->context['email'] = $user->getEmail();
 		}
 		$this->context['activated'] = $user->isActivated();
-		
+
 		$this->context['language'] = $this->localisation->getDisplayLanguage();
 
 		$this->context['password_exists'] = $user->hasPassword();
@@ -122,17 +122,24 @@ class Settings extends Presenter {
 				$errors[] = sprintf(gettext('Email address is %s.'), gettext('invalid'));
 			}
 
-			if($user->modified() && empty($errors)) {
+			if($user->modified()) {
+				if(empty($errors)) {
+					$user->save();
 
-				$user->save();
-
-				if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
-					$this->warning('contact', gettext('Contact details were changed. We sent you an email for you to confirm the new address.'));
+					if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
+						$this->warning('contact', gettext('Contact details were changed. We sent you an email for you to confirm the new address.'));
+					} else {
+						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Try resending one later.'));
+					}
 				} else {
-					$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Try resending one later.'));
+					$this->error('contact', implode('<br>', $errors));
 				}
-			} else {
-				$this->error('contact', implode('<br>', $errors));
+			} else if(isset($_POST['resend'])) {
+				if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
+					$this->success('contact', gettext('We sent you an email for you to confirm the new address.'));
+				} else {
+					$this->alert('contact', gettext('We couldn\'t send you an email to confirm your address. Try resending one later.'));
+				}
 			}
 		}
 

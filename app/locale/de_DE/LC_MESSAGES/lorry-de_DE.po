@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-13 23:01+0100\n"
-"PO-Revision-Date: 2014-03-13 23:01+0100\n"
+"POT-Creation-Date: 2014-03-13 23:09+0100\n"
+"PO-Revision-Date: 2014-03-13 23:09+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -67,7 +67,7 @@ msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:152
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Login.php:82
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:174
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:181
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -112,12 +112,12 @@ msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:79
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:170
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:177
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:84
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:166
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:173
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -176,15 +176,28 @@ msgstr ""
 "Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung "
 "senden. Versuche es später erneut."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:161
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:139
+msgid "We sent you an email for you to confirm the new address."
+msgstr ""
+" Wir haben dir eine E-Mail gesendet, um die neue Adresse zu bestätigen."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:141
+msgid ""
+"We couldn't send you an email to confirm your address. Try resending one "
+"later."
+msgstr ""
+"Wir konnten dir keine E-Mail zur Bestätigung senden. Versuche es später "
+"erneut."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:168
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:163
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:170
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:182
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:189
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -376,8 +389,8 @@ msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:65
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:69
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:275
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:295
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:274
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:294
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:74
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:78
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:99
@@ -699,95 +712,95 @@ msgstr "E-Mail-Adresse ändern"
 msgid "Resend confirmation"
 msgstr "Erneut bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:192
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:191
 msgid "You need to confirm your email address."
 msgstr "Deine E-Mail-Adresse muss bestätigt werden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:198
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:197
 msgid "Language"
 msgstr "Sprache"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:211
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:210
 msgid "View site in"
 msgstr "Betrachte Seite auf"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:220
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:219
 msgid "English"
 msgstr "Englisch"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:228
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:227
 msgid "German"
 msgstr "Deutsch"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:236
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:235
 msgid "Change language"
 msgstr "Sprache ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:243
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:242
 msgid "Remove account"
 msgstr "Konto entfernen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:247
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:246
 msgid "Would you like to remove your account?"
 msgstr "Möchtest du dein Konto entfernen?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:261
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:260
 msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:263
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:262
 msgid "You will permanently loose control of all your uploaded addons."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine hochgeladenen Erweiterungen "
 "verlieren."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:269
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:268
 msgid "I have read and understood the warning."
 msgstr "Ich habe den Hinweis gelesen und verstanden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:282
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:281
 msgid "Permanently remove account"
 msgstr "Konto permanent entfernen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:291
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:290
 msgid "Security"
 msgstr "Sicherheit"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:315
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:314
 msgid "Old password"
 msgstr "Altes Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:330
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:329
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:342
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:341
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:111
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:115
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:350
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:349
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:352
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:351
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:359
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:358
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:366
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:365
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:379
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:378
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:385
+#: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:384
 msgid "Login services"
 msgstr "Anmeldedienste"
 
@@ -798,11 +811,11 @@ msgstr "Verifizierung der E-Mail-Adresse bei %brand%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:41
 msgid ""
-"You requested your email address for the account %username% to be changed to "
-"%email%."
+"You requested your email address for the account \"%username%\" to be "
+"changed to %email%."
 msgstr ""
-"Du hast für Benutzerkonto %username% eine Änderung deiner E-Mail-Addresse zu "
-"%email% beantragt."
+"Du hast für Benutzerkonto „%username%“ eine Änderung deiner E-Mail-Adresse "
+"zu %email% beantragt."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:46
 msgid ""
