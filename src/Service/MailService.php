@@ -75,6 +75,7 @@ class MailService {
 		$activation = EmailFactory::build('Activate');
 		$activation->setRecipent($user->getEmail());
 		$activation->setUrl($url);
+		$activation->setUsername($user->getUsername());
 		return $this->send($activation, $user->getLanguage());
 	}
 

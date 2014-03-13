@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-13 22:40+0100\n"
-"PO-Revision-Date: 2014-03-13 22:42+0100\n"
+"POT-Creation-Date: 2014-03-13 23:01+0100\n"
+"PO-Revision-Date: 2014-03-13 23:01+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -42,10 +42,10 @@ msgstr "keine gültige Zahl"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:29
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:90
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:100
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:117
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:99
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:93
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:103
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
 msgid "invalid"
 msgstr "ungültig"
 
@@ -67,7 +67,7 @@ msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter.php:152
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Login.php:82
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:170
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:174
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -88,35 +88,36 @@ msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:57
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:71
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:78
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:63
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:76
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:83
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:68
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:111
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:117
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:99
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:79
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:166
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:170
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:84
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:162
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:166
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -145,21 +146,21 @@ msgstr "Anmeldedienst entfernt."
 msgid "Can't remove last login service."
 msgstr "Kann letzten Anmeldedienst nicht entfernen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:90
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:93
 #, php-format
 msgid "Clonk Forge profile url is %s."
 msgstr "Clonk Forge Profil-URL ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:100
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:103
 #, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:106
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:109
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:125
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:130
 msgid ""
 "Contact details were changed. We sent you an email for you to confirm the "
 "new address."
@@ -167,7 +168,7 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben dir eine E-Mail gesendet, um die neue "
 "Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:128
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:132
 msgid ""
 "Contact details were changed, but we couldn't send you an email to confirm. "
 "Try resending one later."
@@ -175,15 +176,15 @@ msgstr ""
 "Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung "
 "senden. Versuche es später erneut."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:157
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:161
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:159
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:163
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:178
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:182
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -263,24 +264,24 @@ msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:40
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:46
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:28
 #, php-format
 msgid "%s on the ClonkForge"
 msgstr "%s auf der ClonkForge"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:45
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:51
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:33
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s auf GitHub"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:85
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:92
 #, fuzzy
 msgid "Username could not be changed."
 msgstr "%s konnte nicht geändert werden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:114
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:130
 msgid ""
 "Contact details were changed. We sent an email to the user to confirm this "
 "new address."
@@ -288,12 +289,12 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
 "diese neue Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:132
 msgid "Contact details were changed, but we couldn't send the user an email."
 msgstr ""
 "Kontaktdaten geändert, wir konnten dem Nutzer jedoch keine E-Mail senden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:119
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:135
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
@@ -796,8 +797,12 @@ msgid "%brand% email address verification"
 msgstr "Verifizierung der E-Mail-Adresse bei %brand%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:41
-msgid "You requested your email address to be changed to %email%."
-msgstr "Du hast eine Änderung deiner E-Mail-Addresse zu %email% beantragt."
+msgid ""
+"You requested your email address for the account %username% to be changed to "
+"%email%."
+msgstr ""
+"Du hast für Benutzerkonto %username% eine Änderung deiner E-Mail-Addresse zu "
+"%email% beantragt."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:46
 msgid ""
