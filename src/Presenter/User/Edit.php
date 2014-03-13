@@ -34,7 +34,7 @@ class Edit extends Presenter {
 		if(!isset($this->context['require_activation'])) {
 			$this->context['require_activation'] = true;
 		}
-		
+
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
 		$this->context['administrator'] = $user->isAdministrator();
@@ -70,10 +70,10 @@ class Edit extends Presenter {
 		}
 
 		$new_username = trim(filter_input(INPUT_POST, 'username'));
-		
+
 		if(isset($_GET['change-username']) && $username != $new_username) {
 			$this->context['username_edit'] = $new_username;
-			
+
 			if(ModelFactory::build('User')->byUsername($new_username)) {
 				$errors[] = gettext('Username already taken.');
 			} else {
@@ -97,14 +97,16 @@ class Edit extends Presenter {
 		}
 
 		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-		$this->context['email'] = $email;
 
-		$require_activation = filter_input(INPUT_POST, 'require-activation', FILTER_VALIDATE_BOOLEAN) ? true : false;
-		$this->context['require_activation'] = $require_activation;
-		
 		if(isset($_GET['change-contact']) && $email != $user->getEmail()) {
-			$errors = array();
 			
+			$this->context['email'] = $email;
+
+			$require_activation = filter_input(INPUT_POST, 'require-activation', FILTER_VALIDATE_BOOLEAN) ? true : false;
+			$this->context['require_activation'] = $require_activation;
+
+			$errors = array();
+
 			if(ModelFactory::build('User')->byEmail($email)) {
 				$errors[] = gettext('Email address already used.');
 			} else {
