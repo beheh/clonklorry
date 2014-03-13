@@ -1,0 +1,8 @@
+{% extends 'email/base.twig' %}
+
+{% block subject %}{% trans %}Welcome to {{brand}}{% endtrans %}{% endblock %}
+
+{% block content %}
+<p>{% trans %}Welcome to {{brand}}!{% endtrans %}</p>
+
+{% endblock %}
