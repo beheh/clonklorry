@@ -19,7 +19,7 @@
 				<div class="alert alert-info">{% trans "Contact us to change your username." %}</div>
 			</div>
 			<h3 id="profiles">{% trans "Links" %}</h3>
-		{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
+			{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
 			<form role=form" method="post" action="{{filename}}?change-profiles">
 				<input type="hidden" name="state" value="{{state}}">
 				<div class="form-group">
@@ -50,7 +50,7 @@
 					<button type="submit" class="btn btn-default">{% trans "Confirm email address" %}</button>
 					{% else %}
 					<button type="submit" class="btn btn-default">{% trans "Change email address" %}</button>
-					<a href="#" class="btn btn-warning">{% trans "No confirmation email?" %}</a>
+					<a href="#" class="btn btn-warning">{% trans "Resend confirmation" %}</a>
 					{% endif %}
 				</div>
 			</form>
@@ -95,9 +95,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-
 			<h2 id="security">{% trans "Security" %}</h2>
-
 			<h3 id="password">{% trans "Password" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
 			<form role=form" method="post" id="form-password" action="{{filename}}?change-password">
