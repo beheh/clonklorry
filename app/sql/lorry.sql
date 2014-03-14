@@ -39,7 +39,7 @@ CREATE TABLE `comment` (
 CREATE TABLE `addon` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`owner` int(11) NOT NULL,
-	`short` varchar(255) NOT NULL,
+	`short` varchar(255) NULL,
 	`title` varchar(255) NOT NULL,
 	`abbreviation` varchar(10) DEFAULT NULL,
 	`game` int(11) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE `addon` (
 	`website` varchar(255) DEFAULT NULL,
 	`bugtracker` varchar(255) DEFAULT NULL,
 	PRIMARY KEY (`id`),
-	UNIQUE KEY `short_game` (`short`,`game`)
+	UNIQUE KEY `short` (`short`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `release` (
