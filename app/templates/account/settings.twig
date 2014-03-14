@@ -60,6 +60,7 @@
 			{% if not activated %}
 			<div class="alert alert-warning">{% trans %}You need to confirm your email address.{% endtrans %}</div>
 			{% endif %}
+			</form>
 			<h3 id="language">{% trans "Language" %}</h3>
 			<form role=form" method="post" action="{{filename}}?change-language">
 				<input type="hidden" name="state" value="{{state}}">
@@ -142,16 +143,16 @@
 {{ parent() }}
 
 $('#language-setting').change(function() {
-	$(this).closest('form').submit();
+$(this).closest('form').submit();
 });
 
 $('#remove-confirm').prop('checked', false);
 
 $('#remove-confirm').change(function() {
-	if($(this).prop('checked')) {
-		$('.remove-form-element').removeAttr('disabled');
-	} else {
-		$('.remove-form-element').attr('disabled', true);
-	}
+if($(this).prop('checked')) {
+$('.remove-form-element').removeAttr('disabled');
+} else {
+$('.remove-form-element').attr('disabled', true);
+}
 });
 {% endblock %}
