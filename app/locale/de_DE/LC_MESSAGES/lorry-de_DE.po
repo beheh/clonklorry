@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-14 14:04+0100\n"
-"PO-Revision-Date: 2014-03-14 14:05+0100\n"
+"POT-Creation-Date: 2014-03-14 14:23+0100\n"
+"PO-Revision-Date: 2014-03-14 14:23+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1482,9 +1482,8 @@ msgid "Game"
 msgstr "Spiel\t"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:139
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:135
-msgid "Cancel"
-msgstr "Abbrechen"
+msgid "Back"
+msgstr "Zurück"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:28
 msgid "Register at %brand%"
@@ -1514,6 +1513,10 @@ msgstr ""
 "Dein Passwort wird sicher gespeichert. Wir benötigen zu deiner Sicherheit "
 "mindestens 8 Zeichen und können dir dieses Passwort nicht zusenden falls du "
 "es vergessen solltest."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:135
+msgid "Cancel"
+msgstr "Abbrechen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:143
 msgid "Already registered?"
