@@ -75,6 +75,10 @@ dt {
 textarea {
   resize: vertical;
 }
+.media-addon img {
+  width: 76px;
+  height: 57px;
+}
 .btn-google {
   color: #ffffff;
   background-color: #dd4b39;
