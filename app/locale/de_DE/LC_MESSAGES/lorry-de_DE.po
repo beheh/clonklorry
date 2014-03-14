@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-14 14:23+0100\n"
-"PO-Revision-Date: 2014-03-14 14:23+0100\n"
+"POT-Creation-Date: 2014-03-14 15:01+0100\n"
+"PO-Revision-Date: 2014-03-14 15:01+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,23 +20,23 @@ msgstr ""
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:293
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:295
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:296
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:298
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:309
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:311
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:317
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:319
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:323
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:325
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
@@ -45,7 +45,7 @@ msgstr "keine gültige Zahl"
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:93
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:103
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:117
 msgid "invalid"
 msgstr "ungültig"
 
@@ -88,25 +88,25 @@ msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:59
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:78
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:79
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:65
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:83
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:84
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:70
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:111
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:112
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:75
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:117
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
@@ -248,9 +248,24 @@ msgstr "Nicht implementiert"
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Addon.php:25
-msgid "Edit %addon%"
-msgstr "%addon% bearbeiten"
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Create.php:46
+#, php-format
+msgid "Title is %s."
+msgstr "Titel ist %s."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Create.php:53
+#, php-format
+msgid "Type is %s."
+msgstr "Typ ist %s."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Create.php:64
+#, php-format
+msgid "Game is %s."
+msgstr "Spiel ist %s."
+
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Create.php:68
+msgid "Addon creation currently disabled."
+msgstr "Neue Erweiterungen sind deaktiviert."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Portal.php:74
 msgid "Invalid game."
@@ -261,6 +276,10 @@ msgstr "Ungültiges Spiel."
 msgid "Short name already exists."
 msgstr "E-Mail-Adresse existiert bereits."
 
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/_Addon.php:25
+msgid "Edit %addon%"
+msgstr "%addon% bearbeiten"
+
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Site/Contact.php:50
 msgid "Your message was sent. Thank you for your feedback."
 msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
@@ -269,28 +288,28 @@ msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
 msgid "Sorry, your feedback couldn't be sent."
 msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:25
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:26
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:89
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:46
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:47
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:28
 #, php-format
 msgid "%s on the ClonkForge"
 msgstr "%s auf der ClonkForge"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:51
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:52
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:33
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s auf GitHub"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:92
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:93
 msgid "Username could not be changed."
 msgstr "Benutzername konnte nicht geändert werden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:130
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:131
 msgid ""
 "Contact details were changed. We sent an email to the user to confirm this "
 "new address."
@@ -298,12 +317,12 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
 "diese neue Adresse zu bestätigen."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:132
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:133
 msgid "Contact details were changed, but we couldn't send the user an email."
 msgstr ""
 "Kontaktdaten geändert, wir konnten dem Nutzer jedoch keine E-Mail senden."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:135
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:136
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
@@ -430,7 +449,7 @@ msgid "Details"
 msgstr "Details"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:67
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:53
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:57
 msgid "Title"
 msgstr "Titel"
 
@@ -1398,7 +1417,7 @@ msgid "No game available"
 msgstr "Keine Spiel verfügbar"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:118
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:133
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:159
 msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
@@ -1451,37 +1470,37 @@ msgstr ""
 "Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "und sie über Lorry verfügbar machen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:61
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:71
 msgid "The title should be descriptive and unique."
 msgstr "Der Titel sollte aussagekräftig und einzigartig sein."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:67
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:77
 msgid "Type"
 msgstr "Typ"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:72
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:86
 #: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:122
 #: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:134
 msgid "Choose&hellip;"
 msgstr "Auswählen&hellip;"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:76
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:94
 msgid "Scenario"
 msgstr "Szenario"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:80
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:102
 msgid "Pack"
 msgstr "Objektpaket"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:85
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:107
 msgid "Scenarios should only be a single file."
 msgstr "Szenarios sollten nur aus einer Datei bestehen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:93
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:115
 msgid "Game"
 msgstr "Spiel\t"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:139
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:165
 msgid "Back"
 msgstr "Zurück"
 

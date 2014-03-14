@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Exception\ModelValueInvalidException;
 
 class Create extends Presenter {
 
@@ -25,8 +26,52 @@ class Create extends Presenter {
 
 	public function post() {
 		$this->security->requireLogin();
+		$this->security->requireValidState();
 
-		if(false) {
+		$user = $this->session->getUser();
+
+		$errors = array();
+
+
+		$addon = ModelFactory::build('Addon');
+
+		$addon->setOwner($user->getId());
+
+		try {
+			$title = filter_input(INPUT_POST, 'title');
+			$this->context['addontitle'] = $title;
+			$addon->setTitle($title);
+			$this->context['title_valid'] = true;
+		} catch(ModelValueInvalidException $ex) {
+			$errors[] = sprintf(gettext('Title is %s.'), $ex->getMessage());
+		}
+
+		try {
+			$type = filter_input(INPUT_POST, 'type');
+			$this->context['type'] = $type;
+		} catch(ModelValueInvalidException $ex) {
+			$errors[] = sprintf(gettext('Type is %s.'), $ex->getMessage());
+		}
+
+		try {
+			$game = ModelFactory::build('Game')->byShort(filter_input(INPUT_POST, 'game'));
+			if(!$game) {
+				throw new ModelValueInvalidException('invalid');
+			}
+			$this->context['game'] = $game->getShort();
+			$addon->setGame($game->getId());
+		} catch(ModelValueInvalidException $ex) {
+			$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
+		}
+
+		if(!$user->isAdministrator()) {
+			$errors[] = gettext('Addon creation currently disabled.');
+		}
+
+		if(!empty($errors)) {
+			$this->error('creation', implode('<br>', $errors));
+		} else {
+			$addon->save();
 			$this->redirect('/publish');
 		}
 

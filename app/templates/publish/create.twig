@@ -14,15 +14,15 @@
 				{% include 'functions/alert.twig' with {'selector' : 'creation'} %}
 				<div class="form-group">
 					<label for="title">{% trans "Title" %}</label>
-					<input type="text" class="form-control" name="title" id="title" value="" placeholder="{{exampletitle}}" required autofocus>
+					<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" placeholder="{{exampletitle}}" required{% if not title_valid %} autofocus{% endif %}>
 					<span class="help-block">{% trans %}The title should be descriptive and unique.{% endtrans %}</span>
 				</div>
 				<div class="form-group">
 					<label for="type">{% trans "Type" %}</label>
 					<select name="type" class="form-control" id="type" required>
-						<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
-						<option value="scenario">{% trans "Scenario" %}</option>
-						<option value="pack">{% trans "Pack" %}</option>
+						<option value="" disabled{% if not type %} selected{% endif %}>{% trans "Choose&hellip;"%}</option>
+						<option value="scenario"{% if type == 'scenario' %} selected{% endif %}>{% trans "Scenario" %}</option>
+						<option value="pack"{% if type == 'pack' %} selected{% endif %}>{% trans "Pack" %}</option>
 					</select>
 					<span class="help-block">{% trans %}Scenarios should only be a single file.{% endtrans %}</span>
 				</div>
@@ -31,12 +31,12 @@
 				<div class="form-group">
 					<label for="game">{% trans "Game" %}</label>
 					<div class="row">
-						{% for short, game in games %}
+						{% for short, current_game in games %}
 						<div class="col-sm-6 col-md-4">
 							<label class="thumbnail">
-								<img src="{{resources}}/custom/game/{{short}}.png" alt="{{game.title}}">
+								<img src="{{resources}}/custom/game/{{short}}.png" alt="{{current_game.title}}">
 								<div class="caption">
-									<input type="radio" name="game" value="{{short}}" style="margin-left: auto !important; margin-right: auto !important;" class="center-block" required>
+									<input type="radio" name="game" value="{{short}}" style="margin-left: auto !important; margin-right: auto !important;" class="center-block" {% if game == short %}checked {% endif %}required>
 								</div>
 							</label>
 						</div>
