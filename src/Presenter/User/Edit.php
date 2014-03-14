@@ -10,9 +10,10 @@ use Lorry\Exception\ModelValueInvalidException;
 class Edit extends Presenter {
 
 	public function get($username) {
-		$this->offerIdentification();
 		$this->security->requireModerator();
-
+		$this->offerIdentification();
+		$this->security->requireIdentification();
+		
 		$user = ModelFactory::build('User')->byUsername($username);
 		if(!$user) {
 			throw new FileNotFoundException('user '.$username);

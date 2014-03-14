@@ -9,9 +9,10 @@ use Lorry\Exception\FileNotFoundException;
 class Table extends Presenter {
 
 	public function get() {
-		$this->offerIdentification();
 		$this->security->requireModerator(); //@TODO rate limiting
-
+		$this->offerIdentification();
+		$this->security->requireIdentification();
+		
 		$users = ModelFactory::build('User');
 
 		$filter = filter_input(INPUT_GET, 'filter');
