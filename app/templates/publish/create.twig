@@ -8,9 +8,10 @@
 		<h1>{{ title }}</h1>
 	</div>
 	<form role=form" method="post" action="{{filename}}">
+		<input type="hidden" name="state" value="{{state}}">
 		<div class="row">
 			<div class="col-md-4">
-				<input type="hidden" name="state" value="{{state}}">
+				{% include 'functions/alert.twig' with {'selector' : 'creation'} %}
 				<div class="form-group">
 					<label for="title">{% trans "Title" %}</label>
 					<input type="text" class="form-control" name="title" id="title" value="" placeholder="{{exampletitle}}" required autofocus>
@@ -19,7 +20,7 @@
 				<div class="form-group">
 					<label for="type">{% trans "Type" %}</label>
 					<select name="type" class="form-control" id="type" required>
-						<option disabled selected>{% trans "Choose&hellip;"%}</option>
+						<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
 						<option value="scenario">{% trans "Scenario" %}</option>
 						<option value="pack">{% trans "Pack" %}</option>
 					</select>
