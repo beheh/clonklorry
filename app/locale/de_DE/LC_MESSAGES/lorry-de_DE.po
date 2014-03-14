@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-13 23:09+0100\n"
-"PO-Revision-Date: 2014-03-13 23:09+0100\n"
+"POT-Creation-Date: 2014-03-14 01:19+0100\n"
+"PO-Revision-Date: 2014-03-14 01:22+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -41,7 +41,7 @@ msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:29
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:75
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:93
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:103
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
@@ -87,42 +87,42 @@ msgstr "E-Mail-Adresse unbekannt."
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:57
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:59
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:78
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:63
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:65
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:83
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:68
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:70
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:111
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:73
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:75
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:122
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:116
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:79
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:81
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:177
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:84
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:86
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:173
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:103
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:108
 msgid "There was an error registering."
 msgstr "Fehler bei der Registrierung."
 
@@ -290,9 +290,8 @@ msgid "%s on GitHub"
 msgstr "%s auf GitHub"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:92
-#, fuzzy
 msgid "Username could not be changed."
-msgstr "%s konnte nicht geändert werden."
+msgstr "Benutzername konnte nicht geändert werden."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:130
 msgid ""
@@ -866,18 +865,17 @@ msgstr "Keine passenden Benutzer"
 msgid "No user currently matches your filtering critera."
 msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:21
-msgid "Hi there,"
-msgstr "Hallo,"
+#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:22
+msgid "Hi there %username%,"
+msgstr "Hallo %username%,"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:31
+#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:35
 msgid "Sent by %brand%"
 msgstr "Von %brand% gesendet"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:46
-#, fuzzy
+#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:50
 msgid "No content available."
-msgstr "Keine Erweiterungen verfügbar"
+msgstr "Kein Inhalt verfügbar"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:25
 msgid "Contact us"
@@ -1229,6 +1227,43 @@ msgstr "Kontaktformular"
 msgid "There are no new messages in the queue."
 msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
 
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/16/e9a193d0745f012aa5cd51aba7c2c3113031d0c86e89d764077c42ba58dd.php:31
+msgid "Welcome to %brand%"
+msgstr "Willkommen bei %brand%"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/16/e9a193d0745f012aa5cd51aba7c2c3113031d0c86e89d764077c42ba58dd.php:39
+msgid "Welcome to %brand%!"
+msgstr "Willkommen bei %brand%!"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/16/e9a193d0745f012aa5cd51aba7c2c3113031d0c86e89d764077c42ba58dd.php:44
+msgid ""
+"Although this project is still very early in the development, thank you for "
+"helping us test the platform."
+msgstr ""
+"Auch wenn sich das Projekt noch sehr früh in der Entwicklung befindet, danke "
+"für das Testen der Plattform."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/16/e9a193d0745f012aa5cd51aba7c2c3113031d0c86e89d764077c42ba58dd.php:48
+msgid ""
+"If you'd like to learn more about the project or Clonk visit the about pages "
+"at the bottom of the site."
+msgstr ""
+"Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche einfach "
+"die Info-Seiten am unteren Rand der Seite."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/16/e9a193d0745f012aa5cd51aba7c2c3113031d0c86e89d764077c42ba58dd.php:53
+msgid ""
+"You can report any feedback you have on the contact page at %contact%. If "
+"you're logged in, we'll be able to see who it's from and get back to you."
+msgstr ""
+"Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% einsenden. "
+"Falls du angemeldet bist, können wir sehen dass die Nachricht von dir kommt "
+"und direkt antworten."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/16/e9a193d0745f012aa5cd51aba7c2c3113031d0c86e89d764077c42ba58dd.php:58
+msgid "Once again, thank you for testing %brand%!"
+msgstr "Noch einmal, vielen Dank für das Testen von %brand%!"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:46
 msgid "Administrator"
 msgstr "Administrator"
@@ -1541,6 +1576,9 @@ msgstr "Liste der Community-Seiten"
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:178
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
+
+#~ msgid "Hi there,"
+#~ msgstr "Hallo,"
 
 #~ msgid "No confirmation email?"
 #~ msgstr "Keine Bestätigungsmail?"

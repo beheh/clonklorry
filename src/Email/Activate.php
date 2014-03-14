@@ -10,10 +10,6 @@ class Activate extends Email {
 		$this->context['email'] = $this->getRecipent();
 		$this->render('activate.twig');
 	}
-	
-	public function setUsername($username) {
-		$this->context['username'] = $username;
-	}
 
 	public function setUrl($url) {
 		$this->context['url'] = $url;

@@ -57,7 +57,7 @@ class MailService {
 		$body = $email->getMessage();
 
 		$message = Swift_Message::newInstance()
-				->setFrom($this->config->get('mail/from'))
+				->setFrom(array($this->config->get('mail/from') => $this->config->get('brand')))
 				->setTo($email->getRecipent())
 				->setSubject($email->getSubject())
 				->setBody(strip_tags($body))

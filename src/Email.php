@@ -75,9 +75,13 @@ abstract class Email implements EmailInterface {
 	public function setReplyTo($replyto) {
 		$this->replyto = $replyto;
 	}
-	
+
 	public function getReplyTo() {
 		return $this->replyto;
+	}
+
+	public function setUsername($username) {
+		$this->context['username'] = $username;
 	}
 
 	protected $context = array();

@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\EmailFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Register extends Presenter {
@@ -25,7 +26,8 @@ class Register extends Presenter {
 		if(isset($_SESSION['register_oauth'])) {
 			$register = $_SESSION['register_oauth'];
 
-			if($register['email']) $this->context['email'] = $register['email'];
+			if($register['email'])
+				$this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
 			$this->context['username_focus'] = true;
 
@@ -92,10 +94,13 @@ class Register extends Presenter {
 
 		if(empty($errors)) {
 			if($user->save()) {
+				$registration = EmailFactory::build('Register');
+				$registration->setRecipent($user->getEmail());
+				$registration->setUsername($user->getUsername());
+				$this->mail->send($registration, $user->getLanguage());
 				if($oauth) {
 					$this->session->start($user, true);
 					$this->redirect('/');
-					return;
 				} else {
 					$this->redirect('/login?registered='.urlencode($username));
 				}
