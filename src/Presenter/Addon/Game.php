@@ -15,7 +15,7 @@ class Game extends Presenter {
 		}
 
 		$this->context['title'] = $game->getTitle();
-		$this->context['game'] = strtr(gettext('Addons for %game%'), array('%game%' => $game->getTitle()));
+		$this->context['game'] =  $game->getTitle();
 		$this->context['short'] = $game->getShort();
 
 		$query = ModelFactory::build('Addon')->all();
