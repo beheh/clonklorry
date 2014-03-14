@@ -72,7 +72,7 @@ dt {
 .media-heading + .badge {
   vertical-align: text-bottom;
 }
-.contact-form {
+textarea {
   resize: vertical;
 }
 .btn-google {
