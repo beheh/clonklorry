@@ -136,9 +136,9 @@ class Settings extends Presenter {
 				}
 			} else if(isset($_POST['resend'])) {
 				if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
-					$this->success('contact', gettext('We sent you an email for you to confirm the new address.'));
+					$this->success('contact', gettext('Confirmation email sent.'));
 				} else {
-					$this->alert('contact', gettext('We couldn\'t send you an email to confirm your address. Try resending one later.'));
+					$this->alert('contact', gettext('We can\'t send you a confirmation email right now. Try again later.'));
 				}
 			}
 		}

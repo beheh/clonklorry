@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-14 01:19+0100\n"
-"PO-Revision-Date: 2014-03-14 01:22+0100\n"
+"POT-Creation-Date: 2014-03-14 01:28+0100\n"
+"PO-Revision-Date: 2014-03-14 01:28+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -177,17 +177,14 @@ msgstr ""
 "senden. Versuche es später erneut."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:139
-msgid "We sent you an email for you to confirm the new address."
-msgstr ""
-" Wir haben dir eine E-Mail gesendet, um die neue Adresse zu bestätigen."
+msgid "Confirmation email sent."
+msgstr "Bestätigungsmail gesendet."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:141
-msgid ""
-"We couldn't send you an email to confirm your address. Try resending one "
-"later."
+msgid "We can't send you a confirmation email right now. Try again later."
 msgstr ""
-"Wir konnten dir keine E-Mail zur Bestätigung senden. Versuche es später "
-"erneut."
+"Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es "
+"später erneut."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:168
 msgid "Your password was changed."
@@ -809,12 +806,8 @@ msgid "%brand% email address verification"
 msgstr "Verifizierung der E-Mail-Adresse bei %brand%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:41
-msgid ""
-"You requested your email address for the account \"%username%\" to be "
-"changed to %email%."
-msgstr ""
-"Du hast für Benutzerkonto „%username%“ eine Änderung deiner E-Mail-Adresse "
-"zu %email% beantragt."
+msgid "You requested your email address to be changed to %email%."
+msgstr "Du hast eine Änderung deiner E-Mail-Adresse zu %email% beantragt."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:46
 msgid ""
@@ -1577,11 +1570,12 @@ msgstr "Liste der Community-Seiten"
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
 
+#~ msgid "We sent you an email for you to confirm the new address."
+#~ msgstr ""
+#~ " Wir haben dir eine E-Mail gesendet, um die neue Adresse zu bestätigen."
+
 #~ msgid "Hi there,"
 #~ msgstr "Hallo,"
-
-#~ msgid "No confirmation email?"
-#~ msgstr "Keine Bestätigungsmail?"
 
 #~ msgid "New releases on Lorry"
 #~ msgstr "Neue Veröffentlichungen auf Lorry"
