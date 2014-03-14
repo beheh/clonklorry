@@ -7,5 +7,47 @@
 	<div class="page-header">
 		<h1>{{ title }}</h1>
 	</div>
+	<form role=form" method="post" action="{{filename}}">
+		<div class="row">
+			<div class="col-md-4">
+				<input type="hidden" name="state" value="{{state}}">
+				<div class="form-group">
+					<label for="title">{% trans "Title" %}</label>
+					<input type="text" class="form-control" name="title" id="title" value="" placeholder="{{exampletitle}}" required autofocus>
+					<span class="help-block">{% trans %}The title should be descriptive and unique.{% endtrans %}</span>
+				</div>
+				<div class="form-group">
+					<label for="type">{% trans "Type" %}</label>
+					<select name="type" class="form-control" id="type" required>
+						<option disabled selected>{% trans "Choose&hellip;"%}</option>
+						<option value="scenario">{% trans "Scenario" %}</option>
+						<option value="pack">{% trans "Pack" %}</option>
+					</select>
+					<span class="help-block">{% trans %}Scenarios should only be a single file.{% endtrans %}</span>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="form-group">
+					<label for="game">{% trans "Game" %}</label>
+					<div class="row">
+						{% for short, game in games %}
+						<div class="col-sm-6 col-md-4">
+							<label class="thumbnail">
+								<img src="{{resources}}/custom/game/{{short}}.png" alt="{{game.title}}">
+								<div class="caption">
+									<input type="radio" name="game" value="{{short}}" style="margin-left: auto !important; margin-right: auto !important;" class="center-block" required>
+								</div>
+							</label>
+						</div>
+					    {% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-success">{% trans "Create addon" %}</button>
+			<a href="{{base}}/publish" class="btn btn-default">{% trans "Cancel" %}</a>
+		</div>
+	</form>
 </div>
 {% endblock %}

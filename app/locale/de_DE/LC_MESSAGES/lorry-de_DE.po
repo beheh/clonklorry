@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-14 01:28+0100\n"
-"PO-Revision-Date: 2014-03-14 01:28+0100\n"
+"POT-Creation-Date: 2014-03-14 14:04+0100\n"
+"PO-Revision-Date: 2014-03-14 14:05+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -430,6 +430,7 @@ msgid "Details"
 msgstr "Details"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:67
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:53
 msgid "Title"
 msgstr "Titel"
 
@@ -447,6 +448,7 @@ msgid "Change details"
 msgstr "Details ändern"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:113
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:49
 msgid "Dependencies"
 msgstr "Abhängigkeiten"
 
@@ -464,6 +466,7 @@ msgid "Add dependency"
 msgstr "Abhängigkeit hinzufügen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:156
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:41
 msgid "Presentation"
 msgstr "Präsentation"
 
@@ -1395,6 +1398,7 @@ msgid "No game available"
 msgstr "Keine Spiel verfügbar"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:118
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:133
 msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
@@ -1447,6 +1451,41 @@ msgstr ""
 "Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "und sie über Lorry verfügbar machen."
 
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:61
+msgid "The title should be descriptive and unique."
+msgstr "Der Titel sollte aussagekräftig und einzigartig sein."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:67
+msgid "Type"
+msgstr "Typ"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:72
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:122
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:134
+msgid "Choose&hellip;"
+msgstr "Auswählen&hellip;"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:76
+msgid "Scenario"
+msgstr "Szenario"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:80
+msgid "Pack"
+msgstr "Objektpaket"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:85
+msgid "Scenarios should only be a single file."
+msgstr "Szenarios sollten nur aus einer Datei bestehen."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:93
+msgid "Game"
+msgstr "Spiel\t"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:139
+#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:135
+msgid "Cancel"
+msgstr "Abbrechen"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:28
 msgid "Register at %brand%"
 msgstr "Bei %brand% registrieren"
@@ -1475,10 +1514,6 @@ msgstr ""
 "Dein Passwort wird sicher gespeichert. Wir benötigen zu deiner Sicherheit "
 "mindestens 8 Zeichen und können dir dieses Passwort nicht zusenden falls du "
 "es vergessen solltest."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:135
-msgid "Cancel"
-msgstr "Abbrechen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:143
 msgid "Already registered?"
@@ -1538,6 +1573,18 @@ msgstr ""
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
 
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:45
+msgid "Files"
+msgstr "Dateien"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:53
+msgid "Tags"
+msgstr "Tags"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:57
+msgid "Release"
+msgstr "Release"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:118
 msgid "There are no new releases."
 msgstr "Es gibt keine neuen Veröffentlichungen."
@@ -1589,9 +1636,6 @@ msgstr "Erweiterungen der Woche"
 #~ msgid "User"
 #~ msgstr "Benutzer"
 
-#~ msgid "Profiles"
-#~ msgstr "Profile"
-
 #~ msgid "Change linked profiles"
 #~ msgstr "Verknüpfte Profile ändern"
 
@@ -1632,9 +1676,6 @@ msgstr "Erweiterungen der Woche"
 #~ msgid "Linked profiles"
 #~ msgstr "Verknüpfte Profile"
 
-#~ msgid "Game"
-#~ msgstr "Spiel\t"
-
 #~ msgid "Addon page"
 #~ msgstr "Erweiterungsseite"
 
@@ -1661,9 +1702,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Status"
 #~ msgstr "Status"
-
-#~ msgid "Release"
-#~ msgstr "Release"
 
 #~ msgid ""
 #~ "We would like to check the quality of this addon before it goes public to "
@@ -1808,9 +1846,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Game title"
 #~ msgstr "Spieltitel"
-
-#~ msgid "Choose a game&hellip;"
-#~ msgstr "Wähle ein Spiel&hellip;"
 
 #~ msgid "Create new addon"
 #~ msgstr "Neue Erweiterung anlegen"
