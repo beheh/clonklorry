@@ -22,7 +22,7 @@ class Create extends Presenter {
 		}
 
 		$objects = array('Stippel', 'Monster', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
-		$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%s Pack', '%s Party', 'Left 2 %s', '%sclonk', '%srennen', '%s	arena');
+		$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%s Pack', '%s Party', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
 		$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
 
 		$this->display('publish/create.twig');
