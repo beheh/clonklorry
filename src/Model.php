@@ -185,10 +185,12 @@ abstract class Model implements ModelInterface {
 
 	protected final function ensureType($row, $value) {
 		$this->ensureRow($row);
-		if($row == 'id') return $value;
+		if($row == 'id' || $value === NULL) return $value;
 		switch($this->schema[$row]) {
 			case 'int':
-				return intval($value);
+				$value = intval($value);
+				$this->validateNumber($value);
+				return $value;
 			case 'boolean':
 				return $value == true;
 			case 'string':
