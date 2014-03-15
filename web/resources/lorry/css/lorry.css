@@ -69,7 +69,7 @@ dt {
 .media-heading {
   display: inline-block;
 }
-.media-heading + .badge {
+.media .badge {
   vertical-align: text-bottom;
 }
 textarea {
