@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{{ title }}{% if not addons %} <small><a href="{{filename}}/create" class="label label-success">{% trans %}New addon{% endtrans %}</a></small>{% endif %}</h1>
+		<h1>{{ title }}{% if addons %} <small><a href="{{filename}}/create" class="label label-success">{% trans %}New addon{% endtrans %}</a></small>{% endif %}</h1>
 	</div>
 {% if addons %}
 	<div class="row">
