@@ -70,7 +70,7 @@ class SessionService {
 
 	public final function identified() {
 		$this->ensureUser();
-		return isset($_SESSION['identified']) && $_SESSION['identified'] == true;
+		return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified'] == true;
 	}
 
 	public final function remember() {
