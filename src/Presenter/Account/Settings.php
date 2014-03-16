@@ -89,6 +89,7 @@ class Settings extends Presenter {
 			$this->context['clonkforge'] = $clonkforge;
 			try {
 				$user->setClonkforgeUrl($clonkforge);
+				$this->context['clonkforge'] = $user->getClonkforgeUrl();
 			} catch(ModelValueInvalidException $e) {
 				$this->error('profiles', sprintf(gettext('Clonk Forge profile url is %s.'), gettext('invalid')));
 				$error = true;
@@ -99,6 +100,7 @@ class Settings extends Presenter {
 			$this->context['github'] = $github;
 			try {
 				$user->setGithub($github);
+				$this->context['github'] = $user->getGithub();
 			} catch(ModelValueInvalidException $e) {
 				$this->error('profiles', sprintf(gettext('GitHub name is %s.'), gettext('invalid')));
 				$error = true;
