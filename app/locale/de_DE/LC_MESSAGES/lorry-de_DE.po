@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-14 15:41+0100\n"
-"PO-Revision-Date: 2014-03-14 15:42+0100\n"
+"POT-Creation-Date: 2014-03-16 12:18+0100\n"
+"PO-Revision-Date: 2014-03-16 12:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -263,15 +263,6 @@ msgstr "Spiel ist %s."
 msgid "Addon creation currently disabled."
 msgstr "Neue Erweiterungen sind deaktiviert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Portal.php:74
-msgid "Invalid game."
-msgstr "Ungültiges Spiel."
-
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/Portal.php:83
-#, fuzzy
-msgid "Short name already exists."
-msgstr "E-Mail-Adresse existiert bereits."
-
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Publish/_Addon.php:25
 msgid "Edit %addon%"
 msgstr "%addon% bearbeiten"
@@ -430,8 +421,7 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1f/cc/19328e87f7969b4239e41c697f16aae530fcbc5c933907b1522dccf293d9.php:26
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:168
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:245
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:90
 msgid "Edit addon"
 msgstr "Erweiterung bearbeiten"
 
@@ -1058,6 +1048,7 @@ msgid "The series appeals to all ages alike."
 msgstr ""
 
 #: /home/benedict/public_html/lorry/app/cache/twig/67/1b/f8a8e523b8f7d7ef2b79301aa4af87deced5464e79fcb0f4eb9e73721995.php:118
+#: /home/benedict/public_html/lorry/app/cache/twig/da/6a/7f38dec139345590e41fd2cf69da35b7bacea21226964797da66065a6b54.php:70
 msgid "View the addons"
 msgstr "Betrachte die Erweiterungen"
 
@@ -1232,6 +1223,7 @@ msgstr "Warteschlangen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:70
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:199
+#: /home/benedict/public_html/lorry/app/cache/twig/da/6a/7f38dec139345590e41fd2cf69da35b7bacea21226964797da66065a6b54.php:25
 msgid "Addons"
 msgstr "Erweiterungen"
 
@@ -1405,63 +1397,34 @@ msgstr ""
 "Clonk-Community teilzunehmen."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:48
-msgid "New addon"
-msgstr "Neue Erweiterung"
+msgid "Your addons"
+msgstr "Deine Erweiterungen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:60
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:70
-msgid "Full title"
-msgstr "Vollständiger Titel"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:80
-msgid "Select a game&hellip;"
-msgstr "Wähle ein Spiel&hellip;"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:104
-msgid "No game available"
-msgstr "Keine Spiel verfügbar"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:118
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:159
-msgid "Create addon"
-msgstr "Erweiterung anlegen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:128
-msgid "Unreleased"
-msgstr "Unveröffentlicht"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:183
-msgid "You have not created a new addon yet."
-msgstr "Du hast noch keine neue Erweiterung erstellt."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:192
-msgid "Released"
-msgstr "Veröffentlicht"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:253
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:102
 msgid "View addon page"
 msgstr "Erweiterungsseite betrachten"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:268
-msgid "You have not released an addon yet."
-msgstr "Du hast noch keine Erweiterung veröffentlicht."
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:130
+msgid "New addon"
+msgstr "Neue Erweiterung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:283
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:136
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:162
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:25
+msgid "Create a new addon"
+msgstr "Neue Erweiterung anlegen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:152
 msgid "Welcome to the publishing portal!"
 msgstr "Willkommen beim Veröffentlichungsportal!"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:287
+#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:156
 msgid ""
 "Here you can publish your addons and make them available to your fans. Click "
 "the button below to get started."
 msgstr ""
 "Hier kannst du deine Erweiterungen veröffentlichungen und sie deinen Fans "
 "zugänglich machen. Klicke auf den untenliegenden Knopf, um zu beginnen."
-
-#: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:293
-#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:25
-msgid "Create a new addon"
-msgstr "Neue Erweiterung anlegen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:47
 msgid "This is the publishing portal"
@@ -1475,6 +1438,11 @@ msgstr ""
 "Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
 "und sie über Lorry verfügbar machen."
 
+#: /home/benedict/public_html/lorry/app/cache/twig/da/6a/7f38dec139345590e41fd2cf69da35b7bacea21226964797da66065a6b54.php:95
+#, fuzzy
+msgid "No games available"
+msgstr "Keine Spiel verfügbar"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:71
 msgid "The title should be descriptive and unique."
 msgstr "Der Titel sollte aussagekräftig und einzigartig sein."
@@ -1485,7 +1453,7 @@ msgstr "Typ"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:86
 #: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:122
-#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:134
+#: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:133
 msgid "Choose&hellip;"
 msgstr "Auswählen&hellip;"
 
@@ -1504,6 +1472,10 @@ msgstr "Szenarios sollten nur aus einer Datei bestehen."
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:115
 msgid "Game"
 msgstr "Spiel\t"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:159
+msgid "Create addon"
+msgstr "Erweiterung anlegen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:165
 msgid "Back"
@@ -1643,6 +1615,31 @@ msgstr "Liste der Community-Seiten"
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:178
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
+
+#~ msgid "Invalid game."
+#~ msgstr "Ungültiges Spiel."
+
+#, fuzzy
+#~ msgid "Short name already exists."
+#~ msgstr "E-Mail-Adresse existiert bereits."
+
+#~ msgid "Full title"
+#~ msgstr "Vollständiger Titel"
+
+#~ msgid "Select a game&hellip;"
+#~ msgstr "Wähle ein Spiel&hellip;"
+
+#~ msgid "Unreleased"
+#~ msgstr "Unveröffentlicht"
+
+#~ msgid "You have not created a new addon yet."
+#~ msgstr "Du hast noch keine neue Erweiterung erstellt."
+
+#~ msgid "Released"
+#~ msgstr "Veröffentlicht"
+
+#~ msgid "You have not released an addon yet."
+#~ msgstr "Du hast noch keine Erweiterung veröffentlicht."
 
 #~ msgid "Create a new addon for this game"
 #~ msgstr "Neue Erweiterung für dieses Spiel anlegen"
@@ -1897,9 +1894,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Abbreviation"
 #~ msgstr "Abkürzung"
-
-#~ msgid "Your addons"
-#~ msgstr "Deine Erweiterungen"
 
 #~ msgid "About the project"
 #~ msgstr "Über das Projekt"

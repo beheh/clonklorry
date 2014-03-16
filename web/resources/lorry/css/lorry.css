@@ -79,6 +79,9 @@ textarea {
   width: 76px;
   height: 57px;
 }
+.media-addon:first-child {
+  margin-top: 15px;
+}
 h1 small .label {
   vertical-align: text-top;
 }

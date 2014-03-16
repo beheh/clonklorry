@@ -5,75 +5,27 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{{ title }}</h1>
+		<h1>{{ title }} <small><a href="{{filename}}/create" class="label label-success">{% trans %}New addon{% endtrans %}</a></small></h1>
 	</div>
 {% if addons %}
 	<div class="row">
 		<div class="col-md-12">
-			<h2>{% trans %}New addon{% endtrans %}</h2>
-		{% include 'functions/alert.twig' with {'selector' : 'create'} %}
-			<form method="post" action="{{filename}}" id="form-publish" class="form-inline">
-				<div class="form-group">
-					<label for="title" class="sr-only">{% trans %}Full title{% endtrans %}</label>
-					<input type="text" class="form-control" name="title" id="title" value="{{addon_title}}" maxlength="32" required{% if focus == 'title' %} autofocus{% endif %} placeholder="{% trans %}Full title{% endtrans %}">
-				</div>
-				<div class="form-group">
-				{% if games and games|length > 1%}<select class="form-control" name="game" id="game" required>
-						<option value="">{% trans %}Select a game&hellip;{% endtrans %}</option>
-					{% for game in games %}
-						<option value="{{game.short}}"{% if game.selected %} selected{% endif %}>{{ game.title }}</option>
-					{% else %}
-						<option>{% trans %}No game available{% endtrans %}</option>
-					{% endfor %}
-					</select>{% endif %}
-				</div>
-				<button type="submit" class="btn btn-primary">{% trans "Create addon" %}</button>
-			</form>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-md-6">
-			<h2>{% trans %}Unreleased{% endtrans %}</h2>
-		{% if addons_unreleased %}
 			<ul class="media-list addons-small">
-		{% for addon in addons_unreleased %}
-				<li class="media">
+				{% for addon in addons %}
+				<li class="media media-addon">
 					<div class="pull-left">
-						<img class="media-object" src="http://placehold.it/200x150">
+						<img class="media-object" src="http://placehold.it/76x57">
 					</div>
 					<div class="media-body">
-						<h4 class="media-heading heading-label">{{ addon.title }}</h4>
-						<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
-						<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a></p>
+						<h4 class="media-heading">{{addon.title}}</h4>
+						{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title}%}
+						<p>
+							<a href="{{filename}}/addons/{{addon.id}}/edit" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
+						</p>
 					</div>
 				</li>
-		{% endfor %}
+				{% endfor %}
 			</ul>
-		{% else %}
-			<div class="alert alert-warning">{% trans %}You have not created a new addon yet.{% endtrans %}</div>
-		{% endif %}
-		</div>
-		<div class="col-md-6">
-			<h2>{% trans %}Released{% endtrans %}</h2>
-		{% if addons_released %}
-			<ul class="media-list addons-small">
-		{% for addon in addons_released %}
-				<li class="media">
-					<a class="pull-left" href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">
-						<img class="media-object" src="http://placehold.it/200x150">
-					</a>
-					<div class="media-body">
-						<h4 class="media-heading heading-label"><a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{{ addon.title }}</a></h4>
-						<a href="{{base}}/addons/{{addon.game.short}}" class="label label-game label-{{addon.game.short}}">{{addon.game.title}}</a>
-						<p><a href="{{filename}}/{{addon.game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit addon{% endtrans %}</a> <a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}" class="btn">{% trans %}View addon page{% endtrans %}</a></p>
-					</div>
-				</li>
-		{% endfor %}
-			</ul>
-		{% else %}
-			<div class="alert alert-warning">{% trans %}You have not released an addon yet.{% endtrans %}</div>
-		{% endif %}
 		</div>
 	</div>
 {% else %}
