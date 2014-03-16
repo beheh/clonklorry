@@ -66,14 +66,14 @@ abstract class Model implements ModelInterface {
 		return $this->getValue('id');
 	}
 
-	public final function setValue($name, $value) {
+	protected final function setValue($name, $value) {
 		$this->ensureRow($name);
 		if($this->loaded && $this->values[$name] === $value) return true;
 		$this->changes[$name] = $this->ensureType($name, $value);
 		return true;
 	}
 
-	public final function getValue($name) {
+	protected final function getValue($name) {
 		$this->ensureRow($name);
 		if(array_key_exists($name, $this->changes)) return $this->changes[$name];
 		$this->ensureLoaded();

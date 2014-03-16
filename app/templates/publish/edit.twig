@@ -1,0 +1,108 @@
+{% extends 'root.twig' %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }} <small><span class="label label-default">Unveröffentlicht</span></small></h1>
+	</div>
+	<ul class="nav nav-tabs" id="editAddonTabs" style="margin-bottom: 20px;">
+		<li class="active"><a href="#presentation" data-toggle="tab">{% trans "Presentation" %}</a></li>
+		<li><a href="#files" data-toggle="tab">{% trans "Files" %}</a></li>
+		<li><a href="#dependencies" data-toggle="tab">{% trans "Dependencies" %}</a></li>
+		<li><a href="#tags" data-toggle="tab">{% trans "Tags" %}</a></li>
+		<li><a href="#release" data-toggle="tab">{% trans "Release" %}</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="presentation">
+			<form role=form" method="post" action="{{filename}}">
+				<div class="row">
+					<div class="col-md-4">
+						<input type="hidden" name="state" value="{{state}}">
+						<div class="form-group">
+							<label for="title">Titel</label>
+							<input type="text" class="form-control" name="title" id="title" value="" required>
+						</div>
+						<div class="form-group">
+							<label for="type">Typ</label>
+							<select name="type" class="form-control" id="type" required>
+								<option value="123">Runde</option>
+								<option value="312">Objektpaket</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="type">Spiel</label>
+							<select name="type" class="form-control" id="type" required>
+								<option value="123">Clonk Rage</option>
+								<option value="312">OpenClonk</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">Speichern</button>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="game">Beschreibung</label>
+							<div class="form-group">
+								<textarea class="form-control" name="description" rows="10" required=""></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="tab-pane" id="tags">
+			<form role=form" method="post" action="{{filename}}">
+				<div class="row">
+					<div class="col-md-4">
+						<input type="hidden" name="state" value="{{state}}">
+						<div class="form-group">
+							<label for="type">Spielziel</label>
+							<select name="type" class="form-control" id="type" required>
+								<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+								<option value="123">Abenteuer / Kooperativ</option>
+								<option value="312">Wettrennen</option>
+								<option value="312">Melee</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="type">Spielerzahl</label>
+							<select name="type" class="form-control" id="type" required>
+								<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+								<option value="123">Einzeln</option>
+								<option value="312">Wenige</option>
+								<option value="312">Mehrere</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">Speichern</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="tab-pane" id="files">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+						<label for="game">Dateien</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane" id="dependencies">
+			<div class="row">
+
+			</div>
+		</div>
+
+		<div class="tab-pane" id="release">
+			<div class="row">
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
