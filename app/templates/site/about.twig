@@ -25,7 +25,7 @@
 		<div class="col-md-4">
 			<hr class="visible-xs">
 			<h3>{% trans %}Online community{% endtrans %}</h3>
-			<p>{% trans %}The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk as such: the awesome Community and its creations.{% endtrans %}</p>
+			<p>{% trans %}The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk: the awesome Community and its creations.{% endtrans %}</p>
 			<p>{% trans %}We want to share our own creations easily and give the addon developers our important feedback.{% endtrans %}</p>
 		{% if user_login %}<p><a href="{{user_profile}}" class="btn btn-primary">{% trans "View your profile"%}</a></p>
 		{% else %}<p><a href="{{base}}/register" class="btn btn-success">{% trans "Register now"%}</a></p>{% endif %}
@@ -39,11 +39,11 @@
 			<dl>
 				<dt><a href="http://php.net">PHP</a></dt>
 				<dd>by the <a href="http://php.net/credits.php">PHP Group</a>,</dd>
-				<dt><a href="http://twig.sensiolabs.org">Twig</a> <span class="text-muted">(templating)</span></dt>
+				<dt><a href="http://twig.sensiolabs.org">Twig</a></dt>
 				<dd>by <a href="http://fabien.potencier.org/">Fabien Potencier</a> and <a href="http://sensiolabs.com/">SensioLabs</a>,</dd>
-				<dt><a href="http://swiftmailer.org/">Swift Mailer</a> <span class="text-muted">(mailing)</span></dt>
+				<dt><a href="http://swiftmailer.org/">Swift Mailer</a></dt>
 				<dd>by Chris Corbyn, maintained by Fabien Potencier,</dd>
-				<dt><a href="http://lesscss.org/">Less</a> <span class="text-muted">(styling)</span></dt>
+				<dt><a href="http://lesscss.org/">Less</a></dt>
 				<dd>by <a href="https://github.com/cloudhead">Alexis Sellier</a> and <a href="http://lesscss.org/about/#team">contributors</a>,</dd>
 				<dt><a href="https://code.google.com/p/lightopenid/">LightOpenID</a> / <a href="http://lesscss.org/">OAuth 2.0 Client</a></dt>
 				<dd>by <a href="https://code.google.com/u/103055401176250561450/">lightopenid author</a> / <a href="http://thephpleague.com/">the PHP League</a>.</dd>
@@ -69,10 +69,12 @@
 			<dl>
 				<dt><a href="http://clonkspot.org/">{% trans %}Clonkspot community{% endtrans %}</a></dt>
 				<dd>{% trans %}feedback and thoughts{% endtrans %},</dd>
+				<dt><a href="http://forum.openclonk.org/">{% trans %}OpenClonk community{% endtrans %}</a></dt>
+				<dd>{% trans %}ideas and inspiration{% endtrans %},</dd>
 				<br>
 				<div class="head">
 					<dt><a href="https://beheh.de"><img src="{{resources}}/lorry/img/benedict.png" class="img-circle">Benedict Etzel</a> <span class="text-muted">/ <a href="{{base}}/users/B_E" class="text-muted">B_E</a></span></dt>
-					<dd>{% trans %}idea & development{% endtrans %}.</dd>
+					<dd>{% trans %}concept & development{% endtrans %}.</dd>
 				</div>
 			</dl>
 		</div>
