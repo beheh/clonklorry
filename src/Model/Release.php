@@ -32,11 +32,12 @@ class Release extends Model {
 	}
 
 	public final function setVersion($version) {
+		$this->validateRegexp($version, '/^([a-zA-Z0-9-.]+)$/');
 		return $this->setValue('version', $version);
 	}
 
 	public final function byVersion($version, $addon) {
-		return $this->byValues(array('version' => $version, 'addon' => $addon));
+		return $this->byValues(array('addon' => $addon, 'version' => $version));
 	}
 
 	public final function getVersion() {
