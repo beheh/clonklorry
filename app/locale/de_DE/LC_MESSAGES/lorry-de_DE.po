@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-03-17 21:54+0100\n"
-"PO-Revision-Date: 2014-03-17 21:55+0100\n"
+"POT-Creation-Date: 2014-03-17 21:58+0100\n"
+"PO-Revision-Date: 2014-03-17 21:58+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1373,8 +1373,8 @@ msgid "Back to top"
 msgstr "Nach oben"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:155
-msgid "About us"
-msgstr "Über uns"
+msgid "About the project"
+msgstr "Über das Projekt"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:159
 msgid "Contact"
@@ -1659,6 +1659,9 @@ msgstr "Liste der Community-Seiten"
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:178
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
+
+#~ msgid "About us"
+#~ msgstr "Über uns"
 
 #~ msgid "Back"
 #~ msgstr "Zurück"
@@ -2010,9 +2013,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Full Title"
 #~ msgstr "Vollständiger Titel"
-
-#~ msgid "About the project"
-#~ msgstr "Über das Projekt"
 
 #~ msgid "Privileges"
 #~ msgstr "Privilegien"
