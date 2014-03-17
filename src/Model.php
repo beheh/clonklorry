@@ -69,14 +69,16 @@ abstract class Model implements ModelInterface {
 	protected final function setValue($name, $value) {
 		$this->ensureRow($name);
 		$value = $this->ensureType($name, $value);
-		if($this->loaded && $this->values[$name] === $value) return true;
+		if($this->loaded && $this->values[$name] === $value)
+			return true;
 		$this->changes[$name] = $value;
 		return true;
 	}
 
 	protected final function getValue($name) {
 		$this->ensureRow($name);
-		if(array_key_exists($name, $this->changes)) return $this->changes[$name];
+		if(array_key_exists($name, $this->changes))
+			return $this->changes[$name];
 		$this->ensureLoaded();
 		return $this->values[$name];
 	}
@@ -186,7 +188,8 @@ abstract class Model implements ModelInterface {
 
 	protected final function ensureType($row, $value) {
 		$this->ensureRow($row);
-		if($row == 'id' || $value === NULL) return $value;
+		if($row == 'id' || $value === NULL)
+			return $value;
 		switch($this->schema[$row]) {
 			case 'int':
 				$value = intval($value);
@@ -262,7 +265,8 @@ abstract class Model implements ModelInterface {
 	 * @return boolean True, if all changes will be persistent
 	 */
 	public final function save() {
-		if(!$this->modified()) return true;
+		if(!$this->modified())
+			return true;
 		if($this->loaded) {
 			if(!$this->persistence->update($this, $this->changes)) {
 				return false;
@@ -274,7 +278,8 @@ abstract class Model implements ModelInterface {
 			}
 			$this->changes['id'] = $id;
 		}
-		$this->values = array_merge($this->values, $this->changes);;
+		$this->values = array_merge($this->values, $this->changes);
+		;
 		$this->rollback();
 		$this->loaded = true;
 		return true;
@@ -324,6 +329,16 @@ abstract class Model implements ModelInterface {
 	protected final function validateNumber($number) {
 		if(!is_int($number)) {
 			throw new ModelValueInvalidException(gettext('not a valid number'));
+		}
+	}
+
+	protected final function validateRegexp($value, $regexp) {
+		$result = preg_match($regexp, $value);
+		if($result === false) {
+			throw new Exception('Error matching the regular expression');
+		}
+		else if(!$result){
+			throw new ModelValueInvalidException(gettext('invalid'));
 		}
 	}
 
