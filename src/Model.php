@@ -68,8 +68,9 @@ abstract class Model implements ModelInterface {
 
 	protected final function setValue($name, $value) {
 		$this->ensureRow($name);
+		$value = $this->ensureType($name, $value);
 		if($this->loaded && $this->values[$name] === $value) return true;
-		$this->changes[$name] = $this->ensureType($name, $value);
+		$this->changes[$name] = $value;
 		return true;
 	}
 
