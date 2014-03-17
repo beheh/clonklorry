@@ -85,6 +85,12 @@ textarea {
 h1 small .label {
   vertical-align: text-top;
 }
+.tab-pane {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px 20px 5px 20px;
+  margin-top: -1px;
+}
 .btn-google {
   color: #ffffff;
   background-color: #dd4b39;
