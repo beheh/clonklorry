@@ -25,6 +25,7 @@ class Edit extends Presenter {
 		$this->security->requireLogin();
 
 		$addon = $this->getAddon($id);
+		$this->context['addonid'] = $addon->getId();
 
 		$this->context['title'] = $addon->getTitle();
 
@@ -37,7 +38,7 @@ class Edit extends Presenter {
 		}
 
 		if(isset($_GET['add'])) {
-			$this->context['focus_release'] = true;
+			$this->context['focus_version'] = true;
 		}
 
 		$games = ModelFactory::build('Game')->all()->byAnything();
@@ -51,11 +52,19 @@ class Edit extends Presenter {
 			$this->context['game'] = $game->getShort();
 		}
 
+		$releases = ModelFactory::build('Release')->all()->order('version')->byAddon($addon->getId());
+		$this->context['releases'] = array();
+		foreach($releases as $release) {
+			$this->context['releases'][$release->getId()] = array('version' => $release->getVersion());
+		}
+
 		$this->display('publish/edit.twig');
 	}
 
 	public function post($id) {
 		$this->security->requireLogin();
+
+		$this->security->requireValidState();
 
 		$addon = $this->getAddon($id);
 
@@ -98,6 +107,35 @@ class Edit extends Presenter {
 				}
 			} else {
 				$this->error('addon', implode('<br>', $errors));
+			}
+		}
+
+		if(isset($_GET['release'])) {
+			$version = ltrim(trim(filter_input(INPUT_POST, 'version')), 'v');
+
+			$release = ModelFactory::build('Release');
+			$release->setAddon($addon->getId());
+
+			$errors = array();
+
+			try {
+				$release->setVersion($version);
+				$version = $release->getVersion();
+			} catch(ModelValueInvalidException $ex) {
+				$errors[] = sprintf(gettext('Version is %s.'), $ex->getMessage());
+			}
+			$this->context['version'] = $version;
+
+			if(ModelFactory::build('Release')->byVersion($version, $addon->getId()) !== false) {
+				$errors[] = gettext('Version already exists.');
+			}
+
+			if(empty($errors)) {
+				$release->save();
+				$this->redirect('/publish/addons/'.$addon->getId().'/'.$release->getId());
+			} else {
+				$this->error('release', implode('<br>', $errors));
+				$this->context['focus_version'] = true;
 			}
 		}
 

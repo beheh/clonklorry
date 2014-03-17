@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{{ title }}</h1>
+		<h1>{{title}}</h1>
 	</div>
 	<ul class="nav nav-tabs" id="editAddonTabs">
 		<li class="active"><a href="#addon" data-toggle="tab">{% trans "Addon" %}</a></li>
@@ -13,8 +13,8 @@
 	<div class="tab-content">
 		<div class="tab-pane active" id="addon">
 			<form role=form" method="post" action="{{filename}}?addon#addon">
-				{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
 				<input type="hidden" name="state" value="{{state}}">
+				{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
@@ -63,13 +63,15 @@
 		</div>
 
 		<div class="tab-pane" id="presentation">
-			<form role=form" method="post" action="{{filename}}">
+			<form role=form" method="post" action="{{filename}}?presentation#presentation">
+				<input type="hidden" name="state" value="{{state}}">
+				{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
 				<div class="row">
 					<div class="col-md-8">
 						<div class="form-group">
 							<label for="description">{% trans "Description "%}</label>
 							<div class="form-group">
-								<textarea class="form-control" id="description" name="description" rows="10" required=""></textarea>
+								<textarea class="form-control" id="description" name="description" rows="10"></textarea>
 							</div>
 						</div>
 					</div>
@@ -98,10 +100,12 @@
 		<div class="tab-pane" id="releases">
 			<div class="row">
 				<div class="col-md-12">
-					<form role=form" class="form-inline" method="post" action="{{filename}}#releases">
+					<form role=form" class="form-inline" method="post" action="{{filename}}?release#releases">
+						<input type="hidden" name="state" value="{{state}}">
+					{% include 'functions/alert.twig' with {'selector' : 'release'} %}
 						<div class="form-group">
 							<label class="sr-only" for="version	">{% trans "Version"%}</label>
-							<input type="text" class="form-control" id="version" placeholder="{% trans "Version"%}"{% if focus_release %} autofocus{% endif %}>
+							<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="{% trans "Version"%}"{% if focus_version %} autofocus{% endif %} required>
 						</div>
 						<button type="submit" class="btn btn-success">{% trans %}Add release{% endtrans %}</button>
 					</form>
@@ -109,8 +113,10 @@
 					<ul class="list-group">
 						{% for release in releases %}
 						<li class="list-group-item">
-							<a href="#">{{release}}</a>
+							{% set version = release.version %}
+							<a href="{{base}}/publish/addons/{{addonid}}/{{release.version}}" class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</a>
 							<button type="button" class="close" title="{% trans "Remove" %}" aria-hidden="true">&times;</button>
+							<span class="label label-default">{% trans "Unreleased" %}</span>
 						</li>
 						{% else %}
 						<li class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</li>

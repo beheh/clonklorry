@@ -20,8 +20,8 @@
 						<h4 class="media-heading">{{addon.title}}</h4>
 						{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title}%}
 						<p>
-							<a href="{{filename}}/addons/{{addon.id}}/edit" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
-							<a href="{{filename}}/addons/{{addon.id}}/edit?add#releases" class="btn btn-sm btn-default">{% trans %}New release{% endtrans %}</a>
+							<a href="{{filename}}/addons/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
+							<a href="{{filename}}/addons/{{addon.id}}?add#releases" class="btn btn-sm btn-default">{% trans %}New release{% endtrans %}</a>
 						</p>
 					</div>
 				</li>

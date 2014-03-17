@@ -110,7 +110,7 @@ class Environment {
 			'/download/:alpha/:alpha/:version' => 'Addon\Download',
 			'/publish' => 'Publish\Portal',
 			'/publish/create' => 'Publish\Create',
-			'/publish/addons/:number/edit' => 'Publish\Edit',
+			'/publish/addons/:number' => 'Publish\Edit',
 			'/users' => 'User\Table',
 			'/users/:alpha' => 'User\Profile',
 			'/users/:alpha/edit' => 'User\Edit',
