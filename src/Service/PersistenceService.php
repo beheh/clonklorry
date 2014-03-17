@@ -137,7 +137,7 @@ class PersistenceService {
 		$query = $this->connection->prepare('INSERT INTO `'.$model->getTable().'` ('.$keys.') VALUES ('.$valuenames.')');
 		$query->execute($contents);
 		if($query->errorCode() != PDO::ERR_NONE) {
-			$errorinfo = $statement->errorInfo();
+			$errorinfo = $query->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
