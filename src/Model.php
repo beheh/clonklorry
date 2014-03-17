@@ -125,6 +125,10 @@ abstract class Model implements ModelInterface {
 		$this->ensureUnloaded();
 		foreach($pairs as $row => $value) {
 			$this->ensureRow($row);
+			// do not allow abstract objects
+			if(is_object($value)) {
+				throw new Exception('attempting to fetch model using object as value');
+			}
 			// do not allow empty values to search
 			if(empty($value)) {
 				if($this->multiple) {
@@ -335,7 +339,7 @@ abstract class Model implements ModelInterface {
 	protected final function validateRegexp($value, $regexp) {
 		$result = preg_match($regexp, $value);
 		if($result === false) {
-			throw new Exception('Error matching the regular expression');
+			throw new Exception('error matching the regular expression');
 		}
 		else if(!$result){
 			throw new ModelValueInvalidException(gettext('invalid'));
