@@ -58,7 +58,8 @@ CREATE TABLE `release` (
 	`version` varchar(255) NOT NULL,
 	`timestamp` int(11) DEFAULT NULL,
 	`description` text,
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `addon_version` (`addon`,`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `dependency` (
