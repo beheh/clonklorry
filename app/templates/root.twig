@@ -11,6 +11,7 @@
 		<meta property="og:title" content="{{title|default(brand)}}">
 		<meta property="og:image" content="{{component}}/lorry/img/logo.png">
 		<meta property="og:site_name" content="{{brand}}">
+		<script>var base = '{{base}}';</script>
 	</head>
 	<body>{% block body %}
 		{% include 'functions/navbar.twig' %}
@@ -35,6 +36,9 @@
 		<script src="{{resources}}/jquery/jquery-2.1.0.min.js"></script>
 		<script src="{{resources}}/bootstrap/js/bootstrap.min.js"></script>
 		<script src="{{resources}}/lorry/js/lorry.js"></script>
+		{% for script in scripts %}
+		<script src="{{resources}}{{script}}"></script>
+		{% endfor %}
 		<script>{% block javascript %}{% endblock %}</script>
 		<script>(function() {
 				if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
