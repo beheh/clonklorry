@@ -51,12 +51,14 @@ class SessionService {
 		$this->ensureSession();
 		$this->ensureUser();
 		$this->ensureSecret($this->user);
+		session_regenerate_id();
 		$_SESSION['secret'] = $this->user->getSecret();
 	}
 
 	protected final function authenticate(User $user) {
 		$this->ensureSession();
 		$this->ensureSecret($user);
+		session_regenerate_id();
 		$this->user = $user;
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
