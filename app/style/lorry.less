@@ -1,3 +1,5 @@
+@import 'bootstrap/variables.less';
+
 .navbar-brand {
 
 }
@@ -112,6 +114,34 @@ h1 small .label {
 	border: 1px solid #ddd;
 	padding: 20px 20px 5px 20px;
 	margin-top: -1px;
+}
+
+@media (max-width: @screen-xs-min) { 
+    .nav-tabs > li {
+        float: none;
+    }
+
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus  {
+		border-bottom-color: #ddd;
+	}
+
+	.nav-tabs > li > a {
+		border-radius: 4px;
+		margin-right: 0px;
+	}
+
+	.nav-tabs {
+		margin-bottom: 8px;
+		border-bottom: none;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 5px;
+	}
 }
 
 @import 'buttons.less';
