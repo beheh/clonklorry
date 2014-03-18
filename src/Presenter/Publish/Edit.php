@@ -132,7 +132,7 @@ class Edit extends Presenter {
 
 			if(empty($errors)) {
 				$release->save();
-				$this->redirect('/publish/addons/'.$addon->getId().'/'.$release->getId());
+				$this->redirect('/publish/addons/'.$addon->getId().'/'.$release->getVersion());
 			} else {
 				$this->error('release', implode('<br>', $errors));
 				$this->context['focus_version'] = true;
