@@ -40,15 +40,5 @@
 		<script src="{{resources}}{{script}}"></script>
 		{% endfor %}
 		<script>{% block javascript %}{% endblock %}</script>
-		<script>(function() {
-				if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-					var msViewportStyle = document.createElement("style");
-					msViewportStyle.appendChild(
-							document.createTextNode("@-ms-viewport{width:auto!important}")
-							);
-					document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-				}
-			})();
-		</script>
 	</body>
 </html>
