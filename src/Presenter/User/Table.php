@@ -34,7 +34,11 @@ class Table extends Presenter {
 			$users = $users->byAnything();
 		}
 		foreach($users as $user) {
-			$this->context['users'][] = $user->getUsername();
+			$this->context['users'][] = array(
+				'name' => $user->getUsername(),
+				'administrator' => $user->isAdministrator(),
+				'moderator' => $user->isModerator()
+					);
 		}
 
 

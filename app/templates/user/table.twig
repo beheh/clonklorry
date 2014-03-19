@@ -8,18 +8,13 @@
 		<h1>{{ title }}</h1>
 	</div>
 	{% if users %}
-	<div class="table-responsive">
-		<table class="table">
-			<thead>
-				<tr><th>{% trans "Username" %}</th></tr>
-			</thead>
-			<tbody>
+	<ul class="list-group">
 		{% for user in users %}
-			<tr><td><a href="{{filename}}/{{user}}"><strong>{{ user }}</strong></a></td></tr>
+		<li class="list-group-item">
+			{% include "functions/user.twig" %}
+		</li>
 		{% endfor %}
-			</tbody>
-		</table>
-	</div>
+	</ul>
 </div>
 	{% else %}
 </div>
