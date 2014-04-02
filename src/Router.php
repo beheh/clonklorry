@@ -27,7 +27,7 @@ abstract class Router {
 	}
 
 	public static function getPath() {
-		$path = filter_input(INPUT_SERVER, 'PATH_INFO');
+		$path = trim(filter_input(INPUT_SERVER, 'PATH_INFO'));
 		if(!$path) {
 			$path = '/';
 		}
@@ -57,7 +57,7 @@ abstract class Router {
 			}
 		}
 
-		throw new FileNotFoundException($path);
+		throw new FileNotFoundException('no matching presenter for path "'.$path.'"');
 	}
 
 }
