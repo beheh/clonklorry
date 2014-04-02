@@ -67,7 +67,7 @@ abstract class Presenter implements PresenterInterface {
 	 *
 	 * @var \Twig_Environment;
 	 */
-	private $twig;
+	protected $twig;
 
 	public final function setTwig(Twig_Environment $twig) {
 		$this->twig = $twig;

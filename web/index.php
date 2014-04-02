@@ -2,12 +2,7 @@
 
 require '../vendor/autoload.php';
 
-\Analog::handler(\Analog\Handler\Threshold::init(
-				\Analog\Handler\File::init('../app/logs/lorry.log'),
-				\Analog::WARNING
-));
-
-\Analog::debug('initializing lorry');
+\Analog::handler(\Analog\Handler\File::init('../app/logs/lorry.log'));
 
 try {
 	$lorry = new Lorry\Environment();

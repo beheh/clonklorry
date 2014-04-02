@@ -20,6 +20,12 @@ class Environment {
 	 */
 	public function requestHandle() {
 		$config = new ConfigService();
+		
+		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::WARNING;
+		\Analog::handler(\Analog\Handler\Threshold::init(
+						\Analog\Handler\File::init('../app/logs/lorry.log'),
+						$loglevel
+		));
 
 		try {
 			$this->handle($config);
@@ -105,6 +111,7 @@ class Environment {
 		EmailFactory::setSessionService($session);
 		EmailFactory::setTwig($twig);
 
+		// set production routes
 		Router::setRoutes(array(
 			'/' => 'Site\Front',
 			'/addons' => 'Addon\Portal',
@@ -140,6 +147,13 @@ class Environment {
 			'/error/forbidden' => 'Error\Forbidden',
 			'/error/notfound' => 'Error\NotFound',
 		));
+
+		// set debug routes
+		if($config->get('debug')) {
+			Router::addRoutes(array(
+				'/debug/cachewarmer' => 'Debug\CacheWarmer'
+			));
+		}
 
 		// determine the RESTful method
 		$method = strtolower($_SERVER['REQUEST_METHOD']);
