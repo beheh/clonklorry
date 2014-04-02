@@ -12,7 +12,7 @@ A database and the corresponding PHP PDO-extension should also be available. Lor
 All requirements can be checked by executing the standalone file `install.php` in the /app directory.
 
 
-Deployment
+Deploying
 ----------
 To deploy the application, clone the source and point your webserver to the web/-directory. The other directories must not be publicly accessible.
 
@@ -33,3 +33,21 @@ Roadmap
 - Add a moderation log
 - Finish implementing user moderation features
 - Add a search function
+
+
+Copying
+-------
+Copyright (C) 2014  Benedict Etzel
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
