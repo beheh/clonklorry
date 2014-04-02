@@ -31,7 +31,11 @@ class Error extends Presenter {
 		$this->context['description'] = $this->getLocalizedDescription();
 
 		if($exception) {
-			Analog::error(get_class($exception).': '.$exception->getMessage());
+			$message = get_class($exception).': '.$exception->getMessage();
+			if(get_class($this) == __CLASS__) {
+				$message .= ' in '.$exception->getTraceAsString();
+			}
+			Analog::error($message);
 			if($this->config->get('debug')) {
 				$this->context['raw'] = '<pre>'.get_class($exception).': '.$exception->getMessage().'<br><br>'.$exception->getTraceAsString().'</pre>';
 			}
