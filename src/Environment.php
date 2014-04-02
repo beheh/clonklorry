@@ -85,14 +85,14 @@ class Environment {
 		$mail = new MailService();
 		$mail->setConfigService($config);
 		$mail->setLocalisationService($localisation);
-		
+
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);
 		PresenterFactory::setSecurityService($security);
 		PresenterFactory::setSessionService($session);
 		PresenterFactory::setMailService($mail);
 		PresenterFactory::setTwig($twig);
-		
+
 		EmailFactory::setConfigService($config);
 		EmailFactory::setLocalisationService($localisation);
 		EmailFactory::setSecurityService($security);
@@ -111,7 +111,7 @@ class Environment {
 			'/publish' => 'Publish\Portal',
 			'/publish/create' => 'Publish\Create',
 			'/publish/addons/:number' => 'Publish\Edit',
-			'/publish/addons/:number/:version' => 'Publish\Release',			
+			'/publish/addons/:number/:version' => 'Publish\Release',
 			'/publish/addons/:number/:version/upload' => 'Publish\Upload',
 			'/api/upload/remove' => 'Publish\Remove',
 			'/users' => 'User\Table',
@@ -148,7 +148,7 @@ class Environment {
 			}
 
 			// execute the RESTful method
-			return call_user_func_array(array($presenter, $method), Router::getMatches());
+			return $presenter->handle($method, Router::getMatches());
 		} catch(Exception $exception) {
 			$presenter = $exception->getPresenter();
 			if(PresenterFactory::valid($presenter)) {

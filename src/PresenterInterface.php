@@ -17,4 +17,5 @@ interface PresenterInterface {
 	public function setSessionService(SessionService $session);
 	public function setMailService(MailService $mail);
 	public function setTwig(Twig_Environment $twig);
+	public function handle($method, $parameters);
 }

@@ -74,10 +74,17 @@ abstract class Presenter implements PresenterInterface {
 	}
 
 	/**
+	 * Handle the RESTful method
+	 */
+	public final function handle($method, $parameters) {
+		return call_user_func_array(array($this, $method), $parameters);
+	}
+
+	/**
 	 * Default handling for post requests.
 	 */
 	public function post() {
-		call_user_func_array(array($this, 'get'), func_get_args());
+		return call_user_func_array(array($this, 'get'), func_get_args());
 	}
 
 	protected $context = array();
@@ -137,14 +144,13 @@ abstract class Presenter implements PresenterInterface {
 			return;
 		}
 		$user = $this->session->getUser();
-		
+
 		if(isset($_POST['return'])) {
-			$this->context['return'] = filter_input(INPUT_POST, 'return');			
-		}
-		else {
+			$this->context['return'] = filter_input(INPUT_POST, 'return');
+		} else {
 			$this->context['return'] = Router::getPath();
 		}
-				
+
 		$this->context['password'] = false;
 		if($user->hasPassword()) {
 			$this->context['password'] = true;
