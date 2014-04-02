@@ -2,6 +2,7 @@
 
 namespace Lorry;
 
+use Analog\Analog;
 use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\PersistenceService;
@@ -23,8 +24,13 @@ class Environment {
 		try {
 			$this->handle($config);
 		} catch(\Exception $e) {
+
+			$identifier = sha1(uniqid('lorry'));
+			Analog::error($identifier.' - '.get_class($e).': '.$e->getMessage());
+
 			header('HTTP/1.1 500 Internal Server Error');
 			header('Content-Type: text/plain');
+
 			if($config && $config->get('debug')) {
 				echo 'An internal error occured: '.get_class($e).PHP_EOL.PHP_EOL;
 				if($e->getMessage()) {
@@ -33,8 +39,8 @@ class Environment {
 				echo 'Stack trace:'.PHP_EOL.$e->getTraceAsString().PHP_EOL.PHP_EOL;
 				echo 'Lorry platform in debug mode.';
 			} else {
-				echo 'An internal error occured.'.PHP_EOL;
-				echo 'We have been notified and will be looking into this.';
+				echo 'An internal error occured. We will be looking into this.'.PHP_EOL.PHP_EOL;
+				echo 'Error was '.$identifier.' at '.date('Y-m-d H:i:s').'.'.PHP_EOL;
 			}
 		}
 	}
