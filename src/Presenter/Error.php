@@ -30,9 +30,11 @@ class Error extends Presenter {
 		$this->context['title'] = $this->getLocalizedMessage();
 		$this->context['description'] = $this->getLocalizedDescription();
 
-		Analog::error(get_class($exception).': '.$exception->getMessage());
-		if($this->config->get('debug')) {
-			$this->context['raw'] = '<pre>'.get_class($exception).': '.$exception->getMessage().'<br><br>'.$exception->getTraceAsString().'</pre>';
+		if($exception) {
+			Analog::error(get_class($exception).': '.$exception->getMessage());
+			if($this->config->get('debug')) {
+				$this->context['raw'] = '<pre>'.get_class($exception).': '.$exception->getMessage().'<br><br>'.$exception->getTraceAsString().'</pre>';
+			}
 		}
 
 		$this->display('generic/hero.twig');
