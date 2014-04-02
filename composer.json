@@ -1,4 +1,6 @@
 {
+	"name": "beheh/lorry",
+	"description": "A web platform to host and showcase Clonk addons and their dependencies.",
 	"type": "project",
 	"require": {
 		"twig/twig": "1.*",
