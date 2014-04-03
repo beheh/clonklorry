@@ -21,7 +21,7 @@ class Environment {
 	public function requestHandle() {
 		$config = new ConfigService();
 		
-		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::WARNING;
+		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::INFO;
 		\Analog::handler(\Analog\Handler\Threshold::init(
 						\Analog\Handler\File::init('../app/logs/lorry.log'),
 						$loglevel
