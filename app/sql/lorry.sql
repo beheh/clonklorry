@@ -2,14 +2,13 @@ CREATE TABLE `game` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`short` varchar(16) NOT NULL,
 	`title` varchar(16) NOT NULL,
-	`color` varchar(24) NOT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `short` (`short`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `game` (`id`, `short`, `title`, `color`) VALUES
-(1, 'rage',	'Clonk Rage', 'firebrick'),
-(2, 'openclonk', 'OpenClonk', 'darkbrown');
+INSERT INTO `game` (`id`, `short`, `title`) VALUES
+(1, 'rage',	'Clonk Rage'),
+(2, 'openclonk', 'OpenClonk');
 
 CREATE TABLE `user` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
