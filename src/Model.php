@@ -192,19 +192,47 @@ abstract class Model implements ModelInterface {
 
 	protected final function ensureType($row, $value) {
 		$this->ensureRow($row);
-		if($row == 'id' || $value === NULL)
+		if($row == 'id' || $value === NULL) {
 			return $value;
+		}
 		switch($this->schema[$row]) {
 			case 'int':
+			case 'datetime':
 				$value = intval($value);
 				$this->validateNumber($value);
-				return $value;
+				break;
 			case 'boolean':
-				return $value == true;
-			case 'string':
-			default:
-				return $value;
+				$value = ($value == true);
+				break;
 		}
+		return $value;
+	}
+
+	private final function decodeType($row, $value) {
+		$this->ensureRow($row);
+		if($row == 'id' || $value === NULL) {
+			return $value;
+		}
+		switch($this->schema[$row]) {
+			case 'datetime':
+				$value = strtotime($value);
+				break;
+		}
+		return $value;
+	}
+
+	private final function encodeType($row, $value) {
+		$this->ensureRow($row);
+		if($row == 'id' || $value === NULL) {
+			return $value;
+		}
+		switch($this->schema[$row]) {
+			case 'datetime':
+				$this->validateNumber($value);
+				$value = date('Y-m-d H:i:s', $value);
+				break;
+		}
+		return $value;
 	}
 
 	public final function ensureRow($row) {
@@ -241,7 +269,7 @@ abstract class Model implements ModelInterface {
 		$this->rollback();
 
 		foreach($row as $key => $value) {
-			$this->values[$key] = $this->ensureType($key, $value);
+			$this->values[$key] = $this->ensureType($key, $this->decodeType($key, $value));
 		}
 
 		$this->loaded = true;
@@ -271,19 +299,24 @@ abstract class Model implements ModelInterface {
 	public final function save() {
 		if(!$this->modified())
 			return true;
+
+		$changes = array();
+		foreach($this->changes as $row => $value) {
+			$changes[$row] = $this->encodeType($row, $value);
+		}
 		if($this->loaded) {
-			if(!$this->persistence->update($this, $this->changes)) {
+			if(!$this->persistence->update($this, $changes)) {
 				return false;
 			}
 		} else {
-			$id = $this->persistence->save($this, $this->changes);
+			$id = $this->persistence->save($this, $changes);
 			if(!$id) {
 				return false;
 			}
 			$this->changes['id'] = $id;
 		}
 		$this->values = array_merge($this->values, $this->changes);
-		;
+
 		$this->rollback();
 		$this->loaded = true;
 		return true;
@@ -340,8 +373,7 @@ abstract class Model implements ModelInterface {
 		$result = preg_match($regexp, $value);
 		if($result === false) {
 			throw new Exception('error matching the regular expression');
-		}
-		else if(!$result){
+		} else if(!$result) {
 			throw new ModelValueInvalidException(gettext('invalid'));
 		}
 	}
