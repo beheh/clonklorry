@@ -5,14 +5,9 @@
 {% block content %}
 	<div class="container">
 		<div class="page-header">
-			<h1><a href="{{base}}/publish/addons/{{addonid}}#releases">{{title}}</a>
+			<h1><a href="{{base}}/publish/addons/{{addonid}}#releases" class="text-muted">{{title}}</a> <span class="text-muted"> / </span>
 				<small>
 					<span class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</span>
-					{% if false %}
-						<span class="label label-success">{% trans "Released" %}</span>
-					{% else %}
-						<span class="label label-default">{% trans "Unreleased" %}</span>
-					{% endif %}
 				</small>
 			</h1>
 		</div>
