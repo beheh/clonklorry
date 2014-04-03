@@ -2,6 +2,7 @@
 
 namespace Lorry\Service;
 
+use Analog;
 use PDO;
 use Exception;
 use PDOException;
@@ -28,7 +29,8 @@ class PersistenceService {
 	private $connection = null;
 
 	public function ensureConnected() {
-		if($this->connection) return true;
+		if($this->connection)
+			return true;
 		try {
 			$this->connection = new PDO($this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
 		} catch(PDOException $ex) {
@@ -101,10 +103,13 @@ class PersistenceService {
 		$this->ensureConnected();
 		$model->ensureLoaded();
 
+		Analog::debug('updating a '.get_class($model).' model, changes are '.print_r($changes, true));
+
 		$values = array();
 		$sets = '';
 		foreach($changes as $row => $change) {
-			if(!empty($values)) $sets .= ', ';
+			if(!empty($values))
+				$sets .= ', ';
 			$sets .= '`'.$row.'` = ?';
 			$values[] = $change;
 		}
@@ -121,6 +126,8 @@ class PersistenceService {
 	public function save(Model $model, $values) {
 		$this->ensureConnected();
 		$model->ensureUnloaded();
+
+		Analog::debug('saving a '.get_class($model).' model, values are '.print_r($values, true));
 
 		$keys = '';
 		$valuenames = '';
