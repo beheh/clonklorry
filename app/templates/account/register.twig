@@ -12,7 +12,7 @@
 	<div class="row" id="register">
 		<div class="col-md-4">
 		{% include 'functions/alert.twig' with {'selector' : 'register'} %}
-			<form id="form-register" action="{{filename}}" method="post" role="form">
+			<form id="form-register" method="post" role="form">
 				<div class="form-group">
 					<label for="username">{% trans "Username" %}</label>
 					<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}" pattern="[a-zA-Z0-9_]+" data-content="{% trans %}Your username may contain letters, numbers and underscores and must be between 3 and 16 characters long.{% endtrans %}" {% if username %} value="{{username}}" {% endif %}maxlength="16" {% if username_focus %}autofocus {% endif %}required>

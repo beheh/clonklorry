@@ -24,8 +24,11 @@ class Login extends Presenter {
 		if(!isset($this->context['remember']) && $this->session->shouldRemember()) {
 			$this->context['remember'] = true;
 		}
-		if(isset($_GET['by-email']) || isset($_COOKIE['lorry_login_email'])) {
+		if(isset($_POST['email_submit']) || isset($_COOKIE['lorry_login_email'])) {
 			$this->context['email_visible'] = true;
+		}
+		if(isset($_POST['forgot_password'])) {
+			$this->context['forgot_password'] = true;
 		}
 		if(isset($_GET['registered'])) {
 			$this->context['username'] = $_GET['registered'];
@@ -43,7 +46,7 @@ class Login extends Presenter {
 	}
 
 	public function post() {
-		if(isset($_GET['by-email'])) {
+		if(isset($_POST['email-submit'])) {
 			// login by email token
 			$this->context['email_focus'] = true;
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -51,12 +54,13 @@ class Login extends Presenter {
 			if($user) {
 				// show email by default in future
 				setcookie('lorry_login_email', '1', time() + 60 * 60 * 24 * 365, '/');
+				$this->warning('email', 'Not yet supported.');
 				// @TODO send mail token
 			} else {
 				// email is unknown
-				$this->context['email'] = $email;
 				$this->error('email', gettext('Email address unknown.'));
 			}
+			$this->context['email'] = $email;
 		} else {
 			// login by username and password
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);

@@ -12,7 +12,7 @@
 	<div class="row" id="login">
 		<div class="col-md-4">
 		{% include 'functions/alert.twig' with {'selector' : 'login'} %}
-			<form id="form-login" method="post" action="{{ filename }}" role="form">
+			<form id="form-login" method="post" role="form">
 				<div class="form-group">
 					<label for="username">{% trans "Username" %}</label>
 					<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
@@ -27,18 +27,22 @@
 					</label>
 				</div>
 				<button class="btn btn-large btn-primary" type="submit">{% trans "Login" %}</button>
-			{% if not email %}<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">{% if username %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>{% endif %}
+				{% if not (email or email_visible) %}
+				<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">
+					{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}
+				</a>{% endif %}
 			</form>
 			<hr>
 			<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
-				<h4 id="reset">{% trans "Use your email account to log in:" %}</h4>
+				<h4>{% if email_visible and (forgot_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
 			{% include 'functions/alert.twig' with {'selector' : 'email'} %}
-				<form method="post" action="?by-email" role="form">
+				<form method="post" role="form">
+					{% if username %}<input type="hidden" name="forgot_password" value="yes">{% endif %}
 					<div class="form-group">
 						<label for="email">{% trans "Email address" %}</label>
 						<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
 					</div>
-					<button class="btn btn-primary" type="submit">{% trans "Send one-time login" %}</button>
+					<button class="btn btn-primary" type="submit" name="email-submit">{% trans "Send one-time login" %}</button>
 				</form>
 				<hr>
 			</div>
