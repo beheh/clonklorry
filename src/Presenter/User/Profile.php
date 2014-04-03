@@ -22,8 +22,10 @@ class Profile extends Presenter {
 		$this->context['administrator'] = $user->isAdministrator();
 		$this->context['moderator'] = $user->isModerator();
 
-		$this->context['registration'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATE), $user->getRegistration());
-		
+		if($user->getRegistration()) {
+			$this->context['registration'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATE), $user->getRegistration());
+		}
+
 		$this->context['profiles'] = array();
 		if($user->getClonkforge()) {
 			$this->context['clonkforge'] = array(
