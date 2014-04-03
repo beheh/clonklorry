@@ -38,15 +38,22 @@ class Profile extends Presenter {
 				'url' => sprintf($this->config->get('github'), urlencode($user->getGithub())));
 		}
 
+		$games = ModelFactory::build('Game')->byAnything();
+
 		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
 		$this->context['addons'] = array();
 		foreach($addons as $addon) {
-			$user_addon = array();
-			$user_addon['title'] = $addon->getTitle();
-			$game = ModelFactory::build('Game')->byId($addon->getGame());
+			$user_addon = array(
+				'title' => $addon->getTitle(),
+				'short' => $addon->getShort(),
+				'description' => $addon->getDescription()
+			);
+			
+			$game = $addon->fetchGame();
 			if($game) {
-				$user_addon['url'] = $this->config->get('base').'/addons/'.$game->getShort().'/'.$addon->getShort();
+				$user_addon['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
 			}
+
 			$this->context['addons'][] = $user_addon;
 		}
 

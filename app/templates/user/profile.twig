@@ -64,9 +64,9 @@
 			<h2>{% trans %}Activity{% endtrans %}</h2>
 			<h3>{% trans %}Addons{% endtrans %}</h3>
 		{% if addons %}
-			<ul>
+			<ul class="media-list">
 		{% for addon in addons %}
-				<li><a href="{{ addon.url }}">{{ addon.title }}</a></li>
+			{% include "functions/addon.twig" %}
 		{% endfor %}
 			</ul>
 		{% else %}
