@@ -17,7 +17,7 @@ CREATE TABLE `user` (
 	`secret` varchar(255) DEFAULT NULL,
 	`password` varchar(255) DEFAULT NULL,
 	`email` varchar(255) NOT NULL,
-	`registration` datetime NOT NULL,
+	`registration` datetime NULL,
 	`activated` bit(1) NOT NULL DEFAULT b'0',
 	`clonkforge` int(11) DEFAULT NULL,
 	`github` varchar(255) DEFAULT NULL,
