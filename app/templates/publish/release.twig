@@ -2,130 +2,130 @@
 
 {% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-resumable.js'] %}
 
-	{% block content %}
-		<div class="container">
-			<div class="page-header">
-				<h1><a href="{{base}}/publish/addons/{{addonid}}#releases">{{title}}</a>
-					<small>
-						<span class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</span>
-						{% if false %}
-							<span class="label label-success">{% trans "Released" %}</span>
-						{% else %}
-							<span class="label label-default">{% trans "Unreleased" %}</span>
-						{% endif %}
-					</small>
-				</h1>
-			</div>
-			<ul class="nav nav-tabs" id="editAddonTabs">
-				<li class="active"><a href="#general" data-toggle="tab">{% trans "General" %}</a></li>
-				<li><a href="#files" data-toggle="tab">{% trans "Files" %}</a></li>
-				<li><a href="#dependencies" data-toggle="tab">{% trans "Dependencies" %}</a></li>
-				<li><a href="#changes" data-toggle="tab">{% trans "Changes" %}</a></li>
-				<li><a href="#release" data-toggle="tab">{% trans "Publish" %}</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane active" id="general">
-					<form role=form" method="post" action="{{filename}}">
-						<input type="hidden" name="state" value="{{state}}">
-						<div class="form-group">
-							<label for="title">{%trans "Addon" %}</label>
-							<p class="form-control-static"><a href="{{base}}/publish/addons/{{addonid}}#releases">{{title}}</a></p>
-						</div>
-						<div class="form-group">
-							<label for="title">{%trans "Version" %}</label>
-							<div class="row">
-								<div class="col-xs-4">
-									<input type="text" class="form-control" name="version" id="title" value="{{version}}" required>
-								</div>
+{% block content %}
+	<div class="container">
+		<div class="page-header">
+			<h1><a href="{{base}}/publish/addons/{{addonid}}#releases">{{title}}</a>
+				<small>
+					<span class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</span>
+					{% if false %}
+						<span class="label label-success">{% trans "Released" %}</span>
+					{% else %}
+						<span class="label label-default">{% trans "Unreleased" %}</span>
+					{% endif %}
+				</small>
+			</h1>
+		</div>
+		<ul class="nav nav-tabs" id="editAddonTabs">
+			<li class="active"><a href="#general" data-toggle="tab">{% trans "General" %}</a></li>
+			<li><a href="#files" data-toggle="tab">{% trans "Files" %}</a></li>
+			<li><a href="#dependencies" data-toggle="tab">{% trans "Dependencies" %}</a></li>
+			<li><a href="#changes" data-toggle="tab">{% trans "Changes" %}</a></li>
+			<li><a href="#release" data-toggle="tab">{% trans "Publish" %}</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="general">
+				<form role=form" method="post" action="{{filename}}">
+					<input type="hidden" name="state" value="{{state}}">
+					<div class="form-group">
+						<label for="title">{%trans "Addon" %}</label>
+						<p class="form-control-static"><a href="{{base}}/publish/addons/{{addonid}}#releases">{{title}}</a></p>
+					</div>
+					<div class="form-group">
+						<label for="title">{%trans "Version" %}</label>
+						<div class="row">
+							<div class="col-xs-4">
+								<input type="text" class="form-control" name="version" id="title" value="{{version}}" required>
 							</div>
 						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-						</div>
-					</form>
-				</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+					</div>
+				</form>
+			</div>
 
-				<div class="tab-pane" id="files">
-					<div class="row">
-						<div class="col-md-8">
-							<div class="form-group">
-								<label for="files">{% trans %}Files{% endtrans %}</label>
-								<script>var addon = '{{addonid}}';
-									var release = '{{version}}';</script>
-								<div id="no-resumable">
-									<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
-									<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
-								</div>
-								<div id="resumable">
-									<span id="text-reselect" class="hidden">{% trans "Select file to continue upload "%}</span>
-									<span id="text-uploaded" class="hidden">{% trans "Ready for deployment "%}</span>
-									<span id="text-remove" class="hidden">{% trans "Remove "%}</span>
-									<div id="resumable-error" class="alert alert-danger"></div>
-									<ul class="list-group" id="resumable-files-none">
-										<li id="resumable-files-none" class="list-group-item text-muted">{% trans %}No file selected{% endtrans %}</li>
-									</ul>
-									<ul class="list-group" id="resumable-files">
-									</ul>
-									<button type="button" id="resumable-select" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
-									<button type="button" id="resumable-upload" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
-									<button type="button" id="resumable-pause" class="btn btn-success"><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
-									<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
-								</div>
+			<div class="tab-pane" id="files">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="files">{% trans %}Files{% endtrans %}</label>
+							<script>var addon = '{{addonid}}';
+								var release = '{{version}}';</script>
+							<div id="no-resumable">
+								<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
+								<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
+							</div>
+							<div id="resumable">
+								<span id="text-reselect" class="hidden">{% trans "Select file to continue upload "%}</span>
+								<span id="text-uploaded" class="hidden">{% trans "Ready for deployment "%}</span>
+								<span id="text-remove" class="hidden">{% trans "Remove "%}</span>
+								<div id="resumable-error" class="alert alert-danger"></div>
+								<ul class="list-group" id="resumable-files-none">
+									<li id="resumable-files-none" class="list-group-item text-muted">{% trans %}No file selected{% endtrans %}</li>
+								</ul>
+								<ul class="list-group" id="resumable-files">
+								</ul>
+								<button type="button" id="resumable-select" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
+								<button type="button" id="resumable-upload" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
+								<button type="button" id="resumable-pause" class="btn btn-success"><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
+								<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="tab-pane" id="dependencies">
-					<form role=form" method="post" action="{{filename}}">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="form-group">
-									<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
-								</div>
+			<div class="tab-pane" id="dependencies">
+				<form role=form" method="post" action="{{filename}}">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
 							</div>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
+			</div>
 
-				<div class="tab-pane" id="changes">
-					<form role=form" method="post" action="{{filename}}">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="form-group">
-									<label for="description">{% trans "Changelog "%}</label>
-									<div class="form-group">
-										<textarea class="form-control monospace" id="description" name="description" rows="6" placeholder="+ Added a new feature..."></textarea>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-						</div>
-					</form>
-				</div>
-
-				<div class="tab-pane" id="release">
+			<div class="tab-pane" id="changes">
+				<form role=form" method="post" action="{{filename}}">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="alert alert-warning">
-								<strong>You can't currently release this addon</strong>
-								<ul>
-									<li>You need to add at least one file</li>
-									<li>You should <a href="#tags">select a few tags</a></li>
-								</ul>
+							<div class="form-group">
+								<label for="description">{% trans "Changelog "%}</label>
+								<div class="form-group">
+									<textarea class="form-control monospace" id="description" name="description" rows="6" placeholder="+ Added a new feature..."></textarea>
+								</div>
 							</div>
-							<div class="panel panel-info">
-								<div class="panel-heading">Recommended</div>
-								<ul class="panel-body list-group">
-									<li class="list-group-item">Add an english description</li>
-									<li class="list-group-item">Add an english description</li>
-								</ul>r
-							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="tab-pane" id="release">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-warning">
+							<strong>You can't currently release this addon</strong>
+							<ul>
+								<li>You need to add at least one file</li>
+								<li>You should <a href="#tags">select a few tags</a></li>
+							</ul>
+						</div>
+						<div class="panel panel-info">
+							<div class="panel-heading">Recommended</div>
+							<ul class="panel-body list-group">
+								<li class="list-group-item">Add an english description</li>
+								<li class="list-group-item">Add an english description</li>
+							</ul>r
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	{% endblock %}
+	</div>
+{% endblock %}

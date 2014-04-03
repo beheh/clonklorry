@@ -68,7 +68,7 @@ class Edit extends Presenter {
 
 		$addon = $this->getAddon($id);
 
-		if(isset($_GET['addon'])) {
+		if(isset($_POST['addon-submit'])) {
 			$errors = array();
 
 			$title = trim(filter_input(INPUT_POST, 'title'));
@@ -110,7 +110,7 @@ class Edit extends Presenter {
 			}
 		}
 
-		if(isset($_GET['release'])) {
+		if(isset($_POST['release-submit'])) {
 			$version = ltrim(trim(filter_input(INPUT_POST, 'version')), 'v');
 
 			$release = ModelFactory::build('Release');
