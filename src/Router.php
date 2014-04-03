@@ -32,9 +32,15 @@ abstract class Router {
 		if($path_info) {
 			$path = $path_info;
 		} else {
+			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
 			$base = filter_input(INPUT_SERVER, 'BASE');
-			$path = trim(substr(filter_input(INPUT_SERVER, 'REDIRECT_URL'), strlen($base)));
+			if($base) {
+				$path = substr($request_uri, strlen($base));
+			} else {
+				$path = $request_uri;
+			}
 		}
+		$path = trim($path);
 		if(!$path) {
 			$path = '/';
 		}
