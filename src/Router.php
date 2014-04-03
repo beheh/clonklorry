@@ -30,9 +30,13 @@ abstract class Router {
 		$path = '';
 		$path_info = filter_input(INPUT_SERVER, 'PATH_INFO');
 		if($path_info) {
+			// fallback if no mod_rewrite
 			$path = $path_info;
 		} else {
 			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
+			// don't pass get parameters
+			$request_uri = substr($request_uri, 0, strpos($request_uri, '?'));
+			// filter out prefix directory if exists
 			$base = filter_input(INPUT_SERVER, 'BASE');
 			if($base) {
 				$path = substr($request_uri, strlen($base));
