@@ -45,7 +45,7 @@ class Release extends Model {
 	}
 
 	public final function latest($addon) {
-		return $this->order('timestamp', true)->byValue('addon', $addon);
+		return $this->order('timestamp', true)->limit(1)->byValue('addon', $addon);
 	}
 
 	public function setTimestamp($timestamp) {
