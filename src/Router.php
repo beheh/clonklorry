@@ -35,7 +35,9 @@ abstract class Router {
 		} else {
 			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
 			// don't pass get parameters
-			$request_uri = substr($request_uri, 0, strpos($request_uri, '?'));
+			if(strpos($request_uri, '?') !== false) {
+				$request_uri = substr($request_uri, 0, strpos($request_uri, '?'));
+			}
 			// filter out prefix directory if exists
 			$base = filter_input(INPUT_SERVER, 'BASE');
 			if($base) {
