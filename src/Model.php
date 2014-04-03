@@ -105,6 +105,20 @@ abstract class Model implements ModelInterface {
 		return $this;
 	}
 
+	private $limit_from = null;
+	private $limit = null;
+
+	public final function limit($from, $limit = null) {
+		if($limit == null) {
+			$limit = $from;
+		}
+		else {
+			$this->limit_from = $from;
+		}
+		$this->limit = $limit;
+		return $this;
+	}
+
 	public final function byAnything() {
 		$this->all();
 		return $this->byValues();
@@ -140,7 +154,7 @@ abstract class Model implements ModelInterface {
 		}
 
 		if($this->multiple) {
-			$rows = $this->persistence->loadAll($this, $pairs, $this->order_row, $this->order_descending);
+			$rows = $this->persistence->loadAll($this, $pairs, $this->order_row, $this->order_descending, $this->limit_from, $this->limit);
 
 			if(empty($rows)) {
 				return array();
@@ -159,7 +173,7 @@ abstract class Model implements ModelInterface {
 				return false;
 			}
 
-			$row = $this->persistence->load($this, $pairs, $this->order_row, $this->order_descending);
+			$row = $this->persistence->load($this, $pairs, $this->order_row, $this->order_descending, $this->limit_from, $this->limit);
 
 			if(empty($row)) {
 				return false;
