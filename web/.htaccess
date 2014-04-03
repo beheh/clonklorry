@@ -1,12 +1,28 @@
 AddDefaultCharset utf-8
-Options -Indexes
 
-RewriteEngine on
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond $1 !^(index\.php)
-RewriteRule ^(.*)$ index.php/$1 [L]
+DirectoryIndex index.php
 
-ErrorDocument 403 error/forbidden
-ErrorDocument 404 error/notfound
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	# detect rewrite base
+	RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+	RewriteRule ^(.*) - [E=BASE:%1]
+
+	# prevent duplicate content
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^index\.php(/(.*)|$) %{ENV:BASE}/$2 [R=301,L]
+
+	# serve existing files
+	RewriteCond %{REQUEST_FILENAME} -f
+	RewriteRule .? - [L]
+
+	# rewrite all other queries to the front controller.
+	RewriteRule .? %{ENV:BASE}/index.php [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+	<IfModule mod_alias.c>
+		RedirectMatch 302 ^/$ /index.php/
+	</IfModule>
+</IfModule>

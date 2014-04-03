@@ -27,7 +27,14 @@ abstract class Router {
 	}
 
 	public static function getPath() {
-		$path = trim(filter_input(INPUT_SERVER, 'PATH_INFO'));
+		$path = '';
+		$path_info = filter_input(INPUT_SERVER, 'PATH_INFO');
+		if($path_info) {
+			$path = $path_info;
+		} else {
+			$base = filter_input(INPUT_SERVER, 'BASE');
+			$path = trim(substr(filter_input(INPUT_SERVER, 'REDIRECT_URL'), strlen($base)));
+		}
 		if(!$path) {
 			$path = '/';
 		}
