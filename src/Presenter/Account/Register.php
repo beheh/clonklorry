@@ -2,6 +2,7 @@
 
 namespace Lorry\Presenter\Account;
 
+use Analog;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\EmailFactory;
@@ -94,6 +95,7 @@ class Register extends Presenter {
 
 		if(empty($errors)) {
 			if($user->save()) {
+				Analog::info('adding user "'.$user->getUsername().'"');
 				$registration = EmailFactory::build('Register');
 				$registration->setRecipent($user->getEmail());
 				$registration->setUsername($user->getUsername());
