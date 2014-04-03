@@ -146,6 +146,16 @@ h1 a:active {
     margin-top: 5px;
   }
 }
+.label-primary {
+  background-color: transparent;
+  border: solid 1px #428bca;
+  color: #428bca;
+}
+.label-success {
+  background-color: transparent;
+  border: solid 1px #5cb85c;
+  color: #5cb85c;
+}
 @media (min-width: 1200px) {
   #front .carousel {
     height: 417px;
