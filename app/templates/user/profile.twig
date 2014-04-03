@@ -17,9 +17,21 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-		<h2>{% trans %}Profile{% endtrans %}</h2>
-		{% if not self and user_administrator or (user_moderator and moderator == false) %}
-			<h2 id="moderate">{% trans %}Moderation{% endtrans %}</h2>
+		<h2>{% trans %}User{% endtrans %}</h2>		
+		{% if registration %}
+			<p>{% trans %}Registered on {{registration}}.{% endtrans %}</p>
+		{% endif %}
+		{% if clonkforge or github %}
+			<div>
+				<h3>{% trans %}Links{% endtrans %}</h3>
+				<ul>
+				{% if clonkforge %}<li><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
+				{% if github %}<li><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
+				</ul>
+			</div>
+		{% endif %}
+		{% if not self and user_administrator or (user_moderator and moderator == false) or true %}
+			<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
 			<p>
 				<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
 				<a href="#ban" data-toggle="collapse" data-target="#collapse-ban" class="btn btn-danger">{% trans %}Ban user{% endtrans %}</a>
@@ -45,15 +57,6 @@
 						<button type="submit" class="btn btn-danger">{% trans %}Ban now{% endtrans %}</button>
 					</div>
 				</form>
-			</div>
-		{% endif %}
-		{% if clonkforge or github %}
-			<div>
-				<h3>{% trans %}Links{% endtrans %}</h3>
-				<ul>
-				{% if clonkforge %}<li><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
-				{% if github %}<li><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
-				</ul>
 			</div>
 		{% endif %}
 		</div>

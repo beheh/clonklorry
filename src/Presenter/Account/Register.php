@@ -94,6 +94,7 @@ class Register extends Presenter {
 		$user->setLanguage($this->localisation->getDisplayLanguage());
 
 		if(empty($errors)) {
+			$user->setRegistration(time());
 			if($user->save()) {
 				Analog::info('adding user "'.$user->getUsername().'"');
 				$registration = EmailFactory::build('Register');

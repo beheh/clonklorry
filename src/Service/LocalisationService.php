@@ -126,11 +126,19 @@ class LocalisationService {
 	}
 	
 	const FORMAT_DATETIME = 1;
+	const FORMAT_DATE = 2;
+	const FORMAT_TIME = 3;
 
 	public final function getFormat($format) {
 		switch($format) {
 			case self::FORMAT_DATETIME:
 				return gettext('d-m-Y H:i');
+				break;
+			case self::FORMAT_DATE:
+				return gettext('d-m-Y');
+				break;
+			case self::FORMAT_TIME:
+				return gettext('H:i');
 				break;
 		}
 	}

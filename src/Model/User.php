@@ -14,6 +14,7 @@ class User extends Model {
 			'secret' => 'string(255)',
 			'password' => 'string(255)',
 			'email' => 'string(255)',
+			'registration' => 'datetime',
 			'activated' => 'boolean',
 			'clonkforge' => 'int',
 			'github' => 'string',
@@ -76,6 +77,14 @@ class User extends Model {
 
 	public final function byEmail($email) {
 		return $this->byValue('email', $email);
+	}
+
+	public function setRegistration($registration) {
+		return $this->setValue('registration', $registration);
+	}
+
+	public function getRegistration() {
+		return $this->getValue('registration');
 	}
 
 	public final function isActivated() {

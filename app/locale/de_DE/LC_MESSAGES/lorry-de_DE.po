@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-04-03 16:02+0100\n"
-"PO-Revision-Date: 2014-04-03 16:02+0100\n"
+"POT-Creation-Date: 2014-04-03 16:44+0100\n"
+"PO-Revision-Date: 2014-04-03 16:44+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,33 +16,33 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/benedict/public_html/lorry/app/cache\n"
 "X-Poedit-SearchPath-1: /home/benedict/NetBeansProjects/lorry/src\n"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Environment.php:81
+#: /home/benedict/NetBeansProjects/lorry/src/Environment.php:80
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:305
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:338
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:308
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:341
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:321
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:354
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:329
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:362
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:335
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:368
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model.php:345
-#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:29
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:75
+#: /home/benedict/NetBeansProjects/lorry/src/Model.php:377
+#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:30
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:76
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:94
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:105
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:124
@@ -50,19 +50,19 @@ msgstr "keine gültige Zahl"
 msgid "invalid"
 msgstr "ungültig"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:119
+#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:128
 msgid "not a matching Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:125
+#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:134
 msgid "not a valid Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:133
+#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:142
 msgid "not a valid Clonk Forge profile id"
 msgstr "keine gültige ClonkForge Profil-ID"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:155
+#: /home/benedict/NetBeansProjects/lorry/src/Model/User.php:166
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
@@ -89,42 +89,42 @@ msgstr "E-Mail-Adresse unbekannt."
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:59
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:60
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:79
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:65
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:66
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:84
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:70
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:71
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:112
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:75
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:76
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:124
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:117
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:81
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:82
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:195
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:86
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:87
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Settings.php:191
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:108
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/Account/Register.php:111
 msgid "There was an error registering."
 msgstr "Fehler bei der Registrierung."
 
@@ -312,18 +312,18 @@ msgid "Sorry, your feedback couldn't be sent."
 msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:26
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:89
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:131
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:47
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:28
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:30
 #, php-format
 msgid "%s on the ClonkForge"
 msgstr "%s auf der ClonkForge"
 
 #: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Edit.php:52
-#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:33
+#: /home/benedict/NetBeansProjects/lorry/src/Presenter/User/Profile.php:35
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s auf GitHub"
@@ -349,71 +349,79 @@ msgstr ""
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:133
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:135
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:138
+msgid "d-m-Y"
+msgstr "d.m.Y"
+
 #: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:141
+msgid "H:i"
+msgstr "H:i"
+
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:149
 msgid "January"
 msgstr "Januar"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:143
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:151
 msgid "February"
 msgstr "Februar"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:145
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:153
 msgid "March"
 msgstr "März"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:147
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:155
 msgid "April"
 msgstr "April"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:149
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:157
 msgid "May"
 msgstr "Mai"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:151
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:159
 msgid "June"
 msgstr "Juni"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:153
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:161
 msgid "July"
 msgstr "Juli"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:155
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:163
 msgid "August"
 msgstr "August"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:157
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:165
 msgid "September"
 msgstr "September"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:159
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:167
 msgid "October"
 msgstr "Oktober"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:161
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:169
 msgid "November"
 msgstr "November"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:163
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:171
 msgid "December"
 msgstr "Dezember"
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:170
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:178
 msgid "1st"
 msgstr "1."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:172
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:180
 msgid "2nd"
 msgstr "2."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:174
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:182
 msgid "3rd"
 msgstr "3."
 
-#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:176
+#: /home/benedict/NetBeansProjects/lorry/src/Service/LocalisationService.php:184
 msgid "%n%th"
 msgstr "%n%."
 
@@ -807,7 +815,6 @@ msgid "concept & development"
 msgstr "Konzept & Entwicklung"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:45
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:75
 msgid "Profile"
 msgstr "Profil"
 
@@ -833,7 +840,7 @@ msgid "Contact us to change your username."
 msgstr "Kontaktiere uns zur Änderung des Nutzernamens."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/30/13/7deb72ffadcdc4148dff7ba0674ca16675b1784e428738a545b1cbbcfbfd.php:85
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:164
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:93
 msgid "Links"
 msgstr "Links"
 
@@ -1347,7 +1354,7 @@ msgstr "Navigation umschalten"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:81
 #: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:25
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:82
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:124
 msgid "Moderation"
 msgstr "Moderation"
 
@@ -1502,7 +1509,7 @@ msgid "Queues"
 msgstr "Warteschlangen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/9e/ec/c341e119da722a5b13b2a299fc32071ad496cd18a8b4106f3f67c82efd0c.php:70
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:199
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:208
 #: /home/benedict/public_html/lorry/app/cache/twig/da/6a/7f38dec139345590e41fd2cf69da35b7bacea21226964797da66065a6b54.php:25
 msgid "Addons"
 msgstr "Erweiterungen"
@@ -1556,52 +1563,60 @@ msgstr ""
 msgid "Once again, thank you for testing %brand%!"
 msgstr "Noch einmal, vielen Dank für das Testen von %brand%!"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:93
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:104
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:75
+msgid "User"
+msgstr "Benutzer"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:82
+msgid "Registered on %registration%."
+msgstr "Registriert am %registration%."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:135
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:146
 msgid "Ban user"
 msgstr "Benutzer bannen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:116
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:158
 msgid "Reason"
 msgstr "Grund"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:126
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:168
 msgid "Duration"
 msgstr "Dauer"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:131
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:173
 msgid "Choose a duration&hellip;"
 msgstr "Wähle eine Dauer&hellip;"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:135
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:177
 msgid "One day"
 msgstr "Ein Tag"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:139
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:181
 msgid "One Week"
 msgstr "Eine Woche"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:143
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:185
 msgid "Infinitely"
 msgstr "Unbegrenzt"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:150
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:192
 msgid "Ban now"
 msgstr "Jetzt bannen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:195
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:204
 msgid "Activity"
 msgstr "Aktivität"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:228
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:237
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:234
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:243
 msgid "Comments"
 msgstr "Kommentare"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:270
+#: /home/benedict/public_html/lorry/app/cache/twig/aa/c5/72a4e0c552a7c3941e5b91ff36aaba3c7bedbde250eb5a7592b487bc5f6f.php:279
 msgid "This user has not commented yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
@@ -2042,9 +2057,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "New releases"
 #~ msgstr "Neue Veröffentlichungen"
-
-#~ msgid "User"
-#~ msgstr "Benutzer"
 
 #~ msgid "Change linked profiles"
 #~ msgstr "Verknüpfte Profile ändern"
