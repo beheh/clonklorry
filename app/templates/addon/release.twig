@@ -18,8 +18,8 @@
 	{% endif %}
 	<p>{% trans %}Version {{version}}, released on the {{releaseday}}{% endtrans %}</p>
 	{% if modify %}
-	<a href="{{base}}/publish/{{game.short}}/{{addon.short}}" class="btn btn-info">{% trans %}Edit this addon{% endtrans %}</a>
-	<a href="{{base}}/publish/{{game.short}}/{{addon.short}}/{{version}}" class="btn">{% trans %}Edit this release{% endtrans %}</a>
+	<a href="{{base}}/publish/addons/{{addon.id}}" class="btn btn-info">{% trans %}Edit this addon{% endtrans %}</a>
+	<a href="{{base}}/publish/addons/{{addon.id}}/{{version}}" class="btn">{% trans %}Edit this release{% endtrans %}</a>
 	{% endif %}
 	<div class="row">
 		<div class="col-md-4">

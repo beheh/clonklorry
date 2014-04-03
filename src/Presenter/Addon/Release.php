@@ -35,7 +35,7 @@ class Release extends Presenter {
 		$this->context['title'] = $addon->getTitle();
 
 		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
-		$this->context['addon'] = array('title' => $addon->getTitle(), 'short' => $addon->getShort());
+		$this->context['addon'] = array('id' => $addon->getId(), 'title' => $addon->getTitle(), 'short' => $addon->getShort());
 
 
 		$owner = ModelFactory::build('User')->byId($addon->getOwner());
