@@ -1,6 +1,6 @@
 {% extends 'email/base.twig' %}
 
-{% block subject %}{% trans %}Login{% endtrans %}{% endblock %}
+{% block subject %}{% trans %}One-time-login for {{brand}}{% endtrans %}{% endblock %}
 
 {% block body %}
 <p>{% trans %}You (or somebody else) requested a one-time login for your account.{% endtrans %}</p>

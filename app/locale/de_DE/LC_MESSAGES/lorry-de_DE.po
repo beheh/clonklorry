@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-04-03 15:50+0100\n"
-"PO-Revision-Date: 2014-04-03 15:50+0100\n"
+"POT-Creation-Date: 2014-04-03 16:02+0100\n"
+"PO-Revision-Date: 2014-04-03 16:02+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -566,17 +566,25 @@ msgstr ""
 msgid "Settings"
 msgstr "Einstellungen"
 
+#: /home/benedict/public_html/lorry/app/cache/twig/13/94/9976e18318c5e957d9bf0adc0422e0d98e75823ca6777116d216d514dfc2.php:31
+msgid "Password reset for %brand%"
+msgstr "Password bei %brand% zurücksetzen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/13/94/9976e18318c5e957d9bf0adc0422e0d98e75823ca6777116d216d514dfc2.php:39
+msgid "You (or somebody else) requested a password reset for your account."
+msgstr ""
+"Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dein Konto "
+"angefordert."
+
 #: /home/benedict/public_html/lorry/app/cache/twig/1a/84/39c95b1001d91415bb99ca69c1aee8e8fe81ec38ea328569156a998b7f53.php:31
-#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:153
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:40
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:97
-#: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:64
-msgid "Login"
-msgstr "Anmelden"
+msgid "One-time-login for %brand%"
+msgstr "Einmal-Anmeldung für %brand%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/1a/84/39c95b1001d91415bb99ca69c1aee8e8fe81ec38ea328569156a998b7f53.php:39
 msgid "You (or somebody else) requested a one-time login for your account."
 msgstr ""
+"Du (oder jemand anderes) hat eine Einmal-Anmeldung für dein Konto "
+"angefordert."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/23/a3/df84ce3ef75264020224f0084ebf0365d6799e17f5aa2745e8a956a60417.php:26
 #: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:93
@@ -965,9 +973,8 @@ msgid "Login services"
 msgstr "Anmeldedienste"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:33
-#, php-format
-msgid "%brand% email address verification"
-msgstr "Verifizierung der E-Mail-Adresse bei %brand%"
+msgid "Confirm your email address for %brand%"
+msgstr "Bestätige deine E-Mail-Adresse für %brand%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/47/eb/de35658814e524e2fb86c84887047349db3b9140ba9285b08f78be1e48de.php:41
 msgid "You requested your email address to be changed to %email%."
@@ -1020,10 +1027,6 @@ msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
 #: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:22
 msgid "Hi there %username%,"
 msgstr "Hallo %username%,"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:35
-msgid "Sent by %brand%"
-msgstr "Von %brand% gesendet"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:50
 msgid "No content available."
@@ -1335,9 +1338,8 @@ msgid "New %game% addon"
 msgstr "Neue %game%-Erweiterung"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/7d/9f/8d2b40d8fa6b0035da01be47196df1f37d8bffa0c78c7d48727849d0555c.php:31
-#, php-format
-msgid "%brand% site feedback"
-msgstr "%brand% Seitenfeedback"
+msgid "Site feedback for %brand%"
+msgstr "Seitenfeedback für %brand%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:25
 msgid "Toggle navigation"
@@ -1359,14 +1361,20 @@ msgstr "Abmelden"
 msgid "Register"
 msgstr "Registrieren"
 
+#: /home/benedict/public_html/lorry/app/cache/twig/83/dc/6f418e2ab98018446376c784ff76a0837d2b2103cee648f3a77aa5b3b393.php:153
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:40
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/84/ea87be7c849f8e5b5bd610187840b39d0ce347fe36bf892a3cef62d0bfa8.php:97
+#: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:64
+msgid "Login"
+msgstr "Anmelden"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/9a/35/8f08a34db3aafd6b9fc3ebf20f6ea9a92c7a4f3b9b77f25cbf0cba849e7d.php:56
 msgid "Return to home"
 msgstr "Zurück zur Startseite"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/9b/78/4a52ca703ceb924c23ef2a43a5f9d699a1a209178ecc52cf08ee86526f6c.php:26
-#, fuzzy
 msgid "Edit release"
-msgstr "Diesen Release bearbeiten"
+msgstr "Release bearbeiten"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/9b/78/4a52ca703ceb924c23ef2a43a5f9d699a1a209178ecc52cf08ee86526f6c.php:77
 #, fuzzy
@@ -1608,7 +1616,6 @@ msgstr ""
 "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/b5/70/4bc4d5c2094c628ffde5b0c1c84df51c393f98b29a7e0c89507e19553d82.php:51
-#, fuzzy
 msgid "Learn all about Clonk"
 msgstr "Lerne Clonk kennen"
 
@@ -1945,6 +1952,22 @@ msgstr "Liste der Community-Seiten"
 msgid "Addons of the week"
 msgstr "Erweiterungen der Woche"
 
+#~ msgid "Sent by %brand%"
+#~ msgstr "Von %brand% gesendet"
+
+#~ msgid "%brand% site feedback"
+#~ msgstr "%brand% Seitenfeedback"
+
+#~ msgid "%brand% password reset"
+#~ msgstr "%brand% Password"
+
+#, fuzzy
+#~ msgid "%brand% one-time-login"
+#~ msgstr "Einmal-Anmeldung senden"
+
+#~ msgid "%brand% email address confirmation"
+#~ msgstr "%brand% E-Mail-Adresse bei %brand% bestätigen"
+
 #~ msgid "Edit %addon%"
 #~ msgstr "%addon% bearbeiten"
 
@@ -2049,9 +2072,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "User was unbanned"
 #~ msgstr "Benutzer wurde entbannt"
-
-#~ msgid "Users password was reset"
-#~ msgstr "Passwort des Benutzers zurückgesetzt"
 
 #~ msgid ""
 #~ "If you have any legal issues please do not hesitate to contact us either "
