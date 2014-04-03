@@ -132,8 +132,10 @@ class User extends Model {
 			if($clonkforge < 1) {
 				throw new ModelValueInvalidException(gettext('not a valid Clonk Forge profile id'));
 			}
+		} else {
+			$clonkforge = null;
 		}
-		return $this->setValue('clonkforge', intval($clonkforge));
+		return $this->setValue('clonkforge', $clonkforge);
 	}
 
 	public final function getClonkforge() {
@@ -154,6 +156,9 @@ class User extends Model {
 			if(!preg_match('#^'.$this->config->get('github_name').'$#', $github)) {
 				throw new ModelValueInvalidException(gettext('not a valid GitHub name'));
 			}
+		}
+		else {
+			$github = null;
 		}
 		return $this->setValue('github', $github);
 	}
