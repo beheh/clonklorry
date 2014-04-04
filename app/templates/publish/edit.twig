@@ -131,3 +131,7 @@
 	</div>
 </div>
 {% endblock %}
+	
+{% block javascript %}
+	$('.tab-pane form').areYouSure({'message':'You have unsaved changes.'});
+{% endblock %}

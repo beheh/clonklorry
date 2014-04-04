@@ -1,20 +1,37 @@
-$(document).ready(function() {
-    /*$('#search-item').click(function(e) {
-	e.preventDefault();
-	$('#search-global').blur();
-	$('#search-global').focus();
-	});
-    $('#search-global').typeahead({
-	source:['Codename: Modern Combat', 'Hazard', 'OC']
-    });*/
-});
+/* Bootstrap Tabs */
 
+// automatic enabling of bootstrap tabs
+// based on https://stackoverflow.com/questions/7862233/twitter-bootstrap-tabs-go-to-specific-tab-on-page-reload
 var url = document.location.toString();
 if (url.match('#')) {
-    $('.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show') ;
-} 
+	$('.nav-tabs a[href=#' + url.split('#')[1] + ']').tab('show');
+}
 
-// Change hash for page-reload
-$('.nav-tabs a').on('shown', function (e) {
-    window.location.hash = e.target.hash;
-})
+$('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+	if (e.relatedTarget) {
+		var tab = $(e.relatedTarget).attr('href');
+		if ($(tab).children('form').hasClass('dirty')) {
+			var event = $.Event('beforeunload');
+			if (!confirm('You have unsaved changes.')) {
+				e.preventDefault();
+			} else {
+				$(tab).children('form').trigger('reinitialize.areYouSure');
+			}
+		}
+	}
+});
+
+// keep tabs in history and enable forward/backward navigation
+// based on http://redotheweb.com/2012/05/17/enable-back-button-handling-with-twitter-bootstrap-tabs-plugin.html
+$('a[data-toggle="tab"]').on('click', function(e) {
+	history.pushState(null, null, $(e.target).attr('href'));
+});
+
+window.addEventListener("popstate", function(e) {
+	var activeTab = $('[href=' + location.hash + ']');
+	if (activeTab.length) {
+		activeTab.tab('show');
+	} else {
+		$('.nav-tabs a:first').tab('show');
+	}
+});
