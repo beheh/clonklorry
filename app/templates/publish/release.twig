@@ -5,11 +5,7 @@
 {% block content %}
 	<div class="container">
 		<div class="page-header">
-			<h1><a href="{{base}}/publish/addons/{{addonid}}#releases" class="text-muted">{{title}}</a> <span class="text-muted"> / </span>
-				<small>
-					<span class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</span>
-				</small>
-			</h1>
+			<h1><a href="{{base}}/publish/addons/{{addonid}}#releases" class="text-muted">{{title}}</a> <span class="text-muted"> / </span>{{version}}</h1>
 		</div>
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#general" data-toggle="tab">{% trans "General" %}</a></li>
@@ -20,6 +16,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="general">
+				{% include 'functions/alert.twig' with {'selector' : 'version'} %}			
 				<form role=form" method="post" action="{{filename}}">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="form-group">
@@ -27,15 +24,15 @@
 						<p class="form-control-static"><a href="{{base}}/publish/addons/{{addonid}}#releases">{{title}}</a></p>
 					</div>
 					<div class="form-group">
-						<label for="title">{%trans "Version" %}</label>
+						<label for="version">{%trans "Version" %}</label>
 						<div class="row">
 							<div class="col-xs-4">
-								<input type="text" class="form-control" name="version" id="title" value="{{version}}" required>
+								<input type="text" class="form-control" name="version" id="version" value="{{new_version}}" required>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+						<button type="submit" class="btn btn-primary" name="general-submit">{% trans "Save" %}</button>
 					</div>
 				</form>
 			</div>
