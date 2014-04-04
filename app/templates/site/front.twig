@@ -8,7 +8,6 @@
 				<ol class="carousel-indicators">
 					<li data-target="#featured-front" data-slide-to="0" class="active"></li>
 					<li data-target="#featured-front" data-slide-to="1"></li>
-					<li data-target="#featured-front" data-slide-to="2"></li>
 				</ol>
 				<div class="carousel-inner">
 					<div class="item active">
@@ -35,7 +34,7 @@
 					<span class="glyphicon glyphicon-chevron-right"></span>
 				</a>
 			</div>
-			<h3>Latest releases</h3>
+			<h3>{% trans %}Latest releases{% endtrans %}</h3>
 		{% if new_addons %}
 			<ul class="media-list addons-small">
 			{% for addon in new_addons %}
@@ -45,31 +44,24 @@
 		{% else %}
 			<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
 		{% endif %}
+			<hr class="visible-xs">
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 sidebar">
 		{% if user_login %}
 			<h1>{% trans %}Welcome back.{% endtrans %}</h1>
 		{% else %}
-			<h2><span class="hidden-xs">{% trans %}Welcome to Lorry.{% endtrans %}</span><span class="visible-xs">{% trans %}Welcome{% endtrans %}</span></h2>
+			<h1><span class="visible-lg">{% trans %}Welcome to Lorry.{% endtrans %}</span><span class="hidden-lg">{% trans %}Welcome{% endtrans %}</span></h1>
 		{% endif %}
 			<p class="text-big">{% trans %}Lorry is the place to find out about and get the best addons for the game series Clonk, and to discuss all about your favourites with the community.{% endtrans %}</p>
 			<p>
 				<a href="{{base}}/clonk" class="btn btn-success">{% trans %}New to Clonk?{% endtrans %}</a>
 				<a href="{{base}}/about" class="btn btn-default">{% trans %}About Lorry{% endtrans %}</a>
 			</p>
-			<h1>Spotlight</h1>
-			<img src="http://clonkspot.org/images/logo.png" alt="clonkspot" style="height: 69px; width: 248px; margin-bottom: 12px;">
-			<p class="text-big">Clonkspot is a community platform introducing Clonk and features a blog and discussion board about various aspects of the games.</p>
-			<p>
-				<a href="http://clonkspot.org" class="btn btn-info">{% trans %}Visit clonkspot.org{% endtrans %}</a>
-				<a href="{{base}}/community" class="btn btn-default">{% trans %}List of community sites{% endtrans %}</a>
-			</p>
 			<hr>
-			<h3>{% trans %}Addons of the week{% endtrans %}</h3>
-			<ul>
-				<li>Lorry</li>
-				<li>Clonk Infinity</li>
-			</ul>
+			<h2>{% trans %}In development{% endtrans %}</h2>
+			<p class="text-big">{% trans %}Lorry is actively beeing developed. You can join and try out the features, but we might reset the accounts at some point.{% endtrans %}</p>
+			<a href="https://github.com/beheh/lorry" class="btn btn-info">{% trans %}Lorry on GitHub{% endtrans %}</a>
+			<a href="https://clonkspot.org/forum/topic_show.pl?tid=30" class="btn btn-default">{% trans %}Lorry on Clonkspot{% endtrans %}</a>
 		</div>
 	</div>
 </div>

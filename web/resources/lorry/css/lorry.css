@@ -118,9 +118,6 @@ h1 a:active {
 .badge-openclonk {
   background-color: gray;
 }
-#release-presentation-sidebar h2:first-child {
-  margin-top: 0px;
-}
 @media (max-width: 767px) {
   .nav-tabs > li {
     float: none;
@@ -149,6 +146,12 @@ h1 a:active {
 @media (min-width: 1200px) {
   #front .carousel {
     height: 417px;
+  }
+}
+@media (min-width: 992px) {
+  .sidebar h1:first-child,
+  .sidebar h2:first-child {
+    margin-top: 0px;
   }
 }
 .btn-google {

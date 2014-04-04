@@ -5,63 +5,63 @@
 		<div class="page-header">
 			<h1>{{ title }} <small><span class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</span></small></h1>
 		</div>
-		{% if developer or team %}
-			{% endif %}
-			{% if modify and false %}
-				<a href="{{base}}/publish/addons/{{addon.id}}" class="btn btn-info">{% trans %}Edit this addon{% endtrans %}</a>
-				<a href="{{base}}/publish/addons/{{addon.id}}/{{version}}" class="btn">{% trans %}Edit this release{% endtrans %}</a>
-			{% endif %}
-			<div class="row">
-								<div class="col-md-3">
-									<p class="" style="font-size: 0;">
-										<img src="{{base}}img/title.png" style="width: 100%; margin-bottom: 2%;">
-										<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
-										<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
-										<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 0;">
-									</p>
-									<div class="visible-desktop" id="download">
-										<p class="center"><a href="{{base}}/download/{{game.short}}/{{addon.short}}/{{version}}" class="btn btn-primary">Download</a> 70.3MB total</p>
-										{% if requirements %}
-											<p class="center">
-												Requires
-												{% for requirement in requirements %}
-													<a href="{{base}}/addons/{{requirement.game}}/{{requirement.short}}">{{ requirement.title }}</a>
-												{% endfor %}
-											</p>
-										{% endif %}
-									</div>
-								</div>
-								<div class="col-md-5">
-									{% if addon_description %}
-										<p>{{ addon_description }}</p>
-									{% else %}
-										<p><em>{% trans %}This addon has no description.{% endtrans %}</em></p>
-									{% endif %}
-									{% if release_description %}
-										<p>{{ release_description }}</p>
-									{% endif %}
-									<p>{% trans %}Categories{% endtrans %} <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>
-								</div>
-								<div class="col-md-4" id="release-presentation-sidebar">
-									<h2>{% trans %}Addon{% endtrans	%}</h2>
-									<p>{% trans %}Released on the {{releaseday}}.{% endtrans %}</p>
-									<h2>{% trans %}Community{% endtrans %}</h2>
-									<p>State: <span class="success">Active</span> [<a href="#" id="state">?</a>]</p>
-									<ul>
-										{% if website %}<li><a href="{{website}}">{% trans %}Project page{% endtrans %}</a></li>{% endif %}
-										{% if bugtracker %}<li><a href="{{bugtracker}}">{% trans %}Report a bug{% endtrans %}</a></li>{% endif %}
-										<li><a href="#">{% trans %}Interested in an update?{% endtrans %}</a></li>
-									</ul>
-								</div>
-							</div>
-							<hr>
-							<div class="row">
-								<div class="col-md-8">
-									<h2>{% trans %}Rounds and Addons{% endtrans %}</h2>
-									<img src="" style="width: 150px; height: 105px;">
-									<img src="" style="width: 150px; height: 105px;">
-									<img src="" style="width: 150px; height: 105px;">
-								</div>
-							</div>
-						</div>
-						{% endblock %}
+		<div class="row">
+			<div class="col-md-3">
+				<p class="" style="font-size: 0;">
+					<img src="{{base}}img/title.png" style="width: 100%; margin-bottom: 2%;">
+					<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
+					<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 2%;">
+					<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 0;">
+				</p>
+				<div class="visible-desktop" id="download">
+					<p class="center"><a href="{{base}}/download/{{game.short}}/{{addon.short}}/{{version}}" class="btn btn-primary">Download</a> 70.3MB total</p>
+					{% if requirements %}
+						<p class="center">
+							Requires
+							{% for requirement in requirements %}
+								<a href="{{base}}/addons/{{requirement.game}}/{{requirement.short}}">{{ requirement.title }}</a>
+							{% endfor %}
+						</p>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-md-5">
+				{% if addon_description %}
+					<p>{{ addon_description }}</p>
+				{% else %}
+					<p><em>{% trans %}This addon has no description.{% endtrans %}</em></p>
+				{% endif %}
+				{% if release_description %}
+					<p>{{ release_description }}</p>
+				{% endif %}
+				<p>{% trans %}Categories{% endtrans %} <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>
+			</div>
+			<div class="col-md-4 sidebar">
+				<h2>{% trans %}Addon{% endtrans	%}</h2>
+				<p>{% trans %}Released on the {{releaseday}}.{% endtrans %}</p>
+				{% if modify %}
+					<p>
+						<a href="{{base}}/publish/addons/{{addon.id}}" class="btn btn-block btn-default">{% trans %}Edit addon{% endtrans %}</a>
+						<a href="{{base}}/publish/addons/{{addon.id}}/{{version}}" class="btn btn-block btn-default">{% trans %}Edit release{% endtrans %}</a>
+					</p>
+				{% endif %}
+				<h2>{% trans %}Community{% endtrans %}</h2>
+				<p>State: <span class="success">Active</span> [<a href="#" id="state">?</a>]</p>
+				<ul>
+					{% if website %}<li><a href="{{website}}">{% trans %}Project page{% endtrans %}</a></li>{% endif %}
+					{% if bugtracker %}<li><a href="{{bugtracker}}">{% trans %}Report a bug{% endtrans %}</a></li>{% endif %}
+					<li><a href="#">{% trans %}Interested in an update?{% endtrans %}</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-8">
+				<h2>{% trans %}Rounds and Addons{% endtrans %}</h2>
+				<img src="" style="width: 150px; height: 105px;">
+				<img src="" style="width: 150px; height: 105px;">
+				<img src="" style="width: 150px; height: 105px;">
+			</div>
+		</div>
+	</div>
+{% endblock %}

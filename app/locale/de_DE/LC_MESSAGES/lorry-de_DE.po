@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-04-04 12:43+0100\n"
-"PO-Revision-Date: 2014-04-04 12:43+0100\n"
+"POT-Creation-Date: 2014-04-04 13:22+0100\n"
+"PO-Revision-Date: 2014-04-04 13:22+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -470,7 +470,7 @@ msgstr "Veröffentlichen"
 #: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:86
 #: /home/benedict/public_html/lorry/app/cache/twig/23/a3/df84ce3ef75264020224f0084ebf0365d6799e17f5aa2745e8a956a60417.php:54
 #: /home/benedict/public_html/lorry/app/cache/twig/23/a3/df84ce3ef75264020224f0084ebf0365d6799e17f5aa2745e8a956a60417.php:122
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:167
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:137
 #: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:42
 msgid "Addon"
 msgstr "Erweiterung"
@@ -597,6 +597,7 @@ msgstr ""
 "angefordert."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/23/a3/df84ce3ef75264020224f0084ebf0365d6799e17f5aa2745e8a956a60417.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:154
 #: /home/benedict/public_html/lorry/app/cache/twig/d0/95/e6abd85b47c21a19824deba6aea8ce16c0b7872e7438eee643513cc6ebf1.php:108
 msgid "Edit addon"
 msgstr "Erweiterung bearbeiten"
@@ -679,7 +680,7 @@ msgstr "Du hast noch keinen Release erstellt."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/2d/a9/c1cd5e1813c232e88b23f3561aeab642cd23d87d2b6fa5be0fd54c3cecfe.php:25
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:193
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:157
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:160
 msgid "About Lorry"
 msgstr "Über Lorry"
 
@@ -1383,6 +1384,7 @@ msgid "Return to home"
 msgstr "Zurück zur Startseite"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/9b/78/4a52ca703ceb924c23ef2a43a5f9d699a1a209178ecc52cf08ee86526f6c.php:26
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:164
 msgid "Edit release"
 msgstr "Release bearbeiten"
 
@@ -1642,45 +1644,36 @@ msgstr "Lerne Clonk kennen"
 msgid "Version %version%"
 msgstr "Version %version%"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:55
-msgid "Edit this addon"
-msgstr "Erweiterung bearbeiten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:65
-msgid "Edit this release"
-msgstr "Diesen Release bearbeiten"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:146
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:116
 msgid "This addon has no description."
 msgstr "Diese Erweiterung hat keine Beschreibung."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:161
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:131
 msgid "Categories"
 msgstr "Kategorien"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:171
-#, fuzzy
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:141
 msgid "Released on the %releaseday%."
-msgstr "Version %version%, veröffentlicht am %releaseday%"
+msgstr "Veröffentlicht am %releaseday%."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:175
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:171
 #: /home/benedict/public_html/lorry/app/cache/twig/e3/83/87911c79059dda5b7542d652c01066274ddab31d15450fc495b700255c3c.php:25
 msgid "Community"
 msgstr "Community"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:185
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:181
 msgid "Project page"
 msgstr "Projektseite"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:194
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:190
 msgid "Report a bug"
 msgstr "Einen Fehler melden"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:199
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:195
 msgid "Interested in an update?"
 msgstr "An einem Update interessiert?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:209
+#: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:205
 msgid "Rounds and Addons"
 msgstr "Runden und Erweiterungen"
 
@@ -1883,7 +1876,7 @@ msgstr ""
 "der Clonk-Spiele."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:199
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:151
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:154
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
@@ -1908,7 +1901,7 @@ msgstr ""
 "und ihre Zeit hineininvestiert."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:219
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:136
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:139
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
 
@@ -1944,19 +1937,23 @@ msgstr "Unveröffentlicht"
 msgid "No release created"
 msgstr "Kein Release erstellt"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:118
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:72
+msgid "Latest releases"
+msgstr "Neue Veröffentlichungen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:120
 msgid "There are no new releases."
 msgstr "Es gibt keine neuen Veröffentlichungen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:130
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:133
 msgid "Welcome back."
 msgstr "Willkommen zurück."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:138
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:141
 msgid "Welcome"
 msgstr "Willkommen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:144
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:147
 msgid ""
 "Lorry is the place to find out about and get the best addons for the game "
 "series Clonk, and to discuss all about your favourites with the community."
@@ -1965,16 +1962,40 @@ msgstr ""
 "und um rund um deine Favoriten mit der Community zu diskutieren."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:166
-msgid "Visit clonkspot.org"
-msgstr "clonkspot.org öffnen"
+msgid "In development"
+msgstr "In Entwicklung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:172
-msgid "List of community sites"
-msgstr "Liste der Community-Seiten"
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:170
+msgid ""
+"Lorry is actively beeing developed. You can join and try out the features, "
+"but we might reset the accounts at some point."
+msgstr ""
+"Lorry wird aktiv entwickelt. Du kannst mitmachen und die Features "
+"ausprobieren, aber es könnte sein dass wir die Benutzerdaten in Zukunft "
+"zurücksetzen."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:174
+msgid "Lorry on GitHub"
+msgstr "Lorry auf GitHub"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e4/1f/8ea27d5f6c880514f6ef6204ce4894fd3dc21fc1f7ebff5c9a29b0c47e98.php:178
-msgid "Addons of the week"
-msgstr "Erweiterungen der Woche"
+msgid "Lorry on Clonkspot"
+msgstr "Lorry auf Clonkspot"
+
+#~ msgid "Edit this addon"
+#~ msgstr "Erweiterung bearbeiten"
+
+#~ msgid "Edit this release"
+#~ msgstr "Diesen Release bearbeiten"
+
+#~ msgid "Visit clonkspot.org"
+#~ msgstr "clonkspot.org öffnen"
+
+#~ msgid "List of community sites"
+#~ msgstr "Liste der Community-Seiten"
+
+#~ msgid "Addons of the week"
+#~ msgstr "Erweiterungen der Woche"
 
 #~ msgid "Released"
 #~ msgstr "Veröffentlicht"
@@ -2075,9 +2096,6 @@ msgstr "Erweiterungen der Woche"
 
 #~ msgid "New releases on Lorry"
 #~ msgstr "Neue Veröffentlichungen auf Lorry"
-
-#~ msgid "New releases"
-#~ msgstr "Neue Veröffentlichungen"
 
 #~ msgid "Change linked profiles"
 #~ msgstr "Verknüpfte Profile ändern"

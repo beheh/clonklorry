@@ -141,10 +141,7 @@ class Environment {
 			'/auth/callback/:alpha' => 'Auth\Callback',
 			'/about' => 'Site\About',
 			'/clonk' => 'Site\Clonk',
-			'/community' => 'Site\Community',
-			'/contact' => 'Site\Contact',
-			'/error/forbidden' => 'Error\Forbidden',
-			'/error/notfound' => 'Error\NotFound',
+			'/contact' => 'Site\Contact'
 		));
 
 		// set debug routes
