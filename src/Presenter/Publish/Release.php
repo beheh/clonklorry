@@ -35,7 +35,8 @@ class Release extends Presenter {
 		$addon = $this->getAddon($id);
 		$release = $this->getRelease($addon->getId(), $version);
 
-		$this->context['title'] = $addon->getTitle();
+		$this->context['title'] = $addon->getTitle().' '.$release->getVersion();
+		$this->context['addontitle'] = $addon->getTitle();
 		$this->context['addonid'] = $addon->getId();
 		$this->context['version'] = $release->getVersion();
 		if(!isset($this->context['new_version'])) {
