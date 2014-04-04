@@ -12,7 +12,7 @@ $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
 		var tab = $(e.relatedTarget).attr('href');
 		if ($(tab).children('form').hasClass('dirty')) {
 			var event = $.Event('beforeunload');
-			if (!confirm('You have unsaved changes.')) {
+			if (!confirm(translation.unsavedChanges)) {
 				e.preventDefault();
 			} else {
 				$(tab).children('form').trigger('reinitialize.areYouSure');
