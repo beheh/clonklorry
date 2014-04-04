@@ -130,7 +130,7 @@ class PersistenceService {
 		$query = $this->connection->prepare('UPDATE `'.$model->getTable().'` SET '.$sets.' WHERE `id` = ?');
 		$query->execute($values);
 		if($query->errorCode() != PDO::ERR_NONE) {
-			$errorinfo = $statement->errorInfo();
+			$errorinfo = $query->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $query->rowCount() == 1;
