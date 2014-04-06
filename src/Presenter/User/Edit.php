@@ -29,6 +29,9 @@ class Edit extends Presenter {
 		if(!isset($this->context['username_edit'])) {
 			$this->context['username_edit'] = $user->getUsername();
 		}
+		if(isset($_GET['username-changed'])) {
+			$this->success('username', gettext('Username was changed.'));
+		}
 
 		$this->context['email'] = isset($_POST['email']) ? filter_input(INPUT_POST, 'email') : $user->getEmail();
 
@@ -72,7 +75,7 @@ class Edit extends Presenter {
 
 		$new_username = trim(filter_input(INPUT_POST, 'username'));
 
-		if(isset($_GET['change-username']) && $username != $new_username) {
+		if(isset($_POST['change-username-submit']) && $username != $new_username) {
 			$this->context['username_edit'] = $new_username;
 
 			if(ModelFactory::build('User')->byUsername($new_username)) {
@@ -87,7 +90,7 @@ class Edit extends Presenter {
 
 			if(empty($errors)) {
 				if($user->modified() && $user->save()) {
-					$this->redirect('/users/'.$new_username.'/edit?change-username');
+					$this->redirect('/users/'.$new_username.'/edit?username-changed');
 					return;
 				} else {
 					$this->error(gettext('Username could not be changed.'));
@@ -99,7 +102,7 @@ class Edit extends Presenter {
 
 		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
-		if(isset($_GET['change-contact']) && $email != $user->getEmail()) {
+		if(isset($_POST['change-contact-submit']) && $email != $user->getEmail()) {
 			
 			$this->context['email'] = $email;
 
