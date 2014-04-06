@@ -1,9 +1,12 @@
+{% set _addon_url %}
+	{{base}}/addons/{% if addon.game %}{{addon.game.short}}{% else %}{{short}}{% endif %}/{{addon.short}}
+{% endset %}
 <li class="media media-addon">
-	<a href="{{base}}/addons/{% if addon.game %}{{addon.game.short}}{% else %}{{short}}{% endif %}/{{addon.short}}" class="pull-left">
+	<a href="{{_addon_url}}" class="pull-left">
 		<img class="media-object" src="http://placehold.it/76x57">
 	</a>
 	<div class="media-body">
-		<h4 class="media-heading">{{ addon.title }}</h4>
+		<h4 class="media-heading"><a href="{{_addon_url}}">{{ addon.title }}</a></h4>
 		{% if addon.game %}{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title} %}{% endif %}
 		<p>{{addon.description}}</p>
 	</div>

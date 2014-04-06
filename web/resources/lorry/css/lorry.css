@@ -84,6 +84,12 @@ textarea {
 .media-addon:first-child {
   margin-top: 15px;
 }
+.media-addon {
+  text-overflow: ellipsis;
+}
+.media-heading a {
+  color: black;
+}
 h1 small .label {
   vertical-align: text-top;
 }
