@@ -1,3 +1,6 @@
+CREATE DATABASE `lorry` DEFAULT CHARACTER SET utf8;
+USE `lorry`;
+
 CREATE TABLE `game` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`short` varchar(16) NOT NULL,
