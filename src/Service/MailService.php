@@ -2,6 +2,7 @@
 
 namespace Lorry\Service;
 
+use Analog\Analog;
 use Lorry\Email;
 use Lorry\EmailFactory;
 use Swift_Mailer;
@@ -68,7 +69,14 @@ class MailService {
 			$message->setReplyTo($replyto);
 		}
 
-		return $this->mailer->send($message);
+		try {
+			return $this->mailer->send($message);
+		}
+		catch(\Exception $exception) {
+			$message = get_class($this).': '.get_class($exception).' '.$exception->getMessage().' in '.$exception->getTraceAsString();
+			Analog::error($message);
+		}
+		return false;
 	}
 
 	public function sendActivation(\Lorry\Model\User $user, $url) {
