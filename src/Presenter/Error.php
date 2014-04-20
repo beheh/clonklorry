@@ -4,7 +4,7 @@ namespace Lorry\Presenter;
 
 use Analog;
 use Lorry\Presenter;
-use Lorry\Exception;
+use \Exception;
 
 class Error extends Presenter {
 
