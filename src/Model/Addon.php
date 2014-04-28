@@ -68,6 +68,17 @@ class Addon extends Model {
 		return $this->getValue('title');
 	}
 
+	public function byTitle($title, $owner = 0, $game = 0) {
+		$constraints = array('title' => $title);
+		if($owner != 0) {
+			$constraints['owner'] = $owner;
+		}
+		if($game != 0) {
+			$constraints['game'] = $game;
+		}
+		return $this->byValues($constraints);
+	}
+
 	public function setAbbreviation($abbreviation) {
 		$abbreviation = trim(strtolower($abbreviation));
 		if($abbreviation) {

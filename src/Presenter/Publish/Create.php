@@ -16,7 +16,7 @@ class Create extends Presenter {
 		foreach($games as $game) {
 			$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
 		}
-		
+
 		if(!isset($this->context['game'])) {
 			$this->context['game'] = filter_input(INPUT_GET, 'for');
 		}
@@ -41,8 +41,8 @@ class Create extends Presenter {
 
 		$addon->setOwner($user->getId());
 
+		$title = filter_input(INPUT_POST, 'title');
 		try {
-			$title = filter_input(INPUT_POST, 'title');
 			$this->context['addontitle'] = $title;
 			$addon->setTitle($title);
 			$this->context['title_valid'] = true;
@@ -50,8 +50,8 @@ class Create extends Presenter {
 			$errors[] = sprintf(gettext('Title is %s.'), $ex->getMessage());
 		}
 
+		$type = filter_input(INPUT_POST, 'type');
 		try {
-			$type = filter_input(INPUT_POST, 'type');
 			$this->context['type'] = $type;
 		} catch(ModelValueInvalidException $ex) {
 			$errors[] = sprintf(gettext('Type is %s.'), $ex->getMessage());
@@ -68,6 +68,12 @@ class Create extends Presenter {
 			$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
 		}
 
+		$existing = ModelFactory::build('Addon')->byTitle($title, $user->getId(), $game->getId());
+		if($existing) {
+			$errors[] = gettext("You have already created an addon with this title for this game.");
+		}
+
+
 		if(!$user->isAdministrator()) {
 			$errors[] = gettext('Addon creation currently disabled.');
 		}
@@ -76,7 +82,7 @@ class Create extends Presenter {
 			$this->error('creation', implode('<br>', $errors));
 		} else {
 			$addon->save();
-			$this->redirect('/publish');
+			$this->redirect('/publish/addons/'.$addon->getId());
 		}
 
 		$this->get();
