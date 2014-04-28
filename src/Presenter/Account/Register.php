@@ -30,7 +30,6 @@ class Register extends Presenter {
 			if($register['email'])
 				$this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
-			$this->context['username_focus'] = true;
 
 			$this->context['oauth'] = true;
 		}
