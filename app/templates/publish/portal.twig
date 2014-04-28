@@ -1,15 +1,15 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Publish'|trans %}
+{% set title = 'My addons'|trans %}
 
 {% block content %}
 <div class="container">
 {% if addons %}
 	<div class="page-header">
-		<h1>{{ title }} <a href="{{filename}}/create" class="btn btn-default" btitle="{% trans %}Create a new addon{% endtrans %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
+		<h1>{{ title }}</h1>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12"">
 			<ul class="media-list addons-small">
 				{% for addon in addons %}
 				<li class="media media-addon">
@@ -21,7 +21,7 @@
 						{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title}%}
 						<p>
 							<a href="{{filename}}/addons/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
-							<a href="{{filename}}/addons/{{addon.id}}?add#releases" class="btn btn-sm btn-default">{% trans %}New release{% endtrans %}</a>
+							<a href="{{filename}}/addons/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Edit releases{% endtrans %}</a>
 						</p>
 					</div>
 				</li>
