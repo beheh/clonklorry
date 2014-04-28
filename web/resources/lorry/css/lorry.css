@@ -124,6 +124,9 @@ h1 a:active {
 .badge-openclonk {
   background-color: gray;
 }
+h1 a.btn {
+  vertical-align: top;
+}
 @media (max-width: 767px) {
   .nav-tabs > li {
     float: none;
