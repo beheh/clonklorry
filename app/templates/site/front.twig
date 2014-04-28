@@ -49,18 +49,22 @@
 		<div class="col-md-4 sidebar">
 		{% if user_login %}
 			<h1>{% trans %}Welcome back.{% endtrans %}</h1>
+			<p class="lead">{% trans %}Lorry lives from community creations. Why not start developing one today?{% endtrans %}</p>
+			<!--<p>
+				<a href="{{base}}/publish/create" class="btn btn-primary">{% trans %}Create a new addon{% endtrans %}</a>
+			</p>--!>
 		{% else %}
 			<h1><span class="visible-lg">{% trans %}Welcome to Lorry.{% endtrans %}</span><span class="hidden-lg">{% trans %}Welcome{% endtrans %}</span></h1>
-		{% endif %}
-			<p class="text-big">{% trans %}Lorry is the place to find out about and get the best addons for the game series Clonk, and to discuss all about your favourites with the community.{% endtrans %}</p>
+			<p class="lead">{% trans %}Lorry is the place for the best addons for the game series Clonk.{% endtrans %}</p>
 			<p>
-				<a href="{{base}}/clonk" class="btn btn-success">{% trans %}New to Clonk?{% endtrans %}</a>
-				<a href="{{base}}/about" class="btn btn-default">{% trans %}About Lorry{% endtrans %}</a>
+				<a href="{{base}}/register" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
+				<a href="{{base}}/clonk" class="btn btn-lg btn-default">{% trans %}New to Clonk?{% endtrans %}</a>
 			</p>
+		{% endif %}
 			<hr>
 			<h2>{% trans %}In development{% endtrans %}</h2>
-			<p class="text-big">{% trans %}Lorry is actively beeing developed. You can join and try out the features, but we might reset the accounts at some point.{% endtrans %}</p>
-			<a href="https://github.com/beheh/lorry" class="btn btn-info">{% trans %}Lorry on GitHub{% endtrans %}</a>
+			<p class="text-big">{% trans %}The Lorry platform is actively beeing developed. You can join and try out the features, but we might reset the accounts at some point.{% endtrans %}</p>
+			<a href="{{base}}/about" class="btn btn-info">{% trans %}About Lorry{% endtrans %}</a>
 			<a href="https://clonkspot.org/forum/topic_show.pl?tid=30" class="btn btn-default">{% trans %}Lorry on Clonkspot{% endtrans %}</a>
 		</div>
 	</div>
