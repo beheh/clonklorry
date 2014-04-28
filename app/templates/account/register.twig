@@ -7,7 +7,11 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{% trans 'Register' %}</h1>
+		{% if oauth %}
+		<h1>{% trans "Complete registration" %}</h1>
+		{% else %}
+		<h1>{% trans "Register" %}</h1>
+		{% endif %}
 	</div>
 	<div class="row" id="register">
 		<div class="col-md-4">
@@ -32,39 +36,43 @@
 				{% else %}
 				<input type="hidden" name="use-oauth" value="1">
 				{% endif %}
-				<button class="btn btn-large btn-success" type="submit">{% trans "Register" %}</button>
+				<button class="btn btn-lg btn-success" type="submit">{% trans "Register" %}</button>
 				{% if oauth %}
-				<a href="{{base}}/register?cancel" class="btn btn-default">{% trans "Cancel" %}</a>
+				<a href="{{base}}/register?cancel" class="btn btn-lg btn-default">{% trans "Cancel" %}</a>
 				{% else %}
 				<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>
 				{% endif %}
 			</form>
 			<hr>
 			<div class="social">
-			{% if not oauth %}
-				<h4>{% trans %}Alternatively use a login service:{% endtrans %}</h4>
-				{% include 'functions/oauth.twig' %}
+			{% if oauth %}
+				<h4>{% trans %}Linked to {{provider}}{% endtrans %}</h4>
+				<div class="alert alert-success">{% trans %}You can log in using {{provider}} in future. {% endtrans %}</div>
 			{% else %}
-				<h4>{% trans %}{{provider}} authentification successful	{% endtrans %}</h4>
-				<p>{% trans %}You can log in using {{provider}} in future. {% endtrans %}</p>
+				<h4>{% trans %}Login services{% endtrans %}</h4>
+				{% include 'functions/oauth.twig' %}
 			{% endif %}
 			</div>
 		</div>
 		<div class="col-md-8">
 			<hr class="visible-xs">
-			{% if not oauth %}
+			{% if oauth %}
+			<h2>{% trans %}Nearly done&hellip;{% endtrans %}</h2>
+			<p>{% trans %}You still need to choose your username.{% endtrans %}</p>
+			{% else %}
 			<h2>{% trans %}This is Lorry.{% endtrans %}</h2>
-			<p>{% trans %}Lorry is a fan page, distribution platform and online community for players of Clonk games.{% endtrans %}</p>
-			<p>
-				<a href="{{base}}/about" class="btn btn-info">{% trans %}About Lorry{% endtrans %}</a>
-				<a href="{{base}}/clonk" class="btn btn-default">{% trans %}New to Clonk?{% endtrans %}</a>
-			</p>
+			<p class="lead">{% trans %}Lorry is a fan page, distribution platform and online community for players and fans of the Clonk series.{% endtrans %} <a href="{{base}}/about">{% trans %}Learn more&hellip;{% endtrans %}</a></p>
 			<hr>
 			<h3>{% trans %}Why should I register?{% endtrans %}</h3>
-			<p>{% trans %}After registering you can upload your own addons as well as comment and vote on existing contributions.{% endtrans %}</p>
-			<p>{% trans %}You'll become part of a small and friendly community, enjoying the game and devoting their time to it.{% endtrans %}</p>
-			{% else %}
-			<h2>{% trans %}Welcome to Lorry.{% endtrans %}</h2>
+			<ul class="list-group">
+				<li class="list-group-item""><span class="glyphicon glyphicon-upload"></span> {% trans %}Publish your own addons{% endtrans %}</li>
+			</ul>
+			<h4>{% trans %}Upcoming features{% endtrans %}</h4>
+			<ul class="list-group">
+				<li class="list-group-item"><span class="glyphicon glyphicon-comment"></span> {% trans %}Comment and discuss addons{% endtrans %}</li>
+				<li class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span> {% trans %}Vote on existing addons{% endtrans %}</li>
+				<li class="list-group-item"><span class="glyphicon glyphicon-tag"></span> {% trans %}Tag addons{% endtrans %}</li>
+			</ul>
 			{% endif %}
 		</div>
 	</div>
