@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>{{ title }}
+		<h1>{{ username }}
 			{% if administrator or moderator or banned %}
 			<small>
 				{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
@@ -17,7 +17,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-		<h2>{% trans %}User{% endtrans %}</h2>		
+		<h2>{% trans %}User{% endtrans %}</h2>
 		{% if registration %}
 			<p>{% trans %}Registered on {{registration}}.{% endtrans %}</p>
 		{% endif %}
