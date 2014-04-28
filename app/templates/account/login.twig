@@ -26,7 +26,7 @@
 						<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
 					</label>
 				</div>
-				<button class="btn btn-large btn-primary" type="submit">{% trans "Login" %}</button>
+				<button class="btn btn-lg btn-primary" type="submit">{% trans "Login" %}</button>
 				{% if not (email or email_visible) %}
 				<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">
 					{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}
@@ -47,19 +47,23 @@
 				<hr>
 			</div>
 			<div class="social">
-				<h4>{% trans %}Or, select your login service:{% endtrans %}</h4>
+				<h4>{% trans %}Login services{% endtrans %}</h4>
 			{% include 'functions/oauth.twig' %}
 			</div>
 		</div>
 		<div class="col-md-8">
 			<hr class="visible-xs">
 			<h2>{% trans %}Welcome back!{% endtrans %}</h2>
-			<p>{% trans %}Nice to see you again! Have you visited these other great Clonk sites yet?{% endtrans %}</p>
-			<p><a href="http://openclonk.org">openclonk.org</a> &middot; <a href="http://clonkspot.org">clonkspot.org</a> &middot; <a href="http://clonkspot.org">clonkforge.net</a></p>
+			<p class="lead">{% trans %}Nice to see you again. Have you visited these other great Clonk sites yet?{% endtrans %}</p>
+			<ul class="list-inline">
+				<li><a href="http://openclonk.org">openclonk.org</a></li>
+				<li><a href="https://clonkspot.org">Clonkspot</a></li>
+				<li><a href="http://clonkforge.net">Clonk Forge</a></li>
+			</ul>
 			<hr>
 			<h3>{% trans %}No account yet?{% endtrans %}</h3>
 			<p>{% trans %}Registering takes only a few moments and allows you to participate in the Clonk community.{% endtrans %}</p>
-			<p><a href="{{base}}/register" class="btn btn-success">{% trans %}Register now{% endtrans %}</a></p>
+			<p><a href="{{base}}/register" class="btn btn-md btn-success">{% trans %}Register now{% endtrans %}</a></p>
 		</div>
 	</div>
 </div>
