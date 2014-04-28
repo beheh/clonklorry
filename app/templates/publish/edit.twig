@@ -1,137 +1,138 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-<div class="container">
-	<div class="page-header">
-		<h1>{{title}}</h1>
-	</div>
-	<ul class="nav nav-tabs" id="editAddonTabs">
-		<li class="active"><a href="#addon" data-toggle="tab">{% trans "Addon" %}</a></li>
-		<li><a href="#presentation" data-toggle="tab">{% trans "Presentation" %}</a></li>
-		<li><a href="#releases" data-toggle="tab">{% trans "Releases" %}</a></li>
-	</ul>
-	<div class="tab-content">
-		<div class="tab-pane active" id="addon">
-			<form role=form" method="post" action="{{filename}}?addon#addon">
-				<input type="hidden" name="state" value="{{state}}">
-				{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
-				<div class="row">
-					<div class="col-md-4">
-						<div class="form-group">
-							<label for="title">{%trans "Title" %}</label>
-							<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required>
-						</div>
-						<div class="form-group">
-							<label for="type">{%trans "Game" %}</label>
-							<select name="game" class="form-control" id="type" required>
-								{% for short, currentgame in games %}
-								<option value="{{short}}"{% if short == game %} selected{% endif %}>{{currentgame.title}}</option>
-								{% endfor %}
-							</select>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label for="title">{%trans "Abbreviation (if exists)" %}</label>
-							<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
-						</div>
-						<div class="form-group">
-							<label for="type">{%trans "Type" %}</label>
-							<select name="type" class="form-control" id="type" required>
-								<option value="123">Runde</option>
-								<option value="312">Objektpaket</option>
-							</select>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-				</div>
-			</form>
+	<div class="container">
+		<div class="page-header">
+			<h1>{{title}}</h1>
 		</div>
-
-		<div class="tab-pane" id="dependencies">
-			<form role=form" method="post" action="{{filename}}">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="form-group">
-							<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-
-		<div class="tab-pane" id="presentation">
-			<form role=form" method="post" action="{{filename}}#presentation">
-				<input type="hidden" name="state" value="{{state}}">
-				{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
-				<div class="row">
-					<div class="col-md-8">
-						<div class="form-group">
-							<label for="description">{% trans "Description "%}</label>
+		<ul class="nav nav-tabs" id="editAddonTabs">
+			<li class="active"><a href="#addon" data-toggle="tab">{% trans "Addon" %}</a></li>
+			<li><a href="#presentation" data-toggle="tab">{% trans "Presentation" %}</a></li>
+			<li><a href="#releases" data-toggle="tab">{% trans "Releases" %}</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="addon">
+				<form role=form" method="post" action="{{filename}}?addon#addon">
+					<input type="hidden" name="state" value="{{state}}">
+					{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
+					<div class="row">
+						<div class="col-md-4">
 							<div class="form-group">
-								<textarea class="form-control" id="description" name="description" rows="10"></textarea>
+								<label for="title">{%trans "Title" %}</label>
+								<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required>
+							</div>
+							<div class="form-group">
+								<label for="type">{%trans "Game" %}</label>
+								<select name="game" class="form-control" id="type" required>
+									{% for short, currentgame in games %}
+										<option value="{{short}}"{% if short == game %} selected{% endif %}>{{currentgame.title}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="title">{%trans "Abbreviation (if exists)" %}</label>
+								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
+							</div>
+							<div class="form-group">
+								<label for="type">{%trans "Type" %}</label>
+								<select name="type" class="form-control" id="type" required>
+									<option value="123">Runde</option>
+									<option value="312">Objektpaket</option>
+								</select>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<input type="hidden" name="state" value="{{state}}">
-						<div class="form-group">
-							<label for="type">{% trans "Player count" %}</label>
-							<select name="type" class="form-control" id="type" required>
-								<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="type">{% trans "Goal" %}</label>
-							<select name="type" class="form-control" id="type" required>
-								<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
-							</select>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="tab-pane" id="dependencies">
+				<form role=form" method="post" action="{{filename}}">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary" name="addon-submit">{% trans "Save" %}</button>
-				</div>
-			</form>
-		</div>
-
-		<div class="tab-pane" id="releases">
-			<div class="row">
-				<div class="col-md-12">
-					<label for="version">{% trans "New release" %}</label>
-					<form role=form" class="form-inline" method="post" action="{{filename}}#releases">
-						<input type="hidden" name="state" value="{{state}}">
-					{% include 'functions/alert.twig' with {'selector' : 'release'} %}
-						<div class="form-group">
-							<label class="sr-only" for="version	">{% trans "Version"%}</label>
-							<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="1.0b"{% if focus_version %} autofocus{% endif %} required>
-						</div>
-						<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Add release{% endtrans %}</button>
-					</form>
-					<p></p>
-					<label for="type">{% trans "Existing releases" %}</label>
-					<ul class="list-group">
-						{% for release in releases %}
-						<li class="list-group-item">
-							{% set version = release.version %}
-							<a href="{{base}}/publish/addons/{{addonid}}/{{release.version}}" class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</a>
-							<button type="button" class="close" title="{% trans "Remove" %}" aria-hidden="true">&times;</button>
-							<span class="label label-default">{% trans "Unreleased" %}</span>
-						</li>
-						{% else %}
-						<li class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</li>
-						{% endfor %}
-					</ul>
-				</div>
+				</form>
 			</div>
-			</form>
-		</div>
-	</div>
-</div>
-{% endblock %}
 
-{% block javascript %}
-	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
-{% endblock %}
+			<div class="tab-pane" id="presentation">
+				<form role=form" method="post" action="{{filename}}#presentation">
+					<input type="hidden" name="state" value="{{state}}">
+					{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
+					<div class="row">
+						<div class="col-md-8">
+							<div class="form-group">
+								<label for="description">{% trans "Description "%}</label>
+								<div class="form-group">
+									<textarea class="form-control" id="description" name="description" rows="10"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<input type="hidden" name="state" value="{{state}}">
+							<div class="form-group">
+								<label for="type">{% trans "Player count" %}</label>
+								<select name="type" class="form-control" id="type" required>
+									<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="type">{% trans "Goal" %}</label>
+								<select name="type" class="form-control" id="type" required>
+									<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary" name="addon-submit">{% trans "Save" %}</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="tab-pane" id="releases">
+				<div class="row">
+					<div class="col-md-12">
+						<label for="version">{% trans "New release" %}</label>
+						<form role=form" class="form-inline" method="post" action="{{filename}}#releases">
+							<input type="hidden" name="state" value="{{state}}">
+							{% include 'functions/alert.twig' with {'selector' : 'release'} %}
+							<div class="form-group">
+								<label class="sr-only" for="version	">{% trans "Version"%}</label>
+								<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="1.0b"{% if focus_version %} autofocus{% endif %} required>
+							</div>
+							<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Add release{% endtrans %}</button>
+							<span class="help-block">{% trans %}Only you and administrators can see unpublished releases.{% endtrans %}</span>
+							</form>
+						<p></p>
+						<label for="type">{% trans "Existing releases" %}</label>
+						<ul class="list-group">
+							{% for release in releases %}
+								<li class="list-group-item">
+									{% set version = release.version %}
+										<a href="{{base}}/publish/addons/{{addonid}}/{{release.version}}" class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</a>
+										<button type="button" class="close" title="{% trans "Remove" %}" aria-hidden="true">&times;</button>
+										<span class="label label-default">{% trans "Unreleased" %}</span>
+									</li>
+									{% else %}
+										<li class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					{% endblock %}
+
+						{% block javascript %}
+							$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
+						{% endblock %}
