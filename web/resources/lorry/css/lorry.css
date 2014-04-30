@@ -1,3 +1,11 @@
+::selection {
+  color: white;
+  background-color: firebrick;
+}
+::-moz-selection {
+  color: white;
+  background-color: firebrick;
+}
 body {
   background-image: url('../img/debut_light.png');
   min-height: 100%;
