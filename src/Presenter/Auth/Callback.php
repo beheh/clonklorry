@@ -14,7 +14,7 @@ class Callback extends Presenter {
 
 	public function get($provider) {
 
-		session_start();
+		$this->session->ensureSession();
 		if(isset($_SESSION['register_oauth'])) {
 			unset($_SESSION['register_oauth']);
 		}
@@ -101,6 +101,9 @@ class Callback extends Presenter {
 		}
 
 		if($this->session->authenticated()) {
+			// we ignore returnto
+			unset($_SESSION['returnto']);
+
 			// test, if other user has already used this uid
 			$test_user = ModelFactory::build('User')->byOauth($provider, $uid);
 			if($test_user) {
@@ -117,19 +120,30 @@ class Callback extends Presenter {
 			// grab user with openid data fitting
 			$user = ModelFactory::build('User')->byOauth($provider, $uid);
 
+			$returnto = '';
+			if(isset($_SESSION['returnto'])) {
+				$returnto = $_SESSION['returnto'];
+			}
+			unset($_SESSION['returnto']);
+
 			if($user != null) {
+				$returnto = '/';
 				$this->session->start($user, true);
-				$this->redirect('/#');
+				$this->redirect($returnto.'#');
 			} else {
 				$user = ModelFactory::build('User')->byEmail($email);
 				if($user != null) {
-					$this->redirect('/login?unknown-oauth#');
+					$this->redirect('/login?unknown-oauth&returnto=/settings#');
 					return;
 				}
 
 				// if no user matches register new user
 				$_SESSION['register_oauth'] = array('provider' => $provider_title, 'uid' => $uid, 'username' => $nickname, 'email' => $email);
-				$this->redirect('/register#');
+				$url = '/register';
+				if($returnto) {
+					$url .= '?returnto='.$returnto;
+				}
+				$this->redirect($url.'#');
 			}
 		}
 	}

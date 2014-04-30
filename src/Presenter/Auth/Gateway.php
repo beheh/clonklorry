@@ -16,6 +16,12 @@ class Gateway extends Presenter {
 
 		if($this->session->authenticated()) {
 			$login_hint = $this->session->getUser()->getEmail();
+		} else {
+			$this->session->ensureSession();
+			$returnto = filter_input(INPUT_GET, 'returnto');
+			if($returnto) {
+				$_SESSION['returnto'] = $returnto;
+			}
 		}
 		switch($provider) {
 			case 'openid':

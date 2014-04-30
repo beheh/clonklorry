@@ -19,6 +19,10 @@ class Register extends Presenter {
 			return $this->redirect($this->session->handleOauth());
 		}
 
+		if(isset($_GET['returnto'])) {
+			$this->context['returnto'] = filter_input(INPUT_GET, 'returnto');
+		}
+
 		if(isset($_GET['cancel'])) {
 			unset($_SESSION['register_oauth']);
 		}
@@ -27,7 +31,8 @@ class Register extends Presenter {
 		if(isset($_SESSION['register_oauth'])) {
 			$register = $_SESSION['register_oauth'];
 
-			if($register['email']) $this->context['email'] = $register['email'];
+			if($register['email'])
+				$this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
 
 			$this->context['oauth'] = true;
@@ -99,16 +104,22 @@ class Register extends Presenter {
 				$registration->setRecipent($user->getEmail());
 				$registration->setUsername($user->getUsername());
 				$this->mail->send($registration, $user->getLanguage());
+				$returnto = filter_input(INPUT_GET, 'returnto');
 				if($oauth) {
+					$url = '/';
+					if($returnto) {
+						$url = $returnto;
+					}
 					$this->session->start($user, true);
-					$this->redirect('/');
+					$this->redirect($url);
+					return;
 				} else {
 					$url = '/login?registered='.urlencode($username);
-					$returnto = filter_input(INPUT_GET, 'returnto');
 					if($returnto) {
 						$url .= '&returnto='.$returnto;
 					}
 					$this->redirect($url);
+					return;
 				}
 			} else {
 				$this->error('register', gettext('There was an error registering.'));

@@ -4,12 +4,12 @@
 	{% else %}
 	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
 	{% endif %}
-	<a href="?{% if oauth.google %}remove-{% endif %}oauth=google{% if oauth.google %}&state={{state}}#oauth{% endif %}" class="btn btn-google">{% trans "Google" %}{% if oauth.google %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
-	<a href="?{% if oauth.facebook %}remove-{% endif %}oauth=facebook{% if oauth.facebook %}&state={{state}}#oauth{% endif %}" class="btn btn-facebook">{% trans "Facebook" %}{% if oauth.facebook %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
+	<a href="?{% if oauth.google %}remove-{% endif %}oauth=google{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.google %}&state={{state}}#oauth{% endif %}" class="btn btn-google">{% trans "Google" %}{% if oauth.google %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
+	<a href="?{% if oauth.facebook %}remove-{% endif %}oauth=facebook{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.facebook %}&state={{state}}#oauth{% endif %}" class="btn btn-facebook">{% trans "Facebook" %}{% if oauth.facebook %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 </p>
 {% if not oauth.openid %}<div class="collapse" id="by-openid">
-	<form role="form" action="{{filename}}?oauth=openid" method="post" class="form-inline">
-		{% if user_login %}<input type="hidden" name="state" value="{{state}}">{% endif %}
+	<form role="form" action="{{filename}}?oauth=openid{% if returnto %}&returnto={{returnto}}{% endif %}" method="post" class="form-inline">
+		<input type="hidden" name="state" value="{{state}}">
 		<div class="form-group">
 			<label class="sr-only" for="openid-provider">{% trans %}OpenID url{% endtrans %}</label>
 			<input type="url" class="form-control" name="openid-identity" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>

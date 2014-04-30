@@ -91,7 +91,7 @@ class SessionService {
 
 	public final function authenticated() {
 		if(!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
-				return false;
+			return false;
 		$this->ensureUser();
 		return $this->user !== false;
 	}
@@ -184,7 +184,7 @@ class SessionService {
 		return true;
 	}
 
-	protected final function ensureSession() {
+	public final function ensureSession() {
 		if(!$this->started) {
 			session_start();
 			$this->started = true;
@@ -219,9 +219,18 @@ class SessionService {
 		if(!in_array($provider, self::$OAUTH_PROVIDERS)) {
 			throw new FileNotFoundException();
 		}
+		$params = array();
+
 		$gateway = '/auth/gateway/'.$provider;
 		if($provider == 'openid') {
-			$gateway .= '?identity='.filter_input(INPUT_POST, 'openid-identity');
+			$params[] = 'identity='.filter_input(INPUT_POST, 'openid-identity');
+		}
+		$returnto = filter_input(INPUT_GET, 'returnto');
+		if($returnto) {
+			$params[] = 'returnto='.$returnto;
+		}
+		if(!empty($params)) {
+			$gateway .= '?'.implode('&', $params);
 		}
 		return $gateway;
 	}
