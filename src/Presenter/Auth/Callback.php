@@ -127,9 +127,12 @@ class Callback extends Presenter {
 			unset($_SESSION['returnto']);
 
 			if($user != null) {
-				$returnto = '/';
+				$url = '/';
+				if($returnto) {
+				$url = $returnto;
+				}
 				$this->session->start($user, true);
-				$this->redirect($returnto.'#');
+				$this->redirect($url.'#');
 			} else {
 				$user = ModelFactory::build('User')->byEmail($email);
 				if($user != null) {
