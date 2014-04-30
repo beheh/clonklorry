@@ -13,22 +13,22 @@
 			<h3>{% trans %}Fan page{% endtrans %}</h3>
 			<p>{% trans %}We're here as the fans of Clonk. We built this site as members of the community for "our" game.{% endtrans %}</p>
 			<p>{% trans %}This site is for new players to learn all about Clonk, to discover the huge database of addons and to help them get right into the game.{% endtrans %}</p>
-			<p><a href="{{base}}/clonk" class="btn btn-info" data-instant>{% trans "Learn about Clonk" %}</a></p>
+			<p><a href="{{base}}/clonk" class="btn btn-info">{% trans "Learn about Clonk" %}</a></p>
 		</div>
 		<div class="col-md-4">
 			<hr class="visible-xs">
 			<h3>{% trans %}Distribution platform{% endtrans %}</h3>
 			<p>{% trans %}We want to provide Clonk players with a simple, clean interface to find and download the best addons and keep them up-to-date as they progress.{% endtrans %}</p>
 			<p>{% trans %}It should also serve as an archive, to enable players to go back and find forgotten gems of the past.{% endtrans %}</p>
-			<p><a href="{{base}}/addons" class="btn btn-info" data-instant>{% trans "Discover the addons" %}</a></p>
+			<p><a href="{{base}}/addons" class="btn btn-info">{% trans "Discover the addons" %}</a></p>
 		</div>
 		<div class="col-md-4">
 			<hr class="visible-xs">
 			<h3>{% trans %}Online community{% endtrans %}</h3>
 			<p>{% trans %}The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk: the awesome Community and its creations.{% endtrans %}</p>
 			<p>{% trans %}We want to share our own creations easily and give the addon developers our important feedback.{% endtrans %}</p>
-		{% if user_login %}<p><a href="{{user_profile}}" class="btn btn-primary" data-instant>{% trans "View your profile"%}</a></p>
-		{% else %}<p><a href="{{base}}/register" class="btn btn-success" data-instant>{% trans "Register now"%}</a></p>{% endif %}
+		{% if user_login %}<p><a href="{{user_profile}}" class="btn btn-primary">{% trans "View your profile"%}</a></p>
+		{% else %}<p><a href="{{base}}/register" class="btn btn-success">{% trans "Register now"%}</a></p>{% endif %}
 		</div>
 	</div>
 	<hr>
@@ -57,8 +57,6 @@
 				<dd>by <a href="http://twitter.com/mda">@mda</a>, <a href="http://twitter.com/fat">@fat</a> and <a href="https://github.com/twbs/bootstrap/graphs/contributors">contributors</a>,</dd>
 				<dt><a href="http://resumablejs.com/">Resumable.js</a></dt>
 				<dd>by the company <a href="http://www.23company.com/">23</a>,</dd>
-				<dt><a href="http://instantclick.io/">InstantClick</a></dt>
-				<dd>by <a href="https://github.com/dieulot">Alexandre Dieulot</a>,</dd>
 				<dt><a href="http://www.clonk.de/cr.php?lng={% trans "en" %}">Clonk Rage logo</a></dt>
 				<dd>with <a href="http://www.clonk.de/forum/en/topic_show.pl?pid=11760#pid11760">friendly permission</a> from <a href="http://www.clonk.de/redwolf.php?lng={% trans "en" %}">RedWolfDesign</a>,</dd>
 				<dt><a href="http://git.openclonk.org/openclonk-resources.git/blob/HEAD:/graphics/OpenClonkLogo.xcf">OpenClonk logo</a></dt>
