@@ -13,7 +13,7 @@
 	<a href="{{filename}}?sort=rating{% if sort == 'rating' and not reverse %}&reverse=1{% endif %}">{% trans %}by rating{% endtrans %}</a>{% if sort == 'rating' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %}
 	{% endset %}
 	{% set createaddon %}
-	<a href="{{base}}/publish/create?for={{short}}">{% trans %}create a new addon{% endtrans %}</a>
+	<a href="{{base}}/create?for={{short}}">{% trans %}create a new addon{% endtrans %}</a>
 	{% endset %}
 	<p class="sort-bar">{% trans %}Sort by {{columns}} or {{createaddon}} for this game.{% endtrans %}	</p>
 	<ul class="media-list addons">
