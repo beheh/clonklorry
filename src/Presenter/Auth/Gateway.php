@@ -18,6 +18,7 @@ class Gateway extends Presenter {
 			$login_hint = $this->session->getUser()->getEmail();
 		} else {
 			$this->session->ensureSession();
+			unset($_SESSION['returnto']);
 			$returnto = filter_input(INPUT_GET, 'returnto');
 			if($returnto) {
 				$_SESSION['returnto'] = $returnto;

@@ -25,6 +25,12 @@ class Callback extends Presenter {
 		$nickname = null;
 		$email = null;
 
+		$returnto = null;
+		if(isset($_SESSION['returnto'])) {
+			$returnto = $_SESSION['returnto'];
+			unset($_SESSION['returnto']);
+		}
+
 		try {
 			switch($provider) {
 				case 'openid':
@@ -120,16 +126,10 @@ class Callback extends Presenter {
 			// grab user with openid data fitting
 			$user = ModelFactory::build('User')->byOauth($provider, $uid);
 
-			$returnto = '';
-			if(isset($_SESSION['returnto'])) {
-				$returnto = $_SESSION['returnto'];
-			}
-			unset($_SESSION['returnto']);
-
 			if($user != null) {
 				$url = '/';
 				if($returnto) {
-				$url = $returnto;
+					$url = $returnto;
 				}
 				$this->session->start($user, true);
 				$this->redirect($url.'#');
