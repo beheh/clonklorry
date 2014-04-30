@@ -1,4 +1,4 @@
-var r = new Resumable({target: base + '/publish/addons/'+addon+'/'+release+'/upload', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
+var r = new Resumable({target: base + '/publish/'+addon+'/'+release+'/upload', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
 
 $('#resumable-error').hide();
 if (!r.support) {

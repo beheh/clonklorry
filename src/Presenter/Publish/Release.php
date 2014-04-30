@@ -77,7 +77,7 @@ class Release extends Presenter {
 				if($release->modified()) {
 					if($release->save()) {
 						$this->success('version', gettext('Version saved.'));
-						$this->redirect('/publish/addons/'.$addon->getId().'/'.$new_version.'?version-changed');
+						$this->redirect('/publish/'.$addon->getId().'/'.$new_version.'?version-changed');
 					} else {
 						$this->error('version', gettext('Error saving the release.'));
 					}

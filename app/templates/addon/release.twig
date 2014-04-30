@@ -39,7 +39,7 @@
 						<p>{% trans %}Categories{% endtrans %} <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>
 					</div>
 				</div>
-				<hr>		
+				<hr>
 				<h2>{% trans %}Rounds and Addons{% endtrans %}</h2>
 				<img src="" style="width: 150px; height: 105px;">
 				<img src="" style="width: 150px; height: 105px;">
@@ -50,8 +50,8 @@
 				<p>{% trans %}Released on the {{releaseday}}.{% endtrans %}</p>
 				{% if modify %}
 					<p>
-						<a href="{{base}}/publish/addons/{{addon.id}}" class="btn btn-block btn-default">{% trans %}Edit addon{% endtrans %}</a>
-						<a href="{{base}}/publish/addons/{{addon.id}}/{{version}}" class="btn btn-block btn-default">{% trans %}Edit release{% endtrans %}</a>
+						<a href="{{base}}/publish/{{addon.id}}" class="btn btn-block btn-default">{% trans %}Edit addon{% endtrans %}</a>
+						<a href="{{base}}/publish/{{addon.id}}/{{version}}" class="btn btn-block btn-default">{% trans %}Edit release{% endtrans %}</a>
 					</p>
 				{% endif %}
 				<h2>{% trans %}Community{% endtrans %}</h2>

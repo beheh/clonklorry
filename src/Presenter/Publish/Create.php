@@ -9,23 +9,27 @@ use Lorry\Exception\ModelValueInvalidException;
 class Create extends Presenter {
 
 	public function get() {
-		$this->security->requireLogin();
+		if($this->session->authenticated()) {
+			$this->security->requireLogin();
 
-		$games = ModelFactory::build('Game')->all()->byAnything();
-		$this->context['games'] = array();
-		foreach($games as $game) {
-			$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
+			$games = ModelFactory::build('Game')->all()->byAnything();
+			$this->context['games'] = array();
+			foreach($games as $game) {
+				$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
+			}
+
+			if(!isset($this->context['game'])) {
+				$this->context['game'] = filter_input(INPUT_GET, 'for');
+			}
+
+			$objects = array('Stippel', 'Monster', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
+			$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%s Pack', '%s Party', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
+			$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
+
+			$this->display('publish/create.twig');
+		} else {
+			$this->display('publish/greeter.twig');
 		}
-
-		if(!isset($this->context['game'])) {
-			$this->context['game'] = filter_input(INPUT_GET, 'for');
-		}
-
-		$objects = array('Stippel', 'Monster', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
-		$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%s Pack', '%s Party', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
-		$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
-
-		$this->display('publish/create.twig');
 	}
 
 	public function post() {
@@ -82,7 +86,7 @@ class Create extends Presenter {
 			$this->error('creation', implode('<br>', $errors));
 		} else {
 			$addon->save();
-			$this->redirect('/publish/addons/'.$addon->getId());
+			$this->redirect('/publish/'.$addon->getId());
 		}
 
 		$this->get();

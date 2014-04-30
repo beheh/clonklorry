@@ -117,7 +117,7 @@
 							{% for release in releases %}
 								<li class="list-group-item">
 									{% set version = release.version %}
-										<a href="{{base}}/publish/addons/{{addonid}}/{{release.version}}" class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</a>
+										<a href="{{base}}/publish/{{addonid}}/{{release.version}}" class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</a>
 										<button type="button" class="close" title="{% trans "Remove" %}" aria-hidden="true">&times;</button>
 										<span class="label label-default">{% trans "Unreleased" %}</span>
 									</li>
