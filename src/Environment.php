@@ -73,6 +73,7 @@ class Environment {
 		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
 		$twig->addGlobal('resources', htmlspecialchars($config->get('base').'/resources'));
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
+		$twig->addGlobal('origpath', trim(Router::getPath()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 
 		$twig->addGlobal('site_notice', $config->get('notice'));
