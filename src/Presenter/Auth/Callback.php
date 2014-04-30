@@ -9,6 +9,7 @@ use Lorry\Exception\FileNotFoundException;
 use LightOpenID;
 use League\OAuth2\Client\Provider\Google;
 use League\OAuth2\Client\Provider\Facebook;
+use Analog;
 
 class Callback extends Presenter {
 
@@ -82,13 +83,13 @@ class Callback extends Presenter {
 				}
 
 				try {
-					$token = $oauth_provider->getAccessToken('authorization_code', array('code' => filter_input(INPUT_GET, 'code')));
+					// uppercase Authorization_Code: workaround for https://github.com/thephpleague/oauth2-client/issues/84
+					$token = $oauth_provider->getAccessToken('Authorization_Code', array('code' => filter_input(INPUT_GET, 'code')));
 				} catch(\Exception $ex) {
-					throw new AuthentificationFailedException('could net get access token');
+					throw new AuthentificationFailedException('could net get access token ('.$ex->getMessage().')');
 				}
 				if(!$token) {
-					echo $token;
-					throw new AuthentificationFailedException('invalid code');
+					throw new AuthentificationFailedException('invalid code (token '.$token.')');
 				}
 				$profile = $oauth_provider->getUserDetails($token);
 				$uid = $profile->uid;
@@ -101,6 +102,7 @@ class Callback extends Presenter {
 			}
 		} catch(AuthentificationFailedException $exception) {
 			if($this->session->authenticated()) {
+				Analog::error(get_class($exception).': '.$exception->getMessage());
 				return $this->redirect('/settings?update-oauth=failed#oauth');
 			}
 			throw $exception;

@@ -4,12 +4,12 @@
 	"type": "project",
 	"license": "GPL-3.0",
 	"require": {
-		"twig/twig": "1.*",
-		"twig/extensions": "1.*",
-		"swiftmailer/swiftmailer": "v5.0.3",
-		"lightopenid/lightopenid": "0.7.*",
-		"league/oauth2-client": "dev-master",
-		"analog/analog": "1.0.4-stable"
+		"twig/twig": "~1.15",
+		"twig/extensions": "~1.0.1",
+		"swiftmailer/swiftmailer": "v5.1.0",
+		"lightopenid/lightopenid": "~0.7",
+		"league/oauth2-client": "0.3.0",
+		"analog/analog": "~1.0.4-stable"
 	},
 	"autoload": {
 		"psr-4": {
