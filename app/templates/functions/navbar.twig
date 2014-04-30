@@ -23,7 +23,7 @@
 				<li{% if path.0 == "users" and path.1|lower == user_name|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
 				<li{% if path.0 == "publish" and path.1 != "create" %} class="active"{% endif %}><a href="{{base}}/publish">{% trans 'My addons' %}</a></li>
 				<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
-				<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout" data-no-instant>{% trans 'Logout' %}</a></li>
+				<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
 	{% else %}
 				<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
 				<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
