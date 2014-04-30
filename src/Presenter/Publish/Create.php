@@ -22,8 +22,8 @@ class Create extends Presenter {
 				$this->context['game'] = filter_input(INPUT_GET, 'for');
 			}
 
-			$objects = array('Stippel', 'Monster', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
-			$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%s Pack', '%s Party', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
+			$objects = array('Stippel', 'Feuermonster', 'Monster', 'Wipf', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
+			$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%spack', '%sparty', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
 			$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
 
 			$this->display('publish/create.twig');
