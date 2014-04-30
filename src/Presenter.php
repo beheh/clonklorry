@@ -109,6 +109,10 @@ abstract class Presenter implements PresenterInterface {
 		$this->alert($selector, $message, 'success');
 	}
 
+	protected final function hasAlert($selector) {
+		return isset($this->context['alerts'][$selector]);
+	}
+
 	private final function alert($selector, $message, $type) {
 		if(!array_key_exists('alerts', $this->context)) {
 			$this->context['alerts'] = array();

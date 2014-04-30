@@ -27,8 +27,7 @@ class Register extends Presenter {
 		if(isset($_SESSION['register_oauth'])) {
 			$register = $_SESSION['register_oauth'];
 
-			if($register['email'])
-				$this->context['email'] = $register['email'];
+			if($register['email']) $this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
 
 			$this->context['oauth'] = true;
@@ -104,7 +103,12 @@ class Register extends Presenter {
 					$this->session->start($user, true);
 					$this->redirect('/');
 				} else {
-					$this->redirect('/login?registered='.urlencode($username));
+					$url = '/login?registered='.urlencode($username);
+					$returnto = filter_input(INPUT_GET, 'returnto');
+					if($returnto) {
+						$url .= '&returnto='.$returnto;
+					}
+					$this->redirect($url);
 				}
 			} else {
 				$this->error('register', gettext('There was an error registering.'));

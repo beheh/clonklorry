@@ -35,7 +35,9 @@ class Login extends Presenter {
 			if($_GET['registered']) {
 				$this->context['username_exists'] = true;
 			}
-			$this->success('login', gettext('Registration successful!'));
+			if(!$this->hasAlert('login')) {
+				$this->success('login', gettext('Registration successful!'));
+			}
 		}
 		if(isset($_GET['unknown-oauth'])) {
 			$this->warning('login', gettext('Sign in to link this login service to your account.'));
@@ -79,7 +81,12 @@ class Login extends Presenter {
 					}
 					// log user in
 					$this->session->start($user, $remember, true);
-					$this->redirect('/');
+					$url = '/';
+					$returnto = filter_input(INPUT_GET, 'returnto');
+					if($returnto) {
+						$url = $returnto;
+					}
+					$this->redirect($url);
 					return;
 				} else {
 					// password is incorrect
