@@ -33,17 +33,11 @@ class Portal extends Presenter {
 			$user_addon['title'] = $addon->getTitle();
 			$user_addon['short'] = $addon->getShort();
 			$user_addon['id'] = $addon->getId();
-			$user_addon['public'] = $addon->isPublic();
 			$game = $addon->fetchGame();
 			if($game) {
 				$user_addon['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
 			}
-			if(!$addon->isPublic()) {
-				$user_addon['year'] = 2013;
-				$this->context['addons'][] = $user_addon;
-			} else {
-				$this->context['addons'][] = $user_addon;
-			}
+			$this->context['addons'][] = $user_addon;
 		}
 
 		$this->display('publish/portal.twig');
