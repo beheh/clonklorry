@@ -6,9 +6,10 @@
 		<img class="media-object" src="http://placehold.it/76x57">
 	</a>
 	<div class="media-body">
-		<h4 class="media-heading"><a href="{{_addon_url}}">{{ addon.title }}</a></h4>
-		{% if addon.game %}{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title} %}{% endif %}
+		<h4 class="media-heading"><a href="{{_addon_url}}">{{ addon.title }}</a>
 		{% if addon.version %}{% include 'functions/labels/version.twig' with {'version' : addon.version} %}{% endif %}
+		{% if addon.game %}{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title} %}{% endif %}
+		</h4>
 		<p>{{addon.description}}</p>
 	</div>
 </li>
