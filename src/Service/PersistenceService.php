@@ -74,39 +74,11 @@ class PersistenceService {
 	}
 
 	public function load(Model $model, $pairs, $orderby, $descending, $from, $limit) {
-		$this->ensureConnected();
-
-		$parameters = '';
-		$values = array();
-		foreach($pairs as $row => $value) {
-			if(empty($values)) {
-				$parameters .= ' WHERE ';
-			} else {
-				$parameters .= ' AND ';
-			}
-			$parameters .= '`'.$row.'` = ?';
-			$values[] = $value;
-		}
-
-		$order = $descending ? 'DESC' : 'ASC';
-
-		$limitquery = '';
-		if($limit !== null) {
-			$limitquery = ($from === null) ? ' LIMIT '.intval($limit) : ' LIMIT '.intval($from).', '.intval($limit);
-		}
-
-		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' ORDER BY `'.$orderby.'` '.$order.$limitquery);
-
-		$statement->execute($values);
-		if($statement->errorCode() != PDO::ERR_NONE) {
-			$errorinfo = $statement->errorInfo();
-			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
-		}
-		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-		if(count($results) > 1 && $limit === null && $from === null) {
+		$rows = $this->loadAll($model, $pairs, $orderby, $descending, $from, $limit);
+		if(count($rows) > 1 && $limit === null && $from === null) {
 			throw new Exception('result ambiguity: expected unique identifier');
-		} else if(count($results) == 1) {
-			return $results[0];
+		} else if(count($rows) == 1) {
+			return $rows[0];
 		}
 
 		return;
