@@ -77,11 +77,6 @@ class Create extends Presenter {
 			$errors[] = gettext("You have already created an addon with this title for this game.");
 		}
 
-
-		if(!$user->isAdministrator()) {
-			$errors[] = gettext('Addon creation currently disabled.');
-		}
-
 		if(!empty($errors)) {
 			$this->error('creation', implode('<br>', $errors));
 		} else {

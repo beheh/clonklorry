@@ -59,6 +59,7 @@
 							<label for="files">{% trans %}Files{% endtrans %}</label>
 							<script>var addon = '{{addonid}}';
 								var release = '{{version}}';</script>
+							<div class="alert alert-danger">Uploading files is currently not enabled.</div>
 							<div id="no-resumable">
 								<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
 								<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
@@ -116,19 +117,17 @@
 			<div class="tab-pane" id="release">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="alert alert-warning">
-							<strong>You can't currently release this addon</strong>
-							<ul>
-								<li>You need to add at least one file</li>
-								<li>You should <a href="#tags">select a few tags</a></li>
-							</ul>
+						<div class="panel panel-danger">
+							<div class="panel-heading"><strong>This release can't be published yet.</strong></div>
+							<div class="list-group">
+								<a href="#files" class="list-group-item">Add at least one file</a>
+							</div>
 						</div>
 						<div class="panel panel-info">
-							<div class="panel-heading">Recommended</div>
-							<ul class="panel-body list-group">
-								<li class="list-group-item">Add an english description</li>
-								<li class="list-group-item">Add an english description</li>
-							</ul>
+							<div class="panel-heading">Recommended actions</div>
+							<div class="list-group">
+								<a class="list-group-item">Add some tags</a>
+							</div>
 						</div>
 					</div>
 				</div>
