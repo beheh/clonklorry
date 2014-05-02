@@ -41,11 +41,8 @@ class Addon extends Model {
 		return $this->setValue('short', $short);
 	}
 
-	public function byShort($short, $game, $private = false) {
+	public function byShort($short, $game) {
 		$constraints = array('short' => $short, 'game' => $game);
-		if(!$private) {
-			$constraints['public'] = true;
-		}
 		return $this->byValues($constraints);
 	}
 
@@ -87,7 +84,7 @@ class Addon extends Model {
 	}
 
 	public function byAbbreviation($abbreviation, $game) {
-		$constraints = array('abbreviation' => $abbreviation, 'game' => $game, 'public' => true);
+		$constraints = array('abbreviation' => $abbreviation, 'game' => $game);
 		return $this->byValues($constraints);
 	}
 

@@ -28,7 +28,7 @@ class Release extends Presenter {
 		} else {
 			$release = ModelFactory::build('Release')->byVersion($version, $addon->getId());
 		}
-		if(!$release) {
+		if(!$release || !$release->isScheduled()) {
 			throw new FileNotFoundException('release with version '.$version);
 		}
 
