@@ -10,6 +10,7 @@ class Front extends Presenter {
 		$release = ModelFactory::build('Release')->all()->order('timestamp', true)->byAnything();
 		$addons = array();
 		foreach($release as $release) {
+			if(!$release->isReleased()) continue;
 			$addon = $release->fetchAddon();
 			$game = $addon->fetchGame();
 			$addons[] = array(
