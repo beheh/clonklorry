@@ -14,7 +14,6 @@ class Addon extends Model {
 			'abbreviation' => 'string',
 			'title' => 'string',
 			'game' => 'int',
-			'public' => 'boolean',
 			'updated' => 'int',
 			'description' => 'text',
 			'website' => 'url',
@@ -25,12 +24,8 @@ class Addon extends Model {
 		return $this->setValue('owner', $owner);
 	}
 
-	public function byOwner($owner, $private = false) {
-		$constraints = array('owner' => $owner);
-		if(!$private) {
-			$constraints['public'] = true;
-		}
-		return $this->byValues($constraints);
+	public function byOwner($owner) {
+		return $this->byValue('owner', $owner);
 	}
 
 	public function getOwner() {
@@ -100,12 +95,8 @@ class Addon extends Model {
 		return $this->setValue('game', $game);
 	}
 
-	public function byGame($game, $private = false) {
-		$constraints = array('game' => $game);
-		if(!$private) {
-			$constraints['public'] = true;
-		}
-		return $this->byValues($constraints);
+	public function byGame($game) {
+		return $this->byValue('game', $game);
 	}
 
 	public function getGame() {
@@ -114,14 +105,6 @@ class Addon extends Model {
 
 	public function fetchGame() {
 		return ModelFactory::build('Game')->byId($this->getGame());
-	}
-
-	public function setPublic($public) {
-		return $this->setValue('public', $public);
-	}
-
-	public function isPublic() {
-		return $this->getValue('public');
 	}
 
 	public function setUpdated($updated) {

@@ -113,26 +113,35 @@
 							</form>
 						<p></p>
 						<label for="type">{% trans "Existing releases" %}</label>
-						<ul class="list-group">
+						<div class="list-group">
 							{% for release in releases %}
-								<li class="list-group-item">
+								<a class="list-group-item" href="{{base}}/publish/{{addonid}}/{{release.version}}">
 									{% set version = release.version %}
-										<a href="{{base}}/publish/{{addonid}}/{{release.version}}" class="label label-primary">{% trans %}Version {{version}}{% endtrans %}</a>
-										<button type="button" class="close" title="{% trans "Remove" %}" aria-hidden="true">&times;</button>
-										<span class="label label-default">{% trans "Unreleased" %}</span>
-									</li>
+									<strong>{{addontitle}}</strong>
+									<span class="label label-primary">{{version}}</span>
+									{% if release.released %}
+										{% if release.latest %}
+											{% include "functions/labels/latest.twig" %}
+										{% endif %}
 									{% else %}
-										<li class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</li>
-											{% endfor %}
-										</ul>
-									</div>
-								</div>
-								</form>
-							</div>
+										{% if release.scheduled %}
+											{% include "functions/labels/scheduled.twig" %}
+										{% else %}
+											{% include "functions/labels/unreleased.twig" %}
+										{% endif %}
+									{% endif %}
+								</a>
+							{% else %}
+								<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
+							{% endfor %}
 						</div>
 					</div>
-					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
 
-						{% block javascript %}
-							$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
-						{% endblock %}
+{% block javascript %}
+	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
+{% endblock %}

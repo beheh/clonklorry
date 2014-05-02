@@ -25,7 +25,7 @@ class Portal extends Presenter {
 			$this->context['focus'] = 'title';
 		}
 
-		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId(), true);
+		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
 
 		$this->context['addons'] = array();
 		foreach($addons as $addon) {

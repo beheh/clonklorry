@@ -53,9 +53,14 @@ class Edit extends Presenter {
 		}
 
 		$releases = ModelFactory::build('Release')->all()->order('version')->byAddon($addon->getId());
+		$latest = ModelFactory::build('Release')->latest($addon->getId());
 		$this->context['releases'] = array();
 		foreach($releases as $release) {
-			$this->context['releases'][$release->getId()] = array('version' => $release->getVersion());
+			$this->context['releases'][$release->getId()] = array(
+				'version' => $release->getVersion(),
+				'released' => $release->isReleased(),
+				'latest' => ($latest && $latest->getId() == $release->getId()),
+				'scheduled' => $release->isScheduled());
 		}
 
 		$this->display('publish/edit.twig');

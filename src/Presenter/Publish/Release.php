@@ -39,6 +39,10 @@ class Release extends Presenter {
 		$this->context['addontitle'] = $addon->getTitle();
 		$this->context['addonid'] = $addon->getId();
 		$this->context['version'] = $release->getVersion();
+		$this->context['released'] = $release->isReleased();
+		$latest = ModelFactory::build('Release')->latest($addon->getId());
+		$this->context['latest'] = ($latest && $latest->getId() == $release->getId());
+		$this->context['scheduled'] = $release->isScheduled();
 		if(!isset($this->context['new_version'])) {
 			$this->context['new_version'] = $release->getVersion();
 		}

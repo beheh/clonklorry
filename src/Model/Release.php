@@ -31,6 +31,16 @@ class Release extends Model {
 		return ModelFactory::build('Addon')->byId($this->getAddon());
 	}
 
+	public final function byGame($game) {
+		$addons = ModelFactory::build('Addon')->all()->byGame($game);
+		$releases = array();
+		foreach($addons as $addon) {
+			$release = ModelFactory::build('Release')->latest($addon->getId());
+			if($release) $releases[] = $release;
+		}
+		return $releases;
+	}
+
 	public final function setVersion($version) {
 		$this->validateRegexp($version, '/^([a-zA-Z0-9-.]+)$/');
 		return $this->setValue('version', $version);
@@ -45,7 +55,25 @@ class Release extends Model {
 	}
 
 	public final function latest($addon) {
-		return $this->order('timestamp', true)->limit(1)->byValue('addon', $addon);
+		$releases = $this->order('timestamp', true)->all()->byValue('addon', $addon);
+		foreach($releases as $release) {
+			if(!$release->isReleased()) {
+				continue;
+			}
+			return $release;
+		}
+		return null;
+	}
+
+	public final function isReleased() {
+		if($this->getTimestamp() === null) {
+			return false;
+		}
+
+		if($this->getTimestamp() > time()) {
+			return false;
+		}
+		return true;
 	}
 
 	public function setTimestamp($timestamp) {
@@ -54,6 +82,10 @@ class Release extends Model {
 
 	public function getTimestamp() {
 		return $this->getValue('timestamp');
+	}
+
+	public function isScheduled() {
+		return $this->getTimestamp() !== null;
 	}
 
 	public function setDescription($description) {

@@ -18,9 +18,9 @@ class Game extends Presenter {
 		$this->context['game'] = $game->getTitle();
 		$this->context['short'] = $game->getShort();
 
-		$query = ModelFactory::build('Addon')->all();
+		$query = ModelFactory::build('Release')->all();
 
-		$sort = isset($_GET['sort']) ? $_GET['sort'] : 'date';
+		/*$sort = isset($_GET['sort']) ? $_GET['sort'] : 'date';
 		$reverse = isset($_GET['reverse']) && $_GET['reverse'] == 1 ? true : false;
 		switch($sort) {
 			case 'title':
@@ -36,13 +36,15 @@ class Game extends Presenter {
 				break;
 		}
 		$this->context['sort'] = $sort;
-		$this->context['reverse'] = $reverse;
+		$this->context['reverse'] = $reverse;*/
 
-		$addons = $query->byGame($game->getId());
+		$releases = $query->byGame($game->getId());
 		$this->context['addons'] = array();
-		foreach($addons as $addon) {
+		foreach($releases as $release) {
+			$addon = $release->fetchAddon();
 			$this->context['addons'][] = array(
 				'title' => $addon->getTitle(),
+				'version' => $release->getVersion(),
 				'short' => $addon->getShort(),
 				'description' => $addon->getDescription()
 			);
