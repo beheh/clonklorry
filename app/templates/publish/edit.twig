@@ -3,7 +3,10 @@
 {% block content %}
 	<div class="container">
 		<div class="page-header">
-			<h1>{{title}}</h1>
+			<h1>
+				{{addontitle}}
+				<small><span class="glyphicon glyphicon-pencil"></span></small>
+			</h1>
 		</div>
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#addon" data-toggle="tab">{% trans "Addon" %}</a></li>

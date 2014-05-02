@@ -6,7 +6,9 @@
 	<div class="container">
 		<div class="page-header">
 			<h1>
-				<a href="{{base}}/publish/{{addonid}}#releases">{{addontitle}}</a>
+				<a href="{{base}}/publish/{{addonid}}#releases">
+					{{addontitle}}
+				</a>
 				<small>{% include 'functions/labels/version.twig' with {'version' : version} %}
 				{% if released %}
 					{% if latest %}
@@ -19,6 +21,7 @@
 						{% include "functions/labels/unreleased.twig" %}
 					{% endif %}
 				{% endif %}
+				<span class="glyphicon glyphicon-pencil"></span>
 				</small>
 			</h1>
 		</div>
