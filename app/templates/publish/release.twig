@@ -5,7 +5,9 @@
 {% block content %}
 	<div class="container">
 		<div class="page-header">
-			<h1><a href="{{base}}/publish/{{addonid}}#releases" class="text-muted">{{addontitle}}</a> <span class="text-muted"> / </span><small><span class="label label-primary">Version {{version}}</span></small></h1>
+			<h1>
+				<a href="{{base}}/publish/{{addonid}}#releases" class="text-muted">{{addontitle}}</a>
+				<small>{% include 'functions/labels/version.twig' with {'version' : version} %}</small></h1>
 		</div>
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#general" data-toggle="tab">{% trans "General" %}</a></li>
