@@ -81,7 +81,7 @@ class Create extends Presenter {
 			$this->error('creation', implode('<br>', $errors));
 		} else {
 			$addon->save();
-			$this->redirect('/publish/'.$addon->getId());
+			$this->redirect('/publish?created='.$addon->getId());
 		}
 
 		$this->get();

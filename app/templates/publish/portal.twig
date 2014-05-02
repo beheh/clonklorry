@@ -9,7 +9,8 @@
 		<h1>{{ title }}</h1>
 	</div>
 	<div class="row">
-		<div class="col-md-12"">
+		<div class="col-md-12">
+			{% include 'functions/alert.twig' with {'selector' : 'addons'} %}
 			<ul class="media-list addons-small">
 				{% for addon in addons %}
 				<li class="media media-addon">

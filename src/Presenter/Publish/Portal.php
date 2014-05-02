@@ -25,6 +25,10 @@ class Portal extends Presenter {
 			$this->context['focus'] = 'title';
 		}
 
+		if(isset($_GET['created'])) {
+			$this->success('addons', gettext('Addon created.'));
+		}
+
 		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
 
 		$this->context['addons'] = array();
