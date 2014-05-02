@@ -11,7 +11,7 @@ class Release extends Model {
 		parent::__construct('release', array(
 			'addon' => 'int',
 			'version' => 'string',
-			'timestamp' => 'int',
+			'timestamp' => 'datetime',
 			'description' => 'text'));
 	}
 

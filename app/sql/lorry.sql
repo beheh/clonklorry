@@ -58,7 +58,7 @@ CREATE TABLE `release` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`addon` int(11) NOT NULL,
 	`version` varchar(255) NOT NULL,
-	`timestamp` int(11) DEFAULT NULL,
+	`timestamp` datetime DEFAULT NULL,
 	`description` text,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `addon_version` (`addon`,`version`)
