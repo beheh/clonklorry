@@ -13,7 +13,7 @@ class Edit extends Presenter {
 		$this->security->requireModerator();
 		$this->offerIdentification();
 		$this->security->requireIdentification();
-		
+
 		$user = ModelFactory::build('User')->byUsername($username);
 		if(!$user) {
 			throw new FileNotFoundException('user '.$username);
@@ -23,7 +23,7 @@ class Edit extends Presenter {
 			$this->security->requireAdministrator();
 		}
 
-		$this->context['title'] = gettext('Edit user');
+		$this->context['title'] = sprintf(gettext('Edit %s'), $user->getUsername());
 
 		$this->context['username'] = $user->getUsername();
 		if(!isset($this->context['username_edit'])) {
@@ -103,7 +103,7 @@ class Edit extends Presenter {
 		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
 		if(isset($_POST['change-contact-submit']) && $email != $user->getEmail()) {
-			
+
 			$this->context['email'] = $email;
 
 			$require_activation = filter_input(INPUT_POST, 'require-activation', FILTER_VALIDATE_BOOLEAN) ? true : false;

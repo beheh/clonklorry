@@ -27,7 +27,7 @@ class Edit extends Presenter {
 		$addon = $this->getAddon($id);
 		$this->context['addonid'] = $addon->getId();
 
-		$this->context['title'] = $addon->getTitle();
+		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle());
 
 		if(!isset($this->context['addontitle'])) {
 			$this->context['addontitle'] = $addon->getTitle();
