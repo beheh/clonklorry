@@ -152,14 +152,14 @@ class Environment {
 		}
 
 		// determine the RESTful method
-		$method = strtolower($_SERVER['REQUEST_METHOD']);
+		$method = strtolower(filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_STRING));
 
 		try {
 			// determine the controller
 			$presenter = Router::route();
 
 			// check if method is supported
-			if(!method_exists($presenter, $method)) {
+			if(!method_exists($presenter, $method) || ($method !== 'get' && $method !== 'post')) {
 				throw new NotImplementedException(get_class($presenter).'->'.$method.'()');
 			}
 
