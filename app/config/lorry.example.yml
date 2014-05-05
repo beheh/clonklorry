@@ -1,7 +1,7 @@
 brand: Lorry
 base: http://localhost
 
-debug: true
+debug: false
 
 enable:
     site: true
