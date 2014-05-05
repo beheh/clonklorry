@@ -20,7 +20,12 @@ contact:
     address: <strong>Full Name</strong>
     legal: legal@example.com
     feedback: feedback@example.com
-    
+
+database:
+    dsn: mysql:host=127.0.0.1;dbname=lorry
+    username: lorry
+    password: lorry
+
 mail:
     smtp-host: example.com
     smtp-port: 587
@@ -28,12 +33,6 @@ mail:
     username: lorry
     password: lorry
     from: lorry@example.com
-
-database:
-    dsn: mysql:host=127.0.0.1;dbname=lorry
-    username: lorry
-    password: lorry
-
 
 oauth:
     google:
