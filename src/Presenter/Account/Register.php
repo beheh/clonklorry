@@ -45,7 +45,7 @@ class Register extends Presenter {
 	}
 
 	public function post() {
-		if(!$this->config->get('enable-registration')) {
+		if(!$this->config->get('enable/registration')) {
 			return $this->get();
 		}
 
