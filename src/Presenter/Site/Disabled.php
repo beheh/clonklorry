@@ -8,7 +8,7 @@ class Disabled extends Presenter {
 
 	public function get() {
 		// don't localise here
-		$notice = $this->config->get('notice');
+		$notice = $this->config->get('notice/text');
 		if($notice) {
 			$this->context['title'] = $notice;
 		} else {
