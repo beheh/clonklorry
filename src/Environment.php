@@ -76,7 +76,7 @@ class Environment {
 		$twig->addGlobal('origpath', trim(Router::getPath()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 
-		$twig->addGlobal('site_enabled', $config->get('site/enabled'));
+		$twig->addGlobal('site_enabled', $config->get('enable/site'));
 		$twig->addGlobal('site_notice', $config->get('notice'));
 		$twig->addGlobal('site_notice_class', $config->get('notice_class'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
