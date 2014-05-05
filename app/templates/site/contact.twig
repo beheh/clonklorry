@@ -32,11 +32,11 @@
 			{% set legalmail = "<a href=\"mailto:" ~ legal_address ~ "\">" ~ legal_address ~ "</a>" %}
 			<p>{% trans %}If you have any legal issues please do not hesitate to contact us either via our feedback form or via {{legalmail}}. That way we are able to quickly resolve to any problems that might occur or remove any content which infringes your rights.{% endtrans %}</p>
 			<p>{% trans %}We are not responsible for the content of outgoing links. User generated content does not necessarily reflect the views of the site owners.{% endtrans %}</p>
-		{% if site_contact %}
+		{% if address %}
 			<hr>
 			<h3>{% trans %}Responsible for the content{% endtrans %}</h3>
 			<address>
-			{{ site_contact|raw }}
+			{{ address|raw }}
 			</address>
 		{% endif %}
 		</div>

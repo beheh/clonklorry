@@ -162,7 +162,7 @@ class User extends Model {
 	public final function setGithub($github) {
 		if($github) {
 			$this->validateString($github, 1, 255);
-			if(!preg_match('#^'.$this->config->get('github_name').'$#', $github)) {
+			if(!preg_match('#^'.$this->config->get('github/name').'$#', $github)) {
 				throw new ModelValueInvalidException(gettext('not a valid GitHub name'));
 			}
 		}

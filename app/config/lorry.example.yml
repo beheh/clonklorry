@@ -1,0 +1,45 @@
+brand: Lorry
+base: http://localhost
+
+debug: true
+
+enable:
+    site: true
+    registration: true
+    
+notice:
+    text:
+    class: danger
+    
+clonkforge: http://clonkforge.net/user.php?usr=%d
+github:
+    url: https://github.com/%s
+    name: ([a-zA-Z0-9][a-zA-Z0-9-]*)
+    
+contact:
+    address: <strong>Full Name</strong>
+    legal: legal@example.com
+    feedback: feedback@example.com
+    
+mail:
+    smtp-host: example.com
+    smtp-port: 587
+    smtp-encryption: tls
+    username: lorry
+    password: lorry
+    from: lorry@example.com
+
+database:
+    dsn: mysql:host=127.0.0.1;dbname=lorry
+    username: lorry
+    password: lorry
+
+
+oauth:
+    google:
+        id:
+        secret:
+    
+    facebook:
+        id:
+        secret:

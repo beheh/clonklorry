@@ -7,7 +7,7 @@ use Lorry\Email;
 class Feedback extends Email {
 
 	public function write() {
-		$this->setRecipent($this->config->get('legal_mail'));
+		$this->setRecipent($this->config->get('contact/feedback'));
 		$this->render('feedback.twig');
 	}
 

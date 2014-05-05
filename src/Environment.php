@@ -77,11 +77,10 @@ class Environment {
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 
 		$twig->addGlobal('site_enabled', $config->get('enable/site'));
-		$twig->addGlobal('site_notice', $config->get('notice'));
-		$twig->addGlobal('site_notice_class', $config->get('notice_class'));
+		$twig->addGlobal('site_notice', $config->get('notice/text'));
+		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
-		$twig->addGlobal('site_contact', $config->get('contact'));
 
 		if($session->authenticated()) {
 			$user = $session->getUser();

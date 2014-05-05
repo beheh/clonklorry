@@ -40,8 +40,8 @@ class Gateway extends Presenter {
 				break;
 			case 'google':
 				$google = new Google(array(
-					'clientId' => $this->config->get('oauth/google-id'),
-					'clientSecret' => $this->config->get('oauth/google-secret'),
+					'clientId' => $this->config->get('oauth/google/id'),
+					'clientSecret' => $this->config->get('oauth/google/secret'),
 					'redirectUri' => $this->config->get('base').'/auth/callback/google'
 				));
 				$google->scopes = array('profile', 'email');
@@ -53,8 +53,8 @@ class Gateway extends Presenter {
 				break;
 			case 'facebook':
 				$facebook = new Facebook(array(
-					'clientId' => $this->config->get('oauth/facebook-id'),
-					'clientSecret' => $this->config->get('oauth/facebook-secret'),
+					'clientId' => $this->config->get('oauth/facebook/id'),
+					'clientSecret' => $this->config->get('oauth/facebook/secret'),
 					'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
 				));
 				$facebook->scopes = array('public_profile', 'email');	

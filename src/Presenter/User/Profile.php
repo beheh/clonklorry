@@ -35,7 +35,7 @@ class Profile extends Presenter {
 		if($user->getGithub()) {
 			$this->context['github'] = array(
 				'profile' => sprintf(gettext('%s on GitHub'), $user->getGithub()),
-				'url' => sprintf($this->config->get('github'), urlencode($user->getGithub())));
+				'url' => sprintf($this->config->get('github/url'), urlencode($user->getGithub())));
 		}
 
 		$games = ModelFactory::build('Game')->byAnything();

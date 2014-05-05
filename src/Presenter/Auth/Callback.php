@@ -52,16 +52,16 @@ class Callback extends Presenter {
 				case 'google':
 					$provider_title = 'Google';
 					$oauth_provider = new Google(array(
-						'clientId' => $this->config->get('oauth/google-id'),
-						'clientSecret' => $this->config->get('oauth/google-secret'),
+						'clientId' => $this->config->get('oauth/google/id'),
+						'clientSecret' => $this->config->get('oauth/google/secret'),
 						'redirectUri' => $this->config->get('base').'/auth/callback/google'
 					));
 					break;
 				case 'facebook':
 					$provider_title = 'Facebook';
 					$oauth_provider = new Facebook(array(
-						'clientId' => $this->config->get('oauth/facebook-id'),
-						'clientSecret' => $this->config->get('oauth/facebook-secret'),
+						'clientId' => $this->config->get('oauth/facebook/id'),
+						'clientSecret' => $this->config->get('oauth/facebook/secret'),
 						'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
 					));
 					break;

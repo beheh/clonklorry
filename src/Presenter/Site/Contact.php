@@ -13,7 +13,8 @@ class Contact extends Presenter {
 			$user = $this->session->getUser();
 		}
 
-		$this->context['legal_address'] = $this->config->get('legal_mail');
+		$this->context['address'] = $this->config->get('contact/address');
+		$this->context['legal_address'] = $this->config->get('contact/legal');
 		if($user) {
 			$this->context['by'] = $user->getUsername();
 		} else {
