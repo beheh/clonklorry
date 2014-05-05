@@ -76,7 +76,9 @@ class Environment {
 		$twig->addGlobal('origpath', trim(Router::getPath()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 
+		$twig->addGlobal('site_enabled', $config->get('site/enabled'));
 		$twig->addGlobal('site_notice', $config->get('notice'));
+		$twig->addGlobal('site_notice_class', $config->get('notice_class'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
 		$twig->addGlobal('site_contact', $config->get('contact'));
@@ -112,37 +114,44 @@ class Environment {
 		EmailFactory::setTwig($twig);
 
 		// set production routes
-		Router::setRoutes(array(
-			'/' => 'Site\Front',
-			'/addons' => 'Addon\Portal',
-			'/addons/:alpha' => 'Addon\Game',
-			'/addons/:alpha/:alpha' => 'Addon\Release',
-			'/addons/:alpha/:alpha/:version' => 'Addon\Release',
-			'/download/' => 'Redirect\Front',
-			'/download/:alpha/:alpha' => 'Addon\Download',
-			'/download/:alpha/:alpha/:version' => 'Addon\Download',
-			'/create' => 'Publish\Create',
-			'/publish' => 'Publish\Portal',
-			'/publish/:number' => 'Publish\Edit',
-			'/publish/:number/:version' => 'Publish\Release',
+		if($config->get('enable/site')) {
+			Router::addRoutes(array(
+				'/' => 'Site\Front',
+				'/addons' => 'Addon\Portal',
+				'/addons/:alpha' => 'Addon\Game',
+				'/addons/:alpha/:alpha' => 'Addon\Release',
+				'/addons/:alpha/:alpha/:version' => 'Addon\Release',
+				'/download/' => 'Redirect\Front',
+				'/download/:alpha/:alpha' => 'Addon\Download',
+				'/download/:alpha/:alpha/:version' => 'Addon\Download',
+				'/create' => 'Publish\Create',
+				'/publish' => 'Publish\Portal',
+				'/publish/:number' => 'Publish\Edit',
+				'/publish/:number/:version' => 'Publish\Release',
 //			'/publish/:number/:version/upload' => 'Publish\Upload',
-			'/users' => 'User\Table',
-			'/users/:alpha' => 'User\Profile',
-			'/users/:alpha/edit' => 'User\Edit',
-			'/admin' => 'Manage\Administration',
-			'/moderate' => 'Manage\Moderation',
-			'/register' => 'Account\Register',
-			'/login' => 'Account\Login',
-			'/logout' => 'Account\Logout',
-			'/settings' => 'Account\Settings',
-			'/activate' => 'Account\Activate',
-			'/identify' => 'Account\Identify',
-			'/auth/gateway/:alpha' => 'Auth\Gateway',
-			'/auth/callback/:alpha' => 'Auth\Callback',
-			'/about' => 'Site\About',
-			'/clonk' => 'Site\Clonk',
-			'/contact' => 'Site\Contact'
-		));
+				'/users' => 'User\Table',
+				'/users/:alpha' => 'User\Profile',
+				'/users/:alpha/edit' => 'User\Edit',
+				'/admin' => 'Manage\Administration',
+				'/moderate' => 'Manage\Moderation',
+				'/register' => 'Account\Register',
+				'/login' => 'Account\Login',
+				'/logout' => 'Account\Logout',
+				'/settings' => 'Account\Settings',
+				'/activate' => 'Account\Activate',
+				'/identify' => 'Account\Identify',
+				'/auth/gateway/:alpha' => 'Auth\Gateway',
+				'/auth/callback/:alpha' => 'Auth\Callback',
+				'/about' => 'Site\About',
+				'/clonk' => 'Site\Clonk',
+				'/contact' => 'Site\Contact'
+			));
+		}
+		else {
+			Router::addRoutes(array(
+				'/' => 'Site\Disabled'
+			));
+		}
 
 		// set debug routes
 		if($config->get('debug')) {

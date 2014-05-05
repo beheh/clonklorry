@@ -2,9 +2,12 @@
 
 $config['brand'] = 'Lorry';
 $config['base'] = 'https://example.com';
-$config['notice'] = '';
 $config['debug'] = false;
 
+$config['notice'] = '';
+$config['notice_class'] = 'info';
+
+$config['enable/site'] = true;
 $config['enable/registration'] = true;
 
 $config['clonkforge'] = 'http://clonkforge.net/user.php?usr=%d';

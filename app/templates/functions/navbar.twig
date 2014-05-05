@@ -11,6 +11,7 @@
 		</div>
 
 		<div class="collapse navbar-collapse main-navbar-collapse">
+			{% if site_enabled%}
 			<ul class="nav navbar-nav">
 				<li{% if path.0 == "addons" and path.1 == "rage" %} class="active"{% endif %}><a href="{{base}}/addons/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
 				<li{% if path.0 == "addons" and path.1 == "openclonk"  %} class="active"{% endif %}><a href="{{base}}/addons/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
@@ -29,6 +30,7 @@
 				<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
 	{% endif %}
 			</ul>
+			{% endif %}
 		</div>
 	</div>
 </nav>
