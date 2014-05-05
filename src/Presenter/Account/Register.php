@@ -37,7 +37,7 @@ class Register extends Presenter {
 			$this->context['oauth'] = true;
 		}
 
-		if(!$this->config->get('enable-registration')) {
+		if(!$this->config->get('enable/registration')) {
 			$this->context['registration_disabled'] = true;
 		}
 

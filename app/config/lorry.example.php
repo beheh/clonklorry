@@ -5,7 +5,7 @@ $config['base'] = 'https://example.com';
 $config['notice'] = '';
 $config['debug'] = false;
 
-$config['enable-registration'] = true;
+$config['enable/registration'] = true;
 
 $config['clonkforge'] = 'http://clonkforge.net/user.php?usr=%d';
 $config['github'] = 'https://github.com/%s';
