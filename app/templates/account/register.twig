@@ -5,6 +5,14 @@
 {% endset %}
 
 {% block content %}
+{% if registration_disabled %}
+<div class="jumbotron">
+	<div class="container">
+		<h1>{% trans %}Registration disabled{% endtrans %}</h1>
+		<p>{% trans %}New Registrations are disabled.{% endtrans %}</p>
+	</div>
+</div>
+{% else %}
 <div class="container">
 	<div class="page-header">
 		{% if oauth %}
@@ -15,7 +23,7 @@
 	</div>
 	<div class="row" id="register">
 		<div class="col-md-4">
-		{% include 'functions/alert.twig' with {'selector' : 'register'} %}
+			{% include 'functions/alert.twig' with {'selector' : 'register'} %}
 			<form id="form-register" method="post" role="form">
 				<div class="form-group">
 					<label for="username">{% trans "Username" %}</label>
@@ -76,6 +84,7 @@
 			{% endif %}
 		</div>
 	</div>
+	{% endif %}
 </div>
 {% endblock %}
 

@@ -31,17 +31,24 @@ class Register extends Presenter {
 		if(isset($_SESSION['register_oauth'])) {
 			$register = $_SESSION['register_oauth'];
 
-			if($register['email'])
-				$this->context['email'] = $register['email'];
+			if($register['email']) $this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
 
 			$this->context['oauth'] = true;
+		}
+
+		if(!$this->config->get('enable-registration')) {
+			$this->context['registration_disabled'] = true;
 		}
 
 		$this->display('account/register.twig');
 	}
 
 	public function post() {
+		if(!$this->config->get('enable-registration')) {
+			return $this->get();
+		}
+
 		$username = filter_input(INPUT_POST, 'username');
 		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 		$password = filter_input(INPUT_POST, 'password');
