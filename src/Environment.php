@@ -81,6 +81,7 @@ class Environment {
 		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
+		$twig->addGlobal('enable', $config->get('enable'));
 		
 		if($session->authenticated()) {
 			$user = $session->getUser();
