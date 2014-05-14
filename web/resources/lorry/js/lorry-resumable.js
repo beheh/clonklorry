@@ -1,12 +1,12 @@
 var r = new Resumable({target: base + '/publish/'+addon+'/'+release+'/upload', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
 
-$('#resumable-error').hide();
 if (!r.support) {
 	$('#resumable').hide();
 	$('#no-resumable').show();
 } else {
 	$('#no-resumable').hide();
 	r.assignBrowse($('#resumable-select'));
+	r.assignDrop($('#files'));
 	$('#resumable-pause').hide();
 	$('#resumable-upload').click(function() {
 		r.upload();
@@ -60,6 +60,7 @@ r.on('fileAdded', function(file) {
 			}
 		});
 	});
+	r.upload();
 	updateState();
 });
 
