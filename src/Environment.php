@@ -81,7 +81,7 @@ class Environment {
 		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
 		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
 		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
-
+		
 		if($session->authenticated()) {
 			$user = $session->getUser();
 			$twig->addGlobal('user_login', true);
@@ -117,6 +117,7 @@ class Environment {
 			Router::addRoutes(array(
 				'/' => 'Site\Front',
 				'/addons' => 'Addon\Portal',
+				'/addons/:alpha.json' => 'Addon\Json',
 				'/addons/:alpha' => 'Addon\Game',
 				'/addons/:alpha/:alpha' => 'Addon\Release',
 				'/addons/:alpha/:alpha/:version' => 'Addon\Release',
