@@ -3,26 +3,40 @@
 namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
+use Lorry\ModelFactory;
 use Lorry\Exception;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\OutputCompleteException;
 use Lorry\Model\User;
+use Lorry\Model\Addon;
+use Lorry\Model\Release;
 
 class Upload extends Presenter {
 
-	const UPLOAD_DIR = '../app/upload/lorry';
-
-	private function ensureUserDirectory(User $user) {
-		$user_directory = self::UPLOAD_DIR.'/user'.$user->getId();
-		if(!is_dir($user_directory)) {
-			mkdir($user_directory);
+	private function getAddon($id) {
+		$addon = ModelFactory::build('Addon')->byId($id);
+		if(!$addon) {
+			throw new FileNotFoundException();
 		}
-		return true;
+		if($addon->getOwner() != $this->session->getUser()->getId()) {
+			throw new ForbiddenException();
+		}
+		return $addon;
 	}
 
-	private function getUserDirectory(User $user) {
-		$this->ensureUserDirectory($user);
-		return self::UPLOAD_DIR.'/user'.$user->getId();
+	private function getRelease($id, $version) {
+		$release = ModelFactory::build('Release')->byVersion($version, $id);
+		if(!$release) {
+			throw new FileNotFoundException();
+		}
+		return $release;
+	}
+
+	const UPLOAD_DIR = '../app/upload/publish';
+
+	private function getTargetDirectory(User $user, Addon $addon, Release $release) {
+		return self::UPLOAD_DIR.'/user'.$user->getId().'/addon'.$addon->getId().'/release'.$release->getId();
 	}
 
 	private function removeChunkDirectory($chunk_directory) {
@@ -40,7 +54,7 @@ class Upload extends Presenter {
 		rmdir($chunk_directory);
 	}
 
-	private function attemptAssembleFile($chunk_directory, $file_name, $chunk_size, $total_size) {
+	private function attemptAssembleFile(User $user, Addon $addon, Release $release, $chunk_directory, $file_name, $chunk_size, $total_size) {
 
 		// count all the parts of this file
 		$total_files = 0;
@@ -55,7 +69,7 @@ class Upload extends Presenter {
 		if($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
 
 			// create the final destination file
-			if(($fp = fopen(self::UPLOAD_DIR.'/'.$file_name, 'w')) !== false) {
+			if(($fp = fopen($this->getTargetDirectory($user, $addon, $release).'/'.$file_name, 'w')) !== false) {
 				for($i = 1; $i <= $total_files; $i++) {
 					fwrite($fp, file_get_contents($chunk_directory.'/'.$file_name.'.part'.$i));
 				}
@@ -70,24 +84,33 @@ class Upload extends Presenter {
 		return true;
 	}
 
-	public function get($addonid, $release) {
+	public function get($id, $version) {
 		if(!$this->session->authenticated()) {
 			throw new ForbiddenException();
 		}
 
 		$user = $this->session->getUser();
-		$chunk_directory = $this->getUserDirectory($user).'/'.basename(filter_input(INPUT_GET, 'resumableIdentifier'));
+		$addon = $this->getAddon($id);
+		$release = $this->getRelease($addon->getId(), $version);
 
+		$chunk_directory = $this->getTargetDirectory($user, $addon, $release).'/'.basename(filter_input(INPUT_GET, 'resumableIdentifier'));
 		$part_file = $chunk_directory.'/'.filter_input(INPUT_GET, 'resumableFilename').'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
+
 		if(!file_exists($part_file)) {
 			throw new FileNotFoundException();
+		} else {
+			throw new OutputCompleteException();
 		}
 	}
 
-	public function post($addonid, $release) {
+	public function post($id, $version) {
 		if(!$this->session->authenticated()) {
 			throw new ForbiddenException();
 		}
+
+		$user = $this->session->getUser();
+		$addon = $this->getAddon($id);
+		$release = $this->getRelease($addon->getId(), $version);
 
 		$file = $_FILES['file'];
 
@@ -95,9 +118,12 @@ class Upload extends Presenter {
 			throw new Exception('Error receiving file chunk.');
 		}
 
-		$user = $this->session->getUser();
-		$chunk_directory = $this->getUserDirectory($user).'/'.basename(filter_input(INPUT_POST, 'resumableIdentifier'));
-
+		$target_directory = $this->getTargetDirectory($user, $addon, $release);
+		if(!is_dir($target_directory)) {
+			mkdir($target_directory, 0777, true);
+		}
+		
+		$chunk_directory = $target_directory.'/'.basename(filter_input(INPUT_POST, 'resumableIdentifier'));
 		if(!is_dir($chunk_directory)) {
 			mkdir($chunk_directory);
 		}
@@ -110,7 +136,7 @@ class Upload extends Presenter {
 			throw new Exception('Error saving file chunk.');
 		}
 
-		if(!$this->attemptAssembleFile($chunk_directory, $file_name, filter_input(INPUT_POST, 'resumableChunkSize', FILTER_SANITIZE_NUMBER_INT), filter_input(INPUT_POST, 'resumableTotalSize', FILTER_SANITIZE_NUMBER_INT))) {
+		if(!$this->attemptAssembleFile($user, $addon, $release, $chunk_directory, $file_name, filter_input(INPUT_POST, 'resumableChunkSize', FILTER_SANITIZE_NUMBER_INT), filter_input(INPUT_POST, 'resumableTotalSize', FILTER_SANITIZE_NUMBER_INT))) {
 			throw new Exception('Error assembling file.');
 		}
 	}

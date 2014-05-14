@@ -129,7 +129,7 @@ class Environment {
 				'/publish' => 'Publish\Portal',
 				'/publish/:number' => 'Publish\Edit',
 				'/publish/:number/:version' => 'Publish\Release',
-//			'/publish/:number/:version/upload' => 'Publish\Upload',
+				'/publish/:number/:version/upload' => 'Publish\Upload',
 				'/users' => 'User\Table',
 				'/users/:alpha' => 'User\Profile',
 				'/users/:alpha/edit' => 'User\Edit',
