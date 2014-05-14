@@ -118,7 +118,7 @@ class Environment {
 			Router::addRoutes(array(
 				'/' => 'Site\Front',
 				'/addons' => 'Addon\Portal',
-				'/addons/:alpha.json' => 'Addon\Json',
+				'/addons/:alpha\.json' => 'Addon\Json',
 				'/addons/:alpha' => 'Addon\Game',
 				'/addons/:alpha/:alpha' => 'Addon\Release',
 				'/addons/:alpha/:alpha/:version' => 'Addon\Release',
