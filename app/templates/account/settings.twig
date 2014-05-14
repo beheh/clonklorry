@@ -80,8 +80,8 @@
 				</noscript>
 			</form>
 			<h3 id="remove-account">{% trans "Remove account" %}</h3>
-			{% if not show_remove_account %}<p><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>{% endif %}
-			<div id="remove-account-confirm" class="collapse{% if show_remove_account %} in{% endif %}">
+			{% if not show_remove_account %}<p id="remove-confirm-prompt" class="collapse"><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>{% endif %}
+			<div id="remove-account-confirm" class="collapse in">
 				<form role="form" method="post">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="alert alert-danger">
@@ -92,10 +92,10 @@
 					</label>
 					<div class="form-group">
 						<label for="password">{% trans "Password" %}</label>
-						<input type="password" class="form-control remove-form-element" name="password" required disabled>
+						<input type="password" class="form-control remove-form-element" name="password" required>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-danger remove-form-element" name="remove-account-submit" disabled>{% trans "Permanently remove account"%}</button>
+						<button type="submit" class="btn btn-danger remove-form-element" name="remove-account-submit">{% trans "Permanently remove account"%}</button>
 					</div>
 					{% include 'functions/alert.twig' with {'selector' : 'remove-account'} %}
 				</form>
@@ -105,7 +105,7 @@
 			<h2 id="security">{% trans "Security" %}</h2>
 			<h3 id="password">{% trans "Password" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
-			<form role=form" method="post" id="form-password"">
+			<form role=form" method="post" id="form-password">
 				<input type="hidden" name="state" value="{{state}}">
 				{% if password_exists %}
 				<div class="form-group">
@@ -127,8 +127,8 @@
 			</form>
 			<h3 id="remote-logout">{% trans "Sessions" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
-			<p><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
-			<div class="collapse" id="remote-logout-confirm">
+			<p id="remote-logout-prompt" class="collapse"><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
+			<div class="collapse in" id="remote-logout-confirm">
 				<form method="post" role=form">
 					<input type="hidden" name="state" value="{{state}}">
 					<button type="submit" class="btn btn-warning"  name="remote-logout-submit">{% trans "Log out all other devices" %}</button>
@@ -143,19 +143,23 @@
 {% endblock %}
 
 {% block javascript %}
-{{ parent() }}
-
 $('#language-setting').change(function() {
-$(this).closest('form').submit();
+	$(this).closest('form').submit();
 });
+
+$('.remove-form-element').attr('disabled', true);
+$('#remove-confirm-prompt').show();
+{% if not show_remove_account %}$('#remove-account-confirm').removeClass('in');{% endif %}
 
 $('#remove-confirm').prop('checked', false);
-
 $('#remove-confirm').change(function() {
-if($(this).prop('checked')) {
-$('.remove-form-element').removeAttr('disabled');
-} else {
-$('.remove-form-element').attr('disabled', true);
-}
+	if($(this).prop('checked')) {
+		$('.remove-form-element').removeAttr('disabled');
+	} else {
+		$('.remove-form-element').attr('disabled', true);
+	}
 });
+
+$('#remote-logout-prompt').show();
+$('#remote-logout-confirm').removeClass('in');
 {% endblock %}
