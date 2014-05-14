@@ -32,7 +32,15 @@ class Edit extends Presenter {
 		if(!isset($this->context['addontitle'])) {
 			$this->context['addontitle'] = $addon->getTitle();
 		}
-
+		
+		if(!isset($this->context['short'])) {
+			$this->context['short'] = $addon->getShort();
+		}
+		$title = $addon->getTitle();
+		$maintitle = strstr($title, ':');
+		$cleantitle = $maintitle ? $maintitle : $title;
+		$this->context['shortidea'] = preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
+		
 		if(!isset($this->context['abbreviation'])) {
 			$this->context['abbreviation'] = $addon->getAbbreviation();
 		}
@@ -51,6 +59,14 @@ class Edit extends Presenter {
 			$game = $addon->fetchGame();
 			$this->context['game'] = $game->getShort();
 		}
+
+		/* Presentation */
+
+		if(!isset($this->context['description'])) {
+			$this->context['description'] = $addon->getDescription();
+		}
+
+		/* Releases */
 
 		$releases = ModelFactory::build('Release')->all()->order('version')->byAddon($addon->getId());
 		$latest = ModelFactory::build('Release')->latest($addon->getId());
@@ -112,6 +128,34 @@ class Edit extends Presenter {
 				}
 			} else {
 				$this->error('addon', implode('<br>', $errors));
+			}
+		}
+
+		if(isset($_POST['presentation-submit'])) {
+			$errors = array();
+
+			$intro = trim(filter_input(INPUT_POST, 'intro'));
+			try {
+				//$addon->setIntro($intro);
+			} catch(ModelValueInvalidException $ex) {
+
+			}
+
+			$description = trim(filter_input(INPUT_POST, 'description'));
+			try {
+				$addon->setDescription($description);
+			} catch(ModelValueInvalidException $ex) {
+				$this->context['description'] = $description;
+			}
+
+			if(empty($errors)) {
+				if($addon->modified()) {
+					$addon->save();
+					$this->success('presentation', gettext('Presentation saved.'));
+				}
+			} else {
+				$this->error('release', implode('<br>', $errors));
+				$this->context['focus_version'] = true;
 			}
 		}
 

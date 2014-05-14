@@ -19,11 +19,20 @@
 					<input type="hidden" name="state" value="{{state}}">
 					{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-lg-4">
 							<div class="form-group">
 								<label for="title">{%trans "Title" %}</label>
 								<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required>
 							</div>
+							<div class="form-group">
+								<label for="type">{%trans "Type" %}</label>
+								<select name="type" class="form-control" id="type">
+									<option value="123">Runde</option>
+									<option value="312">Objektpaket</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4">
 							<div class="form-group">
 								<label for="type">{%trans "Game" %}</label>
 								<select name="game" class="form-control" id="type" required>
@@ -32,18 +41,19 @@
 									{% endfor %}
 								</select>
 							</div>
+							
 						</div>
-						<div class="col-md-4">
+							<div class="col-lg-4">
 							<div class="form-group">
-								<label for="title">{%trans "Abbreviation (if exists)" %}</label>
-								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
+								<label for="title">{%trans "Identifier" %}</label>
+								<input type="text" class="form-control" name="title" id="title" value="{{short}}" placeholder="{{shortidea}}">
+								<span class="help-block">Will be used in download url, ideally your filename.</br>
+								Examples: moderncombat, hazard, metalmagic</span>
 							</div>
 							<div class="form-group">
-								<label for="type">{%trans "Type" %}</label>
-								<select name="type" class="form-control" id="type" required>
-									<option value="123">Runde</option>
-									<option value="312">Objektpaket</option>
-								</select>
+								<label for="title">{%trans "Abbreviation" %}</label>
+								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
+								<span class="help-block">Only enter an abbreviation if it is unique and well known.</span>
 							</div>
 						</div>
 					</div>
@@ -72,30 +82,58 @@
 					<div class="row">
 						<div class="col-md-8">
 							<div class="form-group">
-								<label for="description">{% trans "Description "%}</label>
+								<div class="row">
+									<div class="col-sm-2">
+										<label for="title">{% trans "Title image" %}</label>
+										<div class="form-group">
+											<!--<img class="media-object" src="http://placehold.it/76x57" width="76" height="57">!-->
+											<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans %}Select{% endtrans %}</button>
+										</div>
+									</div>
+									<div class="col-sm-10">
+										<label for="intro">{% trans "Sitewide intro" %}</label>
+										<div class="form-group">
+											<textarea class="form-control" id="intro" name="intro" rows="2" placeholder="{% trans %}Short intro text, will be used around the site alongside the title image.{% endtrans %}"></textarea>
+										</div>
+									</div>
+								</div>
+								<label for="description">{% trans "Description" %}</label>
 								<div class="form-group">
-									<textarea class="form-control" id="description" name="description" rows="10"></textarea>
+									<textarea class="form-control" id="description" name="description" rows="6" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
-							<input type="hidden" name="state" value="{{state}}">
+						<!--	<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
-								<label for="type">{% trans "Player count" %}</label>
-								<select name="type" class="form-control" id="type" required>
-									<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
-								</select>
+								<label for="type">{% trans "Supported player counts" %}</label>
+								<div class="checkbox">
+									<label><input type="checkbox"> Single player (a single player can/has to do something)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox"> Cooperative (all players have too solve a riddle or kill a boss)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox"> Free for all (only one player can win)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox"> Multiple teams (teams win)</label>
+								</div>
 							</div>
 							<div class="form-group">
 								<label for="type">{% trans "Goal" %}</label>
-								<select name="type" class="form-control" id="type" required>
+								<select name="type" class="form-control" id="type">
 									<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+									<option value="adventure">Adventure</option>
+									<option value="melee">Melee</option>
+									<option value="settlement">Settlement</option>
+									<option value="various">Various</option>
 								</select>
-							</div>
+							</div>!-->
 						</div>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary" name="addon-submit" disabled>{% trans "Save" %}</button>
+						<button type="submit" class="btn btn-primary" name="presentation-submit">{% trans "Save" %}</button>
 					</div>
 				</form>
 			</div>
@@ -113,7 +151,7 @@
 							</div>
 							<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Add release{% endtrans %}</button>
 							<span class="help-block">{% trans %}Only you and administrators can see unpublished releases.{% endtrans %}</span>
-							</form>
+						</form>
 						<p></p>
 						<label for="type">{% trans "Existing releases" %}</label>
 						<div class="list-group">
@@ -134,17 +172,17 @@
 										{% endif %}
 									{% endif %}
 								</a>
-							{% else %}
-								<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
-							{% endfor %}
+								{% else %}
+									<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
+									{% endfor %}
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-{% endblock %}
+				{% endblock %}
 
-{% block javascript %}
-	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
-{% endblock %}
+					{% block javascript %}
+						$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
+					{% endblock %}
