@@ -15,6 +15,7 @@ class Addon extends Model {
 			'title' => 'string',
 			'game' => 'int',
 			'updated' => 'int',
+			'introduction' => 'text',
 			'description' => 'text',
 			'website' => 'url',
 			'bugtracker' => 'url'));
@@ -111,6 +112,15 @@ class Addon extends Model {
 
 	public function getUpdated() {
 		return $this->getValue('updated');
+	}
+
+	public function setIntroduction($introduction) {
+		$this->validateString($introduction, 50, 150);
+		return $this->setValue('introduction', $introduction);
+	}
+
+	public function getIntroduction() {
+		return $this->getValue('introduction');
 	}
 
 	public function setDescription($description) {
