@@ -62,6 +62,10 @@ class Edit extends Presenter {
 
 		/* Presentation */
 
+		if(!isset($this->context['introduction'])) {
+			$this->context['introduction'] = $addon->getIntroduction();
+		}
+
 		if(!isset($this->context['description'])) {
 			$this->context['description'] = $addon->getDescription();
 		}
@@ -116,7 +120,7 @@ class Edit extends Presenter {
 			try {
 				$addon->setAbbreviation($abbreviation);
 				$this->context['abbreviation'] = $addon->getAbbreviation();
-			} catch(ModelValueInvalidException $ex) {
+			} catch(ModelValueInvalidException $e) {
 				$errors[] = sprintf(gettext('Abbreviation is %s.'), $ex->getMessage());
 				$this->context['abbreviation'] = $abbreviation;
 			}
@@ -134,11 +138,12 @@ class Edit extends Presenter {
 		if(isset($_POST['presentation-submit'])) {
 			$errors = array();
 
-			$intro = trim(filter_input(INPUT_POST, 'intro'));
+			$introduction = trim(filter_input(INPUT_POST, 'introduction'));
 			try {
-				//$addon->setIntro($intro);
-			} catch(ModelValueInvalidException $ex) {
-
+				$addon->setIntroduction($introduction);
+			} catch(ModelValueInvalidException $e) {
+				$this->context['introduction'] = $introduction;
+				$errors[] = sprintf(gettext('Introdution is %s.'), $e->getMessage());
 			}
 
 			$description = trim(filter_input(INPUT_POST, 'description'));
@@ -146,6 +151,7 @@ class Edit extends Presenter {
 				$addon->setDescription($description);
 			} catch(ModelValueInvalidException $ex) {
 				$this->context['description'] = $description;
+				$errors[] = sprintf(gettext('Description is %s.'), $e->getMessage());
 			}
 
 			if(empty($errors)) {
@@ -154,8 +160,7 @@ class Edit extends Presenter {
 					$this->success('presentation', gettext('Presentation saved.'));
 				}
 			} else {
-				$this->error('release', implode('<br>', $errors));
-				$this->context['focus_version'] = true;
+				$this->error('presentation', implode('<br>', $errors));
 			}
 		}
 

@@ -47,6 +47,7 @@ CREATE TABLE `addon` (
 	`abbreviation` varchar(10) DEFAULT NULL,
 	`game` int(11) NOT NULL,
 	`updated` int(11) DEFAULT NULL,
+	`introduction` text,
 	`description` text,
 	`website` varchar(255) DEFAULT NULL,
 	`bugtracker` varchar(255) DEFAULT NULL,

@@ -46,7 +46,7 @@ class Game extends Presenter {
 				'title' => $addon->getTitle(),
 				'version' => $release->getVersion(),
 				'short' => $addon->getShort(),
-				'description' => $addon->getDescription()
+				'introduction' => $addon->getIntroduction()
 			);
 		}
 

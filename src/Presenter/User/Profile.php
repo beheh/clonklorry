@@ -47,7 +47,7 @@ class Profile extends Presenter {
 			$user_addon = array(
 				'title' => $addon->getTitle(),
 				'short' => $addon->getShort(),
-				'description' => $addon->getDescription()
+				'introduction' => $addon->getIntroduction()
 			);
 			
 			$game = $addon->fetchGame();

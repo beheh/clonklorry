@@ -16,7 +16,7 @@ class Front extends Presenter {
 			$addons[] = array(
 				'title' => $addon->getTitle(),
 				'short' => $addon->getShort(),
-				'description' => $addon->getDescription(),
+				'introduction' => $addon->getIntroduction(),
 				'version' => $release->getVersion(),
 				'game' => array(
 					'title' => $game->getTitle(),

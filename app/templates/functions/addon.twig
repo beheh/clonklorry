@@ -10,6 +10,6 @@
 		{% if addon.version %}{% include 'functions/labels/version.twig' with {'version' : addon.version} %}{% endif %}
 		{% if addon.game %}{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title} %}{% endif %}
 		</h4>
-		<p>{{addon.description}}</p>
+		<p>{{addon.introduction}}</p>
 	</div>
 </li>
