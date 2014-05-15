@@ -242,6 +242,7 @@
 
 	function resetDependencyVersions() {
 		$('#add-dependency').removeAttr('disabled');
+		$('#add-dependency-select').removeAttr('disabled');
 		$('#add-dependency-version').empty();
 		$('#add-dependency-version').append($('<option disabled>{% trans %}Select an addon first&hellip;{% endtrans %}</option>'));
 		$('#add-dependency-version').attr('disabled', true);
@@ -249,6 +250,7 @@
 
 	function selectDependencyAddon() {
 		$('#add-dependency').attr('disabled', true);
+		$('#add-dependency-select').attr('disabled', true);
 		$('#add-dependency-version').empty();
 		$('#add-dependency-version').append($('<option disabled>{% trans %}Loading versions&hellip;{% endtrans %}</option>'));
 		//$.get('', function() {
