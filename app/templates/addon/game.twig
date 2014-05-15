@@ -15,7 +15,7 @@
 	{% set createaddon %}
 	<a href="{{base}}/create?for={{short}}">{% trans %}create a new addon{% endtrans %}</a>
 	{% endset %}
-	<p class="sort-bar">{% trans %}Sort by {{columns}} or {{createaddon}} for this game.{% endtrans %}	</p>
+	<!--<p class="sort-bar">{% trans %}Sort by {{columns}} or {{createaddon}} for this game.{% endtrans %}	</p>!-->
 	<ul class="media-list addons">
 	{% for addon in addons %}
 		{% include "functions/addon.twig" %}
