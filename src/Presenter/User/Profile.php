@@ -40,9 +40,10 @@ class Profile extends Presenter {
 
 		$games = ModelFactory::build('Game')->byAnything();
 
-		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
+		$releases = ModelFactory::build('Release')->all()->byOwner($user->getId());
 		$this->context['addons'] = array();
-		foreach($addons as $addon) {
+		foreach($releases as $release) {
+			$addon = $release->fetchAddon();
 			$user_addon = array(
 				'title' => $addon->getTitle(),
 				'short' => $addon->getShort(),

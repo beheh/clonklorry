@@ -40,6 +40,16 @@ class Release extends Model {
 		}
 		return $releases;
 	}
+	
+	public final function byOwner($owner) {
+		$addons = ModelFactory::build('Addon')->all()->byOwner($owner);
+		$releases = array();
+		foreach($addons as $addon) {
+			$release = ModelFactory::build('Release')->latest($addon->getId());
+			if($release) $releases[] = $release;
+		}
+		return $releases;
+	}
 
 	public final function setVersion($version) {
 		$this->validateRegexp($version, '/^([a-zA-Z0-9-.]+)$/');
