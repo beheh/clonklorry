@@ -6,6 +6,7 @@ debug: false
 enable:
     site: true
     registration: true
+    upload: true
     
 notice:
     text:

@@ -1,6 +1,6 @@
 {% extends 'root.twig' %}
 
-{% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-resumable.js'] %}
+{% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-image-upload.js', '/lorry/js/lorry-release-upload.js'] %}
 
 {% block content %}
 	<div class="container">
@@ -10,21 +10,24 @@
 					{{addontitle}}
 				</a>
 				<small>{% include 'functions/labels/version.twig' with {'version' : version} %}
-				{% if released %}
-					{% if latest %}
-						{% include "functions/labels/latest.twig" %}
-					{% endif %}
-				{% else %}
-					{% if scheduled %}
-						{% include "functions/labels/scheduled.twig" %}
+					{% if released %}
+						{% if latest %}
+							{% include "functions/labels/latest.twig" %}
+						{% endif %}
 					{% else %}
-						{% include "functions/labels/unreleased.twig" %}
+						{% if scheduled %}
+							{% include "functions/labels/scheduled.twig" %}
+						{% else %}
+							{% include "functions/labels/unreleased.twig" %}
+						{% endif %}
 					{% endif %}
-				{% endif %}
-				<span class="glyphicon glyphicon-pencil"></span>
+					<span class="glyphicon glyphicon-pencil"></span>
 				</small>
 			</h1>
 		</div>
+		<noscript>
+		<div class="alert alert-danger">{% trans %}Javascript needs to be enabled in order to edit addons and releases.{% endtrans %}</div>
+		</noscript>
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#general" data-toggle="tab">{% trans "General" %}</a></li>
 			<li><a href="#files" data-toggle="tab">{% trans "Files" %}</a></li>
@@ -35,11 +38,11 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="general">
 				{% include 'functions/alert.twig' with {'selector' : 'version'} %}
-				<form role=form" method="post" action="{{filename}}">
+				<form role="form" method="post" action="{{filename}}">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="form-group">
 						<label for="title">{%trans "Addon" %}</label>
-						<p class="form-control-static"><a href="{{base}}/publish/{{addonid}}#releases">{{addontitle}}</a></p>
+						<p class="form-control-static"><a href="{{base}}/publish/{{addonid}}">{{addontitle}}</a></p>
 					</div>
 					<div class="form-group">
 						<label for="version">{%trans "Version" %}</label>
@@ -56,59 +59,82 @@
 			</div>
 
 			<div class="tab-pane" id="files">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="form-group">
-							<label for="files">{% trans %}Files{% endtrans %}</label>
-							<script>var addon = '{{addonid}}';
-								var release = '{{version}}';</script>
-							<div class="alert alert-danger">Uploading files is currently not enabled.</div>
-							<div id="no-resumable">
-								<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
-								<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
-							</div>
-							<div id="resumable">
-								<span id="text-reselect" class="hidden">{% trans "Select file to continue upload "%}</span>
-								<span id="text-uploaded" class="hidden">{% trans "Ready for deployment "%}</span>
-								<span id="text-remove" class="hidden">{% trans "Remove "%}</span>
-								<div id="resumable-error" class="alert alert-danger"></div>
-								<ul class="list-group" id="resumable-files-none">
-									<li id="resumable-files-none" class="list-group-item text-muted">{% trans %}No file selected{% endtrans %}</li>
-								</ul>
-								<ul class="list-group" id="resumable-files">
-								</ul>
-								<button type="button" id="resumable-select" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
-								<button type="button" id="resumable-upload" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
-								<button type="button" id="resumable-pause" class="btn btn-success"><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
-								<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
-							</div>
+				<div class="form-group">
+					<label for="files">{% trans %}Files{% endtrans %}</label>
+					<script>var addon = '{{addonid}}';
+						var release = '{{version}}';</script>
+						{% if enable.upload %}
+						<div id="no-resumable">
+							<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
+							<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
 						</div>
+					{% else %}
+						<div class="alert alert-danger">{% trans %}File upload is disabled.{% endtrans %}</div>
+					{% endif %}
+					<div id="resumable">
+						<span id="text-reselect" class="hidden">{% trans "Select file to continue upload" %}</span>
+						<span id="text-uploaded" class="hidden">{% trans "Ready to publish" %}</span>
+						<span id="text-remove" class="hidden">{% trans "Remove" %}</span>
+						<div id="resumable-error" class="alert alert-danger hidden"></div>
+						<ul class="list-group" id="resumable-files-none">
+							<li class="list-group-item text-muted">{% trans %}No files uploaded{% endtrans %}</li>
+						</ul>
+						<ul class="list-group" id="resumable-files">
+						</ul>
+						{% if enable.upload %}
+							<button type="button" id="resumable-select" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
+							<button type="button" id="resumable-upload" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
+							<button type="button" id="resumable-pause" class="btn btn-success"><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
+							<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
+						{% endif %}
 					</div>
 				</div>
 			</div>
 
 			<div class="tab-pane" id="dependencies">
-				<form role=form" method="post" action="{{filename}}">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
+				<div class="form-group">
+					<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
+					<ul class="list-group" id="resumable-files-none">
+						<li id="resumable-files-none" class="list-group-item text-muted">{% trans %}No dependencies added{% endtrans %}</li>
+					</ul>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="add-dependency">{% trans %}Search for an addon{% endtrans %}</label>
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Hazard" id="add-dependency">
+								<span class="input-group-btn">
+								  <button class="btn btn-default" id="add-dependency-reset" type="button">&times;</button>
+								  <button class="btn btn-primary" id="add-dependency-select" type="button"><span class="glyphicon glyphicon-step-forward"></span></button>
+								</span>
 							</div>
 						</div>
 					</div>
-				</form>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="add-dependency-version">{% trans %}Version{% endtrans %}</label>
+							<select class="form-control" id="add-dependency-version" disabled>
+								<option disabled>{% trans %}Javascript needs to be enabled{% endtrans %}</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-success inline" name="add-dependency-add" disabled><span class="glyphicon glyphicon-plus"></span> {% trans %}Add dependency{% endtrans %}</button>
+				</div>
 			</div>
 
 			<div class="tab-pane" id="changes">
-				<form role=form" method="post" action="{{filename}}">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<label for="description">{% trans "Changelog "%}</label>
-								<div class="form-group">
-									<textarea class="form-control monospace" id="description" name="description" rows="6" placeholder="+ Added a new feature..."></textarea>
-								</div>
-							</div>
+				<form role="form" method="post" action="{{filename}}">
+					<div class="form-group">
+						<div class="form-group">
+							<label for="new">{% trans "What's new?"%}</label>
+							<textarea class="form-control" id="new" name="new" rows="3" placeholder="{% trans %}Briefly explain why this release is better than the previous one.{% endtrans %}"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="changelog">{% trans "Detailed changelog" %}</label>
+							<textarea class="form-control monospace" id="changelog" name="changelog" rows="8" placeholder="+ Added a new feature..."></textarea>
 						</div>
 					</div>
 					<div class="form-group">
@@ -118,7 +144,7 @@
 			</div>
 
 			<div class="tab-pane" id="release">
-				<div class="row">
+				<!--<div class="row">
 					<div class="col-md-12">
 						<div class="panel panel-danger">
 							<div class="panel-heading"><strong>This release can't be published yet.</strong></div>
@@ -133,7 +159,41 @@
 							</div>
 						</div>
 					</div>
+				</div>!-->
+				{% if released %}
+					<p>This addon was released on ???.</p>
+				{% else %}
+				<div class="row">
+					<div class="col-md-6">
+						<h2>{% trans %}Quick release{% endtrans %}</h2>
+						<p>{% trans %}If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.{% endtrans %}</p>
+						<p>{% trans %}All downloads will immediately redirect to your uploaded version.{% endtrans %}</p>
+						<p class="alert alert-warning">{% trans %}Publishing a release is final. Any changes after releasing require a new release.{% endtrans %}</p>
+						<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
+						<form role="form" class="form-inline" method="post" action="">
+							<div class="pull-right">
+								<label class="checkbox inline" style="margin-right: 20px;">
+									<input type="checkbox" id="release-confirm"> {% trans %}Confirm instant release{% endtrans %}
+								</label>
+								<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-6">
+						<h2>{% trans %}Scheduled release{% endtrans %}</h2>
+						<form role="form" method="post" action="">
+							<label for="datetime">{% trans %}Date and time{% endtrans %}</label>
+							<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{current_datetime}}" required>
+							<label class="checkbox">
+								<input type="checkbox">{% trans %}Make release date and time public{% endtrans %}
+							</label>
+							<p class="alert alert-info">{% trans %}You can cancel a scheduled release at any time before the automated release.{% endtrans %}</p>
+							<p>{% trans %}Your release will be automatically made vailabe to all players at the specified timestamp.{% endtrans %}</p>
+							<button type="submit" class="btn btn-primary btn-large pull-right">{% trans %}Schedule Release{% endtrans %}</button>
+						</form>
+					</div>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>

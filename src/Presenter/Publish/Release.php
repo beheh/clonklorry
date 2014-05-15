@@ -36,6 +36,7 @@ class Release extends Presenter {
 		$release = $this->getRelease($addon->getId(), $version);
 
 		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle().' '.$release->getVersion());
+		$this->context['game'] = $addon->fetchGame()->getShort();
 		$this->context['addontitle'] = $addon->getTitle();
 		$this->context['addonid'] = $addon->getId();
 		$this->context['version'] = $release->getVersion();

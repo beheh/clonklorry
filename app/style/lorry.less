@@ -95,12 +95,15 @@ dt {
 
 .media .badge {
 	vertical-align: text-bottom;
+	padding: 4px 7px;
 }
 
 .media .label {
 	display: inline-block;
 	vertical-align: text-bottom;
 	margin-top: 0px;
+	font-size: 12px;
+	padding: 4px 7px;
 }
 
 textarea {
@@ -169,6 +172,10 @@ h1 a.btn {
 	vertical-align: top;
 }
 
+.twitter-typeahead + .input-group-btn button {
+	margin-top: -4px;
+}
+
 @media (max-width: @screen-xs-max) {
     .nav-tabs > li {
         float: none;
@@ -200,7 +207,7 @@ h1 a.btn {
 @media (min-width: @screen-lg-min) {
 	#front .carousel {
 		height: 417px;
-	}
+	} 
 }
 
 @media (min-width: @screen-md-min) {
@@ -208,6 +215,9 @@ h1 a.btn {
 		margin-top: 0px;
 	}
 }
+
+
+@import 'typeahead.less';
 
 @import 'buttons.less';
 
