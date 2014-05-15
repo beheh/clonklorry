@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-15 18:33+0100\n"
-"PO-Revision-Date: 2014-05-15 18:34+0100\n"
+"POT-Creation-Date: 2014-05-15 20:19+0100\n"
+"PO-Revision-Date: 2014-05-15 20:20+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1338,19 +1338,23 @@ msgstr "Einen Fehler melden"
 msgid "Interested in an update?"
 msgstr "An einem Update interessiert?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:74
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:85
 msgid "You have unsaved changes."
 msgstr "Du hast ungespeicherte Änderungen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:150
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:87
+msgid "Preparing upload"
+msgstr "Hochladen wird vorbereitet"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:157
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:163
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:170
 msgid "About the project"
 msgstr "Über das Projekt"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:167
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:174
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -1937,6 +1941,26 @@ msgstr "Nicht implementiert"
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:118
+msgid "error receiving file chunk"
+msgstr "Fehler beim Empfangen eines Dateiabschnitts"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:123
+msgid "invalid filename"
+msgstr "ungültiger Dateiname"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:138
+msgid "could not create upload directory"
+msgstr ""
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:144
+msgid "error saving file chunk"
+msgstr "Fehler beim Speichern eines Dateiabschnitts"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:148
+msgid "error assembling file"
+msgstr "Fehler beim Zusammensetzen der Datei"
+
 #: /home/benedict/public_html/lorry/src/Presenter/Publish/Create.php:54
 #: /home/benedict/public_html/lorry/src/Presenter/Publish/Edit.php:108
 #, php-format
@@ -2142,6 +2166,14 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
+#, fuzzy
+#~ msgid "file not found"
+#~ msgstr "Datei nicht gefunden"
+
+#, fuzzy
+#~ msgid "login required"
+#~ msgstr "Identifikation erforderlich"
+
 #~ msgid "Details"
 #~ msgstr "Details"
 
@@ -2260,12 +2292,6 @@ msgstr "%n%."
 #~ "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie "
 #~ "Clonk, und um rund um deine Favoriten mit der Community zu diskutieren."
 
-#~ msgid "Error receiving file chunk."
-#~ msgstr "Fehler beim Empfangen des Dateiabschnitts."
-
-#~ msgid "Error saving file chunk."
-#~ msgstr "Fehler beim Speichern des Dateiabschnitts."
-
 #~ msgid "Edit this addon"
 #~ msgstr "Erweiterung bearbeiten"
 
@@ -2343,9 +2369,6 @@ msgstr "%n%."
 
 #~ msgid "View addon page"
 #~ msgstr "Erweiterungsseite betrachten"
-
-#~ msgid "Invalid game."
-#~ msgstr "Ungültiges Spiel."
 
 #~ msgid "Full title"
 #~ msgstr "Vollständiger Titel"

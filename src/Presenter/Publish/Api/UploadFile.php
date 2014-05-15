@@ -1,8 +1,8 @@
 <?php
 
-namespace Lorry\Presenter\Publish;
+namespace Lorry\Presenter\Publish\Api;
 
-use Lorry\Presenter;
+use Lorry\ApiPresenter;
 use Lorry\ModelFactory;
 use Lorry\Exception;
 use Lorry\Exception\ForbiddenException;
@@ -12,7 +12,7 @@ use Lorry\Model\User;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
 
-class Upload extends Presenter {
+class UploadFile extends ApiPresenter {
 
 	private function getAddon($id) {
 		$addon = ModelFactory::build('Addon')->byId($id);
@@ -37,6 +37,14 @@ class Upload extends Presenter {
 
 	private function getTargetDirectory(User $user, Addon $addon, Release $release) {
 		return self::UPLOAD_DIR.'/user'.$user->getId().'/addon'.$addon->getId().'/release'.$release->getId();
+	}
+
+	private function sanitizeFilename($supplied) {
+		$file_name = basename($supplied);
+		if(!preg_match('/^[-0-9A-Z_\.]/i', $file_name)) {
+			throw new Exception(gettext('invalid filename'));
+		}
+		return $file_name;
 	}
 
 	private function removeChunkDirectory($chunk_directory) {
@@ -93,8 +101,10 @@ class Upload extends Presenter {
 		$addon = $this->getAddon($id);
 		$release = $this->getRelease($addon->getId(), $version);
 
-		$chunk_directory = $this->getTargetDirectory($user, $addon, $release).'/'.basename(filter_input(INPUT_GET, 'resumableIdentifier'));
-		$part_file = $chunk_directory.'/'.filter_input(INPUT_GET, 'resumableFilename').'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
+		$file_name = $this->sanitizeFilename(filter_input(INPUT_GET, 'resumableFilename'));
+
+		$chunk_directory = $this->getTargetDirectory($user, $addon, $release).'/'.$file_name;
+		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
 		if(!file_exists($part_file)) {
 			throw new FileNotFoundException();
@@ -115,29 +125,41 @@ class Upload extends Presenter {
 		$file = $_FILES['file'];
 
 		if($file['error'] != 0) {
-			throw new Exception('Error receiving file chunk.');
+			throw new Exception(gettext('error receiving file chunk'));
 		}
 
 		$target_directory = $this->getTargetDirectory($user, $addon, $release);
 		if(!is_dir($target_directory)) {
 			mkdir($target_directory, 0777, true);
 		}
-		
-		$chunk_directory = $target_directory.'/'.basename(filter_input(INPUT_POST, 'resumableIdentifier'));
+
+
+		if(is_file($target_directory.'/'.$file_name)) {
+			throw new Exception(gettext('file already exists'));
+		}
+
+		$identifier = $this->sanitizeFilename(filter_input(INPUT_POST, 'resumableIdentifier'));
+
+		$chunk_directory = $target_directory.'/'.$identifier;
 		if(!is_dir($chunk_directory)) {
 			mkdir($chunk_directory);
 		}
 
-		$file_name = basename(filter_input(INPUT_POST, 'resumableFilename'));
+		$file_name = $this->sanitizeFilename(filter_input(INPUT_POST, 'resumableFilename'));
+
+		// final check
+		if(!is_dir($chunk_directory)) {
+			throw new Exception(gettext('could not create upload directory'));
+		}
 
 		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_POST, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
 		if(!move_uploaded_file($file['tmp_name'], $part_file)) {
-			throw new Exception('Error saving file chunk.');
+			throw new Exception(gettext('error saving file chunk'));
 		}
 
 		if(!$this->attemptAssembleFile($user, $addon, $release, $chunk_directory, $file_name, filter_input(INPUT_POST, 'resumableChunkSize', FILTER_SANITIZE_NUMBER_INT), filter_input(INPUT_POST, 'resumableTotalSize', FILTER_SANITIZE_NUMBER_INT))) {
-			throw new Exception('Error assembling file.');
+			throw new Exception(gettext('error assembling file'));
 		}
 	}
 

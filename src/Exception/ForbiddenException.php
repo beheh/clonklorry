@@ -12,4 +12,12 @@ class ForbiddenException extends Exception {
 	public function getApiType() {
 		return 'forbidden';
 	}
+
+	public function getHttpCode() {
+		return 403;
+	}
+
+	public function getHttpMessage() {
+		return 'Forbidden';
+	}
 }

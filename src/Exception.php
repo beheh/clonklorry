@@ -14,4 +14,12 @@ class Exception extends PHPException {
 		return 'internal';
 	}
 
+	public function getHttpCode() {
+		return null;
+	}
+
+	public function getHttpMessage() {
+		return null;
+	}
+
 }

@@ -60,6 +60,7 @@ releaseResumable.on('fileAdded', function(file) {
 			}
 		});
 	});
+	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text(translation.preparingUpload);
 	releaseResumable.upload();
 	updateState();
 });
@@ -70,23 +71,16 @@ releaseResumable.on('fileProgress', function(file) {
 });
 
 releaseResumable.on('fileSuccess', function(file) {
-	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').addClass('resumable-complete');
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text($('#text-uploaded').text());
-	$('li[data-unique="' + file.uniqueIdentifier + '"]').removeClass('list-group-item-error');
+	$('li[data-unique="' + file.uniqueIdentifier + '"]').removeClass('list-group-item-danger');
 	$('li[data-unique="' + file.uniqueIdentifier + '"]').addClass('list-group-item-success');
 	updateState();
 });
 
-releaseResumable.on('fileError', function(message, file) {
-	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').addClass('resumable-error');
-	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text(message);
+releaseResumable.on('fileError', function(file, raw) {
+	result = $.parseJSON(raw);
+	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text(ucfirst(result.message));
 	$('li[data-unique="' + file.uniqueIdentifier + '"]').removeClass('list-group-item-success');
-	$('li[data-unique="' + file.uniqueIdentifier + '"]').addClass('list-group-item-error');
-	updateState();
-});
-
-releaseResumable.on('error', function(message, file) {
-	$('#resumable-error').text(message);
-	$('#resumable-error').show();
+	$('li[data-unique="' + file.uniqueIdentifier + '"]').addClass('list-group-item-danger');
 	updateState();
 });

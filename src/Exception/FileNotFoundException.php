@@ -14,4 +14,12 @@ class FileNotFoundException extends Exception {
 		return 'notfound';
 	}
 
+	public function getHttpCode() {
+		return 404;
+	}
+
+	public function getHttpMessage() {
+		return 'File Not Found';
+	}
+
 }

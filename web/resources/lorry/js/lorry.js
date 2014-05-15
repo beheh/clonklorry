@@ -35,3 +35,9 @@ window.addEventListener("popstate", function(e) {
 		$('.nav-tabs a:first').tab('show');
 	}
 });
+
+// capitalize first character in string
+// based on https://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript
+function ucfirst(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
