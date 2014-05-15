@@ -3,12 +3,14 @@
 namespace Lorry;
 
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\OutputCompleteException;
 
 abstract class Router {
 
 	private static $routes = array();
 
 	public function __construct() {
+
 	}
 
 	public static function addRoutes($route) {
@@ -54,6 +56,12 @@ abstract class Router {
 	 */
 	public static function route() {
 		$path = self::getPath();
+
+		if($path != '/' && substr($path, strlen($path) - 1, 1) == '/') {
+			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
+			header('Location: '.substr($request_uri, 0, strlen($request_uri) - 1));
+			throw new OutputCompleteException;
+		}
 
 		$tokens = array(
 			':string' => '([a-zA-Z]+)',
