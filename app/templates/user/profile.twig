@@ -18,17 +18,23 @@
 	<div class="row">
 		<div class="col-md-4">
 		<h2>{% trans %}User{% endtrans %}</h2>
-		{% if registration %}
-			<p>{% trans %}Registered on {{registration}}.{% endtrans %}</p>
+		<ul class="list-group">
+			<li class="list-group-item"><span class="glyphicon glyphicon-fire"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
+		{% if username == "B_E" %}
+			<li class="list-group-item"><span class="glyphicon glyphicon-leaf"></span> <a href="{{base}}/about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
+		{% else %}
+			<li class="list-group-item"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Participant in Lorry Alpha{% endtrans %}</li>
 		{% endif %}
+		{% if username == "Nachtfalter" or username == "Luchs" or username == "Nachtschatten" or username == "Tyron" %}
+			<li class="list-group-item"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
+		{% endif %}
+		</ul>
 		{% if clonkforge or github %}
-			<div>
 				<h3>{% trans %}Links{% endtrans %}</h3>
-				<ul>
-				{% if clonkforge %}<li><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
-				{% if github %}<li><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
-				</ul>
-			</div>
+				<div class="list-group">
+				{% if clonkforge %}<a class="list-group-item" href="{{clonkforge.url}}">{{clonkforge.profile}}</a>{% endif %}
+				{% if github %}<a class="list-group-item"  href="{{github.url}}">{{github.profile}}</a>{% endif %}
+				</div>
 		{% endif %}
 		{% if not self and user_administrator or (user_moderator and moderator == false) %}
 			<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
@@ -71,19 +77,6 @@
 			</ul>
 		{% else %}
 			<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
-		{% endif %}
-			<h3>{% trans %}Comments{% endtrans %}</h3>
-		{% if comments %}
-			<table>
-		{% for comment in comments %}
-				<tr class="comment">
-					<th><a href="{{ comment.url }}">{{ comment.timestamp }}</a></th>
-					<td>{{ comment.content }}</td>
-				</tr>
-		{% endfor %}
-			</table>
-		{% else %}
-			<div class="alert alert-warning">{% trans %}This user has not commented yet.{% endtrans %}</div>
 		{% endif %}
 		</div>
 	</div>
