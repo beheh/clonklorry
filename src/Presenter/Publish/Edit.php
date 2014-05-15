@@ -4,18 +4,19 @@ namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Edit extends Presenter {
 
-	private function getAddon($id) {
+	public static function getAddon($id, User $user) {
 		$addon = ModelFactory::build('Addon')->byId($id);
 		if(!$addon) {
 			throw new FileNotFoundException();
 		}
-		if($addon->getOwner() != $this->session->getUser()->getId()) {
+		if($addon->getOwner() != $user->getId()) {
 			throw new ForbiddenException();
 		}
 		return $addon;
@@ -24,7 +25,7 @@ class Edit extends Presenter {
 	public function get($id) {
 		$this->security->requireLogin();
 
-		$addon = $this->getAddon($id);
+		$addon = Edit::getAddon($id, $this->session->getUser());
 		$this->context['addonid'] = $addon->getId();
 
 		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle());
@@ -48,7 +49,7 @@ class Edit extends Presenter {
 		if(!isset($this->context['identifier'])) {
 			$this->context['identifier'] = $addon->getShort();
 		}
-		
+
 		if(isset($_GET['add'])) {
 			$this->context['focus_version'] = true;
 		}
@@ -95,7 +96,7 @@ class Edit extends Presenter {
 
 		$this->security->requireValidState();
 
-		$addon = $this->getAddon($id);
+		$addon = Edit::getAddon($id, $this->session->getUser());
 
 		if(isset($_POST['addon-submit'])) {
 			$errors = array();

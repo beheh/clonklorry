@@ -5,23 +5,11 @@ namespace Lorry\Presenter\Publish;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Release extends Presenter {
 
-	private function getAddon($id) {
-		$addon = ModelFactory::build('Addon')->byId($id);
-		if(!$addon) {
-			throw new FileNotFoundException();
-		}
-		if($addon->getOwner() != $this->session->getUser()->getId()) {
-			throw new ForbiddenException();
-		}
-		return $addon;
-	}
-
-	private function getRelease($id, $version) {
+	public static function getRelease($id, $version) {
 		$release = ModelFactory::build('Release')->byVersion($version, $id);
 		if(!$release) {
 			throw new FileNotFoundException();
@@ -29,11 +17,13 @@ class Release extends Presenter {
 		return $release;
 	}
 
+	const UPLOAD_DIR = '../app/upload/publish';
+
 	public function get($id, $version) {
 		$this->security->requireLogin();
 
-		$addon = $this->getAddon($id);
-		$release = $this->getRelease($addon->getId(), $version);
+		$addon = Edit::getAddon($id, $this->session->getUser());
+		$release = Release::getRelease($addon->getId(), $version);
 
 		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle().' '.$release->getVersion());
 		$this->context['game'] = $addon->fetchGame()->getShort();
@@ -58,8 +48,8 @@ class Release extends Presenter {
 		$this->security->requireLogin();
 		$this->security->requireValidState();
 
-		$addon = $this->getAddon($id);
-		$release = $this->getRelease($addon->getId(), $version);
+		$addon = Edit::getAddon($id, $this->session->getUser());
+		$release = Release::getRelease($addon->getId(), $version);
 
 		if(isset($_POST['general-submit'])) {
 			$new_version = filter_input(INPUT_POST, 'version');
