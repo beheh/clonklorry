@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2014-05-15 13:09+0100\n"
-"PO-Revision-Date: 2014-05-15 13:09+0100\n"
+"PO-Revision-Date: 2014-05-15 13:11+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -212,7 +212,7 @@ msgstr "Wähle zuerst eine Erweiterung&hellip;"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:508
 msgid "Loading versions&hellip;"
-msgstr "Lade Versioinen&hellip;"
+msgstr "Lade Versionen&hellip;"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0a/37/f99dc44e76594a6725fe007cd51d1dbdfce1ba22a71fbf112835781ef5a5.php:515
 msgid "Select a version&hellip;"
