@@ -10,4 +10,8 @@ class FileNotFoundException extends Exception {
 		return 'Error\FileNotFound';
 	}
 
+	public function getApiType() {
+		return 'notfound';
+	}
+
 }

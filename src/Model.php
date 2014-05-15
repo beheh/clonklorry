@@ -396,4 +396,7 @@ abstract class Model implements ModelInterface {
 		$this->validateString($language, 5, 5);
 	}
 
+	public function forApi() {
+		return array();
+	}
 }

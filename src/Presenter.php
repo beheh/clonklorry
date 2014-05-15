@@ -76,7 +76,7 @@ abstract class Presenter implements PresenterInterface {
 	/**
 	 * Handle the RESTful method
 	 */
-	public final function handle($method, $parameters) {
+	public function handle($method, $parameters) {
 		return call_user_func_array(array($this, $method), $parameters);
 	}
 
@@ -89,7 +89,7 @@ abstract class Presenter implements PresenterInterface {
 
 	protected $context = array();
 
-	protected final function display($template) {
+	protected function display($template) {
 		$this->twig->display($template, $this->context);
 	}
 

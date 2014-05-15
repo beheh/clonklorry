@@ -10,4 +10,8 @@ class Exception extends PHPException {
 		return 'Error';
 	}
 
+	public function getApiType() {
+		return 'internal';
+	}
+
 }

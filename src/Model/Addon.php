@@ -38,7 +38,10 @@ class Addon extends Model {
 	}
 
 	public function setShort($short) {
-		$this->validateString($short, 4, 30);
+		$short = trim(strtolower($short));
+		if($short) {
+			$this->validateString($short, 4, 30);
+		}
 		return $this->setValue('short', $short);
 	}
 
@@ -156,6 +159,23 @@ class Addon extends Model {
 
 	public function __toString() {
 		return $this->getTitle().'';
+	}
+
+	public function forApi($detailed = false) {
+		$result = array();
+
+		$result['identifier'] = $this->getShort();
+		$result['gameIdentifier'] = $this->fetchGame()->getShort();
+		$result['title'] = $this->getTitle();
+		if($this->getAbbreviation()) {
+			$result['abbreviation'] = $this->getAbbreviation();
+		}
+		$result['introduction'] = $this->getIntroduction();
+		if($detailed) {
+			$result['description'] = $this->getDescription();
+		}
+
+		return $result;
 	}
 
 }
