@@ -146,6 +146,7 @@ class Environment {
 				'/auth/callback/:alpha' => 'Auth\Callback',
 				'/about' => 'Site\About',
 				'/clonk' => 'Site\Clonk',
+				'/api' => 'Site\Api',
 				'/contact' => 'Site\Contact'
 			));
 		}

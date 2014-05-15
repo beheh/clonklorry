@@ -1,0 +1,28 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Lorry REST API'|trans %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h1>{{ title }}</h1>
+	</div>
+	<p class="lead">{% trans %}Lorry offers a read-only JSON based REST API to access data about addons and releases.{% endtrans %}</p>
+	<h2>{% trans %}Endpoints{% endtrans %}</h2>
+	<p>{% trans %}Most endpoints are simply counterparts to the human-readable output and can therefore be reached by simply appending <code>.json</code> to the url.{% endtrans %}</p>
+	<table class="table">
+		<tr><th>{% trans %}Url{% endtrans %}</th><th>{% trans %}Description{% endtrans %}</th><th>{% trans %}Typical result{% endtrans %}</th></tr>
+		<tr><td><pre>/addons/&lt;game&gt;.json</pre></td><td>Returns a list of addons for the queried game.</td><td><pre>{"addons":[{"identifier":"knights","gameIdentifier":"rage", ... }]}</pre></td></tr>
+		<tr><td><pre>/addons/&lt;game&gt/&lt;addon&gt.json</pre></td><td>Returns details about the queried addon.</td><td><pre>{"addon":{"identifier":"knights","gameIdentifier":"rage", ... }}</pre></td></tr>
+	</table>
+	<h2>{% trans %}Objects{% endtrans %}</h2>
+	<table class="table">
+		<tr><th>{% trans %}Type{% endtrans %}</th><th>{% trans %}Structure{% endtrans %}</th></tr>
+		<tr><td>addon</td><td><pre>{"identifier":"knights","gameIdentifier":"rage","title":"Knights","introduction":"The original knights pack."}</pre></td></tr>
+		<tr><td>game</td><td><pre>{"identifier":"rage","title":"Clonk Rage"}</pre></td></tr>
+	</table>
+	<h2>{% trans %}Error handling{% endtrans %}</h2>
+	<p>{% trans %}You can handle errors by checking for the <code>error</code> field in the response.{% endtrans %}</p>
+	<pre>{"error":"forbidden"}</pre>
+</div>
+{% endblock %}
