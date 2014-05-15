@@ -19,7 +19,9 @@
 		<div class="col-md-4">
 		<h2>{% trans %}User{% endtrans %}</h2>
 		<ul class="list-group">
+		{% if registration %}
 			<li class="list-group-item"><span class="glyphicon glyphicon-fire"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
+		{% endif %}
 		{% if username == "B_E" %}
 			<li class="list-group-item"><span class="glyphicon glyphicon-leaf"></span> <a href="{{base}}/about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
 		{% else %}
