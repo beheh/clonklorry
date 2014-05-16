@@ -1,53 +1,52 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Publish new addon'|trans %}
+{% set title = 'New addon'|trans %}
 
 {% block content %}
-<div class="container">
-	<div class="page-header">
-		<h1>{{ title }}</h1>
-	</div>
-	<form role=form" method="post" action="{{filename}}">
-		<input type="hidden" name="state" value="{{state}}">
-		<div class="row">
-			<div class="col-md-4">
-				{% include 'functions/alert.twig' with {'selector' : 'creation'} %}
-				<div class="form-group">
-					<label for="title">{% trans "Title" %}</label>
-					<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" placeholder="{{exampletitle}}" required{% if not title_valid %} autofocus{% endif %}>
-					<span class="help-block">{% trans %}The title should be descriptive and unique.{% endtrans %}</span>
-				</div>
-				<div class="form-group">
-					<label for="type">{% trans "Type" %}</label>
-					<select name="type" class="form-control" id="type" required>
-						<option value="" disabled{% if not type %} selected{% endif %}>{% trans "Choose&hellip;"%}</option>
-						<option value="scenario"{% if type == 'scenario' %} selected{% endif %}>{% trans "Scenario" %}</option>
-						<option value="pack"{% if type == 'pack' %} selected{% endif %}>{% trans "Pack" %}</option>
-					</select>
-					<span class="help-block">{% trans %}Scenarios should only be a single file.{% endtrans %}</span>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<div class="form-group">
-					<label for="game">{% trans "Game" %}</label>
-					<div class="row">
-						{% for short, current_game in games %}
-						<div class="col-sm-6 col-md-4">
-							<label class="thumbnail">
-								<img src="{{resources}}/custom/game/{{short}}.png" alt="{{current_game.title}}">
-								<div class="caption">
-									<input type="radio" name="game" value="{{short}}" style="margin-left: auto !important; margin-right: auto !important;" class="center-block" {% if game == short %}checked {% endif %}required>
-								</div>
-							</label>
+	<div class="container">
+		<div class="page-header">
+			<h1>{{ title }}</h1>
+		</div>
+		<form role=form" method="post" action="{{filename}}">
+			<input type="hidden" name="state" value="{{state}}">
+			<div class="row">
+				<div class="col-md-4">
+					{% include 'functions/alert.twig' with {'selector' : 'creation'} %}
+					<div class="form-group">
+						<label for="title">{% trans "Title" %}</label>
+						<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" placeholder="{{exampletitle}}" required{% if not title_valid %} autofocus{% endif %}>
+						<span class="help-block">{% trans %}The title should be descriptive and unique.{% endtrans %}</span>
+					</div>
+					<div class="form-group">
+						<label for="type">{% trans "Type" %}</label>
+						<select name="type" class="form-control" id="type" required>
+							<option value="" disabled{% if not type %} selected{% endif %}>{% trans "Choose&hellip;"%}</option>
+							<option value="scenario"{% if type == 'scenario' %} selected{% endif %}>{% trans "Scenario" %}</option>
+							<option value="pack"{% if type == 'pack' %} selected{% endif %}>{% trans "Pack" %}</option>
+						</select>
+						<span class="help-block">{% trans %}Scenarios should only be a single file.{% endtrans %}</span>
+					</div>
+					<div class="form-group">
+						<label for="game">{% trans "Game" %}</label>
+						<div class="btn-group" data-toggle="buttons">
+							{% for short, current_game in games %}
+								<label class="btn btn-default">
+									<img src="{{resources}}/custom/game/{{short}}.png" alt="{{current_game.title}}">
+									<input type="radio" name="game" value="{{short}}" {% if game == short %}checked {% endif %}required>
+								</label>
+							{% endfor %}
 						</div>
-					    {% endfor %}
+					</div>
+					<div class="form-group">
+						<span class="help-block">{% trans %}All details can be changed before releasing.{% endtrans %}</span>
+						<button type="submit" class="btn btn-lg btn-success">{% trans "Create addon" %}</button>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<button type="submit" class="btn btn-lg btn-success">{% trans "Create addon" %}</button>
-		</div>
-	</form>
-</div>
+		</form>
+	</div>
 {% endblock %}
+
+{% block javascript %}
+	$('[data-toggle=buttons] .btn:has(input:checked)').button('toggle');
+{% endblock%}
