@@ -11,10 +11,10 @@ class Addon extends Model {
 		parent::__construct('addon', array(
 			'owner' => 'string',
 			'short' => 'string',
-			'abbreviation' => 'string',
 			'title' => 'string',
+			'abbreviation' => 'string',
 			'game' => 'int',
-			'updated' => 'int',
+			'type' => 'int',
 			'introduction' => 'text',
 			'description' => 'text',
 			'website' => 'url',
@@ -41,6 +41,8 @@ class Addon extends Model {
 		$short = trim(strtolower($short));
 		if($short) {
 			$this->validateString($short, 4, 30);
+		} else {
+			$short = null;
 		}
 		return $this->setValue('short', $short);
 	}
@@ -79,6 +81,8 @@ class Addon extends Model {
 		$abbreviation = trim(strtolower($abbreviation));
 		if($abbreviation) {
 			$this->validateString($abbreviation, 2, 6);
+		} else {
+			$abbreviation = null;
 		}
 		return $this->setValue('abbreviation', $abbreviation);
 	}
@@ -108,13 +112,12 @@ class Addon extends Model {
 		return ModelFactory::build('Game')->byId($this->getGame());
 	}
 
-	public function setUpdated($updated) {
-		$this->validateNumber($updated);
-		return $this->setValue('updated', $updated);
+	public function setType($type) {
+		return $this->setValue('type', $type);
 	}
 
-	public function getUpdated() {
-		return $this->getValue('updated');
+	public function getType() {
+		return $this->getValue('type');
 	}
 
 	public function setIntroduction($introduction) {
@@ -138,6 +141,8 @@ class Addon extends Model {
 	public function setWebsite($website) {
 		if($website) {
 			$this->validateUrl($website);
+		} else {
+			$website = null;
 		}
 		return $this->setValue('website', $website);
 	}
@@ -149,6 +154,8 @@ class Addon extends Model {
 	public function setBugtracker($bugtracker) {
 		if($bugtracker) {
 			$this->validateUrl($bugtracker);
+		} else {
+			$bugtracker = null;
 		}
 		return $this->setValue('bugtracker', $bugtracker);
 	}

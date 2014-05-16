@@ -42,11 +42,11 @@ CREATE TABLE `comment` (
 CREATE TABLE `addon` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`owner` int(11) NOT NULL,
-	`short` varchar(255) NULL,
+	`short` varchar(255) DEFAULT NULL,
 	`title` varchar(255) NOT NULL,
 	`abbreviation` varchar(10) DEFAULT NULL,
 	`game` int(11) NOT NULL,
-	`updated` int(11) DEFAULT NULL,
+	`type` int(11) NOT NULL,
 	`introduction` text,
 	`description` text,
 	`website` varchar(255) DEFAULT NULL,
