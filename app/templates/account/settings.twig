@@ -25,6 +25,7 @@
 			<h3 id="profiles">{% trans "Links" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
 			<form role=form" method="post">
+				<input type="hidden" name="profiles-form">
 				<input type="hidden" name="state" value="{{state}}">
 				<div class="form-group">
 					<label for="clonkforge">{% trans "Clonk Forge profile" %}</label>
@@ -35,7 +36,7 @@
 					<input type="text" class="form-control" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-default" name="profiles-submit">{% trans "Save links" %}</button>
+					<button type="submit" class="btn btn-default">{% trans "Save links" %}</button>
 				</div>
 			</form>
 		</div>
@@ -44,6 +45,7 @@
 			<h3 id="contact">{% trans "Contact details" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
 			<form role=form" method="post">
+				<input type="hidden" name="contact-form">
 				<input type="hidden" name="state" value="{{state}}">
 				<div class="form-group">
 					<label for="email">{% trans "Email address" %}</label>
@@ -57,13 +59,13 @@
 					<button type="submit" class="btn btn-warning" name="resend">{% trans "Resend confirmation" %}</button>
 					{% endif %}
 				</div>
-			<input type="hidden" name="contact-submit">
 			{% if not activated %}
 			<div class="alert alert-warning">{% trans %}You need to confirm your email address.{% endtrans %}</div>
 			{% endif %}
 			</form>
 			<h3 id="language">{% trans "Language" %}</h3>
 			<form role=form" method="post">
+				<input type="hidden" name="language-form">
 				<input type="hidden" name="state" value="{{state}}">
 				<div class="form-group">
 					<label for="language-setting">{% trans "View site in" %}</label>
@@ -72,7 +74,6 @@
 						<option value="de-DE"{% if language == "de-DE" %} selected{% endif %}>{% trans "German" %}</option>
 					</select>
 				</div>
-				<input type="hidden" name="language-submit">
 				<noscript>
 				<div class="form-group">
 					<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
@@ -83,6 +84,7 @@
 			{% if not show_remove_account %}<p id="remove-confirm-prompt" class="collapse"><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>{% endif %}
 			<div id="remove-account-confirm" class="collapse in">
 				<form role="form" method="post">
+					<input type="hidden" name="remove-account-form">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="alert alert-danger">
 						<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
@@ -95,7 +97,7 @@
 						<input type="password" class="form-control remove-form-element" name="password" required>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-danger remove-form-element" name="remove-account-submit">{% trans "Permanently remove account"%}</button>
+						<button type="submit" class="btn btn-danger remove-form-element">{% trans "Permanently remove account"%}</button>
 					</div>
 					{% include 'functions/alert.twig' with {'selector' : 'remove-account'} %}
 				</form>
@@ -106,6 +108,7 @@
 			<h3 id="password">{% trans "Password" %}</h3>
 			{% include 'functions/alert.twig' with {'selector' : 'password'} %}
 			<form role=form" method="post" id="form-password">
+				<input type="hidden" name="password-form">
 				<input type="hidden" name="state" value="{{state}}">
 				{% if password_exists %}
 				<div class="form-group">
@@ -122,7 +125,7 @@
 					<input type="password" class="form-control" name="password-confirm" id="password-confirm" required>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-default" name="password-submit">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+					<button type="submit" class="btn btn-default">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
 				</div>
 			</form>
 			<h3 id="remote-logout">{% trans "Sessions" %}</h3>
@@ -130,8 +133,9 @@
 			<p id="remote-logout-prompt" class="collapse"><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 			<div class="collapse in" id="remote-logout-confirm">
 				<form method="post" role=form">
+					<input type="hidden" name="remote-logout-form">
 					<input type="hidden" name="state" value="{{state}}">
-					<button type="submit" class="btn btn-warning"  name="remote-logout-submit">{% trans "Log out all other devices" %}</button>
+					<button type="submit" class="btn btn-warning">{% trans "Log out all other devices" %}</button>
 				</form>
 			</div>
 			<h4 id="oauth-services">{% trans "Login services" %}</h4>

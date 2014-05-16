@@ -81,7 +81,7 @@ class Settings extends Presenter {
 
 		$user = $this->session->getUser();
 
-		if(isset($_POST['profiles-submit'])) {
+		if(isset($_POST['profiles-form'])) {
 			$error = false;
 
 			// Clonk Forge profile url
@@ -112,7 +112,7 @@ class Settings extends Presenter {
 			}
 		}
 
-		if(isset($_POST['contact-submit'])) {
+		if(isset($_POST['contact-form'])) {
 			$errors = array();
 
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -145,7 +145,7 @@ class Settings extends Presenter {
 			}
 		}
 
-		if(isset($_POST['language-submit'])) {
+		if(isset($_POST['language-form'])) {
 			$language = filter_input(INPUT_POST, 'language');
 			if($this->localisation->setDisplayLanguage($language)) {
 				$user->setLanguage($language);
@@ -155,14 +155,14 @@ class Settings extends Presenter {
 			}
 		}
 
-		if(isset($_POST['remove-account-submit'])) {
+		if(isset($_POST['remove-account-form'])) {
 			$this->context['show_remove_account'] = true;
 			$password = filter_input(INPUT_POST, 'password');
 
 			$confirm = filter_input(INPUT_POST, 'confirm', FILTER_VALIDATE_BOOLEAN) || false;
 			if($confirm) {
 				if($user->matchPassword($password)) {
-					
+
 				} else {
 					$this->error('remove-account', gettext('Password wrong.'));
 				}
@@ -171,7 +171,7 @@ class Settings extends Presenter {
 			}
 		}
 
-		if(isset($_POST['password-submit'])) {
+		if(isset($_POST['password-form'])) {
 			$has_password = $user->hasPassword();
 			$password_old = filter_input(INPUT_POST, 'password-old');
 			$password_new = filter_input(INPUT_POST, 'password-new');
@@ -200,7 +200,7 @@ class Settings extends Presenter {
 			}
 		}
 
-		if(isset($_POST['remote-logout-submit'])) {
+		if(isset($_POST['remote-logout-form'])) {
 			$user->regenerateSecret();
 			$user->save();
 
