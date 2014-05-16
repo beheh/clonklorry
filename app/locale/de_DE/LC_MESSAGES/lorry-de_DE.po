@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-16 17:11+0100\n"
-"PO-Revision-Date: 2014-05-16 17:14+0100\n"
+"POT-Creation-Date: 2014-05-16 17:16+0100\n"
+"PO-Revision-Date: 2014-05-16 17:17+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -612,10 +612,18 @@ msgstr ""
 "Erweiterungen und Releases abrufen kannst."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:46
+msgid ""
+"<strong>Please note:</strong> The lorry api is not yet final and can change "
+"at any time."
+msgstr ""
+"<strong>Achtung:</strong> Die Lorry-API ist noch nicht fertiggestellt und "
+"kann jederzeit geändert werden."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:50
 msgid "Endpoints"
 msgstr "Endpunkte"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:50
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:54
 msgid ""
 "Most endpoints correspond to the web interface and can therefore be reached "
 "by simply appending <code>.json</code> to the url."
@@ -623,46 +631,46 @@ msgstr ""
 "Die meisten Endpunkte korrespondieren zur Web-Oberfläche und können über das "
 "Anhängen von <code>.json</code> an die URL erreicht werden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:55
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:59
 msgid "Url"
 msgstr "URL"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:57
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:61
 #: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:248
 msgid "Description"
 msgstr "Beschreibung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:59
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:63
 msgid "Typical result"
 msgstr "Typisches Ergebnis"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:63
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:67
 msgid "Returns a list of addons for the queried game."
 msgstr "Gibt eine Liste von Erweiterungen für das Spiel zurück."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:67
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:71
 msgid "Returns details about the queried addon."
 msgstr "Gibt Details über die Erweiterung zurück."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:72
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:76
 msgid "Objects"
 msgstr "Objekte"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:77
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:81
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:78
 #: /home/benedict/public_html/lorry/app/cache/twig/e2/6e/4779df6f411580b6359bd9e5203e76abd7190ea76e3b100d1d863710ec4e.php:92
 msgid "Type"
 msgstr "Typ"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:79
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:83
 msgid "Structure"
 msgstr "Struktur"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:86
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:90
 msgid "Error handling"
 msgstr "Fehlerbehandlung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:90
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:94
 msgid ""
 "You can handle errors by checking for the <code>error</code> field in the "
 "response."
@@ -670,13 +678,17 @@ msgstr ""
 "Fehler können behandelt werden, indem die Antwort auf <code>error</code>-"
 "Feld überprüft wird."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:92
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:96
 msgid ""
 "Additionally, a human-readable message may be given in a <code>message</"
 "code> field."
 msgstr ""
 "Weiterhin kann eine menschenlesbare Nachricht in einem <code>message</code>-"
 "Feld gegeben sein."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:100
+msgid "Examples"
+msgstr "Beispiele"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/3d/91/279dc89aee991b90296a3ca7c62f5bb72ca1a076c4020df52c0ef3b4dff3.php:37
 msgid "Unreleased"
