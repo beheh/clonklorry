@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-16 17:16+0100\n"
-"PO-Revision-Date: 2014-05-16 17:17+0100\n"
+"POT-Creation-Date: 2014-05-16 17:18+0100\n"
+"PO-Revision-Date: 2014-05-16 17:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -600,8 +600,8 @@ msgid "Login services"
 msgstr "Anmeldedienste"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:25
-msgid "Lorry REST API"
-msgstr "Lorry REST API"
+msgid "Lorry API"
+msgstr "Lorry-API"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/33/09/c863ff39ad5c4e7f749fc86b6e11b98ec495410212fb3cf92fa91b09c0eb.php:42
 msgid ""
