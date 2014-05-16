@@ -55,7 +55,7 @@
 				<h2>{% trans %}Addon{% endtrans	%}</h2>
 				<p>{% trans %}Released on the {{releaseday}}.{% endtrans %}</p>
 				{% if modify %}
-					<p>
+					<p class="hidden-print">
 						<a href="{{base}}/publish/{{addon.id}}" class="btn btn-block btn-default">{% trans %}Edit addon{% endtrans %}</a>
 						<a href="{{base}}/publish/{{addon.id}}/{{version}}" class="btn btn-block btn-default">{% trans %}Edit release{% endtrans %}</a>
 					</p>
