@@ -53,7 +53,7 @@ CREATE TABLE `addon` (
 	`bugtracker` varchar(255) DEFAULT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `short` (`short`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `release` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
