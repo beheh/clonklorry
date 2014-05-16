@@ -31,7 +31,7 @@
 						<div class="btn-group" data-toggle="buttons">
 							{% for short, current_game in games %}
 								<label class="btn btn-default">
-									<img src="{{resources}}/custom/game/{{short}}.png" alt="{{current_game.title}}">
+									<img src="{{resources}}/custom/game/{{short}}.png" alt="{{current_game.title}}" class="img-responsive">
 									<input type="radio" name="game" value="{{short}}" {% if game == short %}checked {% endif %}required>
 								</label>
 							{% endfor %}
