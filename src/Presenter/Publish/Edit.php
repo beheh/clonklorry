@@ -75,6 +75,15 @@ class Edit extends Presenter {
 			$this->context['description'] = $addon->getDescription();
 		}
 
+		if(!isset($this->context['website'])) {
+			$this->context['website'] = $addon->getWebsite();
+		}
+
+		if(!isset($this->context['bugtracker'])) {
+			$this->context['bugtracker'] = $addon->getBugtracker();
+		}
+
+
 		/* Releases */
 
 		$releases = ModelFactory::build('Release')->all()->order('version')->byAddon($addon->getId());
@@ -98,7 +107,7 @@ class Edit extends Presenter {
 
 		$addon = Edit::getAddon($id, $this->session->getUser());
 
-		if(isset($_POST['addon-submit'])) {
+		if(isset($_POST['addon-form'])) {
 			$errors = array();
 
 			$title = trim(filter_input(INPUT_POST, 'title'));
@@ -149,15 +158,15 @@ class Edit extends Presenter {
 			}
 		}
 
-		if(isset($_POST['presentation-submit'])) {
+		if(isset($_POST['presentation-form'])) {
 			$errors = array();
 
 			$introduction = trim(filter_input(INPUT_POST, 'introduction'));
 			try {
 				$addon->setIntroduction($introduction);
-			} catch(ModelValueInvalidException $e) {
+			} catch(ModelValueInvalidException $ex) {
 				$this->context['introduction'] = $introduction;
-				$errors[] = sprintf(gettext('Introdution is %s.'), $e->getMessage());
+				$errors[] = sprintf(gettext('Introdution is %s.'), $ex->getMessage());
 			}
 
 			$description = trim(filter_input(INPUT_POST, 'description'));
@@ -165,7 +174,23 @@ class Edit extends Presenter {
 				$addon->setDescription($description);
 			} catch(ModelValueInvalidException $ex) {
 				$this->context['description'] = $description;
-				$errors[] = sprintf(gettext('Description is %s.'), $e->getMessage());
+				$errors[] = sprintf(gettext('Description is %s.'), $ex->getMessage());
+			}
+
+			$website = trim(filter_input(INPUT_POST, 'website-url'));
+			try {
+				$addon->setWebsite($website);
+			} catch(ModelValueInvalidException $ex) {
+				$this->context['website'] = $website;
+				$errors[] = sprintf(gettext('Website is %s.'), $ex->getMessage());
+			}
+
+			$bugtracker = trim(filter_input(INPUT_POST, 'bugtracker-url'));
+			try {
+				$addon->setBugtracker($bugtracker);
+			} catch(ModelValueInvalidException $ex) {
+				$this->context['bugtracker'] = $bugtracker;
+				$errors[] = sprintf(gettext('Bugtracker is %s.'), $ex->getMessage());
 			}
 
 			if(empty($errors)) {
@@ -178,7 +203,7 @@ class Edit extends Presenter {
 			}
 		}
 
-		if(isset($_POST['release-submit'])) {
+		if(isset($_POST['release-form'])) {
 			$version = ltrim(trim(filter_input(INPUT_POST, 'version')), 'v');
 
 			$release = ModelFactory::build('Release');

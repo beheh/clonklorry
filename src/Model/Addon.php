@@ -121,7 +121,11 @@ class Addon extends Model {
 	}
 
 	public function setIntroduction($introduction) {
-		$this->validateString($introduction, 50, 150);
+		if($introduction) {
+			$this->validateString($introduction, 50, 150);
+		} else {
+			$introduction = null;
+		}
 		return $this->setValue('introduction', $introduction);
 	}
 
@@ -130,7 +134,11 @@ class Addon extends Model {
 	}
 
 	public function setDescription($description) {
-		$this->validateString($description, 0, 4096);
+		if($description) {
+			$this->validateString($description, 0, 4096);
+		} else {
+			$description = null;
+		}
 		return $this->setValue('description', $description);
 	}
 
