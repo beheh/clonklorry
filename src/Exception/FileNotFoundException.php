@@ -11,7 +11,7 @@ class FileNotFoundException extends Exception {
 	}
 
 	public function getApiType() {
-		return 'notfound';
+		return 'filenotfound';
 	}
 
 	public function getHttpCode() {

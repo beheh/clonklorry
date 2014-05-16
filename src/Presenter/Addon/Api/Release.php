@@ -1,12 +1,12 @@
 <?php
 
-namespace Lorry\Presenter\Addon;
+namespace Lorry\Presenter\Addon\Api;
 
 use Lorry\ApiPresenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
-class ReleaseApi extends ApiPresenter {
+class Release extends ApiPresenter {
 
 	public function get($gamename, $addonname, $version = 'latest') {
 		$game = ModelFactory::build('Game')->byShort($gamename);

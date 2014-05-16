@@ -41,4 +41,8 @@ class Game extends Model {
 		return $this->getTitle().'';
 	}
 
+	public function forApi() {
+		return array('id' => $this->getShort(), 'title' => $this->getTitle());
+	}
+
 }

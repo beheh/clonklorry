@@ -1,12 +1,12 @@
 <?php
 
-namespace Lorry\Presenter\Addon;
+namespace Lorry\Presenter\Addon\Api;
 
 use Lorry\ApiPresenter;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\ModelFactory;
 
-class GameApi extends ApiPresenter {
+class Game extends ApiPresenter {
 
 	public function get($name) {
 		$game = ModelFactory::build('Game')->byShort($name);
@@ -24,11 +24,13 @@ class GameApi extends ApiPresenter {
 		}
 
 		$result = array();
-		$result['addons']  = $addons;
-		if(!isset($_GET['headless'])) {
-			$addons = array('addons' => $addons);
+		if(isset($_GET['headless'])) {
+			$result = $addons;
+		} else {
+			$result['game'] = $game->forApi();
+			$result['addons'] = $addons;
 		}
-		$this->display($addons);
+		$this->display($result);
 	}
 
 }

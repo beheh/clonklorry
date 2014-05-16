@@ -179,8 +179,7 @@ class Addon extends Model {
 	public function forApi($detailed = false) {
 		$result = array();
 
-		$result['identifier'] = $this->getShort();
-		$result['gameIdentifier'] = $this->fetchGame()->getShort();
+		$result['id'] = $this->getShort();
 		$result['title'] = $this->getTitle();
 		if($this->getAbbreviation()) {
 			$result['abbreviation'] = $this->getAbbreviation();
