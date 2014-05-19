@@ -1,86 +1,88 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>{{ username }}
-			{% if administrator or moderator or banned %}
-			<small>
-				{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
-				{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
+		<div class="container">
+			<h1>{{ username }}
+				{% if administrator or moderator or banned %}
+					<small>
+						{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
+						{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
+						{% endif %}
+						{% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
+						{% endif %}
+					</small>
 				{% endif %}
-				{% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
-				{% endif %}
-			</small>
-			{% endif %}
-		</h1>
+			</h1>
+		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-4">
-		<h2>{% trans %}User{% endtrans %}</h2>
-		<ul class="list-group">
-		{% if registration %}
-			<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-fire"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
-		{% endif %}
-		{% if username == "B_E" %}
-			<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><span class="glyphicon glyphicon-leaf"></span> <a href="{{base}}/about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
-		{% else %}
-			<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Participant in Lorry Alpha{% endtrans %}</li>
-		{% endif %}
-		{% if username == "Nachtfalter" or username == "Luchs" or username == "Nachtschatten" or username == "Tyron" %}
-			<li class="list-group-item" title="{% trans %}Built something awesome for the community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
-		{% endif %}
-		</ul>
-		{% if clonkforge or github %}
-				<h3>{% trans %}Links{% endtrans %}</h3>
-				<div class="list-group">
-				{% if clonkforge %}<a class="list-group-item" href="{{clonkforge.url}}">{{clonkforge.profile}}</a>{% endif %}
-				{% if github %}<a class="list-group-item"  href="{{github.url}}">{{github.profile}}</a>{% endif %}
-				</div>
-		{% endif %}
-		{% if not self and user_administrator or (user_moderator and moderator == false) %}
-			<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
-			<p>
-				<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
-				<a href="#ban" data-toggle="collapse" data-target="#collapse-ban" class="btn btn-danger">{% trans %}Ban user{% endtrans %}</a>
-			</p>
-			<div id="collapse-ban" class="collapse{% if alerts.ban %} in{% endif %}">
-				<h3 id="ban">{% trans %}Ban user{% endtrans %}</h3>
-			{% include 'functions/alert.twig' with {'selector' : 'ban'} %}
-				<form role="form" method="post" action="{{filename}}?ban">
-					<div class="form-group">
-						<label for="reason">{% trans "Reason" %}</label>
-						<input type="text" class="form-control" name="reason" id="reason" value="{{ban_reason}}" required>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>{% trans %}User{% endtrans %}</h2>
+				<ul class="list-group">
+					{% if registration %}
+						<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-fire"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
+						{% endif %}
+						{% if username == "B_E" %}
+						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><span class="glyphicon glyphicon-leaf"></span> <a href="{{base}}/about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
+						{% else %}
+						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Participant in Lorry Alpha{% endtrans %}</li>
+						{% endif %}
+						{% if username == "Nachtfalter" or username == "Luchs" or username == "Nachtschatten" or username == "Tyron" %}
+						<li class="list-group-item" title="{% trans %}Built something awesome for the community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
+						{% endif %}
+				</ul>
+				{% if clonkforge or github %}
+					<h3>{% trans %}Links{% endtrans %}</h3>
+					<div class="list-group">
+						{% if clonkforge %}<a class="list-group-item" href="{{clonkforge.url}}">{{clonkforge.profile}}</a>{% endif %}
+						{% if github %}<a class="list-group-item"  href="{{github.url}}">{{github.profile}}</a>{% endif %}
 					</div>
-					<div class="form-group">
-						<label for="duration">{% trans "Duration" %}</label>
-						<select class="form-control" name="duration" id="duration" required>
-							<option value="">{% trans %}Choose a duration&hellip;{% endtrans %}</option>
-							<option value="1d">{% trans %}One day{% endtrans %}</option>
-							<option value="1w">{% trans %}One Week{% endtrans %}</option>
-							<option value="infinite">{% trans %}Infinitely{% endtrans %}</option>
-						</select>
+				{% endif %}
+				{% if not self and user_administrator or (user_moderator and moderator == false) %}
+					<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
+					<p>
+						<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
+						<a href="#ban" data-toggle="collapse" data-target="#collapse-ban" class="btn btn-danger">{% trans %}Ban user{% endtrans %}</a>
+					</p>
+					<div id="collapse-ban" class="collapse{% if alerts.ban %} in{% endif %}">
+						<h3 id="ban">{% trans %}Ban user{% endtrans %}</h3>
+						{% include 'functions/alert.twig' with {'selector' : 'ban'} %}
+						<form role="form" method="post" action="{{filename}}?ban">
+							<div class="form-group">
+								<label for="reason">{% trans "Reason" %}</label>
+								<input type="text" class="form-control" name="reason" id="reason" value="{{ban_reason}}" required>
+							</div>
+							<div class="form-group">
+								<label for="duration">{% trans "Duration" %}</label>
+								<select class="form-control" name="duration" id="duration" required>
+									<option value="">{% trans %}Choose a duration&hellip;{% endtrans %}</option>
+									<option value="1d">{% trans %}One day{% endtrans %}</option>
+									<option value="1w">{% trans %}One Week{% endtrans %}</option>
+									<option value="infinite">{% trans %}Infinitely{% endtrans %}</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger">{% trans %}Ban now{% endtrans %}</button>
+							</div>
+						</form>
 					</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-danger">{% trans %}Ban now{% endtrans %}</button>
-					</div>
-				</form>
+				{% endif %}
 			</div>
-		{% endif %}
-		</div>
-		<div class="col-md-8">
-			<h2>{% trans %}Activity{% endtrans %}</h2>
-			<h3>{% trans %}Addons{% endtrans %}</h3>
-		{% if addons %}
-			<ul class="media-list">
-		{% for addon in addons %}
-			{% include "functions/addon.twig" %}
-		{% endfor %}
-			</ul>
-		{% else %}
-			<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
-		{% endif %}
+			<div class="col-md-8">
+				<h2>{% trans %}Activity{% endtrans %}</h2>
+				<h3>{% trans %}Addons{% endtrans %}</h3>
+				{% if addons %}
+					<ul class="media-list">
+						{% for addon in addons %}
+							{% include "functions/addon.twig" %}
+						{% endfor %}
+					</ul>
+				{% else %}
+					<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
+				{% endif %}
+			</div>
 		</div>
 	</div>
-</div>
 {% endblock %}

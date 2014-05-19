@@ -3,10 +3,12 @@
 {% set title = 'New addon'|trans %}
 
 {% block content %}
-	<div class="container">
-		<div class="page-header">
-			<h1>{{ title }}</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1>{{title}}</h1>
 		</div>
+	</div>
+	<div class="container">
 		<form role=form" method="post" action="{{filename}}">
 			<input type="hidden" name="state" value="{{state}}">
 			<div class="row">

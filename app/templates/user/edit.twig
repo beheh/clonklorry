@@ -1,96 +1,98 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>
-			<a href="{{base}}/users/{{username}}">{{username}}</a>
-			<small><span class="glyphicon glyphicon-pencil"></span></small>
-		</h1>
+		<div class="container">
+			<h1>
+				<a href="{{base}}/users/{{username}}">{{username}}</a>
+				<small><span class="glyphicon glyphicon-pencil"></span></small>
+			</h1>
+		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<h2>{% trans "Account" %}</h2>
-			<div class="row">
-				<div class="col-md-6">
-					{% include 'functions/alert.twig' with {'selector' : 'username'} %}
-					<form role=form" method="post">
-						<input type="hidden" name="state" value="{{state}}">
-						<div class="form-group">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h2>{% trans "Account" %}</h2>
+				<div class="row">
+					<div class="col-md-6">
+						{% include 'functions/alert.twig' with {'selector' : 'username'} %}
+						<form role=form" method="post">
+							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
-								<label for="username">{% trans "Username" %}</label>
-								<input type="text" class="form-control" name="username" id="username" value="{{username_edit}}" required>
+								<div class="form-group">
+									<label for="username">{% trans "Username" %}</label>
+									<input type="text" class="form-control" name="username" id="username" value="{{username_edit}}" required>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-default" name="change-username-submit">{% trans "Change username" %}</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-6">
+						{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+						<form role=form" method="post">
+							<input type="hidden" name="state" value="{{state}}">
+							<div class="form-group">
+								<label for="email">{% trans "Email address" %}</label>
+								<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="require-activation" value="yes"{% if require_activation %} checked{% endif %}> {% trans %}Email address has to be activated{% endtrans %}
+								</label>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-default" name="change-username-submit">{% trans "Change username" %}</button>
+								<button type="submit" class="btn btn-default" name="change-contact-submit">{% trans "Change email address" %}</button>
 							</div>
-						</div>
-					</form>
-				</div>
-				<div class="col-md-6">
-					{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-					<form role=form" method="post">
-						<input type="hidden" name="state" value="{{state}}">
-						<div class="form-group">
-							<label for="email">{% trans "Email address" %}</label>
-							<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
-						</div>
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" name="require-activation" value="yes"{% if require_activation %} checked{% endif %}> {% trans %}Email address has to be activated{% endtrans %}
-							</label>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-default" name="change-contact-submit">{% trans "Change email address" %}</button>
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
-		{% if not self %}
-		<div class="col-md-4">
-			<h2 id="security">{% trans "Support" %}</h2>
-			<label class="checkbox"><input type="checkbox" id="support-confirm"> {% trans %}Please confirm this user should be moderated.{% endtrans %}</label>
-			<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>
-			<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset login services{% endtrans %}</a>
-			{% if user_administrator %}
-			<label class="checkbox"><input type="checkbox" id="remove-confirm"> {% trans %}Please confirm this user should be removed.{% endtrans %}</label>
-			<button type="submit" class="btn btn-danger btn-block" id="remove-button" disabled="">Konto permanent entfernen</button>
+			{% if not self %}
+				<div class="col-md-4">
+					<h2 id="security">{% trans "Support" %}</h2>
+					<label class="checkbox"><input type="checkbox" id="support-confirm"> {% trans %}Please confirm this user should be moderated.{% endtrans %}</label>
+					<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>
+					<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset login services{% endtrans %}</a>
+					{% if user_administrator %}
+						<label class="checkbox"><input type="checkbox" id="remove-confirm"> {% trans %}Please confirm this user should be removed.{% endtrans %}</label>
+						<button type="submit" class="btn btn-danger btn-block" id="remove-button" disabled="">Konto permanent entfernen</button>
+					{% endif %}
+				</div>
 			{% endif %}
 		</div>
-		{% endif %}
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h2>{% trans %}Moderation protocol{% endtrans %}</h2>
-			<div class="alert alert-info">{% trans %}This account has not been moderated in the past.{% endtrans %}</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>{% trans %}Moderation protocol{% endtrans %}</h2>
+				<div class="alert alert-info">{% trans %}This account has not been moderated in the past.{% endtrans %}</div>
+			</div>
 		</div>
 	</div>
-</div>
 
 {% endblock %}
 
 {% block javascript %}
-{{ parent() }}
+	{{ parent() }}
 
-$('#remove-confirm').prop('checked', false);
+	$('#remove-confirm').prop('checked', false);
 
-$('#remove-confirm').change(function() {
-if($(this).prop('checked')) {
-$('#remove-button').removeAttr('disabled');
-} else {
-$('#remove-button').attr('disabled', true);
-}
-});
+	$('#remove-confirm').change(function() {
+	if($(this).prop('checked')) {
+	$('#remove-button').removeAttr('disabled');
+	} else {
+	$('#remove-button').attr('disabled', true);
+	}
+	});
 
 
-$('#support-confirm').prop('checked', false);
+	$('#support-confirm').prop('checked', false);
 
-$('#support-confirm').change(function() {
-if($(this).prop('checked')) {
-$('.support-button').removeAttr('disabled');
-} else {
-$('.support-button').attr('disabled', true);
-}
-});
+	$('#support-confirm').change(function() {
+	if($(this).prop('checked')) {
+	$('.support-button').removeAttr('disabled');
+	} else {
+	$('.support-button').attr('disabled', true);
+	}
+	});
 {% endblock %}

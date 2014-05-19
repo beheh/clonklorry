@@ -3,12 +3,11 @@
 {% set title = 'Publish'|trans %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>{{ title }} <small>{{version}}</small></h1>
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
 	</div>
-</div>
-<div class="jumbotron">
 	<div class="container">
 		<h2>{% trans %}This is the publishing portal{% endtrans %}</h2>
 		<p>{% trans %}After registering you can easily publish your addons here and distribute them via Lorry.{% endtrans %}</p>

@@ -3,43 +3,46 @@
 {% set title = 'Contact us'|trans %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>{{ title }}</h1>
-	</div>
-	<div class="row">
-		<div class="col-md-7">
-			<h2>{% trans %}We &hearts; feedback{% endtrans %}</h2>
-			<p>{% trans %}We here are fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
-			<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
-			<form method="post">
-				{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-				<div class="form-group">
-					<textarea class="form-control contact-form" name="feedback" rows="6" required></textarea>
-				</div>
-				<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
-			{% if by %}
-				{% set sender = by|escape('html') %}
-				<span class="btn "disabled>{% trans %}Will be sent as "{{sender}}".{% endtrans %}</span>
-			{% endif %}
-			</form>
-		</div>
-		<div class="col-md-5">
-			<h2>{% trans %}Legal issues{% endtrans %}</h2>
-		{% if site_trademark %}
-			<p>{{ site_trademark|raw }}.</p>
-		{% endif %}
-			{% set legalmail = "<a href=\"mailto:" ~ legal_address ~ "\">" ~ legal_address ~ "</a>" %}
-			<p>{% trans %}If you have any legal issues please do not hesitate to contact us either via our feedback form or via {{legalmail}}. That way we are able to quickly resolve to any problems that might occur or remove any content which infringes your rights.{% endtrans %}</p>
-			<p>{% trans %}We are not responsible for the content of outgoing links. User generated content does not necessarily reflect the views of the site owners.{% endtrans %}</p>
-		{% if address %}
-			<hr>
-			<h3>{% trans %}Responsible for the content{% endtrans %}</h3>
-			<address>
-			{{ address|raw }}
-			</address>
-		{% endif %}
+		<div class="container">
+			<h1>{{title}}</h1>
 		</div>
 	</div>
-</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<h2>{% trans %}We &hearts; feedback{% endtrans %}</h2>
+				<p>{% trans %}We here are fans of Clonk. We built this site as members of our community for the game and want to do our best.{% endtrans %}</p>
+				<p>{% trans %}If you have any wishes or should encounter any problem, do not hesitate to contact us:{% endtrans %}</p>
+				<form method="post">
+					{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+					<div class="form-group">
+						<textarea class="form-control contact-form" name="feedback" rows="6" required></textarea>
+					</div>
+					<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
+					{% if by %}
+						{% set sender = by|escape('html') %}
+						<span class="btn "disabled>{% trans %}Will be sent as "{{sender}}".{% endtrans %}</span>
+					{% endif %}
+				</form>
+			</div>
+			<div class="col-md-5">
+				<h2>{% trans %}Legal{% endtrans %}</h2>
+				<h3>{% trans %}Disclaimer{% endtrans %}</h3>
+				{% set legalmail = "<a href=\"mailto:" ~ legal_address ~ "\">" ~ legal_address ~ "</a>" %}
+				<p>{% trans %}If you have any legal issues please do not hesitate to contact us either via our feedback form or via {{legalmail}}. That way we are able to quickly resolve to any problems that might occur or remove any content which infringes your rights.{% endtrans %}</p>
+				<p>{% trans %}We are not responsible for the content of outgoing links or user generated content. User generated content does not necessarily reflect the view of the site owners.{% endtrans %}</p>
+				{% if site_trademark %}
+				<h3>{% trans %}Trademarks{% endtrans %}</h3>
+				<p>{{ site_trademark|raw }}.</p>
+				{% endif %}
+				{% if address %}
+				<h3>{% trans %}Site owner{% endtrans %}</h3>
+				<address>
+					{{ address|raw }}
+				</address>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 {% endblock %}

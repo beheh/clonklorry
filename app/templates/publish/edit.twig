@@ -1,15 +1,16 @@
 {% extends 'root.twig' %}
 
 {% block content %}
+	<div class="page-header">
+		<div class="container">
+			<h1>{{addontitle}} <small><span class="glyphicon glyphicon-pencil"></span></small></h1>
+		</div>
+	</div>
 	<div class="container">
 		<div class="page-header">
-			<h1>
-				{{addontitle}}
-				<small><span class="glyphicon glyphicon-pencil"></span></small>
-			</h1>
 		</div>
 		<noscript>
-			<div class="alert alert-danger">{% trans %}Javascript needs to be activated in order to edit addons and releases.{% endtrans %}</div>
+		<div class="alert alert-danger">{% trans %}Javascript needs to be activated in order to edit addons and releases.{% endtrans %}</div>
 		</noscript>
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#addon" data-toggle="tab">{% trans "Addon" %}</a></li>
@@ -47,12 +48,12 @@
 						<div class="col-lg-4">
 
 						</div>
-							<div class="col-lg-4">
+						<div class="col-lg-4">
 							<div class="form-group">
 								<label for="identifier">{%trans "Identifier" %}</label>
 								<input type="text" class="form-control" name="identifier" id="identifier" value="{{identifier}}" placeholder="{{identifier_proposal}}">
 								<span class="help-block">{% trans %}Will be used in download url, ideally your filename.<br>
-								Examples: moderncombat, hazard, metalmagic.{% endtrans %}</span>
+									Examples: moderncombat, hazard, metalmagic.{% endtrans %}</span>
 							</div>
 							<div class="form-group">
 								<label for="title">{%trans "Abbreviation" %}</label>
@@ -188,16 +189,16 @@
 										{% endif %}
 									{% endif %}
 								</a>
-								{% else %}
-									<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
-									{% endfor %}
-									</div>
-								</div>
-							</div>
+							{% else %}
+								<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
-				{% endblock %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
 
 {% block javascript %}
 	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});

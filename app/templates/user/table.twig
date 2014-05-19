@@ -3,26 +3,27 @@
 {% set title = 'Users'|trans %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>{{ title }}</h1>
+		<div class="container">
+			<h1>{{ title }}</h1>
+		</div>
 	</div>
 	{% if users %}
-	<ul class="list-group">
-		{% for user in users %}
-		<li class="list-group-item">
-			{% include "functions/user.twig" %}
-		</li>
-		{% endfor %}
-	</ul>
-</div>
+		<div class="container">
+			<ul class="list-group">
+				{% for user in users %}
+					<li class="list-group-item">
+						{% include "functions/user.twig" %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
 	{% else %}
-</div>
-<div class="jumbotron">
-	<div class="container">
-		<h1>{% trans %}No matching users{% endtrans %}</h1>
-		<p>{% trans %}No user currently matches your filtering critera.{% endtrans %}</p>
-	</div>
-</div>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{% trans %}No matching users{% endtrans %}</h1>
+				<p>{% trans %}No user currently matches your filtering critera.{% endtrans %}</p>
+			</div>
+		</div>
 	{% endif %}
 {% endblock %}

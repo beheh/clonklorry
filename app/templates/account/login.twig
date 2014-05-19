@@ -1,70 +1,71 @@
 {% extends 'root.twig' %}
 
 {% set title %}
-{% trans %}Login to {{brand}}{% endtrans %}
+	{% trans %}Login to {{brand}}{% endtrans %}
 {% endset %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>{% trans 'Login' %}</h1>
+		<div class="container">
+			<h1>{% trans 'Login' %}</h1>
+		</div>
 	</div>
-	<div class="row" id="login">
-		<div class="col-md-4">
-		{% include 'functions/alert.twig' with {'selector' : 'login'} %}
-			<form id="form-login" method="post" role="form">
-				<div class="form-group">
-					<label for="username">{% trans "Username" %}</label>
-					<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
-				</div>
-				<div class="form-group">
-					<label for="password">{% trans "Password" %}</label>
-					<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" {% if username and username_exists %} autofocus{% endif %} required>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
-					</label>
-				</div>
-				<button class="btn btn-lg btn-primary" type="submit">{% trans "Login" %}</button>
-				{% if not (email or email_visible) %}
-				<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">
-					{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}
-				</a>{% endif %}
-			</form>
-			<hr>
-			<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
-				<h4>{% if email_visible and (forgot_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
-			{% include 'functions/alert.twig' with {'selector' : 'email'} %}
-				<form method="post" role="form">
-					{% if username %}<input type="hidden" name="forgot_password" value="yes">{% endif %}
+	<div class="container">
+		<div class="row" id="login">
+			<div class="col-md-4">
+				{% include 'functions/alert.twig' with {'selector' : 'login'} %}
+				<form id="form-login" method="post" role="form">
 					<div class="form-group">
-						<label for="email">{% trans "Email address" %}</label>
-						<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
+						<label for="username">{% trans "Username" %}</label>
+						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
 					</div>
-					<button class="btn btn-primary" type="submit" name="email-submit">{% trans "Send one-time login" %}</button>
+					<div class="form-group">
+						<label for="password">{% trans "Password" %}</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" {% if username and username_exists %} autofocus{% endif %} required>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="remember" value="yes"{% if remember %} checked{% endif %}> {% trans "Remember on this device" %}
+						</label>
+					</div>
+					<button class="btn btn-lg btn-primary" type="submit">{% trans "Login" %}</button>
+					{% if not (email or email_visible) %}
+						<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>
+					{% endif %}
 				</form>
 				<hr>
+				<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
+					<h4>{% if email_visible and (forgot_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
+					{% include 'functions/alert.twig' with {'selector' : 'email'} %}
+					<form method="post" role="form">
+						{% if username %}<input type="hidden" name="forgot_password" value="yes">{% endif %}
+						<div class="form-group">
+							<label for="email">{% trans "Email address" %}</label>
+							<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
+						</div>
+						<button class="btn btn-primary" type="submit" name="email-submit">{% trans "Send one-time login" %}</button>
+					</form>
+					<hr>
+				</div>
+				<div class="social">
+					<h4>{% trans %}Login services{% endtrans %}</h4>
+					{% include 'functions/oauth.twig' %}
+				</div>
 			</div>
-			<div class="social">
-				<h4>{% trans %}Login services{% endtrans %}</h4>
-			{% include 'functions/oauth.twig' %}
+			<div class="col-md-8">
+				<hr class="visible-xs">
+				<h2>{% trans %}Welcome back!{% endtrans %}</h2>
+				<p class="lead">{% trans %}Nice to see you again. Have you visited these other great Clonk sites yet?{% endtrans %}</p>
+				<ul class="list-inline">
+					<li><a href="http://openclonk.org">openclonk.org</a></li>
+					<li><a href="https://clonkspot.org">Clonkspot</a></li>
+					<li><a href="http://clonkforge.net">Clonk Forge</a></li>
+				</ul>
+				<hr>
+				<h3>{% trans %}No account yet?{% endtrans %}</h3>
+				<p>{% trans %}Registering takes only a few moments and allows you to participate in the Clonk community.{% endtrans %}</p>
+				<p><a href="{{base}}/register{% if returnto %}?returnto={{returnto}}{% endif %}" class="btn btn-md btn-success">{% trans %}Register now{% endtrans %}</a></p>
 			</div>
-		</div>
-		<div class="col-md-8">
-			<hr class="visible-xs">
-			<h2>{% trans %}Welcome back!{% endtrans %}</h2>
-			<p class="lead">{% trans %}Nice to see you again. Have you visited these other great Clonk sites yet?{% endtrans %}</p>
-			<ul class="list-inline">
-				<li><a href="http://openclonk.org">openclonk.org</a></li>
-				<li><a href="https://clonkspot.org">Clonkspot</a></li>
-				<li><a href="http://clonkforge.net">Clonk Forge</a></li>
-			</ul>
-			<hr>
-			<h3>{% trans %}No account yet?{% endtrans %}</h3>
-			<p>{% trans %}Registering takes only a few moments and allows you to participate in the Clonk community.{% endtrans %}</p>
-			<p><a href="{{base}}/register{% if returnto %}?returnto={{returnto}}{% endif %}" class="btn btn-md btn-success">{% trans %}Register now{% endtrans %}</a></p>
 		</div>
 	</div>
-</div>
 {% endblock %}

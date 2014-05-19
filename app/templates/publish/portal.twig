@@ -3,44 +3,43 @@
 {% set title = 'My addons'|trans %}
 
 {% block content %}
-<div class="container">
-{% if addons %}
 	<div class="page-header">
-		<h1>{{ title }}</h1>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			{% include 'functions/alert.twig' with {'selector' : 'addons'} %}
-			<ul class="media-list addons-small">
-				{% for addon in addons %}
-				<li class="media media-addon">
-					<div class="pull-left">
-						{% if false %}<a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{% endif %}<img class="media-object" src="http://placehold.it/76x57">{% if false %}</a>{% endif %}
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">{{addon.title}}</h4>
-						{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title}%}
-						<p>
-							<a href="{{filename}}/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
-							<a href="{{filename}}/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Edit releases{% endtrans %}</a>
-						</p>
-					</div>
-				</li>
-				{% endfor %}
-			</ul>
+		<div class="container">
+			<h1>{{title}}</h1>
 		</div>
 	</div>
-{% else %}
-	<div class="page-header">
-		<h1>{{ title }}</h1>
-	</div>
-</div>
-<div class="jumbotron">
-	<div class="container">
-		<h2>{% trans %}Welcome to the publishing portal!{% endtrans %}</h2>
-		<p>{% trans %}Here you can publish your addons and make them available to your fans. Click the button below to get started.{% endtrans %}</p>
-		<p><a href="{{base}}/create" class="btn btn-lg btn-success">{% trans %}Create a new addon{% endtrans %}</a></p>
-	</div>
-{% endif %}
-</div>
+	{% if addons %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					{% include 'functions/alert.twig' with {'selector' : 'addons'} %}
+					<ul class="media-list addons-small">
+						{% for addon in addons %}
+							<li class="media media-addon">
+								<div class="pull-left">
+									{% if false %}<a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{% endif %}<img class="media-object" src="http://placehold.it/76x57">{% if false %}</a>{% endif %}
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">{{addon.title}}</h4>
+									{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title}%}
+									<p>
+										<a href="{{filename}}/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
+										<a href="{{filename}}/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Edit releases{% endtrans %}</a>
+									</p>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<div class="jumbotron">
+			<div class="container">
+				<h2>{% trans %}Welcome to the publishing portal!{% endtrans %}</h2>
+				<p>{% trans %}Here you can publish your addons and make them available to your fans. Click the button below to get started.{% endtrans %}</p>
+				<p><a href="{{base}}/create" class="btn btn-lg btn-success">{% trans %}Create a new addon{% endtrans %}</a></p>
+			</div>
+		</div>
+	{% endif %}
 {% endblock %}

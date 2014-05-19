@@ -3,29 +3,31 @@
 {% set title = 'Addons'|trans %}
 
 {% block content %}
-<div class="container">
 	<div class="page-header">
-		<h1>{{ title }}</h1>
-	</div>
-	{% if games %}
-	<div class="row">
-	{% for game in games %}
-		<div class="col-md-4">
-			<h3>{{game.title}}</h3>
-			<p><img src="{{resources}}/custom/game/{{game.short}}.png" alt="{{game.title}}"></p>
-			<p><a href="{{base}}/addons/{{game.short}}" class="btn btn-primary">{% trans %}View the addons{% endtrans %}</a></p>
+		<div class="container">
+			<h1>{{title}}</h1>
 		</div>
-	{% endfor %}
 	</div>
-</div>
-{% else %}
-</div>
-<div class="jumbotron">
 	<div class="container">
-		<a href="#"><img src="{{resources}}/custom/game/{{short}}.png" class="pull-right jumbo-image hidden-xs"></a>
-		<h1>{% trans %}No games available{% endtrans %}</h1>
+		{% if games %}
+			<div class="row">
+				{% for game in games %}
+					<div class="col-md-4">
+						<h3>{{game.title}}</h3>
+						<p><img src="{{resources}}/custom/game/{{game.short}}.png" alt="{{game.title}}"></p>
+						<p><a href="{{base}}/addons/{{game.short}}" class="btn btn-primary">{% trans %}View the addons{% endtrans %}</a></p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% else %}
 	</div>
-</div>
+	<div class="jumbotron">
+		<div class="container">
+			<a href="#"><img src="{{resources}}/custom/game/{{short}}.png" class="pull-right jumbo-image hidden-xs"></a>
+			<h1>{% trans %}No games available{% endtrans %}</h1>
+		</div>
+	</div>
 {% endif %}
 </div>
 {% endblock %}
