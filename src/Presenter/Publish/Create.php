@@ -9,27 +9,28 @@ use Lorry\Exception\ModelValueInvalidException;
 class Create extends Presenter {
 
 	public function get() {
-		if($this->session->authenticated()) {
-			$this->security->requireLogin();
-
-			$games = ModelFactory::build('Game')->all()->byAnything();
-			$this->context['games'] = array();
-			foreach($games as $game) {
-				$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
-			}
-
-			if(!isset($this->context['game'])) {
-				$this->context['game'] = filter_input(INPUT_GET, 'for');
-			}
-
-			$objects = array('Stippel', 'Feuermonster', 'Monster', 'Wipf', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
-			$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%spack', '%sparty', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
-			$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
-
-			$this->display('publish/create.twig');
-		} else {
+		if(!$this->session->authenticated()) {
 			$this->display('publish/greeter.twig');
+			return;
 		}
+
+		$this->security->requireLogin();
+
+		$games = ModelFactory::build('Game')->all()->byAnything();
+		$this->context['games'] = array();
+		foreach($games as $game) {
+			$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
+		}
+
+		if(!isset($this->context['game'])) {
+			$this->context['game'] = filter_input(INPUT_GET, 'for');
+		}
+
+		$objects = array('Stippel', 'Feuermonster', 'Monster', 'Wipf', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
+		$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%spack', '%sparty', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
+		$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
+
+		$this->display('publish/create.twig');
 	}
 
 	public function post() {

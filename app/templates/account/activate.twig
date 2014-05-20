@@ -1,0 +1,14 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Activation required'|trans %}
+
+{% block content %}
+	<div class="jumbotron" id="identify">
+		<div class="container">
+			<h1>{{title}}</h1>
+			<p>{% trans %}Please activate your account by confirming your email address.{% endtrans %}</p>
+			{% if reason %}<p>{{reason}}</p>{% endif %}
+			<p><a href="{{base}}/settings?#contact" class="btn btn-lg btn-primary">{% trans %}Settings{% endtrans %}</a></p>
+		</div>
+	</div>
+{% endblock %}
