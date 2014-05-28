@@ -1,11 +1,11 @@
 <p id="oauth">
 	{% if oauth.openid %}
-	<a href="?remove-oauth=openid&state={{state}}#oauth" class="btn btn-default">{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
+	<a href="?remove-oauth=openid&state={{state}}#oauth" class="btn btn-default remove-oauth-confirm">{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
 	{% else %}
 	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
-	{% endif %}
-	<a href="?{% if oauth.google %}remove-{% endif %}oauth=google{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.google %}&state={{state}}#oauth{% endif %}" class="btn btn-google">{% trans "Google" %}{% if oauth.google %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
-	<a href="?{% if oauth.facebook %}remove-{% endif %}oauth=facebook{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.facebook %}&state={{state}}#oauth{% endif %}" class="btn btn-facebook">{% trans "Facebook" %}{% if oauth.facebook %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
+	{% endif %}	
+	<a href="?{% if oauth.google %}remove-{% endif %}oauth=google{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.google %}&state={{state}}#oauth{% endif %}" class="btn btn-google remove-oauth-confirm">{% trans "Google" %}{% if oauth.google %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
+	<a href="?{% if oauth.facebook %}remove-{% endif %}oauth=facebook{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.facebook %}&state={{state}}#oauth{% endif %}" class="btn btn-facebook remove-oauth-confirm">{% trans "Facebook" %}{% if oauth.facebook %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 </p>
 {% if not oauth.openid %}<div class="collapse" id="by-openid">
 	<form role="form" action="{{filename}}?oauth=openid{% if returnto %}&returnto={{returnto}}{% endif %}" method="post" class="form-inline">

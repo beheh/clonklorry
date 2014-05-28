@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-28 21:45+0100\n"
-"PO-Revision-Date: 2014-05-28 21:45+0100\n"
+"POT-Creation-Date: 2014-05-28 23:19+0100\n"
+"PO-Revision-Date: 2014-05-28 23:21+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1395,15 +1395,19 @@ msgstr "Du hast ungespeicherte Änderungen."
 msgid "Preparing upload"
 msgstr "Hochladen wird vorbereitet"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:157
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:89
+msgid "Are you sure you want to remove this login service from your account?"
+msgstr "Möchtest du diesen Anmeldedienst wirklich von deinem Konto entfernen?"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:159
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:170
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:172
 msgid "About the project"
 msgstr "Über das Projekt"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:174
+#: /home/benedict/public_html/lorry/app/cache/twig/c6/1b/681b94a9555631e0785675cd03bc21f5cc9a5aad65d723a9534c1b577766.php:176
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -1791,27 +1795,27 @@ msgstr "Lorry auf Clonkspot"
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/public_html/lorry/src/Model.php:353
+#: /home/benedict/public_html/lorry/src/Model.php:355
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/public_html/lorry/src/Model.php:356
+#: /home/benedict/public_html/lorry/src/Model.php:358
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/public_html/lorry/src/Model.php:369
+#: /home/benedict/public_html/lorry/src/Model.php:371
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/public_html/lorry/src/Model.php:377
+#: /home/benedict/public_html/lorry/src/Model.php:379
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/public_html/lorry/src/Model.php:383
+#: /home/benedict/public_html/lorry/src/Model.php:385
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: /home/benedict/public_html/lorry/src/Model.php:392
+#: /home/benedict/public_html/lorry/src/Model.php:394
 #: /home/benedict/public_html/lorry/src/Model/User.php:30
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:86
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:94

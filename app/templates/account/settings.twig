@@ -168,4 +168,8 @@
 
 	$('#remote-logout-prompt').show();
 	$('#remote-logout-confirm').removeClass('in');
+
+	$('.remove-oauth-confirm').click(function() {
+		return confirm(translation.sureRemoveOauth);
+	});
 {% endblock %}
