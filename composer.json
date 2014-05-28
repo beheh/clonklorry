@@ -10,14 +10,11 @@
 		"lightopenid/lightopenid": "~0.7",
 		"league/oauth2-client": "0.3.0",
 		"analog/analog": "~1.0.4-stable",
-		"symfony/yaml": "~2.4"
+		"symfony/yaml": "~2.4",
+    "symfony/finder": "~2.4"
 	},
 	"autoload": {
 		"psr-4": {
 			"Lorry\\": "src/"
 		}
-	},
-	"config": {
-		"component-dir": "web/components"
-	}
-}
+	}}
