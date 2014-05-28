@@ -56,13 +56,15 @@ CREATE TABLE `addon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `release` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`addon` int(11) NOT NULL,
-	`version` varchar(255) NOT NULL,
-	`timestamp` datetime DEFAULT NULL,
-	`description` text,
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `addon_version` (`addon`,`version`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `addon` int(11) NOT NULL,
+  `version` varchar(255) NOT NULL,
+  `timestamp` datetime DEFAULT NULL,
+  `assetsecret` varchar(64) NOT NULL,
+  `description` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `addon_version` (`addon`,`version`),
+  UNIQUE KEY `assetsecret` (`assetsecret`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `dependency` (

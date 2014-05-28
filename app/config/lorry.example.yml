@@ -7,16 +7,22 @@ enable:
     site: true
     registration: true
     upload: true
-    
+
 notice:
     text:
     class: danger
-    
+
 clonkforge: http://clonkforge.net/user.php?usr=%d
 github:
     url: https://github.com/%s
     name: ([a-zA-Z0-9][a-zA-Z0-9-]*)
-    
+
+assetbase: http://localhost/assets
+
+upload:
+    assets:
+    data:
+
 contact:
     address: <strong>Full Name</strong>
     legal: legal@example.com
@@ -39,7 +45,7 @@ oauth:
     google:
         id:
         secret:
-    
+
     facebook:
         id:
         secret:

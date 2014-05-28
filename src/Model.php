@@ -50,7 +50,7 @@ abstract class Model implements ModelInterface {
 		$this->changes = array();
 	}
 
-	public function isLoaded() {
+	public final function isLoaded() {
 		return $this->loaded;
 	}
 
@@ -323,6 +323,7 @@ abstract class Model implements ModelInterface {
 				return false;
 			}
 		} else {
+			$this->onSave();
 			$id = $this->persistence->save($this, $changes);
 			if(!$id) {
 				return false;
@@ -398,5 +399,8 @@ abstract class Model implements ModelInterface {
 
 	public function forApi() {
 		return array();
+	}
+
+	protected function onSave() {
 	}
 }

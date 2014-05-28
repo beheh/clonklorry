@@ -8,7 +8,6 @@ use Lorry\Exception;
 class ApiPresenter extends Presenter {
 
 	public function handle($method, $parameters) {
-		error_reporting(0);
 		try {
 			return call_user_func_array(array($this, $method), $parameters);
 		} catch(Exception $ex) {

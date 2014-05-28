@@ -31,14 +31,14 @@
 		<div class="alert alert-danger">{% trans %}Javascript needs to be enabled in order to edit addons and releases.{% endtrans %}</div>
 		</noscript>
 		<ul class="nav nav-tabs" id="editAddonTabs">
-			<li class="active"><a href="#general" data-toggle="tab">{% trans "General" %}</a></li>
+			<li class="active"><a href="#release" data-toggle="tab">{% trans "Release" %}</a></li>
 			<li><a href="#files" data-toggle="tab">{% trans "Files" %}</a></li>
 			<li><a href="#dependencies" data-toggle="tab">{% trans "Dependencies" %}</a></li>
 			<li><a href="#changes" data-toggle="tab">{% trans "Changes" %}</a></li>
-			<li><a href="#release" data-toggle="tab">{% trans "Publish" %}</a></li>
+			<li><a href="#publish" data-toggle="tab">{% trans "Publish" %}</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="general">
+			<div class="tab-pane active" id="release">
 				{% include 'functions/alert.twig' with {'selector' : 'version'} %}
 				<form role="form" method="post" action="{{filename}}">
 					<input type="hidden" name="state" value="{{state}}">
@@ -145,7 +145,7 @@
 				</form>
 			</div>
 
-			<div class="tab-pane" id="release">
+			<div class="tab-pane" id="publish">
 				<!--<div class="row">
 					<div class="col-md-12">
 						<div class="panel panel-danger">

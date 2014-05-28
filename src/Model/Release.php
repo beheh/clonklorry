@@ -12,6 +12,7 @@ class Release extends Model {
 			'addon' => 'int',
 			'version' => 'string',
 			'timestamp' => 'datetime',
+			'assetsecret' => 'string',
 			'description' => 'text'));
 	}
 
@@ -40,7 +41,7 @@ class Release extends Model {
 		}
 		return $releases;
 	}
-	
+
 	public final function byOwner($owner) {
 		$addons = ModelFactory::build('Addon')->all()->byOwner($owner);
 		$releases = array();
@@ -112,6 +113,14 @@ class Release extends Model {
 
 	public function fetchDependencies() {
 		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
+	}
+
+	public function onSave() {
+		$this->setValue('assetsecret', sha1($this->getAddon().uniqid()));
+	}
+
+	public function getAssetSecret() {
+		return $this->getValue('assetsecret');
 	}
 
 }

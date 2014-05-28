@@ -1,4 +1,4 @@
-var releaseResumable = new Resumable({target: base + '/publish/'+addon+'/'+release+'/upload', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
+var releaseResumable = new Resumable({target: base + '/publish/'+addon+'/'+release+'/upload?type=data', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
 
 if (!releaseResumable.support) {
 	$('#resumable').hide();
