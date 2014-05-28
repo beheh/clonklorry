@@ -1,13 +1,18 @@
+# the brand to show at various points around the site
 brand: Lorry
+# the base site url
 base: http://localhost
 
+# global debug mode throughout the application, should always be false in production
 debug: false
 
+# main site enabling
 enable:
     site: true
     registration: true
     upload: true
 
+# short term notices
 notice:
     text:
     class: danger
@@ -17,8 +22,10 @@ github:
     url: https://github.com/%s
     name: ([a-zA-Z0-9][a-zA-Z0-9-]*)
 
+# the url which maps to the asset upload dir, without trailing /
 assetbase: http://localhost/assets
 
+# the directories for different user data, should be writeable
 upload:
     assets:
     data:
