@@ -95,10 +95,18 @@ class UploadFile extends ApiPresenter {
 		return true;
 	}
 
-	public function get($id, $version) {
+	private function ensureAuthorization() {
 		if(!$this->session->authenticated()) {
 			throw new ForbiddenException();
 		}
+
+		if(!$this->config->get('enable/upload')) {
+			throw new ForbiddenException(gettext('uploading files is disabled'));
+		}
+	}
+
+	public function get($id, $version) {
+		$this->ensureAuthorization();
 
 		$type = $this->getType();
 
@@ -121,9 +129,7 @@ class UploadFile extends ApiPresenter {
 	}
 
 	public function post($id, $version) {
-		if(!$this->session->authenticated()) {
-			throw new ForbiddenException();
-		}
+		$this->ensureAuthorization();
 
 		$this->security->requireValidState();
 
