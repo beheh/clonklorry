@@ -315,6 +315,9 @@ abstract class Model implements ModelInterface {
 			return true;
 
 		$changes = array();
+		if(!$this->loaded) {
+			$this->onSave();
+		}
 		foreach($this->changes as $row => $value) {
 			$changes[$row] = $this->encodeType($row, $value);
 		}
@@ -323,7 +326,6 @@ abstract class Model implements ModelInterface {
 				return false;
 			}
 		} else {
-			$this->onSave();
 			$id = $this->persistence->save($this, $changes);
 			if(!$id) {
 				return false;
