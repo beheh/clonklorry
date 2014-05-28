@@ -122,7 +122,7 @@ class Addon extends Model {
 
 	public function setIntroduction($introduction) {
 		if($introduction) {
-			$this->validateString($introduction, 50, 150);
+			$this->validateString($introduction, 50, 200);
 		} else {
 			$introduction = null;
 		}
