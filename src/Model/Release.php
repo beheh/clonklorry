@@ -116,7 +116,7 @@ class Release extends Model {
 	}
 
 	public function onSave() {
-		$this->setValue('assetsecret', sha1($this->getAddon().uniqid()));
+		$this->setValue('assetsecret', md5($this->getAddon().time().uniqid()));
 	}
 
 	public function getAssetSecret() {
