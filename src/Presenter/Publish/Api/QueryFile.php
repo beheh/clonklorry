@@ -12,12 +12,23 @@ use Symfony\Component\Finder\Finder;
 
 class QueryFile extends ApiPresenter {
 
-	public static function sanitizeFilename($supplied) {
+	public static function sanitizePath($supplied) {
 		$file_name = basename($supplied);
-		if(preg_match('/^[-0-9A-Z_\.]/i', $file_name)) {
-			return $file_name;
+		if(!preg_match('/^[-0-9A-Z_\.]*$/i', $file_name)) {
+			throw new Exception(gettext('invalid path'));
 		}
-		throw new Exception(gettext('invalid filename'));
+		return $file_name;
+	}
+
+	public static function sanitizeFilename($supplied) {
+		$file_name = QueryFile::sanitizePath($supplied);
+		if(preg_match('/^.*\.((zip)|(rar)|(tar))$/i', $file_name)) {
+			throw new Exception(gettext('please upload the individual files instead of an archive'));
+		}
+		if(!preg_match('/^.*\.((c4d)|(c4s)|(c4f)|(ocd)|(ocs)|(ocf))$/i', $file_name)) {
+			throw new Exception(gettext('file must end with a clonk extension'));
+		}
+		return $file_name;
 	}
 
 	public static function getType() {

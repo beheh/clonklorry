@@ -78,8 +78,12 @@ class UploadFile extends ApiPresenter {
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
 
-		$identifier = QueryFile::sanitizeFilename(filter_input(INPUT_GET, 'resumableIdentifier'));
+		$identifier = QueryFile::sanitizePath(filter_input(INPUT_GET, 'resumableIdentifier'));
 		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_GET, 'resumableFilename'));
+
+		if(!$identifier || !$file_name) {
+			throw new FileNotFoundException;
+		}
 
 		switch($type) {
 			case 'data':
@@ -90,7 +94,7 @@ class UploadFile extends ApiPresenter {
 				break;
 		}
 
-		$chunk_directory = $target_directory.'/'.$identifier;
+		$chunk_directory = $target_directory.'/'.$identifier.'.parts';
 		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
 		if(!file_exists($part_file)) {
@@ -109,6 +113,8 @@ class UploadFile extends ApiPresenter {
 		$user = $this->session->getUser();
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
+
+		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'resumableFilename'));
 
 		$file = $_FILES['file'];
 
@@ -133,14 +139,12 @@ class UploadFile extends ApiPresenter {
 			throw new Exception(gettext('file already exists'));
 		}
 
-		$identifier = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'resumableIdentifier'));
+		$identifier = QueryFile::sanitizePath(filter_input(INPUT_POST, 'resumableIdentifier'));
 
-		$chunk_directory = $target_directory.'/'.$identifier;
+		$chunk_directory = $target_directory.'/'.$identifier.'.parts';
 		if(!is_dir($chunk_directory)) {
 			mkdir($chunk_directory);
 		}
-
-		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'resumableFilename'));
 
 		// final check
 		if(!is_dir($chunk_directory)) {

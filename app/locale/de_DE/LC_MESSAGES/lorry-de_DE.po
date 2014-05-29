@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-29 16:04+0100\n"
-"PO-Revision-Date: 2014-05-29 16:05+0100\n"
+"POT-Creation-Date: 2014-05-29 17:02+0100\n"
+"PO-Revision-Date: 2014-05-29 17:04+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2045,31 +2045,39 @@ msgstr "Nicht implementiert"
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:36
-msgid "invalid filename"
-msgstr "ungültiger Dateiname"
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:18
+msgid "invalid path"
+msgstr "ungültiger Pfad"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:93
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:26
+msgid "please upload the individual files instead of an archive"
+msgstr "Bitte lade die einzelnen Dateien anstelle eines Archivs hoch"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:29
+msgid "file must end with a clonk extension"
+msgstr "Datei muss mit Clonk-Erweiterung enden"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:68
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:134
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:122
 msgid "error receiving file chunk"
 msgstr "Fehler beim Empfangen eines Dateiabschnitts"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:151
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:139
 msgid "file already exists"
 msgstr "Datei existiert bereits"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:165
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:151
 msgid "could not create upload directory"
 msgstr "konnte Verzeichnis zum Hochladen nicht erstellen"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:171
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:157
 msgid "error saving file chunk"
 msgstr "Fehler beim Speichern eines Dateiabschnitts"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:175
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:161
 msgid "error assembling file"
 msgstr "Fehler beim Zusammensetzen der Datei"
 
@@ -2287,6 +2295,9 @@ msgstr "3."
 #: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:184
 msgid "%n%th"
 msgstr "%n%."
+
+#~ msgid "invalid filename"
+#~ msgstr "ungültiger Dateiname"
 
 #~ msgid "General"
 #~ msgstr "Allgemein"
