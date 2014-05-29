@@ -40,6 +40,9 @@ if (!releaseResumable.support) {
 		releaseResumable.pause();
 		updateReleaseResumableState();
 	});
+	$('#resumable-select').removeAttr('disabled');
+	$('#resumable-upload').removeAttr('disabled');
+	$('#resumable-pause').removeAttr('disabled');
 	$('#resumable').show();
 }
 
@@ -137,17 +140,11 @@ function updateReleaseResumableState() {
 	}
 
 	if (releaseResumable.isUploading()) {
-		$('#resumable-select').attr('disabled', true);
-		$('#resumable-pause').removeAttr('disabled');
 		$('#resumable-pause').show();
 		$('#resumable-upload').hide();
-		$('#resumable-upload').attr('disabled', true);
 	}
 	else {
-		$('#resumable-select').removeAttr('disabled');
 		$('#resumable-pause').hide();
-		$('#resumable-pause').attr('disabled', true);
-		$('#resumable-upload').removeAttr('disabled');
 		$('#resumable-upload').show();
 	}
 }
