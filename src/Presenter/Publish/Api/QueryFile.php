@@ -14,37 +14,37 @@ class QueryFile extends ApiPresenter {
 
 	public static function sanitizeFilename($supplied) {
 		$file_name = basename($supplied);
-		if(!preg_match('/^[-0-9A-Z_\.]/i', $file_name)) {
-			throw new Exception(gettext('invalid filename'));
+		if(preg_match('/^[-0-9A-Z_\.]/i', $file_name)) {
+			return $file_name;
 		}
-		return $file_name;
+		throw new Exception(gettext('invalid filename'));
 	}
 
 	public static function getType() {
 		$type = filter_input(INPUT_GET, 'type');
-		if(!in_array($type, array('asset', 'data'))) {
-			throw new Exception('unknown type');
-		}
 		if($type == 'asset') {
 			throw new Lorry\Exception\NotImplementedException;
 		}
-		return $type;
+		if(in_array($type, array('asset', 'data'))) {
+			return $type;
+		}
+		throw new Exception('unknown type');
 	}
 
 	public static function getAssetDirectory(ConfigService $config, Addon $addon, Release $release) {
 		$base = $config->get('upload/assets');
-		if(!is_dir($base) || !is_writable($base)) {
-			throw new \Exception('asset directory does not exist or is not writeable');
+		if(is_dir($base) && is_writable($base)) {
+			return $base.'/'.$release->getAssetSecret();
 		}
-		return $base.'/'.$release->getAssetSecret();
+		throw new \Exception('asset directory does not exist or is not writeable');
 	}
 
 	public static function getDataDirectory(ConfigService $config, Addon $addon, Release $release) {
 		$base = $config->get('upload/data');
-		if(!is_dir($base) || !is_writable($base)) {
-			throw new \Exception('data directory does not exist or is not writeable');
+		if(is_dir($base) && is_writable($base)) {
+			return $base.'/addon'.$addon->getId().'/release'.$release->getId();
 		}
-		return $base.'/addon'.$addon->getId().'/release'.$release->getId();
+		throw new \Exception('data directory does not exist or is not writeable');
 	}
 
 	public function get($id, $version) {
