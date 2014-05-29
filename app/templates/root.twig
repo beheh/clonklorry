@@ -45,5 +45,6 @@
 		<script src="{{resources}}{{script}}"></script>
 		{% endfor %}
 		<script>{% block javascript %}{% endblock %}</script>
+		{% if site_tracking %}{{site_tracking|raw}}{% endif %}
 	</body>
 </html>

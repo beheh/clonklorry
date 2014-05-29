@@ -7,16 +7,17 @@ use Symfony\Component\Yaml\Yaml;
 
 class ConfigService {
 
-	const FILE = '../app/config/lorry.yml';
+	const DIR = '../app/config/';
 
 	private $config;
 
 	public function __construct() {
 		$config = array();
-		if(!file_exists(self::FILE)) {
-			throw new Exception('config file not found (at '.self::FILE.')');
+		$file = self::DIR.'lorry.yml';
+		if(!file_exists($file)) {
+			throw new Exception('config file not found (at '.$file.')');
 		}
-		$this->config = Yaml::parse(file_get_contents(self::FILE));
+		$this->config = Yaml::parse(file_get_contents($file));
 	}
 
 	public function get($key) {
@@ -44,6 +45,14 @@ class ConfigService {
 			return $match[1] * $suffixes[strtolower($match[2])];
 		}
 		return 0;
+	}
+
+	public function getTracking() {
+		$file = self::DIR.'tracking.html';
+		if(file_exists($file)) {
+			return file_get_contents($file);
+		}
+		return false;
 	}
 
 }
