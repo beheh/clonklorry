@@ -63,7 +63,8 @@ releaseResumable.on('fileAdded', function(file) {
 });
 
 releaseResumable.on('fileProgress', function(file) {
-	if(file.isComplete()) return;
+	if (file.isComplete())
+		return;
 	var percentage = Math.min(Math.round(file.progress() * 100), 99);
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text(percentage + '%');
 });
@@ -148,3 +149,9 @@ function updateReleaseResumableState() {
 		$('#resumable-upload').show();
 	}
 }
+
+$(window).on('beforeunload', function() {
+	if (releaseResumable.isUploading()) {
+		return translation.stillUploading;
+	}
+});
