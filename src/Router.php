@@ -59,7 +59,7 @@ abstract class Router {
 
 		if($path != '/' && substr($path, strlen($path) - 1, 1) == '/') {
 			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
-			header('Location: '.substr($request_uri, 0, strlen($request_uri) - 1));
+			header('Location: '.substr($request_uri, 0, strlen($request_uri) - 1), true, 301);
 			throw new OutputCompleteException;
 		}
 
