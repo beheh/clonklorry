@@ -1,4 +1,4 @@
 {% extends 'functions/labels/label.twig' %}
 
 {% block class %}label-primary{% endblock %}
-{% block title %}{{version}}{% endblock %}
+{% block title %}{% if prefix %}{{prefix}} {% endif%}{{version}}{% endblock %}
