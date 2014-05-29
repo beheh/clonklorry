@@ -1,6 +1,6 @@
 {% extends 'root.twig' %}
 
-{% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-image-upload.js', '/lorry/js/lorry-release-upload.js'] %}
+{% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-asset-upload.js', '/lorry/js/lorry-release-upload.js'] %}
 
 {% block content %}
 	<div class="page-header">
@@ -66,27 +66,36 @@
 					<script>var addon = '{{addonid}}';
 						var release = '{{version}}';</script>
 						{% if enable.upload %}
-						<div id="no-resumable">
+						<div id="release-files-no-resumable">
 							<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
 							<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
+						</div>
+						<div id="release-files-error-loading">
+							<div class="alert alert-danger">{% trans %}Could not load existing files.{% endtrans %}</div>
 						</div>
 					{% else %}
 						<div class="alert alert-danger">{% trans %}File upload is disabled.{% endtrans %}</div>
 					{% endif %}
 					<div id="resumable">
-						<span id="text-reselect" class="hidden">{% trans "Select file to continue upload" %}</span>
-						<span id="text-uploaded" class="hidden">{% trans "Ready to publish" %}</span>
-						<span id="text-remove" class="hidden">{% trans "Remove" %}</span>
+						<span id="message-text-reselect" class="hidden">{% trans %}Select file to continue upload{% endtrans %}</span>
+						<span id="message-text-uploaded" class="hidden">{% trans %}Ready to publish{% endtrans %}</span>
+						<span id="message-text-remove" class="hidden">{% trans %}Remove{% endtrans %}</span>
+						<span id="message-text-confirm-remove" class="hidden">{% trans %}Are you sure you want to remove this file?{% endtrans %}</span>
+						<span id="message-text-remove-failed" class="hidden">{% trans %}File could not be removed.{% endtrans %}</span>
+						<span id="message-text-file-exists" class="hidden">{% trans %}File already exists.{% endtrans %}</span>
 						<div id="resumable-error" class="alert alert-danger hidden"></div>
-						<ul class="list-group" id="resumable-files-none">
+						<ul class="list-group" id="resumable-files-loading">
+							<li class="list-group-item text-muted">{% trans %}Loading files&hellip;{% endtrans %}</li>
+						</ul>
+						<ul class="list-group" id="resumable-files-none" style="display: none;">
 							<li class="list-group-item text-muted">{% trans %}No files uploaded{% endtrans %}</li>
 						</ul>
 						<ul class="list-group" id="resumable-files">
 						</ul>
 						{% if enable.upload %}
-							<button type="button" id="resumable-select" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
-							<button type="button" id="resumable-upload" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
-							<button type="button" id="resumable-pause" class="btn btn-success"><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
+							<button type="button" id="resumable-select" class="btn btn-default" disabled><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
+							<button type="button" id="resumable-upload" class="btn btn-success" disabled><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
+							<button type="button" id="resumable-pause" class="btn btn-success" disabled><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
 							<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
 						{% endif %}
 					</div>
@@ -107,8 +116,8 @@
 							<div class="input-group">
 								<input type="text" class="form-control" placeholder="Hazard" id="add-dependency">
 								<span class="input-group-btn">
-								  <button class="btn btn-default" id="add-dependency-reset" type="button">&times;</button>
-								  <button class="btn btn-primary" id="add-dependency-select" type="button"><span class="glyphicon glyphicon-step-forward"></span></button>
+									<button class="btn btn-default" id="add-dependency-reset" type="button">&times;</button>
+									<button class="btn btn-primary" id="add-dependency-select" type="button"><span class="glyphicon glyphicon-step-forward"></span></button>
 								</span>
 							</div>
 						</div>
@@ -165,36 +174,36 @@
 				{% if released %}
 					<p>This addon was released on ???.</p>
 				{% else %}
-				<div class="row">
-					<div class="col-md-6">
-						<h2>{% trans %}Quick release{% endtrans %}</h2>
-						<p>{% trans %}If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.{% endtrans %}</p>
-						<p>{% trans %}All downloads will immediately redirect to your uploaded version.{% endtrans %}</p>
-						<p class="alert alert-warning">{% trans %}Publishing a release is final. Any changes after releasing require a new release.{% endtrans %}</p>
-						<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
-						<form role="form" class="form-inline" method="post" action="">
-							<div class="pull-right">
-								<label class="checkbox inline" style="margin-right: 20px;">
-									<input type="checkbox" id="release-confirm"> {% trans %}Confirm instant release{% endtrans %}
+					<div class="row">
+						<div class="col-md-6">
+							<h2>{% trans %}Quick release{% endtrans %}</h2>
+							<p>{% trans %}If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.{% endtrans %}</p>
+							<p>{% trans %}All downloads will immediately redirect to your uploaded version.{% endtrans %}</p>
+							<p class="alert alert-warning">{% trans %}Publishing a release is final. Any changes after releasing require a new release.{% endtrans %}</p>
+							<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
+							<form role="form" class="form-inline" method="post" action="">
+								<div class="pull-right">
+									<label class="checkbox inline" style="margin-right: 20px;">
+										<input type="checkbox" id="release-confirm"> {% trans %}Confirm instant release{% endtrans %}
+									</label>
+									<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+								</div>
+							</form>
+						</div>
+						<div class="col-md-6">
+							<h2>{% trans %}Scheduled release{% endtrans %}</h2>
+							<form role="form" method="post" action="">
+								<label for="datetime">{% trans %}Date and time{% endtrans %}</label>
+								<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{current_datetime}}" required>
+								<label class="checkbox">
+									<input type="checkbox">{% trans %}Make release date and time public{% endtrans %}
 								</label>
-								<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
-							</div>
-						</form>
+								<p class="alert alert-info">{% trans %}You can cancel a scheduled release at any time before the automated release.{% endtrans %}</p>
+								<p>{% trans %}Your release will be automatically made vailabe to all players at the specified timestamp.{% endtrans %}</p>
+								<button type="submit" class="btn btn-primary btn-large pull-right">{% trans %}Schedule Release{% endtrans %}</button>
+							</form>
+						</div>
 					</div>
-					<div class="col-md-6">
-						<h2>{% trans %}Scheduled release{% endtrans %}</h2>
-						<form role="form" method="post" action="">
-							<label for="datetime">{% trans %}Date and time{% endtrans %}</label>
-							<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{current_datetime}}" required>
-							<label class="checkbox">
-								<input type="checkbox">{% trans %}Make release date and time public{% endtrans %}
-							</label>
-							<p class="alert alert-info">{% trans %}You can cancel a scheduled release at any time before the automated release.{% endtrans %}</p>
-							<p>{% trans %}Your release will be automatically made vailabe to all players at the specified timestamp.{% endtrans %}</p>
-							<button type="submit" class="btn btn-primary btn-large pull-right">{% trans %}Schedule Release{% endtrans %}</button>
-						</form>
-					</div>
-				</div>
 				{% endif %}
 			</div>
 		</div>
@@ -205,36 +214,36 @@
 	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
 
 	var lorryTokenizer = function(a) {
-		return [a.title, a.abbreviation];
+	return [a.title, a.abbreviation];
 	};
 
 	function prefetchFilter(parsedResponse) {
-		var addons = [];
-		$(parsedResponse).each(function(key, addon) {
-			addons.push(addon);
-		});
-		console.log(addons);
-		return addons;
+	var addons = [];
+	$(parsedResponse).each(function(key, addon) {
+	addons.push(addon);
+	});
+	console.log(addons);
+	return addons;
 	}
 
 	var publicAddons = new Bloodhound({
-		datumTokenizer: lorryTokenizer,
-		queryTokenizer: Bloodhound.tokenizers.whitespace,
-		local: [{ title: 'Hazard', abbreviation: 'hzck' }], // example
-		prefetch: {url: '{{base}}/addons/{{game}}.json?headless', filter: prefetchFilter},
-//		remote: {url: '{{base}}/search.json?for=%QUERY', filter: prefetchFilter},
-		thumbprint: '3' // hash of all addon versions
+	datumTokenizer: lorryTokenizer,
+	queryTokenizer: Bloodhound.tokenizers.whitespace,
+	local: [{ title: 'Hazard', abbreviation: 'hzck' }], // example
+	prefetch: {url: '{{base}}/addons/{{game}}.json?headless', filter: prefetchFilter},
+	//		remote: {url: '{{base}}/search.json?for=%QUERY', filter: prefetchFilter},
+	thumbprint: '3' // hash of all addon versions
 	});
 
 	publicAddons.initialize();
 
 	$('#add-dependency').typeahead(null, {
-		name: 'public-addons',
-		displayKey: 'title',
-		source: publicAddons.ttAdapter(),
-		templates: {
-			suggestion: function(a) { return '<strong>'+a.title+'</strong>'; }
-		}
+	name: 'public-addons',
+	displayKey: 'title',
+	source: publicAddons.ttAdapter(),
+	templates: {
+	suggestion: function(a) { return '<strong>'+a.title+'</strong>'; }
+	}
 	}).on('typeahead:selected', selectDependencyAddon);
 
 	$('#add-dependency-reset').click(resetDependencyVersions);
@@ -243,23 +252,23 @@
 	resetDependencyVersions();
 
 	function resetDependencyVersions() {
-		$('#add-dependency').removeAttr('disabled');
-		$('#add-dependency-select').removeAttr('disabled');
-		$('#add-dependency-version').empty();
-		$('#add-dependency-version').append($('<option disabled>{% trans %}Select an addon first&hellip;{% endtrans %}</option>'));
-		$('#add-dependency-version').attr('disabled', true);
+	$('#add-dependency').removeAttr('disabled');
+	$('#add-dependency-select').removeAttr('disabled');
+	$('#add-dependency-version').empty();
+	$('#add-dependency-version').append($('<option disabled>{% trans %}Select an addon first&hellip;{% endtrans %}</option>'));
+	$('#add-dependency-version').attr('disabled', true);
 	}
 
 	function selectDependencyAddon() {
-		$('#add-dependency').attr('disabled', true);
-		$('#add-dependency-select').attr('disabled', true);
-		$('#add-dependency-version').empty();
-		$('#add-dependency-version').append($('<option disabled>{% trans %}Loading versions&hellip;{% endtrans %}</option>'));
-		//$.get('', function() {
-		//	$('#add-dependency-version').removeAttr('disabled');
-		//  $('#add-dependency-version').empty();
-		//	$('#add-dependency-version').append($('<option disabled>{% trans %}Select a version&hellip;{% endtrans %}</option>'));
-		//});
+	$('#add-dependency').attr('disabled', true);
+	$('#add-dependency-select').attr('disabled', true);
+	$('#add-dependency-version').empty();
+	$('#add-dependency-version').append($('<option disabled>{% trans %}Loading versions&hellip;{% endtrans %}</option>'));
+	//$.get('', function() {
+	//	$('#add-dependency-version').removeAttr('disabled');
+	//  $('#add-dependency-version').empty();
+	//	$('#add-dependency-version').append($('<option disabled>{% trans %}Select a version&hellip;{% endtrans %}</option>'));
+	//});
 	}
 
 {% endblock %}

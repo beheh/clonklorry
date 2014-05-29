@@ -14,41 +14,6 @@ use Analog;
 
 class UploadFile extends ApiPresenter {
 
-	private function getType() {
-		$type = filter_input(INPUT_GET, 'type');
-		if(!in_array($type, array('asset', 'data'))) {
-			throw new Exception('unknown type');
-		}
-		if($type == 'asset') {
-			throw new Lorry\Exception\NotImplementedException;
-		}
-		return $type;
-	}
-
-	private function getAssetDirectory(Addon $addon, Release $release) {
-		$base = $this->config->get('upload/assets');
-		if(!is_dir($base) || !is_writable($base)) {
-			throw new \Exception('asset directory does not exist or is not writeable');
-		}
-		return $base.'/'.$release->getAssetSecret();
-	}
-
-	private function getDataDirectory(Addon $addon, Release $release) {
-		$base = $this->config->get('upload/data');
-		if(!is_dir($base) || !is_writable($base)) {
-			throw new \Exception('data directory does not exist or is not writeable');
-		}
-		return $base.'/addon'.$addon->getId().'/release'.$release->getId();
-	}
-
-	private function sanitizeFilename($supplied) {
-		$file_name = basename($supplied);
-		if(!preg_match('/^[-0-9A-Z_\.]/i', $file_name)) {
-			throw new Exception(gettext('invalid filename'));
-		}
-		return $file_name;
-	}
-
 	private function removeChunkDirectory($chunk_directory) {
 		if(rename($chunk_directory, $chunk_directory.'.tmp')) {
 			$chunk_directory .= '.tmp';
@@ -79,7 +44,7 @@ class UploadFile extends ApiPresenter {
 		if($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
 
 			// create the final destination file
-			if(($fp = fopen($this->getDataDirectory($addon, $release).'/'.$file_name, 'w')) !== false) {
+			if(($fp = fopen(QueryFile::getDataDirectory($this->config, $addon, $release).'/'.$file_name, 'w')) !== false) {
 				for($i = 1; $i <= $total_files; $i++) {
 					fwrite($fp, file_get_contents($chunk_directory.'/'.$file_name.'.part'.$i));
 				}
@@ -108,15 +73,24 @@ class UploadFile extends ApiPresenter {
 	public function get($id, $version) {
 		$this->ensureAuthorization();
 
-		$type = $this->getType();
+		$type = QueryFile::getType();
 
 		$user = $this->session->getUser();
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
 
-		$file_name = $this->sanitizeFilename(filter_input(INPUT_GET, 'resumableFilename'));
+		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_GET, 'resumableFilename'));
 
-		$chunk_directory = $this->getDataDirectory($addon, $release).'/'.$file_name;
+		switch($type) {
+			case 'data':
+				$target_directory = QueryFile::getDataDirectory($this->config, $addon, $release);
+				break;
+			case 'asset':
+				$target_directory = QueryFile::getAssetDirectory($this->config, $addon, $release);
+				break;
+		}
+
+		$chunk_directory = $target_directory.'/'.$file_name;
 		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
 		if(!file_exists($part_file)) {
@@ -133,7 +107,7 @@ class UploadFile extends ApiPresenter {
 
 		$this->security->requireValidState();
 
-		$type = $this->getType();
+		$type = QueryFile::getType();
 
 		$user = $this->session->getUser();
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
@@ -147,10 +121,10 @@ class UploadFile extends ApiPresenter {
 
 		switch($type) {
 			case 'data':
-				$target_directory = $this->getDataDirectory($addon, $release);
+				$target_directory = QueryFile::getDataDirectory($this->config, $addon, $release);
 				break;
 			case 'asset':
-				$target_directory = $this->getAssetDirectory($addon, $release);
+				$target_directory = QueryFile::getAssetDirectory($this->config, $addon, $release);
 				break;
 		}
 
@@ -162,14 +136,14 @@ class UploadFile extends ApiPresenter {
 			throw new Exception(gettext('file already exists'));
 		}
 
-		$identifier = $this->sanitizeFilename(filter_input(INPUT_POST, 'resumableIdentifier'));
+		$identifier = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'resumableIdentifier'));
 
 		$chunk_directory = $target_directory.'/'.$identifier;
 		if(!is_dir($chunk_directory)) {
 			mkdir($chunk_directory);
 		}
 
-		$file_name = $this->sanitizeFilename(filter_input(INPUT_POST, 'resumableFilename'));
+		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'resumableFilename'));
 
 		// final check
 		if(!is_dir($chunk_directory)) {

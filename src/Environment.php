@@ -130,6 +130,8 @@ class Environment {
 				'/publish' => 'Publish\Portal',
 				'/publish/:number' => 'Publish\Edit',
 				'/publish/:number/:version' => 'Publish\Release',
+				'/publish/:number/:version/query' => 'Publish\Api\QueryFile',
+				'/publish/:number/:version/remove' => 'Publish\Api\RemoveFile',
 				'/publish/:number/:version/upload' => 'Publish\Api\UploadFile',
 				'/users' => 'User\Table',
 				'/users/:alpha' => 'User\Profile',
