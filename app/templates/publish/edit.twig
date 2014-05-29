@@ -3,7 +3,12 @@
 {% block content %}
 	<div class="page-header">
 		<div class="container">
-			<h1>{{addontitle}} <small><span class="glyphicon glyphicon-pencil"></span></small></h1>
+			<h1>{{addontitle}}
+				<small>
+					<span class="label label-default">{% trans %}Addon{% endtrans %}</span>
+					<span class="glyphicon glyphicon-pencil"></span>
+				</small>
+			</h1>
 		</div>
 	</div>
 	<div class="container">
@@ -44,24 +49,24 @@
 							</div>
 						</div>
 						<div class="col-lg-4">
-
-						</div>
-						<div class="col-lg-4">
 							<div class="form-group">
-								<label for="identifier">{%trans "Identifier" %}</label>
-								<input type="text" class="form-control" name="identifier" id="identifier" value="{{identifier}}" placeholder="{{identifier_proposal}}">
-								<span class="help-block">{% trans %}Will be used in download url, ideally your filename.<br>Examples: moderncombat, hazard, metalmagic.{% endtrans %}</span>
+								<label for="url">{%trans "Url" %}</label>
+								<input type="text" class="form-control" name="url" id="url" value="{{short}}" placeholder="{{short_proposal}}">
+								<span class="help-block">{% trans %}Ideally your main filename without extension.<br>Examples: hazard, moderncombat, metalmagic.{% endtrans %}</span>
 							</div>
 							<div class="form-group">
 								<label for="title">{%trans "Abbreviation" %}</label>
 								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
-								<span class="help-block">{% trans %}Only enter an abbreviation if it is unique and well known.{% endtrans %}</span>
+								<span class="help-block">{% trans %}Only enter a well-known abbreviation	.{% endtrans %}</span>
 							</div>
+						</div>
+						<div class="col-md-4">
+							<a href="#">{% trans %}Remove addon&hellip;{% endtrans %}</a>
 						</div>
 					</div>
 					<div class="form-group">
-						<span class="help-block">{% trans %}These details cannot be changed once the first release has been published.{% endtrans %}</span>
 						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+						<span class="btn" disabled>{% trans %}These settings cannot be changed once the first release has been published.{% endtrans %}</span>
 					</div>
 				</form>
 			</div>
@@ -86,26 +91,22 @@
 					{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
 					<div class="row">
 						<div class="col-md-8">
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-3">
-										<div class="form-group">
-											<label for="title">{% trans "Title image" %}</label>
-											<!--<img class="media-object" src="http://placehold.it/76x57" width="76" height="57">!-->
-											<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans %}Select{% endtrans %}</button>
-										</div>
-									</div>
-									<div class="col-sm-9">
-										<div class="form-group">
-											<label for="introduction">{% trans "Sitewide intro" %}</label>
-											<textarea class="form-control" id="introduction" name="introduction" rows="2" placeholder="{% trans %}Short intro text, will be used around the site alongside the title image.{% endtrans %}">{{introduction}}</textarea>
-										</div>
-									</div>
-								</div>
+							<!--<div class="col-sm-3">
 								<div class="form-group">
-									<label for="description">{% trans "Description" %}</label>
-									<textarea class="form-control" id="description" name="description" rows="6" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
+									<label for="title">{% trans "Title image" %}</label>
+									<img class="media-object" src="http://placehold.it/76x57" width="76" height="57">
+									<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans %}Select{% endtrans %}</button>
 								</div>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<label for="introduction">{% trans "Sitewide intro" %}</label>
+									<textarea class="form-control" id="introduction" name="introduction" rows="2" placeholder="{% trans %}Short intro text, will be used around the site alongside the title image.{% endtrans %}">{{introduction}}</textarea>
+								</div>
+							</div>!-->
+							<div class="form-group">
+								<label for="description">{% trans "Description" %}</label>
+								<textarea class="form-control" id="description" name="description" rows="6" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -147,6 +148,7 @@
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+						<span class="btn" disabled>{% trans %}The presentation can be changed anytime and affects all releases.{% endtrans %}</span>
 					</div>
 				</form>
 			</div>
@@ -164,7 +166,7 @@
 								<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="1.0b"{% if focus_version %} autofocus{% endif %} required>
 							</div>
 							<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Add release{% endtrans %}</button>
-							<span class="help-block">{% trans %}Only you and administrators can see unpublished releases.{% endtrans %}</span>
+							<span class="help-block">{% trans %}Releases are invisible until you publish them.{% endtrans %}</span>
 						</form>
 						<p></p>
 						<label for="type">{% trans "Existing releases" %}</label>
@@ -173,7 +175,7 @@
 								<a class="list-group-item" href="{{base}}/publish/{{addonid}}/{{release.version}}">
 									{% set version = release.version %}
 									<strong>{{addontitle}}</strong>
-									<span class="label label-primary">{{version}}</span>
+									{% include 'functions/labels/version.twig' with {'version' : version} %}
 									{% if release.released %}
 										{% if release.latest %}
 											{% include "functions/labels/latest.twig" %}
@@ -186,17 +188,17 @@
 										{% endif %}
 									{% endif %}
 								</a>
-							{% else %}
-								<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
-							{% endfor %}
+								{% else %}
+									<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
+									{% endfor %}
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-{% endblock %}
+				{% endblock %}
 
-{% block javascript %}
-	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
-{% endblock %}
+					{% block javascript %}
+						$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
+					{% endblock %}

@@ -40,14 +40,14 @@ class Edit extends Presenter {
 		$title = $addon->getTitle();
 		$maintitle = strstr($title, ':');
 		$cleantitle = $maintitle ? $maintitle : $title;
-		$this->context['identifier_proposal'] = preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
+		$this->context['short_proposal'] = preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
 
 		if(!isset($this->context['abbreviation'])) {
 			$this->context['abbreviation'] = $addon->getAbbreviation();
 		}
 
-		if(!isset($this->context['identifier'])) {
-			$this->context['identifier'] = $addon->getShort();
+		if(!isset($this->context['short'])) {
+			$this->context['short'] = $addon->getShort();
 		}
 
 		if(isset($_GET['add'])) {
@@ -130,13 +130,13 @@ class Edit extends Presenter {
 				$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
 			}
 
-			$identifier = trim(strtolower(filter_input(INPUT_POST, 'identifier')));
+			$url = trim(strtolower(filter_input(INPUT_POST, 'url')));
 			try {
-				$addon->setShort($identifier);
-				$this->context['identifier'] = $addon->getShort();
+				$addon->setShort($url);
+				$this->context['short'] = $addon->getShort();
 			} catch(ModelValueInvalidException $ex) {
-				$errors[] = sprintf(gettext('Identifier is %s.'), $ex->getMessage());
-				$this->context['identifier'] = $identifier;
+				$errors[] = sprintf(gettext('Url is %s.'), $ex->getMessage());
+				$this->context['short'] = $url;
 			}
 
 			$abbreviation = trim(filter_input(INPUT_POST, 'abbreviation'));

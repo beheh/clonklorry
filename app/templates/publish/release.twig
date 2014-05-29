@@ -9,7 +9,7 @@
 				<a href="{{base}}/publish/{{addonid}}#releases">
 					{{addontitle}}
 				</a>
-				<small>{% include 'functions/labels/version.twig' with {'version' : version} %}
+				<small>{% include 'functions/labels/version.twig' with {'version' : version, prefix: 'Release'|trans} %}
 					{% if released %}
 						{% if latest %}
 							{% include "functions/labels/latest.twig" %}
