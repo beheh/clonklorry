@@ -129,20 +129,16 @@ function updateReleaseResumableState() {
 		$('#resumable-files').hide();
 		$('#resumable-files-none').show();
 	}
-	if (releaseResumable.files.length > 0 && releaseResumable.progress() < 1) {
-		$('#resumable-upload').removeAttr('disabled');
-	}
-	else {
-		$('#resumable-upload').attr('disabled', true);
-	}
 
 	if (releaseResumable.isUploading()) {
 		$('#resumable-select').attr('disabled', true);
+		$('#resumable-pause').removeAttr('disabled');
 		$('#resumable-pause').show();
 		$('#resumable-upload').hide();
 	}
 	else {
 		$('#resumable-select').removeAttr('disabled');
+		$('#resumable-pause').attr('disabled', true);
 		$('#resumable-pause').hide();
 		$('#resumable-upload').show();
 	}
