@@ -56,12 +56,17 @@ class QueryFile extends ApiPresenter {
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
 
-		$finder = new Finder();
-		$found = $finder->files()->depth('== 0')->in(QueryFile::getDataDirectory($this->config, $addon, $release));
-
 		$files = array();
-		foreach($found as $file) {
-			$files[] = array('uniqueIdentifier' => count($files), 'fileName' => $file->getRelativePathname());
+
+		$directory = QueryFile::getDataDirectory($this->config, $addon, $release);
+		if(is_dir($directory)) {
+
+			$finder = new Finder();
+			$found = $finder->files()->depth('== 0')->in($directory);
+
+			foreach($found as $file) {
+				$files[] = array('uniqueIdentifier' => count($files), 'fileName' => $file->getRelativePathname());
+			}
 		}
 
 		$this->display(array('files' => $files));
