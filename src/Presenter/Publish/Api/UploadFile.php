@@ -6,7 +6,6 @@ use Lorry\ApiPresenter;
 use Lorry\Exception;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
-use Lorry\Exception\OutputCompleteException;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
 use Lorry\Model\User;
@@ -79,6 +78,7 @@ class UploadFile extends ApiPresenter {
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
 
+		$identifier = QueryFile::sanitizeFilename(filter_input(INPUT_GET, 'resumableIdentifier'));
 		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_GET, 'resumableFilename'));
 
 		switch($type) {
@@ -90,15 +90,12 @@ class UploadFile extends ApiPresenter {
 				break;
 		}
 
-		$chunk_directory = $target_directory.'/'.$file_name;
+		$chunk_directory = $target_directory.'/'.$identifier;
 		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
 		if(!file_exists($part_file)) {
-			throw new FileNotFoundException();
-		} else {
-			throw new OutputCompleteException();
+			throw new FileNotFoundException;
 		}
-
 		$this->display(array('chunk' => 'exists'));
 	}
 
@@ -160,7 +157,7 @@ class UploadFile extends ApiPresenter {
 			throw new Exception(gettext('error assembling file'));
 		}
 
-		$this->display(array('result' => 'complete'));
+		$this->display(array('chunk' => 'received'));
 	}
 
 }
