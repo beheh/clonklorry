@@ -149,6 +149,7 @@ class Environment {
 				'/about' => 'Site\About',
 				'/clonk' => 'Site\Clonk',
 				'/api' => 'Site\Api',
+				'/privacy' => 'Site\Privacy',
 				'/contact' => 'Site\Contact'
 			));
 		}

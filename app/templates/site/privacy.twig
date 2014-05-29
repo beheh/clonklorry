@@ -1,0 +1,32 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Privacy policy'|trans %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	<div class="container">
+		<p><strong>{% trans %}All data, apart from files you upload, are kept on Lorry servers and backup systems and are not passed on to any third party.{% endtrans %}</strong></p>
+		<p>{% trans %}Files you upload may be transfered to a content delivery network to make them publicly available. You are responsible for files you upload.{% endtrans %}</p>
+		<h2>{% trans %}User data{% endtrans %}</h2>
+		<p>{% trans %}We save the following data directly related to your account:{% endtrans %}</p>
+		<ul>
+			<li>{% trans %}<strong>Basic account information</strong> (username, email address, encrypted password, language, verification status){% endtrans %}</li>
+			<li>{% trans %}<strong>Login services</strong> which you linked to your account{% endtrans %}</li>
+			<li>{% trans %}<strong>Profil information</strong> (when you registered, what you set up on the settings page){% endtrans %}</li>
+		</ul>
+		<p>{% trans %}The following data is saved as linked to your account, but cannot be correlated once you delete your account:{% endtrans %}</p>
+		<ul>
+			<li>{% trans %}<strong>Addons</strong> and <strong>releases</strong> you created and any files you uploaded{% endtrans %}</li>
+		</ul>
+		<h2>{% trans %}Transparency{% endtrans %}</h2>
+		<p>{% trans %}Lorrys source code is public, so you can check all of this yourself. If you have further questions concerning your privacy, please do not hesitate to contact us.{% endtrans %}<p>
+		<p>{% trans %}Our systems are hosted by Uberspace, a hoster with an (in our opinion) excellent privacy policy.{% endtrans %}</p>
+		<p>
+			<a href="{{base}}/contact" class="btn btn-primary">{% trans %}Contact us{% endtrans %}</a>
+			<a href="https://uberspace.de/privacy" class="btn btn-default">{% trans %}Uberspace privacy policy{% endtrans %}</a>
+	</div>
+{% endblock %}

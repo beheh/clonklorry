@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-29 17:02+0100\n"
-"PO-Revision-Date: 2014-05-29 17:04+0100\n"
+"POT-Creation-Date: 2014-05-29 17:53+0100\n"
+"PO-Revision-Date: 2014-05-29 17:54+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -802,6 +802,7 @@ msgid "Moderator"
 msgstr "Moderator"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:25
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:99
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
@@ -1558,6 +1559,98 @@ msgstr "Alle Details können vor der Veröffentlichung geändert werden."
 #: /home/benedict/public_html/lorry/app/cache/twig/dd/0a/3ff8973c9cf6f5d632b51525f95c0f561db20ed01e1d56e32c41c7f6d3d7.php:158
 msgid "Create addon"
 msgstr "Erweiterung anlegen"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:25
+msgid "Privacy policy"
+msgstr "Datenschutzerklärung"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:44
+msgid ""
+"All data, apart from files you upload, are kept on Lorry servers and backup "
+"systems and are not passed on to any third party."
+msgstr ""
+"Alle Daten, außer Dateien die du hochlädst, sind auf Lorry-Servern und "
+"Backup-Systemen und werden nicht an Dritte weitergegeben."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:48
+msgid ""
+"Files you upload may be transfered to a content delivery network to make "
+"them publicly available. You are responsible for files you upload."
+msgstr ""
+"Dateien, die du hochlädst, können auf ein Content Delivery Network "
+"übertragen werden um sie öffentlich verfügbar zu machen. Du bist für Dateien "
+"verantwortlich, die du hochlädst."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:52
+msgid "User data"
+msgstr "Benutzerdaten"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:56
+msgid "We save the following data directly related to your account:"
+msgstr "Wir speichern die folgenden Daten über dein Benutzerkonto:"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:61
+msgid ""
+"<strong>Basic account information</strong> (username, email address, "
+"encrypted password, language, verification status)"
+msgstr ""
+"<strong>Grundlegende Kontoinformationen</strong> (Benutzername, E-Mail-"
+"Adresse, verschlüsseltes Passwort, Sprache, Aktivierungsstatus)"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:65
+msgid "<strong>Login services</strong> which you linked to your account"
+msgstr ""
+"<strong>Anmeldedienste</strong> welche du mit deinem Konto verknüpft hast"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:69
+msgid ""
+"<strong>Profil information</strong> (when you registered, what you set up on "
+"the settings page)"
+msgstr ""
+"<strong>Profilinformationen</strong> (wann du dich registriert hast, was du "
+"auf der Einstellungsseite angegeben hast)"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:74
+msgid ""
+"The following data is saved as linked to your account, but cannot be "
+"correlated once you delete your account:"
+msgstr ""
+"Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht "
+"mehr zugeordnet werden wenn du dein Konto löschst:"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:79
+msgid ""
+"<strong>Addons</strong> and <strong>releases</strong> you created and any "
+"files you uploaded"
+msgstr ""
+"<strong>Erweiterungen</strong> and <strong>Releases</strong> die du "
+"erstellst und alle Dateien, die du hochlädst"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:84
+msgid "Transparency"
+msgstr "Transparenz"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:88
+msgid ""
+"Lorrys source code is public, so you can check all of this yourself. If you "
+"have further questions concerning your privacy, please do not hesitate to "
+"contact us."
+msgstr ""
+"Lorrys Quellcode ist öffentlich, damit du all dies selbst nachprüfen kannst. "
+"Falls du weitere Fragen zu deiner Privatsphäre hast kannst du uns jederzeit "
+"kontaktieren."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:92
+msgid ""
+"Our systems are hosted by Uberspace, a hoster with an (in our opinion) "
+"excellent privacy policy."
+msgstr ""
+"Unsere Systeme werden von Uberspace gehostet, einem Hoster mit einer (in "
+"unseren Augen) exzellenten Datenschutzerklärung."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:103
+msgid "Uberspace privacy policy"
+msgstr "Datenschutzerklärung von Uberspace"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e1/ac/7b703b781cfe21e5a290e18a213b40ae2c69753d1b19cba423596a1b9361.php:29
 msgid "Register at %brand%"

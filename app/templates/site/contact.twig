@@ -17,7 +17,7 @@
 				<form method="post">
 					{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
 					<div class="form-group">
-						<textarea class="form-control contact-form" name="feedback" rows="6" required></textarea>
+						<textarea class="form-control contact-form" name="feedback" rows="10" required></textarea>
 					</div>
 					<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 					{% if by %}
@@ -28,14 +28,16 @@
 			</div>
 			<div class="col-md-5">
 				<h2>{% trans %}Legal{% endtrans %}</h2>
-				<h3>{% trans %}Disclaimer{% endtrans %}</h3>
 				{% set legalmail = "<a href=\"mailto:" ~ legal_address ~ "\">" ~ legal_address ~ "</a>" %}
 				<p>{% trans %}If you have any legal issues please do not hesitate to contact us either via our feedback form or via {{legalmail}}. That way we are able to quickly resolve to any problems that might occur or remove any content which infringes your rights.{% endtrans %}</p>
-				<p>{% trans %}We are not responsible for the content of outgoing links or user generated content. User generated content does not necessarily reflect the view of the site owners.{% endtrans %}</p>
 				{% if site_trademark %}
-				<h3>{% trans %}Trademarks{% endtrans %}</h3>
 				<p>{{ site_trademark|raw }}.</p>
 				{% endif %}
+				<p>
+					<a href="{{base}}/privacy" class="btn btn-default">{% trans %}Privacy policy{% endtrans %}</a>
+				</p>
+				<h3>{% trans %}Disclaimer{% endtrans %}</h3>
+				<p>{% trans %}We are not responsible for the content of outgoing links or user generated content. User generated content does not necessarily reflect the view of the site owners.{% endtrans %}</p>
 				{% if address %}
 				<h3>{% trans %}Site owner{% endtrans %}</h3>
 				<address>
