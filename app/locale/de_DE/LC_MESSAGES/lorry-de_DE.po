@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-05-29 17:53+0100\n"
-"PO-Revision-Date: 2014-05-29 17:54+0100\n"
+"POT-Creation-Date: 2014-05-29 20:01+0100\n"
+"PO-Revision-Date: 2014-05-29 20:01+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -278,7 +278,7 @@ msgid "Password"
 msgstr "Passwort"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0e/fb/194bc3b08a670aa156849af9dbcea59ba9d71c0a92fa80da5eab7ce47209.php:74
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:109
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:111
 msgid "Confirm"
 msgstr "Bestätigen"
 
@@ -756,16 +756,16 @@ msgstr "Bitte öffne %url% um deine Addresse zu bestätigen."
 msgid "OpenID"
 msgstr "OpenID"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:53
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:55
 msgid "Google"
 msgstr "Google"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:74
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:76
 msgid "Facebook"
 msgstr "Facebook"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:100
-#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:104
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:102
+#: /home/benedict/public_html/lorry/app/cache/twig/4a/4a/d745b670ab0893d511ed8597060ea6d6e7427c3793765acc13710d568827.php:106
 msgid "OpenID url"
 msgstr "OpenID-URL"
 
@@ -838,11 +838,7 @@ msgstr "Wird als „%sender%” gesendet. "
 msgid "Legal"
 msgstr "Rechtliches"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:90
-msgid "Disclaimer"
-msgstr "Haftungsausschluss"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:97
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:93
 msgid ""
 "If you have any legal issues please do not hesitate to contact us either via "
 "our feedback form or via %legalmail%. That way we are able to quickly "
@@ -854,7 +850,16 @@ msgstr ""
 "wir Probleme schnell lösen und Inhalte entfernen, die gegen deine Rechte "
 "verstoßen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:101
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:110
+#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:25
+msgid "Privacy policy"
+msgstr "Datenschutzerklärung"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:115
+msgid "Disclaimer"
+msgstr "Haftungsausschluss"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:119
 msgid ""
 "We are not responsible for the content of outgoing links or user generated "
 "content. User generated content does not necessarily reflect the view of the "
@@ -864,11 +869,7 @@ msgstr ""
 "Inhalten verantwortlich. Benutzergenerierte Inhalt müssen nicht der Meinung "
 "der Seitenbetreiber entsprechen."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:108
-msgid "Trademarks"
-msgstr "Warenzeichen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:121
+#: /home/benedict/public_html/lorry/app/cache/twig/59/a7/1004c0944866bb8ad95d1e80bac066e12dfe711178e4447857fe07df892e.php:126
 msgid "Site owner"
 msgstr "Seitenbetreiber"
 
@@ -1364,8 +1365,7 @@ msgstr "Aktivierung erforderlich"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/b5/9e/cb9b1bfcdbb8d636fa0e8d08f1341f3cb1a18c5a4aac20615ed9b1e7b3dd.php:41
 msgid "Please activate your account by confirming your email address."
-msgstr ""
-"Bitte aktiviere deinen Account indem du deine E-Mail-Adresse bestätigst."
+msgstr "Bitte aktiviere dein Konto indem du deine E-Mail-Adresse bestätigst."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/c5/4d/ed13adfb76107d4f0c536f7f50b8858dbe010a7c761138ba3101f993ec03.php:123
 msgid "This addon has no description."
@@ -1560,10 +1560,6 @@ msgstr "Alle Details können vor der Veröffentlichung geändert werden."
 msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:25
-msgid "Privacy policy"
-msgstr "Datenschutzerklärung"
-
 #: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:44
 msgid ""
 "All data, apart from files you upload, are kept on Lorry servers and backup "
@@ -1638,7 +1634,7 @@ msgid ""
 msgstr ""
 "Lorrys Quellcode ist öffentlich, damit du all dies selbst nachprüfen kannst. "
 "Falls du weitere Fragen zu deiner Privatsphäre hast kannst du uns jederzeit "
-"kontaktieren."
+"kontaktieren.\t"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/e0/c4/838453d08e444831c5679c33c1df24f0b041bc45feacd0479a73fbb9ddbc.php:92
 msgid ""
@@ -2142,17 +2138,21 @@ msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 msgid "invalid path"
 msgstr "ungültiger Pfad"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:26
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:21
+msgid "filename too long"
+msgstr "Dateiname zu lang"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:24
+msgid "filename too short"
+msgstr "Dateiname zu kurz"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:33
 msgid "please upload the individual files instead of an archive"
 msgstr "Bitte lade die einzelnen Dateien anstelle eines Archivs hoch"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:29
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/QueryFile.php:36
 msgid "file must end with a clonk extension"
 msgstr "Datei muss mit Clonk-Erweiterung enden"
-
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:68
-msgid "uploading files is disabled"
-msgstr "Hochladen von Dateien ist deaktiviert"
 
 #: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:122
 msgid "error receiving file chunk"
@@ -2166,11 +2166,27 @@ msgstr "Datei existiert bereits"
 msgid "could not create upload directory"
 msgstr "konnte Verzeichnis zum Hochladen nicht erstellen"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:157
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:159
+msgid "file too big"
+msgstr "Datei zu groß"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:162
+msgid "file chunk count too big"
+msgstr "Dateiabschnittszahl zu hoch"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:165
+msgid "invalid file chunk size"
+msgstr "ungültige Dateiabschnittsgröße"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:168
+msgid "file chunk exceeds total size"
+msgstr "Dateiabschnitt übertrifft Gesamtgröße"
+
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:174
 msgid "error saving file chunk"
 msgstr "Fehler beim Speichern eines Dateiabschnitts"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:161
+#: /home/benedict/public_html/lorry/src/Presenter/Publish/Api/UploadFile.php:179
 msgid "error assembling file"
 msgstr "Fehler beim Zusammensetzen der Datei"
 
@@ -2389,8 +2405,16 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
-#~ msgid "invalid filename"
-#~ msgstr "ungültiger Dateiname"
+#: /home/benedict/public_html/lorry/src/Service/SecurityService.php:73
+msgid "uploading files is disabled"
+msgstr "Hochladen von Dateien ist deaktiviert"
+
+#: /home/benedict/public_html/lorry/src/Service/SecurityService.php:76
+msgid "please activate your account before uploading files"
+msgstr "Bitte aktiviere deinen Konto bevor du Dateien hochlädst"
+
+#~ msgid "Trademarks"
+#~ msgstr "Warenzeichen"
 
 #~ msgid "General"
 #~ msgstr "Allgemein"
@@ -2749,9 +2773,6 @@ msgstr "%n%."
 
 #~ msgid "Basic"
 #~ msgstr "Allgemein"
-
-#~ msgid "Username too long."
-#~ msgstr "Benutzername zu lang."
 
 #~ msgid "Username invalid."
 #~ msgstr "Benutzername ungültig."

@@ -30,4 +30,20 @@ class ConfigService {
 		}
 		return $subset;
 	}
+
+	public function getSize($key) {
+		$size = $this->get($key);
+		$suffixes = array(
+			'' => 1,
+			'k' => 1024,
+			'm' => 1048576, // 1024 * 1024
+			'g' => 1073741824, // 1024 * 1024 * 1024
+		);
+		$match = null;
+		if(preg_match('/([0-9]+)\s*(k|m|g)?(b?(ytes?)?)/i', $size, $match)) {
+			return $match[1] * $suffixes[strtolower($match[2])];
+		}
+		return 0;
+	}
+
 }

@@ -13,7 +13,11 @@ use Analog;
 
 class UploadFile extends ApiPresenter {
 
-	private function removeChunkDirectory($chunk_directory) {
+	public static function removeChunkDirectory($chunk_directory) {
+		if(!is_dir($chunk_directory)) {
+			return false;
+		}
+
 		if(rename($chunk_directory, $chunk_directory.'.tmp')) {
 			$chunk_directory .= '.tmp';
 		}
@@ -25,7 +29,7 @@ class UploadFile extends ApiPresenter {
 			}
 		}
 
-		rmdir($chunk_directory);
+		return rmdir($chunk_directory);
 	}
 
 	private function attemptAssembleFile(User $user, Addon $addon, Release $release, $chunk_directory, $file_name, $chunk_size, $total_size) {
@@ -53,7 +57,7 @@ class UploadFile extends ApiPresenter {
 				return false;
 			}
 
-			$this->removeChunkDirectory($chunk_directory);
+			UploadFile::removeChunkDirectory($chunk_directory);
 		}
 
 		return true;
@@ -63,14 +67,10 @@ class UploadFile extends ApiPresenter {
 		if(!$this->session->authenticated()) {
 			throw new ForbiddenException();
 		}
-
-		if(!$this->config->get('enable/upload')) {
-			throw new ForbiddenException(gettext('uploading files is disabled'));
-		}
 	}
 
 	public function get($id, $version) {
-		$this->ensureAuthorization();
+		$this->security->requireLogin();
 
 		$type = QueryFile::getType();
 
@@ -104,9 +104,9 @@ class UploadFile extends ApiPresenter {
 	}
 
 	public function post($id, $version) {
-		$this->ensureAuthorization();
-
+		$this->security->requireLogin();
 		$this->security->requireValidState();
+		$this->security->requireUploadRights();
 
 		$type = QueryFile::getType();
 
@@ -151,13 +151,31 @@ class UploadFile extends ApiPresenter {
 			throw new Exception(gettext('could not create upload directory'));
 		}
 
-		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_POST, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
+		$chunk_number = filter_input(INPUT_POST, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
+		$chunk_size = filter_input(INPUT_POST, 'resumableChunkSize', FILTER_SANITIZE_NUMBER_INT);
+		$total_size = filter_input(INPUT_POST, 'resumableTotalSize', FILTER_SANITIZE_NUMBER_INT);
+
+		if($total_size > $this->config->getSize('upload/datasize')) {
+			throw new Exception(gettext('file too big'));
+		}
+		if($chunk_number > 1000) {
+			throw new Exception(gettext('file chunk count too big'));
+		}
+		if($chunk_size < 1 || $total_size < 1) {
+			throw new Exception(gettext('invalid file chunk size'));
+		}
+		if(($chunk_number * $chunk_size) > ($total_size + $chunk_size)) {
+			throw new Exception(gettext('file chunk exceeds total size'));
+		}
+
+		$part_file = $chunk_directory.'/'.$file_name.'.part'.$chunk_number;
 
 		if(!move_uploaded_file($file['tmp_name'], $part_file)) {
 			throw new Exception(gettext('error saving file chunk'));
 		}
 
-		if(!$this->attemptAssembleFile($user, $addon, $release, $chunk_directory, $file_name, filter_input(INPUT_POST, 'resumableChunkSize', FILTER_SANITIZE_NUMBER_INT), filter_input(INPUT_POST, 'resumableTotalSize', FILTER_SANITIZE_NUMBER_INT))) {
+
+		if(!$this->attemptAssembleFile($user, $addon, $release, $chunk_directory, $file_name, $chunk_size, $total_size)) {
 			throw new Exception(gettext('error assembling file'));
 		}
 

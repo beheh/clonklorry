@@ -19,15 +19,25 @@ class RemoveFile extends ApiPresenter {
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
 
-		$filename = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'fileName'));
+		$filename = QueryFile::sanitizePath(filter_input(INPUT_POST, 'fileName'));
+		$unfiltered_identifier = filter_input(INPUT_POST, 'uniqueIdentifier');
+		$identifier = false;
+		if($unfiltered_identifier) {
+			$identifier = QueryFile::sanitizePath($unfiltered_identifier);
+		}
 
-		$file = QueryFile::getDataDirectory($this->config, $addon, $release).'/'.$filename;
+		$target_directory = QueryFile::getDataDirectory($this->config, $addon, $release);
+		$chunk_directory = $target_directory.'/'.$identifier.'.parts';
 
-		if(!file_exists($file)) {
+		$file = $target_directory.'/'.$filename;
+
+		if(!file_exists($file) && (!$identifier || !is_dir($chunk_directory))) {
 			throw new FileNotFoundException;
 		}
 
-		unlink($file);
+		if(!unlink($file) && !UploadFile::removeChunkDirectory($chunk_directory)) {
+			throw new \Exception('file removal failed');
+		}
 
 		$this->display(array('file' => 'removed'));
 	}

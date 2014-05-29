@@ -94,6 +94,7 @@ class Environment {
 		}
 
 		$security = new SecurityService();
+		$security->setConfigService($config);
 		$security->setSessionService($session);
 
 		$mail = new MailService();

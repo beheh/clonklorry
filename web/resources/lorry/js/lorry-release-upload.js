@@ -63,6 +63,7 @@ releaseResumable.on('fileAdded', function(file) {
 });
 
 releaseResumable.on('fileProgress', function(file) {
+	if(file.isComplete()) return;
 	var percentage = Math.min(Math.round(file.progress() * 100), 99);
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text(percentage + '%');
 });
@@ -86,30 +87,32 @@ function releaseFilesAdd(file) {
 		if (!confirm($('#message-text-confirm-remove').text())) {
 			return;
 		}
-		$.ajax(releaseFileBaseUrl + '/remove', {
-			method: 'post',
-			data: {state: state, fileName: file.fileName},
-			success: function() {
-				$('li[data-unique="' + file.uniqueIdentifier + '"]').remove();
-				$.each(releaseResumable.files, function(key, clickedFile) {
-					if (clickedFile.uniqueIdentifier === file.uniqueIdentifier) {
-						file.cancel();
-						return false;
-					}
-				});
-				$.each(releaseFilesExisting, function(key, clickedFile) {
-					if (clickedFile.uniqueIdentifier === file.uniqueIdentifier) {
-						releaseFilesExisting.splice(key, 1);
-						return false;
-					}
-				});
-
-				updateReleaseResumableState();
-			},
-			error: function() {
-				alert($('#message-text-remove-failed').text());
+		$.each(releaseResumable.files, function(key, clickedFile) {
+			if (clickedFile.uniqueIdentifier === file.uniqueIdentifier) {
+				file.cancel();
+				return false;
 			}
 		});
+		$.ajax(releaseFileBaseUrl + '/remove', {
+			method: 'post',
+			dataType: 'json',
+			data: {state: state, fileName: file.fileName, uniqueIdentifier: file.uniqueIdentifier}
+		})
+				.always(function(result) {
+					if (result.file === 'removed' || result.status === 404) {
+						$('li[data-unique="' + file.uniqueIdentifier + '"]').remove();
+						$.each(releaseFilesExisting, function(key, clickedFile) {
+							if (clickedFile.uniqueIdentifier === file.uniqueIdentifier) {
+								releaseFilesExisting.splice(key, 1);
+								return false;
+							}
+						});
+						updateReleaseResumableState();
+					}
+					else {
+						alert($('#message-text-remove-failed').text());
+					}
+				});
 	});
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text(translation.preparingUpload);
 }
@@ -135,11 +138,13 @@ function updateReleaseResumableState() {
 		$('#resumable-pause').removeAttr('disabled');
 		$('#resumable-pause').show();
 		$('#resumable-upload').hide();
+		$('#resumable-upload').attr('disabled', true);
 	}
 	else {
 		$('#resumable-select').removeAttr('disabled');
-		$('#resumable-pause').attr('disabled', true);
 		$('#resumable-pause').hide();
+		$('#resumable-pause').attr('disabled', true);
+		$('#resumable-upload').removeAttr('disabled');
 		$('#resumable-upload').show();
 	}
 }

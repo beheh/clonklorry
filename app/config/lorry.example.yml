@@ -28,7 +28,9 @@ assetbase: http://localhost/assets
 # the directories for different user data, should be writeable
 upload:
     assets:
+    assetsize: 5M
     data:
+    datasize: 128M
 
 contact:
     address: <strong>Full Name</strong>

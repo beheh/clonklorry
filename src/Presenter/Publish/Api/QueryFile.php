@@ -17,6 +17,13 @@ class QueryFile extends ApiPresenter {
 		if(!preg_match('/^[-0-9A-Z_\.]*$/i', $file_name)) {
 			throw new Exception(gettext('invalid path'));
 		}
+		if(strlen($file_name) > 50) {
+			throw new Exception(gettext('filename too long'));
+		}
+		if(strlen($file_name) < 5) {
+			throw new Exception(gettext('filename too short'));
+		}
+
 		return $file_name;
 	}
 
@@ -76,7 +83,7 @@ class QueryFile extends ApiPresenter {
 			$found = $finder->files()->depth('== 0')->in($directory);
 
 			foreach($found as $file) {
-				$files[] = array('uniqueIdentifier' => count($files), 'fileName' => $file->getRelativePathname());
+				$files[] = array('uniqueIdentifier' => count($files), 'fileName' => $file->getRelativePathname(), 'complete' => true, 'progress' => 100);
 			}
 		}
 
