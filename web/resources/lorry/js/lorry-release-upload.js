@@ -85,8 +85,10 @@ releaseResumable.on('fileError', function(file, raw) {
 function releaseFilesAdd(file) {
 	$('#resumable-files').append($('<li class="list-group-item resumable-item" data-unique="' + file.uniqueIdentifier + '"><span class="resumable-filename">' + file.fileName + '</span><button type="button" class="close" title="' + $('#message-text-remove').text() + '" aria-hidden="true">&times;</button><span class="resumable-progress"></span></li>'));
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .close').click(function() {
-		if (!confirm($('#message-text-confirm-remove').text())) {
-			return;
+		if ((file.isComplete && file.isComplete()) || file.complete) {
+			if (!confirm($('#message-text-confirm-remove').text())) {
+				return;
+			}
 		}
 		$.each(releaseResumable.files, function(key, clickedFile) {
 			if (clickedFile.uniqueIdentifier === file.uniqueIdentifier) {
