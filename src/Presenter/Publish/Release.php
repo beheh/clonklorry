@@ -30,6 +30,10 @@ class Release extends Presenter {
 		$this->context['addontitle'] = $addon->getTitle();
 		$this->context['addonid'] = $addon->getId();
 		$this->context['version'] = $release->getVersion();
+
+		$this->context['whatsnew'] = $release->getWhatsnew();
+		$this->context['changelog'] = $release->getChangelog();
+
 		$this->context['released'] = $release->isReleased();
 		$latest = ModelFactory::build('Release')->latest($addon->getId());
 		$this->context['latest'] = ($latest && $latest->getId() == $release->getId());
@@ -51,7 +55,7 @@ class Release extends Presenter {
 		$addon = Edit::getAddon($id, $this->session->getUser());
 		$release = Release::getRelease($addon->getId(), $version);
 
-		if(isset($_POST['general-submit'])) {
+		if(isset($_POST['general-form'])) {
 			$new_version = filter_input(INPUT_POST, 'version');
 			$this->context['new_version'] = $new_version;
 
@@ -79,6 +83,36 @@ class Release extends Presenter {
 				}
 			} else {
 				$this->error('version', implode($errors, '<br>'));
+			}
+		}
+
+		if(isset($_POST['changes-form'])) {
+			$whatsnew = trim(filter_input(INPUT_POST, 'whatsnew'));
+			$changelog = trim(filter_input(INPUT_POST, 'changelog'));
+
+			$errors = array();
+
+			try {
+				$release->setWhatsnew($whatsnew);
+			} catch(ModelValueInvalidException $ex) {
+				$errors[] = sprintf(gettext('"%s" is %s.'), gettext('What\'s new?'), $ex->getMessage());
+			}
+			try {
+				$release->setChangelog($changelog);
+			} catch(ModelValueInvalidException $ex) {
+				$errors[] = sprintf(gettext('Changelog is %s.'), $ex->getMessage());
+			}
+
+			if(empty($errors)) {
+				if($release->modified()) {
+					if($release->save()) {
+						$this->success('changes', gettext('Changes saved.'));
+					} else {
+						$this->error('changes', gettext('Error saving the changes.'));
+					}
+				}
+			} else {
+				$this->error('changes', implode($errors, '<br>'));
 			}
 		}
 

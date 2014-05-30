@@ -1,14 +1,16 @@
 {% extends 'root.twig' %}
 
 {% block content %}
-	<div class="container">
-		<div class="page-header">
+	<div class="page-header">
+		<div class="container">
 			<h1>{{ title }}
 				<small>
 					{% include 'functions/labels/version.twig' with {'version' : version} %}
 				</small>
 			</h1>
 		</div>
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
 				<div class="row">
@@ -20,7 +22,7 @@
 							<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 0;">
 						</p>
 						<div class="visible-desktop" id="download">
-							<p class="center"><a href="{{base}}/download/{{game.short}}/{{addon.short}}/{{version}}" class="btn btn-primary">Download</a> 70.3MB total</p>
+							<p class="center"><a href="{{base}}/download/{{game.short}}/{{addon.short}}/{{version}}" class="btn btn-primary btn-block">{% trans %}Download{% endtrans %}</a></p>
 							{% if requirements %}
 								<p class="center">
 									Requires
@@ -32,40 +34,49 @@
 						</div>
 					</div>
 					<div class="col-md-8">
-						{% if addon_description %}
-							<p>{{ addon_description }}</p>
+						{% if description %}
+							<p>{{ description }}</p>
 						{% else %}
 							<p><em>{% trans %}This addon has no description.{% endtrans %}</em></p>
 						{% endif %}
-						{% if release_description %}
-							<p>{{ release_description }}</p>
+						{% if whatsnew %}
+							<p>{{ whatsnew }}</p>
 						{% endif %}
 <!--						<p>{% trans %}Categories{% endtrans %} <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>!-->
+						{% if changelog %}
+							<a href="#changelog" data-toggle="collapse" data-target="#changelog-block">{% trans %}Changelog{% endtrans %}</a>
+						{% endif %}
 					</div>
 				</div>
-				<hr>
+				{% if changelog %}
+					<div class="collapse" id="changelog-block">
+						<h3 id="changelog">{% trans "Changelog" %}</h3>
+						<pre>{{ changelog }}</pre>
+					</div>
+				{% endif %}
+				<!--<hr>
 				<h2>{% trans %}Rounds and Addons{% endtrans %}</h2>
 				<img src="" style="width: 150px; height: 105px;">
 				<img src="" style="width: 150px; height: 105px;">
 				<img src="" style="width: 150px; height: 105px;">
-				<hr>
-<!--				<h2>{% trans %}Comments{% endtrans %}</h2>!-->
+				<h2>{% trans %}Comments{% endtrans %}</h2>-->
 			</div>
 			<div class="col-md-4 sidebar">
-				<h2>{% trans %}Addon{% endtrans	%}</h2>
-				<p>{% trans %}Released on the {{releaseday}}.{% endtrans %}</p>
+				<h3>{% trans %}Release{% endtrans %}</h3>
+				<ul class="list-group">
+					<li class="list-group-item"><span class="glyphicon glyphicon-time"></span> {% trans %}Released on the {{releaseday}}{% endtrans %}</li>
+				</ul>
 				{% if modify %}
 					<p class="hidden-print">
 						<a href="{{base}}/publish/{{addon.id}}" class="btn btn-block btn-default">{% trans %}Edit addon{% endtrans %}</a>
 						<a href="{{base}}/publish/{{addon.id}}/{{version}}" class="btn btn-block btn-default">{% trans %}Edit release{% endtrans %}</a>
 					</p>
 				{% endif %}
-				<h2>{% trans %}Community{% endtrans %}</h2>
-<!--				<p>State: <span class="success">Active</span> [<a href="#" id="state">?</a>]</p>!-->
-				<ul>
-					{% if website %}<li><a href="{{website}}">{% trans %}Project page{% endtrans %}</a></li>{% endif %}
-					{% if bugtracker %}<li><a href="{{bugtracker}}">{% trans %}Report a bug{% endtrans %}</a></li>{% endif %}
-					<li><a href="#">{% trans %}Interested in an update?{% endtrans %}</a></li>
+				<h3>{% trans %}Community{% endtrans %}</h3>
+				<ul class="list-group">
+					{% if website %}<li class="list-group-item"><a href="{{website}}">{% trans %}Project page{% endtrans %}</a></li>{% endif %}
+					{% if bugtracker %}<li class="list-group-item"><a href="{{bugtracker}}">{% trans %}Report a bug{% endtrans %}</a></li>{% endif %}
+					<li class="list-group-item"><a href="#">{% trans %}Interested in an update?{% endtrans %}</a></li>
 				</ul>
 			</div>
 		</div>

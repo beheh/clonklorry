@@ -45,8 +45,9 @@ class Release extends Presenter {
 		}
 		$this->context['version'] = $release->getVersion();
 
-		$this->context['addon_description'] = $addon->getDescription();
-		$this->context['release_description'] = $release->getDescription();
+		$this->context['description'] = $addon->getDescription();
+		$this->context['whatsnew'] = $release->getWhatsnew();
+		$this->context['changelog'] = $release->getChangelog();
 
 		$this->context['dependencies'] = array();
 		$dependencies = $release->fetchDependencies();

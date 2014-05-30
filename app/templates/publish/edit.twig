@@ -22,7 +22,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="addon">
-				<form role=form" method="post" action="{{filename}}?addon#addon">
+				<form role=form" method="post" action="{{filename}}#addon">
 					<input type="hidden" name="addon-form">
 					<input type="hidden" name="state" value="{{state}}">
 					{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
@@ -57,7 +57,7 @@
 							<div class="form-group">
 								<label for="title">{%trans "Abbreviation" %}</label>
 								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
-								<span class="help-block">{% trans %}Only enter a well-known abbreviation	.{% endtrans %}</span>
+								<span class="help-block">{% trans %}Only enter a well-known abbreviation.{% endtrans %}</span>
 							</div>
 						</div>
 						<div class="col-md-4">

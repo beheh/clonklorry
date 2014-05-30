@@ -13,7 +13,8 @@ class Release extends Model {
 			'version' => 'string',
 			'timestamp' => 'datetime',
 			'assetsecret' => 'string',
-			'description' => 'text'));
+			'changelog' => 'text',
+			'whatsnew' => 'text'));
 	}
 
 	public final function setAddon($addon) {
@@ -99,12 +100,30 @@ class Release extends Model {
 		return $this->getTimestamp() !== null;
 	}
 
-	public function setDescription($description) {
-		return $this->setValue('description', $description);
+	public function setWhatsnew($whatsnew) {
+		if($whatsnew) {
+			$this->validateString($whatsnew, 5, 512);
+		} else {
+			$whatsnew = null;
+		}
+		return $this->setValue('whatsnew', $whatsnew);
 	}
 
-	public function getDescription() {
-		return $this->getValue('description');
+	public function getWhatsnew() {
+		return $this->getValue('whatsnew');
+	}
+
+	public function setChangelog($changelog) {
+		if($changelog) {
+			$this->validateString($changelog, 5, 65536);
+		} else {
+			$changelog = null;
+		}
+		return $this->setValue('changelog', $changelog);
+	}
+
+	public function getChangelog() {
+		return $this->getValue('changelog');
 	}
 
 	public function fetchRequirements() {
