@@ -225,7 +225,7 @@ class Edit extends Presenter {
 
 			if(empty($errors)) {
 				$release->save();
-				$this->redirect('/publish/'.$addon->getId().'/'.$release->getVersion());
+				$this->success('release', gettext('Release created.'));
 			} else {
 				$this->error('release', implode('<br>', $errors));
 				$this->context['focus_version'] = true;
