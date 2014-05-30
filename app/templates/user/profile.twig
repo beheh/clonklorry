@@ -1,4 +1,4 @@
-{% extends 'root.twig' %}
+	{% extends 'root.twig' %}
 
 {% block content %}
 	<div class="page-header">
@@ -26,8 +26,10 @@
 						{% endif %}
 						{% if username == "B_E" %}
 						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><span class="glyphicon glyphicon-leaf"></span> <a href="{{base}}/about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
-						{% else %}
-						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Participant in Lorry Alpha{% endtrans %}</li>
+						{% elseif user_alpha %}
+						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-heart"></span> {% trans %}Took part in Lorry Alpha{% endtrans %}</li>
+						{% elseif user_beta %}
+						<li class="list-group-item" title="{% trans %}Registered on the beta site{% endtrans %}"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Took part in Lorry Beta{% endtrans %}</li>
 						{% endif %}
 						{% if username == "Nachtfalter" or username == "Luchs" or username == "Nachtschatten" or username == "Tyron" %}
 						<li class="list-group-item" title="{% trans %}Built something awesome for the community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
@@ -35,10 +37,10 @@
 				</ul>
 				{% if clonkforge or github %}
 					<h3>{% trans %}Links{% endtrans %}</h3>
-					<div class="list-group">
-						{% if clonkforge %}<a class="list-group-item" href="{{clonkforge.url}}">{{clonkforge.profile}}</a>{% endif %}
-						{% if github %}<a class="list-group-item"  href="{{github.url}}">{{github.profile}}</a>{% endif %}
-					</div>
+					<ul class="list-group">
+						{% if clonkforge %}<li class="list-group-item"><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
+						{% if github %}<li class="list-group-item"><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
+					</ul>
 				{% endif %}
 				{% if not self and user_administrator or (user_moderator and moderator == false) %}
 					<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
