@@ -251,7 +251,7 @@ abstract class Model implements ModelInterface {
 
 	public final function ensureRow($row) {
 		if(!array_key_exists($row, $this->schema) && $row != 'id') {
-			throw new InvalidArgumentException('row "'.$row.'" does not exist');
+			throw new InvalidArgumentException('row "'.$row.'" does not exist in model "'.get_class($this).'"');
 		}
 		return true;
 	}
