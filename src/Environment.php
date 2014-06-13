@@ -75,6 +75,8 @@ class Environment {
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('origpath', trim(Router::getPath()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
+		$twig->addGlobal('locale', str_replace('-', '_', $localisation->getDisplayLanguage()));
+		$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
 
 		$twig->addGlobal('site_enabled', $config->get('enable/site'));
 		$twig->addGlobal('site_notice', $config->get('notice/text'));

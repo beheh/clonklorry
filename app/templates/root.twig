@@ -8,41 +8,44 @@
 		<link rel="shortcut icon" href="{{resources}}/lorry/img/favicon.ico" type="image/x-icon">
 		<link href="{{resources}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="{{resources}}/lorry/css/lorry.css?3" rel="stylesheet">
+		{% if fbid %}<meta property="fb:app_id" content="{{fbid}}">{% endif %}
 		<meta property="og:title" content="{{title|default(brand)}}">
-		<meta property="og:image" content="{{component}}/lorry/img/logo.png">
-		<meta property="og:site_name" content="{{brand}}">
+		<meta property="og:locale" content="{{locale}}">
+		<meta property="og:url" content="{{base}}{{origpath}}">
+		<meta property="og:site_name" content="{{brand}}">{% block opengraph %}
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="{{resources}}/lorry/img/logo.png">{% endblock %}
 		<script>var base = '{{base}}', state = '{{state}}';</script>
 	</head>
 	<body>{% block body %}
 		{% include 'functions/navbar.twig' %}
 		{% if site_notice and site_enabled %}
-		<div id="site-notice" class="jumbotron alert-{{site_notice_class|default('danger')}}">
-			<div class="container">
-				{{site_notice}}
+			<div id="site-notice" class="jumbotron alert-{{site_notice_class|default('danger')}}">
+				<div class="container">
+					{{site_notice}}
+				</div>
 			</div>
-		</div>
 		{% endif %}
 		{% block content %}
-		<div class="container">
-		</div>
+			<div class="container">
+			</div>
 		{% endblock %}
 		<div class="container">
 			<footer class="footer">
 				<p class="visible-xs hidden-print">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
 				<p><a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}{% if site_enabled %} · <a class="text" href="{{base}}/about">{% trans "About the project" %}</a> · <a class="text" href="{{base}}/contact">{% trans "Contact" %}</a>{% endif %}</p>
 			</footer>
-		</div>
-	{% endblock %}
+		</div>{% endblock %}
 		<script src="{{resources}}/jquery/jquery-2.1.1.min.js"></script>
 		<script src="{{resources}}/bootstrap/js/bootstrap.min.js"></script>
 		{% if user_login %}
-			<script>var translation = {unsavedChanges:"{% trans %}You have unsaved changes.{% endtrans %}",preparingUpload:"{% trans %}Preparing upload{% endtrans %}",sureRemoveOauth:"{% trans %}Are you sure you want to remove this login service from your account?{% endtrans %}", stillUploading:"{% trans %}You are still uploading files.{% endtrans %}"}</script>
+			<script>var translation = {unsavedChanges: "{% trans %}You have unsaved changes.{% endtrans %}", preparingUpload: "{% trans %}Preparing upload{% endtrans %}", sureRemoveOauth: "{% trans %}Are you sure you want to remove this login service from your account?{% endtrans %}", stillUploading: "{% trans %}You are still uploading files.{% endtrans %}"}</script>
 			<script src="{{resources}}/jquery/jquery.are-you-sure.js"></script>
 			<script src="{{resources}}/typeahead.js/typeahead.bundle.min.js"></script>
 		{% endif %}
 		<script src="{{resources}}/lorry/js/lorry.js"></script>
 		{% for script in scripts %}
-		<script src="{{resources}}{{script}}"></script>
+			<script src="{{resources}}{{script}}"></script>
 		{% endfor %}
 		<script>{% block javascript %}{% endblock %}</script>
 		{% if site_tracking %}{{site_tracking|raw}}{% endif %}
