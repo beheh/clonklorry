@@ -15,15 +15,13 @@
 				<h3 id="appearance">{% trans "Appearance" %}</h3>
 				<div class="form-group">
 					<label for="username">{% trans "Username" %}</label>
-					<input type="text" class="form-control" name="username" id="username" value="{{username}}" required disabled>
+					<input type="text" class="form-control" name="username" id="username" value="{{username}}" {% if not user_admistrator %}title="{% trans %}Contact us to change your username.{% endtrans %}" {%endif %}required disabled>
 				</div>
+				{% if user_administrator %}
 				<div class="form-group">
-					{% if user_administrator %}
-						<a href="{{base}}/users/{{user_name}}/edit" class="btn btn-default">{% trans %}Edit own user{% endtrans %}</a>
-					{% else %}
-						<div class="alert alert-info">{% trans %}Contact us to change your username.{% endtrans %}</div>
-					{% endif %}
+					<a href="{{base}}/users/{{user_name}}/edit" class="btn btn-default">{% trans %}Edit own user{% endtrans %}</a>
 				</div>
+				{% endif %}
 				<h3 id="profiles">{% trans "Links" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
 				<form role=form" method="post">
