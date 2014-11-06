@@ -11,60 +11,138 @@
 	</div>
 	<div class="container">
 		<div class="row">
+			<div class="col-md-4">
+				<h2>{% trans "User data" %}</h2>
+				<h3>{% trans "Identity" %}</h3>
+				{% include 'functions/alert.twig' with {'selector' : 'username'} %}
+				<form role=form" method="post">
+					<input type="hidden" name="state" value="{{state}}">
+					<div class="form-group">
+						<div class="form-group">
+							<label for="username">{% trans "Username" %}</label>
+							<input type="text" class="form-control" name="username" id="username" value="{{username_edit}}" required>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default" name="change-username-submit">{% trans "Change username" %}</button>
+						</div>
+					</div>
+				</form>
+				{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+				<form role=form" method="post">
+					<input type="hidden" name="state" value="{{state}}">
+					<div class="form-group">
+						<label for="email">{% trans "Email address" %}</label>
+						<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="require-activation" value="yes"{% if require_activation %} checked{% endif %}> {% trans %}New email address has to be activated{% endtrans %}
+						</label>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-default" name="change-contact-submit">{% trans "Change email address" %}</button>
+					</div>
+				</form>
+				{% if user_administrator and not self %}
+				<h3>{% trans "Rights" %}</h3>
+				<form role=form" method="post">
+					<input type="hidden" name="state" value="{{state}}">
+					<div class="radio">
+						<label>
+							<input type="radio" name="rights" value="yes"{% if not moderator or administrator %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="rights" value="yes"{% if moderator and not administrator %} checked{% endif %}> {% trans %}Moderator{% endtrans %}
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="rights" value="yes"{% if administrator %} checked{% endif %}> {% trans %}Administrator{% endtrans %}
+						</label>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-default" name="rights-submit">{% trans "Save" %}</button>
+					</div>
+				</form>
+				{% endif %}
+			</div>
+			{% if not self %}
 			<div class="col-md-8">
-				<h2>{% trans "Account" %}</h2>
 				<div class="row">
 					<div class="col-md-6">
-						{% include 'functions/alert.twig' with {'selector' : 'username'} %}
-						<form role=form" method="post">
+					<h2 id="moderation">{% trans "Moderation" %}</h2>
+						<h3 id="ban">{% trans %}Ban{% endtrans %}</h3>
+						{% include 'functions/alert.twig' with {'selector' : 'ban'} %}
+						<form role="form" method="post" action="{{filename}}?ban">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
-								<div class="form-group">
-									<label for="username">{% trans "Username" %}</label>
-									<input type="text" class="form-control" name="username" id="username" value="{{username_edit}}" required>
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-default" name="change-username-submit">{% trans "Change username" %}</button>
-								</div>
+								<label for="reason">{% trans "Reasoning" %}</label>
+								<input type="text" class="form-control" name="reason" id="reason" value="{{ban_reason}}" required>
+								 <p class="help-block">{% trans %}Try to give a constructive and helpful reason.{% endtrans %}</p>
+							</div>
+							<div class="form-group">
+								<label for="duration">{% trans "Duration" %}</label>
+								<input class="form-control" type="number" name="duration" id="duration" required placeholder="1" min="1">
+							</div>
+							<div class="form-group">
+								<select class="form-control" name="duration-type" required>
+									<option value="">{% trans %}Choose a duration&hellip;{% endtrans %}</option>
+									<option value="d">{% trans %}day(s){% endtrans %}</option>
+									<option value="w">{% trans %}week(s){% endtrans %}</option>
+									<option value="m">{% trans %}month(s){% endtrans %}</option>
+									<option value="y">{% trans %}year(s){% endtrans %}</option>
+									<option value="infinite">{% trans %}forever{% endtrans %}</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger">{% trans %}Ban now{% endtrans %}</button>
 							</div>
 						</form>
 					</div>
 					<div class="col-md-6">
-						{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-						<form role=form" method="post">
+						<h2 id="support">{% trans "Support" %}</h2>
+						<h3>{% trans %}Reset{% endtrans%}</h3>
+						<noscript>
+							<div class="alert alert-danger">{% trans %}Javascript needs to be enabled.{% endtrans %}</div>
+						</noscript>
+						<form method="post">
 							<input type="hidden" name="state" value="{{state}}">
-							<div class="form-group">
-								<label for="email">{% trans "Email address" %}</label>
-								<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="require-activation" value="yes"{% if require_activation %} checked{% endif %}> {% trans %}Email address has to be activated{% endtrans %}
-								</label>
+							<div class="form-group collapse" id="support-intro">
+								<label for="support-confirm">{% trans %}Please type the username to confirm:{% endtrans %}</label>
+								<input class="form-control"id="support-confirm" type="text" required>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-default" name="change-contact-submit">{% trans "Change email address" %}</button>
+								<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>								
+								<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Remove login services{% endtrans %}</a>
 							</div>
 						</form>
+						{% if user_administrator %}
+						<h3>{% trans %}Disable{% endtrans%}</h3>
+						<form method="post">
+							<input type="hidden" name="state" value="{{state}}">
+							<div class="form-group collapse" id="remove-intro">
+								<label for="remove-confirm">{% trans %}Please type the username to confirm:{% endtrans %}</label>
+								<input class="form-control" id="remove-confirm" type="text" required>
+								 <p class="help-block">{% trans %}The account "{{username}}" will be <strong>permanently disabled</strong>.{% endtrans %}</p>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-danger btn-block remove-button" disabled="">{% trans %}Disable account permamently{% endtrans %}</button>
+							</div>
+						</form>
+						{% endif %}
 					</div>
 				</div>
 			</div>
-			{% if not self %}
-				<div class="col-md-4">
-					<h2 id="security">{% trans "Support" %}</h2>
-					<label class="checkbox"><input type="checkbox" id="support-confirm"> {% trans %}Please confirm this user should be moderated.{% endtrans %}</label>
-					<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>
-					<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset login services{% endtrans %}</a>
-					{% if user_administrator %}
-						<label class="checkbox"><input type="checkbox" id="remove-confirm"> {% trans %}Please confirm this user should be removed.{% endtrans %}</label>
-						<button type="submit" class="btn btn-danger btn-block" id="remove-button" disabled="">Konto permanent entfernen</button>
-					{% endif %}
-				</div>
 			{% endif %}
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>{% trans %}Moderation protocol{% endtrans %}</h2>
+				<h2>{% trans %}Log{% endtrans %}</h2>
+				<table class="table">
+					<tr><th>{% trans %}Date{% endtrans %}</th><th>{% trans %}Action{% endtrans %}</th><th>{% trans %}Executed by{% endtrans %}</th></tr>
+				</table>
 				<div class="alert alert-info">{% trans %}This account has not been moderated in the past.{% endtrans %}</div>
 			</div>
 		</div>
@@ -75,24 +153,23 @@
 {% block javascript %}
 	{{ parent() }}
 
-	$('#remove-confirm').prop('checked', false);
+	var username = "{{username}}";
 
-	$('#remove-confirm').change(function() {
-	if($(this).prop('checked')) {
-	$('#remove-button').removeAttr('disabled');
-	} else {
-	$('#remove-button').attr('disabled', true);
-	}
+	$('#support-intro').show();
+	$('#support-confirm').on("change keyup paste", function() {
+		if($(this).val().toLowerCase() == username.toLowerCase()) {
+			$('.support-button').removeAttr('disabled');
+		} else {
+			$('.support-button').attr('disabled', true);
+		}
 	});
-
-
-	$('#support-confirm').prop('checked', false);
-
-	$('#support-confirm').change(function() {
-	if($(this).prop('checked')) {
-	$('.support-button').removeAttr('disabled');
-	} else {
-	$('.support-button').attr('disabled', true);
-	}
+	
+	$('#remove-intro').show();		
+	$('#remove-confirm').on("change keyup paste", function() {
+		if($(this).val().toLowerCase() == username.toLowerCase()) {
+			$('.remove-button').removeAttr('disabled');
+		} else {
+			$('.remove-button').attr('disabled', true);
+		}
 	});
 {% endblock %}

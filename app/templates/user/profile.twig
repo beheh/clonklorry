@@ -46,30 +46,7 @@
 					<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
 					<p>
 						<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
-						<a href="#ban" data-toggle="collapse" data-target="#collapse-ban" class="btn btn-danger">{% trans %}Ban user{% endtrans %}</a>
 					</p>
-					<div id="collapse-ban" class="collapse{% if alerts.ban %} in{% endif %}">
-						<h3 id="ban">{% trans %}Ban user{% endtrans %}</h3>
-						{% include 'functions/alert.twig' with {'selector' : 'ban'} %}
-						<form role="form" method="post" action="{{filename}}?ban">
-							<div class="form-group">
-								<label for="reason">{% trans "Reason" %}</label>
-								<input type="text" class="form-control" name="reason" id="reason" value="{{ban_reason}}" required>
-							</div>
-							<div class="form-group">
-								<label for="duration">{% trans "Duration" %}</label>
-								<select class="form-control" name="duration" id="duration" required>
-									<option value="">{% trans %}Choose a duration&hellip;{% endtrans %}</option>
-									<option value="1d">{% trans %}One day{% endtrans %}</option>
-									<option value="1w">{% trans %}One Week{% endtrans %}</option>
-									<option value="infinite">{% trans %}Infinitely{% endtrans %}</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-danger">{% trans %}Ban now{% endtrans %}</button>
-							</div>
-						</form>
-					</div>
 				{% endif %}
 			</div>
 			<div class="col-md-8">
