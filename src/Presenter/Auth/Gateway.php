@@ -57,8 +57,8 @@ class Gateway extends Presenter {
 					'clientSecret' => $this->config->get('oauth/facebook/secret'),
 					'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
 				));
-				$facebook->scopes = array('public_profile', 'email');	
-			$facebook->authorize();
+				$facebook->scopes = array('public_profile', 'email');
+				$facebook->authorize();
 				break;
 			default:
 				throw new FileNotFoundException();

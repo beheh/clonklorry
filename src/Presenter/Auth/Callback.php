@@ -115,7 +115,8 @@ class Callback extends Presenter {
 			// test, if other user has already used this uid
 			$test_user = ModelFactory::build('User')->byOauth($provider, $uid);
 			if($test_user) {
-				return $this->redirect('/settings?update-oauth=duplicate#oauth');
+				$this->redirect('/settings?update-oauth=duplicate#oauth');
+				return;
 			}
 
 			// we now trust provider and user
@@ -123,7 +124,8 @@ class Callback extends Presenter {
 			$user->setOauth($provider, $uid);
 			$user->save();
 
-			return $this->redirect('/settings?update-oauth=success#oauth');
+			$this->redirect('/settings?update-oauth=success#oauth');
+			return;
 		} else {
 			// grab user with openid data fitting
 			$user = ModelFactory::build('User')->byOauth($provider, $uid);
@@ -135,6 +137,7 @@ class Callback extends Presenter {
 				}
 				$this->session->start($user, true);
 				$this->redirect($url.'#');
+				return;
 			} else {
 				$user = ModelFactory::build('User')->byEmail($email);
 				if($user != null) {
@@ -149,6 +152,7 @@ class Callback extends Presenter {
 					$url .= '?returnto='.$returnto;
 				}
 				$this->redirect($url.'#');
+				return;
 			}
 		}
 	}
