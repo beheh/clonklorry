@@ -8,7 +8,7 @@ use Lorry\Exception\ModelValueInvalidException;
 use InvalidArgumentException;
 use Exception;
 
-abstract class Model implements ModelInterface {
+abstract class Model {
 
 	/**
 	 *

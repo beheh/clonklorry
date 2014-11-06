@@ -40,7 +40,7 @@ class ModelFactory {
 			throw new Exception('unknown model "'.$class.'"');
 		}
 		$instance = new $class();
-		if(!$instance instanceof ModelInterface) {
+		if(!$instance instanceof Model) {
 			throw new Exception('model does not implement interface');
 		}
 		$instance->setConfigService(self::$config);

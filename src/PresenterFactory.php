@@ -84,7 +84,7 @@ class PresenterFactory {
 		}
 		$class = '\\Lorry\\Presenter\\'.$presenter;
 		$instance = new $class();
-		if(!$instance instanceof PresenterInterface) {
+		if(!$instance instanceof Presenter) {
 			throw new Exception('presenter does not implement interface');
 		}
 		$instance->setConfigService(self::$config);

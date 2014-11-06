@@ -73,7 +73,7 @@ class EmailFactory {
 		}
 		$class = '\\Lorry\\Email\\'.$email;
 		$instance = new $class();
-		if(!$instance instanceof EmailInterface) {
+		if(!$instance instanceof Email) {
 			throw new Exception('email does not implement interface');
 		}
 		$instance->setConfigService(self::$config);

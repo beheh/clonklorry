@@ -11,7 +11,7 @@ use Lorry\Exception\OutputCompleteException;
 use Lorry\Router;
 use Twig_Environment;
 
-abstract class Presenter implements PresenterInterface {
+abstract class Presenter {
 
 	/**
 	 *

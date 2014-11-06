@@ -8,7 +8,7 @@ use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Twig_Environment;
 
-abstract class Email implements EmailInterface {
+abstract class Email {
 
 	/**
 	 *
