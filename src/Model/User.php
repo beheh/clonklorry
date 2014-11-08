@@ -105,9 +105,10 @@ class User extends Model {
 	}
 
 	public final function matchSecret($secret) {
-		if(empty($secret))
+		if(empty($secret)) {
 			return false;
-		return $this->match('secret', $secret);
+		}
+		return hash_equals($this->getValue('secret'), $secret);
 	}
 
 	public final function isAdministrator() {
