@@ -4,9 +4,7 @@
 	<div class="page-header">
 		<div class="container">
 			{% if addons %}<img src="{{resources}}/custom/game/{{short}}.png" class="pull-right hidden-xs" alt="{% trans %}{{game}} logo{% endtrans %}">{% endif %}
-			<h1>
-				{{title}}
-			</h1>
+			<h1>{{title}}{% if not user_login %} <small>&lbrack;<a href="{{base}}/clonk">?</a>&rbrack;</small>{% endif %}</h1>
 		</div>
 	</div>
 	<div class="container">

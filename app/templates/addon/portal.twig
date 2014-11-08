@@ -13,8 +13,8 @@
 			<div class="row">
 				{% for game in games %}
 					<div class="col-md-4">
+						<h2><img src="{{resources}}/custom/game/{{game.short}}.png" height="80" alt="{{game.title}}"></h2>
 						<h3>{{game.title}}</h3>
-						<p><img src="{{resources}}/custom/game/{{game.short}}.png" alt="{{game.title}}"></p>
 						<p><a href="{{base}}/addons/{{game.short}}" class="btn btn-primary">{% trans %}View the addons{% endtrans %}</a></p>
 					</div>
 				{% endfor %}

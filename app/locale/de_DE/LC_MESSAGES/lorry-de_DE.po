@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-11-08 19:30+0100\n"
-"PO-Revision-Date: 2014-11-08 19:36+0100\n"
+"POT-Creation-Date: 2014-11-08 20:17+0100\n"
+"PO-Revision-Date: 2014-11-08 20:21+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1666,16 +1666,16 @@ msgid "Create a new addon"
 msgstr "Eine neue Erweiterung anlegen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:45
-msgid "This is the publishing portal"
-msgstr "Dies ist das Veröffentlichungsportal"
+msgid "Would you like to show the world what you built?"
+msgstr "Möchtest du der Welt zeigen, was du gebaut hast?"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/d1/7e/348422e4a226503fd4ce4c8a274c174a990659b402460c910d7445842103.php:49
 msgid ""
-"After registering you can easily publish your addons here and distribute "
-"them via Lorry."
+"Great! After registering you can easily publish your addons here and "
+"distribute them via Lorry."
 msgstr ""
-"Nach der Registrierung kannst du deine Erweiterungen hier veröffentlichen "
-"und sie über Lorry verfügbar machen."
+"Toll! Nach der Registrierung kannst du deine Erweiterungen hier "
+"veröffentlichen und sie über Lorry verfügbar machen."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/da/6a/7f38dec139345590e41fd2cf69da35b7bacea21226964797da66065a6b54.php:97
 msgid "No games available"
@@ -2513,6 +2513,17 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 msgid "please activate your account before uploading files"
 msgstr "Bitte aktiviere deinen Konto bevor du Dateien hochlädst"
 
+#~ msgid "(This is your chance!)"
+#~ msgstr "(Das ist deine Chance!)"
+
+#~ msgid "Have you built an awesome addon to show the world?"
+#~ msgstr ""
+#~ "Hast du eine einzigartige Erweiterung gebaut, die du der Welt zeigen "
+#~ "möchtest?"
+
+#~ msgid "This is the publishing portal"
+#~ msgstr "Dies ist das Veröffentlichungsportal"
+
 #~ msgid "OpenID login"
 #~ msgstr "OpenID-Anmeldung"
 
@@ -2996,9 +3007,6 @@ msgstr "Bitte aktiviere deinen Konto bevor du Dateien hochlädst"
 
 #~ msgid "GitHub"
 #~ msgstr "GitHub"
-
-#~ msgid "This is you."
-#~ msgstr "Das bist du."
 
 #~ msgid "Open settings"
 #~ msgstr "Einstellungen öffnen"
