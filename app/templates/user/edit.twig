@@ -104,31 +104,28 @@
 					<div class="col-md-6">
 						<h2 id="support">{% trans "Support" %}</h2>
 						<h3>{% trans %}Reset{% endtrans%}</h3>
-						<noscript>
-							<div class="alert alert-danger">{% trans %}Javascript needs to be enabled.{% endtrans %}</div>
-						</noscript>
 						<form method="post">
 							<input type="hidden" name="state" value="{{state}}">
-							<div class="form-group collapse" id="support-intro">
+							<div class="form-group">
 								<label for="support-confirm">{% trans %}Please type the username to confirm:{% endtrans %}</label>
-								<input class="form-control"id="support-confirm" type="text" required>
+								<input type="text" class="form-control" id="support-confirm" required="yes">
 							</div>
 							<div class="form-group">
-								<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Reset password{% endtrans %}</a>								
-								<a href="" class="btn btn-warning btn-block support-button" disabled="">{% trans %}Remove login services{% endtrans %}</a>
+								<button type="submit" class="btn btn-warning btn-block support-button">{% trans %}Reset password{% endtrans %}</a>								
+								<button type="submit" class="btn btn-warning btn-block support-button">{% trans %}Remove login services{% endtrans %}</a>
 							</div>
 						</form>
 						{% if user_administrator %}
 						<h3>{% trans %}Disable{% endtrans%}</h3>
 						<form method="post">
 							<input type="hidden" name="state" value="{{state}}">
-							<div class="form-group collapse" id="remove-intro">
+							<div class="form-group">
 								<label for="remove-confirm">{% trans %}Please type the username to confirm:{% endtrans %}</label>
 								<input class="form-control" id="remove-confirm" type="text" required>
 								 <p class="help-block">{% trans %}The account "{{username}}" will be <strong>permanently disabled</strong>.{% endtrans %}</p>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-danger btn-block remove-button" disabled="">{% trans %}Disable account permamently{% endtrans %}</button>
+								<button type="submit" class="btn btn-danger btn-block remove-button">{% trans %}Disable account permamently{% endtrans %}</button>
 							</div>
 						</form>
 						{% endif %}
@@ -155,19 +152,23 @@
 
 	var username = "{{username}}";
 
-	$('#support-intro').show();
+	$('.support-button').attr('disabled', true);
 	$('#support-confirm').on("change keyup paste", function() {
 		if($(this).val().toLowerCase() == username.toLowerCase()) {
 			$('.support-button').removeAttr('disabled');
+			$('#support-confirm').attr('disabled', true).off();
+			$(this).val(username);
 		} else {
 			$('.support-button').attr('disabled', true);
 		}
 	});
 	
-	$('#remove-intro').show();		
+	$('.remove-button').attr('disabled', true);
 	$('#remove-confirm').on("change keyup paste", function() {
 		if($(this).val().toLowerCase() == username.toLowerCase()) {
 			$('.remove-button').removeAttr('disabled');
+			$('#remove-confirm').attr('disabled', true).off();
+			$(this).val(username);
 		} else {
 			$('.remove-button').attr('disabled', true);
 		}

@@ -81,7 +81,7 @@
 					</noscript>
 				</form>
 				<h3 id="remove-account">{% trans "Remove account" %}</h3>
-				{% if not show_remove_account %}<p id="remove-confirm-prompt" class="collapse"><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>{% endif %}
+				{% if not show_remove_account %}<p id="remove-confirm-prompt" class="visible-js"><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>{% endif %}
 				<div id="remove-account-confirm" class="collapse in">
 					<form role="form" method="post">
 						<input type="hidden" name="remove-account-form">
@@ -147,12 +147,13 @@
 {% endblock %}
 
 {% block javascript %}
+	$('#by-openid').removeClass('in');
+	
 	$('#language-setting').change(function() {
 		$(this).closest('form').submit();
 	});
 
 	$('.remove-form-element').attr('disabled', true);
-	$('#remove-confirm-prompt').show();
 	{% if not show_remove_account %}$('#remove-account-confirm').removeClass('in');{% endif %}
 
 	$('#remove-confirm').prop('checked', false);

@@ -2,18 +2,19 @@
 	{% if oauth.openid %}
 	<a href="?remove-oauth=openid&state={{state}}#oauth" class="btn btn-default remove-oauth-confirm">{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
 	{% else %}
-	<a href="#by-openid" class="btn btn-default" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
+	<a href="#by-openid" class="btn btn-default visible-js" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
 	{% endif %}	
 	<a href="?{% if oauth.google %}remove-{% endif %}oauth=google{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.google %}&state={{state}}#oauth{% endif %}" class="btn btn-google{% if oauth.google %} remove-oauth-confirm{% endif %}">{% trans "Google" %}{% if oauth.google %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 	<a href="?{% if oauth.facebook %}remove-{% endif %}oauth=facebook{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.facebook %}&state={{state}}#oauth{% endif %}" class="btn btn-facebook{% if oauth.facebook %} remove-oauth-confirm{% endif %}">{% trans "Facebook" %}{% if oauth.facebook %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 </p>
-{% if not oauth.openid %}<div class="collapse" id="by-openid">
+{% if not oauth.openid %}<div id="by-openid" class="collapse in">
 	<form role="form" action="{{filename}}?oauth=openid{% if returnto %}&returnto={{returnto}}{% endif %}" method="post" class="form-inline">
 		<input type="hidden" name="state" value="{{state}}">
+		<noscript><p class="help-block"><strong>{% trans %}or{% endtrans %}</strong></p></noscript>
 		<div class="form-group">
-			<label class="sr-only" for="openid-provider">{% trans %}OpenID url{% endtrans %}</label>
+			<label for="openid-provider" class="sr-only">{% trans %}OpenID url{% endtrans %}</label>
 			<input type="url" class="form-control" name="openid-identity" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" required>
 		</div>
-		<button type="submit" class="btn btn-primary">{% trans %}Confirm{% endtrans %}</button>
+		<button type="submit" class="btn btn-default">{% trans %}Login with OpenID{% endtrans %}</button>
 	</form>
 </div>{% endif %}

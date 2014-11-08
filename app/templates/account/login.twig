@@ -30,11 +30,11 @@
 					</div>
 					<button class="btn btn-lg btn-primary" type="submit">{% trans "Login" %}</button>
 					{% if not (email or email_visible) %}
-						<a href="#by-email" class="btn btn-link" data-toggle="collapse" data-target="#by-email">{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>
+						<a href="#by-email" class="btn btn-link visible-js" data-toggle="collapse" data-target="#by-email">{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>
 					{% endif %}
 				</form>
 				<hr>
-				<div id="by-email" class="collapse{% if email_visible or email %} in{% endif %}">
+				<div id="by-email" class="collapse in">
 					<h4>{% if email_visible and (forgot_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
 					{% include 'functions/alert.twig' with {'selector' : 'email'} %}
 					<form method="post" role="form">
@@ -63,4 +63,11 @@
 			</div>
 		</div>
 	</div>
+{% endblock %}
+
+{% block javascript %}
+	$('#by-openid').removeClass('in');
+	{% if not (email_visible or email) %}
+	$('#by-email').removeClass('in');
+	{% endif %}
 {% endblock %}
