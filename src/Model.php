@@ -189,19 +189,16 @@ abstract class Model {
 		$this->ensureLoaded();
 		$this->ensureRow($row);
 
+		$comparison = $this->values[$row];
 		if(array_key_exists($row, $this->changes)) {
-			if($this->changes[$row] != $value) {
-				return false;
-			}
+			$comparison = $this->changes[$row];
+		}
 
+		if($value === $comparison) {
 			return true;
 		}
 
-		if($this->values[$row] != $value) {
-			return false;
-		}
-
-		return true;
+		return false;
 	}
 
 	protected final function ensureType($row, $value) {
