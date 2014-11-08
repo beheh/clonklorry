@@ -106,7 +106,6 @@ class SessionService {
 		if(!isset($_SESSION['state']) || !$_SESSION['state']) {
 			$this->regenerateState();
 		}
-		return true;
 	}
 
 	public final function getState() {
@@ -122,13 +121,37 @@ class SessionService {
 	}
 
 	public final function verifyState($state) {
+		$this->ensureSession();
 		if(!isset($_SESSION['state'])) {
 			return false;
 		}
-		$original_state = $_SESSION['state'];
-		if(!hash_equals($state, $original_state)) {
+		if(hash_equals($state, $_SESSION['state'])) {
+			return true;
+		}
+		return false;
+	}
+	
+	public final function setAuthorizationState($state) {
+		$this->ensureSession();
+		$_SESSION['authorization_state'] = $state;
+	}
+	
+	public final function verifyAuthorizationState($state) {
+		$this->ensureSession();
+		if(!isset($_SESSION['authorization_state'])) {
 			return false;
 		}
+		if(hash_equals($state, $_SESSION['authorization_state'])) {
+			$this->clearAuthorizationState();
+			return true;
+		}
+		$this->clearAuthorizationState();
+		return false;
+	}
+	
+	public final function clearAuthorizationState() {
+		$this->ensureSession();
+		unset($_SESSION['authorization_state']);
 		return true;
 	}
 

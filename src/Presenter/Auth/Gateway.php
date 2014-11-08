@@ -8,12 +8,13 @@ use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
 use LightOpenID;
 use League\OAuth2\Client\Provider\Google;
-use League\OAuth2\Client\Provider\Facebook;
+use Lorry\Override\Facebook;
 
 class Gateway extends Presenter {
 
 	public function get($provider) {
 
+		$login_hint = false;
 		if($this->session->authenticated()) {
 			$login_hint = $this->session->getUser()->getEmail();
 		} else {
@@ -49,7 +50,9 @@ class Gateway extends Presenter {
 				if($login_hint) {
 					$custom .= '&login_hint='.$login_hint;
 				}
-				return $this->redirect($google->getAuthorizationUrl().$custom, true);
+				$authorizationUrl = $google->getAuthorizationUrl();
+				$this->session->setAuthorizationState($google->state);
+				$this->redirect($authorizationUrl, true);
 				break;
 			case 'facebook':
 				$facebook = new Facebook(array(
@@ -58,7 +61,9 @@ class Gateway extends Presenter {
 					'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
 				));
 				$facebook->scopes = array('public_profile', 'email');
-				$facebook->authorize();
+				$authorizationUrl = $facebook->getAuthorizationUrl();
+				$this->session->setAuthorizationState($facebook->state);
+				$this->redirect($authorizationUrl, true);
 				break;
 			default:
 				throw new FileNotFoundException();

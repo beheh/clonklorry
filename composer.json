@@ -9,7 +9,7 @@
 		"twig/extensions": "~1.0.1",
 		"swiftmailer/swiftmailer": "v5.1.0",
 		"lightopenid/lightopenid": "~0.7",
-		"league/oauth2-client": "0.3.0",
+		"league/oauth2-client": "0.4.0",
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.4",
 		"symfony/finder": "~2.4"

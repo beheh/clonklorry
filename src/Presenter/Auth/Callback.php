@@ -71,15 +71,19 @@ class Callback extends Presenter {
 			}
 
 			if($oauth_provider) {
+				if(!$this->session->verifyAuthorizationState(filter_input(INPUT_GET, 'state'))) {
+					throw new AuthentificationFailedException('invalid state (csrf?)');
+				}
+				
 				if(isset($_GET['error'])) {
-					if($_GET['error'] == 'access_denied') {
+					if(filter_input(INPUT_GET, 'error') === 'access_denied') {
 						if($this->session->authenticated()) {
 							return $this->redirect('/settings#oauth');
 						} else {
 							return $this->redirect('/register');
 						}
 					}
-					throw new AuthentificationFailedException($_GET['error']);
+					throw new AuthentificationFailedException(filter_input(INPUT_GET, 'error'));
 				}
 
 				try {
@@ -89,7 +93,7 @@ class Callback extends Presenter {
 					throw new AuthentificationFailedException('could net get access token ('.$ex->getMessage().')');
 				}
 				if(!$token) {
-					throw new AuthentificationFailedException('invalid code (token '.$token.')');
+					throw new AuthentificationFailedException('missing access token');
 				}
 				$profile = $oauth_provider->getUserDetails($token);
 				$uid = $profile->uid;
