@@ -139,7 +139,7 @@ class Callback extends Presenter {
 				if($returnto) {
 					$url = $returnto;
 				}
-				$this->session->start($user, true);
+				$this->session->start($user, false, false	);
 				$this->redirect($url.'#');
 				return;
 			} else {
