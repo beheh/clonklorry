@@ -41,6 +41,49 @@ a.text {
 	margin-top: 40px;
 }
 
+.navbar-brand svg {
+	width: 24px;
+	height: 18px;
+	vertical-align: top;
+	margin-right: 1px;
+}
+
+.navbar-default {
+	svg rect {
+		fill:@navbar-default-link-color;
+	}
+
+	a:hover svg rect {
+		fill: @navbar-inverse-link-hover-color;
+	}
+
+	a:active svg rect {
+		fill: @navbar-inverse-link-active-color;
+	}
+
+	a:disabled svg rect {
+		fill: @navbar-inverse-link-disabled-color;
+	}
+}
+
+.navbar-inverse {
+	svg rect {
+		fill:@navbar-inverse-link-color;
+	}
+
+	a:hover svg rect {
+		fill: @navbar-inverse-link-hover-color;
+	}
+
+	a:active svg rect {
+		fill: @navbar-inverse-link-active-color;
+	}
+
+	a:disabled svg rect {
+		fill: @navbar-inverse-link-disabled-color;
+	}
+}
+
 footer {
 	margin-top: 20px;
 }
