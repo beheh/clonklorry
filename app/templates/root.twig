@@ -14,11 +14,12 @@
 		<meta property="og:url" content="{{base}}{{origpath}}">
 		<meta property="og:site_name" content="{{brand}}">{% block opengraph %}
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="{{resources}}/lorry/img/logo.png">{% endblock %}
+		<meta property="og:image" content="{{resources}}/lorry/img/lorry-512x512.png">{% endblock %}
 		<script>var base = '{{base}}', state = '{{state}}';</script>
 	</head>
-	<body>{% block body %}
+	<body>
 		<noscript><style>.visible-js { display: none; }</style></noscript>
+		{% block body %}
 		{% include 'functions/navbar.twig' %}
 		{% if site_notice and site_enabled %}
 			<div id="site-notice" class="jumbotron alert-{{site_notice_class|default('danger')}}">
@@ -31,12 +32,8 @@
 			<div class="container">
 			</div>
 		{% endblock %}
-		<div class="container">
-			<footer class="footer">
-				<p class="visible-xs hidden-print">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
-				<p><a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}{% if site_enabled %} · <a class="text" href="{{base}}/about">{% trans "About the project" %}</a> · <a class="text" href="{{base}}/contact">{% trans "Contact" %}</a>{% endif %}</p>
-			</footer>
-		</div>{% endblock %}
+		{% include 'functions/footer.twig' %}
+		{% endblock %}
 		<script src="{{resources}}/jquery/jquery-2.1.1.min.js"></script>
 		<script src="{{resources}}/bootstrap/js/bootstrap.min.js"></script>
 		{% if user_login %}
