@@ -5,6 +5,11 @@
 	"license": "GPL-3.0",
 	"require": {
 		"php": ">= 5.6",
+		"ext-json": "*",
+		"ext-gettext": "*",
+		"ext-pdo": "*",
+		"ext-openssl": "*",
+		"ext-curl": "*",
 		"twig/twig": "~1.16",
 		"twig/extensions": "~1.2",
 		"swiftmailer/swiftmailer": "~5.3",
@@ -13,6 +18,9 @@
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.5",
 		"symfony/finder": "~2.5"
+    },
+	"suggest": {
+		"ext-http": "More reliable language negotiation"
 	},
 	"autoload": {
 		"psr-4": {
