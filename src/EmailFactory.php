@@ -74,7 +74,7 @@ class EmailFactory {
 		$class = '\\Lorry\\Email\\'.$email;
 		$instance = new $class();
 		if(!$instance instanceof Email) {
-			throw new Exception('email does not implement interface');
+			throw new Exception('email does not implement base class');
 		}
 		$instance->setConfigService(self::$config);
 		$instance->setLocalisationService(self::$localisation);

@@ -85,7 +85,7 @@ class PresenterFactory {
 		$class = '\\Lorry\\Presenter\\'.$presenter;
 		$instance = new $class();
 		if(!$instance instanceof Presenter) {
-			throw new Exception('presenter does not implement interface');
+			throw new Exception('presenter does not implement base class');
 		}
 		$instance->setConfigService(self::$config);
 		$instance->setLocalisationService(self::$localisation);

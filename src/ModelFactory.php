@@ -41,7 +41,7 @@ class ModelFactory {
 		}
 		$instance = new $class();
 		if(!$instance instanceof Model) {
-			throw new Exception('model does not implement interface');
+			throw new Exception('model does not implement base class');
 		}
 		$instance->setConfigService(self::$config);
 		$instance->setPersistenceService(self::$persistence);
