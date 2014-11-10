@@ -12,7 +12,7 @@ class PersistenceService {
 
 	/**
 	 *
-	 * @var \Lorry\Service\Config
+	 * @var \Lorry\Service\ConfigService
 	 */
 	protected $config;
 	protected $cache;
