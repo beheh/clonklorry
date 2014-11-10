@@ -3,18 +3,21 @@
 	<head lang="{% trans "en" %}">
 		<meta charset="utf-8">
 		<title>{{title|default(brand)}}</title>
+		<link href="{{resources}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{resources}}/lorry/css/lorry.css?3" rel="stylesheet">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="{{resources}}/lorry/img/favicon.ico" type="image/x-icon">
-		<link href="{{resources}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="{{resources}}/lorry/css/lorry.css?3" rel="stylesheet">
+		<link rel="apple-touch-icon" href="{{resources}}/lorry/img/lorry-128x128-touch.png">
 		{% if fbid %}<meta property="fb:app_id" content="{{fbid}}">{% endif %}
 		<meta property="og:title" content="{{title|default(brand)}}">
 		<meta property="og:locale" content="{{locale}}">
 		<meta property="og:url" content="{{base}}{{origpath}}">
-		<meta property="og:site_name" content="{{brand}}">{% block opengraph %}
+		<meta property="og:site_name" content="{{brand}}">
+		{% block opengraph %}
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="{{resources}}/lorry/img/lorry-512x512.png">{% endblock %}
+		<meta property="og:image" content="{{resources}}/lorry/img/lorry-512x512.png">
+		{% endblock %}
 		<script>var base = '{{base}}', state = '{{state}}';</script>
 	</head>
 	<body>
