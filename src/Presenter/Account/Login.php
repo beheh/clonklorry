@@ -60,8 +60,8 @@ class Login extends Presenter {
 			if($user) {
 				// show email by default in future
 				setcookie('lorry_login_email', '1', time() + 60 * 60 * 24 * 365, '/');
-				$this->warning('email', 'Not yet supported.');
-				// @TODO send mail token
+				$this->job->submit('Login', $user->getId());
+				$this->success('email', 'We\'ll send your email shortly.');
 			} else {
 				// email is unknown
 				$this->error('email', gettext('Email address unknown.'));

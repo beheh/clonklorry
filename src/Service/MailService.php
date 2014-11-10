@@ -71,20 +71,11 @@ class MailService {
 
 		try {
 			return $this->mailer->send($message);
-		}
-		catch(\Exception $exception) {
+		} catch(\Exception $exception) {
 			$message = get_class($this).': '.get_class($exception).' '.$exception->getMessage().' in '.$exception->getTraceAsString();
 			Analog::error($message);
 		}
 		return false;
-	}
-
-	public function sendActivation(\Lorry\Model\User $user, $url) {
-		$activation = EmailFactory::build('Activate');
-		$activation->setRecipent($user->getEmail());
-		$activation->setUrl($url);
-		$activation->setUsername($user->getUsername());
-		return $this->send($activation, $user->getLanguage());
 	}
 
 }

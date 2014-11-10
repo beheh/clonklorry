@@ -7,6 +7,7 @@ use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Lorry\Service\MailService;
+use Lorry\Service\JobService;
 use Lorry\Exception\OutputCompleteException;
 use Lorry\Router;
 use Twig_Environment;
@@ -61,6 +62,16 @@ abstract class Presenter {
 
 	public final function setMailService(MailService $mail) {
 		$this->mail = $mail;
+	}
+
+	/**
+	 *
+	 * @var \Lorry\Service\JobService
+	 */
+	protected $job;
+
+	public final function setJobService(JobService $job) {
+		$this->job = $job;
 	}
 
 	/**

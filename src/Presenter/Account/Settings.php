@@ -128,17 +128,17 @@ class Settings extends Presenter {
 				if(empty($errors)) {
 					$user->save();
 
-					if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
-						$this->warning('contact', gettext('Contact details were changed. We sent you an email for you to confirm the new address.'));
+					if($this->job->submit('Activate', $user->getId())) {
+						$this->warning('contact', gettext('Contact details were changed. We\'ll send you an email to confirm the new address.'));
 					} else {
-						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Try resending one later.'));
+						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Pleasy try again later.'));
 					}
 				} else {
 					$this->error('contact', implode('<br>', $errors));
 				}
 			} else if(isset($_POST['resend'])) {
-				if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
-					$this->success('contact', gettext('Confirmation email sent.'));
+				if($this->job->submit('Activate', $user->getId())) {
+					$this->success('contact', gettext('You should receive your confirmation email soon.'));
 				} else {
 					$this->alert('contact', gettext('We can\'t send you a confirmation email right now. Try again later.'));
 				}

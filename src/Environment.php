@@ -9,6 +9,7 @@ use Lorry\Service\PersistenceService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
 use Lorry\Service\MailService;
+use Lorry\Service\JobService;
 use Lorry\Exception\NotImplementedException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
@@ -75,7 +76,10 @@ class Environment {
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('origpath', trim(Router::getPath()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
-		$twig->addGlobal('locale', str_replace('-', '_', $localisation->getDisplayLanguage()));
+		$language = $localisation->getDisplayLanguage();
+		$twig->addGlobal('locale', str_replace('-', '_', $language));
+		$languages = $localisation->getAvailableLanguages();
+		$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages)+1) % count($languages)], '-', true));
 		$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
 
 		$twig->addGlobal('site_enabled', $config->get('enable/site'));
@@ -103,12 +107,16 @@ class Environment {
 		$mail = new MailService();
 		$mail->setConfigService($config);
 		$mail->setLocalisationService($localisation);
+		
+		$job = new JobService();
+		$job->setConfigService($config);
 
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);
 		PresenterFactory::setSecurityService($security);
 		PresenterFactory::setSessionService($session);
 		PresenterFactory::setMailService($mail);
+		PresenterFactory::setJobService($job);
 		PresenterFactory::setTwig($twig);
 
 		EmailFactory::setConfigService($config);
@@ -154,7 +162,8 @@ class Environment {
 				'/clonk' => 'Site\Clonk',
 				'/api' => 'Site\Api',
 				'/privacy' => 'Site\Privacy',
-				'/contact' => 'Site\Contact'
+				'/contact' => 'Site\Contact',
+				'/language' => 'Site\Language',
 			));
 		}
 		else {
@@ -166,7 +175,8 @@ class Environment {
 		// set debug routes
 		if($config->get('debug')) {
 			Router::addRoutes(array(
-				'/debug/cachewarmer' => 'Debug\CacheWarmer'
+				'/debug/cachewarmer' => 'Debug\CacheWarmer',
+				'/debug/testjob' => 'Debug\TestJob'
 			));
 		}
 

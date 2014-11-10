@@ -42,7 +42,7 @@ persistence:
     username: lorry
     password: lorry
 
-redis:
+job:
     dsn: unix:/home/lorry/.redis/sock
 
 mail:

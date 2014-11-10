@@ -5,7 +5,6 @@ namespace Lorry\Presenter\Account;
 use Analog;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
-use Lorry\EmailFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Register extends Presenter {
@@ -107,17 +106,14 @@ class Register extends Presenter {
 			$user->setRegistration(time());
 			if($user->save()) {
 				Analog::info('adding user "'.$user->getUsername().'"');
-				$registration = EmailFactory::build('Register');
-				$registration->setRecipent($user->getEmail());
-				$registration->setUsername($user->getUsername());
-				$this->mail->send($registration, $user->getLanguage());
+				$this->job->submit('Welcome', $user->getId());
 				$returnto = filter_input(INPUT_GET, 'returnto');
 				if($oauth) {
 					$url = '/';
 					if($returnto) {
 						$url = $returnto;
 					}
-					$this->session->start($user, true);
+					$this->session->start($user, false, false);
 					$this->redirect($url);
 					return;
 				} else {
