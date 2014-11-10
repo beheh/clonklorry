@@ -46,12 +46,13 @@
 						{% else %}
 							<input type="hidden" name="use-oauth" value="1">
 						{% endif %}
-						<button class="btn btn-lg btn-success" type="submit">{% trans "Register" %}</button>
+						<p><button class="btn btn-lg btn-success" type="submit">{% trans "Register" %}</button>
 						{% if oauth %}
 							<a href="{{base}}/register?cancel" class="btn btn-lg btn-default">{% trans "Cancel" %}</a>
 						{% else %}
 							<a href="{{base}}/login" class="btn btn-link">{% trans "Already registered?" %}</a>
 						{% endif %}
+						</p>
 					</form>
 					<hr>
 					<div class="social">
@@ -85,6 +86,8 @@
 							<li class="list-group-item"><span class="glyphicon glyphicon-tag"></span> {% trans %}Tag addons and help others to find new favourites{% endtrans %}</li>
 						</ul>
 					{% endif %}
+					{% set policy %}<a href="{{base}}/privacy" target="_blank">{% trans %}privacy policy{% endtrans %}</a>{% endset %}
+					<p class="help-block">{% trans %}Because we think it's important: our {{policy}}.{% endtrans %}</p>
 				</div>
 			</div>
 		{% endif %}

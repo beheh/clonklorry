@@ -138,7 +138,7 @@ class Settings extends Presenter {
 				}
 			} else if(isset($_POST['resend'])) {
 				if($this->job->submit('Activate', $user->getId())) {
-					$this->success('contact', gettext('You should receive your confirmation email soon.'));
+					$this->success('contact', gettext('You should receive the confirmation email soon.'));
 				} else {
 					$this->alert('contact', gettext('We can\'t send you a confirmation email right now. Try again later.'));
 				}
