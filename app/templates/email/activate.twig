@@ -1,6 +1,6 @@
 {% extends 'email/base.twig' %}
 
-{% block subject %}{% trans %}Confirm your email address for {{brand}}{% endtrans %}{% endblock %}
+{% block subject %}{% trans %}{{brand}}: Confirm your (new) email address{% endtrans %}{% endblock %}
 
 {% set url = '<a href="' ~ url ~ '">' ~ url ~ '</a>' %}
 
