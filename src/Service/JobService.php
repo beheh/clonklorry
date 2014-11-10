@@ -34,7 +34,7 @@ class JobService {
 			throw new Exception('job does not implement base class');			
 		}
 		$queue = call_user_func($class_name.'::getQueue');
-		return Resque::enqueue($queue, $class_name);
+		return Resque::enqueue($queue, $class_name, $args);
 	}
 
 }
