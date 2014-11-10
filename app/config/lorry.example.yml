@@ -42,6 +42,9 @@ persistence:
     username: lorry
     password: lorry
 
+redis:
+    dsn: unix:/home/lorry/.redis/sock
+
 mail:
     smtp-host: example.com
     smtp-port: 587

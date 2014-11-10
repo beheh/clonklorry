@@ -17,7 +17,9 @@
 		"league/oauth2-client": "0.4.0",
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.5",
-		"symfony/finder": "~2.5"
+		"symfony/finder": "~2.5",
+        "chrisboulton/php-resque": "dev-master"
+
     },
 	"suggest": {
 		"ext-http": "More reliable language negotiation"
