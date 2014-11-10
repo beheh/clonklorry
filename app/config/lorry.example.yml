@@ -37,7 +37,7 @@ contact:
     legal: legal@example.com
     feedback: feedback@example.com
 
-database:
+persistence:
     dsn: mysql:host=127.0.0.1;dbname=lorry
     username: lorry
     password: lorry

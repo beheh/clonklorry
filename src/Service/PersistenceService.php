@@ -32,7 +32,7 @@ class PersistenceService {
 		if($this->connection)
 			return true;
 		try {
-			$this->connection = new PDO($this->config->get('database/dsn'), $this->config->get('database/username'), $this->config->get('database/password'));
+			$this->connection = new PDO($this->config->get('persistence/dsn'), $this->config->get('persistence/username'), $this->config->get('persistence/password'));
 		} catch(PDOException $ex) {
 			// catch the pdo exception to prevent credential leaking
 			throw new Exception('could not connect to database ('.$ex->getMessage().')');
