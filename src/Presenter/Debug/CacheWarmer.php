@@ -12,18 +12,34 @@ use RecursiveRegexIterator;
 class CacheWarmer extends Presenter {
 
 	public function get() {
-		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('../app/templates'));
-		$results = new RegexIterator($iterator, '/^.+\.twig$/i', RecursiveRegexIterator::GET_MATCH);
 
+		header('Content-Type: text/plain');
+		
+		$cache = $this->twig->getCache();
+		if(!$cache) {
+			echo 'Cache is not in use.';
+			return;
+		}
+
+		$this->twig->clearTemplateCache();
+		$cache = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($cache), RecursiveIteratorIterator::LEAVES_ONLY);
+		$templates = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('../app/templates'), RecursiveIteratorIterator::LEAVES_ONLY);
+		
 		$time = microtime(true);
-
-		$this->twig->clearCacheFiles();
+		foreach($cache as $file) {
+			if(!$file->isFile() || $file->getBasename() === '.gitignore') {
+				continue;
+			}
+			unlink($file->getPathname());
+		}
 		Analog::info('Cleared Twig cache');
 
 		$i = 0;
-		foreach($results as $file => $array) {
-			$filename = substr($file, 17);
-			$this->twig->loadTemplate($filename);
+		foreach($templates as $file) {
+			if(!$file->isFile() || $file->getExtension() !== 'twig') {
+				continue;
+			}
+			$this->twig->loadTemplate(substr($file->getPathname(), strlen('../app/templates/')));
 			$i++;
 		}
 		Analog::info('Cached '.$i.' Twig templates');
@@ -33,7 +49,6 @@ class CacheWarmer extends Presenter {
 			$duration = '<1';
 		}
 		
-		header('Content-Type: text/plain');
 		echo 'Done. Cleared cache and recached '.$i.' templates in '.$duration.'s.';
 	}
 
