@@ -1,8 +1,5 @@
 <?php
-
-require '../vendor/autoload.php';
-
-\Analog::handler(\Analog\Handler\File::init('../app/logs/lorry.log'));
+require '../app/bootstrap.php';
 
 try {
 	$lorry = new Lorry\Environment();
