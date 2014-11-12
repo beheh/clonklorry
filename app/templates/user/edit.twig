@@ -44,13 +44,13 @@
 						<button type="submit" class="btn btn-default" name="change-contact-submit">{% trans "Change email address" %}</button>
 					</div>
 				</form>
-				{% if user_administrator and not self %}
+				{% if user_administrator %}
 				<h3>{% trans "Permissions" %}</h3>
 				<form role=form" method="post">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="radio">
 						<label>
-							<input type="radio" name="rights" value="yes"{% if not moderator or administrator %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
+							<input type="radio" name="rights" value="yes"{% if not (moderator or administrator) %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
 						</label>
 					</div>
 					<div class="radio">
@@ -64,7 +64,7 @@
 						</label>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-default" name="rights-submit">{% trans "Save permissions" %}</button>
+						<button type="submit" class="btn btn-default" name="rights-submit">{% trans "Change permissions" %}</button>
 					</div>
 				</form>
 				{% endif %}
