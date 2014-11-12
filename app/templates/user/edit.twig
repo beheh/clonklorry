@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<h2>{% trans "User data" %}</h2>
-				<h3>{% trans "Identity" %}</h3>
+				<h3>{% trans "Appearance" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'username'} %}
 				<form role=form" method="post">
 					<input type="hidden" name="state" value="{{state}}">
@@ -27,6 +27,7 @@
 						</div>
 					</div>
 				</form>
+				<h3>{% trans "Contact details" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
 				<form role=form" method="post">
 					<input type="hidden" name="state" value="{{state}}">
@@ -44,7 +45,7 @@
 					</div>
 				</form>
 				{% if user_administrator and not self %}
-				<h3>{% trans "Rights" %}</h3>
+				<h3>{% trans "Permissions" %}</h3>
 				<form role=form" method="post">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="radio">
@@ -63,7 +64,7 @@
 						</label>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-default" name="rights-submit">{% trans "Save" %}</button>
+						<button type="submit" class="btn btn-default" name="rights-submit">{% trans "Save permissions" %}</button>
 					</div>
 				</form>
 				{% endif %}
