@@ -17,34 +17,37 @@ notice:
     text:
     class: danger
 
-clonkforge: http://clonkforge.net/user.php?usr=%d
+# default urls for links
+clonkforge:
+    url: http://clonkforge.net/user.php?usr=%d
 github:
     url: https://github.com/%s
     name: ([a-zA-Z0-9][a-zA-Z0-9-]*)
 
-# the url which maps to the asset upload dir, without trailing /
-assetbase: http://localhost/assets
-
-# the directories for different user data, should be writeable
+# directories for user data, should be writeable
 upload:
     assets:
     assetsize: 5M
     data:
     datasize: 128M
 
+# legal info (displayed on the contact page)
 contact:
     address: <strong>Full Name</strong>
     legal: legal@example.com
     feedback: feedback@example.com
 
+# main persistence database
 persistence:
     dsn: mysql:host=127.0.0.1;dbname=lorry
     username: lorry
     password: lorry
 
+# job queue and underlying redis database
 job:
     dsn: unix:/home/lorry/.redis/sock
 
+# for outgoing mails
 mail:
     smtp-host: example.com
     smtp-port: 587
@@ -53,6 +56,7 @@ mail:
     password: lorry
     from: lorry@example.com
 
+# oauth secrets
 oauth:
     google:
         id:

@@ -30,7 +30,7 @@ class Profile extends Presenter {
 		if($user->getClonkforge()) {
 			$this->context['clonkforge'] = array(
 				'profile' => sprintf(gettext('%s on the ClonkForge'), $user->getUsername()),
-				'url' => sprintf($this->config->get('clonkforge'), urlencode($user->getClonkforge())));
+				'url' => sprintf($this->config->get('clonkforge/url'), urlencode($user->getClonkforge())));
 		}
 		if($user->getGithub()) {
 			$this->context['github'] = array(

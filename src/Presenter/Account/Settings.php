@@ -51,7 +51,7 @@ class Settings extends Presenter {
 			$this->context['github'] = $user->getGithub();
 		}
 
-		$this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge'), 0);
+		$this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge/url'), 0);
 		$this->context['github_placeholder'] = $user->getUsername();
 
 		if(!isset($this->context['email'])) {
