@@ -29,6 +29,9 @@ class ConfigService {
 			}
 			$subset = $subset[$current];
 		}
+		if(is_array($subset) && !empty($subset)) {
+			throw new Exception('"'.$key.'" is not a valid config key');
+		}
 		return $subset;
 	}
 
