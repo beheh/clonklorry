@@ -69,13 +69,7 @@ class MailService {
 			$message->setReplyTo($replyto);
 		}
 
-		try {
-			return $this->mailer->send($message);
-		} catch(\Exception $exception) {
-			$message = get_class($this).': '.get_class($exception).' '.$exception->getMessage().' in '.$exception->getTraceAsString();
-			Analog::error($message);
-		}
-		return false;
+		return $this->mailer->send($message);
 	}
 
 }
