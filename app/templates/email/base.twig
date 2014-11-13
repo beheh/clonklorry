@@ -1,4 +1,4 @@
-<p>{% if username %}{% trans %}Hi there {{username}},{% endtrans %}{% else %}Hi there,{% endif %}</p>
+<p>{% if username %}{% trans %}Hi there {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}</p>
 
 {% block body %}
 <p>{% trans %}No content available.{% endtrans %}</p>
