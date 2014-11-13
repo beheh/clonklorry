@@ -25,6 +25,9 @@ class JobService {
 	}
 	
 	public function submit($job, $args) {
+		if(!is_array($args)) {
+			throw new Exception('invalid arguments (not an array)');
+		}
 		$this->ensureSetup();
 		$class_name = '\\Lorry\\Job\\'.$job.'Job';
 		if(!class_exists($class_name)) {

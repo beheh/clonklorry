@@ -60,7 +60,7 @@ class Login extends Presenter {
 			if($user) {
 				// show email by default in future
 				setcookie('lorry_login_email', '1', time() + 60 * 60 * 24 * 365, '/');
-				$this->job->submit('Login', $user->getId());
+				$this->job->submit('Login', array('user' => $user->getId()));
 				$this->success('email', 'We\'ll send your email shortly.');
 			} else {
 				// email is unknown
