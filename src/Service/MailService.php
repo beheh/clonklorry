@@ -48,12 +48,10 @@ class MailService {
 		return true;
 	}
 
-	public function send(Email $email, $language = false) {
+	public function send(Email $email) {
 		$this->ensureMailer();
 
-		$this->localisation->silentLocalize($language);
 		$email->write();
-		$this->localisation->resetLocalize();
 
 		$body = $email->getMessage();
 
