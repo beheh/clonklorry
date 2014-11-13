@@ -18,12 +18,17 @@
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.5",
 		"symfony/finder": "~2.5",
-        "chrisboulton/php-resque": "dev-master"
-
+        "chrisboulton/php-resque": "dev-unixsocket"
     },
 	"suggest": {
 		"ext-http": "More reliable language negotiation"
 	},
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/beheh/php-resque"
+        }
+    ],
 	"autoload": {
 		"psr-4": {
 			"Lorry\\": "src/"
