@@ -34,6 +34,10 @@ class LocalisationService {
 
 		$available = $this->getAvailableLanguages();
 
+		if(!$this->session) {
+			return $available[0];
+		}
+		
 		if($this->session->authenticated()) {
 			$language = $this->session->getUser()->getLanguage();
 			if($this->setDisplayLanguage($language)) {
