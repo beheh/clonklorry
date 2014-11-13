@@ -116,7 +116,7 @@ class LocalisationService {
 		setlocale(LC_ALL, $language.'.UTF-8');
 
 		$textdomain = 'lorry-'.$language;
-		bindtextdomain($textdomain, '../app/locale');
+		bindtextdomain($textdomain, __DIR__.'/../../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
 		
