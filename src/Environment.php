@@ -71,8 +71,8 @@ class Environment {
 		$this->localisation = $localisation;
 
 		// templating
-		$loader = new Twig_Loader_Filesystem('../app/templates');
-		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => $config->get('debug')));
+		$loader = new Twig_Loader_Filesystem(__DIR__.'/../app/templates');
+		$twig = new Twig_Environment($loader, array('cache' => __DIR__.'/../app/cache/twig', 'debug' => $config->get('debug')));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
