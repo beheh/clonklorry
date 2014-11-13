@@ -3,6 +3,7 @@
 namespace Lorry\Job;
 
 use Lorry\ModelFactory;
+use Lorry\Email;
 
 abstract class UserEmailJob extends EmailJob {
 
@@ -15,10 +16,11 @@ abstract class UserEmailJob extends EmailJob {
 		return $this->recipent->getEmail();
 	}
 	
-	public function prepareEmail(\Lorry\Email $email, $args) {
+	public function prepareEmail(Email $email, $args) {
 		$user = ModelFactory::build('User')->byId($args['user']);
 		$this->localisation->silentLocalize($user->getLanguage());
 		$this->recipent = $user;
+		$email->setUsername($user->getUsername());
 		parent::prepareEmail($email);
 	}
 
