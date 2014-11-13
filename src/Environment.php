@@ -55,7 +55,7 @@ class Environment {
 		$config = new ConfigService();
 		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::INFO;
 		\Analog::handler(\Analog\Handler\Threshold::init(
-						\Analog\Handler\File::init('../app/logs/lorry.log'), $loglevel
+						\Analog\Handler\File::init(__DIR__.'/../app/logs/lorry.log'), $loglevel
 		));
 		$this->config = $config;
 
