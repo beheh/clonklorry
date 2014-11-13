@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-11-12 23:36+0100\n"
-"PO-Revision-Date: 2014-11-12 23:37+0100\n"
+"POT-Creation-Date: 2014-11-13 15:20+0100\n"
+"PO-Revision-Date: 2014-11-13 15:21+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -789,6 +789,10 @@ msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
 msgid "Hi there %username%,"
 msgstr "Hallo %username%,"
 
+#: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:24
+msgid "Hi there,"
+msgstr "Hallo,"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/50/07/eddbf78b446b0d46cc17b78511e0d10a43ebfb1a9abb3544178540a2954f.php:50
 msgid "No content available."
 msgstr "Kein Inhalt verfügbar"
@@ -1284,11 +1288,11 @@ msgstr "Willkommen bei %brand%!"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/51/74bf65d689c6b2b3e20ef5e18dc5a21ab5b089cbfc61866d0f17a73da296.php:44
 msgid ""
-"Although this project is still very early in the development, thank you for "
-"helping us test the platform."
+"Although this project is still in development, thank you for helping us test "
+"the platform."
 msgstr ""
-"Auch wenn sich das Projekt noch sehr früh in der Entwicklung befindet, danke "
-"für das Testen der Plattform."
+"Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für deine "
+"Mithilfe beim Testen der Plattform."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/51/74bf65d689c6b2b3e20ef5e18dc5a21ab5b089cbfc61866d0f17a73da296.php:48
 msgid ""
@@ -1300,12 +1304,11 @@ msgstr ""
 
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/51/74bf65d689c6b2b3e20ef5e18dc5a21ab5b089cbfc61866d0f17a73da296.php:53
 msgid ""
-"You can report any feedback you have on the contact page at %contact%. If "
-"you're logged in, we'll be able to see who it's from and get back to you."
+"You can report any feedback you have on the contact page at %contact%. Let's "
+"make %brand% something awesome."
 msgstr ""
 "Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% einsenden. "
-"Falls du angemeldet bist, können wir sehen dass die Nachricht von dir kommt "
-"und direkt antworten."
+"Lass uns aus %brand% etwas tolles machen."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/aa/51/74bf65d689c6b2b3e20ef5e18dc5a21ab5b089cbfc61866d0f17a73da296.php:58
 msgid "Once again, thank you for testing %brand%!"
@@ -1947,7 +1950,7 @@ msgstr "Nach oben"
 msgid "About the project"
 msgstr "Über das Projekt"
 
-#: /home/benedict/public_html/lorry/src/Environment.php:89
+#: /home/benedict/public_html/lorry/src/Environment.php:82
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
@@ -1976,8 +1979,8 @@ msgstr "keine gültige Zahl"
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:85
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:94
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:105
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:124
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:120
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:126
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:109
 msgid "invalid"
 msgstr "ungültig"
 
@@ -1999,8 +2002,8 @@ msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/public_html/lorry/src/Presenter.php:173
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:97
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:167
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:199
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:175
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:207
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -2021,36 +2024,36 @@ msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:69
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:82
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:70
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:75
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:87
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:75
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:80
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:115
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:104
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:85
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:124
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:120
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:126
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:109
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:91
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:195
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:203
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:96
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:191
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:199
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -2093,7 +2096,7 @@ msgstr "GitHub-Name ist %s."
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:132
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:137
 msgid ""
 "Contact details were changed. We'll send you an email to confirm the new "
 "address."
@@ -2101,7 +2104,7 @@ msgstr ""
 "Kontaktdaten geändert. Wir werden dir eine E-Mail senden, um die neue "
 "Adresse zu bestätigen."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:134
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:139
 msgid ""
 "Contact details were changed, but we couldn't send you an email to confirm. "
 "Pleasy try again later."
@@ -2109,29 +2112,29 @@ msgstr ""
 "Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung "
 "senden. Versuche es später erneut."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:141
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:149
 msgid "You should receive the confirmation email soon."
 msgstr "Du solltest die Bestätigungs-E-Mail bald erhalten."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:143
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:151
 msgid "We can't send you a confirmation email right now. Try again later."
 msgstr ""
 "Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es "
 "später erneut."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:170
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:178
 msgid "Confirmation required."
 msgstr "Bestätigung erforderlich."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:186
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:194
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:188
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:196
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:207
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:215
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -2365,23 +2368,11 @@ msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 msgid "Username was changed."
 msgstr "Benutzername wurde geändert."
 
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:50
-#: /home/benedict/public_html/lorry/src/Presenter/User/Profile.php:32
-#, php-format
-msgid "%s on the ClonkForge"
-msgstr "%s auf der ClonkForge"
-
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:55
-#: /home/benedict/public_html/lorry/src/Presenter/User/Profile.php:37
-#, php-format
-msgid "%s on GitHub"
-msgstr "%s auf GitHub"
-
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:96
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:84
 msgid "Username could not be changed."
 msgstr "Benutzername konnte nicht geändert werden."
 
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:134
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:124
 msgid ""
 "Contact details were changed. We sent an email to the user to confirm this "
 "new address."
@@ -2389,88 +2380,98 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
 "diese neue Adresse zu bestätigen."
 
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:136
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:126
 msgid "Contact details were changed, but we couldn't send the user an email."
 msgstr ""
 "Kontaktdaten geändert, wir konnten dem Nutzer jedoch keine E-Mail senden."
 
-#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:139
+#: /home/benedict/public_html/lorry/src/Presenter/User/Edit.php:129
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:135
+#: /home/benedict/public_html/lorry/src/Presenter/User/Profile.php:32
+#, php-format
+msgid "%s on the ClonkForge"
+msgstr "%s auf der ClonkForge"
+
+#: /home/benedict/public_html/lorry/src/Presenter/User/Profile.php:37
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s auf GitHub"
+
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:139
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:138
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:142
 msgid "d-m-Y"
 msgstr "d.m.Y"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:141
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:145
 msgid "H:i"
 msgstr "H:i"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:149
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:153
 msgid "January"
 msgstr "Januar"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:151
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:155
 msgid "February"
 msgstr "Februar"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:153
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:157
 msgid "March"
 msgstr "März"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:155
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:159
 msgid "April"
 msgstr "April"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:157
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:161
 msgid "May"
 msgstr "Mai"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:159
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:163
 msgid "June"
 msgstr "Juni"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:161
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:165
 msgid "July"
 msgstr "Juli"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:163
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:167
 msgid "August"
 msgstr "August"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:165
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:169
 msgid "September"
 msgstr "September"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:167
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:171
 msgid "October"
 msgstr "Oktober"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:169
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:173
 msgid "November"
 msgstr "November"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:171
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:175
 msgid "December"
 msgstr "Dezember"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:178
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:182
 msgid "1st"
 msgstr "1."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:180
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:184
 msgid "2nd"
 msgstr "2."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:182
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:186
 msgid "3rd"
 msgstr "3."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:184
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:188
 msgid "%n%th"
 msgstr "%n%."
 
@@ -2857,9 +2858,6 @@ msgstr "Bitte aktiviere deinen Konto bevor du Dateien hochlädst"
 
 #~ msgid "Addons for %game%"
 #~ msgstr "Erweiterungen für %game%"
-
-#~ msgid "Hi there,"
-#~ msgstr "Hallo,"
 
 #~ msgid "New releases on Lorry"
 #~ msgstr "Neue Veröffentlichungen auf Lorry"
