@@ -17,78 +17,119 @@ use Twig_Environment;
 class Environment {
 
 	/**
-	 * Handle an HTTP request.
+	 * @var \Lorry\Service\ConfigService;
 	 */
-	public function requestHandle() {
-		$config = new ConfigService();
+	private $config;
 
+	/**
+	 * @var \Lorry\Service\PersistenceService;
+	 */
+	private $persistence;
+
+	/**
+	 * @var \Lorry\Service\LocalisationService;
+	 */
+	private $localisation;
+
+	/**
+	 * @var \Twig_Environment
+	 */
+	private $twig;
+
+	/**
+	 * @var \Lorry\Service\SecurityService;
+	 */
+	private $security;
+
+	/**
+	 * @var \Lorry\Service\SecurityService;
+	 */
+	private $mail;
+
+	/**
+	 * @var \Lorry\Service\JobService;
+	 */
+	private $job;
+
+	public function setup() {
+		$config = new ConfigService();
 		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::INFO;
 		\Analog::handler(\Analog\Handler\Threshold::init(
 						\Analog\Handler\File::init('../app/logs/lorry.log'), $loglevel
 		));
+		$this->config = $config;
 
-		try {
-			$this->handle($config);
-		} catch(\Exception $e) {
-
-			$identifier = sha1(uniqid('lorry'));
-			Analog::error($identifier.' - '.get_class($e).': '.$e->getMessage());
-
-			header('HTTP/1.1 500 Internal Server Error');
-			header('Content-Type: text/plain');
-
-			if($config && $config->get('debug')) {
-				echo 'An internal error occured: '.get_class($e).PHP_EOL.PHP_EOL;
-				if($e->getMessage()) {
-					echo 'Message: '.$e->getMessage().PHP_EOL.PHP_EOL;
-				}
-				echo 'Stack trace:'.PHP_EOL.$e->getTraceAsString().PHP_EOL.PHP_EOL;
-				echo 'Lorry platform in debug mode.';
-			} else {
-				echo 'An internal error occured. We will be looking into this.'.PHP_EOL.PHP_EOL;
-				echo 'Error was '.$identifier.' at '.date('Y-m-d H:i:s').'.'.PHP_EOL;
-			}
-		}
-	}
-
-	protected function handle(ConfigService $config) {
-
+		// persistence
 		$persistence = new PersistenceService();
 		$persistence->setConfigService($config);
-
 		ModelFactory::setConfigService($config);
 		ModelFactory::setPersistenceService($persistence);
+		$this->persistence = $persistence;
 
-		$session = new SessionService();
-
+		// localisation
 		$localisation = new LocalisationService();
-		$localisation->setSessionService($session);
-		$localisation->localize();
+		$this->localisation = $localisation;
 
+		// templating
 		$loader = new Twig_Loader_Filesystem('../app/templates');
 		$twig = new Twig_Environment($loader, array('cache' => '../app/cache/twig', 'debug' => $config->get('debug')));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
-
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
 		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
 		$twig->addGlobal('resources', htmlspecialchars($config->get('base').'/resources'));
+		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
+		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
+		$twig->addGlobal('site_enabled', $config->get('enable/site'));
+		$twig->addGlobal('site_notice', $config->get('notice/text'));
+		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
+		$twig->addGlobal('site_tracking', $config->getTracking());
+		$this->twig = $twig;
+
+		// security
+		$security = new SecurityService();
+		$security->setConfigService($config);
+		$this->security = $security;
+
+		// mail
+		$mail = new MailService();
+		$mail->setConfigService($config);
+		$mail->setLocalisationService($localisation);
+		EmailFactory::setConfigService($config);
+		EmailFactory::setLocalisationService($localisation);
+		EmailFactory::setSecurityService($security);
+		EmailFactory::setTwig($twig);
+		$this->mail = $mail;
+
+		// jobs
+		$job = new JobService();
+		$job->setConfigService($config);
+		$this->job = $job;
+	}
+
+	public function handle() {
+		$config = $this->config;
+
+		$session = new SessionService();
+
+		// localize depending on viewer
+		$localisation = $this->localisation;
+		$localisation->setSessionService($session);
+		$localisation->localize();
+
+		// security based on login
+		$security = $this->security;
+		$security->setSessionService($session);
+
+		$twig = $this->twig;
 		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
 		$twig->addGlobal('origpath', trim(Router::getPath()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 		$language = $localisation->getDisplayLanguage();
 		$twig->addGlobal('locale', str_replace('-', '_', $language));
 		$languages = $localisation->getAvailableLanguages();
-		$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages)+1) % count($languages)], '-', true));
+		$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages) + 1) % count($languages)], '-', true));
 		$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
-
-		$twig->addGlobal('site_enabled', $config->get('enable/site'));
-		$twig->addGlobal('site_notice', $config->get('notice/text'));
-		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
-		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
-		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
-		$twig->addGlobal('site_tracking', $config->getTracking());
-		$twig->addGlobal('enable', $config->get('enable/site'));
 
 		if($session->authenticated()) {
 			$user = $session->getUser();
@@ -100,17 +141,8 @@ class Environment {
 			$twig->addGlobal('state', $session->getState());
 		}
 
-		$security = new SecurityService();
-		$security->setConfigService($config);
-		$security->setSessionService($session);
-
-		$mail = new MailService();
-		$mail->setConfigService($config);
-		$mail->setLocalisationService($localisation);
-		
-		$job = new JobService();
-		$job->setConfigService($config);
-
+		$mail = $this->mail;
+		$job = $this->job;
 		PresenterFactory::setConfigService($config);
 		PresenterFactory::setLocalisationService($localisation);
 		PresenterFactory::setSecurityService($security);
@@ -119,13 +151,7 @@ class Environment {
 		PresenterFactory::setJobService($job);
 		PresenterFactory::setTwig($twig);
 
-		EmailFactory::setConfigService($config);
-		EmailFactory::setLocalisationService($localisation);
-		EmailFactory::setSecurityService($security);
-		EmailFactory::setSessionService($session);
-		EmailFactory::setTwig($twig);
-
-		// set production routes
+		// routing
 		if($config->get('enable/site')) {
 			Router::addRoutes(array(
 				'/' => 'Site\Front',
@@ -165,14 +191,13 @@ class Environment {
 				'/contact' => 'Site\Contact',
 				'/language' => 'Site\Language',
 			));
-		}
-		else {
+		} else {
 			Router::addRoutes(array(
 				'/' => 'Site\Disabled'
 			));
 		}
 
-		// set debug routes
+		// debug routing
 		if($config->get('debug')) {
 			Router::addRoutes(array(
 				'/debug/cachewarmer' => 'Debug\CacheWarmer',
@@ -202,6 +227,34 @@ class Environment {
 		} catch(\Exception $exception) {
 			return PresenterFactory::build('Error')->get($exception);
 		}
+	}
+
+	public function getConfig() {
+		return $this->config;
+	}
+
+	public function getPersistence() {
+		return $this->persistence;
+	}
+	
+	public function getLocalisation() {
+		return $this->localisation;
+	}
+
+	public function getTemplating() {
+		return $this->twig;
+	}
+
+	public function getSecurity() {
+		return $this->security;
+	}
+
+	public function getMail() {
+		return $this->mail;
+	}
+
+	public function getJob() {
+		return $this->job;
 	}
 
 }
