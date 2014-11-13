@@ -99,6 +99,7 @@ class Edit extends Presenter {
 
 			$errors = array();
 
+			$previous_email = $user->getEmail();
 			if(ModelFactory::build('User')->byEmail($email)) {
 				$errors[] = gettext('Email address already used.');
 			} else {
@@ -117,8 +118,9 @@ class Edit extends Presenter {
 
 				$user->save();
 
+				$this->job->remove('Activate', array('user' => $user->getId(), 'address' => $previous_email));
 				if($require_activation) {
-					if($this->mail->sendActivation($user, $this->config->get('base').'/activate')) {
+					if($this->job->submit('Activate', array('user' => $user->getId(), 'address' => $user->getEmail()))) {
 						$this->warning('contact', gettext('Contact details were changed. We sent an email to the user to confirm this new address.'));
 					} else {
 						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send the user an email.'));

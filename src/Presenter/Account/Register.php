@@ -106,7 +106,7 @@ class Register extends Presenter {
 			$user->setRegistration(time());
 			if($user->save()) {
 				Analog::info('adding user "'.$user->getUsername().'"');
-				$this->job->submit('Welcome', $user->getId());
+				$this->job->submit('Welcome', array('user' => $user->getId()));
 				$returnto = filter_input(INPUT_GET, 'returnto');
 				if($oauth) {
 					$url = '/';

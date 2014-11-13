@@ -118,6 +118,8 @@ class Settings extends Presenter {
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$this->context['email'] = $email;
 
+			$previous_email = $user->getEmail();
+			
 			try {
 				$user->setEmail($email);
 			} catch(ModelValueInvalidException $e) {
@@ -128,7 +130,10 @@ class Settings extends Presenter {
 				if(empty($errors)) {
 					$user->save();
 
-					if($this->job->submit('Activate', $user->getId())) {
+					// remove activation jobs with previous address, if any
+					$this->job->remove('Activate', array('user' => $user->getId(), 'address' => $previous_email));
+					// submit new activation job
+					if($this->job->submit('Activate', array('user' => $user->getId(), 'address' => $user->getEmail()))) {
 						$this->warning('contact', gettext('Contact details were changed. We\'ll send you an email to confirm the new address.'));
 					} else {
 						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Pleasy try again later.'));
@@ -137,7 +142,10 @@ class Settings extends Presenter {
 					$this->error('contact', implode('<br>', $errors));
 				}
 			} else if(isset($_POST['resend'])) {
-				if($this->job->submit('Activate', $user->getId())) {
+				$args = array('user' => $user->getId(), 'address' => $user->getEmail());
+				// remove any previous activation jobs, if any
+				$this->job->remove('Activate', $args);
+				if($this->job->submit('Activate', $args)) {
 					$this->success('contact', gettext('You should receive the confirmation email soon.'));
 				} else {
 					$this->alert('contact', gettext('We can\'t send you a confirmation email right now. Try again later.'));
