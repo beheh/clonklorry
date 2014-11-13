@@ -7,7 +7,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class ConfigService {
 
-	const DIR = '../app/config/';
+	const DIR = __DIR__.'/../../app/config/';
 
 	private $config;
 
