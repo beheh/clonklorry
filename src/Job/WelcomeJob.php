@@ -8,4 +8,9 @@ class WelcomeJob extends ActivateJob {
 		return 'Welcome';
 	}
 
+	// always perform the initial Welcome message
+	public function beforePerform() {
+		return;
+	}
+	
 }

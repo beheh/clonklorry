@@ -20,9 +20,17 @@ abstract class Job {
 	 * @var \Lorry\Service\PersistenceService
 	 */
 	protected $persistence;
+	
+	public function beforePerform() {
+		
+	}
 
 	public final function setUp() {
 		$environment = new Environment();
+		$environment->setup();
+		$this->config = $environment->config;
+		$this->mail = $environment->mail;
+		$this->persistence = $environment->persistence;
 	}
 
 	abstract function perform();
