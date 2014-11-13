@@ -18,7 +18,8 @@
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.5",
 		"symfony/finder": "~2.5",
-        "chrisboulton/php-resque": "dev-unixsocket"
+        "chrisboulton/php-resque": "dev-unixsocket",
+		"aws/aws-sdk-php": "2.*"
     },
 	"suggest": {
 		"ext-http": "More reliable language negotiation"
