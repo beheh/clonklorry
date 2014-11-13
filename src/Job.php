@@ -30,10 +30,6 @@ abstract class Job {
 	 * @var \Twig_Environment
 	 */
 	protected $templating;
-	
-	public function beforePerform() {
-		
-	}
 
 	public final function setUp() {
 		$environment = new Environment();
