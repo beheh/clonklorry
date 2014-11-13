@@ -21,6 +21,11 @@ abstract class Job {
 	 */
 	protected $persistence;
 	
+	/**
+	 * @var \Lorry\Service\LocalisationService
+	 */
+	protected $localisation;
+	
 	public function beforePerform() {
 		
 	}
@@ -28,9 +33,10 @@ abstract class Job {
 	public final function setUp() {
 		$environment = new Environment();
 		$environment->setup();
-		$this->config = $environment->config;
-		$this->mail = $environment->mail;
-		$this->persistence = $environment->persistence;
+		$this->config = $environment->getConfig();
+		$this->mail = $environment->getMail();
+		$this->persistence = $environment->getPersistence();
+		$this->localisation = $environment->getLocalisation();
 	}
 
 	abstract function perform();
