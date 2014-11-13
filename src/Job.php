@@ -26,6 +26,11 @@ abstract class Job {
 	 */
 	protected $localisation;
 	
+	/**
+	 * @var \Twig_Environment
+	 */
+	protected $templating;
+	
 	public function beforePerform() {
 		
 	}
@@ -37,6 +42,7 @@ abstract class Job {
 		$this->mail = $environment->getMail();
 		$this->persistence = $environment->getPersistence();
 		$this->localisation = $environment->getLocalisation();
+		$this->templating = $environment->getTemplating();				
 	}
 
 	abstract function perform();
