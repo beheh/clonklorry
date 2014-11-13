@@ -68,7 +68,6 @@ class EmailFactory {
 		}
 		$instance->setConfigService(self::$config);
 		$instance->setLocalisationService(self::$localisation);
-		$instance->setSessionService(self::$session);
 		$instance->setSecurityService(self::$security);
 		$instance->setTwig(self::$twig);
 		return $instance;
