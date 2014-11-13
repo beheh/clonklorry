@@ -5,7 +5,6 @@ namespace Lorry;
 use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
-use Lorry\Service\SessionService;
 use Twig_Environment;
 
 abstract class Email {
@@ -38,16 +37,6 @@ abstract class Email {
 
 	public function setSecurityService(SecurityService $security) {
 		$this->security = $security;
-	}
-
-	/**
-	 *
-	 * @var \Lorry\Service\SessionService
-	 */
-	protected $session;
-
-	public function setSessionService(SessionService $session) {
-		$this->session = $session;
 	}
 
 	/**

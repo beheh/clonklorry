@@ -40,17 +40,7 @@ class EmailFactory {
 	public static function setSecurityService(SecurityService $security) {
 		self::$security = $security;
 	}
-
-	/**
-	 *
-	 * @var \Lorry\Service\SessionService
-	 */
-	private static $session;
-
-	public static function setSessionService(SessionService $session) {
-		self::$session = $session;
-	}
-
+	
 	/**
 	 *
 	 * @var \Twig_Environment
