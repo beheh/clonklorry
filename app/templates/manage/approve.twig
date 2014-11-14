@@ -12,6 +12,14 @@
 			</h1>
 		</div>
 	</div>
+	{% if approved %}
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{% trans %}Addon approved{% endtrans %}</h1>
+				<p>{% trans %}This addon has been assigned the namespace <strong>{{namespace}}</strong>.{% endtrans %}</p>
+			</div>
+		</div>
+	{% else %}
 	<div class="container">
 		{% set username %}<a href="{{base}}/users/{{user.name}}" class="">{{user.name}}</a>{% endset %}
 		<p class="lead">{% trans %}<strong>{{username}}</strong> would like to reserve the namespace <strong>{{namespace}}</strong> for this addon.{% endtrans %}</p>
@@ -47,5 +55,6 @@
 				</dl>
 			</div>
 		</div>
+	{% endif %}
 	</div>
 {% endblock %}
