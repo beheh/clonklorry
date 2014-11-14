@@ -3,13 +3,6 @@
 namespace Lorry;
 
 use Analog\Analog;
-use Lorry\Service\ConfigService;
-use Lorry\Service\LocalisationService;
-use Lorry\Service\PersistenceService;
-use Lorry\Service\SecurityService;
-use Lorry\Service\SessionService;
-use Lorry\Service\MailService;
-use Lorry\Service\JobService;
 use Lorry\Exception\NotImplementedException;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
@@ -50,9 +43,13 @@ class Environment {
 	 * @var \Lorry\Service\JobService;
 	 */
 	private $job;
+	
+	/**
+	 * @var 
+	 */
 
 	public function setup() {
-		$config = new ConfigService();
+		$config = new Service\ConfigService();
 		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::INFO;
 		\Analog::handler(\Analog\Handler\Threshold::init(
 						\Analog\Handler\File::init(__DIR__.'/../app/logs/lorry.log'), $loglevel
@@ -60,14 +57,14 @@ class Environment {
 		$this->config = $config;
 
 		// persistence
-		$persistence = new PersistenceService();
+		$persistence = new Service\PersistenceService();
 		$persistence->setConfigService($config);
 		ModelFactory::setConfigService($config);
 		ModelFactory::setPersistenceService($persistence);
 		$this->persistence = $persistence;
 
 		// localisation
-		$localisation = new LocalisationService();
+		$localisation = new Service\LocalisationService();
 		$this->localisation = $localisation;
 
 		// templating
@@ -84,15 +81,17 @@ class Environment {
 		$twig->addGlobal('site_notice', $config->get('notice/text'));
 		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
 		$twig->addGlobal('site_tracking', $config->getTracking());
+		$twig->addGlobal('enable', array('upload' => $config->get('enable/upload')));
+		
 		$this->twig = $twig;
 
 		// security
-		$security = new SecurityService();
+		$security = new Service\SecurityService();
 		$security->setConfigService($config);
 		$this->security = $security;
 
 		// mail
-		$mail = new MailService();
+		$mail = new Service\MailService();
 		$mail->setConfigService($config);
 		$mail->setLocalisationService($localisation);
 		EmailFactory::setConfigService($config);
@@ -102,15 +101,20 @@ class Environment {
 		$this->mail = $mail;
 
 		// jobs
-		$job = new JobService();
+		$job = new Service\JobService();
 		$job->setConfigService($config);
 		$this->job = $job;
+		
+		// content delivery
+		$cdn = new Service\CdnService();
+		$cdn->setConfigService($config);
+		$this->cdn = $cdn;
 	}
 
 	public function handle() {
 		$config = $this->config;
 
-		$session = new SessionService();
+		$session = new Service\SessionService();
 
 		// localize depending on viewer
 		$localisation = $this->localisation;
@@ -176,6 +180,7 @@ class Environment {
 				'/users/:alpha/edit' => 'User\Edit',
 				'/admin' => 'Manage\Administration',
 				'/moderate' => 'Manage\Moderation',
+				'/moderate/approve/:number' => 'Manage\Approve',				
 				'/register' => 'Account\Register',
 				'/login' => 'Account\Login',
 				'/logout' => 'Account\Logout',
@@ -201,7 +206,7 @@ class Environment {
 		if($config->get('debug')) {
 			Router::addRoutes(array(
 				'/debug/cachewarmer' => 'Debug\CacheWarmer',
-				'/debug/testjob' => 'Debug\TestJob'
+				'/debug/jobsubmitter' => 'Debug\JobSubmitter'
 			));
 		}
 
@@ -255,6 +260,10 @@ class Environment {
 
 	public function getJob() {
 		return $this->job;
+	}
+	
+	public function getCdn() {
+		return $this->cdn;
 	}
 
 }

@@ -2,4 +2,6 @@
 <a href="{{base}}/users/{{user.name}}"><strong>{{user.name}}</strong></a>
 {% if user.administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
 {% elseif user.moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>{% endif %}
+{% else %}
+{% trans %}Somebody{% endtrans %}
 {% endif %}

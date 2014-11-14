@@ -166,8 +166,7 @@ class User extends Model {
 			if(!preg_match('#^'.$this->config->get('github/name').'$#', $github)) {
 				throw new ModelValueInvalidException(gettext('not a valid GitHub name'));
 			}
-		}
-		else {
+		} else {
 			$github = null;
 		}
 		return $this->setValue('github', $github);
@@ -251,6 +250,10 @@ class User extends Model {
 
 	public function __toString() {
 		return $this->getUsername().'';
+	}
+
+	public function forApi() {
+		return array('name' => $this->getUsername(), 'administrator' => $this->isAdministrator(), 'moderator' => $this->isModerator());
 	}
 
 }

@@ -17,8 +17,6 @@ class Release extends Presenter {
 		return $release;
 	}
 
-	const UPLOAD_DIR = '../app/upload/publish';
-
 	public function get($id, $version) {
 		$this->security->requireLogin();
 

@@ -31,6 +31,11 @@ abstract class Job {
 	 */
 	protected $templating;
 
+	/**
+	 * @var \Lorry\Service\CdnService
+	 */
+	protected $cdn;
+	
 	public final function setUp() {
 		$environment = new Environment();
 		$environment->setup();
@@ -39,6 +44,7 @@ abstract class Job {
 		$this->persistence = $environment->getPersistence();
 		$this->localisation = $environment->getLocalisation();
 		$this->templating = $environment->getTemplating();				
+		$this->cdn = $environment->getCdn();
 	}
 
 	abstract function perform();

@@ -60,6 +60,8 @@ mail:
 cdn:
     key:
     secret:
+    region: eu-central-1
+    bucket: clonklorry
 
 # oauth secrets
 oauth:
