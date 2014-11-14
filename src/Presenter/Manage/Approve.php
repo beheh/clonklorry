@@ -6,6 +6,7 @@ use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
+use Lorry\Service\LocalisationService;
 
 class Approve extends Presenter {
 
@@ -44,6 +45,7 @@ class Approve extends Presenter {
 			$this->context['namespace'] = $addon->getProposedShort();
 		}
 		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
+		$this->context['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $addon->getApprovalSubmit());
 		
 		$this->display('manage/approve.twig');
 	}
