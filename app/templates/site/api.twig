@@ -15,14 +15,15 @@
 		<p>{% trans %}Most endpoints correspond to the web interface and can therefore be reached by simply appending <code>.json</code> to the url.{% endtrans %}</p>
 		<table class="table">
 			<tr><th>{% trans %}Url{% endtrans %}</th><th>{% trans %}Description{% endtrans %}</th><th>{% trans %}Typical result{% endtrans %}</th></tr>
-			<tr><td><pre>/addons/&lt;game&gt;.json</pre></td><td>{% trans %}Returns a list of addons for the queried game.{% endtrans %}</td><td><pre>{"game":{"id":"rage", ...},"addons":[{"id":"knights", ...}, ...]}</pre></td></tr>
+			<tr><td><pre>/games.json</pre></td><td>{% trans %}Returns a list of games.{% endtrans %}</td><td><pre>{"games":[{"id":"rage", ...}, ...]}</pre></td></tr>
+			<tr><td><pre>/addons/&lt;game&gt;.json</pre></td><td>{% trans %}Returns a list of addons for the queried game.{% endtrans %}</td><td><pre>{"addons":[{"id":"knights", ...}, ...]}</pre></td></tr>
 			<tr><td><pre>/addons/&lt;game&gt/&lt;addon&gt.json</pre></td><td>{% trans %}Returns details about the queried addon.{% endtrans %}</td><td><pre>{"addon":{"id":"knights", ...}}</pre></td></tr>
 		</table>
 		<h2>{% trans %}Objects{% endtrans %}</h2>
 		<table class="table">
 			<tr><th>{% trans %}Type{% endtrans %}</th><th>{% trans %}Structure{% endtrans %}</th></tr>
-			<tr><td>addon</td><td><pre>{"id":"knights","title":"Knights","introduction":"The original knights pack."}</pre></td></tr>
 			<tr><td>game</td><td><pre>{"id":"rage","title":"Clonk Rage"}</pre></td></tr>
+			<tr><td>addon</td><td><pre>{"id":"knights","title":"Knights","introduction":"The original knights pack."}</pre></td></tr>
 		</table>
 		<h2>{% trans %}Error handling{% endtrans %}</h2>
 		<p>{% trans %}You can handle errors by checking for the <code>error</code> field in the response.{% endtrans %} {% trans %}Additionally, a human-readable message may be given in a <code>message</code> field.{% endtrans %}</p>
