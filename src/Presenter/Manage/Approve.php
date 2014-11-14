@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Manage;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Exception\FileNotFoundException;
 
 class Approve extends Presenter {
 
