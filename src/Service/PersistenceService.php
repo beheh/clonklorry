@@ -5,6 +5,7 @@ namespace Lorry\Service;
 use Analog;
 use PDO;
 use Exception;
+use InvalidArgumentException;
 use PDOException;
 use Lorry\Model;
 
@@ -51,8 +52,37 @@ class PersistenceService {
 			} else {
 				$parameters .= ' AND ';
 			}
-			$parameters .= '`'.$row.'` = ?';
-			$values[] = $value;
+			if(is_array($value)) {
+				if(count($value) !== 2) {
+					throw new InvalidArgumentException('invalid contraint value, expected array of size 2 (for example array("!=", "value"))');
+				}
+				$allowed = array('>', '>=', '=', '!=', '<=', '<');
+				if(!in_array($value[0], $allowed)) {
+					throw new InvalidArgumentException('invalid query modifier, must be one of '.implode(', ', $allowed));
+				}
+				if($value[1] === null) {
+					switch($value[0]) {
+						case '=':
+							$parameters .= '`'.$row.'` IS NULL';
+							break;
+						case '!=':
+							$parameters .= '`'.$row.'` IS NOT NULL';
+							break;
+						default:
+							throw new InvalidArgumentException('invalid query modifier, null can only be equal or unequal');
+							break;
+					}
+					
+				}
+				else {
+					$parameters .= '`'.$row.'` '.$value[0].' ?';
+					$values[] = $value[1];
+				}
+			}
+			else {
+				$parameters .= '`'.$row.'` = ?';
+				$values[] = $value;
+			}
 		}
 
 		$order = $descending ? 'DESC' : 'ASC';

@@ -143,14 +143,14 @@ abstract class Model {
 			if(is_object($value)) {
 				throw new Exception('attempting to fetch model using object as value');
 			}
-			// do not allow empty values to search
-			if(empty($value)) {
+			// do not allow search for empty constraints
+			/*if(empty($value)) {
 				if($this->multiple) {
 					return array();
 				} else {
 					return false;
 				}
-			}
+			}*/
 		}
 
 		if($this->multiple) {
