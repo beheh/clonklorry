@@ -45,4 +45,8 @@ class Game extends Model {
 		return array('id' => $this->getShort(), 'title' => $this->getTitle());
 	}
 
+	public function forPresenter() {
+		return array('short' => $this->getShort(), 'title' => $this->getTitle());
+	}
+	
 }
