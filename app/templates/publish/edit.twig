@@ -50,8 +50,8 @@
 						</div>
 						<div class="col-lg-4">
 							<div class="form-group">
-								<label for="url">{%trans "Url" %}</label>
-								<input type="text" class="form-control" name="url" id="url" value="{{short}}" placeholder="{{short_proposal}}">
+								<label for="namespace">{%trans "Namespace" %}</label>
+								<input type="text" class="form-control" name="namespace" id="namespace" value="{{namespace}}" placeholder="{{namespace_proposal}}" {% if approved %}disabled{% endif%}>
 								<span class="help-block">{% trans %}Ideally your main filename without extension.<br>Examples: hazard, moderncombat, metalmagic.{% endtrans %}</span>
 							</div>
 							<div class="form-group">

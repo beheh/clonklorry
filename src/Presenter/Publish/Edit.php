@@ -34,13 +34,18 @@ class Edit extends Presenter {
 			$this->context['addontitle'] = $addon->getTitle();
 		}
 
-		if(!isset($this->context['short'])) {
-			$this->context['short'] = $addon->getShort();
+		if($addon->isApproved()) {
+			$this->context['approved'] = true;
+			$this->context['namespace'] = $addon->getShort();
+		} else {
+			if(!isset($this->context['namespace'])) {
+				$this->context['namespace'] = $addon->getProposedShort();
+			}
 		}
 		$title = $addon->getTitle();
 		$maintitle = strstr($title, ':');
 		$cleantitle = $maintitle ? $maintitle : $title;
-		$this->context['short_proposal'] = preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
+		$this->context['namespace_proposal'] = preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
 
 		if(!isset($this->context['abbreviation'])) {
 			$this->context['abbreviation'] = $addon->getAbbreviation();
@@ -130,13 +135,15 @@ class Edit extends Presenter {
 				$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
 			}
 
-			$url = trim(strtolower(filter_input(INPUT_POST, 'url')));
-			try {
-				$addon->setShort($url);
-				$this->context['short'] = $addon->getShort();
-			} catch(ModelValueInvalidException $ex) {
-				$errors[] = sprintf(gettext('Url is %s.'), $ex->getMessage());
-				$this->context['short'] = $url;
+			if(!$addon->isApproved()) {
+				$namespace = trim(strtolower(filter_input(INPUT_POST, 'namespace')));
+				try {
+					$addon->setProposedShort($namespace);
+					$this->context['namespace'] = $addon->getShort();
+				} catch(ModelValueInvalidException $ex) {
+					$errors[] = sprintf(gettext('Namespace is %s.'), $ex->getMessage());
+					$this->context['namespace'] = $namespace;
+				}
 			}
 
 			$abbreviation = trim(filter_input(INPUT_POST, 'abbreviation'));
