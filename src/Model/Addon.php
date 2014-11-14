@@ -18,7 +18,9 @@ class Addon extends Model {
 			'introduction' => 'text',
 			'description' => 'text',
 			'website' => 'url',
-			'bugtracker' => 'url'));
+			'bugtracker' => 'url',
+			'proposed_short' => 'string',
+			'approval_submit' => 'datetime'));
 	}
 
 	public function setOwner($owner) {
@@ -36,11 +38,15 @@ class Addon extends Model {
 	public function fetchOwner() {
 		return ModelFactory::build('User')->byId($this->getOwner());
 	}
+	
+	public function validateAddonShort($short) {
+		return $this->validateString($short, 4, 30);
+	}
 
 	public function setShort($short) {
 		$short = trim(strtolower($short));
 		if($short) {
-			$this->validateString($short, 4, 30);
+			$this->validateAddonShort($short);
 		} else {
 			$short = null;
 		}
@@ -171,7 +177,40 @@ class Addon extends Model {
 	public function getBugtracker() {
 		return $this->getValue('bugtracker');
 	}
+	
+	public function isApproved() {
+		return $this->getShort() !== null;
+	}
+	
+	public function byApprovalSubmitted() {
+		$constraints = array('short' => array('=', null));
+		$this->all()->order('approval_submit');
+		return $this->byValues($constraints);
+	}
+	
+	public function setProposedShort($proposed_short) {
+		if($proposed_short) {
+			$this->validateAddonShort($proposed_short);
+		}
+		else {
+			$proposed_short = null;
+		}
+		return $this->setValue('proposed_short', $proposed_short);
+	}
+	
+	public function getProposedShort() {
+		return $this->getValue('proposed_short');
+	}
+	
+	public function setApprovalSubmit($approval_submit) {
+		return $this->setValue('approval_submit', $approval_submit);
+	}
 
+	public function getApprovalSubmit() {
+		return $this->getValue('approval_submit');
+	}
+
+	
 	public function __toString() {
 		return $this->getTitle().'';
 	}

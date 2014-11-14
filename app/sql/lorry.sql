@@ -42,7 +42,7 @@ CREATE TABLE `comment` (
 CREATE TABLE `addon` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`owner` int(11) NOT NULL,
-	`short` varchar(255) DEFAULT NULL,
+	`short` varchar(30) DEFAULT NULL,
 	`title` varchar(255) NOT NULL,
 	`abbreviation` varchar(10) DEFAULT NULL,
 	`game` int(11) NOT NULL,
@@ -51,6 +51,8 @@ CREATE TABLE `addon` (
 	`description` text,
 	`website` varchar(255) DEFAULT NULL,
 	`bugtracker` varchar(255) DEFAULT NULL,
+	`proposed_short` varchar(30) DEFAULT NULL,
+	`approval_submit` datetime DEFAULT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `short` (`short`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
