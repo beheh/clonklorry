@@ -19,9 +19,15 @@
 			<div class="col-md-8">
 				<h2>{% trans %}Queues{% endtrans %}</h2>
 				<h3>{% trans %}Addons{% endtrans %}</h3>
-				<p class="alert alert-warning">{% trans %}There are no addons in the approval queue.{% endtrans %}</p>
+				{% if submitted %}
+					{% for request in submitted %}
+						<a href="{{base}}/moderate/approve/{{request.addon.id}}">{{request.addon.title}}</a>
+					{% endfor %}
+				{% else %}
+					<div class="alert alert-info">{% trans %}There are no addons in the approval queue.{% endtrans %}</div>
+				{% endif %}
 				<h3>{% trans %}Contact form{% endtrans %}</h3>
-				<p class="alert alert-warning">{% trans %}There are no new messages in the queue.{% endtrans %}</p>
+				<p class="alert alert-info">{% trans %}There are no new messages in the queue.{% endtrans %}</p>
 			</div>
 		</div>
 	</div>

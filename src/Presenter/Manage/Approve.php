@@ -5,6 +5,7 @@ namespace Lorry\Presenter\Manage;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\ForbiddenException;
 
 class Approve extends Presenter {
 
@@ -21,7 +22,13 @@ class Approve extends Presenter {
 		$this->offerIdentification();
 		$this->security->requireIdentification();
 
-		$addon = Approve::getAddon($id);
+		$addon = Approve::getAddon($id);		
+		// if not submitted
+		$approval_submit = $addon->getApprovalSubmit();
+		if(!$approval_submit) {
+			throw new ForbiddenException();
+		}
+		
 		$game = $addon->fetchGame();
 				
 		$user = $addon->fetchOwner();
@@ -29,7 +36,13 @@ class Approve extends Presenter {
 		$this->context['addon'] = $addon->getTitle();
 		$this->context['user'] = $user->forApi();
 		
-		$this->context['namespace'] = $addon->getShort();		
+		if($addon->isApproved()) {
+			$this->context['approved'] = true;
+			$this->context['namespace'] = $addon->getShort();
+		}
+		else {
+			$this->context['namespace'] = $addon->getProposedShort();
+		}
 		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
 		
 		$this->display('manage/approve.twig');
