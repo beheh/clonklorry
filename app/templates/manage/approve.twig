@@ -39,7 +39,7 @@
 					<dt>{% trans %}User{% endtrans %}</dt>
 					<dd>{% include 'functions/user.twig' with {'user': user} %}</dd>
 					<dt>{% trans %}Addon{% endtrans %}</dt>
-					<dd>{{addon}}{% if game %} {% include 'functions/tags/game.twig' with {'short' : game.short, 'title' : game.title} %}{% endif %}</dd>
+					<dd>{{addon}}{% if game %} {% include 'functions/tags/game.twig' with {'game' : game} %}{% endif %}</dd>
 					<dt>{% trans %}Requested namespace{% endtrans %}</dt>
 					<dd>{{namespace}}</dd>
 					<dt>{% trans %}Example url{% endtrans %}</dt>
