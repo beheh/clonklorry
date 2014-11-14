@@ -17,7 +17,7 @@
 				<form id="form-login" method="post" role="form">
 					<div class="form-group">
 						<label for="username">{% trans "Username" %}</label>
-						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not username_exists %} autofocus{% endif %} required>
+						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not (username_exists or email) %} autofocus{% endif %} required>
 					</div>
 					<div class="form-group">
 						<label for="password">{% trans "Password" %}</label>
