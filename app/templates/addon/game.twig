@@ -7,35 +7,35 @@
 			<h1>{% if not user_login and not addons %}<small class="pull-right"><a href="{{base}}/clonk">&hellip;?</a></small>{% endif %}{{title}}</h1>
 		</div>
 	</div>
+	{% if addons %}
 	<div class="container">
-		{% if addons %}
-			{% set columns %}
-				<a href="{{filename}}?sort=date{% if sort == 'date' and not reverse %}&reverse=1{% endif %}">{% trans %}by date{% endtrans %}</a>{% if sort == 'date' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
-				<a href="{{filename}}?sort=title{% if sort == 'title' and not reverse %}&reverse=1{% endif %}">{% trans %}by name{% endtrans %}</a>{% if sort == 'title' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
-				<a href="{{filename}}?sort=rating{% if sort == 'rating' and not reverse %}&reverse=1{% endif %}">{% trans %}by rating{% endtrans %}</a>{% if sort == 'rating' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %}
-			{% endset %}
-			{% set createaddon %}
-				<a href="{{base}}/create?for={{short}}">{% trans %}create a new addon{% endtrans %}</a>
-			{% endset %}
-			<!--<p class="sort-bar">{% trans %}Sort by {{columns}} or {{createaddon}} for this game.{% endtrans %}	</p>!-->
-			<ul class="media-list addons">
-				{% for addon in addons %}
-					{% include "functions/addon.twig" %}
-				{% endfor %}
-			</ul>
-		{% else %}
-		</div>
-		<div class="jumbotron">
-			<div class="container">
-				<img src="{{resources}}/custom/game/{{short}}.png" class="pull-right jumbo-image hidden-xs" alt="{% trans %}{{game}} logo{% endtrans %}">
-				<h1>{% trans %}No addons available{% endtrans %}</h1>
-				<p>{% trans %}There are no addons for this game yet :-({% endtrans %}</p>
-				{% if user_login %}
-					<p>
-						<a href="{{base}}/create?for={{short}}" class="btn btn-primary btn-lg">{% trans %}New {{game}} addon{% endtrans %}</a>
-					</p>
-				{% endif %}
+		{% set columns %}
+			<a href="{{filename}}?sort=date{% if sort == 'date' and not reverse %}&reverse=1{% endif %}">{% trans %}by date{% endtrans %}</a>{% if sort == 'date' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
+			<a href="{{filename}}?sort=title{% if sort == 'title' and not reverse %}&reverse=1{% endif %}">{% trans %}by name{% endtrans %}</a>{% if sort == 'title' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %} |
+			<a href="{{filename}}?sort=rating{% if sort == 'rating' and not reverse %}&reverse=1{% endif %}">{% trans %}by rating{% endtrans %}</a>{% if sort == 'rating' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %}
+		{% endset %}
+		{% set createaddon %}
+			<a href="{{base}}/create?for={{short}}">{% trans %}create a new addon{% endtrans %}</a>
+		{% endset %}
+		<!--<p class="sort-bar">{% trans %}Sort by {{columns}} or {{createaddon}} for this game.{% endtrans %}	</p>!-->
+		<ul class="media-list addons">
+			{% for addon in addons %}
+				{% include "functions/addon.twig" %}
+			{% endfor %}
+		</ul>
+	</div>
+	{% else %}
+	<div class="jumbotron">
+		<div class="container">
+			<img src="{{resources}}/custom/game/{{short}}.png" class="pull-right jumbo-image hidden-xs" alt="{% trans %}{{game}} logo{% endtrans %}">
+			<h1>{% trans %}No addons available{% endtrans %}</h1>
+			<p>{% trans %}There are no addons for this game yet :-({% endtrans %}</p>
+			{% if user_login %}
+				<p>
+					<a href="{{base}}/create?for={{short}}" class="btn btn-primary btn-lg">{% trans %}New {{game}} addon{% endtrans %}</a>
+				</p>
 			{% endif %}
 		</div>
 	</div>
+	{% endif %}
 {% endblock %}
