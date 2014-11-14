@@ -21,7 +21,7 @@ class Approve extends Presenter {
 		$this->security->requireModerator();
 		$this->offerIdentification();
 		$this->security->requireIdentification();
-
+	
 		$addon = Approve::getAddon($id);		
 		// if not submitted
 		$approval_submit = $addon->getApprovalSubmit();
@@ -34,7 +34,7 @@ class Approve extends Presenter {
 		$user = $addon->fetchOwner();
 		
 		$this->context['addon'] = $addon->getTitle();
-		$this->context['user'] = $user->forApi();
+		$this->context['user'] = $user->forPresenter();
 		
 		if($addon->isApproved()) {
 			$this->context['approved'] = true;

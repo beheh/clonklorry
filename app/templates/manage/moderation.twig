@@ -20,9 +20,16 @@
 				<h2>{% trans %}Queues{% endtrans %}</h2>
 				<h3>{% trans %}Addons{% endtrans %}</h3>
 				{% if submitted %}
+					<table class="table">
+						<tr><th>{% trans %}Addon{% endtrans %}</th><th>{% trans %}Requested namespace{% endtrans %}</th><th>{% trans %}User{% endtrans %}</th></tr>
 					{% for request in submitted %}
-						<a href="{{base}}/moderate/approve/{{request.addon.id}}">{{request.addon.title}}</a>
+						<tr>
+							<td>{{request.addon.title}} {% include 'functions/tags/game.twig' with {'game' : games[request.addon.game]} %}</td>
+							<td><a href="{{base}}/moderate/approve/{{request.addon.id}}"><strong>{{request.namespace}}</strong></a></td>
+							<td>{% include 'functions/user.twig' with {'user': request.user} %}</td>
+						</tr>
 					{% endfor %}
+					</table>
 				{% else %}
 					<div class="alert alert-info">{% trans %}There are no addons in the approval queue.{% endtrans %}</div>
 				{% endif %}

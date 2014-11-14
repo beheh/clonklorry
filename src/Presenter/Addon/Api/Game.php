@@ -24,12 +24,7 @@ class Game extends ApiPresenter {
 		}
 
 		$result = array();
-		if(isset($_GET['headless'])) {
-			$result = $addons;
-		} else {
-			$result['game'] = $game->forApi();
-			$result['addons'] = $addons;
-		}
+		$result['addons'] = $addons;
 		$this->display($result);
 	}
 
