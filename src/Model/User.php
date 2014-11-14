@@ -255,5 +255,9 @@ class User extends Model {
 	public function forApi() {
 		return array('name' => $this->getUsername(), 'administrator' => $this->isAdministrator(), 'moderator' => $this->isModerator());
 	}
+	
+	public function forPresenter() {
+		return $this->forApi();
+	}
 
 }

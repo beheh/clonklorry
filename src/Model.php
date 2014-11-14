@@ -399,6 +399,10 @@ abstract class Model {
 	public function forApi() {
 		return array();
 	}
+	
+	public function forPresenter() {
+		return array();
+	}
 
 	protected function onSave() {
 	}
