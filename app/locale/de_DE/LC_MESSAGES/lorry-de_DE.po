@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-11-14 06:12+0100\n"
-"PO-Revision-Date: 2014-11-14 06:12+0100\n"
+"POT-Creation-Date: 2014-11-14 06:24+0100\n"
+"PO-Revision-Date: 2014-11-14 06:24+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1442,11 +1442,11 @@ msgstr "Freigabe: %addon%"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:61
 msgid ""
-"<strong>%user%</strong> would like to reserve the namespace <strong>"
+"<strong>%username%</strong> would like to reserve the namespace <strong>"
 "%namespace%</strong> for this addon."
 msgstr ""
-"<strong>%user%</strong> möchte den Namensraum <strong>%namespace%</strong> "
-"für diese Erweiterung reservieren."
+"<strong>%username%</strong> möchte den Namensraum <strong>%namespace%</"
+"strong> für diese Erweiterung reservieren."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:71
 msgid ""
@@ -2012,27 +2012,27 @@ msgstr "Aktuelle Version"
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/public_html/lorry/src/Model.php:353
+#: /home/benedict/public_html/lorry/src/Model.php:352
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/public_html/lorry/src/Model.php:356
+#: /home/benedict/public_html/lorry/src/Model.php:355
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/public_html/lorry/src/Model.php:369
+#: /home/benedict/public_html/lorry/src/Model.php:368
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/public_html/lorry/src/Model.php:377
+#: /home/benedict/public_html/lorry/src/Model.php:376
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/public_html/lorry/src/Model.php:383
+#: /home/benedict/public_html/lorry/src/Model.php:382
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: /home/benedict/public_html/lorry/src/Model.php:392
+#: /home/benedict/public_html/lorry/src/Model.php:391
 #: /home/benedict/public_html/lorry/src/Model/User.php:30
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:85
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:94
