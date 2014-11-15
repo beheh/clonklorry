@@ -19,7 +19,7 @@
 			</div>!-->
 			<div class="form-group">
 				<label for="description">{% trans "Description" %}</label>
-				<textarea class="form-control" id="description" name="description" rows="6" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
+				<textarea class="form-control" id="description" name="description" rows="8" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -30,6 +30,10 @@
 			<div class="form-group">
 				<label for="bugtracker-url">{%trans "Bugtracker" %}</label>
 				<input type="text" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/bugtrack.php?prj=">
+			</div>
+			<div class="form-group">
+				<label for="bugtracker-url">{%trans "Forum" %}</label>
+				<input type="text" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/dforum.php?prj=">
 			</div>
 		<!--<input type="hidden" name="state" value="{{state}}">
 			<div class="form-group">

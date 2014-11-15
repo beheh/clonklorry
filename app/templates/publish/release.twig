@@ -9,8 +9,8 @@
 				<a href="{{base}}/publish/{{addonid}}#releases">
 					{{addontitle}}
 				</a>
-				<small>{% include 'functions/labels/version.twig' with {'version' : version, prefix: 'Release'|trans} %}
-					{% if released %}
+				<small><a href="#basic">{% include 'functions/labels/version.twig' with {'version' : version, prefix: 'Release'|trans} %}</a>
+					<a href="#publish">{% if released %}
 						{% if latest %}
 							{% include "functions/labels/latest.twig" %}
 						{% endif %}
@@ -18,9 +18,9 @@
 						{% if scheduled %}
 							{% include "functions/labels/scheduled.twig" %}
 						{% else %}
-							{% include "functions/labels/unreleased.twig" %}
+							{% include "functions/labels/unpublished.twig" %}
 						{% endif %}
-					{% endif %}
+					{% endif %}</a>
 					<span class="glyphicon glyphicon-pencil"></span>
 				</small>
 			</h1>

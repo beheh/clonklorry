@@ -3,10 +3,10 @@
 {% block content %}
 	<div class="page-header">
 		<div class="container">
-			<h1>{{addontitle}}
+			<h1><a href="#basic">{{addontitle}}</a>
 				<small>
-					<span class="label label-default">{% trans %}Addon{% endtrans %}</span>
-					{% if approved %}<a href="#approval"><span class="label label-success">{% trans %}Approved{% endtrans %}</span></a>{% endif %}
+					<a href="#basic"><span class="label label-default">{% trans %}Addon{% endtrans %}</span></a>
+					{% if not approved %}<a href="#approval"><span class="label label-warning">{% trans %}Not approved yet{% endtrans %}</span></a>{% endif %}
 					<span class="glyphicon glyphicon-pencil"></span>
 				</small>
 			</h1>
