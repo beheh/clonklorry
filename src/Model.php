@@ -69,7 +69,7 @@ abstract class Model {
 	protected final function setValue($name, $value) {
 		$this->ensureRow($name);
 		$value = $this->ensureType($name, $value);
-		if($this->loaded && $this->values[$name] === $value)
+		if($this->loaded && $this->getValue($name) === $value)
 			return true;
 		$this->changes[$name] = $value;
 		return true;
@@ -288,6 +288,10 @@ abstract class Model {
 		return true;
 	}
 
+	public final function getChanges() {
+		return $this->changes;
+	}
+	
 	/**
 	 * Returns whether unsaved changes remain.
 	 * @return boolean True, if unsaved changes are present.
