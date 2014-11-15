@@ -6,6 +6,7 @@
 			<h1>{{addontitle}}
 				<small>
 					<span class="label label-default">{% trans %}Addon{% endtrans %}</span>
+					{% if approved %}<a href="#approval"><span class="label label-success">{% trans %}Approved{% endtrans %}</span></a>{% endif %}
 					<span class="glyphicon glyphicon-pencil"></span>
 				</small>
 			</h1>
@@ -18,6 +19,7 @@
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#addon" data-toggle="tab">{% trans "Addon" %}</a></li>
 			<li><a href="#presentation" data-toggle="tab">{% trans "Presentation" %}</a></li>
+			<li><a href="#approval" data-toggle="tab">{% trans "Approval" %}</a></li>
 			<li><a href="#releases" data-toggle="tab">{% trans "Releases" %}</a></li>
 		</ul>
 		<div class="tab-content">
@@ -29,19 +31,19 @@
 					<div class="row">
 						<div class="col-lg-4">
 							<div class="form-group">
-								<label for="title">{%trans "Title" %}</label>
-								<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required>
+								<label for="title">{% trans "Title" %}</label>
+								<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required {% if released %}disabled{% endif%}>
 							</div>
 							<div class="form-group">
-								<label for="type">{%trans "Type" %}</label>
-								<select name="type" class="form-control" id="type">
+								<label for="type">{% trans "Type" %}</label>
+								<select name="type" class="form-control" id="type" required {% if released %}disabled{% endif%}>
 									<option value="123">Runde</option>
 									<option value="312">Objektpaket</option>
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="type">{%trans "Game" %}</label>
-								<select name="game" class="form-control" id="type" required>
+								<label for="type">{% trans "Game" %}</label>
+								<select name="game" class="form-control" id="type" required {% if released %}disabled{% endif%}>
 									{% for short, currentgame in games %}
 										<option value="{{short}}"{% if short == game %} selected{% endif %}>{{currentgame.title}}</option>
 									{% endfor %}
@@ -50,23 +52,16 @@
 						</div>
 						<div class="col-lg-4">
 							<div class="form-group">
-								<label for="namespace">{%trans "Namespace" %}</label>
-								<input type="text" class="form-control" name="namespace" id="namespace" value="{{namespace}}" placeholder="{{namespace_proposal}}" {% if approved %}disabled{% endif%}>
-								<span class="help-block">{% trans %}Ideally your main filename without extension.<br>Examples: hazard, moderncombat, metalmagic.{% endtrans %}</span>
-							</div>
-							<div class="form-group">
-								<label for="title">{%trans "Abbreviation" %}</label>
-								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}">
+								<label for="title">{% trans "Abbreviation" %}</label>
+								<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}" {% if released %}disabled{% endif%}>
 								<span class="help-block">{% trans %}Only enter a well-known abbreviation.{% endtrans %}</span>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<a href="#">{% trans %}Remove addon&hellip;{% endtrans %}</a>
 						</div>
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
 						<span class="btn" disabled>{% trans %}These settings cannot be changed once the first release has been published.{% endtrans %}</span>
+						<a href="#" class="btn btn-danger pull-right">{% trans %}Remove addon{% endtrans %}</a>
 					</div>
 				</form>
 			</div>
@@ -151,6 +146,29 @@
 						<span class="btn" disabled>{% trans %}The presentation can be changed anytime and affects all releases.{% endtrans %}</span>
 					</div>
 				</form>
+			</div>
+					
+			<div class="tab-pane" id="approval">
+				{% if approved %}
+				<div class="alert alert-success">{% trans %}This addon was approved. Releases can now be published at any time.{% endtrans %}</div>
+				{% else %}
+				<div class="alert alert-warning">{% trans %}This addon needs to be approved by a moderator. Releases can be published freely after approval.{% endtrans %}</div>					
+				{% endif %}
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="namespace">{% trans "Namespace" %}</label>
+							<input type="text" class="form-control" name="namespace" id="namespace" value="{{namespace}}" placeholder="{{namespace_proposal}}" {% if approved %}disabled{% endif%}>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<h4>Choose a namespace</h4>
+						<p>The namespace will be used as a unique identifier for your addon and its releases.</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-success">{% trans %}Submit for approval{% endtrans %}</button>
+				</div>
 			</div>
 
 			<div class="tab-pane" id="releases">
