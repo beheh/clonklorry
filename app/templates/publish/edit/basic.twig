@@ -1,0 +1,40 @@
+<form role=form" method="post" action="{{filename}}#basic">
+	<input type="hidden" name="addon-form">
+	<input type="hidden" name="state" value="{{state}}">
+	{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="form-group">
+				<label for="title">{% trans "Title" %}</label>
+				<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required {% if released %}disabled{% endif%}>
+			</div>
+			<div class="form-group">
+				<label for="type">{% trans "Type" %}</label>
+				<select name="type" class="form-control" id="type" required {% if released %}disabled{% endif%}>
+					<option value="123">Runde</option>
+					<option value="312">Objektpaket</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="type">{% trans "Game" %}</label>
+				<select name="game" class="form-control" id="type" required {% if released %}disabled{% endif%}>
+					{% for short, currentgame in games %}
+						<option value="{{short}}"{% if short == game %} selected{% endif %}>{{currentgame.title}}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="form-group">
+				<label for="title">{% trans "Abbreviation" %}</label>
+				<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}" {% if released %}disabled{% endif%}>
+				<span class="help-block">{% trans %}Only enter a well-known abbreviation.{% endtrans %}</span>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+		<span class="btn" disabled>{% trans %}These settings cannot be changed once the first release has been published.{% endtrans %}</span>
+		<a href="#" class="btn btn-danger pull-right">{% trans %}Remove addon{% endtrans %}</a>
+	</div>
+</form>

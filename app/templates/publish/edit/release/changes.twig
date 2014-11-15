@@ -1,0 +1,18 @@
+<form role="form" method="post" action="{{filename}}#changes">
+	{% include 'functions/alert.twig' with {'selector' : 'changes'} %}
+	<input type="hidden" name="changes-form">
+	<input type="hidden" name="state" value="{{state}}">
+	<div class="form-group">
+		<div class="form-group">
+			<label for="whatsnew">{% trans "What's new?"%}</label>
+			<textarea class="form-control" id="whatsnew" name="whatsnew" rows="3" placeholder="{% trans %}Briefly explain why this release is better than the previous one.{% endtrans %}" maxlength="512">{{whatsnew}}</textarea>
+		</div>
+		<div class="form-group">
+			<label for="changelog">{% trans "Detailed changelog" %}</label>
+			<textarea class="form-control monospace" id="changelog" name="changelog" rows="6" placeholder="+ Added a new feature..." maxlength="65536">{{changelog}}</textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+	</div>
+</form>

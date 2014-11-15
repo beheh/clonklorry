@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-md-12">
+		<label for="version">{% trans "New release" %}</label>
+		<form role=form" class="form-inline" method="post" action="{{filename}}#releases">
+			<input type="hidden" name="release-form">
+			<input type="hidden" name="state" value="{{state}}">
+			{% include 'functions/alert.twig' with {'selector' : 'release'} %}
+			<div class="form-group">
+				<label class="sr-only" for="version	">{% trans "Version"%}</label>
+				<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="1.0b"{% if focus_version %} autofocus{% endif %} required>
+			</div>
+			<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Add release{% endtrans %}</button>
+			<span class="help-block">{% trans %}Releases are invisible until you publish them.{% endtrans %}</span>
+		</form>
+		<p></p>
+		<label for="type">{% trans "Existing releases" %}</label>
+		<div class="list-group">
+			{% for release in releases %}
+				<a class="list-group-item" href="{{base}}/publish/{{addonid}}/{{release.version}}">
+					{% set version = release.version %}
+					<strong>{{addontitle}}</strong>
+					{% include 'functions/labels/version.twig' with {'version' : version} %}
+					{% if release.released %}
+						{% if release.latest %}
+							{% include "functions/labels/latest.twig" %}
+						{% endif %}
+					{% else %}
+						{% if release.scheduled %}
+							{% include "functions/labels/scheduled.twig" %}
+						{% else %}
+							{% include "functions/labels/unreleased.twig" %}
+						{% endif %}
+					{% endif %}
+				</a>
+			{% else %}
+				<span class="list-group-item text-muted">{% trans %}No release created{% endtrans %}</span>
+			{% endfor %}
+		</div>
+	</div>
+</div>

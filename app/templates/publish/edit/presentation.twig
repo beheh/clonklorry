@@ -1,0 +1,66 @@
+<form role=form" method="post" action="{{filename}}#presentation" name="test">
+	<input type="hidden" name="presentation-form">
+	<input type="hidden" name="state" value="{{state}}">
+	{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
+	<div class="row">
+		<div class="col-md-8">
+			<!--<div class="col-sm-3">
+				<div class="form-group">
+					<label for="title">{% trans "Title image" %}</label>
+					<img class="media-object" src="http://placehold.it/76x57" width="76" height="57">
+					<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans %}Select{% endtrans %}</button>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="form-group">
+					<label for="introduction">{% trans "Sitewide intro" %}</label>
+					<textarea class="form-control" id="introduction" name="introduction" rows="2" placeholder="{% trans %}Short intro text, will be used around the site alongside the title image.{% endtrans %}">{{introduction}}</textarea>
+				</div>
+			</div>!-->
+			<div class="form-group">
+				<label for="description">{% trans "Description" %}</label>
+				<textarea class="form-control" id="description" name="description" rows="6" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label for="website-url">{%trans "Website" %}</label>
+				<input type="text" class="form-control" name="website-url" id="website-url" value="{{website}}" placeholder="http://clonkforge.net/pr.php?pr=">
+			</div>
+			<div class="form-group">
+				<label for="bugtracker-url">{%trans "Bugtracker" %}</label>
+				<input type="text" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/bugtrack.php?prj=">
+			</div>
+		<!--<input type="hidden" name="state" value="{{state}}">
+			<div class="form-group">
+				<label for="type">{% trans "Supported player counts" %}</label>
+				<div class="checkbox">
+					<label><input type="checkbox"> Single player (a single player can/has to do something)</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox"> Cooperative (all players have too solve a riddle or kill a boss)</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox"> Free for all (only one player can win)</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox"> Multiple teams (teams win)</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type">{% trans "Goal" %}</label>
+				<select name="type" class="form-control" id="type">
+					<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+					<option value="adventure">Adventure</option>
+					<option value="melee">Melee</option>
+					<option value="settlement">Settlement</option>
+					<option value="various">Various</option>
+				</select>
+			</div>!-->
+		</div>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+		<span class="btn" disabled>{% trans %}The presentation can be changed anytime and affects all releases.{% endtrans %}</span>
+	</div>
+</form>

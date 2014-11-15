@@ -1,0 +1,31 @@
+<div class="form-group">
+	<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
+	<ul class="list-group" id="resumable-files-none">
+		<li id="resumable-files-none" class="list-group-item text-muted">{% trans %}No dependencies added{% endtrans %}</li>
+	</ul>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<div class="form-group">
+			<label for="add-dependency">{% trans %}Search for an addon{% endtrans %}</label>
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Hazard" id="add-dependency">
+				<span class="input-group-btn">
+					<button class="btn btn-default" id="add-dependency-reset" type="button">&times;</button>
+					<button class="btn btn-primary" id="add-dependency-select" type="button"><span class="glyphicon glyphicon-step-forward"></span></button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label for="add-dependency-version">{% trans %}Version{% endtrans %}</label>
+			<select class="form-control" id="add-dependency-version" disabled>
+				<option disabled>{% trans %}Javascript needs to be enabled{% endtrans %}</option>
+			</select>
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<button type="submit" class="btn btn-success inline" name="add-dependency-add" disabled><span class="glyphicon glyphicon-plus"></span> {% trans %}Add dependency{% endtrans %}</button>
+</div>

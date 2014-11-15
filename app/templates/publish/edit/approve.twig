@@ -1,0 +1,46 @@
+{% if approved %}
+	<div class="panel panel-success">
+		<div class="panel-heading">{% trans %}Addon approved{% endtrans %}</div>
+		<div class="panel-body">
+			{% trans %}This addon was approved. Releases can now be published at any time.{% endtrans %}
+		</div>
+	</div>
+{% elseif queued %}
+	<div class="panel panel-info">
+		<div class="panel-heading">{% trans %}Waiting for approval{% endtrans %}</div>
+		<div class="panel-body">
+			<p>{% trans %}This addon was submitted for approval. A moderator will check your addon shortly.{% endtrans %}</p>
+			<button type="submit" class="btn btn-default">{% trans %}Withdraw{% endtrans %}</button>
+		</div>
+	</div>
+{% elseif denied %}
+	<div class="panel panel-danger">
+		<div class="panel-heading">{% trans %}Addon rejected{% endtrans %}</div>
+		<div class="panel-body">
+			{% trans %}Sorry, this addon was rejected. You can submit your addon again after improving.{% endtrans %}
+		</div>
+	</div>
+{% else %}
+	<div class="panel panel-warning">
+		<div class="panel-heading">{% trans %}Approval required{% endtrans %}</div>
+		<div class="panel-body">
+			{% trans %}This addon needs to be approved by a moderator. Releases can be published freely after approval.{% endtrans %}<br>
+		</div>
+	</div>
+{% endif %}
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+			<label for="namespace">{% trans "Namespace" %}</label>
+			<input type="text" class="form-control" name="namespace" id="namespace" value="{{namespace}}" placeholder="{{namespace_proposal}}" {% if approved %}disabled{% endif%}>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<h4>Choose a namespace</h4>
+		<p>The namespace will be used as a unique identifier for your addon and its releases.</p>
+	</div>
+</div>
+<div class="form-group">
+	<button class="btn btn-default"{% if approved or queued %} disabled{% endif %}>{% trans %}Save{% endtrans %}</button>
+	<button class="btn btn-success"{% if approved or queued %} disabled{% endif %}>{% trans %}Submit for approval{% endtrans %}</button>
+</div>

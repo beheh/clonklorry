@@ -1,0 +1,50 @@
+<!--<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-danger">
+							<div class="panel-heading"><strong>This release can't be published yet.</strong></div>
+							<div class="list-group">
+								<a href="#files" class="list-group-item">Add at least one file</a>
+							</div>
+						</div>
+						<div class="panel panel-info">
+							<div class="panel-heading">Recommended actions</div>
+							<div class="list-group">
+								<a class="list-group-item">Add some tags</a>
+							</div>
+						</div>
+					</div>
+				</div>!-->
+{% if released %}
+	<p>This addon was published on date.</p>
+{% else %}
+	<div class="row">
+		<div class="col-md-6">
+			<h2>{% trans %}Quick release{% endtrans %}</h2>
+			<p>{% trans %}If you would like to get your newest creation to the community as soon as possible you can instantly release your latest version.{% endtrans %}</p>
+			<p>{% trans %}All downloads will immediately redirect to your uploaded version.{% endtrans %}</p>
+			<p class="alert alert-warning">{% trans %}Publishing a release is final. Any changes after releasing require a new release.{% endtrans %}</p>
+			<p>{% trans %}Your release will be instantly available to all players.{% endtrans %}</p>
+			<form role="form" class="form-inline" method="post" action="">
+				<div class="pull-right">
+					<label class="checkbox inline" style="margin-right: 20px;">
+						<input type="checkbox" id="release-confirm"> {% trans %}Confirm instant release{% endtrans %}
+					</label>
+					<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<h2>{% trans %}Scheduled release{% endtrans %}</h2>
+			<form role="form" method="post" action="">
+				<label for="datetime">{% trans %}Date and time{% endtrans %}</label>
+				<input type="datetime-local" id="datetime" name="datetime" value="{{datetime}}" min="{{current_datetime}}" required>
+				<label class="checkbox">
+					<input type="checkbox">{% trans %}Make release date and time public{% endtrans %}
+				</label>
+				<p class="alert alert-info">{% trans %}You can cancel a scheduled release at any time before the automated release.{% endtrans %}</p>
+				<p>{% trans %}Your release will be automatically made vailabe to all players at the specified timestamp.{% endtrans %}</p>
+				<button type="submit" class="btn btn-primary btn-large pull-right">{% trans %}Schedule Release{% endtrans %}</button>
+			</form>
+		</div>
+	</div>
+{% endif %}

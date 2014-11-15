@@ -1,0 +1,39 @@
+<div class="form-group">
+	<label for="files">{% trans %}Files{% endtrans %}</label>
+	<script>var addon = '{{addonid}}';
+		var release = '{{version}}';</script>
+		{% if enable.upload %}
+		<div id="release-files-no-resumable">
+			<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
+			<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
+		</div>
+		<div id="release-files-error-loading">
+			<div class="alert alert-danger">{% trans %}Could not load existing files.{% endtrans %}</div>
+		</div>
+	{% else %}
+		<div class="alert alert-danger">{% trans %}File upload is disabled.{% endtrans %}</div>
+	{% endif %}
+	<div id="resumable">
+		<span id="message-text-reselect" class="hidden">{% trans %}Select file to continue upload{% endtrans %}</span>
+		<span id="message-text-uploaded" class="hidden">{% trans %}Ready to publish{% endtrans %}</span>
+		<span id="message-text-remove" class="hidden">{% trans %}Remove{% endtrans %}</span>
+		<span id="message-text-confirm-remove" class="hidden">{% trans %}Are you sure you want to remove this file?{% endtrans %}</span>
+		<span id="message-text-remove-failed" class="hidden">{% trans %}File could not be removed.{% endtrans %}</span>
+		<span id="message-text-file-exists" class="hidden">{% trans %}File already exists.{% endtrans %}</span>
+		<div id="resumable-error" class="alert alert-danger hidden"></div>
+		<ul class="list-group" id="resumable-files-loading">
+			<li class="list-group-item text-muted">{% trans %}Loading files&hellip;{% endtrans %}</li>
+		</ul>
+		<ul class="list-group" id="resumable-files-none" style="display: none;">
+			<li class="list-group-item text-muted">{% trans %}No files uploaded{% endtrans %}</li>
+		</ul>
+		<ul class="list-group" id="resumable-files">
+		</ul>
+		{% if enable.upload %}
+			<button type="button" id="resumable-select" class="btn btn-default" disabled><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
+			<button type="button" id="resumable-upload" class="btn btn-success" disabled><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
+			<button type="button" id="resumable-pause" class="btn btn-success" disabled><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
+			<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
+		{% endif %}
+	</div>
+</div>
