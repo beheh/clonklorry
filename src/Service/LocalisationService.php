@@ -147,6 +147,20 @@ class LocalisationService {
 		}
 	}
 
+	public final function namedLanguage($language) {
+		switch($language) {
+			case 'en-US':
+				return gettext('English');
+				break;
+			case 'de-DE':
+				return gettext('German');
+				break;
+			default:
+				return $language;
+				break;
+		}
+	}
+	
 	public final function namedMonth($month) {
 		switch($month) {
 			case 1:
