@@ -17,36 +17,34 @@ class Approve extends Presenter {
 		}
 		return $addon;
 	}
-	
+
 	public function get($id) {
 		$this->security->requireModerator();
 		$this->offerIdentification();
 		$this->security->requireIdentification();
-	
-		$addon = Approve::getAddon($id);		
+
+		$addon = Approve::getAddon($id);
 		// if not submitted
-		$approval_submit = $addon->getApprovalSubmit();
-		if(!$approval_submit) {
+		if(!$addon->getApprovalSubmit() && !$addon->isApproved()) {
 			throw new ForbiddenException();
 		}
-		
+
 		$game = $addon->fetchGame();
-				
+
 		$user = $addon->fetchOwner();
-		
+
 		$this->context['addon'] = $addon->getTitle();
 		$this->context['user'] = $user->forPresenter();
-		
+
 		if($addon->isApproved()) {
 			$this->context['approved'] = true;
 			$this->context['namespace'] = $addon->getShort();
-		}
-		else {
+		} else {
 			$this->context['namespace'] = $addon->getProposedShort();
 		}
 		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
 		$this->context['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $addon->getApprovalSubmit());
-		
+
 		$this->display('manage/approve.twig');
 	}
 
