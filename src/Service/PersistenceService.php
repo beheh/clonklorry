@@ -95,7 +95,8 @@ class PersistenceService {
 			$limitquery = ($from === null) ? ' LIMIT '.intval($limit) : ' LIMIT '.intval($from).', '.intval($limit);
 		}
 
-		$statement = $this->connection->prepare('SELECT * FROM `'.$model->getTable().'`'.$parameters.' ORDER BY `'.$orderby.'` '.$order.$limitquery);
+		$query = 'SELECT * FROM `'.$model->getTable().'`'.$parameters.' ORDER BY `'.$orderby.'` '.$order.$limitquery;
+		$statement = $this->connection->prepare($query);
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
