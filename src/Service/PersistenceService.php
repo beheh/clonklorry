@@ -46,9 +46,11 @@ class PersistenceService {
 
 		$parameters = '';
 		$values = array();
+		$where = false;
 		foreach($pairs as $row => $value) {
-			if(empty($values)) {
+			if(!$where) {
 				$parameters .= ' WHERE ';
+				$where = true;
 			} else {
 				$parameters .= ' AND ';
 			}
@@ -72,16 +74,17 @@ class PersistenceService {
 							throw new InvalidArgumentException('invalid query modifier, null can only be equal or unequal');
 							break;
 					}
-					
-				}
-				else {
+				} else {
 					$parameters .= '`'.$row.'` '.$value[0].' ?';
 					$values[] = $value[1];
 				}
-			}
-			else {
-				$parameters .= '`'.$row.'` = ?';
-				$values[] = $value;
+			} else {
+				if($value === null) {
+					$parameters .= '`'.$row.'` IS NULL';
+				} else {
+					$parameters .= '`'.$row.'` = ?';
+					$values[] = $value;
+				}
 			}
 		}
 
