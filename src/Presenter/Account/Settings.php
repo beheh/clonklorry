@@ -62,7 +62,8 @@ class Settings extends Presenter {
 		$this->context['language'] = $this->localisation->getDisplayLanguage();
 
 		$this->context['password_exists'] = $user->hasPassword();
-		if(isset($_GET['add-password']) && !$user->hasPassword()) {
+		$this->context['identified'] = $identified = $this->session->identified();
+		if((isset($_GET['add-password']) && !$user->hasPassword()) || ($identified && isset($_GET['change-password']))) {
 			$this->context['focus_password_new'] = true;
 		}
 
@@ -181,10 +182,11 @@ class Settings extends Presenter {
 
 		if(isset($_POST['password-form'])) {
 			$has_password = $user->hasPassword();
+			$identified = $this->session->identified();
 			$password_old = filter_input(INPUT_POST, 'password-old');
 			$password_new = filter_input(INPUT_POST, 'password-new');
 			$password_confirm = filter_input(INPUT_POST, 'password-confirm');
-			if(!$has_password || $user->matchPassword($password_old)) {
+			if(!$has_password || $user->matchPassword($password_old) || $identified) {
 				if($password_new === $password_confirm) {
 					try {
 						$user->setPassword($password_new);

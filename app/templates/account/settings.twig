@@ -110,7 +110,7 @@
 				<form role=form" method="post" id="form-password">
 					<input type="hidden" name="password-form">
 					<input type="hidden" name="state" value="{{state}}">
-					{% if password_exists %}
+					{% if password_exists and not identified %}
 						<div class="form-group">
 							<label for="password-old">{% trans "Old password" %}</label>
 							<input type="password" class="form-control" name="password-old" id="password-old" required{% if focus_password %} autofocus{% endif %}>
