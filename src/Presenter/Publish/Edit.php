@@ -112,7 +112,9 @@ class Edit extends Presenter {
 
 		$addon = Edit::getAddon($id, $this->session->getUser());
 
-		if(isset($_POST['addon-form'])) {
+		$released = false;
+		$this->context['released'] = $released;
+		if(isset($_POST['addon-form']) && !$released) {
 			$errors = array();
 
 			$title = trim(filter_input(INPUT_POST, 'title'));
