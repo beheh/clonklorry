@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-11-16 13:41+0100\n"
-"PO-Revision-Date: 2014-11-16 13:42+0100\n"
+"POT-Creation-Date: 2014-11-16 13:50+0100\n"
+"PO-Revision-Date: 2014-11-16 13:50+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -404,8 +404,7 @@ msgid "Register now"
 msgstr "Jetzt registrieren"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0d/05/83baaf0e522f72c1975b7ffe5439fcde0d853c05151cbf63cc5007a90d89.php:25
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:72
-#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:189
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:68
 msgid "Addons"
 msgstr "Erweiterungen"
 
@@ -796,26 +795,23 @@ msgid "Visit the OpenClonk wiki"
 msgstr "OpenClonk-Wiki öffnen"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:46
-#: /home/benedict/public_html/lorry/app/cache/twig/bd/7f/0a605fa77432b37b414df0084c40595158b399d316b4026c4ea2f43c2f27.php:46
-msgid "Overview"
-msgstr "Übersicht"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:50
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:56
 #: /home/benedict/public_html/lorry/app/cache/twig/48/07/1b32f445e470ae001d51e0470f9d6a633552c78d04682d62841241c5fdc2.php:25
 msgid "Users"
 msgstr "Benutzer"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:62
-#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:60
-msgid "Banned"
-msgstr "Gebannt"
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:52
+msgid "User list"
+msgstr "Benutzerliste"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:68
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:58
+msgid "Banned users"
+msgstr "Gebannte Benutzer"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:64
 msgid "Queues"
 msgstr "Warteschlangen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:81
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:77
 #: /home/benedict/public_html/lorry/app/cache/twig/59/28/3e4b1a06756bf002a7ca623c895044bb4fa34e4a66ee112051550ee252e2.php:41
 #: /home/benedict/public_html/lorry/app/cache/twig/59/28/3e4b1a06756bf002a7ca623c895044bb4fa34e4a66ee112051550ee252e2.php:66
 #: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:199
@@ -823,26 +819,26 @@ msgstr "Warteschlangen"
 msgid "Addon"
 msgstr "Erweiterung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:83
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:79
 #: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:219
 msgid "Requested namespace"
 msgstr "Gewünschte Kennung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:85
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:81
 #: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:77
 #: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:211
 msgid "User"
 msgstr "Benutzer"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:145
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:141
 msgid "There are no addons in the approval queue."
 msgstr "Es sind keine Erweiterungen in der Bestätigungswarteschlange."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:151
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:147
 msgid "Contact form"
 msgstr "Kontaktformular"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:155
+#: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:151
 msgid "There are no new messages in the queue."
 msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
 
@@ -1050,6 +1046,10 @@ msgstr "Jemand"
 msgid "%brand%: Site feedback"
 msgstr "%brand%: Seitenfeedback"
 
+#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:60
+msgid "Banned"
+msgstr "Gebannt"
+
 #: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:85
 msgid "Welcome to Lorry!"
 msgstr "Willkommen bei Lorry!"
@@ -1103,15 +1103,15 @@ msgstr "Benutzer bearbeiten"
 msgid "Activity"
 msgstr "Aktivität"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:237
+#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:233
 msgid "You have not released any addons yet."
 msgstr "Du hast noch keine Erweiterungen veröffentlicht."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:241
+#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:237
 msgid "Why not create one now?"
 msgstr "Warum erstellst nicht gleich jetzt eins?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:247
+#: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:243
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
@@ -1612,6 +1612,10 @@ msgid ""
 msgstr ""
 "Hier kannst du deine Erweiterungen veröffentlichungen und sie deinen Fans "
 "zugänglich machen. Klicke auf den untenliegenden Knopf, um zu beginnen."
+
+#: /home/benedict/public_html/lorry/app/cache/twig/bd/7f/0a605fa77432b37b414df0084c40595158b399d316b4026c4ea2f43c2f27.php:46
+msgid "Overview"
+msgstr "Übersicht"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/bd/7f/0a605fa77432b37b414df0084c40595158b399d316b4026c4ea2f43c2f27.php:50
 msgid "Management"
@@ -2825,9 +2829,6 @@ msgstr "Aktiviere dein Konto um Dateien hinzuzufügen"
 
 #~ msgid "Account log"
 #~ msgstr "Benutzerprotokoll"
-
-#~ msgid "Ban user"
-#~ msgstr "Benutzer bannen"
 
 #, fuzzy
 #~ msgid "Please type the user\tname to confirm:"
