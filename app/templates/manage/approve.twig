@@ -17,6 +17,17 @@
 			<div class="container">
 				<h1>{% trans %}Addon approved{% endtrans %}</h1>
 				<p>{% trans %}This addon has been assigned the namespace <strong>{{namespace}}</strong>.{% endtrans %}</p>
+				<p><strong>{% trans %}Comment:{% endtrans %}</strong> {{comment}}</p>
+				<p><a class="btn btn-primary btn-large" href="{{base}}/moderate">{% trans %}Return to moderation portal{% endtrans %}</a></p>
+			</div>
+		</div>
+	{% elseif rejected %}
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{% trans %}Addon rejected{% endtrans %}</h1>
+				<p>{% trans %}This addon was rejected. It's requested namespace was <em>{{namespace}}</em>.{% endtrans %}</p>
+				<p><strong>{% trans %}Comment:{% endtrans %}</strong> {{comment}}</p>
+				<p><a class="btn btn-primary btn-large" href="{{base}}/moderate">{% trans %}Return to moderation portal{% endtrans %}</a></p>
 			</div>
 		</div>
 	{% else %}
@@ -25,20 +36,22 @@
 		<p class="lead">{% trans %}<strong>{{username}}</strong> would like to reserve the namespace <strong>{{namespace}}</strong> for this addon.{% endtrans %}</p>
 		<div class="row">
 			<div class="col-md-8">
-				<form role="form">
+				<form role="form" method="post" action="{{filename}}">
+					<input type="hidden" name="state" value="{{state}}">
 					{% if release %}
 						<div class="alert alert-success">{% trans %}Approving this addon will trigger a public release. The user can publish further releases of this addon without approval.{% endtrans %}</div>
 					{% else %}
 						<div class="alert alert-info">{% trans %}The user will be able to freely publish releases of this addon after approval.{% endtrans %}</div>
 					{% endif %}
+					{% include 'functions/alert.twig' with {'selector' : 'approval'} %}
 					<div class="form-group">
 						<label for="comment">{% trans %}Comment{% endtrans %}</label>
-						<textarea class="form-control" id="comment" name="comment"></textarea>
-						<p class="help-block">{% trans %}The comment will be visible to the user.{% endtrans %}</p>
+						<textarea class="form-control" id="comment" name="comment">{{comment}}</textarea>
+						{% if comment_help %}<p class="help-block">{{comment_help}}</p>{% endif %}
 					</div>
 					<p>
-						<button type="submit" class="btn btn-lg btn-success">{% trans %}Approve{% endtrans %}</button>
-						<button type="submit" class="btn btn-lg btn-danger">{% trans %}Reject{% endtrans %}</button>
+						<button type="submit" class="btn btn-lg btn-success" name="approve">{% trans %}Approve{% endtrans %}</button>
+						<button type="submit" class="btn btn-lg btn-danger" name="reject">{% trans %}Reject{% endtrans %}</button>
 					</p>
 				</form>
 			</div>

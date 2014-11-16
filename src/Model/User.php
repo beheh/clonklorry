@@ -26,9 +26,7 @@ class User extends Model {
 
 	public function setUsername($username) {
 		$this->validateString($username, 3, 16);
-		if(!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
-			throw new ModelValueInvalidException(gettext('invalid'));
-		}
+		$this->validateRegexp($username, '/^[a-z0-9_]+$/i');
 		return $this->setValue('username', $username);
 	}
 

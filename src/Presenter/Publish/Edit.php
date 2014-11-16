@@ -5,6 +5,7 @@ namespace Lorry\Presenter\Publish;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Model\User;
+use Lorry\Model\Addon;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\ModelValueInvalidException;
@@ -22,6 +23,13 @@ class Edit extends Presenter {
 		return $addon;
 	}
 
+	public static function getNamespaceProposal(Addon $addon) {
+		$title = $addon->getTitle();
+		$maintitle = strstr($title, ':');
+		$cleantitle = $maintitle ? $maintitle : $title;
+		return preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
+	}
+
 	public function get($id) {
 		$this->security->requireLogin();
 
@@ -32,27 +40,6 @@ class Edit extends Presenter {
 
 		if(!isset($this->context['addontitle'])) {
 			$this->context['addontitle'] = $addon->getTitle();
-		}
-
-		if($addon->isApproved()) {
-			$this->context['approved'] = true;
-			$this->context['namespace'] = $addon->getShort();
-		} else {
-			if(!isset($this->context['namespace'])) {
-				$this->context['namespace'] = $addon->getProposedShort();
-			}
-		}
-		$title = $addon->getTitle();
-		$maintitle = strstr($title, ':');
-		$cleantitle = $maintitle ? $maintitle : $title;
-		$this->context['namespace_proposal'] = preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
-
-		if(!isset($this->context['abbreviation'])) {
-			$this->context['abbreviation'] = $addon->getAbbreviation();
-		}
-
-		if(!isset($this->context['short'])) {
-			$this->context['short'] = $addon->getShort();
 		}
 
 		if(isset($_GET['add'])) {
@@ -68,6 +55,10 @@ class Edit extends Presenter {
 		if(!isset($this->context['game'])) {
 			$game = $addon->fetchGame();
 			$this->context['game'] = $game->getShort();
+		}
+
+		if(!isset($this->context['abbreviation'])) {
+			$this->context['abbreviation'] = $addon->getAbbreviation();
 		}
 
 		/* Presentation */
@@ -88,6 +79,26 @@ class Edit extends Presenter {
 			$this->context['bugtracker'] = $addon->getBugtracker();
 		}
 
+		/* Approve */
+
+		$this->context['namespace_proposal'] = self::getNamespaceProposal($addon);
+
+		$this->context['approval_comment'] = $addon->getApprovalComment();
+
+		if($addon->isApproved()) {
+			$this->context['approved'] = true;
+			$this->context['namespace'] = $addon->getShort();
+		} elseif($addon->isRejected()) {
+			$this->context['rejected'] = true;
+		} else {
+			if($addon->isSubmittedForApproval()) {
+				$this->context['submitted'] = true;
+			}
+		}
+
+		if(!isset($this->context['namespace'])) {
+			$this->context['namespace'] = $addon->getProposedShort();
+		}
 
 		/* Releases */
 
@@ -135,17 +146,6 @@ class Edit extends Presenter {
 				$addon->setGame($game->getId());
 			} catch(ModelValueInvalidException $ex) {
 				$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
-			}
-
-			if(!$addon->isApproved()) {
-				$namespace = trim(strtolower(filter_input(INPUT_POST, 'namespace')));
-				try {
-					$addon->setProposedShort($namespace);
-					$this->context['namespace'] = $addon->getShort();
-				} catch(ModelValueInvalidException $ex) {
-					$errors[] = sprintf(gettext('Namespace is %s.'), $ex->getMessage());
-					$this->context['namespace'] = $namespace;
-				}
 			}
 
 			$abbreviation = trim(filter_input(INPUT_POST, 'abbreviation'));
@@ -209,6 +209,59 @@ class Edit extends Presenter {
 				}
 			} else {
 				$this->error('presentation', implode('<br>', $errors));
+			}
+		}
+
+		if(isset($_POST['approval-form'])) {
+			if(!$addon->isApproved()) {
+				if($addon->isSubmittedForApproval()) {
+					if(isset($_POST['withdraw'])) {
+						$addon->withdrawSubmission();
+						$addon->save();
+					}
+				} else {
+					$namespace = trim(strtolower(filter_input(INPUT_POST, 'namespace')));
+					try {
+						$addon->setProposedShort($namespace);
+						$this->context['namespace'] = $addon->getShort();
+					} catch(ModelValueInvalidException $ex) {
+						$this->context['namespace'] = $namespace;
+						$errors[] = sprintf(gettext('Namespace is %s.'), $ex->getMessage());
+					}
+					if(empty($errors)) {
+						$submitted = false;
+						if(isset($_POST['submit'])) {
+							if($addon->getProposedShort() === null) {
+								$proposal = self::getNamespaceProposal($addon);
+								try {
+									$addon->validateAddonShort($proposal);
+									$addon->setProposedShort($proposal);
+								} catch(ModelValueInvalidException $ex) {
+									// if user has not supplied proposal and ours doesn't work - ignore, it will be re-caught when setting
+								}
+							}
+							try {
+								$addon->submitForApproval();
+								$submitted = true;
+							} catch(ModelValueInvalidException $ex) {
+								$this->context['namespace'] = $namespace;
+								$errors[] = gettext('Namespace required.');
+							}
+						}
+					}
+					// recheck here, since submission could have thrown another error
+					if(empty($errors)) {
+						if($addon->modified()) {
+							$addon->save();
+							if(!$submitted) {
+								$this->success('approval', gettext('Namespace saved.'));
+							}
+						}
+					} else {
+						$this->error('approval', implode('<br>', $errors));
+						$this->context['focus_namespace'] = true;
+					}
+				}
 			}
 		}
 

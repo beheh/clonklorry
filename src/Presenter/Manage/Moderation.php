@@ -20,7 +20,7 @@ class Moderation extends Presenter {
 		$this->context['games'] = $games;
 		
 		$submitted = array();
-		$addons = ModelFactory::build('Addon')->byApprovalSubmitted();
+		$addons = ModelFactory::build('Addon')->bySubmittedForApproval();
 		foreach($addons as $addon) {
 			$result = array(
 				'addon' => 

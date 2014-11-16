@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-		<label for="version">{% trans "New release" %}</label>
+		<label for="version">{% trans "Plan new release" %}</label>
 		<form role=form" class="form-inline" method="post" action="{{filename}}#releases">
 			<input type="hidden" name="release-form">
 			<input type="hidden" name="state" value="{{state}}">
@@ -9,11 +9,11 @@
 				<label class="sr-only" for="version	">{% trans "Version"%}</label>
 				<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="1.0b"{% if focus_version %} autofocus{% endif %} required>
 			</div>
-			<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Add release{% endtrans %}</button>
+			<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Plan release{% endtrans %}</button>
 			<span class="help-block">{% trans %}Releases are invisible until you publish them.{% endtrans %}</span>
 		</form>
 		<p></p>
-		<label for="type">{% trans "Existing releases" %}</label>
+		<label for="type">{% trans "Releases" %}</label>
 		<div class="list-group">
 			{% for release in releases %}
 				<a class="list-group-item" href="{{base}}/publish/{{addonid}}/{{release.version}}">

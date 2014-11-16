@@ -53,6 +53,7 @@ CREATE TABLE `addon` (
 	`bugtracker` varchar(255) DEFAULT NULL,
 	`proposed_short` varchar(30) DEFAULT NULL,
 	`approval_submit` datetime DEFAULT NULL,
+	`approval_comment` text,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `short` (`short`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

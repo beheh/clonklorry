@@ -9,7 +9,7 @@
 		</div>
 		<div class="form-group">
 			<label for="changelog">{% trans "Detailed changelog" %}</label>
-			<textarea class="form-control monospace" id="changelog" name="changelog" rows="6" placeholder="+ Added a new feature..." maxlength="65536">{{changelog}}</textarea>
+			<textarea class="form-control monospace" id="changelog" name="changelog" rows="6" placeholder="{% trans %}+ Added a new feature...{% endtrans %}">{{changelog}}</textarea>
 		</div>
 	</div>
 	<div class="form-group">

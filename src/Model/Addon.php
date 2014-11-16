@@ -4,6 +4,7 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 use Lorry\ModelFactory;
+use Lorry\Exception\ModelValueInvalidException;
 
 class Addon extends Model {
 
@@ -20,7 +21,8 @@ class Addon extends Model {
 			'website' => 'url',
 			'bugtracker' => 'url',
 			'proposed_short' => 'string',
-			'approval_submit' => 'datetime'));
+			'approval_submit' => 'datetime',
+			'approval_comment' => 'text'));
 	}
 
 	public function setOwner($owner) {
@@ -38,9 +40,10 @@ class Addon extends Model {
 	public function fetchOwner() {
 		return ModelFactory::build('User')->byId($this->getOwner());
 	}
-	
+
 	public function validateAddonShort($short) {
-		return $this->validateString($short, 4, 30);
+		$this->validateString($short, 4, 30);
+		$this->validateRegexp($short, '/^[a-z0-9]+$/i');
 	}
 
 	public function setShort($short) {
@@ -177,31 +180,29 @@ class Addon extends Model {
 	public function getBugtracker() {
 		return $this->getValue('bugtracker');
 	}
-	
+
 	public function isApproved() {
 		return $this->getShort() !== null;
 	}
 	
-	public function byApprovalSubmitted() {
-		$constraints = array('short' => array('=', null));
-		$this->all()->order('approval_submit');
-		return $this->byValues($constraints);
+	public function isRejected() {
+		return $this->getShort() === null && $this->getApprovalSubmit() === null && $this->getApprovalComment() !== null;
 	}
-	
+
 	public function setProposedShort($proposed_short) {
+		$proposed_short = trim(strtolower($proposed_short));
 		if($proposed_short) {
 			$this->validateAddonShort($proposed_short);
-		}
-		else {
+		} else {
 			$proposed_short = null;
 		}
 		return $this->setValue('proposed_short', $proposed_short);
 	}
-	
+
 	public function getProposedShort() {
 		return $this->getValue('proposed_short');
 	}
-	
+
 	public function setApprovalSubmit($approval_submit) {
 		return $this->setValue('approval_submit', $approval_submit);
 	}
@@ -210,7 +211,62 @@ class Addon extends Model {
 		return $this->getValue('approval_submit');
 	}
 
+	public function bySubmittedForApproval() {
+		$constraints = array('short' => null, 'approval_submit' => array('!=', null));
+		$this->all()->order('approval_submit');
+		return $this->byValues($constraints);
+	}
+
+	public function isSubmittedForApproval() {
+		return $this->getApprovalSubmit() !== null;
+	}
+
+	public function submitForApproval() {
+		if($this->getProposedShort() === null) {
+			throw new ModelValueInvalidException(gettext('required'));
+		}
+		$this->setApprovalComment(null);
+		return $this->setApprovalSubmit(time());
+	}
+
+	public function withdrawSubmission() {
+		return $this->setApprovalSubmit(null);
+	}
+
+	public function approve($comment = null) {
+		if($comment) {
+			$this->validateComment($comment);
+		}
+		else {
+			$comment = null;
+		}
+		$this->setApprovalComment($comment);
+		return $this->setShort($this->getProposedShort());
+	}
+
+	public function reject($comment = null) {
+		if($comment) {
+			$this->validateComment($comment);
+		}
+		else {
+			$comment = null;
+		}
+		$this->setApprovalComment($comment);
+		return $this->setApprovalSubmit(null);
+	}
 	
+	public function validateComment($comment) {
+		$this->validateString($comment, 0, 1024);
+	}
+	
+	public function getApprovalComment() {
+		return $this->getValue('approval_comment');
+	}
+	
+	public function setApprovalComment($comment) {
+		return $this->setValue('approval_comment', $comment);
+	}
+
 	public function __toString() {
 		return $this->getTitle().'';
 	}
