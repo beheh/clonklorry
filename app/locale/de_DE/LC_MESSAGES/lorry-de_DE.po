@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-11-16 13:50+0100\n"
-"PO-Revision-Date: 2014-11-16 13:50+0100\n"
+"POT-Creation-Date: 2014-11-16 13:53+0100\n"
+"PO-Revision-Date: 2014-11-16 13:53+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -228,8 +228,8 @@ msgstr ""
 #: /home/benedict/public_html/lorry/app/cache/twig/0b/d5/199e1399713b2bf14a8e62e1c2b05f7f2cf9e72d8e09cedd890888f333b4.php:80
 #: /home/benedict/public_html/lorry/app/cache/twig/24/18/fb4acfb9aa4c6a6edcee7c941a15a347b23391201b7a8c87612fefe703c4.php:65
 #: /home/benedict/public_html/lorry/app/cache/twig/24/18/fb4acfb9aa4c6a6edcee7c941a15a347b23391201b7a8c87612fefe703c4.php:69
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:276
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:300
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:270
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:294
 msgid "Password"
 msgstr "Passwort"
 
@@ -244,7 +244,7 @@ msgstr ""
 
 #: /home/benedict/public_html/lorry/app/cache/twig/05/85/f2b12b0df31c5fe7f358a753a7eb95e0c43ba5f93e3dc63238519c703df9.php:142
 #: /home/benedict/public_html/lorry/app/cache/twig/05/85/f2b12b0df31c5fe7f358a753a7eb95e0c43ba5f93e3dc63238519c703df9.php:146
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:346
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:340
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
@@ -266,7 +266,7 @@ msgstr "Du kannst dich in Zukunft via %provider% anmelden."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/05/85/f2b12b0df31c5fe7f358a753a7eb95e0c43ba5f93e3dc63238519c703df9.php:198
 #: /home/benedict/public_html/lorry/app/cache/twig/0b/d5/199e1399713b2bf14a8e62e1c2b05f7f2cf9e72d8e09cedd890888f333b4.php:170
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:387
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:381
 msgid "Login services"
 msgstr "Anmeldedienste"
 
@@ -1414,100 +1414,96 @@ msgstr "Konto"
 msgid "Contact details"
 msgstr "Kontaktdaten"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:170
-msgid "Confirm email address"
-msgstr "E-Mail-Adresse bestätigen"
-
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:176
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:167
 #: /home/benedict/public_html/lorry/app/cache/twig/d8/59/2457a65da3b228456e455525d28324ac0353509ce7ecb9b3169a62691798.php:128
 msgid "Change email address"
 msgstr "E-Mail-Adresse ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:180
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:174
 msgid "Resend confirmation"
 msgstr "Erneut bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:191
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:185
 msgid "You need to confirm your email address."
 msgstr "Deine E-Mail-Adresse muss bestätigt werden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:199
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:193
 msgid "Language"
 msgstr "Sprache"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:210
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:204
 msgid "View site in"
 msgstr "Betrachte Seite auf"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:219
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:213
 #: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:153
 msgid "English"
 msgstr "Englisch"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:227
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:221
 #: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:156
 msgid "German"
 msgstr "Deutsch"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:235
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:229
 msgid "Change language"
 msgstr "Sprache ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:242
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:236
 msgid "Remove account"
 msgstr "Konto entfernen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:248
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:242
 msgid "Would you like to remove your account?"
 msgstr "Möchtest du dein Konto entfernen?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:262
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:256
 msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:264
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:258
 msgid "You will permanently loose control of all your uploaded addons."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine hochgeladenen Erweiterungen "
 "verlieren."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:270
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:264
 msgid "I have read and understood the warning."
 msgstr "Ich habe den Hinweis gelesen und verstanden."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:283
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:277
 msgid "Permanently remove account"
 msgstr "Konto permanent entfernen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:296
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:290
 msgid "Security"
 msgstr "Sicherheit"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:319
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:313
 msgid "Old password"
 msgstr "Altes Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:334
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:328
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:354
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:348
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:356
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:350
 msgid "Set password"
 msgstr "Passwort setzen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:363
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:357
 msgid "Sessions"
 msgstr "Anmeldungen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:370
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:364
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:381
+#: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:375
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
@@ -2723,6 +2719,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/public_html/lorry/src/Service/SecurityService.php:75
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto um Dateien hinzuzufügen"
+
+#~ msgid "Confirm email address"
+#~ msgstr "E-Mail-Adresse bestätigen"
 
 #~ msgid "New release"
 #~ msgstr "Neuer Release"
