@@ -1,4 +1,4 @@
-	{% extends 'root.twig' %}
+{% extends 'root.twig' %}
 
 {% block content %}
 	<div class="page-header">
@@ -51,13 +51,14 @@
 			</div>
 			<div class="col-md-8">
 				<h2>{% trans %}Activity{% endtrans %}</h2>
-				<h3>{% trans %}Addons{% endtrans %}</h3>
 				{% if addons %}
 					<ul class="media-list">
 						{% for addon in addons %}
 							{% include "functions/addon.twig" %}
 						{% endfor %}
 					</ul>
+				{% elseif self %}
+					<div class="alert alert-info">{% trans %}You have not released any addons yet.{% endtrans %} <a href="{{base}}/create">{% trans %}Why not create one now?{% endtrans %}</a></div>
 				{% else %}
 					<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
 				{% endif %}
