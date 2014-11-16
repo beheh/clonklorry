@@ -72,7 +72,7 @@ class SecurityService {
 			throw new ForbiddenException(gettext('uploading files is disabled'));
 		}
 		if(!$user->isActivated()) {
-			throw new ForbiddenException(gettext('please activate your account before uploading files'));
+			throw new ForbiddenException(gettext('activate your account to add files'));
 		}
 		/*if($user->uploadedFiles() > 5) {
 			throw new ForbiddenException(gettext('you have too many unreleased files'));
