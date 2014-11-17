@@ -37,8 +37,11 @@ class Addon extends Model {
 		return $this->getValue('owner');
 	}
 
+	/**
+	 * @return User
+	 */
 	public function fetchOwner() {
-		return ModelFactory::build('User')->byId($this->getOwner());
+		return $this->fetch('User', 'owner');
 	}
 
 	public function validateAddonShort($short) {
@@ -117,8 +120,11 @@ class Addon extends Model {
 		return $this->getValue('game');
 	}
 
+	/**
+	 * @return Game
+	 */
 	public function fetchGame() {
-		return ModelFactory::build('Game')->byId($this->getGame());
+		return $this->fetch('Game', 'game');
 	}
 
 	public function setType($type) {
@@ -184,7 +190,7 @@ class Addon extends Model {
 	public function isApproved() {
 		return $this->getShort() !== null;
 	}
-	
+
 	public function isRejected() {
 		return $this->getShort() === null && $this->getApprovalSubmit() === null && $this->getApprovalComment() !== null;
 	}
@@ -236,8 +242,7 @@ class Addon extends Model {
 	public function approve($comment = null) {
 		if($comment) {
 			$this->validateComment($comment);
-		}
-		else {
+		} else {
 			$comment = null;
 		}
 		$this->setApprovalComment($comment);
@@ -247,22 +252,21 @@ class Addon extends Model {
 	public function reject($comment = null) {
 		if($comment) {
 			$this->validateComment($comment);
-		}
-		else {
+		} else {
 			$comment = null;
 		}
 		$this->setApprovalComment($comment);
 		return $this->setApprovalSubmit(null);
 	}
-	
+
 	public function validateComment($comment) {
 		$this->validateString($comment, 0, 1024);
 	}
-	
+
 	public function getApprovalComment() {
 		return $this->getValue('approval_comment');
 	}
-	
+
 	public function setApprovalComment($comment) {
 		return $this->setValue('approval_comment', $comment);
 	}

@@ -11,6 +11,13 @@ use Lorry\Exception\ModelValueInvalidException;
 
 class Approve extends Presenter {
 
+	/**
+	 * 
+	 * @param type $id
+	 * @return \Lorry\Model\Addon
+	 * @throws FileNotFoundException
+	 * @throws ForbiddenException
+	 */
 	public static function getAddon($id) {
 		$addon = ModelFactory::build('Addon')->byId($id);
 		if(!$addon) {

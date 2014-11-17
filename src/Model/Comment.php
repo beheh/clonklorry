@@ -25,6 +25,10 @@ class Comment extends Model {
 		return $this->getValue('owner');
 	}
 
+	public function fetchOwner() {
+		return $this->fetch('User', 'owner');
+	}
+
 	public function setContent($content) {
 		return $this->setValue('content', $content);
 	}

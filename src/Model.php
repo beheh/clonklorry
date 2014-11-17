@@ -111,8 +111,7 @@ abstract class Model {
 	public final function limit($from, $limit = null) {
 		if($limit == null) {
 			$limit = $from;
-		}
-		else {
+		} else {
 			$this->limit_from = $from;
 		}
 		$this->limit = $limit;
@@ -144,13 +143,13 @@ abstract class Model {
 				throw new Exception('attempting to fetch model using object as value');
 			}
 			// do not allow search for empty constraints
-			/*if(empty($value)) {
-				if($this->multiple) {
-					return array();
-				} else {
-					return false;
-				}
-			}*/
+			/* if(empty($value)) {
+			  if($this->multiple) {
+			  return array();
+			  } else {
+			  return false;
+			  }
+			  } */
 		}
 
 		if($this->multiple) {
@@ -291,7 +290,7 @@ abstract class Model {
 	public final function getChanges() {
 		return $this->changes;
 	}
-	
+
 	/**
 	 * Returns whether unsaved changes remain.
 	 * @return boolean True, if unsaved changes are present.
@@ -340,6 +339,21 @@ abstract class Model {
 		return true;
 	}
 
+	/* Chainloading */
+
+	/**
+	 * 
+	 * @param type $model The model to create and load
+	 * @param type $row The row which maps the target models id
+	 * @return Model
+	 */
+	protected final function fetch($model, $row) {
+		$this->ensureLoaded();
+		$this->ensureRow($row);
+		$object = ModelFactory::build($model)->byId($this->getValue($row));
+		return $object;
+	}
+
 	/* Validation */
 
 	/**
@@ -350,18 +364,13 @@ abstract class Model {
 	 * @param type $regexp The (optional) regexp to match the string agains
 	 * @throws ModelValueInvalidException
 	 */
-	protected final function validateString($string, $minlength, $maxlength, $regexp = '') {
+	protected final function validateString($string, $minlength, $maxlength) {
 		$string = (string) $string;
 		if(strlen($string) < $minlength) {
 			throw new ModelValueInvalidException(gettext('too short'));
 		}
 		if(strlen($string) > $maxlength) {
 			throw new ModelValueInvalidException(gettext('too long'));
-		}
-		if(!empty($regexp)) {
-			/* if(!preg_match($pattern, $subject)) {
-			  throw new ModelValueInvalidException(gettext('not in a valid format'));
-			  } */
 		}
 	}
 
@@ -403,11 +412,13 @@ abstract class Model {
 	public function forApi() {
 		return array();
 	}
-	
+
 	public function forPresenter() {
 		return array();
 	}
 
 	protected function onSave() {
+		
 	}
+
 }

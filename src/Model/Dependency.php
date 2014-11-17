@@ -25,8 +25,11 @@ class Dependency extends Model {
 		return $this->getValue('release');
 	}
 
+	/**
+	 * @return Release
+	 */
 	public function fetchRelease() {
-		return ModelFactory::build('Release')->byId($this->getRelease());
+		return $this->fetch('Release', 'release');
 	}
 
 	public function setRequired($required) {
@@ -41,8 +44,11 @@ class Dependency extends Model {
 		return $this->getValue('required');
 	}
 
+	/**
+	 * @return Release
+	 */
 	public function fetchRequired() {
-		return ModelFactory::build('Release')->byId($this->getRequired());
+		return $this->fetch('Release', 'required');
 	}
 
 }

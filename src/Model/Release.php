@@ -29,8 +29,11 @@ class Release extends Model {
 		return $this->getValue('addon');
 	}
 
+	/**
+	 * @return Addon
+	 */
 	public final function fetchAddon() {
-		return ModelFactory::build('Addon')->byId($this->getAddon());
+		return $this->fetch('Addon', 'addon');
 	}
 
 	public final function byGame($game) {
