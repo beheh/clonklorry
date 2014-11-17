@@ -2,7 +2,7 @@
 
 namespace Lorry\Service;
 
-use Exception;
+use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
 
 class ConfigService {
@@ -15,11 +15,17 @@ class ConfigService {
 		$config = array();
 		$file = self::DIR.'lorry.yml';
 		if(!file_exists($file)) {
-			throw new Exception('config file not found (at '.$file.')');
+			throw new InvalidArgumentException('config file not found (at '.$file.')');
 		}
 		$this->config = Yaml::parse(file_get_contents($file));
 	}
 
+	/**
+	 * 
+	 * @param string $key
+	 * @return mixed
+	 * @throws Exception
+	 */
 	public function get($key) {
 		$keys = explode('/', $key);
 		$subset = $this->config;
@@ -35,6 +41,11 @@ class ConfigService {
 		return $subset;
 	}
 
+	/**
+	 * 
+	 * @param string $key
+	 * @return int
+	 */
 	public function getSize($key) {
 		$size = $this->get($key);
 		$suffixes = array(
@@ -50,12 +61,16 @@ class ConfigService {
 		return 0;
 	}
 
+	/**
+	 * 
+	 * @return string
+	 */
 	public function getTracking() {
 		$file = self::DIR.'tracking.html';
 		if(file_exists($file)) {
 			return file_get_contents($file);
 		}
-		return false;
+		return '';
 	}
 
 }

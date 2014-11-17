@@ -48,6 +48,11 @@ class MailService {
 		return true;
 	}
 
+	/**
+	 * 
+	 * @param Email $email
+	 * @return bool
+	 */
 	public function send(Email $email) {
 		$this->ensureMailer();
 

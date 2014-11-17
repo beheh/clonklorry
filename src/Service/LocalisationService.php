@@ -14,10 +14,19 @@ class LocalisationService {
 		$this->session = $session;
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public final function getAvailableLanguages() {
 		return array('en-US', 'de-DE');
 	}
 
+	/**
+	 * 
+	 * @param string $language
+	 * @return bool
+	 */
 	public final function verifyLanguage($language) {
 		if(in_array($language, $this->getAvailableLanguages())) {
 			return $language;
@@ -27,6 +36,10 @@ class LocalisationService {
 
 	private $display_language = false;
 
+	/**
+	 * 
+	 * @return string
+	 */
 	public function getDisplayLanguage() {
 		if($this->display_language) {
 			return $this->display_language;
@@ -37,7 +50,7 @@ class LocalisationService {
 		if(!$this->session) {
 			return $available[0];
 		}
-		
+
 		if($this->session->authenticated()) {
 			$language = $this->session->getUser()->getLanguage();
 			if($this->setDisplayLanguage($language)) {
@@ -70,11 +83,11 @@ class LocalisationService {
 		return $this->display_language;
 	}
 
-	public final function resetDisplayLanguage() {
-		setcookie('lorry_language', '', 0, '/');
-		return true;
-	}
-
+	/**
+	 * 
+	 * @param type $language
+	 * @return bool
+	 */
 	public final function setDisplayLanguage($language) {
 		if($this->verifyLanguage($language)) {
 			$this->display_language = $language;
@@ -86,23 +99,35 @@ class LocalisationService {
 		return false;
 	}
 
+	public final function resetDisplayLanguage() {
+		setcookie('lorry_language', '', 0, '/');
+	}
+
 	private $localized = false;
-	
+
+	/**
+	 * 
+	 */
 	public final function localize() {
 		if($this->localized) {
 			return false;
 		}
-			
+
 		$requested = $this->getDisplayLanguage();
 		header('Content-Language: '.$requested);
-		
+
 		$this->localized = true;
-		
-		return $this->silentLocalize($requested);
+
+		$this->silentLocalize($requested);
 	}
 
 	private $current_language = false;
-	
+
+	/**
+	 * 
+	 * @param string $language
+	 * @return bool
+	 */
 	public final function silentLocalize($language) {
 		if($language == $this->current_language) {
 			return true;
@@ -110,7 +135,7 @@ class LocalisationService {
 		if(!$this->verifyLanguage($language)) {
 			return false;
 		}
-			
+
 		$language = str_replace('-', '_', $language);
 		putenv('LC_ALL='.$language);
 		setlocale(LC_ALL, $language.'.UTF-8');
@@ -119,20 +144,29 @@ class LocalisationService {
 		bindtextdomain($textdomain, __DIR__.'/../../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
-		
+
 		$this->current_language = $language;
-		
+
 		return true;
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function resetLocalize() {
 		return $this->silentLocalize($this->getDisplayLanguage());
 	}
-	
+
 	const FORMAT_DATETIME = 1;
 	const FORMAT_DATE = 2;
 	const FORMAT_TIME = 3;
 
+	/**
+	 * 
+	 * @param int $format
+	 * @return string
+	 */
 	public final function getFormat($format) {
 		switch($format) {
 			case self::FORMAT_DATETIME:
@@ -147,6 +181,11 @@ class LocalisationService {
 		}
 	}
 
+	/**
+	 * 
+	 * @param string $language
+	 * @return string
+	 */
 	public final function namedLanguage($language) {
 		switch($language) {
 			case 'en-US':
@@ -160,7 +199,12 @@ class LocalisationService {
 				break;
 		}
 	}
-	
+
+	/**
+	 * 
+	 * @param int $month
+	 * @return string
+	 */
 	public final function namedMonth($month) {
 		switch($month) {
 			case 1:
@@ -190,6 +234,11 @@ class LocalisationService {
 		}
 	}
 
+	/**
+	 * 
+	 * @param int $number
+	 * @return type
+	 */
 	public final function countedNumber($number) {
 		switch($number) {
 			case 1:

@@ -50,41 +50,72 @@ abstract class Model {
 		$this->changes = array();
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function isLoaded() {
 		return $this->loaded;
 	}
 
+	/**
+	 * 
+	 * @return string
+	 */
 	public final function getTable() {
 		return $this->table;
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public final function getSchema() {
 		return $this->schema;
 	}
 
+	/**
+	 * 
+	 * @return int
+	 */
 	public final function getId() {
 		return $this->getValue('id');
 	}
 
+	/**
+	 * 
+	 * @param int $id
+	 * @return Model
+	 */
+	public final function byId($id) {
+		return $this->byValue('id', $id);
+	}
+
+	/**
+	 * 
+	 * @param string $name
+	 * @param mixed $value
+	 */
 	protected final function setValue($name, $value) {
 		$this->ensureRow($name);
 		$value = $this->ensureType($name, $value);
-		if($this->loaded && $this->getValue($name) === $value)
-			return true;
+		if($this->loaded && $this->getValue($name) === $value) {
+			return;
+		}
 		$this->changes[$name] = $value;
-		return true;
 	}
 
+	/**
+	 * 
+	 * @param string $name
+	 * @return mixed
+	 */
 	protected final function getValue($name) {
 		$this->ensureRow($name);
 		if(array_key_exists($name, $this->changes))
 			return $this->changes[$name];
 		$this->ensureLoaded();
 		return $this->values[$name];
-	}
-
-	public final function byId($id) {
-		return $this->byValue('id', $id);
 	}
 
 	private $multiple = false;
@@ -99,6 +130,12 @@ abstract class Model {
 	private $order_row = 'id';
 	private $order_descending = false;
 
+	/**
+	 * 
+	 * @param string $row
+	 * @param bool $descending
+	 * @return \Lorry\Model
+	 */
 	public final function order($row, $descending = false) {
 		$this->order_row = $row;
 		$this->order_descending = $descending;
@@ -108,8 +145,14 @@ abstract class Model {
 	private $limit_from = null;
 	private $limit = null;
 
+	/**
+	 * 
+	 * @param int $from
+	 * @param int $limit
+	 * @return \Lorry\Model
+	 */
 	public final function limit($from, $limit = null) {
-		if($limit == null) {
+		if($limit === null) {
 			$limit = $from;
 		} else {
 			$this->limit_from = $from;
@@ -118,11 +161,22 @@ abstract class Model {
 		return $this;
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public final function byAnything() {
 		$this->all();
 		return $this->byValues();
 	}
 
+	/**
+	 * 
+	 * @param string $row
+	 * @param mixed $value
+	 * @return \Lorry\Model|array
+	 * @throws Exception
+	 */
 	protected final function byValue($row, $value) {
 		if(!is_string($row)) {
 			throw new Exception('invalid row name');
@@ -133,6 +187,7 @@ abstract class Model {
 	/**
 	 *
 	 * @param array $pairs
+	 * @return \Lorry\Model|array
 	 */
 	protected final function byValues($pairs = array()) {
 		$this->ensureUnloaded();
@@ -142,14 +197,6 @@ abstract class Model {
 			if(is_object($value)) {
 				throw new Exception('attempting to fetch model using object as value');
 			}
-			// do not allow search for empty constraints
-			/* if(empty($value)) {
-			  if($this->multiple) {
-			  return array();
-			  } else {
-			  return false;
-			  }
-			  } */
 		}
 
 		if($this->multiple) {
@@ -184,6 +231,12 @@ abstract class Model {
 		}
 	}
 
+	/**
+	 * 
+	 * @param type $row
+	 * @param type $value
+	 * @return bool
+	 */
 	protected final function match($row, $value) {
 		$this->ensureLoaded();
 		$this->ensureRow($row);
@@ -200,9 +253,15 @@ abstract class Model {
 		return false;
 	}
 
+	/**
+	 * 
+	 * @param type $row
+	 * @param type $value
+	 * @return type
+	 */
 	protected final function ensureType($row, $value) {
 		$this->ensureRow($row);
-		if($row == 'id' || $value === NULL) {
+		if($row == 'id' || $value === null) {
 			return $value;
 		}
 		switch($this->schema[$row]) {
@@ -218,6 +277,12 @@ abstract class Model {
 		return $value;
 	}
 
+	/**
+	 * 
+	 * @param string $row
+	 * @param mixed $value
+	 * @return mixed
+	 */
 	private final function decodeType($row, $value) {
 		$this->ensureRow($row);
 		if($row == 'id' || $value === NULL) {
@@ -231,6 +296,12 @@ abstract class Model {
 		return $value;
 	}
 
+	/**
+	 * 
+	 * @param string $row
+	 * @param mixed $value
+	 * @return mixed
+	 */
 	private final function encodeType($row, $value) {
 		$this->ensureRow($row);
 		if($row == 'id' || $value === NULL) {
@@ -245,31 +316,41 @@ abstract class Model {
 		return $value;
 	}
 
+	/**
+	 * 
+	 * @param string $row
+	 * @throws InvalidArgumentException
+	 */
 	public final function ensureRow($row) {
 		if(!array_key_exists($row, $this->schema) && $row != 'id') {
 			throw new InvalidArgumentException('row "'.$row.'" does not exist in model "'.get_class($this).'"');
 		}
-		return true;
 	}
 
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public final function ensureLoaded() {
 		if(!$this->loaded) {
 			throw new Exception('model has not been loaded');
 		}
-		return true;
 	}
 
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public final function ensureUnloaded() {
 		if($this->loaded) {
 			throw new Exception('model has already been loaded');
 		}
-		return true;
 	}
 
 	/**
 	 * Loads the data into this model instance. Should only be called by the PersistenceService.
 	 * @param array $row
-	 * @return boolean True,
+	 * @return bool True,
 	 */
 	public final function unserialize($row) {
 		if(empty($row) || !isset($row['id']) || !is_numeric($row['id'])) {
@@ -287,13 +368,17 @@ abstract class Model {
 		return true;
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public final function getChanges() {
 		return $this->changes;
 	}
 
 	/**
 	 * Returns whether unsaved changes remain.
-	 * @return boolean True, if unsaved changes are present.
+	 * @return bool True, if unsaved changes are present.
 	 */
 	public final function modified() {
 		return !empty($this->changes);
@@ -308,7 +393,7 @@ abstract class Model {
 
 	/**
 	 * Ensure that all changes to model are persistent.
-	 * @return boolean True, if all changes will be persistent
+	 * @return bool True, if all changes will be persistent
 	 */
 	public final function save() {
 		if(!$this->modified())
@@ -374,6 +459,11 @@ abstract class Model {
 		}
 	}
 
+	/**
+	 * 
+	 * @param string $email
+	 * @throws ModelValueInvalidException
+	 */
 	protected final function validateEmail($email) {
 		$email = (string) $email;
 
@@ -382,6 +472,11 @@ abstract class Model {
 		}
 	}
 
+	/**
+	 * 
+	 * @param string $url
+	 * @throws ModelValueInvalidException
+	 */
 	protected final function validateUrl($url) {
 		$url = (string) $url;
 
@@ -390,12 +485,24 @@ abstract class Model {
 		}
 	}
 
+	/**
+	 * 
+	 * @param int $number
+	 * @throws ModelValueInvalidException
+	 */
 	protected final function validateNumber($number) {
 		if(!is_int($number)) {
 			throw new ModelValueInvalidException(gettext('not a valid number'));
 		}
 	}
 
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $regexp
+	 * @throws Exception
+	 * @throws ModelValueInvalidException
+	 */
 	protected final function validateRegexp($value, $regexp) {
 		$result = preg_match($regexp, $value);
 		if($result === false) {
@@ -405,14 +512,26 @@ abstract class Model {
 		}
 	}
 
+	/**
+	 * 
+	 * @param string $language
+	 */
 	protected final function validateLanguage($language) {
 		$this->validateString($language, 5, 5);
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public function forApi() {
 		return array();
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public function forPresenter() {
 		return array();
 	}

@@ -27,7 +27,7 @@ class User extends Model {
 	public function setUsername($username) {
 		$this->validateString($username, 3, 16);
 		$this->validateRegexp($username, '/^[a-z0-9_]+$/i');
-		return $this->setValue('username', $username);
+		$this->setValue('username', $username);
 	}
 
 	public final function byUsername($username) {
@@ -45,7 +45,7 @@ class User extends Model {
 		} else {
 			$hash = null;
 		}
-		return $this->setValue('password', $hash);
+		$this->setValue('password', $hash);
 	}
 
 	public final function hasPassword() {
@@ -53,20 +53,19 @@ class User extends Model {
 	}
 
 	public final function matchPassword($password) {
-		if(empty($password))
+		if(empty($password)) {
 			return false;
+		}
 		return password_verify($password, $this->getValue('password')) === true;
 	}
 
 	public function setEmail($email) {
 		$this->validateEmail($email);
-		if($this->setValue('email', $email)) {
-			if(!$this->modified()) {
-				return true;
-			}
-			return $this->setValue('activated', false);
+		$this->setValue('email', $email);
+		if(!$this->modified()) {
+			return;
 		}
-		return false;
+		$this->setValue('activated', false);
 	}
 
 	public function getEmail() {
@@ -109,12 +108,20 @@ class User extends Model {
 		return hash_equals($this->getValue('secret'), $secret);
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function isAdministrator() {
-		return $this->getId() == 1;
+		return $this->getId() == 1; //@TODO user groups
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function isModerator() {
-		return $this->getId() == 1;
+		return $this->getId() == 1;//@TODO user groups
 	}
 
 	public final function setClonkforgeUrl($clonkforge) {
@@ -242,18 +249,30 @@ class User extends Model {
 		return $this->setValue('language', $language);
 	}
 
+	/**
+	 * 
+	 * @return string
+	 */
 	public final function getLanguage() {
 		return $this->getValue('language');
 	}
 
 	public function __toString() {
-		return $this->getUsername().'';
+		return (string) $this->getUsername();
 	}
 
+	/**
+	 * 
+	 * @return array
+	 */
 	public function forApi() {
 		return array('name' => $this->getUsername(), 'administrator' => $this->isAdministrator(), 'moderator' => $this->isModerator());
 	}
-	
+
+	/**
+	 * 
+	 * @return array
+	 */
 	public function forPresenter() {
 		return $this->forApi();
 	}

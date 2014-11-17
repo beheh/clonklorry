@@ -40,6 +40,17 @@ class PersistenceService {
 		}
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model $model
+	 * @param array $pairs
+	 * @param string $orderby
+	 * @param bool $descending
+	 * @param int $from
+	 * @param int $limit
+	 * @return array
+	 * @throws InvalidArgumentException
+	 */
 	public function loadAll(Model $model, $pairs, $orderby, $descending, $from, $limit) {
 		$this->ensureConnected();
 		$model->ensureRow($orderby);
@@ -107,6 +118,17 @@ class PersistenceService {
 		return $rows;
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model $model
+	 * @param array $pairs
+	 * @param string $orderby
+	 * @param bool $descending
+	 * @param int $from
+	 * @param int $limit
+	 * @return \Lorry\Model
+	 * @throws Exception
+	 */
 	public function load(Model $model, $pairs, $orderby, $descending, $from, $limit) {
 		$rows = $this->loadAll($model, $pairs, $orderby, $descending, $from, $limit);
 		if(count($rows) > 1 && $limit === null && $from === null) {
@@ -115,9 +137,16 @@ class PersistenceService {
 			return $rows[0];
 		}
 
-		return;
+		return null;
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model $model
+	 * @param array $changes
+	 * @return bool
+	 * @throws Exception
+	 */
 	public function update(Model $model, $changes) {
 		$this->ensureConnected();
 		$model->ensureLoaded();
@@ -142,6 +171,13 @@ class PersistenceService {
 		return $query->rowCount() == 1;
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model $model
+	 * @param array $values
+	 * @return bool
+	 * @throws Exception
+	 */
 	public function save(Model $model, $values) {
 		$this->ensureConnected();
 		$model->ensureUnloaded();

@@ -5,8 +5,8 @@ namespace Lorry\Service;
 use Lorry\ModelFactory;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\Exception\OutputCompleteException;
-use Lorry\Exception;
+use InvalidArgumentException;
+use Exception;
 
 class SessionService {
 
@@ -27,10 +27,17 @@ class SessionService {
 		session_name('lorry_session');
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model\User $user
+	 * @param bool $remember
+	 * @param bool $identify
+	 * @throws Exception
+	 */
 	public final function start(User $user, $remember = false, $identify = false) {
 		$this->ensureSession();
 		if(!$user->isLoaded()) {
-			throw new Exception('user is not loaded or does not exist');
+			throw new InvalidArgumentException('user is not loaded or does not exist');
 		}
 		$this->authenticate($user);
 		if($identify) {
@@ -44,7 +51,6 @@ class SessionService {
 		} else {
 			setcookie('lorry_forget', '1', time() + 60 * 60 * 24 * 365, '/');
 		}
-		return true;
 	}
 
 	public final function refresh() {
@@ -55,6 +61,10 @@ class SessionService {
 		$_SESSION['secret'] = $this->user->getSecret();
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model\User $user
+	 */
 	protected final function authenticate(User $user) {
 		$this->ensureSession();
 		$this->ensureSecret($user);
@@ -70,6 +80,10 @@ class SessionService {
 		$_SESSION['identified'] = true;
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function identified() {
 		$this->ensureUser();
 		return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified'] == true;
@@ -82,6 +96,10 @@ class SessionService {
 		setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function shouldRemember() {
 		if(isset($_COOKIE['lorry_forget']) && $_COOKIE['lorry_forget'] == '1') {
 			return false;
@@ -89,6 +107,10 @@ class SessionService {
 		return true;
 	}
 
+	/**
+	 * 
+	 * @return bool
+	 */
 	public final function authenticated() {
 		if(!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
 			return false;
@@ -96,6 +118,10 @@ class SessionService {
 		return $this->user !== false;
 	}
 
+	/**
+	 * 
+	 * @return string
+	 */
 	protected final function castState() {
 		$state = bin2hex(openssl_random_pseudo_bytes(16));
 		return $state;
@@ -108,11 +134,19 @@ class SessionService {
 		}
 	}
 
+	/**
+	 * 
+	 * @return string
+	 */
 	public final function getState() {
 		$this->ensureState();
 		return $_SESSION['state'];
 	}
 
+	/**
+	 * 
+	 * @return string
+	 */
 	public final function regenerateState() {
 		$this->ensureSession();
 		$state = $this->castState();
@@ -120,6 +154,11 @@ class SessionService {
 		return $state;
 	}
 
+	/**
+	 * 
+	 * @param string $state
+	 * @return bool
+	 */
 	public final function verifyState($state) {
 		$this->ensureSession();
 		if(!isset($_SESSION['state'])) {
@@ -131,11 +170,20 @@ class SessionService {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param string $state
+	 */
 	public final function setAuthorizationState($state) {
 		$this->ensureSession();
 		$_SESSION['authorization_state'] = $state;
 	}
 	
+	/**
+	 * 
+	 * @param string $state
+	 * @return bool
+	 */
 	public final function verifyAuthorizationState($state) {
 		$this->ensureSession();
 		if(!isset($_SESSION['authorization_state'])) {
@@ -152,13 +200,12 @@ class SessionService {
 	public final function clearAuthorizationState() {
 		$this->ensureSession();
 		unset($_SESSION['authorization_state']);
-		return true;
 	}
 
 	/**
 	 *
 	 * @return \Lorry\Model\User
-	 * @throws Exceptions
+	 * @throws Exception
 	 */
 	public final function getUser() {
 		if(!$this->authenticated()) {
@@ -174,7 +221,7 @@ class SessionService {
 	protected final function ensureUser() {
 		$this->ensureSession();
 		if($this->user) {
-			return true;
+			return;
 		}
 		if(isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
 			$user = ModelFactory::build('User')->byId($_SESSION['user']);
@@ -196,15 +243,18 @@ class SessionService {
 				$this->logout();
 			}
 		}
-		return true;
+		return;
 	}
 
+	/**
+	 * 
+	 * @param \Lorry\Model\User $user
+	 */
 	protected final function ensureSecret(User $user) {
 		if($user->getSecret() == null) {
 			$user->regenerateSecret();
 			$user->save();
 		}
-		return true;
 	}
 
 	public final function ensureSession() {
@@ -212,18 +262,15 @@ class SessionService {
 			session_start();
 			$this->started = true;
 		}
-		return true;
 	}
 
 	public final function logout() {
 		$this->forget();
 		$this->end();
-		return true;
 	}
 
 	public final function forget() {
 		setcookie('lorry_login', '', 0, '/');
-		return true;
 	}
 
 	public final function end() {
@@ -232,7 +279,6 @@ class SessionService {
 			session_destroy();
 		}
 		setcookie('lorry_session', '', 0, '/');
-		return true;
 	}
 
 	private static $OAUTH_PROVIDERS = array('openid', 'google', 'facebook');

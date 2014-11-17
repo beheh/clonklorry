@@ -111,7 +111,7 @@ class PresenterFactory {
 	/**
 	 * Validates the existence of the presenter
 	 * @param string $presenter
-	 * @return boolean True, if the presenter exists
+	 * @return bool True, if the presenter exists
 	 */
 	public static function valid($presenter) {
 		return class_exists('\\Lorry\\Presenter\\'.$presenter);

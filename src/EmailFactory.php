@@ -76,7 +76,7 @@ class EmailFactory {
 	/**
 	 * Validates the existence of the email
 	 * @param string $email
-	 * @return boolean True, if the email exists
+	 * @return bool True, if the email exists
 	 */
 	public static function valid($email) {
 		return class_exists('\\Lorry\\Email\\'.$email);

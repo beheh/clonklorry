@@ -34,6 +34,10 @@ class SecurityService {
 		}
 	}
 
+	/**
+	 * 
+	 * @throws \Lorry\Exception\ForbiddenException
+	 */
 	public function requireIdentification() {
 		$this->requireLogin();
 		if(!$this->session->identified()) {
@@ -41,6 +45,10 @@ class SecurityService {
 		}
 	}
 
+	/**
+	 * 
+	 * @throws \Lorry\Exception\ForbiddenException
+	 */
 	public function requireModerator() {
 		$user = $this->session->getUser();
 		if(!$user || !$user->isModerator()) {
@@ -48,6 +56,10 @@ class SecurityService {
 		}
 	}
 
+	/**
+	 * 
+	 * @throws \Lorry\Exception\ForbiddenException
+	 */
 	public function requireAdministrator() {
 		$user = $this->session->getUser();
 		if(!$user || !$user->isAdministrator()) {
@@ -55,6 +67,10 @@ class SecurityService {
 		}
 	}
 
+	/**
+	 * 
+	 * @throws \Lorry\Exception\ForbiddenException
+	 */
 	public function requireValidState() {
 		$this->requireLogin();
 		$state = filter_input(INPUT_GET, 'state');
@@ -66,6 +82,10 @@ class SecurityService {
 		}
 	}
 
+	/**
+	 * 
+	 * @throws \Lorry\Exception\ForbiddenException
+	 */
 	public function requireUploadRights() {
 		$user = $this->session->getUser();
 		if(!$this->config->get('enable/upload')) {
@@ -74,9 +94,9 @@ class SecurityService {
 		if(!$user->isActivated()) {
 			throw new ForbiddenException(gettext('activate your account to add files'));
 		}
-		/*if($user->uploadedFiles() > 5) {
-			throw new ForbiddenException(gettext('you have too many unreleased files'));
-		}*/
+		/* if($user->uploadedFiles() > 5) {
+		  throw new ForbiddenException(gettext('you have too many unreleased files'));
+		  } */
 	}
 
 }
