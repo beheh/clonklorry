@@ -39,7 +39,7 @@ class User extends Model {
 	}
 
 	public final function setPassword($password) {
-		$this->validateString($password, 8, 255);
+		$this->validateString($password, 8, 72);
 		if(!empty($password)) {
 			$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
 		} else {
