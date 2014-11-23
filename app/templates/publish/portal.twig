@@ -8,30 +8,26 @@
 			<h1>{{title}}</h1>
 		</div>
 	</div>
-	{% if addons %}
+	{% if addons %}	
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					{% include 'functions/alert.twig' with {'selector' : 'addons'} %}
-					<ul class="media-list addons-small">
-						{% for addon in addons %}
-							<li class="media media-addon">
-								<div class="pull-left">
-									{% if false %}<a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{% endif %}<img class="media-object" src="http://placehold.it/76x57">{% if false %}</a>{% endif %}
-								</div>
-								<div class="media-body">
-									<h4 class="media-heading">{{addon.title}}</h4>
-									{% include 'functions/tags/game.twig' with {'short' : addon.game.short, 'title' : addon.game.title}%}
-									<p>
-										<a href="{{filename}}/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
-										<a href="{{filename}}/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Edit releases{% endtrans %}</a>
-									</p>
-								</div>
-							</li>
-						{% endfor %}
-					</ul>
-				</div>
-			</div>
+			{% include 'functions/alert.twig' with {'selector' : 'addons'} %}
+			<ul class="media-list addons-small">
+				{% for addon in addons %}
+					<li class="media media-addon">
+						<div class="pull-left">
+							{% if false %}<a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{% endif %}<img class="media-object" src="http://placehold.it/76x57">{% if false %}</a>{% endif %}
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading">{{addon.title}}</h4>
+							{% include 'functions/tags/game.twig' with {'game' : addon.game}%}
+							<p>
+								<a href="{{filename}}/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
+								<a href="{{filename}}/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Edit releases{% endtrans %}</a>
+							</p>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
 	{% else %}
 		<div class="jumbotron">
