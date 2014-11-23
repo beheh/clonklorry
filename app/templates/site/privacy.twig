@@ -23,7 +23,8 @@
 			<li>{% trans %}<strong>Addons</strong> and <strong>releases</strong> you created (and the corresponding files you uploaded){% endtrans %}</li>
 		</ul>
 		<h2>{% trans %}Transparency{% endtrans %}</h2>
-		<p>{% trans %}Lorrys source code is public, so you can check all of this yourself. If you have further questions concerning your privacy, please do not hesitate to contact us.{% endtrans %}<p>
+		{% set public %}<a href="https://github.com/clonklorry/clonklorry">{% trans %}public{% endtrans %}</a>{% endset %}
+		<p>{% trans %}Lorrys source code is {{public}}, so you can check all of this yourself. If you have further questions concerning your privacy, please do not hesitate to contact us.{% endtrans %}<p>
 		<p>{% trans %}Our systems are hosted by Uberspace, a hoster with an (in our opinion) excellent privacy policy.{% endtrans %}</p>
 		<p>
 			<a href="{{base}}/contact" class="btn btn-primary">{% trans %}Contact us{% endtrans %}</a>

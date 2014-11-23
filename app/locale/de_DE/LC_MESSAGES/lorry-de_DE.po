@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-11-16 13:53+0100\n"
-"PO-Revision-Date: 2014-11-17 09:26+0100\n"
+"POT-Creation-Date: 2014-11-23 20:58+0100\n"
+"PO-Revision-Date: 2014-11-23 20:58+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -381,8 +381,8 @@ msgid "Welcome back!"
 msgstr "Willkommen zurück!"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0b/d5/199e1399713b2bf14a8e62e1c2b05f7f2cf9e72d8e09cedd890888f333b4.php:186
-msgid "Nice to see you again."
-msgstr "Schön dich wieder zu sehen!"
+msgid "It's great to see you again."
+msgstr "Schön dich wieder zu sehen."
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0b/d5/199e1399713b2bf14a8e62e1c2b05f7f2cf9e72d8e09cedd890888f333b4.php:191
 msgid "No account yet?"
@@ -422,40 +422,44 @@ msgid "Return to home"
 msgstr "Zurück zur Startseite"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:41
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:190
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:192
 msgid "%game% logo"
 msgstr "%game%-Logo"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:72
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:51
+msgid "About Clonk"
+msgstr "Über Clonk"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:74
 msgid "by date"
 msgstr "nach Datum"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:91
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:93
 msgid "by name"
 msgstr "nach Name"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:110
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:112
 msgid "by rating"
 msgstr "nach Bewertung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:132
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:134
 msgid "create a new addon"
 msgstr "erstelle eine neue Erweiterung"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:138
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:140
 #, php-format
 msgid "Sort by %columns% or %createaddon% for this game."
 msgstr "Sortieren nach %columns% oder %createaddon% für dieses Spiel."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:194
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:196
 msgid "No addons available"
 msgstr "Keine Erweiterungen verfügbar"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:198
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:200
 msgid "There are no addons for this game yet :-("
 msgstr "Es gibt noch keine Erweiterungen für dieses Spiel :-("
 
-#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:211
+#: /home/benedict/public_html/lorry/app/cache/twig/0d/fb/70332058fb8c1a48c04cba6b62ea5004b3bef83ab74574e895c500e1c71d.php:213
 msgid "New %game% addon"
 msgstr "Neue %game%-Erweiterung"
 
@@ -619,17 +623,21 @@ msgstr ""
 msgid "Transparency"
 msgstr "Transparenz"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:88
+#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:90
+msgid "public"
+msgstr "öffentlich"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:95
 msgid ""
-"Lorrys source code is public, so you can check all of this yourself. If you "
-"have further questions concerning your privacy, please do not hesitate to "
-"contact us."
+"Lorrys source code is %public%, so you can check all of this yourself. If "
+"you have further questions concerning your privacy, please do not hesitate "
+"to contact us."
 msgstr ""
-"Lorrys Quellcode ist öffentlich, damit du all dies selbst nachprüfen kannst. "
+"Lorrys Quellcode ist %public%, damit du all dies selbst nachprüfen kannst. "
 "Falls du weitere Fragen zu deiner Privatsphäre hast kannst du uns jederzeit "
 "kontaktieren.\t"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:92
+#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:99
 msgid ""
 "Our systems are hosted by Uberspace, a hoster with an (in our opinion) "
 "excellent privacy policy."
@@ -637,11 +645,11 @@ msgstr ""
 "Unsere Systeme werden von Uberspace gehostet, einem Hoster mit einer (in "
 "unseren Augen) exzellenten Datenschutzerklärung."
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:99
+#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:106
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:103
+#: /home/benedict/public_html/lorry/app/cache/twig/30/de/b7e0b1571620992c0191401d294066ec9f95589f25567bd7c55a07d74cb4.php:110
 msgid "Uberspace privacy policy"
 msgstr "Datenschutzerklärung von Uberspace"
 
@@ -1436,12 +1444,12 @@ msgid "View site in"
 msgstr "Betrachte Seite auf"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:213
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:153
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:192
 msgid "English"
 msgstr "Englisch"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/ac/71/22237f3cd8e3c6f1ba21f3e083f5b00f99772d1aea8b3f6b028b7d7b9eb9.php:221
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:156
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:195
 msgid "German"
 msgstr "Deutsch"
 
@@ -2166,27 +2174,27 @@ msgstr "Aktuelle Version"
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/public_html/lorry/src/Model.php:356
+#: /home/benedict/public_html/lorry/src/Model.php:455
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/public_html/lorry/src/Model.php:359
+#: /home/benedict/public_html/lorry/src/Model.php:458
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/public_html/lorry/src/Model.php:372
+#: /home/benedict/public_html/lorry/src/Model.php:471
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/public_html/lorry/src/Model.php:380
+#: /home/benedict/public_html/lorry/src/Model.php:484
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/public_html/lorry/src/Model.php:386
+#: /home/benedict/public_html/lorry/src/Model.php:495
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: /home/benedict/public_html/lorry/src/Model.php:395
+#: /home/benedict/public_html/lorry/src/Model.php:511
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Register.php:85
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:95
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:106
@@ -2195,28 +2203,28 @@ msgstr "keine gültige Zahl"
 msgid "invalid"
 msgstr "ungültig"
 
-#: /home/benedict/public_html/lorry/src/Model/Addon.php:226
+#: /home/benedict/public_html/lorry/src/Model/Addon.php:232
 msgid "required"
 msgstr "benötigt"
 
-#: /home/benedict/public_html/lorry/src/Model/User.php:127
+#: /home/benedict/public_html/lorry/src/Model/User.php:134
 msgid "not a matching Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/public_html/lorry/src/Model/User.php:133
+#: /home/benedict/public_html/lorry/src/Model/User.php:140
 msgid "not a valid Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/public_html/lorry/src/Model/User.php:141
+#: /home/benedict/public_html/lorry/src/Model/User.php:148
 msgid "not a valid Clonk Forge profile id"
 msgstr "keine gültige ClonkForge Profil-ID"
 
-#: /home/benedict/public_html/lorry/src/Model/User.php:165
+#: /home/benedict/public_html/lorry/src/Model/User.php:172
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
 #: /home/benedict/public_html/lorry/src/Presenter.php:173
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:97
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:96
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:176
 #: /home/benedict/public_html/lorry/src/Presenter/Account/Settings.php:209
 msgid "Password wrong."
@@ -2230,11 +2238,11 @@ msgstr "Registrierung erfolgreich!"
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:67
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:66
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:101
+#: /home/benedict/public_html/lorry/src/Presenter/Account/Login.php:100
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
@@ -2399,16 +2407,16 @@ msgstr "Nicht implementiert"
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Manage/Approve.php:53
+#: /home/benedict/public_html/lorry/src/Presenter/Manage/Approve.php:60
 #, php-format
 msgid "Please comment in %s, the users language."
 msgstr "Bitte kommentiere in %s, der Sprache des Benutzers."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Manage/Approve.php:77
+#: /home/benedict/public_html/lorry/src/Presenter/Manage/Approve.php:84
 msgid "Comment can't be empty when rejecting the addon."
 msgstr "Kommentar kann nicht leer sein, wenn die Erweiterung abgelehnt wird."
 
-#: /home/benedict/public_html/lorry/src/Presenter/Manage/Approve.php:86
+#: /home/benedict/public_html/lorry/src/Presenter/Manage/Approve.php:93
 #, php-format
 msgid "Comment is %s."
 msgstr "Kommentar ist %s."
@@ -2636,87 +2644,87 @@ msgstr "%s auf der ClonkForge"
 msgid "%s on GitHub"
 msgstr "%s auf GitHub"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:139
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:173
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:142
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:176
 msgid "d-m-Y"
 msgstr "d.m.Y"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:145
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:179
 msgid "H:i"
 msgstr "H:i"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:167
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:211
 msgid "January"
 msgstr "Januar"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:169
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:213
 msgid "February"
 msgstr "Februar"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:171
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:215
 msgid "March"
 msgstr "März"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:173
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:217
 msgid "April"
 msgstr "April"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:175
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:219
 msgid "May"
 msgstr "Mai"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:177
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:221
 msgid "June"
 msgstr "Juni"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:179
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:223
 msgid "July"
 msgstr "Juli"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:181
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:225
 msgid "August"
 msgstr "August"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:183
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:227
 msgid "September"
 msgstr "September"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:185
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:229
 msgid "October"
 msgstr "Oktober"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:187
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:231
 msgid "November"
 msgstr "November"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:189
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:233
 msgid "December"
 msgstr "Dezember"
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:196
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:245
 msgid "1st"
 msgstr "1."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:198
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:247
 msgid "2nd"
 msgstr "2."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:200
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:249
 msgid "3rd"
 msgstr "3."
 
-#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:202
+#: /home/benedict/public_html/lorry/src/Service/LocalisationService.php:251
 msgid "%n%th"
 msgstr "%n%."
 
-#: /home/benedict/public_html/lorry/src/Service/SecurityService.php:72
+#: /home/benedict/public_html/lorry/src/Service/SecurityService.php:92
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: /home/benedict/public_html/lorry/src/Service/SecurityService.php:75
+#: /home/benedict/public_html/lorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto um Dateien hinzuzufügen"
 
