@@ -15,7 +15,11 @@
 				{% for addon in addons %}
 					<li class="media media-addon">
 						<div class="pull-left">
-							{% if false %}<a href="{{base}}/addons/{{addon.game.short}}/{{addon.short}}">{% endif %}<img class="media-object" src="http://placehold.it/76x57">{% if false %}</a>{% endif %}
+							{% if false %}
+							<img class="media-object" src="{{resources}}/lorry/img/addon-60x80.png">
+							{% else %}
+							{% include "functions/addon.svg" %}
+							{% endif %}
 						</div>
 						<div class="media-body">
 							<h4 class="media-heading">{{addon.title}}</h4>

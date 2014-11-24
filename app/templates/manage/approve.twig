@@ -38,7 +38,7 @@
 		</div>
 	{% else %}
 		<div class="container">
-			{% set username %}<a href="{{base}}/users/{{user.name}}" class="muted">{{user.name}}</a>{% endset %}
+			{% set username %}<a href="{{base}}/users/{{user.name}}" class="text">{{user.name}}</a>{% endset %}
 			<p class="lead">{% trans %}<strong>{{username}}</strong> would like to reserve the namespace <strong>{{namespace}}</strong> for this addon.{% endtrans %}</p>
 			<div class="row">
 				<div class="col-md-8">

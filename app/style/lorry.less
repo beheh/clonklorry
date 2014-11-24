@@ -19,8 +19,9 @@ body {
 	min-height: 100%;
 }
 
-a.text {
+a.text, a:hover.text, a:active.text, .panel a, .panel a:hover, .panel a:active {
 	color: inherit;
+	text-decoration: none;
 }
 
 /*.carousel svg {
@@ -167,9 +168,9 @@ textarea {
 	resize: vertical;
 }
 
-.media-addon img {
-	width: 76px;
-	height: 57px;
+.media-addon img, .media-addon svg {
+	width: 80px;
+	height: 60px;
 }
 
 .media-addon:first-child {
@@ -207,16 +208,11 @@ label.btn {
 	margin-top: -1px;
 }
 
-.row.vertical-align {
-    display: flex;
-    align-items: center;
-}
-
 .panel-body p:last-child {
 	margin-bottom: 0px;
 }
 
-h1 a, h1 a:hover, h1 a:active, a.muted, a.muted:hover, a.muted:active {
+h1 a, h1 a:hover, h1 a:active {
 	color: inherit;
 	text-decoration: none;
 }
@@ -292,12 +288,20 @@ h1 a.btn {
 	#front .carousel {
 		height: 417px;
 	}
+
+	.vertical-align {
+		display: flex;
+		align-items: center;
+	}
 }
 
 @media (min-width: @screen-md-min) {
 	.sidebar h1:first-child , .sidebar h2:first-child {
 		margin-top: 0px;
 	}
+
+
+
 }
 
 @import 'typeahead.less';
