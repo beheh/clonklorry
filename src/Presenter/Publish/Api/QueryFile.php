@@ -86,7 +86,19 @@ class QueryFile extends ApiPresenter {
 			foreach($result as $found) {
 				if($found->isDir()) {
 					$identifier = strstr($found->getRelativePathname(), '.parts', true);
-					$files[] = array('uniqueIdentifier' => $identifier, 'fileName' => $found->getRelativePathname(), 'complete' => false, 'progress' => 0);					
+					$filename = $found->getRelativePathname();
+					// look for first file to determine filename
+					$progressfinder =  new Finder();
+					$progressresult = $progressfinder->files()->in($directory.'/'.$found->getRelativePathname());
+					foreach($progressresult as $progressfound) {
+						$matches = array();
+						preg_match('/^(.*)\.part[0-9]*$/', $progressfound->getRelativePathname(), $matches);
+						if(count($matches) > 1) {
+							$filename = $matches[1];
+						}
+						break;
+					}
+					$files[] = array('uniqueIdentifier' => $identifier, 'fileName' => $filename, 'complete' => false, 'progress' => -1);					
 				}
 				if($found->isFile()) {
 					$files[] = array('uniqueIdentifier' => md5($i), 'fileName' => $found->getRelativePathname(), 'complete' => true, 'progress' => 100);

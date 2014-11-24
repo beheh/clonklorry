@@ -54,7 +54,7 @@ if (!releaseResumable.support) {
 releaseResumable.on('fileAdded', function(file) {
 	var cancel = false;
 	$.each(releaseFilesExisting, function(key, existingFile) {
-		if (file.fileName === existingFile.fileName) {
+		if (file.fileName === existingFile.fileName && existingFile.progress !== -1) {
 			cancel = true;
 			return false;
 		}
