@@ -29,10 +29,10 @@ class QueryFile extends ApiPresenter {
 
 	public static function sanitizeFilename($supplied) {
 		$file_name = QueryFile::sanitizePath($supplied);
-		if(preg_match('/^.*\.((zip)|(rar)|(tar))$/i', $file_name)) {
+		if(preg_match('/^.*\.((zip)|(rar)|(tar)|(7z))$/i', $file_name)) {
 			throw new Exception(gettext('please upload the individual files instead of an archive'));
 		}
-		if(!preg_match('/^.*\.((c4d)|(c4s)|(c4f)|(ocd)|(ocs)|(ocf))$/i', $file_name)) {
+		if(!preg_match('/^.*\.((c4d)|(c4s)|(c4f)|(c4g)|(ocd)|(ocs)|(ocf)|(ocg))$/i', $file_name)) {
 			throw new Exception(gettext('file must end with a clonk extension'));
 		}
 		return $file_name;
@@ -82,8 +82,10 @@ class QueryFile extends ApiPresenter {
 			$finder = new Finder();
 			$found = $finder->files()->depth('== 0')->in($directory);
 
+			$i = 0;
 			foreach($found as $file) {
-				$files[] = array('uniqueIdentifier' => count($files), 'fileName' => $file->getRelativePathname(), 'complete' => true, 'progress' => 100);
+				$files[] = array('uniqueIdentifier' => md5($i), 'fileName' => $file->getRelativePathname(), 'complete' => true, 'progress' => 100);
+				$i++;
 			}
 		}
 

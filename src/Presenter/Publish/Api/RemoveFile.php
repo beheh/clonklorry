@@ -5,6 +5,7 @@ namespace Lorry\Presenter\Publish\Api;
 use Lorry\ApiPresenter;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\FileNotFoundException;
+use Analog;
 
 class RemoveFile extends ApiPresenter {
 
@@ -38,6 +39,8 @@ class RemoveFile extends ApiPresenter {
 		if(!unlink($file) && !UploadFile::removeChunkDirectory($chunk_directory)) {
 			throw new \Exception('file removal failed');
 		}
+		
+		Analog::info('removed file "'.$filename.'" for "'.$user->getUsername().'"');
 
 		$this->display(array('file' => 'removed'));
 	}
