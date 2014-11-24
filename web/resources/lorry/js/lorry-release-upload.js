@@ -130,13 +130,17 @@ function releaseFilesSuccess(file) {
 }
 
 function updateReleaseResumableState() {
-	if ((releaseResumable.files.length + releaseFilesExisting.length) > 0) {
+	var fileCount = releaseResumable.files.length + releaseFilesExisting.length;
+	if (fileCount > 0) {
 		$('#resumable-files').show();
 		$('#resumable-files-none').hide();
+		$('#resumable-files-count').text(fileCount);
+		$('#resumable-files-count').show();
 	}
 	else {
 		$('#resumable-files').hide();
 		$('#resumable-files-none').show();
+		$('#resumable-files-count').hide();
 	}
 
 	if (releaseResumable.isUploading()) {
