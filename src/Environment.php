@@ -166,7 +166,7 @@ class Environment {
 				'/addons/:alpha/:alpha\.json' => 'Addon\Api\Release',
 				'/addons/:alpha/:alpha/:version' => 'Addon\Release',
 				'/games\.json' => 'Addon\Api\Games',
-				'/download/' => 'Redirect\Front',
+				'/download' => 'Redirect\Front',
 				'/download/:alpha/:alpha' => 'Addon\Download',
 				'/download/:alpha/:alpha/:version' => 'Addon\Download',
 				'/create' => 'Publish\Create',
