@@ -80,12 +80,18 @@ class QueryFile extends ApiPresenter {
 		if(is_dir($directory)) {
 
 			$finder = new Finder();
-			$found = $finder->files()->depth('== 0')->in($directory);
+			$result = $finder->depth('== 0')->in($directory);
 
 			$i = 0;
-			foreach($found as $file) {
-				$files[] = array('uniqueIdentifier' => md5($i), 'fileName' => $file->getRelativePathname(), 'complete' => true, 'progress' => 100);
-				$i++;
+			foreach($result as $found) {
+				if($found->isDir()) {
+					$identifier = strstr($found->getRelativePathname(), '.parts', true);
+					$files[] = array('uniqueIdentifier' => $identifier, 'fileName' => $found->getRelativePathname(), 'complete' => false, 'progress' => 0);					
+				}
+				if($found->isFile()) {
+					$files[] = array('uniqueIdentifier' => md5($i), 'fileName' => $found->getRelativePathname(), 'complete' => true, 'progress' => 100);
+					$i++;
+				}
 			}
 		}
 

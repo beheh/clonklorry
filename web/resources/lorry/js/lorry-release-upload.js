@@ -11,7 +11,12 @@ $(document).ready(function() {
 					releaseFilesExisting = data.files;
 					$(releaseFilesExisting).each(function(id, file) {
 						releaseFilesAdd(file);
-						releaseFilesSuccess(file);
+						if(file.complete) {
+							releaseFilesSuccess(file);
+						}
+						else {
+							releaseFilesContinue(file);
+						}
 					});
 				},
 				error: function() {
@@ -86,6 +91,7 @@ releaseResumable.on('fileError', function(file, raw) {
 });
 
 function releaseFilesAdd(file) {
+	$('li[data-unique="' + file.uniqueIdentifier + '"]').remove();
 	$('#resumable-files').append($('<li class="list-group-item resumable-item" data-unique="' + file.uniqueIdentifier + '"><span class="resumable-filename">' + file.fileName + '</span><button type="button" class="close" title="' + $('#message-text-remove').text() + '" aria-hidden="true">&times;</button><span class="resumable-progress"></span></li>'));
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .close').click(function() {
 		if ((file.isComplete && file.isComplete()) || file.complete) {
@@ -127,6 +133,11 @@ function releaseFilesSuccess(file) {
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text($('#message-text-uploaded').text());
 	$('li[data-unique="' + file.uniqueIdentifier + '"]').removeClass('list-group-item-danger');
 	$('li[data-unique="' + file.uniqueIdentifier + '"]').addClass('list-group-item-success');
+}
+
+function releaseFilesContinue(file) {
+	$('li[data-unique="' + file.uniqueIdentifier + '"] .resumable-progress').text($('#message-text-continue').text());
+	$('li[data-unique="' + file.uniqueIdentifier + '"]').removeClass('list-group-item-danger');
 }
 
 function updateReleaseResumableState() {
