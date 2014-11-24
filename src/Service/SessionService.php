@@ -43,7 +43,7 @@ class SessionService {
 		if($identify) {
 			$this->identify();
 		}
-		if($remember == true) {
+		if($remember === true) {
 			$this->remember();
 			if(isset($_COOKIE['lorry_forget'])) {
 				setcookie('lorry_forget', '', 0, '/');
@@ -57,7 +57,7 @@ class SessionService {
 		$this->ensureSession();
 		$this->ensureUser();
 		$this->ensureSecret($this->user);
-		session_regenerate_id();
+		session_regenerate_id(true);
 		$_SESSION['secret'] = $this->user->getSecret();
 	}
 
@@ -68,7 +68,7 @@ class SessionService {
 	protected final function authenticate(User $user) {
 		$this->ensureSession();
 		$this->ensureSecret($user);
-		session_regenerate_id();
+		session_regenerate_id(true);
 		$this->user = $user;
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
@@ -86,7 +86,7 @@ class SessionService {
 	 */
 	public final function identified() {
 		$this->ensureUser();
-		return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified'] == true;
+		return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified'] === true;
 	}
 
 	public final function remember() {
