@@ -23,6 +23,6 @@ DirectoryIndex index.php
 
 <IfModule !mod_rewrite.c>
 	<IfModule mod_alias.c>
-		RedirectMatch 302 ^/$ /index.php/
+		RedirectMatch 301 ^/$ /index.php/
 	</IfModule>
 </IfModule>
