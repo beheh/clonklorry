@@ -14,12 +14,12 @@
 		"twig/extensions": "~1.2",
 		"swiftmailer/swiftmailer": "~5.3",
 		"lightopenid/lightopenid": "~0.7",
-		"league/oauth2-client": "0.6.0",
+		"league/oauth2-client": "~0.6",
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.5",
 		"symfony/finder": "~2.5",
         "chrisboulton/php-resque": "dev-unixsocket",
-		"aws/aws-sdk-php": "2.*"
+		"aws/aws-sdk-php": "~2"
     },
 	"suggest": {
 		"ext-http": "More reliable language negotiation"
