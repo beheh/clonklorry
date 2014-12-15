@@ -136,6 +136,7 @@ abstract class Presenter {
 	 * @param string $location
 	 */
 	protected final function redirect($location, $absolute = false) {
+		// @todo stricter filtering, remove newlines
 		if(!$absolute) {
 			$location = $this->config->get('base').$location;
 		}

@@ -47,7 +47,6 @@ class Login extends Presenter {
 			$this->warning('login', gettext('Sign in to link this login service to your account.'));
 		}
 
-
 		$this->display('account/login.twig');
 	}
 
