@@ -256,6 +256,11 @@ h1 a.btn {
 	margin-top: -4px;
 }
 
+.nav-tabs li.disabled a {
+	pointer-events: none;
+	color: grey;
+}
+
 @media (max-width: @screen-xs-max) {
     .nav-tabs > li {
         float: none;
@@ -284,6 +289,48 @@ h1 a.btn {
 	}
 }
 
+.breakout {
+	display: none;
+	color: #999;
+
+	a {
+		color: inherit;
+	}
+
+	a:active, a:hover {
+		color: #777;
+	}
+}
+
+.svg-highlight {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+}
+
+.media-addon:hover .svg-highlight {
+	filter: none;
+	-webkit-filter: none;
+}
+
+@media (min-width: (@screen-lg-min + 60)) {
+	.breakout {
+		display: block;
+		width: @screen-lg-min+10;
+		margin: 0 auto;
+		height: 69px;
+		padding: 20px 0 10px 0;
+		font-size: 26px;
+		line-height: 36px;
+		margin-bottom: -69px;
+		vertical-align: middle;
+
+		a {
+			display: inline-block;
+			padding-top: 4px;
+		}
+	}
+}
+
 @media (min-width: @screen-lg-min) {
 	#front .carousel {
 		height: 417px;
@@ -299,10 +346,13 @@ h1 a.btn {
 	.sidebar h1:first-child , .sidebar h2:first-child {
 		margin-top: 0px;
 	}
-
-
-
 }
+
+.carousel-caption {
+	text-shadow: #000 1px 1px 4px;
+}
+
+@import 'lorry-shipping.less';
 
 @import 'typeahead.less';
 

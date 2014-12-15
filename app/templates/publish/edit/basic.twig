@@ -1,40 +1,122 @@
+	{% if approval_comment %}
+	{% set approval_comment %}
+		<p><strong>{% trans %}Comment:{% endtrans %}</strong> {% if approval_comment %}{{approval_comment}}{% else %}<em>{% trans %}No comment.{% endtrans %}</em>{% endif %}</p>
+	{% endset %}
+{% endif %}
 <form role=form" method="post" action="{{filename}}#basic">
 	<input type="hidden" name="addon-form">
 	<input type="hidden" name="state" value="{{state}}">
+	{% if approved %}
+		<div class="panel panel-success">
+			<div class="panel-heading">{% trans %}Addon approved{% endtrans %}</div>
+			<div class="panel-body">
+				<p>{% trans %}This addon was approved. Releases can now be published at any time.{% endtrans %}</p>
+				{{approval_comment}}
+			</div>
+		</div>
+	{% elseif submitted %}
+		<div class="panel panel-info">
+			<div class="panel-heading">{% trans %}Waiting for approval&hellip;{% endtrans %}</div>
+			<div class="panel-body">
+				<p>{% trans %}This addon was submitted for approval. A moderator will check this addon shortly.{% endtrans %}</p>
+				<button type="submit" class="btn btn-default" name="withdraw">{% trans %}Withdraw addon{% endtrans %}</button>
+			</div>
+		</div>
+	{% elseif rejected %}
+		<div class="panel panel-danger">
+			<div class="panel-heading">{% trans %}Addon rejected{% endtrans %}</div>
+			<div class="panel-body">
+				<p>{% trans %}This addon was rejected. You can possibly improve the details and submit it again.{% endtrans %}</p>
+				{{approval_comment}}
+			</div>
+		</div>
+	{% else %}
+		<div class="panel panel-warning">
+			<div class="panel-heading">{% trans %}Approval required{% endtrans %}</div>
+			<div class="panel-body">
+				<p>{% trans %}This addon needs to be approved by a moderator before releases can be published.{% endtrans %}</p>
+			</div>
+		</div>
+	{% endif %}
 	{% include 'functions/alert.twig' with {'selector' : 'addon'} %}
-	<div class="row">
+	<div class="row vertical-align">
 		<div class="col-lg-4">
 			<div class="form-group">
-				<label for="title">{% trans "Title" %}</label>
-				<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}" required {% if released %}disabled{% endif%}>
+				<label for="title">{% trans %}Title{% endtrans %}</label>
+				<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}"{% if submitted or approved %} disabled{% endif %}>
 			</div>
+		</div>
+		<div class="col-lg-8">
 			<div class="form-group">
-				<label for="type">{% trans "Type" %}</label>
-				<select name="type" class="form-control" id="type" required {% if released %}disabled{% endif%}>
-					<option value="123">Runde</option>
-					<option value="312">Objektpaket</option>
-				</select>
+				<p>{% trans %}The title will be shown in many various places around the site.{% endtrans %}</p>
 			</div>
+		</div>
+	</div>
+	<div class="row vertical-align">
+		<div class="col-lg-4">
+			<div class="form-group">
+				<label for="namespace">{% trans "Namespace" %}</label>
+				<input type="text" class="form-control" name="namespace" id="namespace" value="{{namespace}}" placeholder="{{namespace_proposal}}"{% if submitted or approved %} disabled{% endif %}>
+			</div>
+		</div>
+		<div class="col-lg-8">
+			{% if approved %}
+				{% set url %}<samp>&hellip;/addons/{{game.short}}/<strong>{{namespace}}</strong></samp>{% endset %}
+				{% if released %}
+					<p>{% trans %}The addon is available under the URL {{url}}.{% endtrans %}</p>
+				{% else %}
+					<p>{% trans %}The addon will be available under the URL {{url}}.{% endtrans %}</p>
+				{% endif %}
+			{% else %}
+				<p>{% trans %}The namespace will be used as a unique identifier for your addon and its releases. It will appear in various urls. Please choose a short namespace, ideally the filename of the addon.{% endtrans %}</p>	
+			{% endif %}
+		</div>
+	</div>
+	<div class="row vertical-align">
+		<div class="col-lg-4">
 			<div class="form-group">
 				<label for="type">{% trans "Game" %}</label>
-				<select name="game" class="form-control" id="type" required {% if released %}disabled{% endif%}>
+				<select name="game" class="form-control" id="type" required{% if submitted or approved %} disabled{% endif%}>
 					{% for short, currentgame in games %}
-						<option value="{{short}}"{% if short == game %} selected{% endif %}>{{currentgame.title}}</option>
+						<option value="{{short}}"{% if short == addongame %} selected{% endif %}>{{currentgame.title}}</option>
 					{% endfor %}
 				</select>
 			</div>
 		</div>
+		<div class="col-lg-8">
+			{% if approved %}
+				{% set gametitle %}{{game.title}}{% endset %}
+				<p>{% trans %}The addon is playable with <strong>{{gametitle}}</strong>.{% endtrans %}</p>
+			{% else %}
+				{% set create_a_new_addon %}<a href="{{base}}/publish">{% trans %}create a new addon{% endtrans%}</a>{% endset %}
+				<p>{% trans %}The addon must be for a specific Clonk game. Consider choosing a different title if you create a version for a different game so players don't get confused and {{create_a_new_addon}}.{% endtrans %}</p>
+			{% endif %}
+		</div>
+	</div>
+	<div class="row vertical-align">
 		<div class="col-lg-4">
 			<div class="form-group">
-				<label for="title">{% trans "Abbreviation" %}</label>
-				<input type="text" class="form-control" name="abbreviation" id="title" value="{{abbreviation}}" {% if released %}disabled{% endif%}>
-				<span class="help-block">{% trans %}Only enter a well-known abbreviation.{% endtrans %}</span>
+				<label for="type">{% trans %}Abbreviation{% endtrans %} {% trans %}(optional){% endtrans %}</label>
+				<input type="text" class="form-control" name="abbreviation" id="abbreviation" value="{{abbreviation}}" {% if approved and not abbreviation %} placeholder="{% trans %}Not set{% endtrans %}"{% endif %}{% if submitted or approved %} disabled{% endif %}>
 			</div>
+		</div>
+		<div class="col-lg-8">
+			{% if approved %}
+				{% if appreviation %}
+					<p>{% trans %}Players will be able to search for your addon by using the abbreviation.{% endtrans %}</p>
+				{% else %}
+					{% set Contact_us %}<a href="{{base}}/contact">{% trans %}Contact us{% endtrans %}</a>{% endset %}
+					<p>{% trans %}{{Contact_us}} to add an abbreviation.{% endtrans %}</p>					
+				{% endif %}
+			{% else %}
+				<p>{% trans %}Please only enter an abbreviation if it is well known.{% endtrans %}</p>			
+			{% endif %}
 		</div>
 	</div>
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-		<span class="btn" disabled>{% trans %}These settings cannot be changed once the first release has been published.{% endtrans %}</span>
-		<a href="#" class="btn btn-danger pull-right">{% trans %}Remove addon{% endtrans %}</a>
+		<button type="submit" name="save" class="btn btn-primary"{% if submitted or approved %} disabled{% endif %}>{% trans "Save" %}</button>
+		<button type="submit" name="submit" class="btn btn-default lorry-js-warn" data-warning="{% trans %}The details on this page cannot be changed anymore once the addon has been submitted and approved.{% endtrans %}\n\n{% trans %}All other settings can still be changed.{% endtrans %}\n\n{% trans%}Are you sure you want to submit this addon?{% endtrans %}" {% if submitted or approved %} disabled{% endif %}>{% trans "Submit for approval" %}</button>
+		<span class="btn" disabled><span class="glyphicon glyphicon-lock"></span> <strong>{% trans %}These settings cannot be changed after approval.{% endtrans %}</strong></span>
+		<!--<a href="#" class="btn btn-link">{% trans %}Would you like to remove this addon?{% endtrans %}</a>!-->
 	</div>
 </form>

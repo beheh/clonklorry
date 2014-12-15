@@ -2,6 +2,7 @@
 
 namespace Lorry\Presenter\Publish;
 
+use DateTime;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
@@ -23,25 +24,46 @@ class Release extends Presenter {
 		$addon = Edit::getAddon($id, $this->session->getUser());
 		$release = Release::getRelease($addon->getId(), $version);
 
+		if($addon->isApproved()) {
+			$this->context['approved'] = true;
+		} else if($addon->isSubmittedForApproval()) {
+			$this->context['submitted'] = true;
+		}
+		$this->context['released'] = $release->isReleased();
+
 		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle().' '.$release->getVersion());
 		$this->context['game'] = $addon->fetchGame()->getShort();
 		$this->context['addontitle'] = $addon->getTitle();
 		$this->context['addonid'] = $addon->getId();
 		$this->context['version'] = $release->getVersion();
 
-		$this->context['whatsnew'] = $release->getWhatsnew();
-		$this->context['changelog'] = $release->getChangelog();
-
-		$this->context['released'] = $release->isReleased();
 		$latest = ModelFactory::build('Release')->latest($addon->getId());
 		$this->context['latest'] = ($latest && $latest->getId() == $release->getId());
 		$this->context['scheduled'] = $release->isScheduled();
+
+		/* Basic */
+
 		if(!isset($this->context['new_version'])) {
 			$this->context['new_version'] = $release->getVersion();
 		}
 		if(isset($_GET['version-changed'])) {
 			$this->success('version', gettext('Release saved.'));
 		}
+
+		/* Files */
+
+		/* Depedencies */
+
+		/* Changes */
+
+		$this->context['whatsnew'] = $release->getWhatsnew();
+		$this->context['changelog'] = $release->getChangelog();
+
+		/* Publish */
+
+		$datetime = new DateTime('tomorrow noon');
+		$this->context['datetime'] = $datetime->format('Y-m-d\TH:i:s');
+		$this->context['shipping'] = false;
 
 		$this->display('publish/release.twig');
 	}
@@ -53,7 +75,9 @@ class Release extends Presenter {
 		$addon = Edit::getAddon($id, $this->session->getUser());
 		$release = Release::getRelease($addon->getId(), $version);
 
-		if(isset($_POST['general-form'])) {
+		/* Basic */
+
+		if(isset($_POST['basic-form'])) {
 			$new_version = filter_input(INPUT_POST, 'version');
 			$this->context['new_version'] = $new_version;
 
@@ -84,6 +108,12 @@ class Release extends Presenter {
 			}
 		}
 
+		/* Files */
+
+		/* Depedencies */
+
+		/* Changes */
+
 		if(isset($_POST['changes-form'])) {
 			$whatsnew = trim(filter_input(INPUT_POST, 'whatsnew'));
 			$changelog = trim(filter_input(INPUT_POST, 'changelog'));
@@ -113,6 +143,8 @@ class Release extends Presenter {
 				$this->error('changes', implode($errors, '<br>'));
 			}
 		}
+
+		/* Publish */
 
 		return $this->get($id, $version);
 	}

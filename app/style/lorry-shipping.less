@@ -1,0 +1,110 @@
+@import 'bootstrap/variables.less';
+@import 'bootstrap/mixins.less';
+
+.lorry-shipping {
+	max-width: 400px;
+	width: 66%;
+	margin: 0 auto 60px;
+	text-align: center;
+}
+
+.lorry-shipping-svg-container {
+	width: 50%;
+	margin: 30px auto;
+}
+
+.lorry-shipping h2 {
+	width: 100%;
+}
+
+@media (max-width: @screen-xs-max) {
+	.lorry-shipping {
+		width: 100%;
+	}
+	
+	.lorry-shipping-svg-container {
+		width: 30%;
+	}
+}
+
+
+.lorry-shipping-drive-by {
+	.animation(lorryDriveBy 5s ease infinite normal);
+}
+
+.lorry-shipping-overlay {
+	fill: white;
+}
+
+.lorry-shipping-drop {
+	.animation(lorryDrop 5s linear infinite normal);
+	.animation-delay(20s);
+	fill: gold; 
+} 
+
+.lorry-shipping-drop:nth-of-type(1) { .animation-delay(0s); }
+.lorry-shipping-drop:nth-of-type(2) { .animation-delay(0.13s); }
+.lorry-shipping-drop:nth-of-type(3) { .animation-delay(0.19s); }
+.lorry-shipping-drop:nth-of-type(4) { .animation-delay(0.32s); }
+.lorry-shipping-drop:nth-of-type(5) { .animation-delay(0.25s); }
+.lorry-shipping-drop:nth-of-type(6) { .animation-delay(0.38s); }
+.lorry-shipping-drop:nth-of-type(7) { .animation-delay(0.42s); }
+.lorry-shipping-drop:nth-of-type(8) { .animation-delay(0.48s); }
+.lorry-shipping-drop:nth-of-type(9) { .animation-delay(0.54s); }
+.lorry-shipping-drop:nth-of-type(10) { .animation-delay(0.64s); }
+.lorry-shipping-drop:nth-of-type(11) { .animation-delay(0.7s); }
+.lorry-shipping-drop:nth-of-type(12) { .animation-delay(0.75s); }
+
+.lorry-shipping-stone { fill: grey; }
+.lorry-shipping-gold { fill: gold; }
+.lorry-shipping-flint { fill: red; }
+
+@lorryDriveBy: {
+	0% {
+		.translate3d(-100%, 0, 0);
+		opacity: 0;
+	}
+
+	30%, 70% {
+		.translate3d(0, 0, 0);
+		opacity: 1;
+	}
+
+	100% {
+		.translate3d(100%, 0, 0);
+		opacity: 0;
+	}
+};
+
+@lorryDrop: {
+	0%, 20% {
+		.translate3d(0, -20px, 0);
+	}
+
+	50% {
+		.translate3d(0, 0, 0);
+	}
+};
+
+/* based on http://stackoverflow.com/a/13204372/837762 */
+#doKeyFrames(@name; @frames) {
+    @-webkit-keyframes @name {
+		@vendor: -webkit-;
+		@frames(); 
+    }
+    @-moz-keyframes @name {
+		@vendor: -moz-;
+		@frames(); 
+    }
+    @-o-keyframes @name {
+		@vendor: -o-;
+		@frames(); 
+    } 
+    @keyframes @name {
+		@vendor: ~'';
+		@frames(); 
+    }
+}
+
+#doKeyFrames(lorryDriveBy; @lorryDriveBy);
+#doKeyFrames(lorryDrop; @lorryDrop);

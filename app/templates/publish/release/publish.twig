@@ -1,0 +1,71 @@
+<!--<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-danger">
+							<div class="panel-heading"><strong>This release can't be published yet.</strong></div>
+							<div class="list-group">
+								<a href="#files" class="list-group-item">Add at least one file</a>
+							</div>
+						</div>
+						<div class="panel panel-info">
+							<div class="panel-heading">Recommended actions</div>
+							<div class="list-group">
+								<a class="list-group-item">Add some tags</a>
+							</div>
+						</div>
+					</div>
+				</div>!-->
+{% if released %}
+	<p>This addon was published on date.</p>
+{% else %}
+	<div class="panel panel-warning">
+		<div class="panel-heading">{% trans %}Before publishing&hellip;{% endtrans %}</div>
+		<div class="panel-body">
+			<ol class="list-unstyled">
+				<li>You should add at least one file.</li>
+			</ol>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h3>{% trans %}Quick release{% endtrans %}</h3>
+			{% if approved %}
+				<p>{% trans %}The release will be instantly available to all players.{% endtrans %}</p>
+				<p class="alert alert-warning">{% trans %}Publishing a release is <strong>final</strong>. Any changes after releasing require a new release.{% endtrans %}</p>				
+			{% elseif submitted %}
+				<p>{% trans %}The release will be published as soon as the addon has been approved.{% endtrans %}</p>
+				<p class="alert alert-warning">{% trans %}The release will not be published if the addon is rejected.{% endtrans %}</p>
+			{% endif %}
+			<form role="form" method="post" action="{{filename}}#publish">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" id="release-confirm"> {% trans %}Confirm instant release{% endtrans %}
+					</label>
+				</div>
+				<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<h3>{% trans %}Schedule release{% endtrans %}</h3>
+			<form role="form" method="post" action="{{filename}}#publish">
+				<p>{% trans %}The release will be available to players after the specified timestamp.{% endtrans %}</p>
+				{% if approved %}
+					<p class="alert alert-info">{% trans %}A scheduled release can be cancelled at any time before the automated release.{% endtrans %}</p>
+				{% else %}
+					{% set needs_to_be_approved %}<a href="{{base}}/publish/{{addonid}}#basic">{% trans %}needs to be approved{% endtrans %}</a>{% endset %}
+					<p class="alert alert-warning">{% trans %}The addon {{needs_to_be_approved}} in order to schedule a release.{% endtrans %}</p>					
+				{% endif %}
+				<div class="form-group">
+					<label for="datetime">{% trans %}Date and time{% endtrans %}</label>
+					<input type="datetime-local" class="form-control" id="datetime" name="datetime" value="{{datetime}}" min="{{current_datetime}}" required{% if not approved %} disabled{% endif %}>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox"{% if not approved %} disabled{% endif %}> {% trans %}Publicly announce release date and time{% endtrans %}
+					</label>
+				</div>
+				<button type="submit" class="btn btn-primary btn-large"{% if not approved %} disabled{% endif %}>{% trans %}Schedule release{% endtrans %}</button>
+			</form>
+		</div>
+	</div>
+	<p></p>
+{% endif %}

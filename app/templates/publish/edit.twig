@@ -2,11 +2,11 @@
 
 {% block content %}
 	<div class="page-header">
+		<div class="breakout"><a href="{{base}}/publish"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
 			<h1><a href="#basic">{{addontitle}}</a>
 				<small>
 					<a href="#basic"><span class="label label-default">{% trans %}Addon{% endtrans %}</span></a>
-					{% if not approved %}<a href="#approval"><span class="label label-warning">{% trans %}Not approved yet{% endtrans %}</span></a>{% endif %}
 					<span class="glyphicon glyphicon-pencil"></span>
 				</small>
 			</h1>
@@ -19,8 +19,7 @@
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="active"><a href="#basic" data-toggle="tab">{% trans "Addon" %}</a></li>
 			<li><a href="#presentation" data-toggle="tab">{% trans "Presentation" %}</a></li>
-			<li><a href="#approval" data-toggle="tab">{% trans "Approval" %}</a></li>
-			<li><a href="#releases" data-toggle="tab">{% trans "Releases" %}</a></li>
+			<li><a href="#releases" data-toggle="tab">{% trans "Releases" %} <span id="releases-count" class="badge">{% if releases %}{{releases|length}}{% endif %}</span></a></li>
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="basic">
@@ -29,10 +28,6 @@
 
 			<div class="tab-pane" id="presentation">
 				{% include "publish/edit/presentation.twig" %}
-			</div>
-
-			<div class="tab-pane" id="approval">
-				{% include "publish/edit/approve.twig" %}
 			</div>
 
 			<div class="tab-pane" id="releases">

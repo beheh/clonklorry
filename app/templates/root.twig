@@ -40,9 +40,9 @@
 		<script src="{{resources}}/jquery/jquery-2.1.1.min.js"></script>
 		<script src="{{resources}}/bootstrap/js/bootstrap.min.js"></script>
 		{% if user_login %}
-			<script>var translation = {unsavedChanges: "{% trans %}You have unsaved changes.{% endtrans %}", preparingUpload: "{% trans %}Preparing upload{% endtrans %}", sureRemoveOauth: "{% trans %}Are you sure you want to remove this login service from your account?{% endtrans %}", stillUploading: "{% trans %}You are still uploading files.{% endtrans %}"}</script>
-			<script src="{{resources}}/jquery/jquery.are-you-sure.js"></script>
+			<script>var translation = {unsavedChanges: "{% trans %}You have unsaved changes.{% endtrans %}", preparingUpload: "{% trans %}Preparing upload{% endtrans %}", stillUploading: "{% trans %}You are still uploading files.{% endtrans %}"}</script>
 			<script src="{{resources}}/typeahead.js/typeahead.bundle.min.js"></script>
+			<script src="{{resources}}/jquery/jquery.are-you-sure.js"></script>
 		{% endif %}
 		<script src="{{resources}}/lorry/js/lorry.js"></script>
 		{% for script in scripts %}

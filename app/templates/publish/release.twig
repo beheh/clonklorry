@@ -4,6 +4,7 @@
 
 {% block content %}
 	<div class="page-header">
+		<div class="breakout"><a href="{{base}}/publish/{{addonid}}#releases"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
 			<h1>
 				<a href="{{base}}/publish/{{addonid}}#releases">
@@ -31,30 +32,34 @@
 		<div class="alert alert-danger">{% trans %}Javascript needs to be enabled in order to edit addons and releases.{% endtrans %}</div>
 		</noscript>
 		<ul class="nav nav-tabs" id="editAddonTabs">
-			<li class="active"><a href="#basic" data-toggle="tab">{% trans "Release" %}</a></li>
-			<li><a href="#files" data-toggle="tab">{% trans "Files" %} <span id="resumable-files-count" class="badge"></span></a></li>
-			<li><a href="#dependencies" data-toggle="tab">{% trans "Dependencies" %}</a></li>
-			<li><a href="#changes" data-toggle="tab">{% trans "Changes" %}</a></li>
-			<li><a href="#publish" data-toggle="tab">{% trans "Publish" %}</a></li>
+			<li class="{% if shipping %}disabled{% else %}active{% endif %}"><a href="#basic" data-toggle="tab">{% trans "Release" %}</a></li>
+			<li{% if shipping %} class="disabled"{% endif %}><a href="#files" data-toggle="tab">{% trans "Files" %} <span id="resumable-files-count" class="badge"></span></a></li>
+			<li{% if shipping %} class="disabled"{% endif %}><a href="#dependencies" data-toggle="tab"{% if shipping %} disabled{% endif %}>{% trans "Dependencies" %}</a></li>
+			<li{% if shipping %} class="disabled"{% endif %}><a href="#changes" data-toggle="tab"{% if shipping %} disabled{% endif %}>{% trans "Changes" %}</a></li>
+			<li{% if shipping %} class="active"{% endif %}><a href="#publish" data-toggle="tab">{% trans "Publish" %}</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="basic">
-				{% include "publish/edit/release/basic.twig" %}
+			<div class="tab-pane{% if not shipping %} active{% endif %}" id="basic">
+				{% include "publish/release/basic.twig" %}
 			</div>
 			<div class="tab-pane" id="files">
-				{% include "publish/edit/release/files.twig" %}
+				{% include "publish/release/files.twig" %}
 			</div>
 
 			<div class="tab-pane" id="dependencies">
-				{% include "publish/edit/release/dependencies.twig" %}
+				{% include "publish/release/dependencies.twig" %}
 			</div>
 
 			<div class="tab-pane" id="changes">
-				{% include "publish/edit/release/changes.twig" %}
+				{% include "publish/release/changes.twig" %}
 			</div>
 
-			<div class="tab-pane" id="publish">
-				{% include "publish/edit/release/publish.twig" %}
+			<div class="tab-pane{% if shipping %} active{% endif %}" id="publish">
+				{% if shipping %}
+					{% include "publish/release/shipping.twig" %}
+				{% else %}
+					{% include "publish/release/publish.twig" %}
+				{% endif %}
 			</div>
 		</div>
 	</div>
