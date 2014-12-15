@@ -36,6 +36,17 @@ window.addEventListener("popstate", function (e) {
 	}
 });
 
+$('.lorry-js-warn').each(function () {
+	$(this).click(function (e) {
+		var message = $(this).data('warning');
+		message = message.replace(/\\n/g, '\n');
+		if (!confirm(message)) {
+			e.preventDefault();
+			$(this).blur();
+		}
+	});
+});
+
 // capitalize first character in string
 // based on https://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript
 function ucfirst(string) {
