@@ -216,13 +216,13 @@ abstract class Model {
 			return $instances;
 		} else {
 			if(empty($pairs)) {
-				return false;
+				return null;
 			}
 
 			$row = $this->persistence->load($this, $pairs, $this->order_row, $this->order_descending, $this->limit_from, $this->limit);
 
 			if(empty($row)) {
-				return false;
+				return null;
 			}
 
 			$this->unserialize($row);
