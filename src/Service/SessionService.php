@@ -169,7 +169,7 @@ class SessionService {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $state
@@ -178,7 +178,7 @@ class SessionService {
 		$this->ensureSession();
 		$_SESSION['authorization_state'] = $state;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $state
@@ -196,7 +196,7 @@ class SessionService {
 		$this->clearAuthorizationState();
 		return false;
 	}
-	
+
 	public final function clearAuthorizationState() {
 		$this->ensureSession();
 		unset($_SESSION['authorization_state']);
@@ -302,6 +302,27 @@ class SessionService {
 			$gateway .= '?'.implode('&', $params);
 		}
 		return $gateway;
+	}
+
+	public final function authorizeResetPassword() {
+		$_SESSION['password_reset_token'] = time();
+	}
+
+	public final function canResetPassword() {
+		if(isset($_SESSION['password_reset_token'])) {
+			// password reset is only valid for 5 minutes
+			if($_SESSION['password_reset_token'] > time() - 5 * 60) {
+				return true;
+			} else {
+				$this->clearPasswordReset();
+			}
+		}
+		return false;
+	}
+
+	public final function clearResetPassword() {
+		$_SESSION['password_reset_token'] = 0;
+		unset($_SESSION['password_reset_token']);
 	}
 
 }

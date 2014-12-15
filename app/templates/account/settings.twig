@@ -92,7 +92,7 @@
 								<input type="checkbox" id="remove-confirm" name="confirm" required> {%trans "I have read and understood the warning." %}
 							</label>
 						</div>
-						{% if password_exists%}
+						{% if password_exists %}
 						<div class="form-group">
 							<label for="password">{% trans "Password" %}</label>
 							<input type="password" class="form-control remove-form-element" name="password" required>
@@ -112,7 +112,7 @@
 				<form role=form" method="post" id="form-password">
 					<input type="hidden" name="password-form">
 					<input type="hidden" name="state" value="{{state}}">
-					{% if password_exists and not identified %}
+					{% if password_exists and not can_reset_password %}
 						<div class="form-group">
 							<label for="password-old">{% trans "Old password" %}</label>
 							<input type="password" class="form-control" name="password-old" id="password-old" required{% if focus_password %} autofocus{% endif %}>

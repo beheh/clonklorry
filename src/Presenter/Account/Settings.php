@@ -15,7 +15,7 @@ class Settings extends Presenter {
 		}
 
 		$user = $this->session->getUser();
-
+		
 		if(isset($_GET['update-oauth'])) {
 			switch(filter_input(INPUT_GET, 'update-oauth')) {
 				case 'success':
@@ -66,6 +66,8 @@ class Settings extends Presenter {
 		if((isset($_GET['add-password']) && !$user->hasPassword()) || ($identified && isset($_GET['change-password']))) {
 			$this->context['focus_password_new'] = true;
 		}
+		
+		$this->context['can_reset_password'] = $this->session->canResetPassword();
 
 		$oauth = array('openid', 'google', 'facebook');
 		$this->context['oauth'] = array();
@@ -186,10 +188,12 @@ class Settings extends Presenter {
 			$password_old = filter_input(INPUT_POST, 'password-old');
 			$password_new = filter_input(INPUT_POST, 'password-new');
 			$password_confirm = filter_input(INPUT_POST, 'password-confirm');
-			if(!$has_password || $user->matchPassword($password_old) || $identified) {
+			$can_reset = $this->session->canResetPassword();
+			if(!$has_password || $user->matchPassword($password_old) || $can_reset) {
 				if($password_new === $password_confirm) {
 					try {
 						$user->setPassword($password_new);
+						$this->session->clearResetPassword();
 						$user->save();
 						$this->session->identify();
 						if($has_password) {
