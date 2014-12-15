@@ -48,6 +48,7 @@ class Approve extends Presenter {
 			$this->context['namespace'] = $addon->getShort();
 		} else {
 			$this->context['namespace'] = $addon->getProposedShort();
+			$this->context['duplicate'] = (ModelFactory::build('Addon')->byShort($addon->getProposedShort()) !== null);
 		}
 		$this->context['rejected'] = $addon->isRejected();
 
@@ -58,7 +59,7 @@ class Approve extends Presenter {
 			$this->context['comment'] = $addon->getApprovalComment();
 		}
 		$this->context['comment_help'] = sprintf(gettext('Please comment in %s, the users language.'), $this->localisation->namedLanguage($owner->getLanguage()));
-		
+
 		$this->display('manage/approve.twig');
 	}
 
@@ -82,8 +83,7 @@ class Approve extends Presenter {
 			if(isset($_POST['reject'])) {
 				if(empty($comment)) {
 					$errors[] = gettext('Comment can\'t be empty when rejecting the addon.');
-				}
-				else {
+				} else {
 					$addon->reject($comment);
 				}
 			} else if(isset($_POST['approve'])) {
@@ -92,7 +92,11 @@ class Approve extends Presenter {
 		} catch(ModelValueInvalidException $ex) {
 			$errors[] = sprintf(gettext('Comment is %s.'), $ex->getMessage());
 		}
-		
+
+		if((isset($_POST['approve']) && ModelFactory::build('Addon')->byShort($addon->getProposedShort()) !== null)) {
+			$errors[] = gettext('The requested namespace has already been reserved for another addon.');
+		}
+
 		if(empty($errors)) {
 			if($addon->modified()) {
 				$addon->save();
