@@ -63,8 +63,8 @@
 							{% if comment_help %}<p class="help-block">{{comment_help}}</p>{% endif %}
 						</div>
 						<p>
-							<button type="submit" class="btn btn-lg btn-success" name="approve"{% if duplicate%} disabled{% endif %}>{% trans %}Approve{% endtrans %}</button>
-							<button type="submit" class="btn btn-lg btn-danger" name="reject">{% trans %}Reject{% endtrans %}</button>
+							<button type="submit" class="btn btn-lg btn-success{% if not duplicate %} lorry-js-warn{% endif %}" data-warning="{% trans %}Are you sure you want to approve this addon?{% endtrans %}" name="approve"{% if duplicate %} disabled{% endif %}>{% trans %}Approve{% endtrans %}</button>
+							<button type="submit" class="btn btn-lg btn-danger lorry-js-warn" data-warning="{% trans %}Are you sure you want to reject this addon?{% endtrans %}" name="reject">{% trans %}Reject{% endtrans %}</button>
 						</p>
 					</form>
 				</div>

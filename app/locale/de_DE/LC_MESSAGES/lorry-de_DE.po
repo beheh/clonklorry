@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-12-15 16:46+0100\n"
-"PO-Revision-Date: 2014-12-15 16:46+0100\n"
+"POT-Creation-Date: 2014-12-15 16:52+0100\n"
+"PO-Revision-Date: 2014-12-15 16:53+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -734,18 +734,18 @@ msgstr "Warteschlangen"
 #: /home/benedict/public_html/lorry/app/cache/twig/59/28/3e4b1a06756bf002a7ca623c895044bb4fa34e4a66ee112051550ee252e2.php:45
 #: /home/benedict/public_html/lorry/app/cache/twig/59/28/3e4b1a06756bf002a7ca623c895044bb4fa34e4a66ee112051550ee252e2.php:62
 #: /home/benedict/public_html/lorry/app/cache/twig/b0/87/24a370638bc95f71a6ad351b460d46d63a845265dad3a8b083ffa0dc7a89.php:34
-#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:225
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:233
 msgid "Addon"
 msgstr "Erweiterung"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:79
-#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:245
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:253
 msgid "Requested namespace"
 msgstr "Gewünschte Kennung"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/36/bb/a5379b8551cdbb49e6de9c6d79bd79dd0a15870e52a51423a10a0c6715cb.php:81
 #: /home/benedict/public_html/lorry/app/cache/twig/64/72/416fcfcba9a1e7b3891d2af93ae026982328821e5e19274ce61b20997e99.php:77
-#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:237
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:245
 msgid "User"
 msgstr "Benutzer"
 
@@ -1554,18 +1554,26 @@ msgid "Comment"
 msgstr "Kommentar"
 
 #: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:212
+msgid "Are you sure you want to approve this addon?"
+msgstr "Möchtest du diese Erweiterung wirklich bestätigen?"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:218
 msgid "Approve"
 msgstr "Bestätigen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:216
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:222
+msgid "Are you sure you want to reject this addon?"
+msgstr "Möchtest du diese Erweiterung wirklich ablehnen?"
+
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:224
 msgid "Reject"
 msgstr "Ablehnen"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:256
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:264
 msgid "Example url"
 msgstr "Beispiel-URL"
 
-#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:268
+#: /home/benedict/public_html/lorry/app/cache/twig/b3/27/848be775757b19d23c060e367e5bbf814c5a11429d0b6955d33c3ce2c9d8.php:276
 msgid "Timestamp"
 msgstr "Zeitstempel"
 
