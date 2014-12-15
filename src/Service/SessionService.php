@@ -161,7 +161,7 @@ class SessionService {
 	 */
 	public final function verifyState($state) {
 		$this->ensureSession();
-		if(!isset($_SESSION['state'])) {
+		if(!isset($_SESSION['state']) || !is_string($state)) {
 			return false;
 		}
 		if(hash_equals($state, $_SESSION['state'])) {
