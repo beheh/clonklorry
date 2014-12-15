@@ -27,7 +27,7 @@ class Create extends Presenter {
 		}
 
 		$objects = array(gettext('Stippel'), gettext('Monster'), gettext('Wipf'), gettext('Stage'), gettext('Bridge'), gettext('Western'), 'Fantasy', 'Mars', gettext('Knight'), gettext('Magic'), gettext('Pressurewave'));
-		$phrases = array(gettext('%s Reloaded'), gettext('Metal & %s'), gettext('%sfight'), gettext('%s pack'), gettext('%sparty'), gettext('Left 2 %s'), gettext('%sclonk'), gettext('%s clonks'), gettext('%s race'), gettext('%s arena'));
+		$phrases = array(gettext('%s Reloaded'), gettext('Metal & %s'), gettext('%sfight'), gettext('%s pack'), gettext('%sparty'), gettext('Left 2 %s'), gettext('%sclonk'), gettext('%s clonks'), gettext('%s race'));
 		$modifiers = array(gettext('%s Extreme'), gettext('Codename: %s'));
 		$example = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
 		if(!rand(0, 5)) {

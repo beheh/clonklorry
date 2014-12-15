@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2014-12-15 16:42+0100\n"
-"PO-Revision-Date: 2014-12-15 16:42+0100\n"
+"POT-Creation-Date: 2014-12-15 16:46+0100\n"
+"PO-Revision-Date: 2014-12-15 16:46+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2613,11 +2613,6 @@ msgstr "%sclonks"
 msgid "%s race"
 msgstr "%srennen"
 
-#: /home/benedict/public_html/lorry/src/Presenter/Publish/Create.php:30
-#, php-format
-msgid "%s arena"
-msgstr "%sarena"
-
 #: /home/benedict/public_html/lorry/src/Presenter/Publish/Create.php:31
 #, php-format
 msgid "%s Extreme"
@@ -2878,6 +2873,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/public_html/lorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto um Dateien hinzuzufügen"
+
+#~ msgid "%s arena"
+#~ msgstr "%sarena"
 
 #~ msgid ""
 #~ "If you would like to get your newest creation to the community as soon as "
