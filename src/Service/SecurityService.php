@@ -30,7 +30,7 @@ class SecurityService {
 
 	public function requireLogin() {
 		if(!$this->session->authenticated()) {
-			throw new ForbiddenException;
+			throw new ForbiddenException('requires login');
 		}
 	}
 
@@ -41,7 +41,7 @@ class SecurityService {
 	public function requireIdentification() {
 		$this->requireLogin();
 		if(!$this->session->identified()) {
-			throw new ForbiddenException;
+			throw new ForbiddenException('requires identification');
 		}
 	}
 
@@ -52,7 +52,7 @@ class SecurityService {
 	public function requireModerator() {
 		$user = $this->session->getUser();
 		if(!$user || !$user->isModerator()) {
-			throw new ForbiddenException;
+			throw new ForbiddenException('requires moderator');
 		}
 	}
 
@@ -63,7 +63,7 @@ class SecurityService {
 	public function requireAdministrator() {
 		$user = $this->session->getUser();
 		if(!$user || !$user->isAdministrator()) {
-			throw new ForbiddenException;
+			throw new ForbiddenException('requires administrator');
 		}
 	}
 
@@ -78,7 +78,7 @@ class SecurityService {
 			$state = filter_input(INPUT_POST, 'state');
 		}
 		if(!$this->session->verifyState($state)) {
-			throw new ForbiddenException;
+			throw new ForbiddenException('no valid state');
 		}
 	}
 
