@@ -59,8 +59,11 @@ class Addon extends Model {
 		return $this->setValue('short', $short);
 	}
 
-	public function byShort($short, $game) {
-		$constraints = array('short' => $short, 'game' => $game);
+	public function byShort($short, $game = null) {
+		$constraints = array('short' => $short);
+		if($game !== null) {
+			$constraints['game'] = $game;
+		}
 		return $this->byValues($constraints);
 	}
 
