@@ -26,9 +26,14 @@ class Create extends Presenter {
 			$this->context['game'] = filter_input(INPUT_GET, 'for');
 		}
 
-		$objects = array('Stippel', 'Feuermonster', 'Monster', 'Wipf', 'Etagen', 'Brückensegmente', 'Western', 'Fantasy', 'Mars', 'Ritter', 'Magie');
-		$phrases = array('%s Reloaded', '%s Extreme', 'Codename: %s', 'Metall & %s', '%skampf', '%spack', '%sparty', 'Left 2 %s', '%sclonk', '%srennen', '%sarena');
-		$this->context['exampletitle'] = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
+		$objects = array(gettext('Stippel'), gettext('Monster'), gettext('Wipf'), gettext('Stage'), gettext('Bridge'), gettext('Western'), 'Fantasy', 'Mars', gettext('Knight'), gettext('Magic'), gettext('Pressurewave'));
+		$phrases = array(gettext('%s Reloaded'), gettext('Metal & %s'), gettext('%sfight'), gettext('%s pack'), gettext('%sparty'), gettext('Left 2 %s'), gettext('%sclonk'), gettext('%s clonks'), gettext('%s race'), gettext('%s arena'));
+		$modifiers = array(gettext('%s Extreme'), gettext('Codename: %s'));
+		$example = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
+		if(!rand(0, 5)) {
+			$example = sprintf($modifiers[array_rand($modifiers)], $example);
+		}
+		$this->context['exampletitle'] = $example;
 
 		$this->display('publish/create.twig');
 	}
