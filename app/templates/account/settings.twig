@@ -85,15 +85,19 @@
 						<input type="hidden" name="remove-account-form">
 						<input type="hidden" name="state" value="{{state}}">
 						<div class="alert alert-danger">
-							<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your uploaded addons.{% endtrans %}
+							<strong>{% trans %}Removing your account is final.{% endtrans %}</strong> {% trans %}You will permanently loose control of all your addons and releases.{% endtrans %}
 						</div>
-						<label class="checkbox">
-							<input type="checkbox" id="remove-confirm" name="confirm" required> {%trans "I have read and understood the warning." %}
-						</label>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" id="remove-confirm" name="confirm" required> {%trans "I have read and understood the warning." %}
+							</label>
+						</div>
+						{% if password_exists%}
 						<div class="form-group">
 							<label for="password">{% trans "Password" %}</label>
 							<input type="password" class="form-control remove-form-element" name="password" required>
 						</div>
+						{% endif %}
 						<div class="form-group">
 							<button type="submit" class="btn btn-danger remove-form-element">{% trans "Permanently remove account"%}</button>
 						</div>
@@ -165,8 +169,4 @@
 
 	$('#remote-logout-prompt').show();
 	$('#remote-logout-confirm').removeClass('in');
-
-	$('.remove-oauth-confirm').click(function() {
-		return confirm(translation.sureRemoveOauth);
-	});
 {% endblock %}

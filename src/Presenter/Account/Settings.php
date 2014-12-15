@@ -170,8 +170,8 @@ class Settings extends Presenter {
 
 			$confirm = filter_input(INPUT_POST, 'confirm', FILTER_VALIDATE_BOOLEAN) || false;
 			if($confirm) {
-				if($user->matchPassword($password)) {
-
+				if(!$user->hasPassword() || $user->matchPassword($password)) {
+					$this->warning('remove-account', 'Not yet implemented.');
 				} else {
 					$this->error('remove-account', gettext('Password wrong.'));
 				}
