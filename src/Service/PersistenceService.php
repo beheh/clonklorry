@@ -44,16 +44,14 @@ class PersistenceService {
 	 * 
 	 * @param \Lorry\Model $model
 	 * @param array $pairs
-	 * @param string $orderby
 	 * @param bool $descending
 	 * @param int $from
 	 * @param int $limit
 	 * @return array
 	 * @throws InvalidArgumentException
 	 */
-	public function loadAll(Model $model, $pairs, $orderby, $descending, $from, $limit) {
+	public function loadAll(Model $model, $pairs, $order, $from, $limit) {
 		$this->ensureConnected();
-		$model->ensureRow($orderby);
 
 		$parameters = '';
 		$values = array();
@@ -99,19 +97,28 @@ class PersistenceService {
 			}
 		}
 
-		$order = $descending ? 'DESC' : 'ASC';
-
 		$limitquery = '';
 		if($limit !== null) {
 			$limitquery = ($from === null) ? ' LIMIT '.intval($limit) : ' LIMIT '.intval($from).', '.intval($limit);
 		}
 
-		$query = 'SELECT * FROM `'.$model->getTable().'`'.$parameters.' ORDER BY `'.$orderby.'` '.$order.$limitquery;
+		$orderquery = ' ORDER BY ';
+		$i = 0;
+		foreach($order as $row => $descending) {
+			if($i > 0) {
+				$orderquery .= ', ';
+			}
+			$orderquery .= '`'.$row.'` ';
+			$orderquery .= $descending ? 'DESC' : 'ASC';
+			$i++;
+		}
+
+		$query = 'SELECT * FROM `'.$model->getTable().'`'.$parameters.$orderquery.$limitquery;
 		$statement = $this->connection->prepare($query);
 		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
-			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
+			throw new Exception($errorinfo[1].': '.$errorinfo[2].' (sql error '.$errorinfo[0].' for query "'.$query.'")');
 		}
 		$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -122,15 +129,14 @@ class PersistenceService {
 	 * 
 	 * @param \Lorry\Model $model
 	 * @param array $pairs
-	 * @param string $orderby
-	 * @param bool $descending
+	 * @param array $order
 	 * @param int $from
 	 * @param int $limit
 	 * @return \Lorry\Model
 	 * @throws Exception
 	 */
-	public function load(Model $model, $pairs, $orderby, $descending, $from, $limit) {
-		$rows = $this->loadAll($model, $pairs, $orderby, $descending, $from, $limit);
+	public function load(Model $model, $pairs, $order, $from, $limit) {
+		$rows = $this->loadAll($model, $pairs, $order, $from, $limit);
 		if(count($rows) > 1 && $limit === null && $from === null) {
 			throw new Exception('result ambiguity: expected unique identifier');
 		} else if(count($rows) == 1) {

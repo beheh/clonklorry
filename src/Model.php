@@ -127,8 +127,7 @@ abstract class Model {
 		return $this;
 	}
 
-	private $order_row = 'id';
-	private $order_descending = false;
+	private $order = array();
 
 	/**
 	 * 
@@ -137,8 +136,8 @@ abstract class Model {
 	 * @return \Lorry\Model
 	 */
 	public final function order($row, $descending = false) {
-		$this->order_row = $row;
-		$this->order_descending = $descending;
+		$this->ensureRow($row);
+		$this->order[$row] = $descending;
 		return $this;
 	}
 
@@ -199,8 +198,13 @@ abstract class Model {
 			}
 		}
 
+		$order = $this->order;
+		if(empty($order)) {
+			$order = array('id' => false);
+		}
+
 		if($this->multiple) {
-			$rows = $this->persistence->loadAll($this, $pairs, $this->order_row, $this->order_descending, $this->limit_from, $this->limit);
+			$rows = $this->persistence->loadAll($this, $pairs, $order, $this->limit_from, $this->limit);
 
 			if(empty($rows)) {
 				return array();
@@ -219,7 +223,7 @@ abstract class Model {
 				return null;
 			}
 
-			$row = $this->persistence->load($this, $pairs, $this->order_row, $this->order_descending, $this->limit_from, $this->limit);
+			$row = $this->persistence->load($this, $pairs, $order, $this->limit_from, $this->limit);
 
 			if(empty($row)) {
 				return null;
