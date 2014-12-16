@@ -1,4 +1,4 @@
-	{% if approval_comment %}
+{% if approval_comment %}
 	{% set approval_comment %}
 		<p><strong>{% trans %}Comment:{% endtrans %}</strong> {% if approval_comment %}{{approval_comment}}{% else %}<em>{% trans %}No comment.{% endtrans %}</em>{% endif %}</p>
 	{% endset %}
@@ -113,10 +113,10 @@
 			{% endif %}
 		</div>
 	</div>
+	<p class="help-block"><span class="glyphicon glyphicon-lock"></span> <strong>{% trans %}These settings cannot be changed after approval.{% endtrans %}</strong></p>
 	<div class="form-group">
 		<button type="submit" name="save" class="btn btn-primary"{% if submitted or approved %} disabled{% endif %}>{% trans "Save" %}</button>
 		<button type="submit" name="submit" class="btn btn-default lorry-js-warn" data-warning="{% trans %}The details on this page cannot be changed anymore once the addon has been submitted and approved.{% endtrans %}\n\n{% trans %}All other settings can still be changed.{% endtrans %}\n\n{% trans%}Are you sure you want to submit this addon?{% endtrans %}" {% if submitted or approved %} disabled{% endif %}>{% trans "Submit for approval" %}</button>
-		<span class="btn" disabled><span class="glyphicon glyphicon-lock"></span> <strong>{% trans %}These settings cannot be changed after approval.{% endtrans %}</strong></span>
 		<!--<a href="#" class="btn btn-link">{% trans %}Would you like to remove this addon?{% endtrans %}</a>!-->
 	</div>
 </form>
