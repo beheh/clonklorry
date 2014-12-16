@@ -199,8 +199,8 @@ abstract class Model {
 		}
 
 		$order = $this->order;
-		if(empty($order)) {
-			$order = array('id' => false);
+		if(!isset($order['id'])) {
+			$order['id'] = false;
 		}
 
 		if($this->multiple) {
