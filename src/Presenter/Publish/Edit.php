@@ -263,7 +263,7 @@ class Edit extends Presenter {
 		/* Releases */
 
 		if(isset($_POST['releases-form'])) {
-			$version = ltrim(trim(filter_input(INPUT_POST, 'version')), 'v');
+			$version = trim(filter_input(INPUT_POST, 'version'));
 
 			$release = ModelFactory::build('Release');
 			$release->setAddon($addon->getId());
