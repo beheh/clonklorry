@@ -21,7 +21,7 @@ class Error extends Presenter {
 	}
 
 	protected function getLocalizedDescription() {
-		return gettext('The server encountered an internal error.');
+		return gettext('The server encountered an internal error processing the request.');
 	}
 
 	public function get(Exception $exception = null) {
