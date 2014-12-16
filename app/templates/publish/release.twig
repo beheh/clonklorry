@@ -125,5 +125,13 @@
 	//	$('#add-dependency-version').append($('<option disabled>{% trans %}Select a version&hellip;{% endtrans %}</option>'));
 	//});
 	}
-
+	
+	$('#publish-quick-confirm').prop('checked', false);
+	$('#publish-quick-confirm').change(function() {
+		if($(this).prop('checked')) {
+			$('#publish-quick-submit').removeAttr('disabled');
+		} else {
+			$('#publish-quick-submit').attr('disabled', true);
+		}
+	});
 {% endblock %}

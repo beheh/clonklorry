@@ -36,17 +36,21 @@
 				<p class="alert alert-warning">{% trans %}The release will not be published if the addon is rejected.{% endtrans %}</p>
 			{% endif %}
 			<form role="form" method="post" action="{{filename}}#publish">
+				<input type="hidden" name="publish-quick-form">
+				<input type="hidden" name="state" value="{{state}}">
 				<div class="checkbox">
 					<label>
-						<input type="checkbox" id="release-confirm"> {% trans %}Confirm instant release{% endtrans %}
+						<input type="checkbox" id="publish-quick-confirm" name="confirm"> {% trans %}Confirm instant release{% endtrans %}
 					</label>
 				</div>
-				<button type="submit" id="release-button" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
+				<button type="submit" id="publish-quick-submit" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
 			</form>
 		</div>
 		<div class="col-md-6">
 			<h3>{% trans %}Schedule release{% endtrans %}</h3>
 			<form role="form" method="post" action="{{filename}}#publish">
+				<input type="hidden" name="publish-scheduled-form">
+				<input type="hidden" name="state" value="{{state}}">
 				<p>{% trans %}The release will be available to players after the specified timestamp.{% endtrans %}</p>
 				{% if approved %}
 					<p class="alert alert-info">{% trans %}A scheduled release can be cancelled at any time before the automated release.{% endtrans %}</p>
