@@ -101,7 +101,19 @@ class Edit extends Presenter {
 			$this->context['focus_version'] = true;
 		}
 
-		$releases = ModelFactory::build('Release')->all()->order('version')->byAddon($addon->getId());
+		// fetch all releasees for this addon and roughly sort them
+		$releases_raw = ModelFactory::build('Release')->all()->order('timestamp')->order('version')->byAddon($addon->getId());
+		// move unpublished releases to end of list
+		$releases = array();
+		$unreleased = array();
+		foreach($releases_raw as $release) {
+			if($release->isReleased()) {
+				$releases[] = $release;
+			} else {
+				$unreleased[] = $release;
+			}
+		}
+		$releases = array_merge($releases, $unreleased);
 		$latest = ModelFactory::build('Release')->latest($addon->getId());
 		$this->context['releases'] = array();
 		foreach($releases as $release) {
