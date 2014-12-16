@@ -1,0 +1,28 @@
+<form role=form" method="post" action="{{filename}}#tags" name="test">
+	<input type="hidden" name="state" value="{{state}}">
+	<div class="form-group">
+		<label for="type">{% trans "Supported player counts" %}</label>
+		<div class="checkbox">
+			<label><input type="checkbox"> Single player (a single player can/has to do something)</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox"> Cooperative (all players have too solve a riddle or kill a boss)</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox"> Free for all (only one player can win)</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox"> Multiple teams (teams win)</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="type">{% trans "Goal" %}</label>
+		<select name="type" class="form-control" id="type">
+			<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
+			<option value="adventure">Adventure</option>
+			<option value="melee">Melee</option>
+			<option value="settlement">Settlement</option>
+			<option value="various">Various</option>
+		</select>
+	</div>
+</form>

@@ -1,4 +1,4 @@
-<form role=form" method="post" action="{{filename}}#presentation" name="test">
+<form role=form" method="post" action="{{filename}}#presentation">
 	<input type="hidden" name="presentation-form">
 	<input type="hidden" name="state" value="{{state}}">
 	{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
@@ -25,46 +25,21 @@
 		<div class="col-md-4">
 			<div class="form-group">
 				<label for="website-url">{%trans "Website" %}</label>
-				<input type="text" class="form-control" name="website-url" id="website-url" value="{{website}}" placeholder="http://clonkforge.net/pr.php?pr=">
+				<input type="url" class="form-control" name="website-url" id="website-url" value="{{website}}" placeholder="http://clonkforge.net/pr.php?pr=">
 			</div>
 			<div class="form-group">
 				<label for="bugtracker-url">{%trans "Bugtracker" %}</label>
-				<input type="text" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/bugtrack.php?prj=">
+				<input type="url" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/bugtrack.php?prj=">
 			</div>
 			<div class="form-group">
 				<label for="bugtracker-url">{%trans "Forum" %}</label>
-				<input type="text" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/dforum.php?prj=">
+				<input type="url" class="form-control" name="bugtracker-url" id="bugtracker-url" value="{{bugtracker}}" placeholder="http://clonkforge.net/dforum.php?prj=">
 			</div>
-		<!--<input type="hidden" name="state" value="{{state}}">
-			<div class="form-group">
-				<label for="type">{% trans "Supported player counts" %}</label>
-				<div class="checkbox">
-					<label><input type="checkbox"> Single player (a single player can/has to do something)</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox"> Cooperative (all players have too solve a riddle or kill a boss)</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox"> Free for all (only one player can win)</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox"> Multiple teams (teams win)</label>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="type">{% trans "Goal" %}</label>
-				<select name="type" class="form-control" id="type">
-					<option value="" disabled selected>{% trans "Choose&hellip;"%}</option>
-					<option value="adventure">Adventure</option>
-					<option value="melee">Melee</option>
-					<option value="settlement">Settlement</option>
-					<option value="various">Various</option>
-				</select>
-			</div>!-->
 		</div>
 	</div>
+	<p class="help-block">{% trans %}The presentation can be changed anytime and affects all releases.{% endtrans %}</p>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-		<span class="btn" disabled>{% trans %}The presentation can be changed anytime and affects all releases.{% endtrans %}</span>
+		<span class="btn" disabled></span>
 	</div>
 </form>
