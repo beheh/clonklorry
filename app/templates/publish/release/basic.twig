@@ -2,18 +2,36 @@
 	{% include 'functions/alert.twig' with {'selector' : 'version'} %}
 	<input type="hidden" name="basic-form">
 	<input type="hidden" name="state" value="{{state}}">
-	<div class="form-group">
-		<label for="title">{%trans "Addon" %}</label>
-		<p class="form-control-static"><a href="{{base}}/publish/{{addonid}}">{{addontitle}}</a></p>
-	</div>
-	<div class="form-group">
-		<label for="version">{%trans "Version" %}</label>
-		<div class="row">
-			<div class="col-xs-4">
-				<input type="text" class="form-control" name="version" id="version" value="{{new_version}}" required>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+						<label for="title">{% trans %}Addon{% endtrans %}</label>
+						<input type="text" class="form-control" value="{{addontitle}}" disabled>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="version">{% trans %}Version{% endtrans %}</label>
+						<input type="text" class="form-control" name="version" id="version" value="{{new_version}}" required>
+					</div>
+				</div>
 			</div>
+			<div class="form-group">
+				<label for="version">{% trans %}Original release date{% endtrans %}</label>
+				<div class="row">
+					<div class="col-sm-4">
+						<input type="date" class="form-control" name="initial" id="initial" value="{{new_version}}">
+					</div>
+				</div>
+			</div>		
+		</div>
+		<div class="col-md-6">
+
 		</div>
 	</div>
+	<p class="help-block">{% trans %}These settings cannot be changed once the release has been published.{% endtrans %}</p>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
 	</div>
