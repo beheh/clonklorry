@@ -7,12 +7,10 @@
 			<div class="alert alert-warning">{% trans %}Your browser does not support uploading files to Lorry.{% endtrans %}</div>
 			<div class="help-block">{% trans %}Uploading files should be possible with Firefox 4+ and Chrome 11+.{% endtrans %}</div>
 		</div>
-		<div id="release-files-error-loading">
-			<div class="alert alert-danger">{% trans %}Could not load existing files.{% endtrans %}</div>
-		</div>
 	{% else %}
 		<div class="alert alert-danger">{% trans %}File upload is disabled.{% endtrans %}</div>
 	{% endif %}
+	{% include 'functions/alert.twig' with {'selector' : 'files'} %}
 	<div id="resumable">
 		<span id="message-text-reselect" class="hidden">{% trans %}Select file to continue upload{% endtrans %}</span>
 		<span id="message-text-uploaded" class="hidden">{% trans %}Ready to publish{% endtrans %}</span>
@@ -25,8 +23,9 @@
 		<ul class="list-group" id="resumable-files-loading">
 			<li class="list-group-item text-muted">{% trans %}Loading files&hellip;{% endtrans %}</li>
 		</ul>
+		<span id="message-text-loading-failed" class="hidden">{% trans %}Error loading existing files.{% endtrans %}</span>
 		<ul class="list-group" id="resumable-files-none" style="display: none;">
-			<li class="list-group-item text-muted">{% trans %}No files uploaded{% endtrans %}</li>
+			<li class="list-group-item text-muted" id="resumable-files-none-text">{% trans %}No files uploaded{% endtrans %}</li>
 		</ul>
 		<ul class="list-group" id="resumable-files">
 		</ul>

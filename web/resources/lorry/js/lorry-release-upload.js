@@ -2,8 +2,6 @@ var releaseFileBaseUrl = base + '/publish/' + addon + '/' + release;
 var releaseResumable = new Resumable({target: releaseFileBaseUrl + '/upload?type=data', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
 var releaseFilesExisting = [];
 
-$('#release-files-error-loading').hide();
-
 $(document).ready(function() {
 	$.ajax(releaseFileBaseUrl + '/query',
 			{
@@ -20,7 +18,7 @@ $(document).ready(function() {
 					});
 				},
 				error: function() {
-					$('#release-files-error-loading').show();
+					$('#resumable-files-none-text').text($('#message-text-loading-failed').text());
 				},
 				complete: function() {
 					updateReleaseResumableState();

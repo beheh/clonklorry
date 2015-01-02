@@ -7,6 +7,7 @@ use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Exception\ForbiddenException;
 
 class Release extends Presenter {
 
@@ -23,6 +24,7 @@ class Release extends Presenter {
 
 		$addon = Edit::getAddon($id, $this->session->getUser());
 		$release = Release::getRelease($addon->getId(), $version);
+		$game = $addon->fetchGame();
 
 		if($addon->isApproved()) {
 			$this->context['approved'] = true;
@@ -31,10 +33,12 @@ class Release extends Presenter {
 		}
 		$this->context['released'] = $release->isReleased();
 
-		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle().' '.$release->getVersion());
-		$this->context['game'] = $addon->fetchGame()->getShort();
-		$this->context['addontitle'] = $addon->getTitle();
-		$this->context['addonid'] = $addon->getId();
+
+		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle() . ' ' . $release->getVersion());
+		$this->context['game'] = $game->getShort();
+		$this->context['addon'] = array('title' => $addon->getTitle(),
+										'id' => $addon->getId(),
+										'game' => $game->forPresenter());
 		$this->context['version'] = $release->getVersion();
 
 		$latest = ModelFactory::build('Release')->latest($addon->getId());
@@ -51,6 +55,12 @@ class Release extends Presenter {
 		}
 
 		/* Files */
+
+		try {
+			$this->security->requireUploadRights();
+		} catch(ForbiddenException $ex) {
+			$this->error('files', $ex->getMessage() . '.');
+		}
 
 		/* Depedencies */
 
@@ -98,7 +108,7 @@ class Release extends Presenter {
 				if($release->modified()) {
 					if($release->save()) {
 						$this->success('version', gettext('Version saved.'));
-						$this->redirect('/publish/'.$addon->getId().'/'.$new_version.'?version-changed');
+						$this->redirect('/publish/' . $addon->getId() . '/' . $new_version . '?version-changed');
 					} else {
 						$this->error('version', gettext('Error saving the release.'));
 					}
