@@ -8,7 +8,7 @@
 				<div class="col-md-8">
 					<div class="form-group">
 						<label for="title">{% trans %}Addon{% endtrans %}</label>
-						<input type="text" class="form-control" value="{{addontitle}}" disabled>
+						<p class="form-control-static"><a href="#" class="">{{addon.title}}</a> {% include 'functions/tags/game.twig' with {'game' : addon.game}%}</p>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -22,7 +22,7 @@
 				<label for="version">{% trans %}Original release date{% endtrans %}</label>
 				<div class="row">
 					<div class="col-sm-4">
-						<input type="date" class="form-control" name="initial" id="initial" value="{{new_version}}">
+						<input type="date" class="form-control" name="initial" id="initial">
 					</div>
 				</div>
 			</div>		

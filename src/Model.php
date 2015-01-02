@@ -97,7 +97,7 @@ abstract class Model {
 	 * @param mixed $value
 	 */
 	protected final function setValue($name, $value) {
-		$this->ensureRow($name);
+		$this->ensureField($name);
 		$value = $this->ensureType($name, $value);
 		if($this->loaded && $this->getValue($name) === $value) {
 			return;
@@ -111,7 +111,7 @@ abstract class Model {
 	 * @return mixed
 	 */
 	protected final function getValue($name) {
-		$this->ensureRow($name);
+		$this->ensureField($name);
 		if(array_key_exists($name, $this->changes))
 			return $this->changes[$name];
 		$this->ensureLoaded();
@@ -136,7 +136,7 @@ abstract class Model {
 	 * @return \Lorry\Model
 	 */
 	public final function order($row, $descending = false) {
-		$this->ensureRow($row);
+		$this->ensureField($row);
 		$this->order[$row] = $descending;
 		return $this;
 	}
@@ -191,7 +191,7 @@ abstract class Model {
 	protected final function byValues($pairs = array()) {
 		$this->ensureUnloaded();
 		foreach($pairs as $row => $value) {
-			$this->ensureRow($row);
+			$this->ensureField($row);
 			// do not allow abstract objects
 			if(is_object($value)) {
 				throw new Exception('attempting to fetch model using object as value');
@@ -243,7 +243,7 @@ abstract class Model {
 	 */
 	protected final function match($row, $value) {
 		$this->ensureLoaded();
-		$this->ensureRow($row);
+		$this->ensureField($row);
 
 		$comparison = $this->values[$row];
 		if(array_key_exists($row, $this->changes)) {
@@ -264,7 +264,7 @@ abstract class Model {
 	 * @return type
 	 */
 	protected final function ensureType($row, $value) {
-		$this->ensureRow($row);
+		$this->ensureField($row);
 		if($row == 'id' || $value === null) {
 			return $value;
 		}
@@ -288,7 +288,7 @@ abstract class Model {
 	 * @return mixed
 	 */
 	private final function decodeType($row, $value) {
-		$this->ensureRow($row);
+		$this->ensureField($row);
 		if($row == 'id' || $value === NULL) {
 			return $value;
 		}
@@ -307,7 +307,7 @@ abstract class Model {
 	 * @return mixed
 	 */
 	private final function encodeType($row, $value) {
-		$this->ensureRow($row);
+		$this->ensureField($row);
 		if($row == 'id' || $value === NULL) {
 			return $value;
 		}
@@ -322,12 +322,12 @@ abstract class Model {
 
 	/**
 	 * 
-	 * @param string $row
+	 * @param string $field
 	 * @throws InvalidArgumentException
 	 */
-	public final function ensureRow($row) {
-		if(!array_key_exists($row, $this->schema) && $row != 'id') {
-			throw new InvalidArgumentException('row "'.$row.'" does not exist in model "'.get_class($this).'"');
+	public final function ensureField($field) {
+		if(!array_key_exists($field, $this->schema) && $field != 'id') {
+			throw new InvalidArgumentException('field "'.$field.'" does not exist in model "'.get_class($this).'"');
 		}
 	}
 
@@ -438,7 +438,7 @@ abstract class Model {
 	 */
 	protected final function fetch($model, $row) {
 		$this->ensureLoaded();
-		$this->ensureRow($row);
+		$this->ensureField($row);
 		$object = ModelFactory::build($model)->byId($this->getValue($row));
 		return $object;
 	}
@@ -522,6 +522,15 @@ abstract class Model {
 	 */
 	protected final function validateLanguage($language) {
 		$this->validateString($language, 5, 5);
+	}
+
+	protected final function localizeField($field, $language = null) {
+		if($language === null) {
+			$language = gettext('en');
+		}
+		$field .= '_'.$language;
+		$this->ensureField($field);
+		return $field;
 	}
 
 	/**

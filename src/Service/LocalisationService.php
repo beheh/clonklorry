@@ -22,6 +22,15 @@ class LocalisationService {
 		return array('en-US', 'de-DE');
 	}
 
+	public final function getLocalizedCountries() {
+		$countries = array();
+		foreach($this->getAvailableLanguages() as $language) {
+			$exploded = explode('-', $language);
+			$countries[$exploded[0]] = true;
+		}
+		return array_keys($countries);
+	}
+
 	/**
 	 * 
 	 * @param string $language

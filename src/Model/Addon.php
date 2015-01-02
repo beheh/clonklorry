@@ -3,7 +3,6 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
-use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Addon extends Model {
@@ -12,7 +11,8 @@ class Addon extends Model {
 		parent::__construct('addon', array(
 			'owner' => 'string',
 			'short' => 'string',
-			'title' => 'string',
+			'title_en' => 'string',
+			'title_de' => 'string',
 			'abbreviation' => 'string',
 			'game' => 'int',
 			'type' => 'int',
@@ -20,6 +20,7 @@ class Addon extends Model {
 			'description' => 'text',
 			'website' => 'url',
 			'bugtracker' => 'url',
+			'forum' => 'url',
 			'proposed_short' => 'string',
 			'approval_submit' => 'datetime',
 			'approval_comment' => 'text'));
@@ -71,18 +72,40 @@ class Addon extends Model {
 		return $this->getValue('short');
 	}
 
-	public function setTitle($title) {
-		$title = trim($title);
-		$this->validateString($title, 3, 50);
-		return $this->setValue('title', $title);
+	public function setTitle($title, $language = null) {
+		$field = $this->localizeField('title', $language);
+
+		$title = ucfirst(trim($title));
+		if(empty($title)) {
+			$title = null;
+		}
+
+		if(!($language == 'en' && !empty($this->getTitle('de'))) && !($language == 'de' && !empty($this->getTitle('en'))) || $title) {
+			$this->validateString($title, 3, 50);
+		}
+		return $this->setValue($field, $title);
 	}
 
-	public function getTitle() {
-		return $this->getValue('title');
+	public function getTitle($language = null) {
+		if($language == null) {
+			$title_en = $this->getTitle('en');
+			$title_de = $this->getTitle('de');
+			if(!empty($title_en) && empty($title_de)) {
+				return $title_en;
+			}
+			if(empty($title_en) && !empty($title_de)) {
+				return $title_de;
+			}
+		}
+		$title = $this->getValue($this->localizeField('title', $language));
+		if($language == null && empty($title)) {
+			return gettext('Unnamed addon');
+		}
+		return $title;
 	}
 
-	public function byTitle($title, $owner = 0, $game = 0) {
-		$constraints = array('title' => $title);
+	public function byTitle($title, $owner = 0, $game = 0, $language = null) {
+		$constraints = array($this->localizeField('title', $language) => $title);
 		if($owner != 0) {
 			$constraints['owner'] = $owner;
 		}
@@ -93,7 +116,7 @@ class Addon extends Model {
 	}
 
 	public function setAbbreviation($abbreviation) {
-		$abbreviation = trim(strtolower($abbreviation));
+		$abbreviation = trim($abbreviation);
 		if($abbreviation) {
 			$this->validateString($abbreviation, 2, 6);
 		} else {
@@ -190,6 +213,20 @@ class Addon extends Model {
 		return $this->getValue('bugtracker');
 	}
 
+	public function setForum($forum) {
+		if($forum) {
+			$this->validateUrl($forum);
+		} else {
+			$forum = null;
+		}
+		return $this->setValue('forum', $forum);
+	}
+
+	public function getForum() {
+		return $this->getValue('forum');
+	}
+
+
 	public function isApproved() {
 		return $this->getShort() !== null;
 	}
@@ -275,14 +312,15 @@ class Addon extends Model {
 	}
 
 	public function __toString() {
-		return $this->getTitle().'';
+		return $this->getTitle() . '';
 	}
 
 	public function forApi($detailed = false) {
 		$result = array();
 
 		$result['id'] = $this->getShort();
-		$result['title'] = $this->getTitle();
+		$result['title_en'] = $this->getTitle('en');
+		$result['title_de'] = $this->getTitle('de');
 		if($this->getAbbreviation()) {
 			$result['abbreviation'] = $this->getAbbreviation();
 		}

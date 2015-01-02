@@ -46,7 +46,7 @@
 					<form role="form" method="post" action="{{filename}}">
 						<input type="hidden" name="state" value="{{state}}">
 						{% if not alerts.approval %}
-							{% if duplicate %}
+							{% if duplicate.namespace %}
 								<div class="alert alert-danger">{% trans %}The requested namespace has already been reserved for another addon.{% endtrans %}</div>
 							{% else%}
 								{% if release %}
@@ -63,7 +63,7 @@
 							{% if comment_help %}<p class="help-block">{{comment_help}}</p>{% endif %}
 						</div>
 						<p>
-							<button type="submit" class="btn btn-lg btn-success{% if not duplicate %} lorry-js-warn{% endif %}" data-warning="{% trans %}Are you sure you want to approve this addon?{% endtrans %}" name="approve"{% if duplicate %} disabled{% endif %}>{% trans %}Approve{% endtrans %}</button>
+							<button type="submit" class="btn btn-lg btn-success{% if not duplicate.namespace %} lorry-js-warn{% endif %}" data-warning="{% trans %}Are you sure you want to approve this addon?{% endtrans %}" name="approve"{% if duplicate.namespace %} disabled{% endif %}>{% trans %}Approve{% endtrans %}</button>
 							<button type="submit" class="btn btn-lg btn-danger lorry-js-warn" data-warning="{% trans %}Are you sure you want to reject this addon?{% endtrans %}" name="reject">{% trans %}Reject{% endtrans %}</button>
 						</p>
 					</form>
@@ -72,14 +72,18 @@
 					<dl>
 						<dt>{% trans %}Addon{% endtrans %}</dt>
 						<dd>{{addon}}{% if game %} {% include 'functions/tags/game.twig' with {'game' : game} %}{% endif %}</dd>
-						<dt>{% trans %}User{% endtrans %}</dt>
-						<dd>{% include 'functions/user.twig' with {'user': user} %}</dd>
+						<dt>{% trans %}Title (English){% endtrans %}</dt>
+						<dd>{{addon_en}}{% if duplicate.title_en %} {% include 'functions/labels/duplicate.twig' %}{% endif %}</dd>
+						<dt>{% trans %}Title (German){% endtrans %}</dt>
+						<dd>{{addon_de}}{% if duplicate.title_de %} {% include 'functions/labels/duplicate.twig' %}{% endif %}</dd>
 						<dt>{% trans %}Requested namespace{% endtrans %}</dt>
 						<dd>{{namespace}}</dd>
-						{% if not duplicate %}
+						{% if not duplicate.namespace %}
 						<dt>{% trans %}Example url{% endtrans %}</dt>
-						<dd><samp>&hellip;/addons/{{game.short}}/<strong>{{namespace}}</strong></samp></dd>
+						<dd><samp>/addons/{{game.short}}/<strong>{{namespace}}</strong></samp></dd>
 						{% endif %}
+						<dt>{% trans %}User{% endtrans %}</dt>
+						<dd>{% include 'functions/user.twig' with {'user': user} %}</dd>
 						<dt>{% trans %}Timestamp{% endtrans %}</dt>
 						<dd>{{timestamp}}</dd>
 					</dl>

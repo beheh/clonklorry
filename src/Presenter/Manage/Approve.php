@@ -41,15 +41,22 @@ class Approve extends Presenter {
 		$owner = $addon->fetchOwner();
 
 		$this->context['addon'] = $addon->getTitle();
+		$this->context['addon_en'] = $addon->getTitle('en');
+		$this->context['addon_de'] = $addon->getTitle('de');
 		$this->context['user'] = $owner->forPresenter();
 
+		$duplicate = array();
 		if($addon->isApproved()) {
 			$this->context['approved'] = true;
 			$this->context['namespace'] = $addon->getShort();
 		} else {
 			$this->context['namespace'] = $addon->getProposedShort();
-			$this->context['duplicate'] = (ModelFactory::build('Addon')->byShort($addon->getProposedShort()) !== null);
+			$duplicate['namespace'] = (ModelFactory::build('Addon')->byShort($addon->getProposedShort()) !== null);
+			$duplicate['title_en'] = count(ModelFactory::build('Addon')->all()->byTitle($addon->getTitle('en'), 0, 0, 'en')) > 1;
+			$duplicate['title_de'] = count(ModelFactory::build('Addon')->all()->byTitle($addon->getTitle('de'), 0, 0, 'de')) > 1;
 		}
+		$this->context['duplicate'] = $duplicate;
+
 		$this->context['rejected'] = $addon->isRejected();
 
 		$this->context['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());

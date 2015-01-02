@@ -24,7 +24,10 @@ class Edit extends Presenter {
 	}
 
 	public static function getNamespaceProposal(Addon $addon) {
-		$title = $addon->getTitle();
+		$title = $addon->getTitle('en');
+		if(empty($title)) {
+			$title = $addon->getTitle('de');
+		}
 		$maintitle = strstr($title, ':');
 		$cleantitle = $maintitle ? $maintitle : $title;
 		return preg_replace('/[^a-z0-9]/', '', strtolower($cleantitle));
@@ -54,8 +57,13 @@ class Edit extends Presenter {
 
 		$this->context['addonid'] = $addon->getId();
 		$this->context['title'] = sprintf(gettext('Edit %s'), $addon->getTitle());
-		if(!isset($this->context['addontitle'])) {
-			$this->context['addontitle'] = $addon->getTitle();
+		$this->context['heading'] = $addon->getTitle();
+
+		$this->context['title_placeholder'] = $addon->getTitle();
+		foreach($this->localisation->getLocalizedCountries() as $country) {
+			if(!isset($this->context['title_' . $country])) {
+				$this->context['title_' . $country] = $addon->getTitle($country);
+			}
 		}
 
 		$this->context['namespace_proposal'] = self::getNamespaceProposal($addon);
@@ -94,6 +102,11 @@ class Edit extends Presenter {
 		if(!isset($this->context['bugtracker'])) {
 			$this->context['bugtracker'] = $addon->getBugtracker();
 		}
+
+		if(!isset($this->context['forum'])) {
+			$this->context['forum'] = $addon->getForum();
+		}
+
 
 		/* Releases */
 
@@ -149,13 +162,22 @@ class Edit extends Presenter {
 			} else if(!$released && !isset($_POST['withdraw'])) {
 				$errors = array();
 
-				$title = trim(filter_input(INPUT_POST, 'title'));
+				$title_en = trim(filter_input(INPUT_POST, 'title_en'));
 				try {
-					$addon->setTitle($title);
-					$this->context['addontitle'] = $addon->getTitle();
+					$addon->setTitle($title_en, 'en');
+					$this->context['title_en'] = $addon->getTitle('en');
 				} catch(ModelValueInvalidException $ex) {
-					$errors[] = sprintf(gettext('Title is %s.'), $ex->getMessage());
-					$this->context['addontitle'] = $title;
+					$errors[] = sprintf(gettext('English title is %s.'), $ex->getMessage());
+					$this->context['title_en'] = $title_en;
+				}
+
+				$title_de = trim(filter_input(INPUT_POST, 'title_de'));
+				try {
+					$addon->setTitle($title_de, 'de');
+					$this->context['title_de'] = $addon->getTitle('de');
+				} catch(ModelValueInvalidException $ex) {
+					$errors[] = sprintf(gettext('German title is %s.'), $ex->getMessage());
+					$this->context['title_de'] = $title_de;
 				}
 
 				$namespace = trim(strtolower(filter_input(INPUT_POST, 'namespace')));
@@ -166,8 +188,23 @@ class Edit extends Presenter {
 					$this->context['namespace'] = $namespace;
 					$errors[] = sprintf(gettext('Namespace is %s.'), $ex->getMessage());
 				}
+
 				$submitted = false;
 				if(isset($_POST['submit'])) {
+					if($addon->getTitle('en') === null) {
+						try {
+							$addon->setTitle($addon->getTitle(), 'en');
+						} catch(ModelValueInvalidException $ex) {
+							// don't care - submit for approval will complain about missing title
+						}
+					}
+					if($addon->getTitle('de') === null) {
+						try {
+							$addon->setTitle($addon->getTitle(), 'de');
+						} catch(ModelValueInvalidException $ex) {
+							
+						}
+					}
 					if($addon->getProposedShort() === null) {
 						$proposal = self::getNamespaceProposal($addon);
 						try {
@@ -260,6 +297,14 @@ class Edit extends Presenter {
 			} catch(ModelValueInvalidException $ex) {
 				$this->context['bugtracker'] = $bugtracker;
 				$errors[] = sprintf(gettext('Bugtracker is %s.'), $ex->getMessage());
+			}
+
+			$forum = trim(filter_input(INPUT_POST, 'forum-url'));
+			try {
+				$addon->setForum($forum);
+			} catch(ModelValueInvalidException $ex) {
+				$this->context['forum'] = $forum;
+				$errors[] = sprintf(gettext('Forum is %s.'), $ex->getMessage());
 			}
 
 			if(empty($errors)) {

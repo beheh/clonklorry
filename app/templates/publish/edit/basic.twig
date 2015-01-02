@@ -42,14 +42,16 @@
 	<div class="row vertical-align">
 		<div class="col-lg-4">
 			<div class="form-group">
-				<label for="title">{% trans %}Title{% endtrans %}</label>
-				<input type="text" class="form-control" name="title" id="title" value="{{addontitle}}"{% if submitted or approved %} disabled{% endif %}>
+				<label for="title_en">{% trans %}Title (English){% endtrans %}</label>
+				<input type="text" class="form-control" name="title_en" id="title_en" placeholder="{{title_placeholder}}" value="{{title_en}}"{% if submitted or approved %} disabled{% endif %}>
+			</div>
+			<div class="form-group">
+				<label for="title_de">{% trans %}Title (German){% endtrans %}</label>
+				<input type="text" class="form-control" name="title_de" id="title_de" placeholder="{{title_placeholder}}" value="{{title_de}}"{% if submitted or approved %} disabled{% endif %}>
 			</div>
 		</div>
 		<div class="col-lg-8">
-			<div class="form-group">
-				<p>{% trans %}The title will be shown in many various places around the site.{% endtrans %}</p>
-			</div>
+			<p>{% trans %}The title will be shown in many various places around the site.{% endtrans %}</p>
 		</div>
 	</div>
 	<div class="row vertical-align">
@@ -68,7 +70,7 @@
 					<p>{% trans %}The addon will be available under the URL {{url}}.{% endtrans %}</p>
 				{% endif %}
 			{% else %}
-				<p>{% trans %}The namespace will be used as a unique identifier for your addon and its releases. It will appear in various urls. Please choose a short namespace, ideally the filename of the addon.{% endtrans %}</p>	
+				<p>{% trans %}The namespace will be used as a unique identifier for your addon and its releases. It will appear in various urls. Please choose a short namespace, ideally the filename of the addon.{% endtrans %}</p>
 			{% endif %}
 		</div>
 	</div>
@@ -106,10 +108,10 @@
 					<p>{% trans %}Players will be able to search for your addon by using the abbreviation.{% endtrans %}</p>
 				{% else %}
 					{% set Contact_us %}<a href="{{base}}/contact">{% trans %}Contact us{% endtrans %}</a>{% endset %}
-					<p>{% trans %}{{Contact_us}} to add an abbreviation.{% endtrans %}</p>					
+					<p>{% trans %}{{Contact_us}} to add an abbreviation.{% endtrans %}</p>
 				{% endif %}
 			{% else %}
-				<p>{% trans %}Please only enter an abbreviation if it is well known.{% endtrans %}</p>			
+				<p>{% trans %}Please only enter an abbreviation if it is well known.{% endtrans %}</p>
 			{% endif %}
 		</div>
 	</div>

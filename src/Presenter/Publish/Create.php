@@ -78,9 +78,9 @@ class Create extends Presenter {
 			$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
 		}
 
-		$existing = ModelFactory::build('Addon')->byTitle($title, $user->getId(), $game->getId());
-		if($existing) {
-			$errors[] = gettext("You have already created an addon with this title for this game.");
+		$existing = ModelFactory::build('Addon')->all()->byTitle($title, $user->getId(), $game->getId());
+		if(count($existing) > 0) {
+			$errors[] = gettext('You have already created an addon with this title for this game.');
 		}
 
 		if(!empty($errors)) {
