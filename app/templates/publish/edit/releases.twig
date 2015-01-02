@@ -6,7 +6,7 @@
 			<input type="hidden" name="state" value="{{state}}">
 			{% include 'functions/alert.twig' with {'selector' : 'release'} %}
 			<div class="form-group">
-				<label class="sr-only" for="version">{% trans "Version"%}</label>
+				<label class="sr-only" for="version">{% trans "Version" %}</label>
 				<input type="text" class="form-control" name="version" id="version" value="{{version}}" placeholder="1.0b"{% if focus_version %} autofocus{% endif %} required>
 			</div>
 			<button type="submit" class="btn btn-success" name="release-submit">{% trans %}Plan release{% endtrans %}</button>

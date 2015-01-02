@@ -13,6 +13,7 @@ class ActivateJob extends UserEmailJob {
 			// user has since changed his address, no need to execute
 			throw new \Resque_Job_DontPerform;
 		}
+		// @todo activate user account
 	}
 
 	public function getActivationToken() {
