@@ -80,10 +80,12 @@ class LocalisationService {
 			$language = http_negotiate_language($available);
 		} else {
 			$language = $available[0];
-			$accept = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-			foreach($available as $i => $current) {
-				if(strpos($accept, $current) === 0) {
-					$language = $available[$i];
+			if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+				$accept = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+				foreach($available as $i => $current) {
+					if(strpos($accept, $current) === 0) {
+						$language = $available[$i];
+					}
 				}
 			}
 		}
@@ -123,7 +125,7 @@ class LocalisationService {
 		}
 
 		$requested = $this->getDisplayLanguage();
-		header('Content-Language: '.$requested);
+		header('Content-Language: ' . $requested);
 
 		$this->localized = true;
 
@@ -146,11 +148,11 @@ class LocalisationService {
 		}
 
 		$language = str_replace('-', '_', $language);
-		putenv('LC_ALL='.$language);
-		setlocale(LC_ALL, $language.'.UTF-8');
+		putenv('LC_ALL=' . $language);
+		setlocale(LC_ALL, $language . '.UTF-8');
 
-		$textdomain = 'lorry-'.$language;
-		bindtextdomain($textdomain, __DIR__.'/../../app/locale');
+		$textdomain = 'lorry-' . $language;
+		bindtextdomain($textdomain, __DIR__ . '/../../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
 
