@@ -1,6 +1,6 @@
 <div class="form-group">
 	<label for="files">{% trans %}Files{% endtrans %}</label>
-	<script>var addon = '{{addonid}}';
+	<script>var addon = '{{addon.id}}';
 		var release = '{{version}}';</script>
 		{% if enable.upload %}
 		<div id="release-files-no-resumable">
@@ -23,7 +23,7 @@
 		<ul class="list-group" id="resumable-files-loading">
 			<li class="list-group-item text-muted">{% trans %}Loading files&hellip;{% endtrans %}</li>
 		</ul>
-		<span id="message-text-loading-failed" class="hidden">{% trans %}Error loading existing files.{% endtrans %}</span>
+		<span id="message-text-loading-failed" class="hidden">{% trans %}Error loading file list.{% endtrans %}</span>
 		<ul class="list-group" id="resumable-files-none" style="display: none;">
 			<li class="list-group-item text-muted" id="resumable-files-none-text">{% trans %}No files uploaded{% endtrans %}</li>
 		</ul>
