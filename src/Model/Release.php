@@ -57,7 +57,9 @@ class Release extends Model {
 	}
 
 	public final function setVersion($version) {
-		$this->validateRegexp($version, '/^([a-zA-Z0-9-.]+)$/');
+		$version = trim($version);
+		$this->validateString($version, 1, 20);
+		$this->validateRegexp($version, '/^([a-zA-Z0-9-][a-zA-Z0-9-.]*)$/');
 		return $this->setValue('version', $version);
 	}
 
