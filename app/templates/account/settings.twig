@@ -132,7 +132,7 @@
 				</form>
 				<h3 id="remote-logout">{% trans "Sessions" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
-				<p id="remote-logout-prompt" class="collapse"><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
+				<p id="remote-logout-prompt"><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 				<div class="collapse in" id="remote-logout-confirm">
 					<form method="post" role=form">
 						<input type="hidden" name="remote-logout-form">
