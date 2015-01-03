@@ -22,10 +22,10 @@
 				<h2>{% trans %}User{% endtrans %}</h2>
 				<ul class="list-group">
 					{% if registration %}
-						<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-fire"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
+						<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-user"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
 						{% endif %}
 						{% if username == "B_E" %}
-						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><span class="glyphicon glyphicon-leaf"></span> <a href="{{base}}/about#about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
+						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><span class="glyphicon glyphicon-fire"></span> <a href="{{base}}/about#about" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
 						{% elseif user_alpha %}
 						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-heart"></span> {% trans %}Took part in Lorry Alpha{% endtrans %}</li>
 						{% elseif user_beta %}
@@ -33,6 +33,9 @@
 						{% endif %}
 						{% if username == "Nachtfalter" or username == "Luchs" or username == "Nachtschatten" or username == "Tyron" %}
 						<li class="list-group-item" title="{% trans %}Built something awesome for the community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
+						{% endif %}
+						{% if username == "Butterbrot" %}
+						<li class="list-group-item" title="{% trans %}Knows Google-fu{% endtrans %}"><span class="glyphicon glyphicon-cog"></span> {% trans %}Lorry hacker{% endtrans %}</li>
 						{% endif %}
 				</ul>
 				{% if clonkforge or github %}
