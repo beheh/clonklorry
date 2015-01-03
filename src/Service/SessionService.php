@@ -45,11 +45,6 @@ class SessionService {
 		}
 		if($remember === true) {
 			$this->remember();
-			if(isset($_COOKIE['lorry_forget'])) {
-				setcookie('lorry_forget', '', 0, '/');
-			}
-		} else {
-			setcookie('lorry_forget', '1', time() + 60 * 60 * 24 * 365, '/');
 		}
 	}
 
@@ -94,17 +89,6 @@ class SessionService {
 		$this->ensureSecret($this->user);
 		$secret = $this->user->getSecret();
 		setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
-	}
-
-	/**
-	 * 
-	 * @return bool
-	 */
-	public final function shouldRemember() {
-		if(isset($_COOKIE['lorry_forget']) && $_COOKIE['lorry_forget'] == '1') {
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -323,6 +307,23 @@ class SessionService {
 	public final function clearResetPassword() {
 		$_SESSION['password_reset_token'] = 0;
 		unset($_SESSION['password_reset_token']);
+	}
+
+	protected final function getFlagName($flag) {
+		return 'lorry_flag_'.$flag;;
+	}
+
+	public final function setFlag($flag) {
+		setcookie($this->getFlagName($flag), '1', time() + 60 * 60 * 24 * 365, '/');
+	}
+
+	public final function unsetFlag($flag) {
+		setcookie($this->getFlagName($flag), '', 0, '/');
+	}
+
+	public final function getFlag($flag) {
+		$name = $this->getFlagName($flag);
+		return isset($_COOKIE[$name]) && filter_input(INPUT_COOKIE, $name) === '1';
 	}
 
 }

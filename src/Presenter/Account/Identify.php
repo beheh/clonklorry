@@ -10,6 +10,8 @@ class Identify extends Presenter {
 		$this->security->requireLogin();
 		$this->offerIdentification();
 
+		$this->context['hide_greeter'] = true;
+
 		if($this->session->identified()) {
 			$this->redirect('/');
 		}

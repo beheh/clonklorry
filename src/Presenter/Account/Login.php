@@ -24,8 +24,7 @@ class Login extends Presenter {
 		if(isset($_GET['returnto'])) {
 			$this->context['returnto'] = filter_input(INPUT_GET, 'returnto');
 		}
-
-		if(!isset($this->context['remember']) && $this->session->shouldRemember()) {
+		if(!isset($this->context['remember']) && !$this->session->getFlag('login_forget')) {
 			$this->context['remember'] = true;
 		}
 		if(isset($_POST['email_submit']) || isset($_COOKIE['lorry_login_email'])) {
@@ -70,11 +69,11 @@ class Login extends Presenter {
 			// login by username and password
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
 			$user = ModelFactory::build('User')->byUsername($username);
-			$remember = filter_input(INPUT_POST, 'remember', FILTER_VALIDATE_BOOLEAN);
+			$remember = filter_input(INPUT_POST, 'remember', FILTER_VALIDATE_BOOLEAN) || false;
 			// take username to next page
 			$this->context['username'] = $username;
 			// set remember checkmark to persist after post
-			$this->context['remember'] = $remember || false;
+			$this->context['remember'] = $remember;
 			if($user) {
 				$this->context['username_exists'] = true;
 				if($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
@@ -84,6 +83,12 @@ class Login extends Presenter {
 					}
 					// log user in
 					$this->session->start($user, $remember, true);
+					if(!$remember) {
+						$this->session->setFlag('login_forget', true);
+					} else {
+						$this->session->unsetFlag('login_forget');
+					}
+					$this->session->setFlag('knows_clonk');
 					$url = '/';
 					$returnto = filter_input(INPUT_GET, 'returnto');
 					if($returnto) {
