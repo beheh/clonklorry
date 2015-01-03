@@ -121,11 +121,11 @@ class User extends Model {
 	 * @return bool
 	 */
 	public final function isModerator() {
-		return $this->getId() == 1;//@TODO user groups
+		return $this->getId() == 1; //@TODO user groups
 	}
 
 	public final function setClonkforgeUrl($clonkforge) {
-		$scanned = array('');
+		$scanned = array();
 		if($clonkforge) {
 			$this->validateUrl($clonkforge);
 			$clonkforge = preg_replace('|^(http://)?(www\.)?(.*)$|', 'http://$3', $clonkforge);
@@ -187,7 +187,7 @@ class User extends Model {
 				return $this->getValue('oauth-openid') != null;
 				break;
 			case 'google':
-				return $this->getValue('oauth-google') != null;
+				return $this->getValue('oauth-google') !== null;
 				break;
 			case 'facebook':
 				return $this->getValue('oauth-facebook') != null;
@@ -214,7 +214,7 @@ class User extends Model {
 	public final function setOauth($provider, $uid) {
 		if(!$uid && !$this->hasPassword() && !$this->hasRemainingOauth($provider)) {
 			// dissallow last oauth to be removed without a password
-			throw new ModelValueInvalidException('the last remaining login method');
+			throw new ModelValueInvalidException(gettext('the last remaining login method'));
 		}
 		switch($provider) {
 			case 'openid':
@@ -227,7 +227,7 @@ class User extends Model {
 				return $this->setValue('oauth-facebook', $uid);
 				break;
 		}
-		throw new ModelValueInvalidException('not a valid OAuth provider');
+		throw new ModelValueInvalidException(gettext('not a valid OAuth provider'));
 	}
 
 	protected final function hasRemainingOauth($except) {

@@ -15,7 +15,7 @@ class Settings extends Presenter {
 		}
 
 		$user = $this->session->getUser();
-		
+
 		if(isset($_GET['update-oauth'])) {
 			switch(filter_input(INPUT_GET, 'update-oauth')) {
 				case 'success':
@@ -32,13 +32,16 @@ class Settings extends Presenter {
 
 		if(isset($_GET['remove-oauth'])) {
 			$this->security->requireValidState();
+			$provider = filter_input(INPUT_GET, 'remove-oauth');
 
 			try {
-				$user->setOauth(filter_input(INPUT_GET, 'remove-oauth'), null);
-				$this->success('oauth', gettext('Removed login service.'));
-				$user->save();
+				$user->setOauth($provider, null);
+				if($user->modified()) {
+					$this->success('oauth', gettext('Removed login service.'));
+					$user->save();
+				}
 			} catch(ModelValueInvalidException $ex) {
-				$this->error('oauth', gettext('Can\'t remove last login service.'));
+				$this->error('oauth', sprintf(gettext('%s is %s.'), ucfirst($provider), $ex->getMessage()));
 			}
 		}
 
@@ -66,7 +69,7 @@ class Settings extends Presenter {
 		if((isset($_GET['add-password']) && !$user->hasPassword()) || ($identified && isset($_GET['change-password']))) {
 			$this->context['focus_password_new'] = true;
 		}
-		
+
 		$this->context['can_reset_password'] = $this->session->canResetPassword();
 
 		$oauth = array('openid', 'google', 'facebook');
@@ -122,7 +125,7 @@ class Settings extends Presenter {
 			$this->context['email'] = $email;
 
 			$previous_email = $user->getEmail();
-			
+
 			try {
 				$user->setEmail($email);
 			} catch(ModelValueInvalidException $e) {
@@ -196,6 +199,7 @@ class Settings extends Presenter {
 						$this->session->clearResetPassword();
 						$user->save();
 						$this->session->identify();
+						$this->session->regenerateState();
 						if($has_password) {
 							$this->success('password', gettext('Your password was changed.'));
 						} else {
@@ -217,6 +221,7 @@ class Settings extends Presenter {
 		if(isset($_POST['remote-logout-form'])) {
 			$user->regenerateSecret();
 			$user->save();
+			$this->session->regenerateState();
 
 			$this->success('remote-logout', gettext('All other devices were logged out.'));
 
