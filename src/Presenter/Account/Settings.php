@@ -226,11 +226,6 @@ class Settings extends Presenter {
 			$this->success('remote-logout', gettext('All other devices were logged out.'));
 
 			$this->session->refresh($user);
-			if($this->session->shouldRemember()) {
-				$this->session->remember();
-			} else {
-				$this->session->forget();
-			}
 		}
 
 		$this->get();

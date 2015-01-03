@@ -170,7 +170,7 @@ class Environment {
 				'/download' => 'Redirect\Front',
 				'/download/:alpha/:alpha' => 'Addon\Download',
 				'/download/:alpha/:alpha/:version' => 'Addon\Download',
-				'/developers' => 'Publish\Developers',
+				'/developers' => 'Site\Developers',
 				'/publish' => 'Publish\Portal',
 				'/publish/create' => 'Publish\Create',
 				'/publish/:number' => 'Publish\Edit',
