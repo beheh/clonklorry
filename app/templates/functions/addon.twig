@@ -1,13 +1,12 @@
 {% set _addon_url %}
-	{{base}}/addons/{% if addon.game %}{{addon.game.short}}{% else %}{{short}}{% endif %}/{{addon.short}}
+	{{base}}/addons/{% if addon.game %}{{addon.game.short}}{% else %}{{short}}{% endif %}/{{addon.short}}{% if addon.version %}/{{addon.version}}{% endif %}
 {% endset %}
 <li class="media media-addon">
 	<a href="{{_addon_url}}" class="pull-left">
 		{% include 'functions/svg/addon.twig' %}
 	</a>
 	<div class="media-body">
-		<h4 class="media-heading"><a href="{{_addon_url}}">{{ addon.title }}</a>
-		{% if addon.version %}{% include 'functions/labels/version.twig' with {'version' : addon.version} %}{% endif %}
+		<h4 class="media-heading"><a href="{{_addon_url}}">{{ addon.title }}{% if addon.version %} {% include 'functions/labels/version.twig' with {'version' : addon.version} %}{% endif %}</a>
 		{% if addon.game %}{% include 'functions/tags/game.twig' with {'game' : addon.game} %}{% endif %}
 		</h4>
 		<p>{{addon.introduction}}</p>
