@@ -27,7 +27,7 @@ class Login extends Presenter {
 		if(!isset($this->context['remember']) && !$this->session->getFlag('login_forget')) {
 			$this->context['remember'] = true;
 		}
-		if(isset($_POST['email_submit']) || isset($_COOKIE['lorry_login_email'])) {
+		if(isset($_POST['email_submit']) || $this->session->getFlag('login_email')) {
 			$this->context['email_visible'] = true;
 		}
 		if(isset($_POST['forgot_password'])) {
@@ -57,7 +57,7 @@ class Login extends Presenter {
 			$user = ModelFactory::build('User')->byEmail($email);
 			if($user) {
 				// show email by default in future
-				setcookie('lorry_login_email', '1', time() + 60 * 60 * 24 * 365, '/');
+				$this->session->setFlag('login_email');
 				$this->job->submit('Login', array('user' => $user->getId()));
 				$this->success('email', 'We\'ll send your email shortly.');
 			} else {
@@ -78,13 +78,11 @@ class Login extends Presenter {
 				$this->context['username_exists'] = true;
 				if($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
 					// do not show email login by default
-					if(isset($_COOKIE['lorry_login_email'])) {
-						setcookie('lorry_login_email', '', 0, '/');
-					}
+					$this->session->unsetFlag('login_email');
 					// log user in
 					$this->session->start($user, $remember, true);
 					if(!$remember) {
-						$this->session->setFlag('login_forget', true);
+						$this->session->setFlag('login_forget');
 					} else {
 						$this->session->unsetFlag('login_forget');
 					}
