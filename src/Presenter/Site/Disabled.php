@@ -15,6 +15,7 @@ class Disabled extends Presenter {
 			$this->context['title'] = $this->config->get('brand').' is currently disabled';
 			$this->context['description'] = 'Please come back later.';
 		}
+		$this->context['hide_greeter'] = true;
 		$this->context['nobuttons'] = true;
 		$this->display('generic/hero.twig');
 	}

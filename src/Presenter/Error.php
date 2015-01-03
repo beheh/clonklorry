@@ -43,6 +43,8 @@ class Error extends Presenter {
 			}
 		}
 
+		$this->context['hide_greeter'] = true;
+
 		$this->display('generic/hero.twig');
 	}
 

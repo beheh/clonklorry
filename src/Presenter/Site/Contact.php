@@ -13,6 +13,7 @@ class Contact extends Presenter {
 			$user = $this->session->getUser();
 		}
 
+		$this->context['hide_greeter'] = true;
 		$this->context['address'] = $this->config->get('contact/address');
 		$this->context['legal_address'] = $this->config->get('contact/legal');
 		if($user) {
