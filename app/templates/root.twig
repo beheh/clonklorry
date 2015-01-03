@@ -32,12 +32,12 @@
 			</div>
 		{% elseif not knows_clonk %}
 			{% if not hide_greeter %}
-				<div class="jumbotron site-notice">
+				<div class="jumbotron site-notice" id="greeter">
 					<div class="container">
 						<p style="margin: 0 0; font-size: 1.2em;">
 							{% trans %}Welcome to Clonk!{% endtrans %} {% trans %}Clonk is a unique game series about .{% endtrans %}
-							<a href="{{base}}/clonk" class="btn btn-success btn">{% trans %}Learn more&hellip;{% endtrans %}</a>
-							<a href="{{base}}/" class="btn btn-default btn">{% trans %}Hide{% endtrans %}</a>
+							<a href="{{base}}/clonk" class="btn btn-success btn">{% trans %}Learn more{% endtrans %}</a>
+							<a href="{{base}}/clonk?returnto={{origpath}}" class="btn btn-default btn" id="greeter-hide">{% trans %}Hide{% endtrans %}</a>
 						</p>
 					</div>
 				</div>

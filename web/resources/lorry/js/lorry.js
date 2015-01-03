@@ -47,6 +47,20 @@ $('.lorry-js-warn').each(function () {
 	});
 });
 
+function setFlag(flag) {
+	var name = 'lorry_flag_' + flag;
+	var date = new Date();
+	date.setTime(date.getTime() + (1000 * 60 * 60 * 24 * 365));
+	document.cookie = name + '=1; expires=' + date.toUTCString() + '; path=/';
+}
+
+
+$('#greeter-hide').click(function (e) {
+	$('#greeter').slideUp();
+	setFlag('knows_clonk');
+	e.preventDefault();
+});
+
 // capitalize first character in string
 // based on https://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript
 function ucfirst(string) {
