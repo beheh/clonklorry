@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-03 13:52+0100\n"
-"PO-Revision-Date: 2015-01-03 13:52+0100\n"
+"POT-Creation-Date: 2015-01-03 14:50+0100\n"
+"PO-Revision-Date: 2015-01-03 14:53+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -79,12 +79,12 @@ msgid "Valuable community member"
 msgstr "Wertvolles Mitglied der Community"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:144
-msgid "Wat willste machen"
-msgstr ""
+msgid "Knows Google-fu"
+msgstr "Kann Google-fu"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:146
-msgid "Lorry-Hacker"
-msgstr ""
+msgid "Lorry hacker"
+msgstr "Lorry-Hacker"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:157
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:96
@@ -591,7 +591,6 @@ msgid "Lorry is a fan page, distribution platform and online community for playe
 msgstr "Lorry ist eine Fanseite, Downloadplattform und Online-Community für Spieler und Fans der Clonk-Serie."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:243
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:204
 msgid "Learn more&hellip;"
 msgstr "Erfahre mehr&hellip;"
 
@@ -966,7 +965,7 @@ msgid "No content available."
 msgstr "Kein Inhalt verfügbar"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:33
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:197
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:200
 msgid "Welcome to Clonk!"
 msgstr "Willkommen bei Clonk!"
 
@@ -1247,11 +1246,15 @@ msgstr "Hochladen wird vorbereitet"
 msgid "You are still uploading files."
 msgstr "Du lädst noch Dateien hoch."
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:199
-msgid "Clonk is a unique game series about building, fighting and creating."
-msgstr ""
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:202
+msgid "Clonk is a unique game series with thousands of player-created worlds."
+msgstr "Clonk ist eine einzigartige Spieleserie mit tausenden von spielererstellten Welten."
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:210
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:207
+msgid "Learn more"
+msgstr "Mehr erfahren"
+
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:215
 msgid "Hide"
 msgstr "Verstecken"
 
@@ -2120,25 +2123,25 @@ msgid "not a valid OAuth provider"
 msgstr "kein gültiger OAuth-Provider"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter.php:174
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:96
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:101
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:181
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:217
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:43
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:42
 msgid "Registration successful!"
 msgstr "Registrierung erfolgreich!"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:47
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:46
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:66
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:65
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:100
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:105
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
@@ -2590,11 +2593,11 @@ msgstr "Änderungen gespeichert."
 msgid "Error saving the changes."
 msgstr "Fehler beim Speichern der Änderungen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:51
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:52
 msgid "Your message was sent. Thank you for your feedback."
 msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:53
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:54
 msgid "Sorry, your feedback couldn't be sent."
 msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
 
@@ -2711,6 +2714,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Clonk is a unique game series about creating and conquering your own world."
+#~ msgstr "Clonk ist eine einzigartige und "
 
 #~ msgid "Don't show again"
 #~ msgstr "Nicht mehr anzeigen"
@@ -3265,9 +3271,6 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
 #~ msgid "Authentification failed."
 #~ msgstr "Authentifizierung fehlgeschlagen."
-
-#~ msgid "Learn more"
-#~ msgstr "Mehr erfahren"
 
 #~ msgid "What is this all about?"
 #~ msgstr "Was ist das hier für eine Seite?"
