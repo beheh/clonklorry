@@ -25,11 +25,23 @@
 		{% block body %}
 		{% include 'functions/navbar.twig' %}
 		{% if site_notice and site_enabled %}
-			<div id="site-notice" class="jumbotron alert-{{site_notice_class|default('danger')}}">
+			<div class="jumbotron site-notice alert-{{site_notice_class|default('danger')}}">
 				<div class="container">
 					{{site_notice}}
 				</div>
 			</div>
+		{% elseif not knows_clonk %}
+			{% if not hide_greeter %}
+				<div class="jumbotron site-notice">
+					<div class="container">
+						<p style="margin: 0 0; font-size: 1.2em;">
+							{% trans %}Welcome to Clonk!{% endtrans %} {% trans %}Clonk is a unique game series about .{% endtrans %}
+							<a href="{{base}}/clonk" class="btn btn-success btn">{% trans %}Learn more&hellip;{% endtrans %}</a>
+							<a href="{{base}}/" class="btn btn-default btn">{% trans %}Hide{% endtrans %}</a>
+						</p>
+					</div>
+				</div>
+			{% endif %}
 		{% endif %}
 		{% block content %}
 			<div class="container">

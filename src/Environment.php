@@ -134,6 +134,7 @@ class Environment {
 		$languages = $localisation->getAvailableLanguages();
 		$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages) + 1) % count($languages)], '-', true));
 		$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
+		$twig->addGlobal('knows_clonk', $session->getFlag('knows_clonk'));
 
 		if($session->authenticated()) {
 			$user = $session->getUser();
@@ -169,8 +170,9 @@ class Environment {
 				'/download' => 'Redirect\Front',
 				'/download/:alpha/:alpha' => 'Addon\Download',
 				'/download/:alpha/:alpha/:version' => 'Addon\Download',
-				'/create' => 'Publish\Create',
+				'/developers' => 'Publish\Developers',
 				'/publish' => 'Publish\Portal',
+				'/publish/create' => 'Publish\Create',
 				'/publish/:number' => 'Publish\Edit',
 				'/publish/:number/:version' => 'Publish\Release',
 				'/publish/:number/:version/query' => 'Publish\Api\QueryFile',

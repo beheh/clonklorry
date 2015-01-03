@@ -9,11 +9,6 @@ use Lorry\Exception\ModelValueInvalidException;
 class Create extends Presenter {
 
 	public function get() {
-		if(!$this->session->authenticated()) {
-			$this->display('publish/greeter.twig');
-			return;
-		}
-
 		$this->security->requireLogin();
 
 		$games = ModelFactory::build('Game')->all()->byAnything();
