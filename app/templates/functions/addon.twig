@@ -3,7 +3,7 @@
 {% endset %}
 <li class="media media-addon">
 	<a href="{{_addon_url}}" class="pull-left">
-		<img class="media-object" src="http://placehold.it/76x57" width="76" height="57">
+		{% include 'functions/svg/addon.twig' %}
 	</a>
 	<div class="media-body">
 		<h4 class="media-heading"><a href="{{_addon_url}}">{{ addon.title }}</a>
