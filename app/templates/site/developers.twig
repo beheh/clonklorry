@@ -1,0 +1,36 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Developers'|trans %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	{% if not user_login %}
+		<div class="jumbotron">
+			<div class="container">
+				<h2>{% trans %}Would you like to show the world what you've built?{% endtrans %}</h2>
+				<p>{% trans %}Great! After registering you can publish your addons on Lorry.{% endtrans %}</p>
+				<p>
+					<a href="{{base}}/register?returnto={{origpath}}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
+					<a href="{{base}}/login?returnto={{origpath}}" class="btn btn-lg btn-primary">{% trans %}Login{% endtrans %}</a>
+				</p>
+			</div>
+		</div>
+	{% else %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<p><a href="{{base}}/publish/create" class="btn btn btn-lg btn-success">{% trans %}Create new addon{% endtrans %}</a></p>
+				</div>
+				<div class="col-md-7">
+					<h2>{% trans %}You have an awesome idea?{% endtrans %}</h2>
+					<p class="lead">{% trans %}Whether it's magic caves or exploding Wipfs, {{brand}} is the place to publish all your addons.{% endtrans %}</p>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}
