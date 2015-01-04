@@ -34,14 +34,16 @@ class Settings extends Presenter {
 			$this->security->requireValidState();
 			$provider = filter_input(INPUT_GET, 'remove-oauth');
 
-			try {
-				$user->setOauth($provider, null);
-				if($user->modified()) {
-					$this->success('oauth', gettext('Removed login service.'));
-					$user->save();
+			if($provider) {
+				try {
+					$user->setOauth($provider, null);
+					if($user->modified()) {
+						$this->success('oauth', gettext('Removed login service.'));
+						$user->save();
+					}
+				} catch(ModelValueInvalidException $ex) {
+					$this->error('oauth', sprintf(gettext('%s is %s.'), ucfirst($provider), $ex->getMessage()));
 				}
-			} catch(ModelValueInvalidException $ex) {
-				$this->error('oauth', sprintf(gettext('%s is %s.'), ucfirst($provider), $ex->getMessage()));
 			}
 		}
 

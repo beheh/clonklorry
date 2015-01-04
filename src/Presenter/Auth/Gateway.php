@@ -36,7 +36,7 @@ class Gateway extends Presenter {
 					$openid->returnUrl = $this->config->get('base').'/auth/callback/openid';
 					$this->redirect($openid->authUrl(), true);
 				} catch(ErrorException $ex) {
-					throw new AuthentificationFailedException();
+					throw new AuthentificationFailedException($ex->getMessage());
 				}
 				break;
 			case 'google':

@@ -35,6 +35,7 @@ class Callback extends Presenter {
 		try {
 			switch($provider) {
 				case 'openid':
+					try {
 					$provider_title = 'OpenID';
 					$openid = new LightOpenID($this->config->get('base'));
 					if($openid->mode == 'cancel') {
@@ -47,6 +48,10 @@ class Callback extends Presenter {
 					$uid = $openid->identity;
 					if(isset($attributes['contact/email'])) {
 						$email = $attributes['contact/email'];
+					}
+					}
+					catch(ErrorException $ex) {
+						throw new AuthentificationFailedException($ex->getMessage());
 					}
 					break;
 				case 'google':
