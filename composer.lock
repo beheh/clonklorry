@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8fe205d25a953160b9cd9709954bd82d",
+    "hash": "c1749871ba5d7d16d4011ea80eb8bec3",
     "packages": [
         {
             "name": "analog/analog",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.7.10",
+            "version": "2.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f315695a5a8995f7c0c163189441a5a1d04989d0"
+                "reference": "087912b2318814e48fee54610a441672491f3200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f315695a5a8995f7c0c163189441a5a1d04989d0",
-                "reference": "f315695a5a8995f7c0c163189441a5a1d04989d0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/087912b2318814e48fee54610a441672491f3200",
+                "reference": "087912b2318814e48fee54610a441672491f3200",
                 "shasum": ""
             },
             "require": {
@@ -121,7 +121,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2014-12-12 18:07:09"
+            "time": "2014-12-18 21:40:25"
         },
         {
             "name": "chrisboulton/php-resque",
@@ -314,16 +314,16 @@
         },
         {
             "name": "league/oauth2-client",
-            "version": "0.6.0",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "6629d503967cad624bfad45f30488d5c5929145e"
+                "reference": "1d790ed19d49e5da8b0c431eb84797f3eec5fd36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/6629d503967cad624bfad45f30488d5c5929145e",
-                "reference": "6629d503967cad624bfad45f30488d5c5929145e",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/1d790ed19d49e5da8b0c431eb84797f3eec5fd36",
+                "reference": "1d790ed19d49e5da8b0c431eb84797f3eec5fd36",
                 "shasum": ""
             },
             "require": {
@@ -333,12 +333,12 @@
             "require-dev": {
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
+                "squizlabs/php_codesniffer": "~2.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.5.x-dev"
+                    "dev-master": "0.7.x-dev"
                 }
             },
             "autoload": {
@@ -369,7 +369,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2014-12-03 15:38:13"
+            "time": "2014-12-29 11:01:20"
         },
         {
             "name": "lightopenid/lightopenid",
@@ -694,16 +694,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.2",
+            "version": "v1.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
                 "shasum": ""
             },
             "require": {
@@ -738,7 +738,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -747,7 +747,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-17 12:53:44"
+            "time": "2014-12-25 19:58:19"
         }
     ],
     "packages-dev": [],
@@ -757,10 +757,10 @@
         "chrisboulton/php-resque": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">= 5.6",
         "ext-json": "*",
-        "ext-gettext": "*",
         "ext-pdo": "*",
         "ext-openssl": "*",
         "ext-curl": "*"
