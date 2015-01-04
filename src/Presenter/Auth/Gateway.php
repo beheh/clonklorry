@@ -43,9 +43,9 @@ class Gateway extends Presenter {
 				$google = new Google(array(
 					'clientId' => $this->config->get('oauth/google/id'),
 					'clientSecret' => $this->config->get('oauth/google/secret'),
-					'redirectUri' => $this->config->get('base').'/auth/callback/google'
+					'redirectUri' => $this->config->get('base').'/auth/callback/google',
+					'scopes' => array('profile', 'email')
 				));
-				$google->scopes = array('profile', 'email');
 				$custom = '';
 				if($login_hint) {
 					$custom .= '&login_hint='.$login_hint;
@@ -58,9 +58,9 @@ class Gateway extends Presenter {
 				$facebook = new Facebook(array(
 					'clientId' => $this->config->get('oauth/facebook/id'),
 					'clientSecret' => $this->config->get('oauth/facebook/secret'),
-					'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
+					'redirectUri' => $this->config->get('base').'/auth/callback/facebook',
+					'scopes' => array('public_profile', 'email')
 				));
-				$facebook->scopes = array('public_profile', 'email');
 				$authorizationUrl = $facebook->getAuthorizationUrl();
 				$this->session->setAuthorizationState($facebook->state);
 				$this->redirect($authorizationUrl, true);
