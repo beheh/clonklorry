@@ -30,6 +30,7 @@ class Register extends Presenter {
 		if(isset($_SESSION['register_oauth'])) {
 			$register = $_SESSION['register_oauth'];
 
+			if($register['username']) $this->context['username'] = $register['username'];
 			if($register['email']) $this->context['email'] = $register['email'];
 			$this->context['provider'] = $register['provider'];
 

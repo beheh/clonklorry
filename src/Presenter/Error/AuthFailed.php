@@ -19,7 +19,7 @@ class AuthFailed extends Presenter\Error {
 	}
 
 	protected function getLocalizedDescription() {
-		return gettext('The authentification failed.');
+		return gettext('The authentification with the login service failed.');
 	}
 
 }

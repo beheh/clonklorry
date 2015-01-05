@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-03 15:35+0100\n"
-"PO-Revision-Date: 2015-01-03 15:35+0100\n"
+"POT-Creation-Date: 2015-01-05 18:56+0100\n"
+"PO-Revision-Date: 2015-01-05 18:57+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2077,10 +2077,10 @@ msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
 #: /home/benedict/Dokumente/clonklorry/src/Model.php:515
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:85
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:100
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:111
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:132
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:86
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:102
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:113
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:134
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:109
 msgid "invalid"
 msgstr "ungültig"
@@ -2119,8 +2119,8 @@ msgstr "kein gültiger OAuth-Provider"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter.php:174
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:99
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:181
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:217
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:183
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:219
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -2140,42 +2140,42 @@ msgstr "E-Mail-Adresse unbekannt."
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:69
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:70
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:70
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:75
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:76
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:75
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:80
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:81
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:104
 #, php-format
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:85
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:132
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:86
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:134
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:109
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:91
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:213
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:92
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:215
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:96
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:209
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:97
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:211
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:128
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:129
 msgid "There was an error registering."
 msgstr "Fehler bei der Registrierung."
 
@@ -2189,60 +2189,60 @@ msgstr "Anmeldedienst bereits mit anderem Konto verknüpft."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:28
 msgid "Authentification with login service failed."
-msgstr "Authentifizierung bei Anmeldedienst fehlgeschlagen."
+msgstr "Authentifizierung mit Anmeldedienst ist fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:40
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:41
 msgid "Removed login service."
 msgstr "Anmeldedienst entfernt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:44
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:45
 #, php-format
 msgid "%s is %s."
 msgstr "%s ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:100
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:102
 #, php-format
 msgid "Clonk Forge profile url is %s."
 msgstr "Clonk Forge Profil-URL ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:111
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:113
 #, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:117
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:119
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:143
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:145
 msgid "Contact details were changed. We'll send you an email to confirm the new address."
 msgstr "Kontaktdaten geändert. Wir werden dir eine E-Mail senden, um die neue Adresse zu bestätigen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:145
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:147
 msgid "Contact details were changed, but we couldn't send you an email to confirm. Pleasy try again later."
 msgstr "Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung senden. Versuche es später erneut."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:155
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:157
 msgid "You should receive the confirmation email soon."
 msgstr "Du solltest die Bestätigungs-E-Mail bald erhalten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:157
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:159
 msgid "We can't send you a confirmation email right now. Try again later."
 msgstr "Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es später erneut."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:184
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:186
 msgid "Confirmation required."
 msgstr "Bestätigung erforderlich."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:204
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:206
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:206
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:208
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:226
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:228
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -2263,8 +2263,8 @@ msgid "Authentification failed"
 msgstr "Authentifizierung fehlgeschlagen"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/AuthFailed.php:22
-msgid "The authentification failed."
-msgstr "Die Authentifizierung ist fehlgeschlagen."
+msgid "The authentification with the login service failed."
+msgstr "Die Authentifizierung mit dem Anmeldedienst ist fehlgeschlagen."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/FileNotFound.php:18
 msgid "File not found"
@@ -2709,6 +2709,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "The authentification failed."
+#~ msgstr "Die Authentifizierung ist fehlgeschlagen."
 
 #~ msgid "Developer"
 #~ msgstr "Entwickler"

@@ -36,21 +36,23 @@ class Callback extends Presenter {
 			switch($provider) {
 				case 'openid':
 					try {
-					$provider_title = 'OpenID';
-					$openid = new LightOpenID($this->config->get('base'));
-					if($openid->mode == 'cancel') {
-						return $this->redirect('/register');
-					}
-					if(!$openid->validate()) {
-						throw new AuthentificationFailedException('OpenID validation failed (mode is'.$openid->mode.')');
-					}
-					$attributes = $openid->getAttributes();
-					$uid = $openid->identity;
-					if(isset($attributes['contact/email'])) {
-						$email = $attributes['contact/email'];
-					}
-					}
-					catch(ErrorException $ex) {
+						$provider_title = 'OpenID';
+						$openid = new LightOpenID($this->config->get('base'));
+						if($openid->mode === 'cancel') {
+							return $this->redirect('/register');
+						}
+						if(!$openid->mode || !$openid->validate()) {
+							throw new AuthentificationFailedException('OpenID validation failed (mode is "'.$openid->mode.'")');
+						}
+						$uid = $openid->identity;
+						$attributes = $openid->getAttributes();
+						if(isset($attributes['contact/email'])) {
+							$email = $attributes['contact/email'];
+						}
+						if(isset($attributes['namePerson/friendly'])) {
+							$nickname = $attributes['namePerson/friendly'];
+						}
+					} catch(ErrorException $ex) {
 						throw new AuthentificationFailedException($ex->getMessage());
 					}
 					break;
@@ -79,7 +81,7 @@ class Callback extends Presenter {
 				if(!$this->session->verifyAuthorizationState(filter_input(INPUT_GET, 'state'))) {
 					throw new AuthentificationFailedException('invalid state (csrf?)');
 				}
-				
+
 				if(isset($_GET['error'])) {
 					if(filter_input(INPUT_GET, 'error') === 'access_denied') {
 						if($this->session->authenticated()) {
@@ -144,7 +146,7 @@ class Callback extends Presenter {
 				if($returnto) {
 					$url = $returnto;
 				}
-				$this->session->start($user, false, false	);
+				$this->session->start($user, false, false);
 				$this->redirect($url.'#');
 				return;
 			} else {
