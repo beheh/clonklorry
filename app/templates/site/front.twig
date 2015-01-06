@@ -49,23 +49,27 @@
 		<div class="col-md-4 sidebar">
 		{% if user_login %}
 			<h1>{% trans %}Welcome back.{% endtrans %}</h1>
-			<p class="lead">{% trans %}Lorry lives from community creations. Why not start developing one today?{% endtrans %}</p>
-			<!--<p>
-				<a href="{{base}}/publish/create" class="btn btn-primary">{% trans %}Create a new addon{% endtrans %}</a>
-			</p>!-->
+			<p class="lead">{% trans %}{{brand}} lives from community creations. Why not start developing a new addon today?{% endtrans %}</p>
+			<p>
+				<a href="{{base}}/developers" class="btn btn-lg btn-primary">{% trans %}Developer portal{% endtrans %}</a>
+				<a href="{{base}}/publish/create" class="btn btn-lg btn-success">{% trans %}New addon{% endtrans %}</a>
+			</p>
 		{% else %}
 			<h1><span class="visible-lg">{% trans %}Welcome to Lorry.{% endtrans %}</span><span class="hidden-lg">{% trans %}Welcome{% endtrans %}</span></h1>
-			<p class="lead">{% trans %}Lorry is the place for the best addons for the game series Clonk.{% endtrans %}</p>
+			<p class="lead">{% trans %}{{brand}} is the site for the best addons for the game series Clonk.{% endtrans %}</p>
 			<p>
+				<a href="{{base}}/about/clonk" class="btn btn-lg btn-primary">{% trans %}New to Clonk?{% endtrans %}</a>
 				<a href="{{base}}/register" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
-				<a href="{{base}}/about/clonk" class="btn btn-lg btn-default">{% trans %}New to Clonk?{% endtrans %}</a>
 			</p>
 		{% endif %}
 			<hr>
-			<h2>{% trans %}In development{% endtrans %}</h2>
-			<p class="text-big">{% trans %}The Lorry platform is actively beeing developed. You can join and try out what works so far, and we will continue to add features.{% endtrans %}</p>
-			<a href="{{base}}/about" class="btn btn-info">{% trans %}About Lorry{% endtrans %}</a>
-			<a href="https://clonkspot.org/forum/topic_show.pl?tid=30" class="btn btn-default">{% trans %}Lorry on Clonkspot{% endtrans %}</a>
+			<h3>{% trans %}New: Multiple languages{% endtrans %}</h3>
+			<p>{% trans %}{{brand}} is now available in German and English. You can add titles and descriptions in these languages for all your addons and releases.{% endtrans %}</p>
+			<p><a href="https://clonkspot.org/forum/topic_show.pl?tid=30" class="btn btn-default">{% trans %}Announcements{% endtrans %}</a></p>
+			<hr>
+			<h3>{% trans %}In development{% endtrans %}</h3>
+			<p>{% trans %}The platform behind {{brand}} is still in development. You can join and try out what works so far, and we will continue to add many features.{% endtrans %}</p>
+			<p><a href="{{base}}/about" class="btn btn-default">{% trans %}About the project{% endtrans %}</a></p>
 		</div>
 	</div>
 </div>
