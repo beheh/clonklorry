@@ -130,7 +130,7 @@
 						<button type="submit" class="btn btn-default">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
 					</div>
 				</form>
-				<h3 id="remote-logout">{% trans "Sessions" %}</h3>
+				<h3 id="remote-logout">{% trans "Session" %}</h3>
 				{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
 				<p id="remote-logout-prompt"><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 				<div class="collapse in" id="remote-logout-confirm">

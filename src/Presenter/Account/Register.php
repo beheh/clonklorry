@@ -30,8 +30,12 @@ class Register extends Presenter {
 		if(isset($_SESSION['register_oauth'])) {
 			$register = $_SESSION['register_oauth'];
 
-			if($register['username']) $this->context['username'] = $register['username'];
-			if($register['email']) $this->context['email'] = $register['email'];
+			if($register['username'] && !isset($this->context['username'])) {
+				$this->context['username'] = $register['username'];
+			}
+			if($register['email'] && !isset($this->context['email'])) {
+				$this->context['email'] = $register['email'];
+			}
 			$this->context['provider'] = $register['provider'];
 
 			$this->context['oauth'] = true;
@@ -68,7 +72,6 @@ class Register extends Presenter {
 
 		if(ModelFactory::build('User')->byUsername($username)) {
 			$errors[] = gettext('Username already taken.');
-			$this->context['username_focus'] = true;
 		} else {
 			try {
 				$user->setUsername($username);
@@ -78,7 +81,7 @@ class Register extends Presenter {
 		}
 
 		if($email && ModelFactory::build('User')->byEmail($email)) {
-			$errors[] = sprintf(gettext('Email address already used.'));
+			$errors[] = sprintf(gettext('Email address is already in use.'));
 		} else {
 			try {
 				$user->setEmail($email);
@@ -107,7 +110,12 @@ class Register extends Presenter {
 			$user->setRegistration(time());
 			if($user->save()) {
 				Analog::info('adding user "'.$user->getUsername().'"');
-				$this->job->submit('Welcome', array('user' => $user->getId()));
+				try {
+					$this->job->submit('Welcome', array('user' => $user->getId()));
+				}
+				catch(\Exception $ex) {
+				}
+				$this->session->setFlag('new_user', false);
 				$returnto = filter_input(INPUT_GET, 'returnto');
 				if($oauth) {
 					$url = '/';
@@ -117,8 +125,9 @@ class Register extends Presenter {
 					$this->session->start($user, false, false);
 					$this->redirect($url);
 					return;
-				} else {
-					$url = '/login?registered='.urlencode($username);
+				}
+				else {
+					$url = '/login?registered='.$user->getUsername();
 					if($returnto) {
 						$url .= '&returnto='.$returnto;
 					}

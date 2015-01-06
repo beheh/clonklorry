@@ -57,11 +57,7 @@
 				<hr class="visible-xs">
 				{% if connect %}
 				{% else %}
-				<h2>{% trans %}Welcome back!{% endtrans %}</h2>
-				<p class="lead">{% trans %}{{brand}} is still being developed.{% endtrans %}</p>
-				<p><a href="{{base}}/contact" class="btn btn-lg btn-default">{% trans %}Feedback{% endtrans %}</a></p>
-				<hr>
-				<h3>{% trans %}Not registered yet?{% endtrans %}</h3>
+				<h2>{% trans %}Not registered yet?{% endtrans %}</h2>
 				<p class="lead">{% trans %}Registering takes only a few moments and lets you to take part in the Clonk community.{% endtrans %}</p>
 				<p><a href="{{base}}/register{% if returnto %}?returnto={{returnto}}{% endif %}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a></p>
 				{% endif %}

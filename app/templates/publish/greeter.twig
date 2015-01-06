@@ -1,0 +1,21 @@
+{% extends 'root.twig' %}
+
+{% set title = 'My addons'|trans %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container">
+			<h2>{% trans %}Would you like to show the world what you've built?{% endtrans %}</h2>
+			<p>{% trans %}After registering you can find all your addons here.{% endtrans %}</p>
+			<p>
+				<a href="{{base}}/register?returnto={{origpath}}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
+				<a href="{{base}}/login?returnto={{origpath}}" class="btn btn-lg btn-primary">{% trans %}Login{% endtrans %}</a>
+			</p>
+		</div>
+	</div>
+{% endblock %}

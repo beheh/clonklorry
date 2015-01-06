@@ -61,7 +61,7 @@
 						{% endfor %}
 					</ul>
 				{% elseif self %}
-					{% set create_one_now %}<a href="{{base}}/create">{% trans %}create one now{% endtrans %}</a>{% endset %}
+					{% set create_one_now %}<a href="{{base}}/developers">{% trans %}create one now{% endtrans %}</a>{% endset %}
 					<div class="alert alert-info">{% trans %}You have not released any addons yet. Why not {{create_one_now}}?{% endtrans %}</a></div>
 				{% else %}
 					<div class="alert alert-warning">{% trans %}This user has not released any addons yet.{% endtrans %}</div>

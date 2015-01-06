@@ -14,7 +14,7 @@
 			<a href="{{filename}}?sort=rating{% if sort == 'rating' and not reverse %}&reverse=1{% endif %}">{% trans %}by rating{% endtrans %}</a>{% if sort == 'rating' %} {% if reverse%}▲{% else %}▼{% endif %}{% endif %}
 		{% endset %}
 		{% set createaddon %}
-			<a href="{{base}}/publish/create?for={{short}}">{% trans %}create a new addon{% endtrans %}</a>
+			<a href="{{base}}/developers?create={{short}}">{% trans %}create a new addon{% endtrans %}</a>
 		{% endset %}
 		<!--<p class="sort-bar">{% trans %}Sort by {{columns}} or {{createaddon}} for this game.{% endtrans %}	</p>!-->
 		<ul class="media-list addons">
@@ -31,7 +31,7 @@
 			<p>{% trans %}There are no addons available for this game yet.{% endtrans %}</p>
 			{% if user_login %}
 				<p>
-					<a href="{{base}}/publish/create?for={{short}}" class="btn btn-primary btn-lg">{% trans %}New {{game}} addon{% endtrans %}</a>
+					<a href="{{base}}/developers?create={{short}}" class="btn btn-primary btn-lg">{% trans %}New {{game}} addon{% endtrans %}</a>
 				</p>
 			{% endif %}
 		</div>

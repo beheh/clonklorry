@@ -25,6 +25,8 @@ class Front extends Presenter {
 		}
 		$this->context['new_addons'] = $addons;
 
+		$this->context['new_user'] = $this->session->getFlag('new_user');
+
 		$this->display('site/front.twig');
 	}
 }

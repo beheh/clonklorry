@@ -46,6 +46,8 @@
 						{% else %}
 							<input type="hidden" name="use-oauth" value="1">
 						{% endif %}
+						{% set policy %}<a href="{{base}}/privacy" target="_blank">{% trans %}privacy policy{% endtrans %}</a>{% endset %}
+						<p class="help-block">{% trans %}Because we think it's important: our {{policy}}.{% endtrans %}</p>
 						<p><button class="btn btn-lg btn-success" type="submit">{% trans "Register" %}</button>
 						{% if oauth %}
 							<a href="{{base}}/register?cancel" class="btn btn-lg btn-default">{% trans "Cancel" %}</a>
@@ -69,12 +71,12 @@
 					<hr class="visible-xs">
 					{% if oauth %}
 						<h2>{% trans %}Nearly done&hellip;{% endtrans %}</h2>
-						<p>{% trans %}You still need to choose your username and enter or verify your email address.{% endtrans %}</p>
+						<p class="lead">{% trans %}You still need to choose your username and enter or verify your email address.{% endtrans %}</p>
 					{% else %}
 						<h2>{% trans %}This is Lorry.{% endtrans %}</h2>
-						<p class="lead">{% trans %}Lorry is a fan page, distribution platform and online community for players and fans of the Clonk series.{% endtrans %} <a href="{{base}}/about">{% trans %}Learn more&hellip;{% endtrans %}</a></p>
+						<p class="lead">{% trans %}Lorry is a fan page, distribution platform and online community for players and fans of the Clonk series.{% endtrans %} <a href="{{base}}/about" target="_blank">{% trans %}Learn more&hellip;{% endtrans %}</a></p>
 						<hr>
-						<h3>{% trans %}Why should I register?{% endtrans %}</h3>
+						<h3>{% trans %}Why should you register?{% endtrans %}</h3>
 						<ul class="list-group">
 							<li class="list-group-item"><span class="glyphicon glyphicon-upload"></span> {% trans %}Publish your own addons, so they are instantly available to all Clonk players{% endtrans %}</li>
 							<li class="list-group-item"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Support Lorry with feedback and help shape the future of the Clonk community{% endtrans %}</li>
@@ -82,12 +84,11 @@
 						<h4>{% trans %}Upcoming features{% endtrans %}</h4>
 						<ul class="list-group">
 							<li class="list-group-item"><span class="glyphicon glyphicon-comment"></span> {% trans %}Comment and discuss addons or send feedback to the developer(s){% endtrans %}</li>
-							<li class="list-group-item"><span class="glyphicon glyphicon-star"></span> {% trans %}Vote on addons to support and highlight the best ones{% endtrans %}</li>
-							<li class="list-group-item"><span class="glyphicon glyphicon-tag"></span> {% trans %}Tag addons and help others to find new favourites{% endtrans %}</li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-star"></span> {% trans %}Vote on addons to support them and save your favourite ones{% endtrans %}</li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-tag"></span> {% trans %}Tag addons by type, genre, player counts&hellip;{% endtrans %}</li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-search"></span> {% trans %}Search addons by name, game, tags&hellip;{% endtrans %}</li>
 						</ul>
 					{% endif %}
-					{% set policy %}<a href="{{base}}/privacy" target="_blank">{% trans %}privacy policy{% endtrans %}</a>{% endset %}
-					<p class="help-block">{% trans %}Because we think it's important: our {{policy}}.{% endtrans %}</p>
 				</div>
 			</div>
 		{% endif %}

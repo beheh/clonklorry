@@ -8,6 +8,11 @@ use Lorry\ModelFactory;
 class Portal extends Presenter {
 
 	public function get() {
+		if(!$this->session->authenticated()) {
+			$this->display('publish/greeter.twig');
+			return;
+		}
+
 		$this->security->requireLogin();
 		$user = $this->session->getUser();
 
@@ -19,10 +24,6 @@ class Portal extends Presenter {
 				'short' => $game->getShort(),
 				'title' => $game->getTitle()
 			);
-		}
-
-		if(isset($_GET['for'])) {
-			$this->context['focus'] = 'title';
 		}
 
 		if(isset($_GET['created'])) {

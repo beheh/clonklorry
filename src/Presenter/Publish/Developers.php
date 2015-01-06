@@ -6,11 +6,9 @@ use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
-class Create extends Presenter {
+class Developers extends Presenter {
 
 	public function get() {
-		$this->security->requireLogin();
-
 		$games = ModelFactory::build('Game')->all()->byAnything();
 		$this->context['games'] = array();
 		foreach($games as $game) {
@@ -18,19 +16,35 @@ class Create extends Presenter {
 		}
 
 		if(!isset($this->context['game'])) {
-			$this->context['game'] = filter_input(INPUT_GET, 'for');
+			$this->context['game'] = filter_input(INPUT_GET, 'create');
 		}
 
-		$objects = array(gettext('Stippel'), gettext('Monster'), gettext('Wipf'), gettext('Stage'), gettext('Bridge'), gettext('Western'), 'Fantasy', 'Mars', gettext('Knight'), gettext('Magic'), gettext('Pressurewave'));
-		$phrases = array(gettext('%s Reloaded'), gettext('Metal & %s'), gettext('%sfight'), gettext('%s pack'), gettext('%sparty'), gettext('Left 2 %s'), gettext('%sclonk'), gettext('%s clonks'), gettext('%s race'));
-		$modifiers = array(gettext('%s Extreme'), gettext('Codename: %s'));
-		$example = sprintf($phrases[array_rand($phrases)], $objects[array_rand($objects)]);
+		if(isset($_GET['create']) && !isset($this->context['focus_title']))  {
+			$this->context['focus_title'] = true;
+		}
+
+		//$objects = array(gettext('Stippel'), gettext('Monster'), gettext('Wipf'), gettext('Stage'), gettext('Bridge'), gettext('Western'), 'Fantasy', 'Mars', gettext('Knight'), gettext('Magic'), gettext('Pressurewave'));
+
+		$singular_objects = array(gettext('Wipf'), gettext('Monster'), gettext('Bridge'), gettext('Tower'), gettext('Stage'), gettext('Pressurewave'), gettext('Fantasy'), gettext('Stippel'));
+		$singular_phrases = array(gettext('%s pack'), gettext('%s of despair'), gettext('%s Infinity'), gettext('%sarena'), gettext('%s fight'), gettext('%s race'));
+		$plural_objects = array(gettext('Wipfs'), gettext('Monsters'), gettext('Bridges'), gettext('Towers'), gettext('Pressurewaves'), gettext('Flints'), gettext('Knights'), gettext('Clonks'), gettext('Stippels'));
+		$plural_phrases = array(gettext('Metal & %s'), gettext('Left 2 %s'));
+
+		if(!rand(0, 1)) {
+			$example = sprintf($singular_phrases[array_rand($singular_phrases)], $singular_objects[array_rand($singular_objects)]);
+		}
+		else {
+			$example = sprintf($plural_phrases[array_rand($plural_phrases)], $plural_objects[array_rand($plural_objects)]);
+		}
+
+		$modifiers = array(gettext('%s Extreme'), gettext('Codename: %s'), gettext('%s Remake'), gettext('%s Reloaded'));
 		if(!rand(0, 5)) {
 			$example = sprintf($modifiers[array_rand($modifiers)], $example);
 		}
+		
 		$this->context['exampletitle'] = $example;
 
-		$this->display('publish/create.twig');
+		$this->display('publish/developers.twig');
 	}
 
 	public function post() {
@@ -50,9 +64,10 @@ class Create extends Presenter {
 		try {
 			$this->context['addontitle'] = $title;
 			$addon->setTitle($title);
-			$this->context['title_valid'] = true;
+			$this->context['focus_title'] = false;
 		} catch(ModelValueInvalidException $ex) {
 			$errors[] = sprintf(gettext('Title is %s.'), $ex->getMessage());
+			$this->context['focus_title'] = true;
 		}
 
 		$type = filter_input(INPUT_POST, 'type');
@@ -76,6 +91,7 @@ class Create extends Presenter {
 		$existing = ModelFactory::build('Addon')->all()->byTitle($title, $user->getId(), $game->getId());
 		if(count($existing) > 0) {
 			$errors[] = gettext('You have already created an addon with this title for this game.');
+			$this->context['focus_title'] = true;
 		}
 
 		if(!empty($errors)) {

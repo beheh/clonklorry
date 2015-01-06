@@ -10,7 +10,6 @@
 	</div>
 	{% if addons %}	
 		<div class="container">
-			<p><a href="{{base}}/publish/create" class="btn btn btn-success">{% trans %}Create new addon{% endtrans %}</a></p>
 			{% include 'functions/alert.twig' with {'selector' : 'addons'} %}
 			<ul class="media-list addons-small">
 				{% for addon in addons %}
@@ -38,8 +37,8 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h2>{% trans %}Your addons will appear here{% endtrans %}</h2>
-				<p>{% trans %}Let's get started!{% endtrans %}</p>
-				<p><a href="{{base}}/publish/create" class="btn btn-lg btn-success">{% trans %}Create a new addon{% endtrans %}</a></p>
+				<p>{% trans %}Visit the developer portal to get started with a new addon.{% endtrans %}</p>
+				<p><a href="{{base}}/developers" class="btn btn-lg btn-info">{% trans %}Developer portal{% endtrans %}</a></p>
 			</div>
 		</div>
 	{% endif %}
