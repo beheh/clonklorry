@@ -140,7 +140,8 @@ abstract class Presenter {
 		if(!$absolute) {
 			$location = $this->config->get('base').$location;
 		}
-		header('HTTP/1.1 301 Moved Permanently');
+		// we use 303 here to hinder POST attacks on pages with returnto parameter
+		header('HTTP/1.1 303 See Other');
 		header('Location: '.$location);
 		throw new OutputCompleteException;
 	}
