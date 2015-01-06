@@ -20,7 +20,7 @@ class Login extends Presenter {
 		if(isset($_GET['oauth'])) {
 			return $this->redirect($this->session->handleOauth());
 		}
-		
+
 		if(isset($_GET['returnto'])) {
 			$this->context['returnto'] = filter_input(INPUT_GET, 'returnto');
 		}
@@ -42,7 +42,13 @@ class Login extends Presenter {
 				$this->success('login', gettext('Registration successful!'));
 			}
 		}
-		if(isset($_GET['unknown-oauth'])) {
+		if(isset($_GET['connect'])) {
+			$this->context['connect'] = true;
+			if(!$this->hasAlert('login')) {
+				$this->warning('login', gettext('Sign in to use this service.'));
+			}
+		}
+		if(isset($_GET['unknown-oauth']) && !$this->hasAlert('login')) {
 			$this->warning('login', gettext('Sign in to link this login service to your account.'));
 		}
 
