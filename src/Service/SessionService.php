@@ -313,8 +313,12 @@ class SessionService {
 		return 'lorry_flag_'.$flag;;
 	}
 
-	public final function setFlag($flag) {
-		setcookie($this->getFlagName($flag), '1', time() + 60 * 60 * 24 * 365, '/');
+	public final function setFlag($flag, $persistent = false) {
+		$time = 0;
+		if($persistent) {
+			$time = time() + 60 * 60 * 24 * 365;
+		}
+		setcookie($this->getFlagName($flag), '1', $time, '/');
 	}
 
 	public final function unsetFlag($flag) {

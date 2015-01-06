@@ -47,17 +47,18 @@ $('.lorry-js-warn').each(function () {
 	});
 });
 
-function setFlag(flag) {
+function setFlag(flag, persistent) {
 	var name = 'lorry_flag_' + flag;
 	var date = new Date();
-	date.setTime(date.getTime() + (1000 * 60 * 60 * 24 * 365));
+	if(persistent) {
+		date.setTime(date.getTime() + (1000 * 60 * 60 * 24 * 365));
+	}
 	document.cookie = name + '=1; expires=' + date.toUTCString() + '; path=/';
 }
 
-
 $('#greeter-hide').click(function (e) {
 	$('#greeter').slideUp();
-	setFlag('knows_clonk');
+	setFlag('knows_clonk', true);
 	e.preventDefault();
 });
 
