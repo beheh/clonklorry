@@ -12,6 +12,8 @@ class Release extends Model {
 			'addon' => 'int',
 			'version' => 'string',
 			'timestamp' => 'datetime',
+			'ready' => 'boolean',
+			'shipping' => 'boolean',
 			'assetsecret' => 'string',
 			'changelog' => 'text',
 			'whatsnew' => 'text'));
@@ -145,6 +147,14 @@ class Release extends Model {
 
 	public function getAssetSecret() {
 		return $this->getValue('assetsecret');
+	}
+	
+	public function setShipping($shipping) {
+		$this->setValue('shipping', $shipping);
+	}
+	
+	public function isShipping() {
+		return $this->getValue('shipping');
 	}
 
 }

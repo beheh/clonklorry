@@ -65,6 +65,7 @@ CREATE TABLE `release` (
   `addon` int(11) NOT NULL,
   `version` varchar(255) NOT NULL,
   `timestamp` datetime DEFAULT NULL,
+  `shipping` bit(1) NOT NULL DEFAULT b'0',
   `assetsecret` varchar(64) NOT NULL,
   `changelog` text,
   `whatsnew` text,

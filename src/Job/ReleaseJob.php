@@ -3,6 +3,7 @@
 namespace Lorry\Job;
 
 use Lorry\Job;
+use Lorry\ModelFactory;
 
 class ReleaseJob extends Job {
 
@@ -11,8 +12,11 @@ class ReleaseJob extends Job {
 	}
 
 	public function perform() {
-		
-		$this->cdn->transfer('addon1/release1/ModernCombat.c4d');
+		$release = ModelFactory::build('Release')->byId(1);
+		//$this->cdn->transfer('addon1/release1/ModernCombat.c4d');
+		sleep(3);
+		$release->setShipping(false);
+		$release->save();
 	}
 
 }

@@ -73,7 +73,7 @@ class Release extends Presenter {
 
 		$datetime = new DateTime('tomorrow noon');
 		$this->context['datetime'] = $datetime->format('Y-m-d\TH:i:s');
-		$this->context['shipping'] = false;
+		$this->context['shipping'] = $release->isShipping();
 
 		$this->display('publish/release.twig');
 	}
@@ -155,6 +155,18 @@ class Release extends Presenter {
 		}
 
 		/* Publish */
+
+		if(isset($_POST['publish-quick-form'])) {
+			$confirm = filter_input(INPUT_POST, 'confirm', FILTER_VALIDATE_BOOLEAN) || false;
+			if($confirm) {
+				$release->setShipping(true);
+				$release->save();
+				$this->job->submit('Release', array($release->getId()));
+				$this->redirect('/publish/'.$id.'/'.$version.'#release');
+			} else {
+				$this->error('publish-quick', gettext('Confirmation required.'));
+			}
+		}
 
 		return $this->get($id, $version);
 	}
