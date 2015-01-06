@@ -1,17 +1,17 @@
 <?php
 
-namespace Lorry\Presenter\Manage;
+namespace Lorry\Presenter\Manage\Administrator;
 
 use Lorry\Presenter;
 
-class Administration extends Presenter {
+class Portal extends Presenter {
 
 	public function get() {
 		$this->security->requireAdministrator();
 		$this->offerIdentification();
 		$this->security->requireIdentification();
 
-		$this->display('manage/administration.twig');
+		$this->display('manage/administrator/portal.twig');
 	}
 
 }

@@ -1,6 +1,6 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Moderation'|trans %}
+{% set title = 'Moderator'|trans %}
 
 {% block content %}
 	<div class="page-header">
@@ -24,7 +24,7 @@
 					{% for request in submitted %}
 						<tr>
 							<td>{{request.addon.title}} {% include 'functions/tags/game.twig' with {'game' : games[request.addon.game]} %}</td>
-							<td><a href="{{base}}/moderate/approve/{{request.addon.id}}"><strong>{{request.namespace}}</strong></a></td>
+							<td><a href="{{base}}/moderator/approve/{{request.addon.id}}"><strong>{{request.namespace}}</strong></a></td>
 							<td>{% include 'functions/user.twig' with {'user': request.user} %}</td>
 						</tr>
 					{% endfor %}

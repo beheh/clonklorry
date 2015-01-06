@@ -1,6 +1,6 @@
 <?php
 
-namespace Lorry\Presenter\Manage;
+namespace Lorry\Presenter\Manage\Moderator;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
@@ -67,7 +67,7 @@ class Approve extends Presenter {
 		}
 		$this->context['comment_help'] = sprintf(gettext('Please comment in %s, the users language.'), $this->localisation->namedLanguage($owner->getLanguage()));
 
-		$this->display('manage/approve.twig');
+		$this->display('manage/moderator/approve.twig');
 	}
 
 	public function post($id) {

@@ -177,5 +177,4 @@ abstract class Presenter {
 		$this->display('account/identify.twig');
 		throw new OutputCompleteException;
 	}
-
 }

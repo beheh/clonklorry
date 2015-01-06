@@ -20,8 +20,8 @@
 				<li{% if path.0 == "addons" and path.1 == "rage" %} class="active"{% endif %}><a href="{{base}}/addons/rage">{% trans %}Clonk Rage{% endtrans %}</a></li>
 				<li{% if path.0 == "addons" and path.1 == "openclonk"  %} class="active"{% endif %}><a href="{{base}}/addons/openclonk">{% trans %}OpenClonk{% endtrans %}</a></li>
 				<li{% if path.0 == "developers" %} class="active"{% endif %}><a href="{{base}}/developers">{% trans 'Developers' %}</a></li>
-				{% if user_moderator %}<li{% if path.0 == "moderate" %} class="active"{% endif %}><a href="{{base}}/moderate">{% trans 'Moderation' %}</a></li>{% endif %}
-				{% if user_administrator %}<li{% if path.0 == "admin" %} class="active"{% endif %}><a href="{{base}}/admin">{% trans 'Administration' %}</a></li>{% endif %}
+				{% if user_moderator %}<li{% if path.0 == "moderator" %} class="active"{% endif %}><a href="{{base}}/moderator">{% trans 'Moderator' %}</a></li>{% endif %}
+				{% if user_administrator %}<li{% if path.0 == "administrator" %} class="active"{% endif %}><a href="{{base}}/administrator">{% trans 'Administrator' %}</a></li>{% endif %}
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
       {% if user_login %}

@@ -4,7 +4,7 @@
 
 {% block content %}
 	<div class="page-header">
-		<div class="breakout"><a href="{{base}}/moderate"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+		<div class="breakout"><a href="{{base}}/moderator"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
 			<h1>{{addon}}
 				<small>
@@ -25,7 +25,7 @@
 				<h1>{% trans %}Addon approved{% endtrans %}</h1>
 				<p>{% trans %}This addon has been assigned the namespace <strong>{{namespace}}</strong>.{% endtrans %}</p>
 				{{comment}}
-				<p><a class="btn btn-primary btn-large" href="{{base}}/moderate">{% trans %}Return to moderation portal{% endtrans %}</a></p>
+				<p><a class="btn btn-primary btn-large" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>
 			</div>
 		</div>
 	{% elseif rejected %}
@@ -34,7 +34,7 @@
 				<h1>{% trans %}Addon rejected{% endtrans %}</h1>
 				<p>{% trans %}This addon was rejected. It's requested namespace was <em>{{namespace}}</em>.{% endtrans %}</p>
 				{{comment}}
-				<p><a class="btn btn-primary btn-large" href="{{base}}/moderate">{% trans %}Return to moderation portal{% endtrans %}</a></p>
+				<p><a class="btn btn-primary btn-large" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>
 			</div>{
 		</div>
 	{% else %}

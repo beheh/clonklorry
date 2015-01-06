@@ -1,11 +1,11 @@
 <?php
 
-namespace Lorry\Presenter\Manage;
+namespace Lorry\Presenter\Manage\Moderator;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 
-class Moderation extends Presenter {
+class Portal extends Presenter {
 
 	public function get() {
 		$this->security->requireModerator();
@@ -38,7 +38,7 @@ class Moderation extends Presenter {
 		}
 		$this->context['submitted'] = $submitted;
 		
-		$this->display('manage/moderation.twig');
+		$this->display('manage/moderator/portal.twig');
 	}
 
 }
