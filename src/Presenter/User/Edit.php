@@ -3,6 +3,7 @@
 namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
+use Lorry\Model\User;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ModelValueInvalidException;
@@ -88,6 +89,42 @@ class Edit extends Presenter {
 			}
 		}
 
+		if(isset($_POST['permissions-submit'])) {
+			$this->security->requireAdministrator();
+
+			$permissions = filter_input(INPUT_POST, 'permissions');
+
+			switch($permissions) {
+				case 'administrator':
+					$user->setPermission(User::PERMISSION_ADMINISTRATE);
+					break;
+				case 'moderator':
+					$user->setPermission(User::PERMISSION_MODERATE);
+					break;
+				case 'user':
+					$user->setPermission(User::PERMISSION_READ);
+					break;
+				default:
+					$this->error('permissions', gettext('Invalid permission.'));
+					break;
+			}
+
+			if($user->modified()) {
+				$user->save();
+
+				if($this->session->getUser()->getId() == $user->getId()) {
+					if($user->isAdministrator()) {
+						$this->redirect('/users/'.$user->getUsername().'/edit');
+					} else {
+						$this->redirect('/users/'.$user->getUsername());
+					}
+					return;
+				}
+				
+				$this->success('permissions', gettext('Permissions changed.'));
+			}
+		}
+
 		$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
 		if(isset($_POST['change-contact-submit']) && $email != $user->getEmail()) {
@@ -132,6 +169,8 @@ class Edit extends Presenter {
 				$this->error('contact', implode('<br>', $errors));
 			}
 		}
+
+
 
 		$this->get($username);
 	}

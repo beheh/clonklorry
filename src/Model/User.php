@@ -8,6 +8,16 @@ use Exception;
 
 class User extends Model {
 
+	const PERMISSION_READ = 1;
+	const PERMISSION_MODERATE = 2;
+	const PERMISSION_ADMINISTRATE = 3;
+	
+	const FLAG_ALPHA = 1;
+	const FLAG_BETA = 2;
+	const FLAG_VIP = 4;
+	const FLAG_CODER = 8;
+	const FLAG_REPORTER = 16;
+
 	public function __construct() {
 		parent::__construct('user', array(
 			'username' => 'string(3,16)',
@@ -19,6 +29,8 @@ class User extends Model {
 			'clonkforge' => 'int',
 			'github' => 'string',
 			'language' => 'string(5,5)',
+			'permissions' => 'int',
+			'flags' => 'int',
 			'oauth-openid' => 'string(255)',
 			'oauth-google' => 'string(255)',
 			'oauth-facebook' => 'string(255)'));
@@ -108,12 +120,24 @@ class User extends Model {
 		return hash_equals($this->getValue('secret'), $secret);
 	}
 
+	public final function setPermission($permission) {
+		return $this->setValue('permissions', $permission);
+	}
+
+	public final function getPermissions() {
+		return $this->getValue('permissions');
+	}
+
+	public final function hasPermission($permission) {
+		return $this->getPermissions() >= $permission;
+	}
+
 	/**
 	 * 
 	 * @return bool
 	 */
 	public final function isAdministrator() {
-		return $this->getId() == 1; //@TODO user groups
+		return $this->hasPermission(User::PERMISSION_ADMINISTRATE);
 	}
 
 	/**
@@ -121,7 +145,31 @@ class User extends Model {
 	 * @return bool
 	 */
 	public final function isModerator() {
-		return $this->getId() == 1; //@TODO user groups
+		return $this->hasPermission(User::PERMISSION_MODERATE);
+	}
+
+	public final function setFlag($flag) {
+		$flags = $this->getFlags();
+		$flags = $flags | $flag;
+		return $this->setFlags($flags);
+	}
+
+	public final function unsetFlag($flag) {
+		$flags = $this->getFlags();
+		$flags = $flags xor $flag;
+		return $this->setFlags($flags);
+	}
+
+	public final function setFlags($flags) {
+		return $this->setValue('flags', $flags);
+	}
+
+	public final function getFlags() {
+		return $this->getValue('flags');
+	}
+
+	public final function hasFlag($flag) {
+		return !!($this->getFlags() & $flag);
 	}
 
 	public final function setClonkforgeUrl($clonkforge) {

@@ -4,6 +4,7 @@ namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Service\LocalisationService;
 
@@ -21,6 +22,15 @@ class Profile extends Presenter {
 
 		$this->context['administrator'] = $user->isAdministrator();
 		$this->context['moderator'] = $user->isModerator();
+
+		$flags = array();
+		$flags['founder'] = $user->getUsername() === 'B_E';
+		$flags['alpha'] = $user->hasFlag(User::FLAG_ALPHA);
+		$flags['beta'] = $user->hasFlag(User::FLAG_BETA);
+		$flags['vip'] = $user->hasFlag(User::FLAG_VIP);
+		$flags['coder'] = $user->hasFlag(User::FLAG_CODER);
+		$flags['reporter'] = $user->hasFlag(User::FLAG_REPORTER);
+		$this->context['flags'] = $flags;
 
 		if($user->getRegistration()) {
 			$this->context['registration'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATE), $user->getRegistration());
@@ -49,7 +59,7 @@ class Profile extends Presenter {
 				'short' => $addon->getShort(),
 				'introduction' => $addon->getIntroduction()
 			);
-			
+
 			$game = $addon->fetchGame();
 			if($game) {
 				$user_addon['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
@@ -57,7 +67,6 @@ class Profile extends Presenter {
 
 			$this->context['addons'][] = $user_addon;
 		}
-
 
 		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
 		$this->context['comments'] = array();

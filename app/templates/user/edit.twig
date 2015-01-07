@@ -5,6 +5,15 @@
 		<div class="container">
 			<h1>
 				<a href="{{base}}/users/{{username}}">{{username}}</a>
+				{% if administrator or moderator or banned %}
+					<small>
+						{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
+						{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
+						{% endif %}
+						{% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
+						{% endif %}
+					</small>
+				{% endif %}
 				<small><span class="glyphicon glyphicon-pencil"></span></small>
 			</h1>
 		</div>
@@ -46,25 +55,26 @@
 				</form>
 				{% if user_administrator %}
 				<h3>{% trans "Permissions" %}</h3>
+				{% include 'functions/alert.twig' with {'selector' : 'permissions'} %}
 				<form role=form" method="post">
 					<input type="hidden" name="state" value="{{state}}">
 					<div class="radio">
 						<label>
-							<input type="radio" name="rights" value="yes"{% if not (moderator or administrator) %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
+							<input type="radio" name="permissions" value="user"{% if not (moderator or administrator) %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio" name="rights" value="yes"{% if moderator and not administrator %} checked{% endif %}> {% trans %}Moderator{% endtrans %}
+							<input type="radio" name="permissions" value="moderator"{% if moderator and not administrator %} checked{% endif %}> {% trans %}Moderator{% endtrans %}
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio" name="rights" value="yes"{% if administrator %} checked{% endif %}> {% trans %}Administrator{% endtrans %}
+							<input type="radio" name="permissions" value="administrator"{% if administrator %} checked{% endif %}> {% trans %}Administrator{% endtrans %}
 						</label>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-default" name="rights-submit">{% trans "Change permissions" %}</button>
+						<button type="submit" class="btn btn-default" name="permissions-submit">{% trans "Change permissions" %}</button>
 					</div>
 				</form>
 				{% endif %}

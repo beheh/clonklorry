@@ -51,7 +51,7 @@ class SecurityService {
 	 */
 	public function requireModerator() {
 		$user = $this->session->getUser();
-		if(!$user || !$user->isModerator()) {
+		if(!$user || (!$user->isModerator() && !$user->isAdministrator())) {
 			throw new ForbiddenException('requires moderator');
 		}
 	}
