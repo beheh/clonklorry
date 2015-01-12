@@ -92,7 +92,6 @@ class Login extends Presenter {
 					} else {
 						$this->session->unsetFlag('login_forget');
 					}
-					$this->session->setFlag('knows_clonk');
 					$url = '/';
 					$returnto = filter_input(INPUT_GET, 'returnto');
 					if($returnto) {

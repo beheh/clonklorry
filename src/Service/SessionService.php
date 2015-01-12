@@ -46,6 +46,7 @@ class SessionService {
 		if($remember === true) {
 			$this->remember();
 		}
+		$this->session->setFlag('knows_clonk');
 	}
 
 	public final function refresh() {
