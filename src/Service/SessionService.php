@@ -310,6 +310,8 @@ class SessionService {
 		unset($_SESSION['password_reset_token']);
 	}
 
+	protected $flags = array();
+	
 	protected final function getFlagName($flag) {
 		return 'lorry_flag_'.$flag;;
 	}
@@ -319,14 +321,19 @@ class SessionService {
 		if($persistent) {
 			$time = time() + 60 * 60 * 24 * 365;
 		}
+		$this->flags[$flag] = true;
 		setcookie($this->getFlagName($flag), '1', $time, '/');
 	}
 
 	public final function unsetFlag($flag) {
+		$this->flags[$flag] = false;
 		setcookie($this->getFlagName($flag), '', 0, '/');
 	}
 
 	public final function getFlag($flag) {
+		if(isset($this->flags[$flag]) && $this->flags[$flag] === true) {
+			return true;
+		}
 		$name = $this->getFlagName($flag);
 		return isset($_COOKIE[$name]) && filter_input(INPUT_COOKIE, $name) === '1';
 	}
