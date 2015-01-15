@@ -46,7 +46,6 @@ class SessionService {
 		if($remember === true) {
 			$this->remember();
 		}
-		$this->setFlag('knows_clonk');
 	}
 
 	public final function refresh() {
@@ -69,6 +68,7 @@ class SessionService {
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
 		$_SESSION['identified'] = false; // whether the user has personally identifed via password, as opposed to login cookie
+		$this->setFlag('knows_clonk');
 	}
 
 	public final function identify() {
