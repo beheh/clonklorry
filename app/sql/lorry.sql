@@ -28,7 +28,7 @@ CREATE TABLE `user` (
 	`oauth-openid` varchar(255) DEFAULT NULL,
 	`oauth-google` varchar(255) DEFAULT NULL,
 	`oauth-facebook` varchar(255) DEFAULT NULL,
-	`language` varchar(5) DEFAULT 'en-US',
+	`language` varchar(5) NOT NULL DEFAULT 'en-US',
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
