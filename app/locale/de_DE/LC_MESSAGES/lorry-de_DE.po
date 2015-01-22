@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-07 13:02+0100\n"
-"PO-Revision-Date: 2015-01-07 13:02+0100\n"
+"POT-Creation-Date: 2015-01-22 15:18+0100\n"
+"PO-Revision-Date: 2015-01-22 15:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;trans\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-Bookmarks: -1,6,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -125,7 +125,8 @@ msgstr "erstellst du nicht gleich eine"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:272
 msgid "You have not released any addons yet. Why not %create_one_now%?"
-msgstr "Du hast noch keine Erweiterungen veröffentlicht. Warum %create_one_now%?"
+msgstr ""
+"Du hast noch keine Erweiterungen veröffentlicht. Warum %create_one_now%?"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:278
 msgid "This user has not released any addons yet."
@@ -156,7 +157,8 @@ msgstr "Hier werden deine Erweiterungen erscheinen"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:154
 msgid "Visit the developer portal to get started with a new addon."
-msgstr "Besuche das Entwicklerportal, um mit einer neuen Erweiterung loszulegen."
+msgstr ""
+"Besuche das Entwicklerportal, um mit einer neuen Erweiterung loszulegen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:160
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:154
@@ -171,16 +173,21 @@ msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:53
-msgid "All data is kept exclusivly under our and our hosters control and not passed on to any other third party."
-msgstr "Alle Daten werden exklusiv unter unserer und der Kontrolle unserer Hoster gehalten und an keine Dritten weitergegeben."
+msgid ""
+"All data is kept exclusivly under our and our hosters control and not passed "
+"on to any other third party."
+msgstr ""
+"Alle Daten werden exklusiv unter unserer und der Kontrolle unserer Hoster "
+"gehalten und an keine Dritten weitergegeben."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:57
 msgid ""
-"Files you upload may be transferred to a content delivery network to make them publicly available. You are responsible for "
-"files you upload."
+"Files you upload may be transferred to a content delivery network to make "
+"them publicly available. You are responsible for files you upload."
 msgstr ""
-"Dateien, die du hochlädst, können auf ein Content Delivery Network übertragen werden um sie öffentlich verfügbar zu machen. "
-"Du bist für Dateien verantwortlich, die du hochlädst."
+"Dateien, die du hochlädst, können auf ein Content Delivery Network "
+"übertragen werden um sie öffentlich verfügbar zu machen. Du bist für Dateien "
+"verantwortlich, die du hochlädst."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:61
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/c2/23/13986645c6473e087b4fe2aa012b3225c4ca98944468cec43eb2c785ad9c.php:92
@@ -192,30 +199,41 @@ msgid "We save the following data directly related to your account:"
 msgstr "Wir speichern die folgenden Daten über dein Benutzerkonto:"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:70
-msgid "<strong>Basic account information</strong> (username, email address and encrypted password)"
-msgstr "<strong>Grundlegende Kontoinformationen</strong> (Benutzername, E-Mail-Adresse und verschlüsseltes Passwort)"
+msgid ""
+"<strong>Basic account information</strong> (username, email address and "
+"encrypted password)"
+msgstr ""
+"<strong>Grundlegende Kontoinformationen</strong> (Benutzername, E-Mail-"
+"Adresse und verschlüsseltes Passwort)"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:74
 msgid ""
-"<strong>Settings and profile information</strong> (for example: language, when you registered, and details you submitted on "
-"the settings page)"
+"<strong>Settings and profile information</strong> (for example: language, "
+"when you registered, and details you submitted on the settings page)"
 msgstr ""
-"<strong>Einstellungen und Profilinformationen</strong> (zum Beispiel: Sprache, wann du dich registriert hast, und was du auf "
-"der Einstellungsseite angegeben hast)"
+"<strong>Einstellungen und Profilinformationen</strong> (zum Beispiel: "
+"Sprache, wann du dich registriert hast, und was du auf der Einstellungsseite "
+"angegeben hast)"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:78
 msgid "<strong>Login services</strong> (only if you added a linked account)"
 msgstr "<strong>Anmeldedienste</strong> (nur, falls du Konten verknüpft hast)"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:83
-msgid "The following data is saved as linked to your account, but cannot be correlated once you delete your account:"
+msgid ""
+"The following data is saved as linked to your account, but cannot be "
+"correlated once you delete your account:"
 msgstr ""
-"Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht mehr zugeordnet werden wenn du dein Konto löschst:"
+"Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht "
+"mehr zugeordnet werden wenn du dein Konto löschst:"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:88
-msgid "<strong>Addons</strong> and <strong>releases</strong> you created (and the corresponding files you uploaded)"
+msgid ""
+"<strong>Addons</strong> and <strong>releases</strong> you created (and the "
+"corresponding files you uploaded)"
 msgstr ""
-"<strong>Erweiterungen</strong> und <strong>Releases</strong> die du erstellst (und alle zugehörigen Dateien, die du hochlädst)"
+"<strong>Erweiterungen</strong> und <strong>Releases</strong> die du "
+"erstellst (und alle zugehörigen Dateien, die du hochlädst)"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:93
 msgid "Transparency"
@@ -227,16 +245,21 @@ msgstr "öffentlich"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:104
 msgid ""
-"Lorry's source code is %public%, so you can check all of this yourself. If you have further questions concerning your "
-"privacy, please do not hesitate to contact us."
+"Lorry's source code is %public%, so you can check all of this yourself. If "
+"you have further questions concerning your privacy, please do not hesitate "
+"to contact us."
 msgstr ""
-"Lorrys Quellcode ist %public%, damit du all dies selbst nachprüfen kannst. Falls du weitere Fragen zu deiner Privatsphäre "
-"hast kannst du uns jederzeit kontaktieren.\t"
+"Lorrys Quellcode ist %public%, damit du all dies selbst nachprüfen kannst. "
+"Falls du weitere Fragen zu deiner Privatsphäre hast kannst du uns jederzeit "
+"kontaktieren.\t"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:108
-msgid "Our systems are hosted by Uberspace, a hoster with an (in our opinion) excellent privacy policy."
+msgid ""
+"Our systems are hosted by Uberspace, a hoster with an (in our opinion) "
+"excellent privacy policy."
 msgstr ""
-"Unsere Systeme werden von Uberspace gehostet, einem Hoster mit einer (in unseren Augen) exzellenten Datenschutzerklärung."
+"Unsere Systeme werden von Uberspace gehostet, einem Hoster mit einer (in "
+"unseren Augen) exzellenten Datenschutzerklärung."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/1f/92/7c2b235937c88ef716233235334622bfedeb60abe461d5971961f4b16ad9.php:115
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:340
@@ -265,7 +288,9 @@ msgstr "%brand%: Einmalige Anmeldung"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/23/b1/527ebfd3558927b63223f4abc17034b08f77fa53c0ade142606bbdb4ef21.php:47
 msgid "You (or somebody else) requested a one-time login for your account."
-msgstr "Du (oder jemand anderes) hat eine Einmal-Anmeldung für dein Konto angefordert."
+msgstr ""
+"Du (oder jemand anderes) hat eine Einmal-Anmeldung für dein Konto "
+"angefordert."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/25/c5/b6b810f78c82043f523e48e7630352cad5582478aceda4f8131e6369b8c0.php:37
 msgid "Title image"
@@ -281,8 +306,10 @@ msgid "Sitewide intro"
 msgstr "Vorstellungstext"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/25/c5/b6b810f78c82043f523e48e7630352cad5582478aceda4f8131e6369b8c0.php:54
-msgid "Short intro text, will be used around the site alongside the title image."
-msgstr "Kurzer Vorstellungstext, wird auf der Seite neben dem Titelbild genutzt."
+msgid ""
+"Short intro text, will be used around the site alongside the title image."
+msgstr ""
+"Kurzer Vorstellungstext, wird auf der Seite neben dem Titelbild genutzt."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/25/c5/b6b810f78c82043f523e48e7630352cad5582478aceda4f8131e6369b8c0.php:63
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f2/de/c029e315af59eb66e7b7901d2e1146c887fdce0f722182f9ed1546ea24bc.php:74
@@ -307,7 +334,8 @@ msgstr "Forum"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/25/c5/b6b810f78c82043f523e48e7630352cad5582478aceda4f8131e6369b8c0.php:108
 msgid "The presentation can be changed anytime and affects all releases."
-msgstr "Die Präsentation kann jederzeit geändert werden und betrifft alle Releases."
+msgstr ""
+"Die Präsentation kann jederzeit geändert werden und betrifft alle Releases."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/25/c5/b6b810f78c82043f523e48e7630352cad5582478aceda4f8131e6369b8c0.php:113
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:372
@@ -417,8 +445,10 @@ msgid "Addon approved"
 msgstr "Erweiterung bestätigt"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:91
-msgid "This addon has been assigned the namespace <strong>%namespace%</strong>."
-msgstr "Dieser Erweiterung wurde die Kennung <strong>%namespace%</strong> zugeteilt."
+msgid ""
+"This addon has been assigned the namespace <strong>%namespace%</strong>."
+msgstr ""
+"Dieser Erweiterung wurde die Kennung <strong>%namespace%</strong> zugeteilt."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:101
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:126
@@ -431,28 +461,42 @@ msgid "Addon rejected"
 msgstr "Erweiterung abgelehnt"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:116
-msgid "This addon was rejected. It's requested namespace was <em>%namespace%</em>."
-msgstr "Dieser Erweiterung wurde abgelehnt. Die angeforderte Kennung war <em>%namespace%</em>."
+msgid ""
+"This addon was rejected. It's requested namespace was <em>%namespace%</em>."
+msgstr ""
+"Dieser Erweiterung wurde abgelehnt. Die angeforderte Kennung war <em>"
+"%namespace%</em>."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:147
-msgid "<strong>%username%</strong> would like to reserve the namespace <strong>%namespace%</strong> for this addon."
-msgstr "<strong>%username%</strong> möchte die Kennung <strong>%namespace%</strong> für diese Erweiterung reservieren."
+msgid ""
+"<strong>%username%</strong> would like to reserve the namespace <strong>"
+"%namespace%</strong> for this addon."
+msgstr ""
+"<strong>%username%</strong> möchte die Kennung <strong>%namespace%</strong> "
+"für diese Erweiterung reservieren."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:167
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:104
 msgid "The requested namespace has already been reserved for another addon."
-msgstr "Die gewünschte Kennung wurde bereits für eine andere Erweiterung reserviert."
+msgstr ""
+"Die gewünschte Kennung wurde bereits für eine andere Erweiterung reserviert."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:176
 msgid ""
-"Approving this addon will trigger a public release. The user can publish further releases of this addon without approval."
+"Approving this addon will trigger a public release. The user can publish "
+"further releases of this addon without approval."
 msgstr ""
-"Die Bestätigung wird die Veröffentlichung eines Releases auslösen. Der Benutzer kann weitere Releases dieser Erweiterung ohne "
-"Bestätigungen veröffentlichen."
+"Die Bestätigung wird die Veröffentlichung eines Releases auslösen. Der "
+"Benutzer kann weitere Releases dieser Erweiterung ohne Bestätigungen "
+"veröffentlichen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:182
-msgid "The user will be able to freely publish releases of this addon after approval."
-msgstr "Der Benutzer wird Releases dieser Erweiterung nach der Bestätigung selbstständig veröffentlichen können."
+msgid ""
+"The user will be able to freely publish releases of this addon after "
+"approval."
+msgstr ""
+"Der Benutzer wird Releases dieser Erweiterung nach der Bestätigung "
+"selbstständig veröffentlichen können."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:199
 msgid "Comment"
@@ -502,15 +546,21 @@ msgstr "Kein Kommentar."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:59
 msgid "This addon was approved. Releases can now be published at any time."
-msgstr "Diese Erweiterung wurde bestätigt. Releases können nun jederzeit veröffentlicht werden."
+msgstr ""
+"Diese Erweiterung wurde bestätigt. Releases können nun jederzeit "
+"veröffentlicht werden."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:73
 msgid "Waiting for approval&hellip;"
 msgstr "Warte auf Bestätigung&hellip;"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:78
-msgid "This addon was submitted for approval. A moderator will check this addon shortly."
-msgstr "Diese Erweiterung wurde zur Bestätigung eingereicht. Ein Moderator wird diese Erweiterung in Kürze überprüfen."
+msgid ""
+"This addon was submitted for approval. A moderator will check this addon "
+"shortly."
+msgstr ""
+"Diese Erweiterung wurde zur Bestätigung eingereicht. Ein Moderator wird "
+"diese Erweiterung in Kürze überprüfen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:82
 msgid "Withdraw addon"
@@ -518,19 +568,26 @@ msgstr "Erweiterung zurückziehen"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:97
 msgid "This addon was rejected. You can possibly improve and submit it again."
-msgstr "Diese Erweiterung wurde abgelehnt. Du kannst sie möglicherweise verbessern und erneut einreichen."
+msgstr ""
+"Diese Erweiterung wurde abgelehnt. Du kannst sie möglicherweise verbessern "
+"und erneut einreichen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:111
 msgid "Approval required"
 msgstr "Bestätigung erforderlich"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:116
-msgid "This addon needs to be approved by a moderator before releases can be published."
-msgstr "Diese Erweiterung muss von einem Moderator bestätigt werden, bevor Releases veröffentlicht werden können."
+msgid ""
+"This addon needs to be approved by a moderator before releases can be "
+"published."
+msgstr ""
+"Diese Erweiterung muss von einem Moderator bestätigt werden, bevor Releases "
+"veröffentlicht werden können."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:164
 msgid "The title will be shown in many various places around the site."
-msgstr "Der Titel wird an vielen verschiedenen Stellen auf der Seite angezeigt."
+msgstr ""
+"Der Titel wird an vielen verschiedenen Stellen auf der Seite angezeigt."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:173
 msgid "Namespace"
@@ -546,11 +603,13 @@ msgstr "Die Erweiterung wird unter der URL %url% verfügbar sein."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:220
 msgid ""
-"The namespace will be used as a unique identifier for your addon and its releases. It will appear in various urls. Please "
-"choose a short namespace, ideally the filename of the addon."
+"The namespace will be used as a unique identifier for your addon and its "
+"releases. It will appear in various urls. Please choose a short namespace, "
+"ideally the filename of the addon."
 msgstr ""
-"Die Kennung wird als einzigartige Identifikation für deine Erweiterung und die Releases genutzt. Sie wird in verschiedenen "
-"URLs erscheinen. Bitte wähle eine kurze Kennung, idealerweise der Dateiname der Erweiterung."
+"Die Kennung wird als einzigartige Identifikation für deine Erweiterung und "
+"die Releases genutzt. Sie wird in verschiedenen URLs erscheinen. Bitte wähle "
+"eine kurze Kennung, idealerweise der Dateiname der Erweiterung."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:232
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:92
@@ -564,11 +623,13 @@ msgstr "Die Erweiterung ist unter <strong>%gametitle%</strong> spielbar."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:290
 msgid ""
-"The addon must be for a specific Clonk game. Consider choosing a different title if you create a version for a different game "
-"so players don't get confused and %create_a_new_addon%."
+"The addon must be for a specific Clonk game. Consider choosing a different "
+"title if you create a version for a different game so players don't get "
+"confused and %create_a_new_addon%."
 msgstr ""
-"Die Erweiterung muss für ein spezifische Clonkspiel sein. Überlege dir, einen anderen Titel zu wählen falls du eine Version "
-"für ein anderes Spiel erstellst um Spieler nicht zu verwirren und %create_a_new_addon%."
+"Die Erweiterung muss für ein spezifische Clonkspiel sein. Überlege dir, "
+"einen anderen Titel zu wählen falls du eine Version für ein anderes Spiel "
+"erstellst um Spieler nicht zu verwirren und %create_a_new_addon%."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:302
 msgid "Abbreviation"
@@ -583,7 +644,8 @@ msgid "Not set"
 msgstr "Nicht gesetzt"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:330
-msgid "Players will be able to search for your addon by using the abbreviation."
+msgid ""
+"Players will be able to search for your addon by using the abbreviation."
 msgstr "Spieler werden deine Erweiterung mithilfe der Abkürzung suchen können."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:345
@@ -596,12 +658,16 @@ msgstr "Bitte gib nur dann eine Abkürzung ein, falls sie bekannt ist."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:363
 msgid "These settings cannot be changed after approval."
-msgstr "Diese Einstellungen können nach der Bestätigung nicht mehr geändert werden."
+msgstr ""
+"Diese Einstellungen können nach der Bestätigung nicht mehr geändert werden."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:376
-msgid "The details on this page cannot be changed anymore once the addon has been submitted and approved."
+msgid ""
+"The details on this page cannot be changed anymore once the addon has been "
+"submitted and approved."
 msgstr ""
-"Die Einstellungen auf dieser Seite können nicht mehr geändert werden, nachdem die Erweiterung eingereicht und bestätigt wurde."
+"Die Einstellungen auf dieser Seite können nicht mehr geändert werden, "
+"nachdem die Erweiterung eingereicht und bestätigt wurde."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:378
 msgid "All other settings can still be changed."
@@ -651,8 +717,12 @@ msgid "Username"
 msgstr "Benutzername"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:102
-msgid "Your username may contain letters, numbers and underscores and must be between 3 and 16 characters long."
-msgstr "Dein Benutzername kann Buchstaben, Zahlen und Unterstriche enthalten und muss zwischen 3 und 16 Zeichen lang sein."
+msgid ""
+"Your username may contain letters, numbers and underscores and must be "
+"between 3 and 16 characters long."
+msgstr ""
+"Dein Benutzername kann Buchstaben, Zahlen und Unterstriche enthalten und "
+"muss zwischen 3 und 16 Zeichen lang sein."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:118
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:122
@@ -664,8 +734,12 @@ msgid "Email address"
 msgstr "E-Mail-Adresse"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:124
-msgid "We require your email address so that we can verify you if you should forget your login details."
-msgstr "Wir benötigen deine E-Mail-Adresse damit wir dich verifizieren können, falls du deine Anmeldedaten vergisst."
+msgid ""
+"We require your email address so that we can verify you if you should forget "
+"your login details."
+msgstr ""
+"Wir benötigen deine E-Mail-Adresse damit wir dich verifizieren können, falls "
+"du deine Anmeldedaten vergisst."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:139
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:143
@@ -680,11 +754,12 @@ msgstr "Passwort"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:145
 msgid ""
-"You password is stored securely. We require at least 8 characters for your security and are unable to send you this password "
-"if you should forget it."
+"You password is stored securely. We require at least 8 characters for your "
+"security and are unable to send you this password if you should forget it."
 msgstr ""
-"Dein Passwort wird sicher gespeichert. Wir benötigen zu deiner Sicherheit mindestens 8 Zeichen und können dir dieses Passwort "
-"nicht zusenden falls du es vergessen solltest."
+"Dein Passwort wird sicher gespeichert. Wir benötigen zu deiner Sicherheit "
+"mindestens 8 Zeichen und können dir dieses Passwort nicht zusenden falls du "
+"es vergessen solltest."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:151
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:155
@@ -727,16 +802,24 @@ msgid "Nearly done&hellip;"
 msgstr "Fast fertig&hellip;"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:242
-msgid "You still need to choose your username and enter or verify your email address."
-msgstr "Du musst noch deinen Benutzernamen wählen und deine E-Mail-Adresse angeben oder überprüfen."
+msgid ""
+"You still need to choose your username and enter or verify your email "
+"address."
+msgstr ""
+"Du musst noch deinen Benutzernamen wählen und deine E-Mail-Adresse angeben "
+"oder überprüfen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:248
 msgid "This is Lorry."
 msgstr "Das hier ist Lorry."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:252
-msgid "Lorry is a fan page, distribution platform and online community for players and fans of the Clonk series."
-msgstr "Lorry ist eine Fanseite, Downloadplattform und Online-Community für Spieler und Fans der Clonk-Serie."
+msgid ""
+"Lorry is a fan page, distribution platform and online community for players "
+"and fans of the Clonk series."
+msgstr ""
+"Lorry ist eine Fanseite, Downloadplattform und Online-Community für Spieler "
+"und Fans der Clonk-Serie."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:256
 msgid "Learn more&hellip;"
@@ -747,12 +830,18 @@ msgid "Why should you register?"
 msgstr "Warum solltest du dich registrieren?"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:266
-msgid "Publish your own addons, so they are instantly available to all Clonk players"
-msgstr "Veröffentliche deine eigenen Erweiterungen, damit sie sofort für alle Clonk-Spieler verfügbar sind"
+msgid ""
+"Publish your own addons, so they are instantly available to all Clonk players"
+msgstr ""
+"Veröffentliche deine eigenen Erweiterungen, damit sie sofort für alle Clonk-"
+"Spieler verfügbar sind"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:270
-msgid "Support Lorry with feedback and help shape the future of the Clonk community"
-msgstr "Unterstütze Lorry mit Feedback und trage damit zur Zukunft der Clonk-Community bei"
+msgid ""
+"Support Lorry with feedback and help shape the future of the Clonk community"
+msgstr ""
+"Unterstütze Lorry mit Feedback und trage damit zur Zukunft der Clonk-"
+"Community bei"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:275
 msgid "Upcoming features"
@@ -760,7 +849,9 @@ msgstr "Zukünftige Features"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:280
 msgid "Comment and discuss addons or send feedback to the developer(s)"
-msgstr "Kommentiere und diskutiere Erweiterungen oder sende Feedback an den Entwickler"
+msgstr ""
+"Kommentiere und diskutiere Erweiterungen oder sende Feedback an den "
+"Entwickler"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:284
 msgid "Vote on addons to support them and save your favourite ones"
@@ -832,16 +923,20 @@ msgid "Fan page"
 msgstr "Fanseite"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:69
-msgid "We're here as the fans of Clonk. We built this site as members of the community for \"our\" game."
-msgstr "Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder der Community für „unser“ Spiel gebaut."
+msgid ""
+"We're here as the fans of Clonk. We built this site as members of the "
+"community for \"our\" game."
+msgstr ""
+"Wir sind als Fans von Clonk hier. Wir haben diese Seite als Mitglieder der "
+"Community für „unser“ Spiel gebaut."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:73
 msgid ""
-"This site is for new players to learn all about Clonk, to discover the huge database of addons and to help them get right "
-"into the game."
+"This site is for new players to learn all about Clonk, to discover the huge "
+"database of addons and to help them get right into the game."
 msgstr ""
-"Auf dieser Seite können neue Spieler alles über Clonk lernen, die riesige Auswahl an Erweiterungen finden und einfach in das "
-"Spiel einsteigen."
+"Auf dieser Seite können neue Spieler alles über Clonk lernen, die riesige "
+"Auswahl an Erweiterungen finden und einfach in das Spiel einsteigen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:79
 msgid "Learn about Clonk"
@@ -853,15 +948,20 @@ msgstr "Downloadplattform"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:90
 msgid ""
-"We want to provide Clonk players with a simple, clean interface to find and download the best addons and keep them up-to-date "
-"as they progress."
+"We want to provide Clonk players with a simple, clean interface to find and "
+"download the best addons and keep them up-to-date as they progress."
 msgstr ""
-"Wir möchten Clonkspielern ein simples und übersichtliches Interfaces zur Verfügung stellen, damit sie die besten "
-"Erweiterungen finden können und während der Entwicklung immer auf dem neuesten Stand sind."
+"Wir möchten Clonkspielern ein simples und übersichtliches Interfaces zur "
+"Verfügung stellen, damit sie die besten Erweiterungen finden können und "
+"während der Entwicklung immer auf dem neuesten Stand sind."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:94
-msgid "It should also serve as an archive, to enable players to go back and find forgotten gems of the past."
-msgstr "Gleichzeitig soll sie als ein Archiv dienen, damit Spieler alte und gut gemachte Erweiterungen wiederfinden können."
+msgid ""
+"It should also serve as an archive, to enable players to go back and find "
+"forgotten gems of the past."
+msgstr ""
+"Gleichzeitig soll sie als ein Archiv dienen, damit Spieler alte und gut "
+"gemachte Erweiterungen wiederfinden können."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:100
 msgid "Discover the addons"
@@ -879,15 +979,21 @@ msgstr "Online-Community"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:115
 msgid ""
-"The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk: the "
-"awesome Community and its creations."
+"The official Clonk site is not really up to date anymore and fails to "
+"highlight one of the best features of Clonk: the awesome Community and its "
+"creations."
 msgstr ""
-"Die offizielle Clonk-Seite ist nicht mehr wirklich aktuell, und präsentiert eines der besten Features von Clonk kaum: die "
-"einzigartige Community mit ihren Kreationen."
+"Die offizielle Clonk-Seite ist nicht mehr wirklich aktuell, und präsentiert "
+"eines der besten Features von Clonk kaum: die einzigartige Community mit "
+"ihren Kreationen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:119
-msgid "We want to share our own creations easily and give the addon developers our important feedback."
-msgstr "Wir wollen unsere Arbeit einfach teilen und den Entwicklern der Erweiterungen unser wichtiges Feedback geben."
+msgid ""
+"We want to share our own creations easily and give the addon developers our "
+"important feedback."
+msgstr ""
+"Wir wollen unsere Arbeit einfach teilen und den Entwicklern der "
+"Erweiterungen unser wichtiges Feedback geben."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:128
 msgid "View your profile"
@@ -902,8 +1008,12 @@ msgid "Register now"
 msgstr "Jetzt registrieren"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:146
-msgid "This project was only made possible with a number of technologies and free resources:"
-msgstr "Dieses Projekt ist nur dank zahlreicher Technologien und freier Ressourcen möglich geworden:"
+msgid ""
+"This project was only made possible with a number of technologies and free "
+"resources:"
+msgstr ""
+"Dieses Projekt ist nur dank zahlreicher Technologien und freier Ressourcen "
+"möglich geworden:"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/45/20/d731d87bac359ed5bd1f9b4451a3ffc290f0f29ae9cb7b5b6ebd8423a95e.php:152
 msgid "Technologies"
@@ -948,7 +1058,9 @@ msgstr "%brand%: Password zurücksetzen"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/61/23/cfa506e9c5f8415fca8a815e9c5f1724eac178d3f4e8d5cc126d2e8e6e63.php:47
 msgid "You (or somebody else) requested a password reset for your account."
-msgstr "Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dein Konto angefordert."
+msgstr ""
+"Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dein Konto "
+"angefordert."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/62/3a/82dfd01dd8bc8a5acf9a73bc14248566bac12f83305531e78ad6703717ca.php:21
 msgid "Are you sure you want to remove this login service from your account?"
@@ -990,14 +1102,20 @@ msgid "We &hearts; feedback"
 msgstr "Wir &hearts; Feedback"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:59
-msgid "We here are fans of Clonk. We built this site as members of our community for the game and want to do our best."
+msgid ""
+"We here are fans of Clonk. We built this site as members of our community "
+"for the game and want to do our best."
 msgstr ""
-"Wir sind als Fans von Clonk hier. Wir haben diese Seite als Teil unserer Community für das Spiel gebaut und möchten unser "
-"Bestes geben."
+"Wir sind als Fans von Clonk hier. Wir haben diese Seite als Teil unserer "
+"Community für das Spiel gebaut und möchten unser Bestes geben."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:63
-msgid "If you have any wishes or should encounter any problem, do not hesitate to contact us:"
-msgstr "Falls du Wünsche hast oder bei dir irgendwelche Fehler auftreten, schick uns einfach eine Nachricht:"
+msgid ""
+"If you have any wishes or should encounter any problem, do not hesitate to "
+"contact us:"
+msgstr ""
+"Falls du Wünsche hast oder bei dir irgendwelche Fehler auftreten, schick uns "
+"einfach eine Nachricht:"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:75
 msgid "Send feedback"
@@ -1013,11 +1131,15 @@ msgstr "Rechtliches"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:102
 msgid ""
-"If you have any legal issues please do not hesitate to contact us either via our feedback form or via %legalmail%. That way "
-"we are able to quickly resolve to any problems that might occur or remove any content which infringes your rights."
+"If you have any legal issues please do not hesitate to contact us either via "
+"our feedback form or via %legalmail%. That way we are able to quickly "
+"resolve to any problems that might occur or remove any content which "
+"infringes your rights."
 msgstr ""
-"Falls du irgendwelche rechtlichen Probleme hast, kontaktiere uns bitte entweder über unser Feedback-Formular oder via "
-"%legalmail%. Dadurch können wir Probleme schnell lösen und Inhalte entfernen, die gegen deine Rechte verstoßen."
+"Falls du irgendwelche rechtlichen Probleme hast, kontaktiere uns bitte "
+"entweder über unser Feedback-Formular oder via %legalmail%. Dadurch können "
+"wir Probleme schnell lösen und Inhalte entfernen, die gegen deine Rechte "
+"verstoßen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:124
 msgid "Disclaimer"
@@ -1025,11 +1147,13 @@ msgstr "Haftungsausschluss"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:128
 msgid ""
-"We are not responsible for the content of outgoing links or user generated content. User generated content does not "
-"necessarily reflect the view of the site owners."
+"We are not responsible for the content of outgoing links or user generated "
+"content. User generated content does not necessarily reflect the view of the "
+"site owners."
 msgstr ""
-"Wir sind nicht für den Inhalt von externen Links oder benutzergenerierten Inhalten verantwortlich. Benutzergenerierte Inhalt "
-"müssen nicht der Meinung der Seitenbetreiber entsprechen."
+"Wir sind nicht für den Inhalt von externen Links oder benutzergenerierten "
+"Inhalten verantwortlich. Benutzergenerierte Inhalt müssen nicht der Meinung "
+"der Seitenbetreiber entsprechen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/6c/ca/a178532c8bd1e64e56233d925ec1ee26dd5717248cc9eac5375e531149df.php:135
 msgid "Site owner"
@@ -1052,22 +1176,30 @@ msgid "Welcome to Clonk!"
 msgstr "Willkommen bei Clonk!"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:50
-msgid "Clonk is a unique two-dimensional game and often referred to as a mix of \"The Settlers\" and \"Lemmings\"."
-msgstr "Clonk ist ein einzigartiges 2D-Spiel und wird oft als eine Mischung aus „Die Siedler“ und „Lemmings“ bezeichnet."
+msgid ""
+"Clonk is a unique two-dimensional game and often referred to as a mix of "
+"\"The Settlers\" and \"Lemmings\"."
+msgstr ""
+"Clonk ist ein einzigartiges 2D-Spiel und wird oft als eine Mischung aus „Die "
+"Siedler“ und „Lemmings“ bezeichnet."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:67
 msgid ""
-"The classic game with hundreds of community-built, high-quality addons. Magical wars, strategic shooters and futuristic "
-"settling: Clonk Rage has it all."
+"The classic game with hundreds of community-built, high-quality addons. "
+"Magical wars, strategic shooters and futuristic settling: Clonk Rage has it "
+"all."
 msgstr ""
-"Das klassische Spiel mit hunderten von hochqualitativen Erweiterungen aus der Community. Magische Kriege, strategische "
-"Shooter und futuristisches Siedeln: das alles hat Clonk Rage."
+"Das klassische Spiel mit hunderten von hochqualitativen Erweiterungen aus "
+"der Community. Magische Kriege, strategische Shooter und futuristisches "
+"Siedeln: das alles hat Clonk Rage."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:71
-msgid "Often the sheer selection is overwelming, so be sure to spread the word and vote for the addons you like."
+msgid ""
+"Often the sheer selection is overwelming, so be sure to spread the word and "
+"vote for the addons you like."
 msgstr ""
-"Oft ist die riesige Auswahl einfach überwältigend, erzähle daher anderen und stimme über die Erweiterungen ab, die dir gut "
-"gefallen."
+"Oft ist die riesige Auswahl einfach überwältigend, erzähle daher anderen und "
+"stimme über die Erweiterungen ab, die dir gut gefallen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:84
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:114
@@ -1075,32 +1207,45 @@ msgid "Official website"
 msgstr "Offizielle Webseite"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:99
-msgid "The opensource successor to the Clonk series, built by players and developers of the previous Clonk titles."
-msgstr "Der quelloffene Nachfolger zur Clonk-Serie, entwickelt von Spieler und Entwicklern der vorherigen Clonk-Titel."
+msgid ""
+"The opensource successor to the Clonk series, built by players and "
+"developers of the previous Clonk titles."
+msgstr ""
+"Der quelloffene Nachfolger zur Clonk-Serie, entwickelt von Spieler und "
+"Entwicklern der vorherigen Clonk-Titel."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:103
 msgid ""
-"Although the addon selection is still limited, OpenClonk completely reimaginges a great part of the game and greatly refines "
-"the technology, now supporting three-dimensional models within the game."
+"Although the addon selection is still limited, OpenClonk completely "
+"reimaginges a great part of the game and greatly refines the technology, now "
+"supporting three-dimensional models within the game."
 msgstr ""
-"Obwohl die Erweiterungsauswahl noch sehr beschränkt ist erfindet OpenClonk einen Großteil des Spieles komplett neu und nutzt "
-"überarbeitete Technologien: jetzt werden dreidimensionale Modelle innerhalb des Spiels unterstützt."
+"Obwohl die Erweiterungsauswahl noch sehr beschränkt ist erfindet OpenClonk "
+"einen Großteil des Spieles komplett neu und nutzt überarbeitete "
+"Technologien: jetzt werden dreidimensionale Modelle innerhalb des Spiels "
+"unterstützt."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:122
 msgid "&hellip;only just the beginning"
 msgstr "&hellip;alles nur der Anfang"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:126
-msgid "Clonk lives from its fans, with dedicated players creating high-quality addons."
-msgstr "Clonk lebt von den Fans, mit hochqualitativen Erweiterungen von passionierten Spielern."
+msgid ""
+"Clonk lives from its fans, with dedicated players creating high-quality "
+"addons."
+msgstr ""
+"Clonk lebt von den Fans, mit hochqualitativen Erweiterungen von "
+"passionierten Spielern."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:130
 msgid ""
-"The series appeals to all ages alike and has been around for many years. Addons exist in a huge variety of gameplay and "
-"genre, and Lorry offers a central platform for the best of them."
+"The series appeals to all ages alike and has been around for many years. "
+"Addons exist in a huge variety of gameplay and genre, and Lorry offers a "
+"central platform for the best of them."
 msgstr ""
-"Die Serie hat Fans in allen Altersgruppen und existiert seit vielen Jahren. Es gibt Erweiterungen für ein riesiges Sprektrum "
-"von Spielweisen und Genres, und Lorry bietet eine zentrale Plattform für die besten Erweiterungen."
+"Die Serie hat Fans in allen Altersgruppen und existiert seit vielen Jahren. "
+"Es gibt Erweiterungen für ein riesiges Sprektrum von Spielweisen und Genres, "
+"und Lorry bietet eine zentrale Plattform für die besten Erweiterungen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:139
 msgid "Create new content for Clonk"
@@ -1108,18 +1253,23 @@ msgstr "Erschaffe neue Inhalte für Clonk"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:143
 msgid ""
-"The official development of Clonk Rage has halted, therefore the community is creating an open source succesor - OpenClonk."
+"The official development of Clonk Rage has halted, therefore the community "
+"is creating an open source succesor - OpenClonk."
 msgstr ""
-"Die offizielle Entwicklung von Clonk Rage ist eingestellt, daher entwickelt die Community einen Open-Source-Nachfolger - "
-"OpenClonk."
+"Die offizielle Entwicklung von Clonk Rage ist eingestellt, daher entwickelt "
+"die Community einen Open-Source-Nachfolger - OpenClonk."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:147
 msgid ""
-"Both games are different and alike, but the majority of all addons have been created for Clonk Rage. Once you've created "
-"something awesome you can distribute it via Lorry, making it instantly available for any interested player."
+"Both games are different and alike, but the majority of all addons have been "
+"created for Clonk Rage. Once you've created something awesome you can "
+"distribute it via Lorry, making it instantly available for any interested "
+"player."
 msgstr ""
-"Beide Spiele sind unterschiedlich und gleich, aber der Großteil der Erweiterungen wurde für Clonk Rage entwickelt. Wenn du "
-"etwas tolles gebaut hast, kannst du es via Lorry anbieten, um es für jeden interessierten Spieler sofort verfügbar zu machen."
+"Beide Spiele sind unterschiedlich und gleich, aber der Großteil der "
+"Erweiterungen wurde für Clonk Rage entwickelt. Wenn du etwas tolles gebaut "
+"hast, kannst du es via Lorry anbieten, um es für jeden interessierten "
+"Spieler sofort verfügbar zu machen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:161
 msgid "Build the next Clonk"
@@ -1127,11 +1277,14 @@ msgstr "Baue das nächste Clonk"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:165
 msgid ""
-"The OpenClonk project is constantly looking for developers to help out with the next iteration of Clonk. If you have moderate "
-"or even advanced C++-skills you should definitively be welcome in the team."
+"The OpenClonk project is constantly looking for developers to help out with "
+"the next iteration of Clonk. If you have moderate or even advanced C++-"
+"skills you should definitively be welcome in the team."
 msgstr ""
-"Das OpenClonk-Projekt sucht ständig nach Entwicklern, die sie bei der nächsten Version von Clonk unterstützen können. Falls "
-"du grundlegende oder sogar fortgeschrittene C++-Kenntnisse hast, solltest du im Team auf jeden Fall willkommen sein."
+"Das OpenClonk-Projekt sucht ständig nach Entwicklern, die sie bei der "
+"nächsten Version von Clonk unterstützen können. Falls du grundlegende oder "
+"sogar fortgeschrittene C++-Kenntnisse hast, solltest du im Team auf jeden "
+"Fall willkommen sein."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/72/d3/68620e4b47b60768446c97912c45f78099c9f0d1d923eb346bc367cc9a33.php:170
 msgid "OpenClonk wiki"
@@ -1148,7 +1301,8 @@ msgstr "Dein Browser unterstützt das Hochladen von Dateien zu Lorry nicht."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/76/7b/f755008d442aab8be347ca3a8f0d9fe39f20348b36942a113ea0e73c889f.php:43
 msgid "Uploading files should be possible with Firefox 4+ and Chrome 11+."
-msgstr "Das Hochladen von Dateien sollte mit Firefox 4+ und Chrome 11+ möglich sein."
+msgstr ""
+"Das Hochladen von Dateien sollte mit Firefox 4+ und Chrome 11+ möglich sein."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/76/7b/f755008d442aab8be347ca3a8f0d9fe39f20348b36942a113ea0e73c889f.php:50
 msgid "File upload is disabled."
@@ -1205,7 +1359,9 @@ msgstr "Pausieren"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/76/7b/f755008d442aab8be347ca3a8f0d9fe39f20348b36942a113ea0e73c889f.php:123
 msgid "The files will only be made availabe after publishing this release."
-msgstr "Die Dateien werden erst nach der Veröffentlichung dieses Releases freigegeben."
+msgstr ""
+"Die Dateien werden erst nach der Veröffentlichung dieses Releases "
+"freigegeben."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/78/1d/47af2b2fbcdfcc0b50232e5c91737da1b79437e12c830a43c2f68743743a.php:45
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ac/c5/9a3ca763183c7b44bcc251050aa09388f69ad4f947a0d5f4d3c75c2ec87e.php:45
@@ -1242,7 +1398,9 @@ msgstr "Lorry ist eine Fanseite for Clonk."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:202
 msgid "Clonk is a unique game series with thousands of player-created worlds."
-msgstr "Clonk ist eine einzigartige Spieleserie mit tausenden von spielererstellten Welten."
+msgstr ""
+"Clonk ist eine einzigartige Spieleserie mit tausenden von spielererstellten "
+"Welten."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:207
 msgid "Learn more"
@@ -1288,8 +1446,12 @@ msgid "You have an awesome idea?"
 msgstr "Du hast eine tolle Idee?"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:176
-msgid "Whether it's magic caves or exploding Wipfs, %brand% is the place to publish your addons."
-msgstr "Egal ob es magische Höhlen oder explodierende Wipfe sind, auf %brand% kannst du deine Erweiterungen veröffentlichen."
+msgid ""
+"Whether it's magic caves or exploding Wipfs, %brand% is the place to publish "
+"your addons."
+msgstr ""
+"Egal ob es magische Höhlen oder explodierende Wipfe sind, auf %brand% kannst "
+"du deine Erweiterungen veröffentlichen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:181
 msgid "Clonk Rage documentation"
@@ -1305,11 +1467,13 @@ msgstr "Aller Anfang ist schwer"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:200
 msgid ""
-"We know it's not always easy to build something awesome. With the introduction on ClonkSpot you should at least have a rough "
-"idea how everything works."
+"We know it's not always easy to build something awesome. With the "
+"introduction on ClonkSpot you should at least have a rough idea how "
+"everything works."
 msgstr ""
-"Wir wissen, dass es nicht immer leicht ist etwas Tolles zu bauen. Mit der Einführung auf ClonkSpot solltest du zumindest eine "
-"grobe Idee haben, wie alles funktioniert."
+"Wir wissen, dass es nicht immer leicht ist etwas Tolles zu bauen. Mit der "
+"Einführung auf ClonkSpot solltest du zumindest eine grobe Idee haben, wie "
+"alles funktioniert."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:204
 msgid "Introduction on ClonkSpot"
@@ -1322,11 +1486,12 @@ msgstr "Nutze %brand% für dein Projekt"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:214
 msgid ""
-"Would you like to integrate %brand% into your project? The Lorry platform offers an API for you to request information about "
-"addons and releases."
+"Would you like to integrate %brand% into your project? The Lorry platform "
+"offers an API for you to request information about addons and releases."
 msgstr ""
-"Möchtest du %brand% in dein Projekt integrieren? Die Lorry-Plattform bietet eine API über die du verschiedene Informationen "
-"über Erweiterungen und Releases abfragen kannst."
+"Möchtest du %brand% in dein Projekt integrieren? Die Lorry-Plattform bietet "
+"eine API über die du verschiedene Informationen über Erweiterungen und "
+"Releases abfragen kannst."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/97/8a/1eaf13dcd34eb967b933e626b0ad0702ab6ba133672e3b6f36d8f868ed7a.php:45
 msgid "Duplicate"
@@ -1345,51 +1510,73 @@ msgid "The release will be instantly available to all players."
 msgstr "Der Release wird sofort für alle Spieler verfügbar sein."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:69
-msgid "Publishing a release is <strong>final</strong>. Any changes after releasing require a new release."
-msgstr "Die Veröffentlichung ist <strong>final</strong>. Jede Änderung nach der Veröffentlichung erfordert einen neuen Release."
+msgid ""
+"Publishing a release is <strong>final</strong>. Any changes after releasing "
+"require a new release."
+msgstr ""
+"Die Veröffentlichung ist <strong>final</strong>. Jede Änderung nach der "
+"Veröffentlichung erfordert einen neuen Release."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:75
 msgid "The release will be published as soon as the addon has been approved."
 msgstr "Der Release wird nach der Bestätigung veröffentlicht. "
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:79
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:82
 msgid "The release will not be published if the addon is rejected."
-msgstr "Der Release wird nicht veröffentlicht, falls die Erweiterung abgelehnt wird."
+msgstr ""
+"Der Release wird nicht veröffentlicht, falls die Erweiterung abgelehnt wird."
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:96
-msgid "Confirm instant release"
-msgstr "Sofortige Veröffentlichung bestätigen"
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:94
+msgid "needs to be submitted"
+msgstr "muss eingereicht werden"
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:102
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:99
+msgid "The addon %needs_to_be_submitted% in order to be quickly released."
+msgstr ""
+"Die Erweiterung %needs_to_be_submitted% um eine schnelle Veröffentlichung "
+"durchzuführen."
+
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:127
+msgid "Confirm quick release"
+msgstr "Schnelle Veröffentlichung bestätigen"
+
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:135
 msgid "Release now"
 msgstr "Jetzt veröffentlichen"
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:109
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:185
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:142
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:218
 msgid "Schedule release"
 msgstr "Veröffentlichung planen"
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:122
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:155
 msgid "The release will be available to players after the specified timestamp."
-msgstr "Der Release wird ab dem angegebenen Zeitpunkt für alle Spieler verfügbar sein."
+msgstr ""
+"Der Release wird ab dem angegebenen Zeitpunkt für alle Spieler verfügbar "
+"sein."
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:129
-msgid "A scheduled release can be cancelled at any time before the automated release."
-msgstr "Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen Veröffentlichung abbrechen."
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:162
+msgid ""
+"A scheduled release can be cancelled at any time before the automated "
+"release."
+msgstr ""
+"Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
+"Veröffentlichung abbrechen."
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:141
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:174
 msgid "needs to be approved"
-msgstr "bestätigt werden"
+msgstr "muss bestätigt werden"
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:146
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:179
 msgid "The addon %needs_to_be_approved% in order to schedule a release."
-msgstr "Die Erweiterung muss vor einer geplanten Veröffentlichung %needs_to_be_approved%."
+msgstr ""
+"Die Erweiterung %needs_to_be_approved% um eine Veröffentlichung zu planen."
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:154
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:187
 msgid "Date and time"
 msgstr "Datum und Zeit"
 
-#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:175
+#: /home/benedict/Dokumente/clonklorry/app/cache/twig/99/e8/1eebf7b6440c146cb2d7cee110c658067bbe61cbfeb211adb2e6da98740d.php:208
 msgid "Publicly announce release date and time"
 msgstr "Veröffentlichsdatum und -zeit öffentlich ankündigen"
 
@@ -1437,7 +1624,8 @@ msgstr "Release"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/af/47/eba27b8a3f466a76c00905feb2d455b7fb1db642431546153d7b07f7db54.php:110
 msgid "Javascript needs to be enabled in order to edit addons and releases."
-msgstr "Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
+msgstr ""
+"Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/af/47/eba27b8a3f466a76c00905feb2d455b7fb1db642431546153d7b07f7db54.php:154
 msgid "Changes"
@@ -1613,7 +1801,8 @@ msgid "Disable"
 msgstr "Deaktivieren"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/c2/23/13986645c6473e087b4fe2aa012b3225c4ca98944468cec43eb2c785ad9c.php:370
-msgid "The account \"%username%\" will be <strong>permanently disabled</strong>."
+msgid ""
+"The account \"%username%\" will be <strong>permanently disabled</strong>."
 msgstr "Das Konto „%username%“ wird <strong>dauerhaft deaktiviert</strong>."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/c2/23/13986645c6473e087b4fe2aa012b3225c4ca98944468cec43eb2c785ad9c.php:376
@@ -1675,7 +1864,9 @@ msgstr "Du hast deine E-Mail-Adresse zu %email% geändert."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/cf/ea/8c20ed6827abeb7272f4b58bccd2695b04fc8c4cbb09b352ac0318587f09.php:55
 msgid "To use all features of %brand% you need to activate this new address."
-msgstr "Um alle Features von %brand% vollständig nutzen zu können, musst du diese neue E-Mail-Adresse aktivieren."
+msgstr ""
+"Um alle Features von %brand% vollständig nutzen zu können, musst du diese "
+"neue E-Mail-Adresse aktivieren."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/cf/ea/8c20ed6827abeb7272f4b58bccd2695b04fc8c4cbb09b352ac0318587f09.php:59
 msgid "Please open %url% to activate your address."
@@ -1683,7 +1874,8 @@ msgstr "Bitte öffne %url% um deine Addresse zu bestätigen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/d7/b6/5bcac1326fb7f74ad3a9006bd32dd4a3f139592ba025683d5a689f2b0a66.php:60
 msgid "Javascript needs to be activated in order to edit addons and releases."
-msgstr "Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
+msgstr ""
+"Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/d7/b6/5bcac1326fb7f74ad3a9006bd32dd4a3f139592ba025683d5a689f2b0a66.php:70
 msgid "Presentation"
@@ -1707,8 +1899,11 @@ msgid "+ Added a new feature..."
 msgstr "+ Neues Feature hinzugefügt..."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/d8/52/e179b057646b8bdcb8ad80253087f70800cb2a612f574e4c7f4fceca265e.php:59
-msgid "The changelogs can still be changed after the release has been published."
-msgstr "Die Änderungsprotokolle können nach der Veröffentlichung des Releases noch geändert werden."
+msgid ""
+"The changelogs can still be changed after the release has been published."
+msgstr ""
+"Die Änderungsprotokolle können nach der Veröffentlichung des Releases noch "
+"geändert werden."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e3/7e/546bcfc4cd8cf92ad10872566a30fcaa4e5ab38c823dbfadf5fdc1b557dc.php:34
 msgid "Identification required"
@@ -1724,10 +1919,11 @@ msgstr "Bestätigen"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e3/7e/546bcfc4cd8cf92ad10872566a30fcaa4e5ab38c823dbfadf5fdc1b557dc.php:90
 msgid ""
-"We would like to verify your identity independent of your login service in future. Please add a secure password to continue."
+"We would like to verify your identity independent of your login service in "
+"future. Please add a secure password to continue."
 msgstr ""
-"Wir möchten deine Identität in Zukunft unabhängig von deinem Anmeldedienst verifizieren. Bitte füge ein sicheres Passwort "
-"hinzu, um fortzufahren."
+"Wir möchten deine Identität in Zukunft unabhängig von deinem Anmeldedienst "
+"verifizieren. Bitte füge ein sicheres Passwort hinzu, um fortzufahren."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e3/a2/2c6e5219c8ea7fa839e0c99614837812bd090a63650c2dcdef9e4099b4aa.php:108
 msgid "No matching users"
@@ -1763,11 +1959,12 @@ msgstr "Hey %user_name%!"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:159
 msgid ""
-"Welcome to %brand%. On this site you can find addons by other players and publish your own. Here are some links to get you "
-"started:"
+"Welcome to %brand%. On this site you can find addons by other players and "
+"publish your own. Here are some links to get you started:"
 msgstr ""
-"Willkommen bei %brand%. Auf dieser Seite kannst du Erweiterungen von anderen Spielern finden und deine veröffentlichen. Hier "
-"sind einige Links, damit du gleich loslegen kannst:"
+"Willkommen bei %brand%. Auf dieser Seite kannst du Erweiterungen von anderen "
+"Spielern finden und deine veröffentlichen. Hier sind einige Links, damit du "
+"gleich loslegen kannst:"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:166
 msgid "For players"
@@ -1782,8 +1979,12 @@ msgid "Welcome back."
 msgstr "Willkommen zurück."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:183
-msgid "%brand% lives from community creations. Why not start developing a new addon today?"
-msgstr "%brand% lebt von Community-Kreationen. Warum fängst du nicht gleich heute mit einer neuen Erweiterung an?"
+msgid ""
+"%brand% lives from community creations. Why not start developing a new addon "
+"today?"
+msgstr ""
+"%brand% lebt von Community-Kreationen. Warum fängst du nicht gleich heute "
+"mit einer neuen Erweiterung an?"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:200
 msgid "Welcome to Lorry."
@@ -1795,7 +1996,8 @@ msgstr "Willkommen"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:206
 msgid "%brand% is the site for the best addons for the game series Clonk."
-msgstr "%brand% ist die Seite für die besten Erweiterungen zur Spieleserie Clonk."
+msgstr ""
+"%brand% ist die Seite für die besten Erweiterungen zur Spieleserie Clonk."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:213
 msgid "New to Clonk?"
@@ -1807,11 +2009,12 @@ msgstr "Neu: Mehrere Sprachen"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:232
 msgid ""
-"%brand% is now available in German and English. You can add titles and descriptions in these languages for all your addons "
-"and releases."
+"%brand% is now available in German and English. You can add titles and "
+"descriptions in these languages for all your addons and releases."
 msgstr ""
-"%brand% ist jetzt in Deutsch und Englisch verfügbar. Du kannst Titel und Beschreibungen in diesen Sprachen für alle deine "
-"Erweiterungen und Releases hinzufügen."
+"%brand% ist jetzt in Deutsch und Englisch verfügbar. Du kannst Titel und "
+"Beschreibungen in diesen Sprachen für alle deine Erweiterungen und Releases "
+"hinzufügen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:236
 msgid "Announcements"
@@ -1823,11 +2026,12 @@ msgstr "In Entwicklung"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:245
 msgid ""
-"The platform behind %brand% is still in development. You can join and try out what works so far, and we will continue to add "
-"many features."
+"The platform behind %brand% is still in development. You can join and try "
+"out what works so far, and we will continue to add many features."
 msgstr ""
-"Die Plattform hinter %brand% wird noch entwickelt. Du kannst mitmachen und ausprobieren, was bisher funktioniert, und wir "
-"werden in Zukunft viele weitere Features hinzufügen."
+"Die Plattform hinter %brand% wird noch entwickelt. Du kannst mitmachen und "
+"ausprobieren, was bisher funktioniert, und wir werden in Zukunft viele "
+"weitere Features hinzufügen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/e4/aa/d421fc1ee3ec815dac9f9c7c1053fe249a8c24c77fbe943cdb24536fa590.php:251
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/c6/cab63af3f042defda5d5d93ae85706ea5936c08bbb0e6223296bb60de327.php:36
@@ -1864,8 +2068,12 @@ msgid "Not registered yet?"
 msgstr "Noch nicht registriert?"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/eb/cd/95ba9b6fa68e6b5d7f8c5d18db77425b5fdb3c168af64c92bd24fc986637.php:201
-msgid "Registering takes only a few moments and lets you to take part in the Clonk community."
-msgstr "Die Registrierung dauert nur wenige Momente and lässt dich an der Clonk-Community teilnehmen."
+msgid ""
+"Registering takes only a few moments and lets you to take part in the Clonk "
+"community."
+msgstr ""
+"Die Registrierung dauert nur wenige Momente and lässt dich an der Clonk-"
+"Community teilnehmen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/c6/cab63af3f042defda5d5d93ae85706ea5936c08bbb0e6223296bb60de327.php:23
 msgid "Back to top"
@@ -1880,43 +2088,57 @@ msgid "Welcome to %brand%!"
 msgstr "Willkommen bei %brand%!"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:52
-msgid "Although this project is still in development, thank you for helping us test the platform."
-msgstr "Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für deine Mithilfe beim Testen der Plattform."
+msgid ""
+"Although this project is still in development, thank you for helping us test "
+"the platform."
+msgstr ""
+"Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für deine "
+"Mithilfe beim Testen der Plattform."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:56
-msgid "If you'd like to learn more about the project or Clonk visit the about pages at the bottom of the site."
-msgstr "Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche einfach die Info-Seiten am unteren Rand der Seite."
+msgid ""
+"If you'd like to learn more about the project or Clonk visit the about pages "
+"at the bottom of the site."
+msgstr ""
+"Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche einfach "
+"die Info-Seiten am unteren Rand der Seite."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:61
 msgid ""
-"%brand% works a bit differently compared to other download sites. In order to publish a scenario or pack you first need to "
-"create a corresponding addon."
+"%brand% works a bit differently compared to other download sites. In order "
+"to publish a scenario or pack you first need to create a corresponding addon."
 msgstr ""
-"%brand% funktioniert etwas anders als andere Downloadseiten. Um ein Szenario oder Pack zu veröffentlichen, musst du zuerst "
-"eine zugehörige Erweiterung erstellen."
+"%brand% funktioniert etwas anders als andere Downloadseiten. Um ein Szenario "
+"oder Pack zu veröffentlichen, musst du zuerst eine zugehörige Erweiterung "
+"erstellen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:65
 msgid ""
-"The addons tracks general information, like the title, an introduction and which game it belongs to. You can then create a "
-"release for the addon, which has a version number, a detailed description and tracks the actual files."
+"The addons tracks general information, like the title, an introduction and "
+"which game it belongs to. You can then create a release for the addon, which "
+"has a version number, a detailed description and tracks the actual files."
 msgstr ""
-"Die Erweiterung speichert grundlegende Informationen, wie den Titel, eine Einführung und zu welchem Spiel sie gehört. Du "
-"kannst dann einen Release für die Erweiterung erstellen, welcher die Versionsnummer, eine ausführliche Beschreibung und die "
-"eigentlichen Dateien speichert."
+"Die Erweiterung speichert grundlegende Informationen, wie den Titel, eine "
+"Einführung und zu welchem Spiel sie gehört. Du kannst dann einen Release für "
+"die Erweiterung erstellen, welcher die Versionsnummer, eine ausführliche "
+"Beschreibung und die eigentlichen Dateien speichert."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:69
 msgid ""
-"Once you have created a release you can publish it. When players search for your addon, they will always be pointed to the "
-"latest release."
+"Once you have created a release you can publish it. When players search for "
+"your addon, they will always be pointed to the latest release."
 msgstr ""
-"Nachdem du einen Release erstellt hast, kannst du ihn veröffentlichen. Wenn Spieler nach deiner Erweiterung suchen, werden "
-"sie immer zum neuesten Release gebracht."
+"Nachdem du einen Release erstellt hast, kannst du ihn veröffentlichen. Wenn "
+"Spieler nach deiner Erweiterung suchen, werden sie immer zum neuesten "
+"Release gebracht."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:74
-msgid "You can send us any feedback you have on the contact page at %contact%. Let's make %brand% a useful and awesome site."
+msgid ""
+"You can send us any feedback you have on the contact page at %contact%. "
+"Let's make %brand% a useful and awesome site."
 msgstr ""
-"Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% einsenden. Lass uns %brand% eine nützliche und tolle Seite "
-"machen."
+"Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% einsenden. "
+"Lass uns %brand% eine nützliche und tolle Seite machen."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/ee/fc/9c35d163e30e11bd2131ae840a123e937b3d76bd392e277cc4e11f3ff546.php:79
 msgid "Once again, thank you for testing %brand%!"
@@ -1944,8 +2166,12 @@ msgid "%brand% offers a read-only REST API for data about addons and releases."
 msgstr "%brand% bietet eine REST-API für Daten zu Erweiterungen und Releases."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f2/de/c029e315af59eb66e7b7901d2e1146c887fdce0f722182f9ed1546ea24bc.php:63
-msgid "<strong>Please note:</strong> The lorry api is not yet final and can change at any time."
-msgstr "<strong>Bitte beachte:</strong> Die Lorry-API ist noch nicht fertiggestellt und kann jederzeit geändert werden."
+msgid ""
+"<strong>Please note:</strong> The lorry api is not yet final and can change "
+"at any time."
+msgstr ""
+"<strong>Bitte beachte:</strong> Die Lorry-API ist noch nicht fertiggestellt "
+"und kann jederzeit geändert werden."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f2/de/c029e315af59eb66e7b7901d2e1146c887fdce0f722182f9ed1546ea24bc.php:67
 msgid "Endpoints"
@@ -1988,12 +2214,20 @@ msgid "Error handling"
 msgstr "Fehlerbehandlung"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f2/de/c029e315af59eb66e7b7901d2e1146c887fdce0f722182f9ed1546ea24bc.php:111
-msgid "You can handle errors by checking for the <code>error</code> field in the response."
-msgstr "Fehler können behandelt werden, indem die Antwort auf <code>error</code>-Feld überprüft wird."
+msgid ""
+"You can handle errors by checking for the <code>error</code> field in the "
+"response."
+msgstr ""
+"Fehler können behandelt werden, indem die Antwort auf <code>error</code>-"
+"Feld überprüft wird."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f2/de/c029e315af59eb66e7b7901d2e1146c887fdce0f722182f9ed1546ea24bc.php:113
-msgid "Additionally, a human-readable message may be given in a <code>message</code> field."
-msgstr "Weiterhin kann eine menschenlesbare Nachricht in einem <code>message</code>-Feld gegeben sein."
+msgid ""
+"Additionally, a human-readable message may be given in a <code>message</"
+"code> field."
+msgstr ""
+"Weiterhin kann eine menschenlesbare Nachricht in einem <code>message</code>-"
+"Feld gegeben sein."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f2/de/c029e315af59eb66e7b7901d2e1146c887fdce0f722182f9ed1546ea24bc.php:117
 msgid "Examples"
@@ -2071,7 +2305,9 @@ msgstr "Die Entfernung deines Kontos ist endgültig."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:267
 msgid "You will permanently loose control of all your addons and releases."
-msgstr "Du wirst permanent die Kontrolle über deine Erweiterungen und Releases verlieren."
+msgstr ""
+"Du wirst permanent die Kontrolle über deine Erweiterungen und Releases "
+"verlieren."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:274
 msgid "I have read and understood the warning."
@@ -2119,7 +2355,9 @@ msgstr "Ursprüngliches Veröffentlichungsdatum"
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/fc/75/f2f85ce55693c3d983276abb545545e35a0da3d540de70e9faed3ea90942.php:79
 msgid "These settings cannot be changed once the release has been published."
-msgstr "Diese Einstellungen können nach der Veröffentlichung nicht mehr geändert werden."
+msgstr ""
+"Diese Einstellungen können nach der Veröffentlichung nicht mehr geändert "
+"werden."
 
 #: /home/benedict/Dokumente/clonklorry/app/cache/twig/fc/a5/d79f69ed0f7a0db4e92f133f4841173056a8adeaa95d2320ea20e5569490.php:48
 msgid "Somebody"
@@ -2191,7 +2429,7 @@ msgid "not a valid OAuth provider"
 msgstr "kein gültiger OAuth-Provider"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter.php:186
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:105
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:104
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:183
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:219
 msgid "Password wrong."
@@ -2213,7 +2451,7 @@ msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:109
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:108
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
@@ -2291,12 +2529,20 @@ msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:145
-msgid "Contact details were changed. We'll send you an email to confirm the new address."
-msgstr "Kontaktdaten geändert. Wir werden dir eine E-Mail senden, um die neue Adresse zu bestätigen."
+msgid ""
+"Contact details were changed. We'll send you an email to confirm the new "
+"address."
+msgstr ""
+"Kontaktdaten geändert. Wir werden dir eine E-Mail senden, um die neue "
+"Adresse zu bestätigen."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:147
-msgid "Contact details were changed, but we couldn't send you an email to confirm. Pleasy try again later."
-msgstr "Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung senden. Versuche es später erneut."
+msgid ""
+"Contact details were changed, but we couldn't send you an email to confirm. "
+"Pleasy try again later."
+msgstr ""
+"Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung "
+"senden. Versuche es später erneut."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:157
 msgid "You should receive the confirmation email soon."
@@ -2304,7 +2550,9 @@ msgstr "Du solltest die Bestätigungs-E-Mail bald erhalten."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:159
 msgid "We can't send you a confirmation email right now. Try again later."
-msgstr "Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es später erneut."
+msgstr ""
+"Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es "
+"später erneut."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:186
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:167
@@ -2357,7 +2605,9 @@ msgstr "Zugriff verweigert"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/Forbidden.php:22
 msgid "You do not have the permissions necessary to access this document."
-msgstr "Du verfügst nicht über die notwendigen Berechtigungen zum Zugriff auf dieses Dokument."
+msgstr ""
+"Du verfügst nicht über die notwendigen Berechtigungen zum Zugriff auf dieses "
+"Dokument."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/NotImplemented.php:18
 msgid "Not implemented"
@@ -2583,7 +2833,8 @@ msgstr "Spiel ist %s."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:93
 msgid "You have already created an addon with this title for this game."
-msgstr "Du hast bereits eine Erweiterung mit diesem Titel für dieses Spiel angelegt."
+msgstr ""
+"Du hast bereits eine Erweiterung mit diesem Titel für dieses Spiel angelegt."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:59
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:37
@@ -2731,12 +2982,17 @@ msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:161
-msgid "Contact details were changed. We sent an email to the user to confirm this new address."
-msgstr "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um diese neue Adresse zu bestätigen."
+msgid ""
+"Contact details were changed. We sent an email to the user to confirm this "
+"new address."
+msgstr ""
+"Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
+"diese neue Adresse zu bestätigen."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:163
 msgid "Contact details were changed, but we couldn't send the user an email."
-msgstr "Kontaktdaten geändert, wir konnten dem Benutzer jedoch keine E-Mail senden."
+msgstr ""
+"Kontaktdaten geändert, wir konnten dem Benutzer jedoch keine E-Mail senden."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:166
 msgid "Contact details were changed."
@@ -2836,6 +3092,12 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
+#~ msgid "Confirm instant release"
+#~ msgstr "Sofortige Veröffentlichung bestätigen"
+
+#~ msgid "The addon %needs_to_be_submitted%."
+#~ msgstr "Diese Erweiterung %needs_to_be_submitted%."
+
 #~ msgid "Built something awesome for the community"
 #~ msgstr "Hat etwas tolles für die Community gebaut"
 
@@ -2843,14 +3105,19 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Wertvolles Mitglied der Clonk-Community"
 
 #~ msgid "Great! After registering you can publish your addons on Lorry."
-#~ msgstr "Toll! Nach der Registrierung kannst du deine Erweiterungen auf Lorry veröffentlichen."
+#~ msgstr ""
+#~ "Toll! Nach der Registrierung kannst du deine Erweiterungen auf Lorry "
+#~ "veröffentlichen."
 
 #~ msgid "Create new addon"
 #~ msgstr "Neue Erweiterung anlegen"
 
-#~ msgid "Whether it's magic caves or exploding Wipfs, %brand% is the place to publish all your addons."
+#~ msgid ""
+#~ "Whether it's magic caves or exploding Wipfs, %brand% is the place to "
+#~ "publish all your addons."
 #~ msgstr ""
-#~ "Egal ob es magische Höhlen oder explodierende Wipfe sind, auf %brand% kannst du all deine Erweiterungen veröffentlichen."
+#~ "Egal ob es magische Höhlen oder explodierende Wipfe sind, auf %brand% "
+#~ "kannst du all deine Erweiterungen veröffentlichen."
 
 #~ msgid "Published"
 #~ msgstr "Veröffentlicht"
@@ -2916,7 +3183,8 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Entwickler"
 
 #~ msgid "Tag addons and help others to find new favourites"
-#~ msgstr "Versehe Erweiterungen mit Tags, damit andere neue Favoriten finden können"
+#~ msgstr ""
+#~ "Versehe Erweiterungen mit Tags, damit andere neue Favoriten finden können"
 
 #~ msgid "Development thread"
 #~ msgstr "Entwicklungs-Thread"
@@ -2924,46 +3192,64 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Lorry on Clonkspot"
 #~ msgstr "Lorry auf Clonkspot"
 
-#~ msgid "%brand% lives from community creations. Why not start developing one today?"
-#~ msgstr "%brand% lebt von Communty-Kreationen. Warum fängst du nicht heute an eine zu bauen?"
+#~ msgid ""
+#~ "%brand% lives from community creations. Why not start developing one "
+#~ "today?"
+#~ msgstr ""
+#~ "%brand% lebt von Communty-Kreationen. Warum fängst du nicht heute an eine "
+#~ "zu bauen?"
 
 #~ msgid "%brand% is the place for the best addons for the game series Clonk."
 #~ msgstr "%brand% ist der "
 
-#~ msgid "Lorry lives from community creations. Why not start developing one today?"
-#~ msgstr "Lorry lebt von Community-Kreationen. Warum fängst du nicht gleich eine neue Erweiterung an?"
+#~ msgid ""
+#~ "Lorry lives from community creations. Why not start developing one today?"
+#~ msgstr ""
+#~ "Lorry lebt von Community-Kreationen. Warum fängst du nicht gleich eine "
+#~ "neue Erweiterung an?"
 
 #~ msgid "Lorry is the place for the best addons for the game series Clonk."
-#~ msgstr "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
+#~ msgstr ""
+#~ "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie "
+#~ "Clonk."
 
 #~ msgid ""
-#~ "The Lorry platform is actively beeing developed. You can join and try out what works so far, and we will continue to add "
-#~ "features."
+#~ "The Lorry platform is actively beeing developed. You can join and try out "
+#~ "what works so far, and we will continue to add features."
 #~ msgstr ""
-#~ "Die Lorry-Plattform wird aktiv entwickelt. Du kannst mitmachen um alles bereits zu testen, und wir werden in Zukunft "
-#~ "weitere Funktionalitäten hinzufügen."
+#~ "Die Lorry-Plattform wird aktiv entwickelt. Du kannst mitmachen um alles "
+#~ "bereits zu testen, und wir werden in Zukunft weitere Funktionalitäten "
+#~ "hinzufügen."
 
 #~ msgid "It's great to see you again."
 #~ msgstr "Schön dich wieder zu sehen."
 
-#~ msgid "Registering takes only a few moments and allows you to participate in the Clonk community."
-#~ msgstr "Eine Registrierung benötigt nur wenige Momente und ermöglicht es dir, an der Clonk-Community teilzunehmen."
+#~ msgid ""
+#~ "Registering takes only a few moments and allows you to participate in the "
+#~ "Clonk community."
+#~ msgstr ""
+#~ "Eine Registrierung benötigt nur wenige Momente und ermöglicht es dir, an "
+#~ "der Clonk-Community teilzunehmen."
 
 #~ msgid "Lorry API reference"
 #~ msgstr "Lorry-API-Referenz"
 
-#~ msgid "Lorry offers a JSON based REST API for you to request data about addons and releases."
-#~ msgstr "Lorry bietet eine JSON-basierte REST-API über die du Daten über Erweiterungen und Releases abrufen kannst."
+#~ msgid ""
+#~ "Lorry offers a JSON based REST API for you to request data about addons "
+#~ "and releases."
+#~ msgstr ""
+#~ "Lorry bietet eine JSON-basierte REST-API über die du Daten über "
+#~ "Erweiterungen und Releases abrufen kannst."
 
 #~ msgid "Lorry API"
 #~ msgstr "Lorry-API"
 
 #~ msgid ""
-#~ "Most endpoints correspond to the web interface and can therefore be reached by simply appending <code>.json</code> to the "
-#~ "url."
+#~ "Most endpoints correspond to the web interface and can therefore be "
+#~ "reached by simply appending <code>.json</code> to the url."
 #~ msgstr ""
-#~ "Die meisten Endpunkte korrespondieren zur Web-Oberfläche und können über das Anhängen von <code>.json</code> an die URL "
-#~ "erreicht werden."
+#~ "Die meisten Endpunkte korrespondieren zur Web-Oberfläche und können über "
+#~ "das Anhängen von <code>.json</code> an die URL erreicht werden."
 
 #~ msgid "The authentification failed."
 #~ msgstr "Die Authentifizierung ist fehlgeschlagen."
@@ -2992,12 +3278,16 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Welcome to the publishing portal!"
 #~ msgstr "Willkommen beim Veröffentlichungsportal!"
 
-#~ msgid "Here you can publish your addons and make them available to your fans. Click the button below to get started."
+#~ msgid ""
+#~ "Here you can publish your addons and make them available to your fans. "
+#~ "Click the button below to get started."
 #~ msgstr ""
-#~ "Hier kannst du deine Erweiterungen veröffentlichungen und sie deinen Fans zugänglich machen. Klicke auf den untenliegenden "
-#~ "Knopf, um zu beginnen."
+#~ "Hier kannst du deine Erweiterungen veröffentlichungen und sie deinen Fans "
+#~ "zugänglich machen. Klicke auf den untenliegenden Knopf, um zu beginnen."
 
-#~ msgid "Clonk is a unique game series about creating and conquering your own world."
+#~ msgid ""
+#~ "Clonk is a unique game series about creating and conquering your own "
+#~ "world."
 #~ msgstr "Clonk ist eine einzigartige und "
 
 #~ msgid "Don't show again"
@@ -3006,8 +3296,12 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Would you like to show the world what you built?"
 #~ msgstr "Möchtest du der Welt zeigen, was du gebaut hast?"
 
-#~ msgid "Great! After registering you can create your addons here and publish them on Lorry."
-#~ msgstr "Toll! Nach der Registrierung kannst du deine Erweiterungen hier anlegen und sie auf Lorry veröffentlichen."
+#~ msgid ""
+#~ "Great! After registering you can create your addons here and publish them "
+#~ "on Lorry."
+#~ msgstr ""
+#~ "Toll! Nach der Registrierung kannst du deine Erweiterungen hier anlegen "
+#~ "und sie auf Lorry veröffentlichen."
 
 #~ msgid "Login service is %s."
 #~ msgstr "Anmeldedienst ist %s."
@@ -3034,14 +3328,15 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Archiv-Release"
 
 #~ msgid ""
-#~ "If you would like to get your newest creation to the community as soon as possible you can instantly release your latest "
-#~ "version."
+#~ "If you would like to get your newest creation to the community as soon as "
+#~ "possible you can instantly release your latest version."
 #~ msgstr ""
-#~ "Falls du deine neueste Kreation so schnell wie möglich in die Community bringen willst kannst du die aktuelle Version "
-#~ "sofort veröffentlichen."
+#~ "Falls du deine neueste Kreation so schnell wie möglich in die Community "
+#~ "bringen willst kannst du die aktuelle Version sofort veröffentlichen."
 
 #~ msgid "All downloads will immediately redirect to your uploaded version."
-#~ msgstr "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
+#~ msgstr ""
+#~ "Alle Downloads werden sofort auf deine hochgeladene Version verweisen."
 
 #~ msgid "Your release will be instantly available to all players."
 #~ msgstr "Dein Release wird sofort für alle Spieler verfügbar sein."
@@ -3049,11 +3344,19 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Make release date and time public"
 #~ msgstr "Releasedatum und -zeit veröffentlichen"
 
-#~ msgid "You can cancel a scheduled release at any time before the automated release."
-#~ msgstr "Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen Veröffentlichung abbrechen."
+#~ msgid ""
+#~ "You can cancel a scheduled release at any time before the automated "
+#~ "release."
+#~ msgstr ""
+#~ "Du kannst eine geplante Veröffentlichung jederzeit vor der automatischen "
+#~ "Veröffentlichung abbrechen."
 
-#~ msgid "Your release will be automatically made vailabe to all players at the specified timestamp."
-#~ msgstr "Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler verfügbar gemacht."
+#~ msgid ""
+#~ "Your release will be automatically made vailabe to all players at the "
+#~ "specified timestamp."
+#~ msgstr ""
+#~ "Dein Release wird zum angegebenen Zeitpunkt automatisch für alle Spieler "
+#~ "verfügbar gemacht."
 
 #~ msgid "Schedule Release"
 #~ msgstr "Veröffentlichung planen"
@@ -3083,7 +3386,9 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Bei der Entwicklung von %brand% wurden keine Wipfe verletzt."
 
 #~ msgid "Lorry is the place to get the best addons for the game series Clonk."
-#~ msgstr "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk."
+#~ msgstr ""
+#~ "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie "
+#~ "Clonk."
 
 #~ msgid "Learn all about Clonk"
 #~ msgstr "Lerne Clonk kennen"
@@ -3134,8 +3439,11 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Nur eine bekannte Abkürzung eintragen."
 
 #, fuzzy
-#~ msgid "The title will be used around the site. Players will be able to search for the addon."
-#~ msgstr "Kurzer Vorstellungstext, wird auf der Seite neben dem Titelbild genutzt."
+#~ msgid ""
+#~ "The title will be used around the site. Players will be able to search "
+#~ "for the addon."
+#~ msgstr ""
+#~ "Kurzer Vorstellungstext, wird auf der Seite neben dem Titelbild genutzt."
 
 #~ msgid "Choosing a title"
 #~ msgstr "Einen Titel wählen"
@@ -3176,8 +3484,12 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Approval denied"
 #~ msgstr "Bestätigung abgelehnt"
 
-#~ msgid "Ideally your main filename without extension.<br>Examples: hazard, moderncombat, metalmagic."
-#~ msgstr "Idealerweise der Hauptdateiname ohne Erweiterung.<br>Beispiele: hazard, moderncombat, metalmagic."
+#~ msgid ""
+#~ "Ideally your main filename without extension.<br>Examples: hazard, "
+#~ "moderncombat, metalmagic."
+#~ msgstr ""
+#~ "Idealerweise der Hauptdateiname ohne Erweiterung.<br>Beispiele: hazard, "
+#~ "moderncombat, metalmagic."
 
 #~ msgid "Remove addon&hellip;"
 #~ msgstr "Erweiterung entfernen&hellip;"
@@ -3210,7 +3522,9 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Bestätigungsmail gesendet."
 
 #~ msgid "Have you built an awesome addon to show the world?"
-#~ msgstr "Hast du eine einzigartige Erweiterung gebaut, die du der Welt zeigen möchtest?"
+#~ msgstr ""
+#~ "Hast du eine einzigartige Erweiterung gebaut, die du der Welt zeigen "
+#~ "möchtest?"
 
 #~ msgid "This is the publishing portal"
 #~ msgstr "Dies ist das Veröffentlichungsportal"
@@ -3267,14 +3581,25 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Status"
 #~ msgstr "Status"
 
-#~ msgid "We would like to check the quality of this addon before it goes public to keep the quality of content high."
-#~ msgstr "Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die Gesamtqualität hoch zu halten."
+#~ msgid ""
+#~ "We would like to check the quality of this addon before it goes public to "
+#~ "keep the quality of content high."
+#~ msgstr ""
+#~ "Wir möchten diese Erweiterung vor der Veröffentlichung überprüfen, um die "
+#~ "Gesamtqualität hoch zu halten."
 
-#~ msgid "If you want, we can release this version for you as soon as we approve it."
-#~ msgstr "Falls du möchtest, können wir diese Version für dich veröffentlichen sobald wir sie überprüft haben."
+#~ msgid ""
+#~ "If you want, we can release this version for you as soon as we approve it."
+#~ msgstr ""
+#~ "Falls du möchtest, können wir diese Version für dich veröffentlichen "
+#~ "sobald wir sie überprüft haben."
 
-#~ msgid "Otherwise you will be able to release whenever you want after this version is approved."
-#~ msgstr "Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie überprüft wurde."
+#~ msgid ""
+#~ "Otherwise you will be able to release whenever you want after this "
+#~ "version is approved."
+#~ msgstr ""
+#~ "Andernfalls kannst du diese Version selbst veröffentlichen, sobald sie "
+#~ "überprüft wurde."
 
 #~ msgid "Release immediately"
 #~ msgstr "Sofort veröffentlichen"
@@ -3282,8 +3607,11 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Confirm release"
 #~ msgstr "Veröffentlichung bestätigen"
 
-#~ msgid "Nice to see you again. Have you visited these other great Clonk sites yet?"
-#~ msgstr "Schön dich wieder zu sehen. Hast du diese anderen tollen Clonkseiten schon besucht?"
+#~ msgid ""
+#~ "Nice to see you again. Have you visited these other great Clonk sites yet?"
+#~ msgstr ""
+#~ "Schön dich wieder zu sehen. Hast du diese anderen tollen Clonkseiten "
+#~ "schon besucht?"
 
 #~ msgid "Only you and administrators can see unpublished releases."
 #~ msgstr "Nur du und Administratoren können unveröffentlichte Releases sehen."
@@ -3304,14 +3632,19 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Verantwortlich für den Inhalt"
 
 #~ msgid ""
-#~ "Clonk is a unique 2.5-dimensional game and often referred to as a mix of \"The Settlers\" and \"Lemmings\": The core "
-#~ "difference is the open addon format, transforming the series to anything you can imagine."
+#~ "Clonk is a unique 2.5-dimensional game and often referred to as a mix of "
+#~ "\"The Settlers\" and \"Lemmings\": The core difference is the open addon "
+#~ "format, transforming the series to anything you can imagine."
 #~ msgstr ""
-#~ "Clonk ist ein einzigartiges 2,5-dimensionales Spiel und wird oft als eine Mischung aus „Die Siedler“ und „Lemmings“ "
-#~ "bezeichnet: Der Kernunterschied ist das offene Erweiterungsformat, mit welcher das Spiel jede Form annehmen."
+#~ "Clonk ist ein einzigartiges 2,5-dimensionales Spiel und wird oft als eine "
+#~ "Mischung aus „Die Siedler“ und „Lemmings“ bezeichnet: Der Kernunterschied "
+#~ "ist das offene Erweiterungsformat, mit welcher das Spiel jede Form "
+#~ "annehmen."
 
 #~ msgid "After activating you can immediately create your own addons."
-#~ msgstr "Nach der Aktivierung kannst du sofort deine eigenen Erweiterungen erstellen."
+#~ msgstr ""
+#~ "Nach der Aktivierung kannst du sofort deine eigenen Erweiterungen "
+#~ "erstellen."
 
 #, fuzzy
 #~ msgid "file not found"
@@ -3358,8 +3691,11 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
 #, fuzzy
-#~ msgid "Javascri pt needs to be activated in order to edit addons and releases."
-#~ msgstr "Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
+#~ msgid ""
+#~ "Javascri pt needs to be activated in order to edit addons and releases."
+#~ msgstr ""
+#~ "Javascript muss aktiviert sein um Erweiterungen und Releases zu "
+#~ "bearbeiten."
 
 #~ msgid "Version %version%"
 #~ msgstr "Version %version%"
@@ -3405,20 +3741,26 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "%provider% authentification successful"
 #~ msgstr "%provider%-Authentifizierung erfolgreich"
 
-#~ msgid "After registering you can upload your own addons as well as comment and vote on existing contributions."
+#~ msgid ""
+#~ "After registering you can upload your own addons as well as comment and "
+#~ "vote on existing contributions."
 #~ msgstr ""
-#~ "Nach deiner Registrierung kannst du deine Erweiterungen hier veröffentlichen sowie bestehende Beiträge kommentieren und "
-#~ "bewerten."
-
-#~ msgid "You'll become part of a small and friendly community, enjoying the game and devoting their time to it."
-#~ msgstr "Du wirst Teil einer kleinen und freundlichen Community die Spaß am Spiel hat und ihre Zeit hineininvestiert."
+#~ "Nach deiner Registrierung kannst du deine Erweiterungen hier "
+#~ "veröffentlichen sowie bestehende Beiträge kommentieren und bewerten."
 
 #~ msgid ""
-#~ "Lorry is the place to find out about and get the best addons for the game series Clonk, and to discuss all about your "
-#~ "favourites with the community."
+#~ "You'll become part of a small and friendly community, enjoying the game "
+#~ "and devoting their time to it."
 #~ msgstr ""
-#~ "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie Clonk, und um rund um deine Favoriten mit der "
-#~ "Community zu diskutieren."
+#~ "Du wirst Teil einer kleinen und freundlichen Community die Spaß am Spiel "
+#~ "hat und ihre Zeit hineininvestiert."
+
+#~ msgid ""
+#~ "Lorry is the place to find out about and get the best addons for the game "
+#~ "series Clonk, and to discuss all about your favourites with the community."
+#~ msgstr ""
+#~ "Lorry ist die Plattform für die besten Erweiterungen zur Spieleserie "
+#~ "Clonk, und um rund um deine Favoriten mit der Community zu diskutieren."
 
 #~ msgid "Edit this addon"
 #~ msgstr "Erweiterung bearbeiten"
@@ -3526,14 +3868,20 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "User was unbanned"
 #~ msgstr "Benutzer wurde entbannt"
 
-#~ msgid "If you have any legal issues please do not hesitate to contact us either via our feedback form or via %legalmail%."
-#~ msgstr "Falls du rechtliche Anliegen hast, kontaktiere uns bitte entweder über unser Feedback-Formular oder via %legalmail%."
+#~ msgid ""
+#~ "If you have any legal issues please do not hesitate to contact us either "
+#~ "via our feedback form or via %legalmail%."
+#~ msgstr ""
+#~ "Falls du rechtliche Anliegen hast, kontaktiere uns bitte entweder über "
+#~ "unser Feedback-Formular oder via %legalmail%."
 
 #~ msgid "Addon page"
 #~ msgstr "Erweiterungsseite"
 
 #~ msgid "Please repeat your password to ensure you have spellt it correctly."
-#~ msgstr "Bitte wiederhole dein Passwort, um die richtige Schreibweise sicherzustellen."
+#~ msgstr ""
+#~ "Bitte wiederhole dein Passwort, um die richtige Schreibweise "
+#~ "sicherzustellen."
 
 #~ msgid "Added login service."
 #~ msgstr "Anmeldedienst hinzugefügt."
@@ -3614,10 +3962,12 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "This user is admin."
 #~ msgstr "Dieser Benutzer ist Administrator."
 
-#~ msgid "Your email address could not be confirmed. You have either already been confirmed or followed an invalid link."
+#~ msgid ""
+#~ "Your email address could not be confirmed. You have either already been "
+#~ "confirmed or followed an invalid link."
 #~ msgstr ""
-#~ "Deine E-Mail-Adresse konnte nicht bestätigt werden. Sie wurde entweder schon bestätigt oder du bist einem ungültigen Link "
-#~ "gefolgt."
+#~ "Deine E-Mail-Adresse konnte nicht bestätigt werden. Sie wurde entweder "
+#~ "schon bestätigt oder du bist einem ungültigen Link gefolgt."
 
 #~ msgid "Welcome back, %s!"
 #~ msgstr "Willkommen zurück, %s!"
@@ -3741,14 +4091,21 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Experience Clonk"
 #~ msgstr "Lerne Clonk kennen"
 
-#~ msgid "Lorry tries to implement the concepts of three main ideas, each equally important."
-#~ msgstr "Lorry versucht die Konzepte von drei Grundgedanken, einer so wichtig wie der andere, umzusetzen."
+#~ msgid ""
+#~ "Lorry tries to implement the concepts of three main ideas, each equally "
+#~ "important."
+#~ msgstr ""
+#~ "Lorry versucht die Konzepte von drei Grundgedanken, einer so wichtig wie "
+#~ "der andere, umzusetzen."
 
 #~ msgid "You are a moderator."
 #~ msgstr "Du bist ein Moderator."
 
-#~ msgid "Lorry tries to implement the concepts of three main ideas, each equally important:"
-#~ msgstr "Lorry versucht die Konzepte von drei Grundideen gleichermaßen umzusetzen:"
+#~ msgid ""
+#~ "Lorry tries to implement the concepts of three main ideas, each equally "
+#~ "important:"
+#~ msgstr ""
+#~ "Lorry versucht die Konzepte von drei Grundideen gleichermaßen umzusetzen:"
 
 #~ msgid "View a fan-made trailer"
 #~ msgstr "Community-Trailer"
