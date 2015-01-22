@@ -31,18 +31,25 @@
 			{% if approved %}
 				<p>{% trans %}The release will be instantly available to all players.{% endtrans %}</p>
 				<p class="alert alert-warning">{% trans %}Publishing a release is <strong>final</strong>. Any changes after releasing require a new release.{% endtrans %}</p>				
-			{% elseif submitted %}
+			{% else %}
 				<p>{% trans %}The release will be published as soon as the addon has been approved.{% endtrans %}</p>
+				{% if submitted %}
 				<p class="alert alert-warning">{% trans %}The release will not be published if the addon is rejected.{% endtrans %}</p>
+				{% else %}
+				{% set needs_to_be_submitted %}<a href="{{base}}/publish/{{addon.id}}#basic">{% trans %}needs to be submitted{% endtrans %}</a>{% endset %}
+				<p class="alert alert-warning">{% trans %}The addon {{needs_to_be_submitted}} in order to be quickly released.{% endtrans %}</p>
+				{% endif %}
 			{% endif %}
 			<form role="form" method="post" action="{{filename}}#publish">
 				<input type="hidden" name="publish-quick-form">
 				<input type="hidden" name="state" value="{{state}}">
+				{% if approved or submitted %}
 				<div class="checkbox">
 					<label>
-						<input type="checkbox" id="publish-quick-confirm" name="confirm"> {% trans %}Confirm instant release{% endtrans %}
+						<input type="checkbox" id="publish-quick-confirm" name="confirm"{% if not (approved or submitted) %} disabled{% endif %}> {% trans %}Confirm quick release{% endtrans %}
 					</label>
 				</div>
+				{% endif %}
 				<button type="submit" id="publish-quick-submit" class="btn btn-success btn-large" disabled>{% trans %}Release now{% endtrans %}</button>
 			</form>
 		</div>
@@ -55,7 +62,7 @@
 				{% if approved %}
 					<p class="alert alert-info">{% trans %}A scheduled release can be cancelled at any time before the automated release.{% endtrans %}</p>
 				{% else %}
-					{% set needs_to_be_approved %}<a href="{{base}}/publish/{{addonid}}#basic">{% trans %}needs to be approved{% endtrans %}</a>{% endset %}
+					{% set needs_to_be_approved %}<a href="{{base}}/publish/{{addon.id}}#basic">{% trans %}needs to be approved{% endtrans %}</a>{% endset %}
 					<p class="alert alert-warning">{% trans %}The addon {{needs_to_be_approved}} in order to schedule a release.{% endtrans %}</p>					
 				{% endif %}
 				<div class="form-group">
