@@ -23,9 +23,9 @@
 		<ul class="list-group" id="resumable-files-loading">
 			<li class="list-group-item text-muted">{% trans %}Loading files&hellip;{% endtrans %}</li>
 		</ul>
-		<span id="message-text-loading-failed" class="hidden">{% trans %}Error loading file list.{% endtrans %}</span>
+		<span id="message-text-files-loading-failed" class="hidden">{% trans %}Error loading file list.{% endtrans %}</span>
 		<ul class="list-group" id="resumable-files-none" style="display: none;">
-			<li class="list-group-item text-muted" id="resumable-files-none-text">{% trans %}No files uploaded{% endtrans %}</li>
+			<li class="list-group-item text-muted">{% trans %}No files uploaded.{% endtrans %}</li>
 		</ul>
 		<ul class="list-group" id="resumable-files">
 		</ul>
@@ -34,6 +34,6 @@
 			<button type="button" id="resumable-upload" class="btn btn-success" disabled>{% trans "Upload / Continue" %}</button>
 			<button type="button" id="resumable-pause" class="btn btn-success" disabled><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
 		{% endif %}
-		<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
+		<div class="help-block">{% trans %}The files will only be made availabe after publishing this release and cannot be changed afterwards.{% endtrans %}</div>
 	</div>
 </div>

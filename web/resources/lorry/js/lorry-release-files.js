@@ -18,7 +18,7 @@ $(document).ready(function() {
 					});
 				},
 				error: function() {
-					$('#resumable-files-none-text').text($('#message-text-loading-failed').text());
+					$('#resumable-files-none-text').text($('#message-text-files-loading-failed').text());
 				},
 				complete: function() {
 					updateReleaseResumableState();
@@ -140,10 +140,10 @@ function releaseFilesContinue(file) {
 
 function updateReleaseResumableState() {
 	var fileCount = releaseResumable.files.length + releaseFilesExisting.length;
+	$('#resumable-files-count').text(fileCount);
 	if (fileCount > 0) {
 		$('#resumable-files').show();
 		$('#resumable-files-none').hide();
-		$('#resumable-files-count').text(fileCount);
 		$('#resumable-files-count').show();
 	}
 	else {

@@ -1,6 +1,6 @@
 {% extends 'root.twig' %}
 
-{% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-asset-upload.js', '/lorry/js/lorry-release-upload.js'] %}
+{% set scripts = ['/resumable/resumable.js', '/lorry/js/lorry-release-files.js', '/lorry/js/lorry-release-dependencies.js'] %}
 
 {% block content %}
 	<div class="page-header">
@@ -33,7 +33,7 @@
 		<ul class="nav nav-tabs" id="editAddonTabs">
 			<li class="{% if shipping %}disabled{% else %}active{% endif %}"><a href="#basic" data-toggle="tab">{% trans "Release" %}</a></li>
 			<li{% if shipping %} class="disabled"{% endif %}><a href="#files" data-toggle="tab">{% trans "Files" %} <span id="resumable-files-count" class="badge"></span></a></li>
-			<li{% if shipping %} class="disabled"{% endif %}><a href="#dependencies" data-toggle="tab"{% if shipping %} disabled{% endif %}>{% trans "Dependencies" %}</a></li>
+			<li{% if shipping %} class="disabled"{% endif %}><a href="#dependencies" data-toggle="tab"{% if shipping %} disabled{% endif %}>{% trans "Dependencies" %} <span id="dependencies-count" class="badge"></span></a></li>
 			<li{% if shipping %} class="disabled"{% endif %}><a href="#changes" data-toggle="tab"{% if shipping %} disabled{% endif %}>{% trans "Changes" %}</a></li>
 			<li{% if shipping %} class="active"{% endif %}><a href="#publish" data-toggle="tab">{% trans "Publish" %}</a></li>
 		</ul>

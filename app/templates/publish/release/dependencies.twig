@@ -1,7 +1,11 @@
 <div class="form-group">
 	<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
-	<ul class="list-group" id="resumable-files-none">
-		<li id="resumable-files-none" class="list-group-item text-muted">{% trans %}No dependencies added{% endtrans %}</li>
+	<ul class="list-group" id="dependencies-loading">
+		<li class="list-group-item text-muted">{% trans %}Loading dependencies&hellip;{% endtrans %}</li>
+	</ul>
+	<span id="message-text-dependencies-loading-failed" class="hidden">{% trans %}Error loading dependency list.{% endtrans %}</span>
+	<ul class="list-group" id="dependencies-none" style="display: none;">
+		<li class="list-group-item text-muted" id="dependencies-none-text">{% trans %}No dependencies added.{% endtrans %}</li>
 	</ul>
 </div>
 <div class="row">
@@ -29,3 +33,4 @@
 <div class="form-group">
 	<button type="submit" class="btn btn-success inline" name="add-dependency-add" disabled>{% trans %}Add dependency{% endtrans %}</button>
 </div>
+<div class="help-block">{% trans %}Users may download your release together with it's dependencies.{% endtrans %}</div>
