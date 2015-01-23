@@ -24,6 +24,8 @@
 					{% if release.released %}
 						{% if release.latest %}
 							{% include "functions/labels/latest.twig" %}
+						{% else %}
+							{% include "functions/labels/published.twig" %}
 						{% endif %}
 					{% else %}
 						{% if release.scheduled %}
