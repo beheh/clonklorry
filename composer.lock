@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1749871ba5d7d16d4011ea80eb8bec3",
+    "hash": "9dd5ba6adc37136b8cf34af8adfd75fc",
     "packages": [
         {
             "name": "analog/analog",
@@ -125,16 +125,16 @@
         },
         {
             "name": "chrisboulton/php-resque",
-            "version": "dev-unixsocket",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/beheh/php-resque.git",
-                "reference": "86d9f895aecfa307a0f06d80b787d1eb4235c0ff"
+                "url": "https://github.com/chrisboulton/php-resque.git",
+                "reference": "c335bc35558e0683f95c3fd5dd11a5817c0a761f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beheh/php-resque/zipball/86d9f895aecfa307a0f06d80b787d1eb4235c0ff",
-                "reference": "86d9f895aecfa307a0f06d80b787d1eb4235c0ff",
+                "url": "https://api.github.com/repos/chrisboulton/php-resque/zipball/c335bc35558e0683f95c3fd5dd11a5817c0a761f",
+                "reference": "c335bc35558e0683f95c3fd5dd11a5817c0a761f",
                 "shasum": ""
             },
             "require": {
@@ -159,6 +159,7 @@
                     "Resque": "lib"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -176,10 +177,7 @@
                 "redis",
                 "resque"
             ],
-            "support": {
-                "source": "https://github.com/beheh/php-resque/tree/unixsocket"
-            },
-            "time": "2014-11-13 00:08:26"
+            "time": "2014-09-25 02:24:50"
         },
         {
             "name": "colinmollenhour/credis",

@@ -45,7 +45,7 @@ persistence:
 
 # job queue and underlying redis database
 job:
-    dsn: unix:/home/lorry/.redis/sock
+    dsn: /home/lorry/.redis/sock
 
 # for outgoing mails
 mail:
