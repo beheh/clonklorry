@@ -2,7 +2,7 @@
 
 namespace Lorry\Job;
 
-class LoginJob extends UserEmailJob {
+class LoginByEmailJob extends UserEmailJob {
 	
 	public function getEmail() {
 		return 'Login';

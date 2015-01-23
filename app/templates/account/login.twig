@@ -17,7 +17,7 @@
 				<form id="form-login" method="post" role="form">
 					<div class="form-group">
 						<label for="username">{% trans "Username" %}</label>
-						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not (username_exists or email) %} autofocus{% endif %} required>
+						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not (username_exists or email) and not email_focus %} autofocus{% endif %} required>
 					</div>
 					<div class="form-group">
 						<label for="password">{% trans "Password" %}</label>
@@ -36,13 +36,17 @@
 				</form>
 				<hr>
 				<div id="by-email" class="collapse in">
-					<h4>{% if email_visible and (forgot_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
+					<h4>{% if email_visible and (reset_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
 					{% include 'functions/alert.twig' with {'selector' : 'email'} %}
 					<form method="post" role="form">
-						{% if username %}<input type="hidden" name="forgot_password" value="yes">{% endif %}
 						<div class="form-group">
 							<label for="email">{% trans "Email address" %}</label>
 							<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="reset_password" value="yes"{% if (forgot_password or username or reset_password) %} checked{% endif %}> {% trans "Reset password" %}
+							</label>
 						</div>
 						<button class="btn btn-primary" type="submit" name="email-submit">{% trans "Send one-time login" %}</button>
 					</form>
@@ -60,6 +64,13 @@
 				<h2>{% trans %}Not registered yet?{% endtrans %}</h2>
 				<p class="lead">{% trans %}Registering takes only a few moments and lets you to take part in the Clonk community.{% endtrans %}</p>
 				<p><a href="{{base}}/register{% if returnto %}?returnto={{returnto}}{% endif %}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a></p>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<h3>{% trans %}Did you know&hellip;{% endtrans %}</h3>
+						<p>{% trans %}You can sign into {{brand}} using only your email address in case you're using a public computer. We'll send you a code which you can use a single time instead of your password.{% endtrans %}</p>
+					</div>
+				</div>
 				{% endif %}
 			</div>
 		</div>

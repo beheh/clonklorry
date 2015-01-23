@@ -9,11 +9,10 @@ class ActivateJob extends UserEmailJob {
 	}
 	
 	public function beforePerform() {
-		if($this->user->getEmail() !== $this->recipent) {
+		if(isset($this->args['address']) && $this->args['address'] != $this->getRecipent()) {
 			// user has since changed his address, no need to execute
 			throw new \Resque_Job_DontPerform;
 		}
-		// @todo activate user account
 	}
 
 	public function getActivationToken() {

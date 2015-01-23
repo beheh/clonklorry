@@ -135,7 +135,7 @@ class Register extends Presenter {
 					return;
 				}
 			} else {
-				$this->error('register', gettext('There was an error registering.'));
+				$this->error('register', gettext('Registration failed.'));
 			}
 		} else {
 			$this->error('register', implode('<br>', $errors));

@@ -30,8 +30,10 @@ class Login extends Presenter {
 		if(isset($_POST['email_submit']) || $this->session->getFlag('login_email')) {
 			$this->context['email_visible'] = true;
 		}
-		if(isset($_POST['forgot_password'])) {
-			$this->context['forgot_password'] = true;
+		if(isset($_POST['reset_password']) || isset($_GET['forgot'])) {
+			$this->context['reset_password'] = true;
+			$this->context['email_visible'] = true;
+			$this->context['email_focus'] = true;
 		}
 		if(isset($_GET['registered'])) {
 			$this->context['username'] = $_GET['registered'];
@@ -61,11 +63,19 @@ class Login extends Presenter {
 			$this->context['email_focus'] = true;
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$user = ModelFactory::build('User')->byEmail($email);
+			$reset = filter_input(INPUT_POST, 'reset_password', FILTER_VALIDATE_BOOLEAN) || false;
 			if($user) {
-				// show email by default in future
-				$this->session->setFlag('login_email');
-				$this->job->submit('Login', array('user' => $user->getId()));
-				$this->success('email', 'We\'ll send your email shortly.');
+				try {
+					$this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => $reset));
+					$this->success('email', gettext('You should receive your code shortly.'));
+					if(!$reset) {
+						// show email by default in future
+						$this->session->setFlag('login_email');
+					}
+				}
+				catch(\Exception $ex) {
+					$this->error('email', gettext('Login via email failed.'));
+				}
 			} else {
 				// email is unknown
 				$this->error('email', gettext('Email address unknown.'));

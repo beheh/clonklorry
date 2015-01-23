@@ -11,8 +11,8 @@ class Login extends Email {
 		$this->render('login.twig');
 	}
 
-	public function setUrl($url) {
-		$this->context['url'] = $url;
+	public function setCode($code) {
+		$this->context['code'] = $code;
 	}
 
 }
