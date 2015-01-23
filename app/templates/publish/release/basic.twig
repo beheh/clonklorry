@@ -8,7 +8,7 @@
 				<div class="col-md-8">
 					<div class="form-group">
 						<label for="title">{% trans %}Addon{% endtrans %}</label>
-						<p class="form-control-static"><a href="#" class="">{{addon.title}}</a> {% include 'functions/tags/game.twig' with {'game' : addon.game}%}</p>
+						<p class="form-control-static">{{addon.title}} {% include 'functions/tags/game.twig' with {'game' : addon.game}%}</p>
 					</div>
 				</div>
 				<div class="col-md-4">

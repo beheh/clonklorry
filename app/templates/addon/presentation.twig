@@ -3,11 +3,7 @@
 {% block content %}
 	<div class="page-header">
 		<div class="container">
-			<h1>{{ title }}
-				<small>
-					{% include 'functions/labels/version.twig' with {'version' : version} %}
-				</small>
-			</h1>
+			<h1><a href="{{base}}/addons/{{game.short}}/{{addon.short}}/{{version}}">{{ title }} <small>{% include 'functions/labels/version.twig' with {'version' : version} %}</small></a></h1>
 		</div>
 	</div>
 	<div class="container">
@@ -22,18 +18,30 @@
 							<img src="{{base}}img/title.png" style="padding: 0; border: 0; width: 32%; margin-left: 0; margin-right: 0;">
 						</p>
 						<div class="visible-desktop" id="download">
-							<p class="center"><a href="{{base}}/download/{{game.short}}/{{addon.short}}/{{version}}" class="btn btn-primary btn-block">{% trans %}Download{% endtrans %}</a></p>
+							<p class="center"><a href="{{base}}/download/{{game.short}}/{{addon.short}}/{{version}}" class="btn btn-primary btn-lg btn-block">{% trans %}Download{% endtrans %}</a></p>
 							{% if requirements %}
 								<p class="center">
 									Requires
 									{% for requirement in requirements %}
-										<a href="{{base}}/addons/{{requirement.game}}/{{requirement.short}}">{{ requirement.title }}</a>
+										<a href="{{base}}/addons/#}{{requirement.game}}/{{requirement.short}}">{{ requirement.title }}</a>
 									{% endfor %}
 								</p>
 							{% endif %}
 						</div>
 					</div>
 					<div class="col-md-8">
+						<p class="help-block">
+							{% if released %}
+								{% trans %}Published on the {{releaseday}}{% endtrans %}
+							{% else %}
+								<strong>{% trans %}Not published yet{% endtrans %}</strong>
+							{% endif %}
+							{% if developer %}
+								 &middot;
+								{% set linked_developer %}<a href="{{developer.url}}">{{developer.name}}</a>{% endset %}
+								{% trans %}Developed by {{linked_developer}}{% endtrans %}
+							{% endif %}
+						</p>
 						{% if description %}
 							<p>{{ description }}</p>
 						{% else %}
@@ -44,16 +52,13 @@
 						{% endif %}
 <!--						<p>{% trans %}Categories{% endtrans %} <a href="#">Shooter</a>, <a href="#">Strategy</a>, <a href="#">Arena</a>.</p>!-->
 						{% if changelog %}
-							<a href="#changelog" data-toggle="collapse" data-target="#changelog-block">{% trans %}Changelog{% endtrans %}</a>
+							<p><a href="#changelog" data-toggle="collapse" data-target="#changelog-block">{% trans %}Changelog{% endtrans %}</a></p>
+							<div class="collapse" id="changelog-block">
+								<pre>{{ changelog }}</pre>
+							</div>
 						{% endif %}
 					</div>
 				</div>
-				{% if changelog %}
-					<div class="collapse" id="changelog-block">
-						<h3 id="changelog">{% trans "Changelog" %}</h3>
-						<pre>{{ changelog }}</pre>
-					</div>
-				{% endif %}
 				<!--<hr>
 				<h2>{% trans %}Rounds and Addons{% endtrans %}</h2>
 				<img src="" style="width: 150px; height: 105px;">
@@ -62,11 +67,8 @@
 				<h2>{% trans %}Comments{% endtrans %}</h2>-->
 			</div>
 			<div class="col-md-4 sidebar">
-				<h3>{% trans %}Release{% endtrans %}</h3>
-				<ul class="list-group">
-					<li class="list-group-item"><span class="glyphicon glyphicon-time"></span> {% trans %}Released on the {{releaseday}}{% endtrans %}</li>
-				</ul>
 				{% if modify %}
+					<h3>{% trans %}Release{% endtrans %}</h3>
 					<p class="hidden-print">
 						<a href="{{base}}/publish/{{addon.id}}" class="btn btn-block btn-default">{% trans %}Edit addon{% endtrans %}</a>
 						<a href="{{base}}/publish/{{addon.id}}/{{version}}" class="btn btn-block btn-default">{% trans %}Edit release{% endtrans %}</a>

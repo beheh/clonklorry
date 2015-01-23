@@ -6,7 +6,7 @@ use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
-class Release extends Presenter {
+class Presentation extends Presenter {
 
 	public function get($gamename, $addonname, $version = 'latest') {
 		$game = ModelFactory::build('Game')->byShort($gamename);
@@ -41,7 +41,7 @@ class Release extends Presenter {
 		$owner = ModelFactory::build('User')->byId($addon->getOwner());
 
 		if($owner) {
-			$this->context['developer'] = $owner->getUsername();
+			$this->context['developer'] = array('name' => $owner->getUsername(), 'url' => $owner->getProfileUrl());
 		}
 		$this->context['version'] = $release->getVersion();
 
@@ -93,7 +93,7 @@ class Release extends Presenter {
 		}
 		$this->context['modify'] = $modify;
 
-		$this->display('addon/release.twig');
+		$this->display('addon/presentation.twig');
 	}
 
 }

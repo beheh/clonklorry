@@ -29,11 +29,11 @@
 		</ul>
 		<ul class="list-group" id="resumable-files">
 		</ul>
-		{% if enable.upload %}
-			<button type="button" id="resumable-select" class="btn btn-default" disabled><span class="glyphicon glyphicon-search"></span> {% trans "Select" %}</button>
-			<button type="button" id="resumable-upload" class="btn btn-success" disabled><span class="glyphicon glyphicon-upload"></span> {% trans "Upload / Continue" %}</button>
+		{% if enable.upload and can_upload %}
+			<button type="button" id="resumable-select" class="btn btn-default" disabled>{% trans "Select" %}</button>
+			<button type="button" id="resumable-upload" class="btn btn-success" disabled>{% trans "Upload / Continue" %}</button>
 			<button type="button" id="resumable-pause" class="btn btn-success" disabled><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
-			<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
 		{% endif %}
+		<div class="help-block">{% trans %}The files will only be made availabe after publishing this release.{% endtrans %}</div>
 	</div>
 </div>

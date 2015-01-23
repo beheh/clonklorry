@@ -6,7 +6,8 @@
 	<div class="page-header">
 		<div class="container">
 			<h1>{{title}}</h1>
-			<p class="lead">{% trans %}The Lorry project is a fan site for the video game Clonk.{% endtrans %} <a href="https://github.com/clonklorry/clonklorry">{% trans %}View on GitHub&hellip;{% endtrans %}</a></p>
+			{% set Clonk %}<a href="{{base}}/about/clonk">{% trans %}Clonk{% endtrans %}</a>{% endset %}
+			<p class="lead">{% trans %}The Lorry project is a fan site for the video game {{Clonk}}.{% endtrans %}</p>
 		</div>
 	</div>
 	<div class="container">
@@ -84,7 +85,7 @@
 					<div class="head">
 						<dt><img src="{{resources}}/lorry/img/benedict.png" class="img-circle">
 						<a href="https://beheh.de">Benedict Etzel</a> <span class="text-muted">/ <a href="{{base}}/users/B_E" class="text-muted">B_E</a></span></dt>
-						<dd>Lorry concept &amp; code.</dd>
+						<dd>founder & developer.</dd>
 					</div>
 				</dl>
 				<h3 id="credits">{% trans "Credits" %}</h3>

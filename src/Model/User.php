@@ -297,6 +297,10 @@ class User extends Model {
 		return $this->setValue('language', $language);
 	}
 
+	public function getProfileUrl() {
+		return $this->config->get('base').'/users/'.$this->getUsername().'';
+	}
+
 	/**
 	 * 
 	 * @return string

@@ -58,8 +58,9 @@ class Release extends Presenter {
 
 		try {
 			$this->security->requireUploadRights();
+			$this->context['can_upload'] = true;
 		} catch(ForbiddenException $ex) {
-			$this->error('files', $ex->getMessage() . '.');
+			$this->warning('files', $ex->getMessage() . '.');
 		}
 
 		/* Depedencies */
