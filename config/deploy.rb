@@ -5,7 +5,7 @@ set :application, 'lorry'
 
 # Git repository
 set :scm, :git
-set :repo_url, 'git@github.com:clonklorry/clonklorry.git'
+set :repo_url, 'git@github.com:beheh/clonklorry.git'
 
 # Default branch is :master, can be overridden
 set :branch, ENV['REVISION'] || ENV['BRANCH_NAME'] || 'master'
