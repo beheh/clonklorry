@@ -1,0 +1,6 @@
+# ignore all but example files
+*
+!.gitignore
+!deploy/
+!deploy.rb
+!*.example

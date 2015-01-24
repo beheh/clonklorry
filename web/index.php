@@ -17,7 +17,7 @@ try {
 	if($lorry != null) {
 		$config = $lorry->getConfig();
 	}
-	if($config && $config->get('debug')) {
+	if(!$config || $config->get('debug')) {
 		echo 'An internal error occured: '.get_class($e).PHP_EOL.PHP_EOL;
 		if($e->getMessage()) {
 			echo 'Message: '.$e->getMessage().PHP_EOL.PHP_EOL;

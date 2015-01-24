@@ -1,3 +1,5 @@
 /nbproject
 /vendor
-/app/config/lorry.yml
+/cache
+/logs
+/.capistrano

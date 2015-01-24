@@ -4,16 +4,15 @@ namespace Lorry\Service;
 
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
+use Lorry\Environment;
 
 class ConfigService {
-
-	const DIR = __DIR__.'/../../app/config/';
 
 	private $config;
 
 	public function __construct() {
 		$config = array();
-		$file = self::DIR.'lorry.yml';
+		$file = Environment::PROJECT_ROOT.'/config/lorry.yml';
 		if(!file_exists($file)) {
 			throw new InvalidArgumentException('config file not found (at '.$file.')');
 		}
@@ -66,7 +65,7 @@ class ConfigService {
 	 * @return string
 	 */
 	public function getTracking() {
-		$file = self::DIR.'tracking.html';
+		$file = Environment::PROJECT_ROOT.'/config/tracking.html';
 		if(file_exists($file)) {
 			return file_get_contents($file);
 		}

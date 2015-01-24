@@ -47,12 +47,13 @@ class Environment {
 	/**
 	 * @var 
 	 */
+	const PROJECT_ROOT = __DIR__.'/..';
 
 	public function setup() {
 		$config = new Service\ConfigService();
 		$loglevel = $config->get('debug') ? \Analog::DEBUG : \Analog::INFO;
 		\Analog::handler(\Analog\Handler\Threshold::init(
-						\Analog\Handler\File::init(__DIR__.'/../app/logs/lorry.log'), $loglevel
+						\Analog\Handler\File::init(self::PROJECT_ROOT.'/logs/lorry.log'), $loglevel
 		));
 		$this->config = $config;
 
@@ -68,8 +69,8 @@ class Environment {
 		$this->localisation = $localisation;
 
 		// templating
-		$loader = new Twig_Loader_Filesystem(__DIR__.'/../app/templates');
-		$twig = new Twig_Environment($loader, array('cache' => __DIR__.'/../app/cache/twig', 'debug' => $config->get('debug')));
+		$loader = new Twig_Loader_Filesystem(self::PROJECT_ROOT.'/app/templates');
+		$twig = new Twig_Environment($loader, array('cache' => self::PROJECT_ROOT.'/cache/twig', 'debug' => $config->get('debug')));
 		$twig->addExtension(new \Twig_Extension_Escaper(true));
 		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));

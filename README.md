@@ -1,32 +1,55 @@
-Lorry
-=====
+# Lorry
+
 A website to host and showcase released Clonk addons and their required packages.
 
+## Deploying
 
-Requirements
-------------
-The application requires a web server with at least PHP>=5.5 and the extensions json, pecl_http, openssl, gettext and curl. Running the application with missing extensions might be possible to some extent, but is not supported or encouraged.
+Lorry can be easily deployed with [Capistrano](http://capistranorb.com/).
 
-A database and the corresponding PHP PDO-extension should also be available. Lorry was developed and tested with an up-to-date MySQL installation.
+### Prepare your deployment system
 
-The queue system requires the redis memory database. There is currently no fallback in place, although a MySQL-backed queue should be possible.
+First, clone this repository to your deployment system. It contains all the files required for Lorry to run.
 
+[Install Capistrano](http://capistranorb.com/documentation/getting-started/installation/) and [Bundler](http://bundler.io/) on your deployment system (you may have to install [Ruby](https://www.ruby-lang.org/) first).
 
-Deploying
-----------
-To deploy the application, clone the source and point your webserver to the web/-directory. The other directories must not be publicly accessible.
+Execute `bundle` in the root of the cloned repository. It should install all the gems necessary for deployment.
 
-Lorry uses composer for dependency management, so simply execute a `composer install` in the root application directory to install all required libraries.
+### Installing the servers
 
-The sql schema in /app/sql/lorry.sql needs to executed in your database. At some point later in development this might be done automatically when installing.
+Your servers require [PHP](http://php.net/), an installed version of [Composer](http://getcomposer.org/), a database set up for PHP's PDO and [Redis](http://redis.io/).
 
-In /web/.htaccess you might have to add a RewriteBase with the base of the web directory, depending on your server configuration.
+Choose a folder where Capistrano should deploy to and configure your webserer to point incoming requests to `<deployfolder>/current/web`.
 
-You also need to set up the main configuration file, which the application expects at `app/config/lorry.yml`. You can copy the existing `lorry.example.yml` in the same directory and modify the values.
+### Setting up your stages
 
-Copying
--------
-Copyright (C) 2014  Benedict Etzel
+Each deployment stage (such as testing, staging, production) requires a configuration file in `config/deploy`, for example `config/deploy/production.rb`.
+
+The file should contain the target server(s), folders and other options:
+
+```ruby
+# Target server(s)
+server "example.com", user: "deploy", roles: %w{app}
+
+# Target directory
+set :deploy_to, '/var/www/lorry'
+
+# PATH should contain php and composer
+set :default_env, { path: "/usr/bin:$HOME/bin:$PATH" }
+```
+
+### Configuring Lorry
+
+Execute `cap <stagename> config:init` in the repository root. It should copy the example files and inform you where you can find the created files.
+
+Edit the configuration files according to their documentation.
+
+### Push to server
+
+You are now ready to deploy Lorry on your server(s): `cap <stagename> deploy`.
+
+## Copying
+
+Copyright (C) 2015  Benedict Etzel
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
