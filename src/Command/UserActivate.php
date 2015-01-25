@@ -8,7 +8,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Lorry\Environment;
 use Lorry\ModelFactory;
-use Lorry\Model\User;
 
 class UserActivate extends Command {
 
