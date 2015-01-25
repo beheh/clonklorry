@@ -8,7 +8,11 @@ use Lorry\ModelFactory;
 
 class Game extends ApiPresenter {
 
-	public function get($name) {
+	public function get($api_version, $name) {
+		if(intval($api_version) != 0) {
+			throw new FileNotFoundException('this endpoint does not support api version '.$api_version);
+		}
+
 		$game = ModelFactory::build('Game')->byShort($name);
 		if(!$game) {
 			throw new FileNotFoundException('game does not exist');

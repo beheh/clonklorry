@@ -43,7 +43,7 @@ class Environment {
 	 * @var \Lorry\Service\JobService;
 	 */
 	private $job;
-	
+
 	/**
 	 * @var 
 	 */
@@ -83,7 +83,7 @@ class Environment {
 		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
 		$twig->addGlobal('site_tracking', $config->getTracking());
 		$twig->addGlobal('enable', array('upload' => $config->get('enable/upload')));
-		
+
 		$this->twig = $twig;
 
 		// security
@@ -105,7 +105,7 @@ class Environment {
 		$job = new Service\JobService();
 		$job->setConfigService($config);
 		$this->job = $job;
-		
+
 		// content delivery
 		$cdn = new Service\CdnService();
 		$cdn->setConfigService($config);
@@ -159,15 +159,13 @@ class Environment {
 
 		// routing
 		if($config->get('enable/site')) {
+			// generic routes
 			Router::addRoutes(array(
 				'/' => 'Site\Front',
 				'/addons' => 'Addon\Portal',
 				'/addons/:alpha' => 'Addon\Game',
-				'/api/addons/:alpha\.json' => 'Addon\Api\Game',
 				'/addons/:alpha/:alpha' => 'Addon\Presentation',
-				'/api/addons/:alpha/:alpha\.json' => 'Addon\Api\Release',
 				'/addons/:alpha/:alpha/:version' => 'Addon\Presentation',
-				'/api/games\.json' => 'Addon\Api\Games',
 				'/download' => 'Redirect\Front',
 				'/download/:alpha/:alpha' => 'Addon\Download',
 				'/download/:alpha/:alpha/:version' => 'Addon\Download',
@@ -199,14 +197,20 @@ class Environment {
 				'/contact' => 'Site\Contact',
 				'/language' => 'Site\Language',
 			));
+			// api routes
+			Router::addRoutes(array(
+				'/api/v([0-9]+)/games\.json' => 'Addon\Api\Games',
+				'/api/v([0-9]+)/addons/:alpha\.json' => 'Addon\Api\Game',
+				'/api/v([0-9]+)/addons/:alpha/:alpha\.json' => 'Addon\Api\Release'
+			));
 		} else {
 			Router::addRoutes(array(
 				'/' => 'Site\Disabled'
 			));
 		}
 
-		// debug routing
 		if($config->get('debug')) {
+			// debug routes
 			Router::addRoutes(array(
 				'/debug/cachewarmer' => 'Debug\CacheWarmer',
 				'/debug/jobsubmitter' => 'Debug\JobSubmitter'
@@ -244,7 +248,7 @@ class Environment {
 	public function getPersistence() {
 		return $this->persistence;
 	}
-	
+
 	public function getLocalisation() {
 		return $this->localisation;
 	}
@@ -264,7 +268,7 @@ class Environment {
 	public function getJob() {
 		return $this->job;
 	}
-	
+
 	public function getCdn() {
 		return $this->cdn;
 	}

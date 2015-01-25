@@ -8,7 +8,11 @@ use Lorry\Exception\FileNotFoundException;
 
 class Release extends ApiPresenter {
 
-	public function get($gamename, $addonname, $version = 'latest') {
+	public function get($api_version, $gamename, $addonname, $version = 'latest') {
+		if(intval($api_version) != 0) {
+			throw new FileNotFoundException('this endpoint does not support api version '.$api_version);
+		}
+
 		$game = ModelFactory::build('Game')->byShort($gamename);
 		if(!$game) {
 			throw new FileNotFoundException('game does not exist');
