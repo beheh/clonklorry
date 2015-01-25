@@ -63,12 +63,6 @@ class UploadFile extends ApiPresenter {
 		return true;
 	}
 
-	private function ensureAuthorization() {
-		if(!$this->session->authenticated()) {
-			throw new ForbiddenException();
-		}
-	}
-
 	public function get($id, $version) {
 		$this->security->requireLogin();
 

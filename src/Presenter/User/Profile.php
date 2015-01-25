@@ -48,8 +48,6 @@ class Profile extends Presenter {
 				'url' => sprintf($this->config->get('github/url'), urlencode($user->getGithub())));
 		}
 
-		$games = ModelFactory::build('Game')->byAnything();
-
 		$releases = ModelFactory::build('Release')->all()->byOwner($user->getId());
 		$this->context['addons'] = array();
 		foreach($releases as $release) {

@@ -11,7 +11,7 @@ class ConfigService {
 	private $config;
 
 	public function __construct() {
-		$config = array();
+		$this->config = array();
 		$file = Environment::PROJECT_ROOT.'/config/lorry.yml';
 		if(!file_exists($file)) {
 			throw new InvalidArgumentException('config file not found (at '.$file.')');

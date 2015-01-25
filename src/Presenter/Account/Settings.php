@@ -189,7 +189,6 @@ class Settings extends Presenter {
 
 		if(isset($_POST['password-form'])) {
 			$has_password = $user->hasPassword();
-			$identified = $this->session->identified();
 			$password_old = filter_input(INPUT_POST, 'password-old');
 			$password_new = filter_input(INPUT_POST, 'password-new');
 			$password_confirm = filter_input(INPUT_POST, 'password-confirm');
