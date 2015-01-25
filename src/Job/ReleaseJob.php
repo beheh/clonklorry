@@ -13,8 +13,7 @@ class ReleaseJob extends Job {
 
 	public function perform() {
 		$release = ModelFactory::build('Release')->byId(1);
-		//$this->cdn->transfer('addon1/release1/ModernCombat.c4d');
-		sleep(3);
+		//$this->cdn->transfer('addon1/release1/ModernCombat.c4d');		
 		$release->setShipping(false);
 		$release->save();
 	}
