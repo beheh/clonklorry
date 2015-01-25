@@ -275,7 +275,7 @@ abstract class Model {
 				$this->validateNumber($value);
 				break;
 			case 'boolean':
-				$value = ($value == true);
+				$value = ($value ? true : false);
 				break;
 		}
 		return $value;

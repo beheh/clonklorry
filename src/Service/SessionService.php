@@ -236,7 +236,7 @@ class SessionService {
 	 * @param \Lorry\Model\User $user
 	 */
 	protected final function ensureSecret(User $user) {
-		if($user->getSecret() == null) {
+		if(empty($user->getSecret())) {
 			$user->regenerateSecret();
 			$user->save();
 		}

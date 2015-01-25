@@ -87,7 +87,7 @@ class Addon extends Model {
 	}
 
 	public function getTitle($language = null) {
-		if($language == null) {
+		if($language === null) {
 			$title_en = $this->getTitle('en');
 			$title_de = $this->getTitle('de');
 			if(!empty($title_en) && empty($title_de)) {
@@ -98,7 +98,7 @@ class Addon extends Model {
 			}
 		}
 		$title = $this->getValue($this->localizeField('title', $language));
-		if($language == null && empty($title)) {
+		if($language === null && empty($title)) {
 			return gettext('Unnamed addon');
 		}
 		return $title;

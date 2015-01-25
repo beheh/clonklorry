@@ -14,7 +14,7 @@ try {
 	header('HTTP/1.1 500 Internal Server Error');
 	header('Content-Type: text/plain');
 
-	if($lorry != null) {
+	if($lorry instanceof \Lorry\Environment) {
 		$config = $lorry->getConfig();
 	}
 	if(!$config || $config->get('debug')) {

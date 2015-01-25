@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Auth;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Model\User;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
 use LightOpenID;
@@ -38,7 +39,7 @@ class Callback extends Presenter {
 					try {
 						$provider_title = 'OpenID';
 						$openid = new LightOpenID($this->config->get('base'));
-						if($openid->mode === 'cancel') {
+						if($openid->mode == 'cancel') {
 							return $this->redirect('/register');
 						}
 						if(!$openid->mode || !$openid->validate()) {
@@ -141,7 +142,7 @@ class Callback extends Presenter {
 			// grab user with openid data fitting
 			$user = ModelFactory::build('User')->byOauth($provider, $uid);
 
-			if($user != null) {
+			if($user instanceof User) {
 				$url = '/';
 				if($returnto) {
 					$url = $returnto;
@@ -151,7 +152,7 @@ class Callback extends Presenter {
 				return;
 			} else {
 				$user = ModelFactory::build('User')->byEmail($email);
-				if($user != null) {
+				if($user instanceof User) {
 					$this->redirect('/login?unknown-oauth&returnto=/settings#');
 					return;
 				}

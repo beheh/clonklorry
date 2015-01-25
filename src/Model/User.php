@@ -61,7 +61,7 @@ class User extends Model {
 	}
 
 	public final function hasPassword() {
-		return $this->getValue('password') != null;
+		return $this->getValue('password') !== null;
 	}
 
 	public final function matchPassword($password) {
@@ -232,13 +232,13 @@ class User extends Model {
 	public final function hasOauth($provider) {
 		switch($provider) {
 			case 'openid':
-				return $this->getValue('oauth-openid') != null;
+				return $this->getValue('oauth-openid') !== null;
 				break;
 			case 'google':
 				return $this->getValue('oauth-google') !== null;
 				break;
 			case 'facebook':
-				return $this->getValue('oauth-facebook') != null;
+				return $this->getValue('oauth-facebook') !== null;
 				break;
 		}
 		throw new Exception('invalid OAuth provider');
@@ -285,7 +285,7 @@ class User extends Model {
 			if($provider == $except) {
 				continue;
 			}
-			if($this->getValue('oauth-'.$provider) != null) {
+			if($this->getValue('oauth-'.$provider) !== null) {
 				$provider_count++;
 			}
 		}
