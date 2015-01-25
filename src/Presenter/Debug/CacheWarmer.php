@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Debug;
 
-use Analog;
+use Analog\Analog;
 use Lorry\Presenter;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
