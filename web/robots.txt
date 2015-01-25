@@ -1,0 +1,9 @@
+#
+# robots.txt for the Lorry platform
+#
+# Please crawl this site responsibly and use the API (/about/api) where possible
+#
+
+User-agent: *
+Disallow: /activate
+Disallow: /auth
