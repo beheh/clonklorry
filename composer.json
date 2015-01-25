@@ -15,10 +15,11 @@
 		"lightopenid/lightopenid": "~0.7",
 		"league/oauth2-client": "~0.7",
 		"analog/analog": "~1.0.4-stable",
-		"symfony/yaml": "~2.5",
-		"symfony/finder": "~2.5",
+		"symfony/yaml": "~2.6",
+		"symfony/finder": "~2.6",
         "chrisboulton/php-resque": "dev-master",
-		"aws/aws-sdk-php": "~2"
+		"aws/aws-sdk-php": "~2",
+		"symfony/console": "~2.6"
     },
 	"suggest": {
 		"ext-gettext": "Localisation",

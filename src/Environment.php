@@ -209,14 +209,6 @@ class Environment {
 			));
 		}
 
-		if($config->get('debug')) {
-			// debug routes
-			Router::addRoutes(array(
-				'/debug/cachewarmer' => 'Debug\CacheWarmer',
-				'/debug/jobsubmitter' => 'Debug\JobSubmitter'
-			));
-		}
-
 		// determine the RESTful method
 		$method = strtolower(filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_STRING));
 
