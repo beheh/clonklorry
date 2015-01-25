@@ -272,7 +272,7 @@ class Edit extends Presenter {
 				$addon->setIntroduction($introduction);
 			} catch(ModelValueInvalidException $ex) {
 				$this->context['introduction'] = $introduction;
-				$errors[] = sprintf(gettext('Introdution is %s.'), $ex->getMessage());
+				$errors[] = sprintf(gettext('Introduction is %s.'), $ex->getMessage());
 			}
 
 			$description = trim(filter_input(INPUT_POST, 'description'));
