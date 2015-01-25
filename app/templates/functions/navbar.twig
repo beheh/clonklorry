@@ -10,10 +10,8 @@
 			<a class="navbar-brand" href="{{base}}">
 				{% include 'functions/logo.svg' %}
 				<strong>{{brand}}</strong>
-			</a>
-			<!--<a class="navbar-brand" href="{{base}}"><img src="{{resources}}/lorry/img/lorry-grey.svg" alt="{{brand}}" class="svg" style="height: 1em; display: inline; margin-right: 1px;"> <strong>{{brand}}</strong></a>!-->
+			</a>			
 		</div>
-
 		<div class="collapse navbar-collapse main-navbar-collapse">
 			{% if site_enabled %}
 			<ul class="nav navbar-nav">
@@ -26,9 +24,9 @@
 			<ul class="nav navbar-nav navbar-right">
       {% if user_login %}
 				<li{% if path.0 == "users" and path.1|lower == user_name|lower %} class="active"{% endif %}><a href="{{user_profile}}">{{user_name}}</a></li>
-				<li{% if path.0 == "publish" and path.1 != "create" %} class="active"{% endif %}><a href="{{base}}/publish">{% trans 'My addons' %}</a></li>
-				<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings">{% trans 'Settings' %}</a></li>
-				<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout">{% trans 'Logout' %}</a></li>
+				<li{% if path.0 == "publish" and path.1 != "create" %} class="active"{% endif %}><a href="{{base}}/publish"><span class="hidden-sm">{% trans "My addons" %}</span><span class="visible-sm" title="{% trans "My addons" %}"><span class="glyphicon glyphicon-list"></span></span></a></li>
+				<li{% if path.0 == "settings" %} class="active"{% endif %}><a href="{{base}}/settings"><span class="hidden-sm">{% trans 'Settings' %}</span><span class="visible-sm" title="{% trans "Settings" %}"><span class="glyphicon glyphicon-wrench"></span></span></a></li>
+				<li{% if path.0 == "logout" %} class="active"{% endif %}><a href="{{base}}/logout"><span class="hidden-sm">{% trans 'Log out' %}</span><span class="visible-sm" title="{% trans "Log out" %}"><span class="glyphicon glyphicon-log-out"></span></a></li>
 	{% else %}
 				<li{% if path.0 == "register" %} class="active"{% endif %}><a href="{{base}}/register">{% trans 'Register' %}</a></li>
 				<li{% if path.0 == "login" %} class="active"{% endif %}><a href="{{base}}/login">{% trans 'Login' %}</a></li>
