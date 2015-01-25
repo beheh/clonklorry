@@ -17,8 +17,7 @@ Execute `bundle` in the root of the cloned repository. It should install all the
 ### Installing the servers
 
 Your servers require [PHP](http://php.net/), an installed version of [Composer](http://getcomposer.org/), a database set up for PHP's PDO and [Redis](http://redis.io/).
-
-Choose a folder where Capistrano should deploy to and configure your webserer to point incoming requests to `<deployfolder>/current/web`.
+Choose a folder where Capistrano should deploy to and configure your webserver to point incoming requests to `<deployfolder>/current/web`.
 
 ### Setting up your stages
 
@@ -40,12 +39,21 @@ set :default_env, { path: "/usr/bin:$HOME/bin:$PATH" }
 ### Configuring Lorry
 
 Execute `cap <stagename> config:init` in the repository root. It should copy the example files and inform you where you can find the created files.
-
 Edit the configuration files according to their documentation.
 
 ### Push to server
 
 You are now ready to deploy Lorry on your server(s): `cap <stagename> deploy`.
+
+## Running the workers
+
+The platform uses workers for asynchronous handling of various tasks (such as sending mails or publishing releases).
+These workers are backed by a [PHP port](https://github.com/chrisboulton/php-resque) of [Resque](https://github.com/resque/resque) running on Redis.
+
+php-resque provides an executable file at `vendor/bin/resque`. You can invoke it like this: `QUEUE=* APP_INCLUDE=<deploydir>/current/app/bootstrap.php php bin/resque`.
+See the [php-resque documentation on workers](https://github.com/chrisboulton/php-resque#workers) for additional parameters.
+
+Remember to restart the worker after every deployment.
 
 ## Copying
 
