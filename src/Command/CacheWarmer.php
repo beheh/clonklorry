@@ -20,8 +20,6 @@ class CacheWarmer extends Command {
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output) {
-		$quiet = $input->getOption('quiet');
-
 		$lorry = new Environment();
 		$lorry->setup();
 
