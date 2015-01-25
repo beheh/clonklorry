@@ -23,8 +23,6 @@ class Developers extends Presenter {
 			$this->context['focus_title'] = true;
 		}
 
-		//$objects = array(gettext('Stippel'), gettext('Monster'), gettext('Wipf'), gettext('Stage'), gettext('Bridge'), gettext('Western'), 'Fantasy', 'Mars', gettext('Knight'), gettext('Magic'), gettext('Pressurewave'));
-
 		$singular_objects = array(gettext('Wipf'), gettext('Monster'), gettext('Bridge'), gettext('Tower'), gettext('Stage'), gettext('Pressurewave'), gettext('Fantasy'), gettext('Stippel'));
 		$singular_phrases = array(gettext('%s pack'), gettext('%s of despair'), gettext('%s Infinity'), gettext('%sarena'), gettext('%s fight'), gettext('%s race'));
 		$plural_objects = array(gettext('Wipfs'), gettext('Monsters'), gettext('Bridges'), gettext('Towers'), gettext('Pressurewaves'), gettext('Flints'), gettext('Knights'), gettext('Clonks'), gettext('Stippels'));
