@@ -36,12 +36,13 @@ class Login extends Presenter {
 			$this->context['email_focus'] = true;
 		}
 		if(isset($_GET['registered'])) {
-			$this->context['username'] = $_GET['registered'];
-			if($_GET['registered']) {
+			$username = filter_input(INPUT_GET, 'registered');
+			if(!empty($username)) {
 				$this->context['username_exists'] = true;
 			}
+			$this->context['username'] = $username;
 			if(!$this->hasAlert('login')) {
-				$this->success('login', gettext('Registration successful!'));
+				$this->success('login', gettext('Registration successful! We\'ll send you an email for you to activate your account.'));
 			}
 		}
 		if(isset($_GET['connect'])) {

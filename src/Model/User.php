@@ -77,7 +77,6 @@ class User extends Model {
 		if(!$this->modified()) {
 			return;
 		}
-		$this->setValue('activated', false);
 	}
 
 	public function getEmail() {
@@ -102,6 +101,10 @@ class User extends Model {
 
 	public final function activate() {
 		return $this->setValue('activated', true);
+	}
+
+	public final function deactivate() {
+		return $this->setValue('activated', false);
 	}
 
 	public final function regenerateSecret() {

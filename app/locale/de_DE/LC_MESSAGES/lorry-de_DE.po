@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-25 11:51+0100\n"
-"PO-Revision-Date: 2015-01-25 11:51+0100\n"
+"POT-Creation-Date: 2015-01-25 12:06+0100\n"
+"PO-Revision-Date: 2015-01-25 12:07+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2120,13 +2120,13 @@ msgid "Did you know&hellip;"
 msgstr "Wusstest du schon&hellip;"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/eb/cd/95ba9b6fa68e6b5d7f8c5d18db77425b5fdb3c168af64c92bd24fc986637.php:229
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "You can sign into %brand% using only your email address in case you're using "
 "a public computer. We'll send you a code which you can use a single time "
 "instead of your password."
 msgstr ""
-"Falls du einen öffentlichen Computer nutzt kannst du dich nur mit deiner E-"
+"Falls du einen öffentlichen Computer nutzt, kannst du dich nur mit deiner E-"
 "Mail-Adresse bei %brand% anmelden. Wir senden dir einen Code welchen du "
 "einmalig anstelle deines Passworts nutzen kannst. "
 
@@ -2325,8 +2325,8 @@ msgid "Resend confirmation"
 msgstr "Erneut bestätigen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:194
-msgid "You need to confirm your email address."
-msgstr "Deine E-Mail-Adresse muss bestätigt werden."
+msgid "Your account still needs to be activated."
+msgstr "Dein Konto muss noch aktiviert werden."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:202
 msgid "Language"
@@ -2464,62 +2464,66 @@ msgstr "Unbenannte Erweiterung"
 msgid "required"
 msgstr "benötigt"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:182
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:185
 msgid "not a matching Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:188
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:191
 msgid "not a valid Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:196
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:199
 msgid "not a valid Clonk Forge profile id"
 msgstr "keine gültige ClonkForge Profil-ID"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:220
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:223
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:265
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:268
 msgid "the last remaining login method"
 msgstr "die letzte Anmeldemöglichtkeit"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:278
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:281
 msgid "not a valid OAuth provider"
 msgstr "kein gültiger OAuth-Provider"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter.php:175
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:114
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:183
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:218
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:115
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:195
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:230
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:44
-msgid "Registration successful!"
-msgstr "Registrierung erfolgreich!"
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:45
+msgid ""
+"Registration successful! We'll send you an email for you to activate your "
+"account."
+msgstr ""
+"Registrierung erfolgreich! Wir werden dir eine E-Mail zur Aktivierung deines "
+"Kontos senden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:50
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:51
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:54
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:55
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:70
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:71
 msgid "You should receive your code shortly."
 msgstr "Du solltest deinen Code bald erhalten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:77
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:78
 msgid "Login via email failed."
 msgstr "Anmeldung per E-Mail fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:81
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:82
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:118
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:119
 msgid "Username unknown."
 msgstr "Benutzername unbekannt."
 
@@ -2547,12 +2551,12 @@ msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:95
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:214
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:226
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:100
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:210
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:222
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
@@ -2596,46 +2600,47 @@ msgstr "GitHub-Name ist %s."
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:145
-msgid ""
-"Contact details were changed. We'll send you an email to confirm the new "
-"address."
-msgstr ""
-"Kontaktdaten geändert. Wir werden dir eine E-Mail senden, um die neue "
-"Adresse zu bestätigen."
-
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:147
-msgid ""
-"Contact details were changed, but we couldn't send you an email to confirm. "
-"Pleasy try again later."
-msgstr ""
-"Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Bestätigung "
-"senden. Versuche es später erneut."
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:169
+msgid "Contact details were changed."
+msgstr "Kontaktdaten wurden geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:157
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:156
+msgid "Contact details were changed. Please remember to activate your account."
+msgstr "Kontaktdaten geändert. Bitte vergesse nicht, dein Konto zu aktivieren."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:158
+msgid ""
+"Contact details were changed, but we couldn't send you an email to activate "
+"your account. Pleasy try again later."
+msgstr ""
+"Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Aktivierung "
+"senden. Bitte versuche es später erneut."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:169
 msgid "You should receive the confirmation email soon."
 msgstr "Du solltest die Bestätigungs-E-Mail bald erhalten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:159
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:171
 msgid "We can't send you a confirmation email right now. Try again later."
 msgstr ""
 "Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es "
 "später erneut."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:186
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:198
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:168
 msgid "Confirmation required."
 msgstr "Bestätigung erforderlich."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:205
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:217
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:207
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:219
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:227
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:239
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -3050,7 +3055,7 @@ msgstr "Berechtigungen geändert."
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:161
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:164
 msgid ""
 "Contact details were changed. We sent an email to the user to confirm this "
 "new address."
@@ -3058,14 +3063,10 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
 "diese neue Adresse zu bestätigen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:163
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:166
 msgid "Contact details were changed, but we couldn't send the user an email."
 msgstr ""
 "Kontaktdaten geändert, wir konnten dem Benutzer jedoch keine E-Mail senden."
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:166
-msgid "Contact details were changed."
-msgstr "Kontaktdaten wurden geändert."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Profile.php:42
 #, php-format
@@ -3160,6 +3161,16 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "You need to confirm your email address."
+#~ msgstr "Deine E-Mail-Adresse muss bestätigt werden."
+
+#~ msgid ""
+#~ "Contact details were changed. We'll send you an email to confirm the new "
+#~ "address."
+#~ msgstr ""
+#~ "Kontaktdaten geändert. Wir werden dir eine E-Mail senden, um die neue "
+#~ "Adresse zu bestätigen."
 
 #~ msgid "Invalid permission."
 #~ msgstr "Ungültige Berechtigung."
@@ -3643,9 +3654,6 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
 #~ msgid "OpenID login"
 #~ msgstr "OpenID-Anmeldung"
-
-#~ msgid "Javascript needs to be enabled."
-#~ msgstr "Javascript muss aktiviert sein."
 
 #~ msgid "Comment and discuss addons"
 #~ msgstr "Kommentiere und diskutiere Erweiterungen"

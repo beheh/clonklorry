@@ -139,12 +139,24 @@ class Settings extends Presenter {
 					$user->save();
 
 					// remove activation jobs with previous address, if any
-					$this->job->remove('Activate', array('user' => $user->getId(), 'address' => $previous_email));
+					try {
+						$this->job->remove('Activate', array('user' => $user->getId(), 'address' => $previous_email));
+					} catch(\Exception $ex) {}
 					// submit new activation job
-					if($this->job->submit('Activate', array('user' => $user->getId(), 'address' => $user->getEmail()))) {
-						$this->warning('contact', gettext('Contact details were changed. We\'ll send you an email to confirm the new address.'));
+					if($user->isActivated()) {
+						$this->success('contact', gettext('Contact details were changed.'));
 					} else {
-						$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to confirm. Pleasy try again later.'));
+						$submitted = false;
+						try {
+							if($this->job->submit('Activate', array('user' => $user->getId(), 'address' => $user->getEmail()))) {
+								$submitted = true;
+							}
+						} catch(\Exception $ex) {}
+						if($submitted) {
+							$this->success('contact', gettext('Contact details were changed. Please remember to activate your account.'));
+						} else {
+							$this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to activate your account. Pleasy try again later.'));
+						}
 					}
 				} else {
 					$this->error('contact', implode('<br>', $errors));

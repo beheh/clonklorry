@@ -37,7 +37,7 @@ class Edit extends Presenter {
 		$this->context['email'] = isset($_POST['email']) ? filter_input(INPUT_POST, 'email') : $user->getEmail();
 
 		if(!isset($this->context['require_activation'])) {
-			$this->context['require_activation'] = true;
+			$this->context['require_activation'] = !$user->isActivated();
 		}
 
 		$this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
@@ -149,7 +149,10 @@ class Edit extends Presenter {
 
 			if($user->modified() && empty($errors)) {
 
-				if(!$require_activation) {
+				if($require_activation) {
+					$user->deactivate();
+				}
+				else {
 					$user->activate();
 				}
 
