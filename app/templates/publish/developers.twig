@@ -33,34 +33,35 @@
 						<div class="form-group">
 							<button type="submit" class="btn btn-lg btn-success">{% trans "Create addon" %}</button>
 						</div>
-					</form>
+					</form>					
 				{% else %}
-				<h2>{% trans %}Ready to publish{% endtrans %}</h2>
+					<h2>{% trans %}Ready to publish{% endtrans %}</h2>
 					<p class="lead">{% trans %}{{brand}} is ready to publish your addons.{% endtrans %}</p>
 					<p>
 						<a href="{{base}}/register?returnto={{origpath}}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
 						<a href="{{base}}/login?returnto={{origpath}}" class="btn btn-lg btn-primary">{% trans %}Login{% endtrans %}</a>
 					</p>
+					<hr>
 				{% endif %}
 			</div>
 			<div class="col-md-7">
 				{% if user_login %}
-				<h2>{% trans %}You have an awesome idea?{% endtrans %}</h2>
-				<p class="lead">{% trans %}Whether it's magic caves or exploding Wipfs, {{brand}} is the place to publish your addons.{% endtrans %}</p>
-				<p>
-					<a href="http://crdocs.clonkspot.org/de/sdk/" class="btn btn-lg btn-primary" target="_blank">{% trans %}Clonk Rage documentation{% endtrans %}</a>
-					<a href="http://wiki.openclonk.org/w/Development" class="btn btn-lg btn-primary" target="_blank">{% trans %}OpenClonk documentation{% endtrans %}</a>
-				</p>
-				<p class="help-block">{% trans %}Please don't <em>actually</em> blast Wipfs into oblivion.{% endtrans %}</p>
-				<hr>
+					<hr class="visible-xs visible-sm">
+					<h2>{% trans %}You have an awesome idea?{% endtrans %}</h2>
+					<p class="lead">{% trans %}Whether it's magic caves or exploding Wipfs, {{brand}} is the place to publish your addons.{% endtrans %}</p>
+					<p>
+						<a href="http://crdocs.clonkspot.org/de/sdk/" class="btn btn-lg btn-primary" target="_blank">{% trans %}Clonk Rage documentation{% endtrans %}</a>
+						<a href="http://wiki.openclonk.org/w/Development" class="btn btn-lg btn-primary" target="_blank">{% trans %}OpenClonk documentation{% endtrans %}</a>
+					</p>
+					<p class="help-block">{% trans %}Please don't <em>actually</em> blast Wipfs into oblivion.{% endtrans %}</p>
 				{% endif %}
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<h3>{% trans %}Getting started{% endtrans %}</h3>
 						<p>{% trans %}We know it's not always easy to build something awesome. With the introduction on ClonkSpot you should at least have a rough idea how everything works.{% endtrans %}</p>
 						<p><a href="https://clonkspot.org/development" class="btn btn-info" target="_blank">{% trans %}Introduction on ClonkSpot{% endtrans %}</a></p>
 					</div>
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<h3>{% trans %}Integrating {{brand}}{% endtrans %}</h3>
 						<p>{% trans %}Would you like to integrate {{brand}} into your project? The Lorry platform offers an API for you to request information about addons and releases.{% endtrans %}</p>
 						<p><a href="{{base}}/about/api" class="btn btn-default">{% trans %}API portal{% endtrans %}</a></p>
