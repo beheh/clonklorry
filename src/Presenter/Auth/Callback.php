@@ -8,6 +8,7 @@ use Lorry\Model\User;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
 use LightOpenID;
+use ErrorException;
 use League\OAuth2\Client\Provider\Google;
 use League\OAuth2\Client\Provider\Facebook;
 use Analog;

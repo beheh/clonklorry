@@ -41,7 +41,7 @@ class QueryFile extends ApiPresenter {
 	public static function getType() {
 		$type = filter_input(INPUT_GET, 'type');
 		if($type == 'asset') {
-			throw new Lorry\Exception\NotImplementedException;
+			throw new \Lorry\Exception\NotImplementedException;
 		}
 		if(in_array($type, array('asset', 'data'))) {
 			return $type;
