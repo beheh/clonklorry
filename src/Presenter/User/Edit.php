@@ -105,7 +105,7 @@ class Edit extends Presenter {
 					$user->setPermission(User::PERMISSION_READ);
 					break;
 				default:
-					$this->error('permissions', gettext('Invalid permission.'));
+					$this->error('permissions', sprintf(gettext('Permission is %s.'), gettext('invalid')));
 					break;
 			}
 
