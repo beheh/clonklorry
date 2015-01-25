@@ -5,7 +5,6 @@ namespace Lorry\Presenter\Publish\Api;
 use Lorry\ApiPresenter;
 use Lorry\Exception;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\Exception\ForbiddenException;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
 use Lorry\Model\User;
