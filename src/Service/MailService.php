@@ -2,9 +2,7 @@
 
 namespace Lorry\Service;
 
-use Analog\Analog;
 use Lorry\Email;
-use Lorry\EmailFactory;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;

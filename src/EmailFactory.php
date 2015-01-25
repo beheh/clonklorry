@@ -5,7 +5,6 @@ namespace Lorry;
 use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
-use Lorry\Service\SessionService;
 use Twig_Environment;
 use Exception;
 

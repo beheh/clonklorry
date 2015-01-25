@@ -3,7 +3,6 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
-use Lorry\ModelFactory;
 
 class Dependency extends Model {
 

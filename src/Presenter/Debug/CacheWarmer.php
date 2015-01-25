@@ -6,8 +6,6 @@ use Analog;
 use Lorry\Presenter;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use RegexIterator;
-use RecursiveRegexIterator;
 
 class CacheWarmer extends Presenter {
 
