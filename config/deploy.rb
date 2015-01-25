@@ -32,3 +32,6 @@ SSHKit.config.command_map[:composer] = "composer"
 
 # Transfer config files to server
 before 'deploy:check:linked_files', 'config:push'
+
+# Setup console
+set :lorry_console_path, "app/console"
