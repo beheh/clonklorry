@@ -17,9 +17,9 @@
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.6",
 		"symfony/finder": "~2.6",
+		"symfony/console": "~2.6",
         "chrisboulton/php-resque": "dev-master",
-		"aws/aws-sdk-php": "~2",
-		"symfony/console": "~2.6"
+		"aws/aws-sdk-php": "~2"
     },
 	"suggest": {
 		"ext-gettext": "Localisation",
