@@ -180,6 +180,7 @@ class Environment {
 				'/users/:alpha' => 'User\Profile',
 				'/users/:alpha/edit' => 'User\Edit',
 				'/administrator' => 'Manage\Administrator\Portal',
+				'/administrator/logs' => 'Manage\Administrator\Logs',
 				'/moderator' => 'Manage\Moderator\Portal',
 				'/moderator/approve/:number' => 'Manage\Moderator\Approve',
 				'/register' => 'Account\Register',

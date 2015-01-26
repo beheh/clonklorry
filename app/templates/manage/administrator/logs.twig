@@ -1,0 +1,18 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Logs'|trans %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="breakout"><a href="{{base}}/administrator"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	<div class="container">
+		<h2>emergency.log</h2>
+		<pre style="max-height: 20em; overflow-y: scroll;">{{emergency_log}}</pre>
+		<h2>lorry.log</h2>
+		<pre style="max-height: 20em; overflow-y: scroll;">{{application_log}}</pre>
+	</div>
+{% endblock %}

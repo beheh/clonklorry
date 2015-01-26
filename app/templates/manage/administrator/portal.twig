@@ -11,14 +11,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<h2>{% trans %}Overview{% endtrans %}</h2>
-				<h3>{% trans %}Management{% endtrans %}</h3>
-				<a href="{{base}}/users?filter=moderators" class="btn btn-primary">Moderators</a>
+				<h2>{% trans %}Management{% endtrans %}</h2>
+				<a href="{{base}}/users?filter=moderators" class="btn btn-primary">{% trans "Moderators" %}</a>
+				<a href="{{base}}/administrator/logs" class="btn btn-default">{% trans "Logs" %}</a>
 			</div>
 			<div class="col-md-4">
 				<h2>{% trans %}Front page{% endtrans %}</h2>
-				<h3>Carousel</h3>
-				<h3>Spotlight</h3>
+				<h3>{% trans %}Featured addons{% endtrans %}</h3>
 			</div>
 		</div>
 	</div>
