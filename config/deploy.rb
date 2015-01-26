@@ -16,7 +16,7 @@ set :log_level, :info
 
 # Symlinks shared between deployments
 set :linked_files, fetch(:linked_files, []) + %w(config/lorry.yml config/tracking.html)
-set :linked_dirs, fetch(:linked_dirs, []) + %w(cache upload vendor logs)
+set :linked_dirs, fetch(:linked_dirs, []) + %w(upload logs)
 
 # Example config files
 set :config_example_suffix, '.example'
