@@ -4,7 +4,7 @@ namespace Lorry\Service;
 
 use Analog;
 use PDO;
-use Exception;
+use RuntimeException;
 use InvalidArgumentException;
 use PDOException;
 use Lorry\Model;
@@ -43,10 +43,11 @@ class PersistenceService {
 		try {
 			$dsn = $this->config->get('persistence/dsn');
 			$this->connection = new PDO($dsn, $this->config->get('persistence/username'), $this->config->get('persistence/password'));
+			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->factory = new QueryFactory(strstr($dsn, ':', true));
 		} catch(PDOException $ex) {
 			// catch the pdo exception to prevent credential leaking
-			throw new Exception('could not connect to database ('.$ex->getMessage().')');
+			throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
 		}
 	}
 
@@ -100,7 +101,7 @@ class PersistenceService {
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
-			throw new Exception($errorinfo[1].': '.$errorinfo[2].' (sql error '.$errorinfo[0].' for query "'.$query.'")');
+			throw new RuntimeException($errorinfo[1].': '.$errorinfo[2].' (sql error '.$errorinfo[0].' for query "'.$query.'")');
 		}
 		$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -154,7 +155,7 @@ class PersistenceService {
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
-			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
+			throw new RuntimeException('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 
 		return $statement->rowCount() == 1;
@@ -183,7 +184,7 @@ class PersistenceService {
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
-			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
+			throw new RuntimeException('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
 	}
@@ -209,7 +210,7 @@ class PersistenceService {
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
-			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
+			throw new RuntimeException('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 
 		return $statement->rowCount() == 1;
