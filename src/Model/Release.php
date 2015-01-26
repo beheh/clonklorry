@@ -141,7 +141,7 @@ class Release extends Model {
 		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
 	}
 
-	public function onSave() {
+	public function onInsert() {
 		$this->setValue('assetsecret', md5($this->getAddon().time().uniqid()));
 	}
 

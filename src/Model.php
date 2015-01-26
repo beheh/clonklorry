@@ -6,6 +6,7 @@ use Lorry\Service\ConfigService;
 use Lorry\Service\PersistenceService;
 use Lorry\Exception\ModelValueInvalidException;
 use InvalidArgumentException;
+use RuntimeException;
 use Exception;
 
 abstract class Model {
@@ -405,7 +406,7 @@ abstract class Model {
 
 		$changes = array();
 		if(!$this->loaded) {
-			$this->onSave();
+			$this->onInsert();
 		}
 		foreach($this->changes as $row => $value) {
 			$changes[$row] = $this->encodeType($row, $value);
@@ -425,6 +426,23 @@ abstract class Model {
 
 		$this->rollback();
 		$this->loaded = true;
+		return true;
+	}
+
+	/**
+	 * Removes the model.
+	 * @return bool True, if the model does not exist any more
+	 */
+	public final function delete() {
+		if(!$this->loaded) {
+			throw new RuntimeException('model is not persistent');
+		}
+
+		if(!$this->persistence->delete($this)) {
+			return false;
+		}
+
+		$this->loaded = false;
 		return true;
 	}
 
@@ -549,7 +567,7 @@ abstract class Model {
 		return array();
 	}
 
-	protected function onSave() {
+	protected function onInsert() {
 		
 	}
 

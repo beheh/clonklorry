@@ -14,7 +14,7 @@ class PersistenceService {
 
 	/**
 	 *
-	 * @var \Lorry\Service\ConfigService
+	 * @var ConfigService
 	 */
 	protected $config;
 	protected $cache;
@@ -52,7 +52,7 @@ class PersistenceService {
 
 	/**
 	 * 
-	 * @param \Lorry\Model $model
+	 * @param Model $model
 	 * @param array $pairs
 	 * @param array $order
 	 * @param int $offset
@@ -90,12 +90,12 @@ class PersistenceService {
 
 	/**
 	 * 
-	 * @param \Lorry\Model $model
+	 * @param Model $model
 	 * @param array $pairs
 	 * @param array $order
 	 * @param int $offset
 	 * @param int $limit
-	 * @return \Lorry\Model
+	 * @return Model
 	 * @throws Exception
 	 */
 	public function load(Model $model, $pairs, $order, $offset, $limit) {
@@ -111,7 +111,7 @@ class PersistenceService {
 
 	/**
 	 * 
-	 * @param \Lorry\Model $model
+	 * @param Model $model
 	 * @param array $changes
 	 * @return bool
 	 * @throws Exception
@@ -143,7 +143,7 @@ class PersistenceService {
 
 	/**
 	 * 
-	 * @param \Lorry\Model $model
+	 * @param Model $model
 	 * @param array $values
 	 * @return bool
 	 * @throws Exception
@@ -156,7 +156,7 @@ class PersistenceService {
 		$query->into($model->getTable());
 
 		$query->cols($values);
-				
+
 		Analog::debug('inserting a '.get_class($model).' model, values are '.print_r($values, true));
 
 		$statement = $this->connection->prepare($query->__toString());
@@ -167,6 +167,33 @@ class PersistenceService {
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
+	}
+
+	/**
+	 * 
+	 * @param Model $model
+	 * @return type
+	 * @throws Exception
+	 */
+	public function delete(Model $model) {
+		$this->ensureConnected();
+		$model->ensureLoaded();
+
+		$query = $this->factory->newDelete();
+		$query->from($model->getTable());
+
+		$query->where('id = :id');
+		$query->bindValue('id', $model->getId());
+
+		$statement = $this->connection->prepare($query->__toString());
+		$statement->execute($query->getBindValues());
+
+		if($statement->errorCode() != PDO::ERR_NONE) {
+			$errorinfo = $query->errorInfo();
+			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
+		}
+
+		return $statement->rowCount() == 1;
 	}
 
 }
