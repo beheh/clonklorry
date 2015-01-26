@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "09ee0c31fca477f0d490a7f40829b5a2",
+    "hash": "4c4232c12645640595eafd7ba6ce04b6",
     "packages": [
         {
             "name": "analog/analog",
@@ -873,7 +873,14 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.2.x-dev",
+            "alias_normalized": "1.2.9999999.9999999-dev",
+            "version": "9999999-dev",
+            "package": "chrisboulton/php-resque"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "chrisboulton/php-resque": 20
