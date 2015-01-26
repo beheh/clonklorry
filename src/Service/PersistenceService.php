@@ -138,7 +138,7 @@ class PersistenceService {
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 
-		return $query->rowCount() == 1;
+		return $statement->rowCount() == 1;
 	}
 
 	/**
@@ -167,27 +167,6 @@ class PersistenceService {
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
-
-
-		/* $keys = '';
-		  $valuenames = '';
-		  $contents = array();
-		  foreach($values as $key => $value) {
-		  if(!empty($contents)) {
-		  $keys .= ', ';
-		  $valuenames .= ', ';
-		  }
-		  $keys .= '`'.$key.'`';
-		  $valuenames .= '?';
-		  $contents[] = $value;
-		  }
-		  $query = $this->connection->prepare('INSERT INTO `'.$model->getTable().'` ('.$keys.') VALUES ('.$valuenames.')');
-		  $query->execute($contents);
-		  if($query->errorCode() != PDO::ERR_NONE) {
-		  $errorinfo = $query->errorInfo();
-		  throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
-		  }
-		  return $this->connection->lastInsertId(); */
 	}
 
 }
