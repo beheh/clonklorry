@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2015-01-26 20:17+0100\n"
-"PO-Revision-Date: 2015-01-26 20:18+0100\n"
+"PO-Revision-Date: 2015-01-26 23:46+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2039,7 +2039,7 @@ msgstr "Konto"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:193
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:193
 msgid "Resend confirmation"
-msgstr "Erneut bestätigen"
+msgstr "Erneut senden"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:204
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:204
