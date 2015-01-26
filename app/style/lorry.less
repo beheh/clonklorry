@@ -1,9 +1,5 @@
 @import 'bootstrap/variables.less';
 
-.navbar-brand {
-
-}
-
 ::selection {
 	color: white;
 	background-color: firebrick;
@@ -61,25 +57,25 @@ a.text, a:hover.text, a:active.text, .panel a, .panel a:hover, .panel a:active {
 
 .navbar-default {
 	svg rect {
-		fill:@navbar-default-link-color;
+		fill: @navbar-default-link-color;
 	}
 
 	a:hover svg rect {
-		fill: @navbar-inverse-link-hover-color;
+		fill: @navbar-default-link-hover-color;
 	}
 
 	a:active svg rect {
-		fill: @navbar-inverse-link-active-color;
+		fill: @navbar-default-link-active-color;
 	}
 
 	a:disabled svg rect {
-		fill: @navbar-inverse-link-disabled-color;
+		fill: @navbar-default-link-disabled-color;
 	}
 }
 
 .navbar-inverse {
 	svg rect {
-		fill:@navbar-inverse-link-color;
+		fill: @navbar-inverse-link-color;
 	}
 
 	a:hover svg rect {
