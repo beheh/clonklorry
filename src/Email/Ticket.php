@@ -12,7 +12,7 @@ class Ticket extends Email {
 	}
 
 	public function setUser($user) {
-		$this->context['user'] = $user;
+		$this->context['user'] = $user->forPresenter();
 	}
 
 	public function setStaff($staff) {

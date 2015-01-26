@@ -37,6 +37,7 @@
 			{% else %}
 			<p class="lead">{% trans %}An anonymous user has sent the following message:{% endtrans %}</p>			
 			{% endif %}
+			{% include 'functions/alert.twig' with {'selector' : 'ticket'} %}
 			<form role="form" method="post" action="{{filename}}">
 				<input type="hidden" name="state" value="{{state}}">
 				<div class="well">{{request}}</div>

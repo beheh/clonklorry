@@ -35,7 +35,7 @@ upload:
 contact:
     address: <strong>Full Name</strong>
     legal: legal@example.com
-    feedback: feedback@example.com
+    feedback: developer@beheh.de
 
 # main persistence database
 persistence:
@@ -49,12 +49,12 @@ job:
 
 # for outgoing mails
 mail:
-    smtp-host: example.com
+    smtp-host: lorry.menkar.uberspace.de
     smtp-port: 587
     smtp-encryption: tls
-    username: lorry
-    password: lorry
-    from: lorry@example.com
+    username: lorry-testing
+    password: aewoow8vohz0caquaeyoo0tiep3theer8eixahloo6ahSh6aesoh9wiRahpafohB
+    from: lorry@testing.clonklorry.org
 
 # content delivery
 cdn:

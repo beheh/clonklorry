@@ -63,11 +63,10 @@ class Ticket extends Presenter {
 				$mail->setStaff($staff);
 				
 				if($this->mail->send($mail)) {
-					$this->success('contact', gettext('Your message was sent. Thank you for your feedback.'));
+					$ticket->escalate();
 				} else {
-					$this->error('contact', gettext('Sorry, your feedback couldn\'t be sent.'));
+					$this->error('ticket', gettext('The ticket could not be escalated.'));
 				}
-				$ticket->escalate();
 			} elseif(isset($_POST['acknowledge'])) {
 				$ticket->acknowledge();
 			}
