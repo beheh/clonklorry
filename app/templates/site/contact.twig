@@ -19,11 +19,11 @@
 					<div class="form-group">
 						<textarea class="form-control contact-form" name="feedback" rows="10" required></textarea>
 					</div>
-					<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 					{% if by %}
 						{% set sender = by|escape('html') %}
-						<span class="btn "disabled>{% trans %}Will be sent as "{{sender}}".{% endtrans %}</span>
+						<p class="pull-right help-block">{% trans %}Will be sent as "{{sender}}".{% endtrans %}</p>
 					{% endif %}
+					<button class="btn btn-primary" type="submit">{% trans "Send feedback" %}</button>
 				</form>
 			</div>
 			<div class="col-md-5">
