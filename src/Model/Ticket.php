@@ -23,7 +23,7 @@ class Ticket extends Model {
 	}
 	
 	public function byNew() {
-		$constrains = array();
+		$constraints = array();
 		$constraints['acknowledged'] = null;
 		$constraints['escalated'] = null;
 		$this->all()->order('submitted');

@@ -19,8 +19,6 @@ class Contact extends Presenter {
 		$this->context['legal_address'] = $this->config->get('contact/legal');
 		if($user) {
 			$this->context['by'] = $user->getUsername();
-		} else {
-			$this->context['by'] = $_SERVER['REMOTE_ADDR'];
 		}
 
 		$this->display('site/contact.twig');
@@ -31,12 +29,6 @@ class Contact extends Presenter {
 		$user = false;
 		if($this->session->authenticated()) {
 			$user = $this->session->getUser();
-		}
-
-		if($user) {
-			$by = $user->getUsername();
-		} else {
-			$by = $_SERVER['REMOTE_ADDR'];
 		}
 
 		$ticket = ModelFactory::build('Ticket');
