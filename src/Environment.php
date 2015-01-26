@@ -183,6 +183,7 @@ class Environment {
 				'/administrator/logs' => 'Manage\Administrator\Logs',
 				'/moderator' => 'Manage\Moderator\Portal',
 				'/moderator/approve/:number' => 'Manage\Moderator\Approve',
+				'/moderator/ticket/:number' => 'Manage\Moderator\Ticket',
 				'/register' => 'Account\Register',
 				'/login' => 'Account\Login',
 				'/logout' => 'Account\Logout',

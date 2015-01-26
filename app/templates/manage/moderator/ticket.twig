@@ -1,0 +1,51 @@
+{% extends 'root.twig' %}
+
+{% set title %}{% trans %}Ticket #{{number}}{% endtrans %}{% endset %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="breakout"><a href="{{base}}/moderator"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	{% if acknowledged %}
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{% trans %}Ticket acknowledged{% endtrans %}</h1>
+				{% set staffname %}<a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a>{% endset %}
+				<p>{% trans %}The following ticket was acknowledged by <strong>{{staffname}}</strong>:{% endtrans %}</p>
+				<div class="well">{{request}}</div>
+				<p><a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>				
+			</div>
+		</div>
+	{% elseif escalated %}
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{% trans %}Ticket escalated{% endtrans %}</h1>
+				{% set staffname %}<a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a>{% endset %}
+				<p>{% trans %}The following ticket was escalated by <strong>{{staffname}}</strong>:{% endtrans %}</p>
+				<div class="well">{{request}}</div>
+				<p><a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>				
+			</div>
+		</div>
+	{% else %}
+		<div class="container">
+			{% if user %}
+			{% set username %}<a href="{{base}}/users/{{user.name}}" class="text">{{user.name}}</a>{% endset %}
+			<p class="lead">{% trans %}<strong>{{username}}</strong> has sent the following message:{% endtrans %}</p>
+			{% else %}
+			<p class="lead">{% trans %}An anonymous user has sent the following message:{% endtrans %}</p>			
+			{% endif %}
+			<form role="form" method="post" action="{{filename}}">
+				<input type="hidden" name="state" value="{{state}}">
+				<div class="well">{{request}}</div>
+				<p class="help-block">{% trans %}Please escalate this ticket if there is any technical problem, error message or complaint.{% endtrans %}</p>
+				<p>
+					<button type="submit" class="btn btn-lg btn-primary" name="acknowledge">{% trans %}Acknowledge{% endtrans %}</button>
+					<button type="submit" class="btn btn-lg btn-default" name="escalate">{% trans %}Escalate{% endtrans %}</button>
+				</p>
+			</form>
+		</div>
+	{% endif %}
+{% endblock %}

@@ -59,6 +59,7 @@ CREATE TABLE `addon` (
 	`approval_submit` datetime DEFAULT NULL,
 	`approval_comment` text,
 	PRIMARY KEY (`id`),
+	KEY `owner` (`owner`),
 	UNIQUE KEY `short` (`short`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -72,6 +73,8 @@ CREATE TABLE `release` (
   `changelog` text,
   `whatsnew` text,
   PRIMARY KEY (`id`),
+  KEY `addon` (`addon`),
+  KEY `version` (`version`),
   UNIQUE KEY `addon_version` (`addon`,`version`),
   UNIQUE KEY `assetsecret` (`assetsecret`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -81,4 +84,18 @@ CREATE TABLE `dependency` (
 	`release` int(11) NOT NULL,
 	`required` int(11) NOT NULL,
 	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ticket` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` int(11) DEFAULT NULL,
+  `request` text NOT NULL,
+  `hash` varchar(64) NOT NULL,
+  `submitted` datetime NOT NULL,
+  `escalated` datetime DEFAULT NULL,
+  `staff` int(11) DEFAULT NULL,
+  `acknowledged` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user` (`user`),
+  UNIQUE KEY `hash` (`hash`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

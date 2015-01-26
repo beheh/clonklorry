@@ -87,6 +87,10 @@ footer span a {
   font-size: 30px;
   line-height: 1.1;
 }
+.jumbotron h2 {
+  font-size: 22px;
+  line-height: 1;
+}
 #identify.jumbotron {
   margin-top: 40px;
   padding: 25px 0 50px 0;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-26 15:34+0100\n"
-"PO-Revision-Date: 2015-01-26 15:34+0100\n"
+"POT-Creation-Date: 2015-01-26 17:15+0100\n"
+"PO-Revision-Date: 2015-01-26 17:15+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -15,6 +15,59 @@ msgstr ""
 "X-Poedit-Bookmarks: -1,6,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: /home/benedict/Dokumente/clonklorry/cache\n"
 "X-Poedit-SearchPath-1: /home/benedict/Dokumente/clonklorry/src\n"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:34
+msgid "Ticket #%number%"
+msgstr "Ticket #%number%"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:64
+msgid "Ticket acknowledged"
+msgstr "Ticket erledigt"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:79
+msgid "The following ticket was acknowledged by <strong>%staffname%</strong>:"
+msgstr "Das folgende Ticket wurde von <strong>%staffname%</strong> erledigt:"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:89
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:126
+#: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:97
+#: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:122
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:97
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:123
+msgid "Return to moderation portal"
+msgstr "Zurück zum Moderationsportal"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:101
+msgid "Ticket escalated"
+msgstr "Ticket eskaliert"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:116
+msgid "The following ticket was escalated by <strong>%staffname%</strong>:"
+msgstr "Das folgende Ticket wurde von <strong>%staffname%</strong> eskaliert:"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:150
+msgid "<strong>%username%</strong> has sent the following message:"
+msgstr "<strong>%username%</strong> hat die folgende Nachricht gesendet:"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:156
+msgid "An anonymous user has sent the following message:"
+msgstr "Ein anonymer Benutzer hat die folgende Nachricht gesendet:"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:174
+msgid ""
+"Please escalate this ticket if there is any technical problem, error message "
+"or complaint."
+msgstr ""
+"Bitte eskaliere dieses Ticket falls es um sich um ein technisches Problem, "
+"eine Fehlermeldung oder eine Beschwerde handelt."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:179
+msgid "Acknowledge"
+msgstr "Erledigt"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:183
+msgid "Escalate"
+msgstr "Eskalieren"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:33
@@ -120,6 +173,7 @@ msgid "Requested namespace"
 msgstr "Gewünschte Kennung"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:90
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:169
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:85
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2d/a6/cabc8bd5272309dd20a96ab36dbff348bc8419d094eff2522c6dd70eb838.php:90
 #: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:297
@@ -138,7 +192,21 @@ msgstr "Es sind keine Erweiterungen in der Bestätigungswarteschlange."
 msgid "Contact form"
 msgstr "Kontaktformular"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:160
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:165
+#: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:305
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:306
+msgid "Timestamp"
+msgstr "Zeitstempel"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:167
+msgid "Request"
+msgstr "Anfrage"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:208
+msgid "Anonymous"
+msgstr "Anonym"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:231
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2d/a6/cabc8bd5272309dd20a96ab36dbff348bc8419d094eff2522c6dd70eb838.php:160
 msgid "There are no new messages in the queue."
 msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
@@ -824,13 +892,6 @@ msgid ""
 msgstr ""
 "Dieser Erweiterung wurde die Kennung <strong>%namespace%</strong> zugeteilt."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:97
-#: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:122
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:97
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:123
-msgid "Return to moderation portal"
-msgstr "Zurück zum Moderationsportal"
-
 #: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:108
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:94
 #: /home/benedict/Dokumente/clonklorry/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:92
@@ -924,11 +985,6 @@ msgstr "Titel (Deutsch)"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:286
 msgid "Example url"
 msgstr "Beispiel-URL"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:305
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:306
-msgid "Timestamp"
-msgstr "Zeitstempel"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3a/df/22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:21
 #: /home/benedict/Dokumente/clonklorry/cache/twig/62/3a/82dfd01dd8bc8a5acf9a73bc14248566bac12f83305531e78ad6703717ca.php:21
@@ -3031,6 +3087,14 @@ msgstr "Kommentar kann nicht leer sein, wenn die Erweiterung abgelehnt wird."
 msgid "Comment is %s."
 msgstr "Kommentar ist %s."
 
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Ticket.php:64
+msgid "Your message was sent. Thank you for your feedback."
+msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Ticket.php:66
+msgid "Sorry, your feedback couldn't be sent."
+msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
+
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/QueryFile.php:18
 msgid "invalid path"
 msgstr "ungültiger Pfad"
@@ -3353,13 +3417,22 @@ msgstr "Änderungen gespeichert."
 msgid "Error saving the changes."
 msgstr "Fehler beim Speichern der Änderungen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:52
-msgid "Your message was sent. Thank you for your feedback."
-msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:53
+#, php-format
+msgid "Message text is %s."
+msgstr "Nachrichtentext ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:54
-msgid "Sorry, your feedback couldn't be sent."
-msgstr "Es tut uns Leid, dein Feedback konnte nicht gesendet werden."
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:59
+msgid "This message has already been sent."
+msgstr "Diese Nachricht wurde bereits gesendet."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:65
+msgid "Thank you for your message, we'll take a look at it."
+msgstr "Danke für deine Nachricht, wir kümmern uns darum."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:67
+msgid "Sorry, your message couldn't be saved."
+msgstr "Entschuldigung, deine Nachricht konnte nicht gespeichert werden."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:34
 msgid "Username was changed."
@@ -3488,6 +3561,23 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "<strong>%username%</strong> sent the following message:"
+#~ msgstr "<strong>%username%</strong> sendete die folgende Nachricht:"
+
+#~ msgid "An anonymous user sent the following message:"
+#~ msgstr "Ein anonymer Benutzer hat die folgende Nachricht gesendet:"
+
+#~ msgid "Sorry, your feedback couldn't be saved."
+#~ msgstr "Entschuldigung, dein "
+
+#~ msgid "Thank you for your message."
+#~ msgstr "Danke für deine Nachricht."
+
+#~ msgid ""
+#~ "Please don't hesitate to escalate this message if there is any problem."
+#~ msgstr ""
+#~ "Bitte eskaliere diese Nachricht falls es irgendwelche Probleme gibt."
 
 #~ msgid "Featured"
 #~ msgstr "Vorgestellt"

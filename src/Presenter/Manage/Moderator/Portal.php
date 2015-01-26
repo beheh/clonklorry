@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Manage\Moderator;
 
 use Lorry\Presenter;
 use Lorry\ModelFactory;
+use Lorry\Service\LocalisationService;
 
 class Portal extends Presenter {
 
@@ -19,9 +20,8 @@ class Portal extends Presenter {
 		}
 		$this->context['games'] = $games;
 		
-		$submitted = array();
-		$addons = ModelFactory::build('Addon')->bySubmittedForApproval();
-		foreach($addons as $addon) {
+		$addons = array();
+		foreach(ModelFactory::build('Addon')->bySubmittedForApproval() as $addon) {
 			$result = array(
 				'addon' => 
 					array('id' => $addon->getId(),
@@ -34,9 +34,25 @@ class Portal extends Presenter {
 			if($owner) {
 				$result['user'] = $owner->forPresenter();
 			}
-			$submitted[] = $result;
+			$addons[] = $result;
 		}
-		$this->context['submitted'] = $submitted;
+		$this->context['addons'] = $addons;
+		
+		$tickets = array();
+		foreach(ModelFactory::build('Ticket')->byNew() as $ticket) {
+			$result = array(
+				'id' => $ticket->getId(),
+				'submitted' => date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $ticket->getSubmitted()),
+				'request' => $ticket->getRequest()
+			);
+			$user = $ticket->fetchUser();
+			if($user) {
+				$result['user'] = $user->forPresenter();
+			}
+			$tickets[] = $result;
+		}
+		
+		$this->context['tickets'] = $tickets;
 		
 		$this->display('manage/moderator/portal.twig');
 	}

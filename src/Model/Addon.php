@@ -258,7 +258,7 @@ class Addon extends Model {
 	}
 
 	public function bySubmittedForApproval() {
-		$constraints = array('short' => null, 'approval_submit' => '!= null');
+		$constraints = array('short' => null, 'approval_submit' => array('!=', null));
 		$this->all()->order('approval_submit');
 		return $this->byValues($constraints);
 	}
