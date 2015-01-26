@@ -11,8 +11,8 @@
 </blockquote>
 	
 {% if user %}{% set username %}<a href="{{base}}/users/{{user.name}}" class="text">{{user.name}}</a>{% endset %}
-<p>The ticket was originally sent by {{username}}.</p>
+<p>{% trans %}The message was originally sent by {{username}}.{% endtrans %}</p>
 {% else %}
-<p>The ticket was originally sent by an anonymous user.</p>
+<p>{% trans %}The message was originally sent by an anonymous user.{% endtrans %}</p>
 {% endif %}
 {% endblock %}

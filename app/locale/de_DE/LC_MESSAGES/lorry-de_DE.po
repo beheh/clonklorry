@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-26 20:14+0100\n"
-"PO-Revision-Date: 2015-01-26 20:14+0100\n"
+"POT-Creation-Date: 2015-01-26 20:17+0100\n"
+"PO-Revision-Date: 2015-01-26 20:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1931,6 +1931,14 @@ msgstr "%brand%: Eskaliertes Ticket"
 msgid "The following ticket was escalated by %staffname%:"
 msgstr "Das folgende Ticket wurde von %staffname% eskaliert:"
 
+#: /home/benedict/Dokumente/clonklorry/cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:81
+msgid "The message was originally sent by %username%."
+msgstr "Die Nachricht wurde ursprünglich von %username% gesendet."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:87
+msgid "The message was originally sent by an anonymous user."
+msgstr "Die Nachricht wurde ursprünglich von einem anonymen Benutzer gesendet."
+
 #: /home/benedict/Dokumente/clonklorry/cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:55
 msgid "We &hearts; feedback"
 msgstr "Wir &hearts; Feedback"
@@ -3564,6 +3572,12 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "The ticket was originally sent by %username%."
+#~ msgstr "Das Ticket wurde ursprünglich von %username% gesendet."
+
+#~ msgid "The ticket was originally sent by an anonymous user."
+#~ msgstr "Das Ticket wurde ursprünglich von einem anonymen Nutzer gesendet."
 
 #~ msgid "Your message was sent. Thank you for your feedback."
 #~ msgstr "Deine Nachricht wurde gesendet. Vielen Dank für dein Feedback."
