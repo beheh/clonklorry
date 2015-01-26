@@ -134,7 +134,7 @@ class PersistenceService {
 		$statement->execute($query->getBindValues());
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
-			$errorinfo = $query->errorInfo();
+			$errorinfo = $statement->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 
@@ -163,7 +163,7 @@ class PersistenceService {
 		$statement->execute($query->getBindValues());
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
-			$errorinfo = $query->errorInfo();
+			$errorinfo = $statement->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
@@ -189,7 +189,7 @@ class PersistenceService {
 		$statement->execute($query->getBindValues());
 
 		if($statement->errorCode() != PDO::ERR_NONE) {
-			$errorinfo = $query->errorInfo();
+			$errorinfo = $statement->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 
