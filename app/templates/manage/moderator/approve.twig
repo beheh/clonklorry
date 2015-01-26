@@ -21,7 +21,7 @@
 				<h1>{% trans %}Addon approved{% endtrans %}</h1>
 				<p>{% trans %}This addon has been assigned the namespace <strong>{{namespace}}</strong>.{% endtrans %}</p>
 				{{comment}}
-				<p><a class="btn btn-primary btn-large" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>
+				<p><a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>
 			</div>
 		</div>
 	{% elseif rejected %}
@@ -30,7 +30,7 @@
 				<h1>{% trans %}Addon rejected{% endtrans %}</h1>
 				<p>{% trans %}This addon was rejected. It's requested namespace was <em>{{namespace}}</em>.{% endtrans %}</p>
 				{{comment}}
-				<p><a class="btn btn-primary btn-large" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>
+				<p><a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>
 			</div>{
 		</div>
 	{% else %}
