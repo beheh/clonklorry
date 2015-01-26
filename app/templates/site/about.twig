@@ -30,10 +30,10 @@
 				<p>{% trans %}The official Clonk site is not really up to date anymore and fails to highlight one of the best features of Clonk: the awesome Community and its creations.{% endtrans %}</p>
 				<p>{% trans %}We want to share our own creations easily and give the addon developers our important feedback.{% endtrans %}</p>
 				{% if user_login %}
-				<p><a href="{{user_profile}}" class="btn btn-primary">{% trans "View your profile"%}</a></p>
-				{% else %}
-				<p><a href="{{base}}/register" class="btn btn-success">{% trans "Register now"%}</a></p>
-				{% endif %}
+					<p><a href="{{user_profile}}" class="btn btn-primary">{% trans "View your profile"%}</a></p>
+					{% else %}
+					<p><a href="{{base}}/register" class="btn btn-success">{% trans "Register now"%}</a></p>
+					{% endif %}
 			</div>
 		</div>
 		<hr>
@@ -44,29 +44,33 @@
 				<dl>
 					<dt><a href="http://php.net/">PHP</a></dt>
 					<dd>by the <a href="http://php.net/credits.php">PHP Group</a>,</dd>
-					<dt><a href="http://twig.sensiolabs.org">Twig</a> / <a href="http://swiftmailer.org/">Swift Mailer</a></dt>
+					<dt><a href="http://twig.sensiolabs.org">Twig</a> & <a href="http://swiftmailer.org/">Swift Mailer</a></dt>
 					<dd>by <a href="http://fabien.potencier.org/">Fabien Potencier</a> and <a href="http://sensiolabs.com/">SensioLabs</a>,</dd>
+					<dt><a href="http://auraphp.com/">Aura</a>.<a href="https://github.com/auraphp/Aura.SqlQuery/">SqlQuery</a></dt>
+					<dd>by the <a href="http://auraphp.com/community">Aura community</a>,</dd>
+					<dt><a href="https://github.com/thephpleague/flysystem">Flysystem</a> & <a href="https://github.com/thephpleague/oauth2-client">OAuth 2.0 Client</a></dt>
+					<dd>by <a href="http://thephpleague.com/">the PHP League</a>,</dd>
+					<dt><a href="https://code.google.com/p/lightopenid/">LightOpenID</a></dt>
+					<dd>by <a href="https://code.google.com/u/103055401176250561450/">the anonymous author</a>,</dd>
+					<dt><a href="https://github.com/jbroadway/analog/">Analog</a></dt>
+					<dd>by <a href="https://github.com/jbroadway">Johnny Broadway</a>,</dd>
 					<dt><a href="http://redis.io/">Redis</a></dt>
 					<dd>by <a href="http://invece.org/">Salvatore Sanfilippo</a>,</dd>
 					<dt><a href="https://github.com/resque/resque">Resque</a> via <a href="https://github.com/chrisboulton/php-resque">resque-php</a></dt>
 					<dd>by <a href="https://github.com/resque/resque/graphs/contributors">Team Resque</a> / <a href="http://chrisboulton.com/">Chris Boulton</a>,</dd>					
 					<dt><a href="http://lesscss.org/">Less</a></dt>
-					<dd>by <a href="https://github.com/cloudhead">Alexis Sellier</a> and <a href="http://lesscss.org/about/#team">contributors</a>,</dd>
-					<dt><a href="https://github.com/thephpleague/flysystem">Flysystem</a> / <a href="https://github.com/thephpleague/oauth2-client">OAuth 2.0 Client</a></dt>
-					<dd>by <a href="http://thephpleague.com/">the PHP League</a>,</dd>
-					<dt><a href="https://code.google.com/p/lightopenid/">LightOpenID</a></dt>
-					<dd>by <a href="https://code.google.com/u/103055401176250561450/">the anonymous author</a>,</dd>
-					<dt><a href="https://github.com/jbroadway/analog/">Analog</a></dt>
-					<dd>by <a href="https://github.com/jbroadway">Johnny Broadway</a>.</dd>
+					<dd>by the <a href="http://lesscss.org/about/#team">core less team</a>.</dd>
 				</dl>
 			</div>
 			<div class="col-md-4">
 				<h3 id="resources">{% trans "Resources" %}</h3>
 				<dl>
 					<dt><a href="http://getbootstrap.com/">Bootstrap</a></dt>
-					<dd>by <a href="http://twitter.com/mda">@mda</a>, <a href="http://twitter.com/fat">@fat</a> and <a href="https://github.com/twbs/bootstrap/graphs/contributors">contributors</a>,</dd>
+					<dd>by <a href="http://twitter.com/mda">@mda</a>, <a href="http://twitter.com/fat">@fat</a> and <a href="https://github.com/orgs/twbs/people">team</a>,</dd>
 					<dt><a href="http://glyphicons.com/">Glyphicons</a></dt>
 					<dd>by Jan Kovařík,</dd>
+					<dt><a href="https://jquery.com/">jQuery</a></dt>
+					<dd>by the <a href="https://jquery.org/team/">jQuery team</a>,</dd>
 					<dt><a href="http://resumablejs.com/">Resumable.js</a></dt>
 					<dd>by <a href="http://www.23company.com/">23</a>,</dd>
 					<dt><a href="https://twitter.github.io/typeahead.js/">Typeahead.js</a></dt>
