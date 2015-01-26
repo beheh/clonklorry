@@ -47,20 +47,22 @@ class Ticket extends Presenter {
 		$this->security->requireValidState();
 
 		$ticket = $this->getTicket($id);
-
+		
 		if(!$ticket->isEscalated() && !$ticket->isAcknowledged()) {
+			$staff = $this->session->getUser();
 			if(isset($_POST['escalate'])) {
-				$feedback = EmailFactory::build('Feedback');
+				$mail = EmailFactory::build('Ticket');
 
 				$user = $ticket->fetchUser();
 				if($user) {
-					$feedback->setReplyTo($user->getEmail());
+					$mail->setReplyTo($user->getEmail());
+					$mail->setUser($user);
 				}
-
-				$feedback->setSender($by);
-				$feedback->setFeedback($ticket->getRequest());
-
-				if($this->mail->send($feedback)) {
+				
+				$mail->setMessage($ticket->getRequest());
+				$mail->setStaff($staff);
+				
+				if($this->mail->send($mail)) {
 					$this->success('contact', gettext('Your message was sent. Thank you for your feedback.'));
 				} else {
 					$this->error('contact', gettext('Sorry, your feedback couldn\'t be sent.'));
@@ -68,9 +70,8 @@ class Ticket extends Presenter {
 				$ticket->escalate();
 			} elseif(isset($_POST['acknowledge'])) {
 				$ticket->acknowledge();
-				$ticket->setStaff($this->session->getUser()->getId());
 			}
-			$ticket->setStaff($this->session->getUser()->getId());
+			$ticket->setStaff($staff->getId());
 			if($ticket->modified()) {
 				$ticket->save();
 			}

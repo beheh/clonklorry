@@ -1,0 +1,18 @@
+{% extends 'email/base.twig' %}
+
+{% block subject %}{% trans %}{{brand}}: Escalated ticket{% endtrans %}{% endblock %}
+
+{% block body %}
+{% set staffname %}<a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a>{% endset %}
+<p>{% trans %}The following ticket was escalated by {{staffname}}:{% endtrans %}</p>
+
+<blockquote>
+	<p>"{{message|raw}}"</p>
+</blockquote>
+	
+{% if user %}{% set username %}<a href="{{base}}/users/{{user.name}}" class="text">{{user.name}}</a>{% endset %}
+	<p>The ticket was originally sent by {{username}}.</p>
+{% else %}
+	<p>The ticket was originally sent by an anonymous user.</p>
+{% endif %}
+{% endblock %}
