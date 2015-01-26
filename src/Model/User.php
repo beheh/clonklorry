@@ -177,6 +177,7 @@ class User extends Model {
 
 	public final function setClonkforgeUrl($clonkforge) {
 		$scanned = array();
+		$id = null;
 		if($clonkforge) {
 			$this->validateUrl($clonkforge);
 			$clonkforge = preg_replace('|^(http://)?(www\.)?(.*)$|', 'http://$3', $clonkforge);
@@ -184,9 +185,10 @@ class User extends Model {
 			if(count($scanned) != 1 || empty($scanned[0])) {
 				throw new ModelValueInvalidException(gettext('not a matching Clonk Forge URL'));
 			}
+			$id = $scanned[0];
 		}
 		try {
-			return $this->setClonkforge($scanned[0]);
+			return $this->setClonkforge($id);
 		} catch(ModelValueInvalidException $e) {
 			throw new ModelValueInvalidException(gettext('not a valid Clonk Forge URL'));
 		}

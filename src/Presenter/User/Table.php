@@ -31,7 +31,7 @@ class Table extends Presenter {
 					break;
 			}
 		} else {
-			$users = $users->byAnything();
+			$users = $users->limit(1)->byAnything();
 		}
 		foreach($users as $user) {
 			$this->context['users'][] = array(

@@ -137,7 +137,7 @@ abstract class Model {
 	 */
 	public final function order($row, $descending = false) {
 		$this->ensureField($row);
-		$this->order[$row] = $descending;
+		$this->order[] = $descending ? $row.' DESC' : $row;
 		return $this;
 	}
 
@@ -199,8 +199,8 @@ abstract class Model {
 		}
 
 		$order = $this->order;
-		if(!isset($order['id'])) {
-			$order['id'] = false;
+		if(empty($order)) {
+			$order[] = 'id';
 		}
 
 		if($this->multiple) {
@@ -415,7 +415,7 @@ abstract class Model {
 				return false;
 			}
 		} else {
-			$id = $this->persistence->save($this, $changes);
+			$id = $this->persistence->insert($this, $changes);
 			if(!$id) {
 				return false;
 			}

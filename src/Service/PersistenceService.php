@@ -8,6 +8,7 @@ use Exception;
 use InvalidArgumentException;
 use PDOException;
 use Lorry\Model;
+use Aura\SqlQuery\QueryFactory;
 
 class PersistenceService {
 
@@ -29,11 +30,20 @@ class PersistenceService {
 	 */
 	private $connection = null;
 
+	/**
+	 *
+	 * @var QueryFactory
+	 */
+	private $factory = null;
+
 	public function ensureConnected() {
-		if($this->connection)
+		if($this->connection !== null) {
 			return true;
+		}
 		try {
-			$this->connection = new PDO($this->config->get('persistence/dsn'), $this->config->get('persistence/username'), $this->config->get('persistence/password'));
+			$dsn = $this->config->get('persistence/dsn');
+			$this->connection = new PDO($dsn, $this->config->get('persistence/username'), $this->config->get('persistence/password'));
+			$this->factory = new QueryFactory(strstr($dsn, ':', true));
 		} catch(PDOException $ex) {
 			// catch the pdo exception to prevent credential leaking
 			throw new Exception('could not connect to database ('.$ex->getMessage().')');
@@ -44,78 +54,31 @@ class PersistenceService {
 	 * 
 	 * @param \Lorry\Model $model
 	 * @param array $pairs
-	 * @param bool $descending
-	 * @param int $from
+	 * @param array $order
+	 * @param int $offset
 	 * @param int $limit
 	 * @return array
 	 * @throws InvalidArgumentException
 	 */
-	public function loadAll(Model $model, $pairs, $order, $from, $limit) {
+	public function loadAll(Model $model, $pairs, $order, $offset, $limit) {
 		$this->ensureConnected();
+		$query = $this->factory->newSelect();
 
-		$parameters = '';
-		$values = array();
-		$where = false;
+		$query->cols(array('*'));
+		$query->from($model->getTable());
+
 		foreach($pairs as $row => $value) {
-			if(!$where) {
-				$parameters .= ' WHERE ';
-				$where = true;
-			} else {
-				$parameters .= ' AND ';
-			}
-			if(is_array($value)) {
-				if(count($value) !== 2) {
-					throw new InvalidArgumentException('invalid contraint value, expected array of size 2 (for example array("!=", "value"))');
-				}
-				$allowed = array('>', '>=', '=', '!=', '<=', '<');
-				if(!in_array($value[0], $allowed)) {
-					throw new InvalidArgumentException('invalid query modifier, must be one of '.implode(', ', $allowed));
-				}
-				if($value[1] === null) {
-					switch($value[0]) {
-						case '=':
-							$parameters .= '`'.$row.'` IS NULL';
-							break;
-						case '!=':
-							$parameters .= '`'.$row.'` IS NOT NULL';
-							break;
-						default:
-							throw new InvalidArgumentException('invalid query modifier, null can only be equal or unequal');
-							break;
-					}
-				} else {
-					$parameters .= '`'.$row.'` '.$value[0].' ?';
-					$values[] = $value[1];
-				}
-			} else {
-				if($value === null) {
-					$parameters .= '`'.$row.'` IS NULL';
-				} else {
-					$parameters .= '`'.$row.'` = ?';
-					$values[] = $value;
-				}
-			}
+			$query->where('`'.$row.'` = :'.$row);
+			$query->bindValue($row, $value);
 		}
 
-		$limitquery = '';
-		if($limit !== null) {
-			$limitquery = ($from === null) ? ' LIMIT '.intval($limit) : ' LIMIT '.intval($from).', '.intval($limit);
-		}
+		$query->orderBy($order);
+		$query->offset($offset);
+		$query->limit($limit);
 
-		$orderquery = ' ORDER BY ';
-		$i = 0;
-		foreach($order as $row => $descending) {
-			if($i > 0) {
-				$orderquery .= ', ';
-			}
-			$orderquery .= '`'.$row.'` ';
-			$orderquery .= $descending ? 'DESC' : 'ASC';
-			$i++;
-		}
+		$statement = $this->connection->prepare($query->__toString());
+		$statement->execute($query->getBindValues());
 
-		$query = 'SELECT * FROM `'.$model->getTable().'`'.$parameters.$orderquery.$limitquery;
-		$statement = $this->connection->prepare($query);
-		$statement->execute($values);
 		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $statement->errorInfo();
 			throw new Exception($errorinfo[1].': '.$errorinfo[2].' (sql error '.$errorinfo[0].' for query "'.$query.'")');
@@ -130,14 +93,14 @@ class PersistenceService {
 	 * @param \Lorry\Model $model
 	 * @param array $pairs
 	 * @param array $order
-	 * @param int $from
+	 * @param int $offset
 	 * @param int $limit
 	 * @return \Lorry\Model
 	 * @throws Exception
 	 */
-	public function load(Model $model, $pairs, $order, $from, $limit) {
-		$rows = $this->loadAll($model, $pairs, $order, $from, $limit);
-		if(count($rows) > 1 && $limit === null && $from === null) {
+	public function load(Model $model, $pairs, $order, $offset, $limit) {
+		$rows = $this->loadAll($model, $pairs, $order, $offset, $limit);
+		if(count($rows) > 1 && $limit === null && $offset === null) {
 			throw new Exception('result ambiguity: expected unique identifier');
 		} else if(count($rows) == 1) {
 			return $rows[0];
@@ -157,23 +120,24 @@ class PersistenceService {
 		$this->ensureConnected();
 		$model->ensureLoaded();
 
+		$query = $this->factory->newUpdate();
+		$query->table($model->getTable());
+
+		$query->cols($changes);
+
+		$query->where('id = :id');
+		$query->bindValue('id', $model->getId());
+
 		Analog::debug('updating a '.get_class($model).' model, changes are '.print_r($changes, true));
 
-		$values = array();
-		$sets = '';
-		foreach($changes as $row => $change) {
-			if(!empty($values))
-				$sets .= ', ';
-			$sets .= '`'.$row.'` = ?';
-			$values[] = $change;
-		}
-		$values[] = $model->getId();
-		$query = $this->connection->prepare('UPDATE `'.$model->getTable().'` SET '.$sets.' WHERE `id` = ?');
-		$query->execute($values);
-		if($query->errorCode() != PDO::ERR_NONE) {
+		$statement = $this->connection->prepare($query->__toString());
+		$statement->execute($query->getBindValues());
+
+		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $query->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
+
 		return $query->rowCount() == 1;
 	}
 
@@ -184,31 +148,46 @@ class PersistenceService {
 	 * @return bool
 	 * @throws Exception
 	 */
-	public function save(Model $model, $values) {
+	public function insert(Model $model, $values) {
 		$this->ensureConnected();
 		$model->ensureUnloaded();
 
-		Analog::debug('saving a '.get_class($model).' model, values are '.print_r($values, true));
+		$query = $this->factory->newInsert();
+		$query->into($model->getTable());
 
-		$keys = '';
-		$valuenames = '';
-		$contents = array();
-		foreach($values as $key => $value) {
-			if(!empty($contents)) {
-				$keys .= ', ';
-				$valuenames .= ', ';
-			}
-			$keys .= '`'.$key.'`';
-			$valuenames .= '?';
-			$contents[] = $value;
-		}
-		$query = $this->connection->prepare('INSERT INTO `'.$model->getTable().'` ('.$keys.') VALUES ('.$valuenames.')');
-		$query->execute($contents);
-		if($query->errorCode() != PDO::ERR_NONE) {
+		$query->cols($values);
+				
+		Analog::debug('inserting a '.get_class($model).' model, values are '.print_r($values, true));
+
+		$statement = $this->connection->prepare($query->__toString());
+		$statement->execute($query->getBindValues());
+
+		if($statement->errorCode() != PDO::ERR_NONE) {
 			$errorinfo = $query->errorInfo();
 			throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
 		}
 		return $this->connection->lastInsertId();
+
+
+		/* $keys = '';
+		  $valuenames = '';
+		  $contents = array();
+		  foreach($values as $key => $value) {
+		  if(!empty($contents)) {
+		  $keys .= ', ';
+		  $valuenames .= ', ';
+		  }
+		  $keys .= '`'.$key.'`';
+		  $valuenames .= '?';
+		  $contents[] = $value;
+		  }
+		  $query = $this->connection->prepare('INSERT INTO `'.$model->getTable().'` ('.$keys.') VALUES ('.$valuenames.')');
+		  $query->execute($contents);
+		  if($query->errorCode() != PDO::ERR_NONE) {
+		  $errorinfo = $query->errorInfo();
+		  throw new Exception('#'.$errorinfo[1].': '.$errorinfo[2]);
+		  }
+		  return $this->connection->lastInsertId(); */
 	}
 
 }

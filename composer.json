@@ -19,6 +19,7 @@
 		"symfony/finder": "~2.6",
 		"symfony/console": "~2.6",
         "chrisboulton/php-resque": "dev-master",
+		"aura/sqlquery": "~2.1",
 		"aws/aws-sdk-php": "~2"
     },
 	"suggest": {
