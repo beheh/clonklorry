@@ -67,9 +67,28 @@ class PersistenceService {
 		$query->cols(array('*'));
 		$query->from($model->getTable());
 
-		foreach($pairs as $row => $value) {
-			$query->where('`'.$row.'` = :'.$row);
-			$query->bindValue($row, $value);
+		foreach($pairs as $row => $parameter) {
+			$operator = '=';
+			if(is_array($parameter)) {
+				$operator = $parameter[0];
+				$value = $parameter[1];
+			} else {
+				$value = $parameter;
+			}
+			if($value === null) {
+				switch($operator) {
+					case '=':
+						$operator = 'IS';
+						break;
+					case '!=':
+						$operator = 'IS NOT';
+						break;
+				}
+				$query->where($row.' '.$operator.' null');
+			} else {
+				$query->where($row.' '.$operator.' :'.$row);
+				$query->bindValue($row, $value);
+			}
 		}
 
 		$query->orderBy($order);
