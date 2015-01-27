@@ -66,64 +66,6 @@
 
 {% block javascript %}
 	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
-
-	var lorryTokenizer = function(a) {
-	return [a.title, a.abbreviation];
-	};
-
-	function prefetchFilter(parsedResponse) {
-	var addons = [];
-	$(parsedResponse).each(function(key, addon) {
-	addons.push(addon);
-	});
-	console.log(addons);
-	return addons;
-	}
-
-	var publicAddons = new Bloodhound({
-	datumTokenizer: lorryTokenizer,
-	queryTokenizer: Bloodhound.tokenizers.whitespace,
-	local: [{ title: 'Hazard', abbreviation: 'hzck' }], // example
-	prefetch: {url: '{{base}}/addons/{{game}}.json?headless', filter: prefetchFilter},
-	//		remote: {url: '{{base}}/search.json?for=%QUERY', filter: prefetchFilter},
-	thumbprint: '3' // hash of all addon versions
-	});
-
-	publicAddons.initialize();
-
-	$('#add-dependency').typeahead(null, {
-	name: 'public-addons',
-	displayKey: 'title',
-	source: publicAddons.ttAdapter(),
-	templates: {
-	suggestion: function(a) { return '<strong>'+a.title+'</strong>'; }
-	}
-	}).on('typeahead:selected', selectDependencyAddon);
-
-	$('#add-dependency-reset').click(resetDependencyVersions);
-	$('#add-dependency-select').click(selectDependencyAddon);
-
-	resetDependencyVersions();
-
-	function resetDependencyVersions() {
-	$('#add-dependency').removeAttr('disabled');
-	$('#add-dependency-select').removeAttr('disabled');
-	$('#add-dependency-version').empty();
-	$('#add-dependency-version').append($('<option disabled>{% trans %}Select an addon first&hellip;{% endtrans %}</option>'));
-	$('#add-dependency-version').attr('disabled', true);
-	}
-
-	function selectDependencyAddon() {
-	$('#add-dependency').attr('disabled', true);
-	$('#add-dependency-select').attr('disabled', true);
-	$('#add-dependency-version').empty();
-	$('#add-dependency-version').append($('<option disabled>{% trans %}Loading versions&hellip;{% endtrans %}</option>'));
-	//$.get('', function() {
-	//	$('#add-dependency-version').removeAttr('disabled');
-	//  $('#add-dependency-version').empty();
-	//	$('#add-dependency-version').append($('<option disabled>{% trans %}Select a version&hellip;{% endtrans %}</option>'));
-	//});
-	}
 	
 	$('#publish-quick-confirm').prop('checked', false);
 	$('#publish-quick-confirm').change(function() {
