@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="{{base}}/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" href="{{resources}}/lorry/img/lorry-128x128-touch.png">
+		<meta name="apple-mobile-web-app-title" content="{{brand}}">
 		{% if fbid %}<meta property="fb:app_id" content="{{fbid}}">{% endif %}
 		<meta property="og:title" content="{{title|default(brand)}}">
 		<meta property="og:locale" content="{{locale}}">
@@ -18,6 +19,7 @@
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="{{resources}}/lorry/img/lorry-512x512.png">
 		{% endblock %}
+		<meta name="msapplication-TileColor" content="firebrick">
 		<script>var base = '{{base}}', state = '{{state}}';</script>
 	</head>
 	<body>
