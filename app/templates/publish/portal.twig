@@ -15,18 +15,20 @@
 				{% for addon in addons %}
 					<li class="media media-addon">
 						<div class="pull-left">
+							<a href="{{filename}}/{{addon.id}}">
 							{% if false %}
 							<img class="media-object" src="{{resources}}/lorry/img/addon-60x80.png">
 							{% else %}
 							{% include "functions/svg/addon.twig" %}
 							{% endif %}
+							</a>
 						</div>
 						<div class="media-body">
-							<h4 class="media-heading">{{addon.title}}</h4>
+							<h4 class="media-heading"><a href="{{filename}}/{{addon.id}}">{{addon.title}}</a></h4>
 							{% include 'functions/tags/game.twig' with {'game' : addon.game}%}
 							<p>
-								<a href="{{filename}}/{{addon.id}}" class="btn btn-sm btn-info">{% trans %}Edit addon{% endtrans %}</a>
-								<a href="{{filename}}/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Edit releases{% endtrans %}</a>
+								<a href="{{filename}}/{{addon.id}}" class="btn btn-sm btn-primary">{% trans %}Edit addon{% endtrans %}</a>
+								<a href="{{filename}}/{{addon.id}}#releases" class="btn btn-sm btn-default">{% trans %}Manage releases{% endtrans %}</a>
 							</p>
 						</div>
 					</li>

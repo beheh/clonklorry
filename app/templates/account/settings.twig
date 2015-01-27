@@ -40,7 +40,7 @@
 								<input type="text" class="form-control" name="github" id="github" value="{{github}}" placeholder="{{github_placeholder}}">
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-default">{% trans "Change links" %}</button>
+								<button type="submit" class="btn btn-primary">{% trans "Change links" %}</button>
 							</div>
 						</form>
 					</div>
@@ -61,7 +61,7 @@
 								<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-default">{% trans "Change email address" %}</button>
+								<button type="submit" class="btn btn-primary">{% trans "Change email address" %}</button>
 								{% if not activated %}
 									<button type="submit" class="btn btn-warning" name="resend">{% trans "Resend confirmation" %}</button>
 								{% endif %}
@@ -85,7 +85,7 @@
 							</div>
 							<noscript>
 							<div class="form-group">
-								<button type="submit" class="btn btn-default">{% trans "Change language" %}</button>
+								<button type="submit" class="btn btn-primary">{% trans "Change language" %}</button>
 							</div>
 							</noscript>
 						</form>
@@ -143,7 +143,7 @@
 								<input type="password" class="form-control" name="password-confirm" id="password-confirm" required>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-default">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
+								<button type="submit" class="btn btn-primary">{% if password_exists %}{% trans "Change password" %}{% else %}{% trans "Set password" %}{% endif %}</button>
 							</div>
 						</form>
 					</div>

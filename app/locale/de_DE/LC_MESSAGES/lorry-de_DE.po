@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-26 20:17+0100\n"
-"PO-Revision-Date: 2015-01-26 23:46+0100\n"
+"POT-Creation-Date: 2015-01-27 23:54+0100\n"
+"PO-Revision-Date: 2015-01-27 23:54+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -79,29 +79,28 @@ msgstr "Eskalieren"
 msgid "My addons"
 msgstr "Meine Erweiterungen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:116
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:127
 #: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:116
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:239
 msgid "Edit addon"
 msgstr "Erweiterung bearbeiten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:124
-#: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:124
-msgid "Edit releases"
-msgstr "Releases bearbeiten"
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:135
+msgid "Manage releases"
+msgstr "Releases verwalten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:152
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:163
 #: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:152
 msgid "Your addons will appear here"
 msgstr "Hier werden deine Erweiterungen erscheinen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:156
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:167
 #: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:156
 msgid "Visit the developer portal to get started with a new addon."
 msgstr ""
 "Besuche das Entwicklerportal, um mit einer neuen Erweiterung loszulegen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:162
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:173
 #: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:162
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:34
 #: /home/benedict/Dokumente/clonklorry/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:34
@@ -161,7 +160,7 @@ msgstr "Erweiterungen"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:238
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:239
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d7/b6/5bcac1326fb7f74ad3a9006bd32dd4a3f139592ba025683d5a689f2b0a66.php:62
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:46
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:50
 msgid "Addon"
 msgstr "Erweiterung"
 
@@ -404,7 +403,7 @@ msgstr "Auswählen&hellip;"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:41
 #: /home/benedict/Dokumente/clonklorry/cache/twig/ce/74/26846bf6f80273cbc69ad7468ec95826ece4bff9ada7e7948bea140500e9.php:23
 #: /home/benedict/Dokumente/clonklorry/cache/twig/ce/74/26846bf6f80273cbc69ad7468ec95826ece4bff9ada7e7948bea140500e9.php:41
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:61
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:77
 msgid "Version"
 msgstr "Version"
 
@@ -426,6 +425,10 @@ msgstr ""
 #: /home/benedict/Dokumente/clonklorry/cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:64
 msgid "Save"
 msgstr "Speichern"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:124
+msgid "Edit releases"
+msgstr "Releases bearbeiten"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/20/9a/e95e8bf1811df30a88fafa116bcc4757dd69a86862ce39b1d0b924069862.php:60
 msgid "Publishing release&hellip;"
@@ -644,18 +647,6 @@ msgstr "Änderungen"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:159
 msgid "Publish"
 msgstr "Veröffentlichen"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:281
-msgid "Select an addon first&hellip;"
-msgstr "Wähle zuerst eine Erweiterung&hellip;"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:292
-msgid "Loading versions&hellip;"
-msgstr "Lade Versionen&hellip;"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:299
-msgid "Select a version&hellip;"
-msgstr "Wähle eine Version&hellip;"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:92
 #: /home/benedict/Dokumente/clonklorry/cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:61
@@ -1628,22 +1619,22 @@ msgstr "Entwicklung"
 msgid "Credits"
 msgstr "Danksagungen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:107
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:113
 #: /home/benedict/Dokumente/clonklorry/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:107
 msgid "You have unsaved changes."
 msgstr "Du hast ungespeicherte Änderungen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:109
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:115
 #: /home/benedict/Dokumente/clonklorry/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:109
 msgid "Preparing upload"
 msgstr "Hochladen wird vorbereitet"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:111
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:117
 #: /home/benedict/Dokumente/clonklorry/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:111
 msgid "You are still uploading files."
 msgstr "Du lädst noch Dateien hoch."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:201
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:207
 #: /home/benedict/Dokumente/clonklorry/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:200
 msgid ""
 "Lorry is a fan site for Clonk, a unique game series with hundreds of worlds "
@@ -1652,12 +1643,12 @@ msgstr ""
 "Lorry ist eine Fanseite für Clonk, eine einzigartige Spieleserie mit "
 "hunderten von spielererstellten Welten."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:206
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:212
 #: /home/benedict/Dokumente/clonklorry/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:205
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:214
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:220
 #: /home/benedict/Dokumente/clonklorry/cache/twig/87/8c/e1640566495e12db923519cb4bb204098893c4acaecb16ee758ca3ec1265.php:213
 msgid "Hide"
 msgstr "Verstecken"
@@ -2791,27 +2782,39 @@ msgstr "Jemand"
 msgid "Published"
 msgstr "Veröffentlicht"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:27
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:31
 msgid "Loading dependencies&hellip;"
 msgstr "Lade Abhängigkeiten&hellip;"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:32
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:36
 msgid "Error loading dependency list."
 msgstr "Fehler beim Laden der Abhängigkeitsliste."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:37
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:41
 msgid "No dependencies added."
 msgstr "Keine Abhängigkeiten hinzugefügt."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:66
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:65
+msgid "Select an addon first&hellip;"
+msgstr "Wähle zuerst eine Erweiterung&hellip;"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:69
+msgid "Loading releases&hellip;"
+msgstr "Lade Releases&hellip;"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:73
+msgid "Error loading the list of releases"
+msgstr "Fehler beim Laden der Releases"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:82
 msgid "Javascript needs to be enabled"
 msgstr "Javascript muss aktiviert sein"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:75
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:91
 msgid "Add dependency"
 msgstr "Abhängigkeit hinzufügen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:80
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:96
 msgid "Users may download the release together with it's dependencies."
 msgstr ""
 "Benutzer können diesen Release zusammen mit den Abhängigkeiten herunterladen."
@@ -2820,7 +2823,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "Duplikat"
 
-#: /home/benedict/Dokumente/clonklorry/src/Environment.php:80
+#: /home/benedict/Dokumente/clonklorry/src/Environment.php:84
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
@@ -3046,6 +3049,82 @@ msgstr "Alle anderen Geräte wurden abgemeldet."
 msgid "%day% of %month% %year%"
 msgstr "%day% %month% %year%"
 
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Game.php:13
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Games.php:13
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:13
+#, php-format
+msgid "This endpoint does not support api version %d."
+msgstr "Dieser Endpunkt unterstützt die API-Version %d nicht."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Game.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:18
+msgid "Game does not exist."
+msgstr "Spiel existiert nicht."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:21
+msgid "invalid path"
+msgstr "ungültiger Pfad"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:24
+msgid "filename too long"
+msgstr "Dateiname zu lang"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:27
+msgid "filename too short"
+msgstr "Dateiname zu kurz"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:36
+msgid "please upload the individual files instead of an archive"
+msgstr "Bitte lade die einzelnen Dateien anstelle eines Archivs hoch"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:39
+msgid "file must end with a clonk extension"
+msgstr "Datei muss auf Clonk-Erweiterung enden"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:111
+msgid "error receiving file chunk"
+msgstr "Fehler beim Empfangen eines Dateiabschnitts"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:121
+msgid "file already exists"
+msgstr "Datei existiert bereits"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:133
+msgid "could not create upload directory"
+msgstr "konnte Verzeichnis zum Hochladen nicht erstellen"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:141
+msgid "file too big"
+msgstr "Datei zu groß"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:144
+msgid "file chunk count too big"
+msgstr "Dateiabschnittszahl zu hoch"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:147
+msgid "invalid file chunk size"
+msgstr "ungültige Dateiabschnittsgröße"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:150
+msgid "file chunk exceeds total size"
+msgstr "Dateiabschnitt übertrifft Gesamtgröße"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:156
+msgid "error saving file chunk"
+msgstr "Fehler beim Speichern eines Dateiabschnitts"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:161
+msgid "error assembling file"
+msgstr "Fehler beim Zusammensetzen der Datei"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:27
+msgid "Addon does not exist."
+msgstr "Erweiterung existiert nicht."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:36
+msgid "Release does not exist."
+msgstr "Release existiert nicht."
+
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Error.php:20
 msgid "Internal server error"
 msgstr "Interner Serverfehler"
@@ -3105,62 +3184,6 @@ msgstr "Kommentar ist %s."
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Ticket.php:68
 msgid "The ticket could not be escalated."
 msgstr "Das Ticket konnte nicht eskaliert werden."
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/QueryFile.php:18
-msgid "invalid path"
-msgstr "ungültiger Pfad"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/QueryFile.php:21
-msgid "filename too long"
-msgstr "Dateiname zu lang"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/QueryFile.php:24
-msgid "filename too short"
-msgstr "Dateiname zu kurz"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/QueryFile.php:33
-msgid "please upload the individual files instead of an archive"
-msgstr "Bitte lade die einzelnen Dateien anstelle eines Archivs hoch"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/QueryFile.php:36
-msgid "file must end with a clonk extension"
-msgstr "Datei muss auf Clonk-Erweiterung enden"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:115
-msgid "error receiving file chunk"
-msgstr "Fehler beim Empfangen eines Dateiabschnitts"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:132
-msgid "file already exists"
-msgstr "Datei existiert bereits"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:144
-msgid "could not create upload directory"
-msgstr "konnte Verzeichnis zum Hochladen nicht erstellen"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:152
-msgid "file too big"
-msgstr "Datei zu groß"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:155
-msgid "file chunk count too big"
-msgstr "Dateiabschnittszahl zu hoch"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:158
-msgid "invalid file chunk size"
-msgstr "ungültige Dateiabschnittsgröße"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:161
-msgid "file chunk exceeds total size"
-msgstr "Dateiabschnitt übertrifft Gesamtgröße"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:167
-msgid "error saving file chunk"
-msgstr "Fehler beim Speichern eines Dateiabschnitts"
-
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Api/UploadFile.php:172
-msgid "error assembling file"
-msgstr "Fehler beim Zusammensetzen der Datei"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
 msgid "Wipf"
@@ -3572,6 +3595,15 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Show releases"
+#~ msgstr "Releases anzeigen"
+
+#~ msgid "Loading versions&hellip;"
+#~ msgstr "Lade Versionen&hellip;"
+
+#~ msgid "Select a version&hellip;"
+#~ msgstr "Wähle eine Version&hellip;"
 
 #~ msgid "The ticket was originally sent by %username%."
 #~ msgstr "Das Ticket wurde ursprünglich von %username% gesendet."
