@@ -1,5 +1,6 @@
 <div class="form-group">
 	<label for="depencencies">{% trans %}Dependencies{% endtrans %}</label>
+	<script>var game = '{{game}}';</script>
 	<ul class="list-group" id="dependencies-loading">
 		<li class="list-group-item text-muted">{% trans %}Loading dependencies&hellip;{% endtrans %}</li>
 	</ul>
@@ -23,6 +24,9 @@
 	</div>
 	<div class="col-md-4">
 		<div class="form-group">
+			<span id="message-text-dependencies-select-first" class="hidden">{% trans %}Select an addon first&hellip;{% endtrans %}</span>
+			<span id="message-text-dependencies-loading-releases" class="hidden">{% trans %}Loading releases&hellip;{% endtrans %}</span>
+			<span id="message-text-dependencies-loading-releases-failed" class="hidden">{% trans %}Error loading the list of releases{% endtrans %}</span>
 			<label for="add-dependency-version">{% trans %}Version{% endtrans %}</label>
 			<select class="form-control" id="add-dependency-version" disabled>
 				<option disabled>{% trans %}Javascript needs to be enabled{% endtrans %}</option>
