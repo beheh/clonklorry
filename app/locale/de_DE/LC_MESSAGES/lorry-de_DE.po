@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-27 23:54+0100\n"
-"PO-Revision-Date: 2015-01-27 23:54+0100\n"
+"POT-Creation-Date: 2015-01-28 00:24+0100\n"
+"PO-Revision-Date: 2015-01-28 00:24+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -322,18 +322,16 @@ msgid "Activity"
 msgstr "Aktivität"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:267
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:270
 msgid "create one now"
 msgstr "erstellst du nicht gleich eine"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:272
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:275
 msgid "You have not released any addons yet. Why not %create_one_now%?"
 msgstr ""
 "Du hast noch keine Erweiterungen veröffentlicht. Warum %create_one_now%?"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:278
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:281
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:272
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
@@ -2773,6 +2771,10 @@ msgstr ""
 "Mail-Adresse bei %brand% anmelden. Wir senden dir einen Code welchen du "
 "einmalig anstelle deines Passworts nutzen kannst. "
 
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:266
+msgid "You have not released any addons yet."
+msgstr "Du hast noch keine Erweiterungen veröffentlicht."
+
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:48
 #: /home/benedict/Dokumente/clonklorry/cache/twig/fc/a5/d79f69ed0f7a0db4e92f133f4841173056a8adeaa95d2320ea20e5569490.php:48
 msgid "Somebody"
@@ -3595,6 +3597,21 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Moderator portal"
+#~ msgstr "Moderatorportal"
+
+#~ msgid "Administrator portal"
+#~ msgstr "Administratorportal"
+
+#~ msgid "Administrators"
+#~ msgstr "Administratoren"
+
+#~ msgid "Moderation portal"
+#~ msgstr "Moderationsportal"
+
+#~ msgid "Administration portal"
+#~ msgstr "Administrationsportal"
 
 #~ msgid "Show releases"
 #~ msgstr "Releases anzeigen"
