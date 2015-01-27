@@ -121,7 +121,7 @@ class PersistenceService {
 	public function load(Model $model, $pairs, $order, $offset, $limit) {
 		$rows = $this->loadAll($model, $pairs, $order, $offset, $limit);
 		if(count($rows) > 1 && $limit === null && $offset === null) {
-			throw new Exception('result ambiguity: expected unique identifier');
+			throw new RuntimeException('result ambiguity: expected unique identifier');
 		} else if(count($rows) == 1) {
 			return $rows[0];
 		}
