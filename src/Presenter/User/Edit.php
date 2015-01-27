@@ -24,8 +24,6 @@ class Edit extends Presenter {
 			$this->security->requireAdministrator();
 		}
 
-		$this->context['title'] = sprintf(gettext('Edit %s'), $user->getUsername());
-
 		$this->context['username'] = $user->getUsername();
 		if(!isset($this->context['username_edit'])) {
 			$this->context['username_edit'] = $user->getUsername();

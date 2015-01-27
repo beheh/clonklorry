@@ -18,10 +18,6 @@ class Table extends Presenter {
 		$filter = filter_input(INPUT_GET, 'filter');
 		if($filter) {
 			switch($filter) {
-				case 'bans':
-					$this->security->requireModerator();
-					//@TODO filter bans
-					break;
 				case 'moderators':
 					$this->security->requireAdministrator();
 					//@TODO filter privileges

@@ -4,15 +4,14 @@
 	<div class="page-header">
 		<div class="container">
 			<h1>{{ username }}
-				{% if administrator or moderator or banned %}
 					<small>
 						{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
 						{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
+						{% else %}<span class="label label-default">{% trans %}User{% endtrans %}</span>
 						{% endif %}
 						{% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
 						{% endif %}
 					</small>
-				{% endif %}
 			</h1>
 		</div>
 	</div>
