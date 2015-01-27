@@ -50,6 +50,7 @@ class SecurityService {
 	 * @throws \Lorry\Exception\ForbiddenException
 	 */
 	public function requireModerator() {
+		$this->requireLogin();
 		$user = $this->session->getUser();
 		if(!$user || (!$user->isModerator() && !$user->isAdministrator())) {
 			throw new ForbiddenException('requires moderator');
@@ -61,6 +62,7 @@ class SecurityService {
 	 * @throws \Lorry\Exception\ForbiddenException
 	 */
 	public function requireAdministrator() {
+		$this->requireLogin();
 		$user = $this->session->getUser();
 		if(!$user || !$user->isAdministrator()) {
 			throw new ForbiddenException('requires administrator');
@@ -87,6 +89,7 @@ class SecurityService {
 	 * @throws \Lorry\Exception\ForbiddenException
 	 */
 	public function requireUploadRights() {
+		$this->requireLogin();
 		$user = $this->session->getUser();
 		if(!$this->config->get('enable/upload')) {
 			throw new ForbiddenException(gettext('uploading files is disabled'));
