@@ -9,7 +9,7 @@
 		"ext-pdo": "*",
 		"ext-openssl": "*",
 		"ext-curl": "*",
-		"twig/twig": "~1.16",
+		"twig/twig": "~1.18",
 		"twig/extensions": "~1.2",
 		"swiftmailer/swiftmailer": "~5.3",
 		"lightopenid/lightopenid": "~0.7",
