@@ -11,7 +11,7 @@ use LightOpenID;
 use ErrorException;
 use League\OAuth2\Client\Provider\Google;
 use League\OAuth2\Client\Provider\Facebook;
-use Analog;
+use Analog\Analog;
 
 class Callback extends Presenter {
 

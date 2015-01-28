@@ -2,13 +2,13 @@
 
 namespace Lorry\Service;
 
-use Analog;
 use PDO;
 use RuntimeException;
 use InvalidArgumentException;
 use PDOException;
 use Lorry\Model;
 use Aura\SqlQuery\QueryFactory;
+use Analog\Analog;
 
 class PersistenceService {
 

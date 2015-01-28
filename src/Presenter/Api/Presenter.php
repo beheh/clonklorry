@@ -4,7 +4,7 @@ namespace Lorry\Presenter\Api;
 
 use Lorry\Presenter as LorryPresenter;
 use Lorry\Exception;
-use Analog;
+use Analog\Analog;
 
 class Presenter extends LorryPresenter {
 

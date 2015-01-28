@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter;
 
-use Analog;
 use Lorry\Presenter;
-use \Exception;
+use Exception;
+use Analog\Analog;
 
 class Error extends Presenter {
 

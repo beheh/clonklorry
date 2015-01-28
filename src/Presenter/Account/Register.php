@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Account;
 
-use Analog;
+use Analog\Analog;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
