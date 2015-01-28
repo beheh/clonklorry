@@ -9,9 +9,7 @@ use Lorry\Exception\FileNotFoundException;
 class Table extends Presenter {
 
 	public function get() {
-		$this->security->requireModerator(); //@TODO rate limiting
-		$this->offerIdentification();
-		$this->security->requireIdentification();
+		$this->security->requireLogin();
 		
 		$users = ModelFactory::build('User');
 
@@ -20,7 +18,8 @@ class Table extends Presenter {
 			switch($filter) {
 				case 'moderators':
 					$this->security->requireAdministrator();
-					//@TODO filter privileges
+					$this->offerIdentification();
+					$this->security->requireIdentification();
 					break;
 				default:
 					throw new FileNotFoundException();

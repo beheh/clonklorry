@@ -2,6 +2,7 @@
 
 {% block content %}
 	<div class="page-header">
+		<div class="breakout"><a href="{{base}}/users"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
 			<h1>{{ username }}
 					<small>
@@ -47,7 +48,7 @@
 						{% if github %}<li class="list-group-item"><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
 					</ul>
 				{% endif %}
-				{% if (user_moderator and moderator == false) or moderator %}
+				{% if (user_moderator and moderator == false) or user_administrator %}
 					<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
 					<p>
 						<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>

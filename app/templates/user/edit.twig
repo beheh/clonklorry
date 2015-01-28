@@ -7,15 +7,7 @@
 		<div class="breakout"><a href="{{base}}/users/{{username}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
 			<h1>
-				<a href="{{base}}/users/{{username}}">{{username}}</a>
-				<small>
-					{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
-					{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
-					{% else %}<span class="label label-default">{% trans %}User{% endtrans %}</span>
-					{% endif %}
-					{% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
-					{% endif %}
-				</small>
+				{{title}}
 			</h1>
 		</div>
 	</div>
