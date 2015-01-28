@@ -47,7 +47,7 @@
 						{% if github %}<li class="list-group-item"><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
 					</ul>
 				{% endif %}
-				{% if not self and user_administrator or (user_moderator and moderator == false) %}
+				{% if (user_moderator and moderator == false) or moderator %}
 					<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
 					<p>
 						<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
