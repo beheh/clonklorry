@@ -58,20 +58,6 @@ class RemoveFile extends Presenter {
 			throw new RuntimeException('unknown filetype at '.$filename);
 		}
 
-
-
-		//$target_directory = QueryFile::getDataDirectory($this->config, $addon, $release);
-		//$chunk_directory = $target_directory.'/'.$identifier.'.parts';
-		//$file = $target_directory.'/'.$filename;
-
-		/* if(!file_exists($file) && (!$identifier || !is_dir($chunk_directory))) {
-		  throw new FileNotFoundException;
-		  }
-
-		  if(!unlink($file) && !UploadFile::removeChunkDirectory($chunk_directory)) {
-		  throw new \Exception('file removal failed');
-		  } */
-
 		Analog::info('removed file "'.$filename.'" for "'.$user->getUsername().'"');
 
 		$this->display(array('file' => 'removed'));

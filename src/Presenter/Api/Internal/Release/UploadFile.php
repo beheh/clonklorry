@@ -69,8 +69,6 @@ class UploadFile extends Presenter {
 	public function get($id, $version) {
 		$this->security->requireLogin();
 
-		$type = QueryFile::getType();
-
 		$user = $this->session->getUser();
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
 		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
@@ -97,8 +95,6 @@ class UploadFile extends Presenter {
 		$this->security->requireLogin();
 		$this->security->requireValidState();
 		$this->security->requireUploadRights();
-
-		$type = QueryFile::getType();
 
 		$user = $this->session->getUser();
 		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);

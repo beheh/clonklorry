@@ -40,17 +40,6 @@ class QueryFile extends Presenter {
 		return $file_name;
 	}
 
-	public static function getType() {
-		$type = filter_input(INPUT_GET, 'type');
-		if($type == 'asset') {
-			throw new \Lorry\Exception\NotImplementedException;
-		}
-		if(in_array($type, array('asset', 'data'))) {
-			return $type;
-		}
-		throw new Exception('unknown type');
-	}
-
 	public static function getFilePath(Addon $addon, Release $release) {
 		return 'addon'.$addon->getId().'/release'.$release->getId();
 	}
