@@ -7,6 +7,11 @@ use Lorry\Presenter;
 class Identify extends Presenter {
 
 	public function get() {
+		if(!$this->session->authenticated()) {
+			$this->redirect('/login');
+			return;
+		}
+
 		$this->security->requireLogin();
 		$this->offerIdentification();
 
@@ -18,6 +23,17 @@ class Identify extends Presenter {
 	}
 
 	public function post() {
+		$return = filter_input(INPUT_POST, 'return');
+		if(!$return) {
+			$return = '/';
+		}
+
+		if(!$this->session->authenticated()) {
+			// redirect user to login
+			$this->redirect('/login?returnto='.$return);
+			return;
+		}
+
 		$this->security->requireLogin();
 		$this->security->requireValidState();
 
@@ -26,11 +42,6 @@ class Identify extends Presenter {
 			if($user->matchPassword(filter_input(INPUT_POST, 'password'))) {
 				$this->session->identify();
 			}
-		}
-
-		$return = filter_input(INPUT_POST, 'return');
-		if(!$return) {
-			$return = '/';
 		}
 
 		if($this->session->identified()) {
