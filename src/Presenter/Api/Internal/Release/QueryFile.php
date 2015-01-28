@@ -6,7 +6,6 @@ use RuntimeException;
 use Lorry\Presenter\Api\Presenter;
 use Lorry\Exception;
 use Lorry\Exception\ForbiddenException;
-use Lorry\Service\ConfigService;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
 use Lorry\Environment;

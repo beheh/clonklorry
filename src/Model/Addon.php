@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
+use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Addon extends Model {

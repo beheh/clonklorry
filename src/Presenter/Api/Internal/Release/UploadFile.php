@@ -8,7 +8,7 @@ use Lorry\Exception\FileNotFoundException;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
 use Lorry\Model\User;
-use Analog;
+use Analog\Analog;
 
 class UploadFile extends Presenter {
 
