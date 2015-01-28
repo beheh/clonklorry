@@ -329,6 +329,11 @@ class Addon extends Model {
 			$result['description'] = $this->getDescription();
 		}
 
+		$dependencies = array();
+		foreach(ModelFactory::build('Release')->all()->byRelease($this->getId()) as $dependency) {
+			$dependencies[] = $dependency->fetchRequires()->getId();
+		}
+		
 		return $result;
 	}
 

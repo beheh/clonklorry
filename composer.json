@@ -2,7 +2,7 @@
 	"name": "beheh/clonklorry",
 	"description": "A web platform to host and showcase Clonk addons and their dependencies.",
 	"type": "project",
-	"license": "GPL-3.0",
+	"license": "AGPL-3.0",
 	"require": {
 		"php": ">= 5.6",
 		"ext-json": "*",
@@ -16,11 +16,11 @@
 		"league/oauth2-client": "~0.7",
 		"analog/analog": "~1.0.4-stable",
 		"symfony/yaml": "~2.6",
-		"symfony/finder": "~2.6",
 		"symfony/console": "~2.6",
         "chrisboulton/php-resque": "dev-master as 1.2.x-dev",
 		"aura/sqlquery": "~2.1",
-		"aws/aws-sdk-php": "~2"
+		"aws/aws-sdk-php": "~2",
+		"league/flysystem": "~1.0"
     },
 	"suggest": {
 		"ext-gettext": "Localisation",

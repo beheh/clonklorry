@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-28 00:43+0100\n"
-"PO-Revision-Date: 2015-01-28 00:44+0100\n"
+"POT-Creation-Date: 2015-01-28 01:43+0100\n"
+"PO-Revision-Date: 2015-01-28 01:43+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -112,12 +112,12 @@ msgstr "Entwicklerportal"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:60
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:77
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:73
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:234
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2d/a6/cabc8bd5272309dd20a96ab36dbff348bc8419d094eff2522c6dd70eb838.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/43/70/8befe75e79af8f06db6e3e98e211ddd03ee7ead0bde27fdc40305356f720.php:90
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:90
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:60
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:56
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:43
 #: /home/benedict/Dokumente/clonklorry/cache/twig/fc/a5/d79f69ed0f7a0db4e92f133f4841173056a8adeaa95d2320ea20e5569490.php:43
 msgid "Moderator"
@@ -174,10 +174,12 @@ msgstr "Gewünschte Kennung"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:90
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:169
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:85
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:79
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2d/a6/cabc8bd5272309dd20a96ab36dbff348bc8419d094eff2522c6dd70eb838.php:90
 #: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:297
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:298
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:85
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:62
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:84
 msgid "User"
 msgstr "Benutzer"
 
@@ -192,7 +194,7 @@ msgid "Contact form"
 msgstr "Kontaktformular"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:165
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:351
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:354
 #: /home/benedict/Dokumente/clonklorry/cache/twig/38/77/fd9f33da50f4fa7969ce3c5de60fd7175fc4da5e62ff31b0f54013772659.php:305
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:306
 msgid "Timestamp"
@@ -212,112 +214,112 @@ msgid "There are no new messages in the queue."
 msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:54
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:71
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:67
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:246
 #: /home/benedict/Dokumente/clonklorry/cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/43/70/8befe75e79af8f06db6e3e98e211ddd03ee7ead0bde27fdc40305356f720.php:103
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:103
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:54
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:50
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:37
 #: /home/benedict/Dokumente/clonklorry/cache/twig/fc/a5/d79f69ed0f7a0db4e92f133f4841173056a8adeaa95d2320ea20e5569490.php:37
 msgid "Administrator"
 msgstr "Administrator"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:68
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:85
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:68
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:87
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:70
 msgid "Banned"
 msgstr "Gebannt"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:93
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:93
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:92
 msgid "Welcome to Lorry!"
 msgstr "Willkommen bei Lorry!"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:95
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:95
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:94
 msgid "Registered on %registration%"
 msgstr "Registriert am %registration%"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:104
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:104
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:103
 msgid "Well that took a bit longer than expected"
 msgstr "Das hat ein bisschen länger gedauert als erwartet"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:108
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:108
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:107
 msgid "Founder of Lorry"
 msgstr "Gründer von Lorry"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:114
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:115
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:114
 msgid "Registered on the alpha site"
 msgstr "War auf der Alpha-Seite registriert"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:116
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:117
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:116
 msgid "Took part in Lorry Alpha"
 msgstr "Teilnehmer in der Lorry-Alpha"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:122
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:124
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:123
 msgid "Registered on the beta site"
 msgstr "War auf der Beta-Seite registriert"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:124
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:126
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:125
 msgid "Took part in Lorry Beta"
 msgstr "Teilnehmer in der Lorry-Beta"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:133
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:135
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:134
 msgid "Built something awesome for the Clonk community"
 msgstr "Hat etwas tolles für die Clonk-Community gebaut"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:135
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:137
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:136
 msgid "Valuable community member"
 msgstr "Wertvolles Mitglied der Community"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:144
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:146
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:145
 msgid "Knows Google-fu"
 msgstr "Kann Google-fu"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:146
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:148
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:147
 msgid "Lorry hacker"
 msgstr "Lorry-Hacker"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:155
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:157
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:156
 msgid "&quot;Hey, what's that button do?&quot;"
 msgstr "&quot;Hey, was macht der Knopf da?&quot;"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:157
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:159
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:158
 msgid "Reported a bug in Lorry"
 msgstr "Hat einen Fehler in Lorry gemeldet"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:168
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:101
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:170
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:169
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:101
 msgid "Links"
 msgstr "Links"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:198
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:200
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:199
 msgid "Moderation"
 msgstr "Moderation"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:205
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:207
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:206
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:215
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:217
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:216
 msgid "Activity"
 msgstr "Aktivität"
 
@@ -331,7 +333,7 @@ msgstr ""
 "Du hast noch keine Erweiterungen veröffentlicht. Warum %create_one_now%?"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/63/23aac94dca4271678deb9c66f8fc7143c1b995472e09b1225bfcd6bf9f93.php:278
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:272
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:271
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
@@ -486,22 +488,35 @@ msgid "Returns details about the queried addon."
 msgstr "Gibt Details über die Erweiterung zurück."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:93
+msgid ""
+"<strong>Please note:</strong> The Lorry platform itself uses various "
+"internal endpoints under <code>/api/internal/...</code>. Do not use these "
+"endpoints, as they will require special authentification and can change "
+"without notice."
+msgstr ""
+"<strong>Bitte beachte:</strong> Die Lorry-Plattform selbst nutzt "
+"verschiedene interne Endpunkte unter <code>/api/internal/...</code>. Diese "
+"Endpunkte sollten nicht genutzt werden, da sie eine spezielle "
+"Authentifizierung benötigen werden und sich jederzeit ohne Ankündigung "
+"ändern können."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:97
 msgid "Objects"
 msgstr "Objekte"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:98
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:102
 msgid "Type"
 msgstr "Typ"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:100
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:104
 msgid "Structure"
 msgstr "Struktur"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:107
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:111
 msgid "Error handling"
 msgstr "Fehlerbehandlung"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:111
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:115
 msgid ""
 "You can handle errors by checking for the <code>error</code> field in the "
 "response."
@@ -509,7 +524,7 @@ msgstr ""
 "Fehler können behandelt werden, indem die Antwort auf <code>error</code>-"
 "Feld überprüft wird."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:113
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:117
 msgid ""
 "Additionally, a human-readable message may be given in a <code>message</"
 "code> field."
@@ -517,7 +532,7 @@ msgstr ""
 "Weiterhin kann eine menschenlesbare Nachricht in einem <code>message</code>-"
 "Feld gegeben sein."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:117
+#: /home/benedict/Dokumente/clonklorry/cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:121
 msgid "Examples"
 msgstr "Beispiele"
 
@@ -650,19 +665,19 @@ msgstr "Veröffentlichen"
 msgid "Edit %username%"
 msgstr "%username% bearbeiten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:102
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:101
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:56
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:56
 msgid "Profile"
 msgstr "Profil"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:108
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:107
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:62
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f8/15/1ddb2bf8417c678e6d587502ef3c5d7a33e6fbe7dd4c65b414eccca07864.php:62
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:123
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:122
 #: /home/benedict/Dokumente/clonklorry/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:96
 #: /home/benedict/Dokumente/clonklorry/cache/twig/43/57/0792c6ba3200fa26255f4f8b0ea34c104cf8624649cccebd95944b932bfd.php:100
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:67
@@ -676,7 +691,7 @@ msgstr "Erscheinungsbild"
 msgid "Username"
 msgstr "Benutzername"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:133
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:132
 msgid "Change username"
 msgstr "Benutzernamen ändern"
 
@@ -728,55 +743,55 @@ msgstr "Normaler Benutzer"
 msgid "Change permissions"
 msgstr "Berechtigungen ändern"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:270
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:271
 msgid "Support"
 msgstr "Support"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:276
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:277
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:286
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:319
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:287
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:320
 msgid "Please type the username to confirm:"
 msgstr "Bitte gib den Benutzernamen zur Bestätigung ein:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:293
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:294
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:171
 #: /home/benedict/Dokumente/clonklorry/cache/twig/eb/cd/95ba9b6fa68e6b5d7f8c5d18db77425b5fdb3c168af64c92bd24fc986637.php:171
 msgid "Reset password"
 msgstr "Password zurücksetzen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:297
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:298
 msgid "Remove login services"
 msgstr "Anmeldedienste entfernen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:309
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:310
 msgid "Disable"
 msgstr "Deaktivieren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:324
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:325
 msgid ""
 "The account \"%username%\" will be <strong>permanently disabled</strong>."
 msgstr "Das Konto „%username%“ wird <strong>dauerhaft deaktiviert</strong>."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:330
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:331
 msgid "Disable account permamently"
 msgstr "Konto dauerhaft deaktivieren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:346
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:349
 msgid "Moderation log"
 msgstr "Moderationsprotokoll"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:353
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:356
 msgid "Action"
 msgstr "Aktion"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:355
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:358
 msgid "Executed by"
 msgstr "Ausgeführt von"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:360
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:363
 msgid "This account has not been moderated in the past."
 msgstr "Dieses Konto wurde noch nicht moderiert."
 
@@ -2148,7 +2163,7 @@ msgstr "Hochladen / Fortsetzen"
 msgid "Pause"
 msgstr "Pausieren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:125
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:123
 msgid ""
 "The files will only be made availabe after publishing this release and "
 "cannot be changed afterwards."
@@ -2728,7 +2743,7 @@ msgstr ""
 "Mail-Adresse bei %brand% anmelden. Wir senden dir einen Code welchen du "
 "einmalig anstelle deines Passworts nutzen kannst. "
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:266
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:265
 msgid "You have not released any addons yet."
 msgstr "Du hast noch keine Erweiterungen veröffentlicht."
 
@@ -3553,6 +3568,17 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid ""
+#~ "<strong>Please note:</strong> The Lorry platform uses various internal "
+#~ "endpoints under <code>/api/internal/...</code>. Do not use these "
+#~ "endpoints, as they will require special authentification and can change "
+#~ "without notice."
+#~ msgstr ""
+#~ "<strong>Bitte beachte:</strong> Die Lorry-Plattform nutzt verschiedene "
+#~ "interne Endpunkte unter <code>/api/internal/...</code>. Diese Endpunkte "
+#~ "sollten nicht genutzt werden, da sie eine spezielle Authentifizierung "
+#~ "benötigen werden und sich jederzeit ohne Ankündigung ändern können."
 
 #~ msgid "Date"
 #~ msgstr "Datum"

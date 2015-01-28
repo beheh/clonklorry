@@ -57,6 +57,10 @@ class Environment {
 		));
 		$this->config = $config;
 
+		// error handling
+		error_reporting(E_ALL ^ E_STRICT);
+		set_error_handler(array('Lorry\Environment', 'handleError'), E_ALL ^ E_STRICT);
+		
 		// persistence
 		$persistence = new Service\PersistenceService();
 		$persistence->setConfigService($config);
@@ -173,9 +177,6 @@ class Environment {
 				'/publish' => 'Publish\Portal',
 				'/publish/:number' => 'Publish\Edit',
 				'/publish/:number/:version' => 'Publish\Release',
-				'/publish/:number/:version/query' => 'Publish\Api\QueryFile',
-				'/publish/:number/:version/remove' => 'Publish\Api\RemoveFile',
-				'/publish/:number/:version/upload' => 'Publish\Api\UploadFile',
 				'/users' => 'User\Table',
 				'/users/:alpha' => 'User\Profile',
 				'/users/:alpha/edit' => 'User\Edit',
@@ -199,11 +200,18 @@ class Environment {
 				'/contact' => 'Site\Contact',
 				'/language' => 'Site\Language',
 			));
+			Router::addRoutes(array(
+				'/api/internal/addons/:number/:version/query' => 'Api\Internal\Release\QueryFile',
+				'/api/internal/addons/:number/:version/remove' => 'Api\Internal\Release\RemoveFile',
+				'/api/internal/addons/:number/:version/upload' => 'Api\Internal\Release\UploadFile',
+				'/api/internal/addons/:number/:version/dependencies' => 'Api\Internal\Release\QueryDependencies',
+			));
 			// api routes
 			Router::addRoutes(array(
-				'/api/v([0-9]+)/games\.json' => 'Addon\Api\Games',
-				'/api/v([0-9]+)/addons/:alpha\.json' => 'Addon\Api\Game',
-				'/api/v([0-9]+)/addons/:alpha/:alpha\.json' => 'Addon\Api\Release'
+				'/api/v([0-9]+)/games' => 'Api\Games',
+				'/api/v([0-9]+)/addons/:alpha' => 'Api\Game',
+				'/api/v([0-9]+)/addons/:alpha/:alpha' => 'Api\Release',				
+				'/api/v([0-9]+)/addons/:alpha/:alpha/:version' => 'Api\Release',
 			));
 		} else {
 			Router::addRoutes(array(
@@ -233,6 +241,10 @@ class Environment {
 		} catch(\Exception $exception) {
 			return PresenterFactory::build('Error')->get($exception);
 		}
+	}
+	
+	public function handleError($code, $message, $file, $line, $context) {
+		throw new \Exception('PHP Error #'.$code.': '.$message);
 	}
 
 	public function getConfig() {

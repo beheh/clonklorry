@@ -1,8 +1,8 @@
 <?php
 
-namespace Lorry\Presenter\Publish\Api;
+namespace Lorry\Presenter\Api\Internal\Release;
 
-use Lorry\ApiPresenter;
+use Lorry\Presenter\Api\Presenter;
 use Lorry\Exception;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Model\Addon;
@@ -10,7 +10,7 @@ use Lorry\Model\Release;
 use Lorry\Model\User;
 use Analog;
 
-class UploadFile extends ApiPresenter {
+class UploadFile extends Presenter {
 
 	public static function removeChunkDirectory($chunk_directory) {
 		if(!is_dir($chunk_directory)) {
@@ -45,15 +45,18 @@ class UploadFile extends ApiPresenter {
 		// the size of the last part is between chunkSize and 2*$chunkSize
 		if($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
 
+			Analog::info('attempting to assemble file "'.$file_name.'"');
+			
 			// create the final destination file
-			if(($fp = fopen(QueryFile::getDataDirectory($this->config, $addon, $release).'/'.$file_name, 'w')) !== false) {
+			$final = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release).'/'.$file_name;
+			if(($fp = fopen($final, 'w')) !== false) {
 				for($i = 1; $i <= $total_files; $i++) {
 					fwrite($fp, file_get_contents($chunk_directory.'/'.$file_name.'.part'.$i));
 				}
 				fclose($fp);
 				Analog::info('uploaded file "'.$file_name.'" for "'.$user->getUsername().'"');
 			} else {
-				return false;
+				throw new RuntimeException('could not create final file at '.$final);
 			}
 
 			UploadFile::removeChunkDirectory($chunk_directory);
@@ -78,16 +81,9 @@ class UploadFile extends ApiPresenter {
 			throw new FileNotFoundException;
 		}
 
-		switch($type) {
-			case 'data':
-				$target_directory = QueryFile::getDataDirectory($this->config, $addon, $release);
-				break;
-			case 'asset':
-				$target_directory = QueryFile::getAssetDirectory($this->config, $addon, $release);
-				break;
-		}
+		$target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release);
 
-		$chunk_directory = $target_directory.'/'.$identifier.'.parts';
+		$chunk_directory = $target_directory.'/'.$file_name.'.parts';
 		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
 		if(!file_exists($part_file)) {
@@ -115,15 +111,8 @@ class UploadFile extends ApiPresenter {
 			throw new Exception(gettext('error receiving file chunk'));
 		}
 
-		switch($type) {
-			case 'data':
-				$target_directory = QueryFile::getDataDirectory($this->config, $addon, $release);
-				break;
-			case 'asset':
-				$target_directory = QueryFile::getAssetDirectory($this->config, $addon, $release);
-				break;
-		}
-
+		$target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release);
+		
 		if(!is_dir($target_directory)) {
 			mkdir($target_directory, 0777, true);
 		}
@@ -134,7 +123,7 @@ class UploadFile extends ApiPresenter {
 
 		$identifier = QueryFile::sanitizePath(filter_input(INPUT_POST, 'resumableIdentifier'));
 
-		$chunk_directory = $target_directory.'/'.$identifier.'.parts';
+		$chunk_directory = $target_directory.'/'.$file_name.'.parts';
 		if(!is_dir($chunk_directory)) {
 			mkdir($chunk_directory);
 		}

@@ -9,7 +9,7 @@ class Dependency extends Model {
 	public function __construct() {
 		parent::__construct('dependency', array(
 			'release' => 'int',
-			'required' => 'int'));
+			'requires' => 'int'));
 	}
 
 	public function setRelease($release) {
@@ -31,23 +31,23 @@ class Dependency extends Model {
 		return $this->fetch('Release', 'release');
 	}
 
-	public function setRequired($required) {
-		return $this->setValue('required', $required);
+	public function setRequires($requires) {
+		return $this->setValue('requires', $requires);
 	}
 
-	public function byRequired($required) {
-		return $this->byValue('required', $required);
+	public function byRequires($requires) {
+		return $this->byValue('requires', $requires);
 	}
 
-	public function getRequired() {
-		return $this->getValue('required');
+	public function getRequires() {
+		return $this->getValue('requires');
 	}
 
 	/**
 	 * @return Release
 	 */
-	public function fetchRequired() {
-		return $this->fetch('Release', 'required');
+	public function fetchRequires() {
+		return $this->fetch('Release', 'requires');
 	}
 
 }

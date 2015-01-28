@@ -1,21 +1,21 @@
 <?php
 
-namespace Lorry\Presenter\Addon\Api;
+namespace Lorry\Presenter\Api;
 
-use Lorry\ApiPresenter;
+use Lorry\Presenter\Api\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
-class Release extends ApiPresenter {
+class Release extends Presenter {
 
 	public function get($api_version, $gamename, $addonname, $version = 'latest') {
 		if(intval($api_version) != 0) {
-			throw new FileNotFoundException('this endpoint does not support api version '.$api_version);
+			throw new FileNotFoundException(sprintf(gettext('This endpoint does not support api version %d.'), $api_version));
 		}
 
 		$game = ModelFactory::build('Game')->byShort($gamename);
 		if(!$game) {
-			throw new FileNotFoundException('game does not exist');
+			throw new FileNotFoundException(gettext('Game does not exist.'));
 		}
 
 		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
@@ -24,7 +24,7 @@ class Release extends ApiPresenter {
 			if($addon) {
 				return $this->redirect('/addons/'.$game->getShort().'/'.$addon->getShort());
 			}
-			throw new FileNotFoundException('addon does not exist');
+			throw new FileNotFoundException(gettext('Addon does not exist.'));
 		}
 
 		if($version == 'latest') {
@@ -33,7 +33,7 @@ class Release extends ApiPresenter {
 			$release = ModelFactory::build('Release')->byVersion($version, $addon->getId());
 		}
 		if(!$release || !$release->isScheduled()) {
-			throw new FileNotFoundException('release with version '.$version);
+			throw new FileNotFoundException(gettext('Release does not exist.'));
 		}
 
 		$result = array();

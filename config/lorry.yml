@@ -26,9 +26,7 @@ github:
 
 # directories for user data, should be writeable
 upload:
-    assets:
     assetsize: 5M
-    data:
     datasize: 128M
 
 # legal info (displayed on the contact page)

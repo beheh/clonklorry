@@ -19,6 +19,7 @@
 			<tr><td><pre>/api/v0/addons/&lt;game&gt;.json</pre></td><td>{% trans %}Returns a list of addons for the queried game.{% endtrans %}</td><td><pre>{"addons":[{"id":"knights", ...}, ...]}</pre></td></tr>
 			<tr><td><pre>/api/v0/addons/&lt;game&gt/&lt;addon&gt.json</pre></td><td>{% trans %}Returns details about the queried addon.{% endtrans %}</td><td><pre>{"addon":{"id":"knights", ...}}</pre></td></tr>
 		</table>
+		<div class="alert alert-warning">{% trans %}<strong>Please note:</strong> The Lorry platform itself uses various internal endpoints under <code>/api/internal/...</code>. Do not use these endpoints, as they will require special authentification and can change without notice.{% endtrans %}</div>
 		<h2>{% trans %}Objects{% endtrans %}</h2>
 		<table class="table">
 			<tr><th>{% trans %}Type{% endtrans %}</th><th>{% trans %}Structure{% endtrans %}</th></tr>

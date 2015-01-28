@@ -1,12 +1,12 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Presenter\Api;
 
-use Lorry\Presenter;
+use Lorry\Presenter as LorryPresenter;
 use Lorry\Exception;
 use Analog;
 
-class ApiPresenter extends Presenter {
+class Presenter extends LorryPresenter {
 
 	public function handle($method, $parameters) {
 		try {

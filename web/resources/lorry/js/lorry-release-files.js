@@ -1,4 +1,4 @@
-var releaseFileBaseUrl = base + '/publish/' + addon + '/' + release;
+var releaseFileBaseUrl = base + '/api/internal/addons/' + addon + '/' + release;
 var releaseResumable = new Resumable({target: releaseFileBaseUrl + '/upload?type=data', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
 var releaseFilesExisting = [];
 
@@ -6,6 +6,7 @@ $(document).ready(function() {
 	$.ajax(releaseFileBaseUrl + '/query',
 			{
 				success: function(data) {
+					console.log(data);
 					releaseFilesExisting = data.files;
 					$(releaseFilesExisting).each(function(id, file) {
 						releaseFilesAdd(file);
@@ -89,8 +90,8 @@ releaseResumable.on('fileError', function(file, raw) {
 });
 
 function releaseFilesAdd(file) {
-	$('li[data-unique="' + file.uniqueIdentifier + '"]').remove();
-	$('#resumable-files').append($('<li class="list-group-item resumable-item" data-unique="' + file.uniqueIdentifier + '"><span class="resumable-filename">' + file.fileName + '</span><button type="button" class="close" title="' + $('#message-text-remove').text() + '" aria-hidden="true">&times;</button><span class="resumable-progress"></span></li>'));
+	$('li[data-filename="' + file.fileName + '"]').remove();
+	$('#resumable-files').append($('<li class="list-group-item resumable-item" data-unique="' + file.uniqueIdentifier + '" data-filename="' + file.fileName + '"><span class="resumable-filename">' + file.fileName + '</span><button type="button" class="close" title="' + $('#message-text-remove').text() + '" aria-hidden="true">&times;</button><span class="resumable-progress"></span></li>'));
 	$('li[data-unique="' + file.uniqueIdentifier + '"] .close').click(function() {
 		if ((file.isComplete && file.isComplete()) || file.complete) {
 			if (!confirm($('#message-text-confirm-remove').text())) {

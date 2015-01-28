@@ -57,7 +57,7 @@ function selectDependencyAddon() {
 	$('#add-dependency-select').attr('disabled', true);
 	$('#add-dependency-version').empty();
 	$('#add-dependency-version').append($('<option disabled>' + $('#message-text-dependencies-loading-releases').text() + '</option>'));
-	$.ajax(base + '/api/v0/addons/' + game + '/' + $('#add-dependency').val().toLowerCase() + '.json', {
+	$.ajax(base + '/api/v0/addons/' + game + '/' + $('#add-dependency').val().toLowerCase(), {
 		success: function (data) {
 			$('#add-dependency-version').removeAttr('disabled');
 			$('#add-dependency-version').empty();
@@ -79,13 +79,12 @@ $(document).ready(function () {
 	$.ajax(releaseFileBaseUrl + '/dependencies',
 			{
 				success: function (data) {
-					alert('gottcha');
 				},
 				error: function () {
-					updateDependencies();
 					$('#dependencies-none-text').text($('#message-text-dependencies-loading-failed').text());
 				},
 				complete: function () {
+					updateDependencies();
 					$('#dependencies-loading').hide();
 				}
 			});
