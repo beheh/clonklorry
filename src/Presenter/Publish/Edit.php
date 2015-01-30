@@ -228,7 +228,7 @@ class Edit extends Presenter {
 					if(!$game) {
 						throw new ModelValueInvalidException('invalid');
 					}
-					$this->context['game'] = $game->getShort();
+					$this->context['game'] = $game->forPresenter();
 					$addon->setGame($game->getId());
 				} catch(ModelValueInvalidException $ex) {
 					$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
