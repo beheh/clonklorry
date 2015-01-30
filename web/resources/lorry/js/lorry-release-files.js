@@ -1,9 +1,10 @@
-var releaseFileBaseUrl = base + '/api/internal/addons/' + addon + '/' + release;
-var releaseResumable = new Resumable({target: releaseFileBaseUrl + '/upload?type=data', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
+var filesEndpoint = base + '/api/internal/addons/' + addon + '/' + release;
+
+var releaseResumable = new Resumable({target: filesEndpoint + '/upload?type=data', permanentErrors: [403, 404, 415, 500, 501], query: {state: state}});
 var releaseFilesExisting = [];
 
 $(document).ready(function () {
-	$.ajax(releaseFileBaseUrl + '/query',
+	$.ajax(filesEndpoint + '/query',
 			{
 				success: function (data) {
 					console.log(data);
@@ -108,7 +109,7 @@ function releaseFilesAdd(file) {
 				return;
 			}
 		});
-		$.ajax(releaseFileBaseUrl + '/remove', {
+		$.ajax(filesEndpoint + '/remove', {
 			method: 'post',
 			dataType: 'json',
 			data: {state: state, fileName: file.fileName, uniqueIdentifier: file.uniqueIdentifier}

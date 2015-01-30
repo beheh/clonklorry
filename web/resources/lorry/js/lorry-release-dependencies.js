@@ -1,6 +1,10 @@
+var dependenciesEndpoint = base + '/api/internal/addons/' + addon + '/' + release + '/dependencies';
+
 var lorryTokenizer = function (a) {
 	return [a.title, a.abbreviation, a.short];
 };
+
+var dependencies = [];
 
 function prefetchFilter(parsedResponse) {
 	var addons = [];
@@ -15,7 +19,7 @@ var publicAddons = new Bloodhound({
 	datumTokenizer: lorryTokenizer,
 	queryTokenizer: Bloodhound.tokenizers.whitespace,
 	local: [{title: 'Hazard', abbreviation: 'hzck', short: 'hazard'}, {title: 'Codename: Modern Combat', abbreviation: 'cmc', short: 'moderncombat'}], // example
-	prefetch: {url: base + '/api/v0/addons/' + game + '.json?headless', filter: prefetchFilter},
+	prefetch: {url: base + '/api/v0/addons/' + game + '', filter: prefetchFilter},
 	//		remote: {url: '{{base}}/search.json?for=%QUERY', filter: prefetchFilter},
 	thumbprint: '3' // hash of all addon versions
 });
@@ -31,52 +35,17 @@ $('#add-dependency').typeahead(null, {
 			return '<strong>' + a.short + '</strong> - ' + a.title + '';
 		}
 	}
-}).on('typeahead:selected', selectDependencyAddon).on('keypress', (function(e) {
-        if (e.keyCode === 13) {
-            selectDependencyAddon();
-            return false;
-        }
+}).on('typeahead:selected', findDependency).on('keypress', (function (e) {
+	if (e.keyCode === 13) {
+		findDependency();
+		return false;
+	}
 }));
 
-$('#add-dependency-reset').click(resetDependencyVersions);
-$('#add-dependency-select').click(selectDependencyAddon);
-
-resetDependencyVersions();
-
-function resetDependencyVersions() {
-	$('#add-dependency').removeAttr('disabled');
-	$('#add-dependency-select').removeAttr('disabled');
-	$('#add-dependency-version').empty();
-	$('#add-dependency-version').append($('<option disabled>' + $('#message-text-dependencies-select-first').text() + '</option>'));
-	$('#add-dependency-version').attr('disabled', true);
-}
-
-function selectDependencyAddon() {
-	$('#add-dependency').blur();
-	$('#add-dependency').attr('disabled', true);
-	$('#add-dependency-select').attr('disabled', true);
-	$('#add-dependency-version').empty();
-	$('#add-dependency-version').append($('<option disabled>' + $('#message-text-dependencies-loading-releases').text() + '</option>'));
-	$.ajax(base + '/api/v0/addons/' + game + '/' + $('#add-dependency').val().toLowerCase(), {
-		success: function (data) {
-			$('#add-dependency-version').removeAttr('disabled');
-			$('#add-dependency-version').empty();
-			$('#add-dependency-version').append($('<option disabled>{% trans %}Select a version&hellip;{% endtrans %}</option>'));
-		},
-		error: function (data) {
-			var message = data.responseJSON && data.responseJSON.message ? data.responseJSON.message : $('#message-text-dependencies-loading-releases-failed').text();
-			$('#add-dependency').removeAttr('disabled');
-			$('#add-dependency-select').removeAttr('disabled');
-			$('#add-dependency-version').empty();
-			$('#add-dependency-version').append($('<option disabled>' + message + '</option>'));
-			$('#add-dependency').focus();
-		}
-	});
-}
-
+$('#add-dependency-find').click(findDependency);
 
 $(document).ready(function () {
-	$.ajax(releaseFileBaseUrl + '/dependencies',
+	$.ajax(dependenciesEndpoint,
 			{
 				success: function (data) {
 				},
@@ -90,8 +59,38 @@ $(document).ready(function () {
 			});
 });
 
+function findDependency() {
+	var focus = $(document.activeElement).is($('#add-dependency'));
+	addDependency($('#add-dependency').val().toLowerCase());
+
+}
+
+function findDependency(string) {
+	$('#add-dependency').attr('disabled', true);
+	$('#add-dependency-find').attr('disabled', true);
+	$.ajax(base + '/api/v0/addons/' + game + '/' + string, {
+		success: function (data) {
+			var short = data.responseJSON ? data.responseJSON.short : false;
+			if (short) {
+				addDependency(short);
+			}
+			$('#add-dependency').removeAttr('disabled');
+		},
+		error: function (data) {
+			var message = data.responseJSON && data.responseJSON.message ? data.responseJSON.message : $('#message-text-dependencies-loading-releases-failed').text();
+			$('#add-dependency').removeAttr('disabled');
+			if (focus) {
+				$('#add-dependency').focus();
+			}
+		},
+		complete: function () {
+			$('#add-dependency-find').removeAttr('disabled');
+		}
+	});
+}
+
 function updateDependencies() {
-	var dependencyCount = 0;
+	var dependencyCount = dependencies.length;
 	$('#dependencies-count').text(dependencyCount);
 	if (dependencyCount > 0) {
 		$('#dependencies-none').hide();
