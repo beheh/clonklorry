@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-30 17:41+0100\n"
-"PO-Revision-Date: 2015-01-30 17:41+0100\n"
+"POT-Creation-Date: 2015-01-31 00:11+0100\n"
+"PO-Revision-Date: 2015-01-31 00:11+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -395,11 +395,38 @@ msgstr "Auswählen&hellip;"
 msgid "Version"
 msgstr "Version"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:50
-msgid "Original release date"
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:52
+msgid "This release was already published somewhere else"
+msgstr "Dieser Release wurde bereits woanders veröffentlicht"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:63
+msgid "Original publishing date"
 msgstr "Ursprüngliches Veröffentlichungsdatum"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:66
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:75
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:71
+msgid "Remove"
+msgstr "Entfernen"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:79
+msgid "Would you like to remove this release?"
+msgstr "Möchtest du diesen Release entfernen?"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:85
+msgid "All uploaded files will be deleted."
+msgstr "Alle hochgeladenen Dateien werden gelöscht."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:90
+msgid "Remove release"
+msgstr "Release entfernen"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:99
+msgid "These settings cannot be changed once the release has been published."
+msgstr ""
+"Diese Einstellungen können nach der Veröffentlichung nicht mehr geändert "
+"werden."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:103
 #: /home/benedict/Dokumente/clonklorry/cache/twig/25/c5/b6b810f78c82043f523e48e7630352cad5582478aceda4f8131e6369b8c0.php:113
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:374
 #: /home/benedict/Dokumente/clonklorry/cache/twig/40/d2/57a1e1428ebebd68dae8352ad1e7c57e2f577159d025088ec651004106fc.php:372
@@ -407,12 +434,6 @@ msgstr "Ursprüngliches Veröffentlichungsdatum"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:64
 msgid "Save"
 msgstr "Speichern"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:70
-msgid "These settings cannot be changed once the release has been published."
-msgstr ""
-"Diese Einstellungen können nach der Veröffentlichung nicht mehr geändert "
-"werden."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/1e/aa/8f25227fb8eb8476578925707f6d501a9ebfde58df75d4fdcad24e6c6210.php:124
 msgid "Edit releases"
@@ -1631,7 +1652,7 @@ msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:134
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:65
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:63
 #: /home/benedict/Dokumente/clonklorry/cache/twig/94/af/2658997d26a0d47ad7c6ac68e79ec9c28d32e413f334b36ae9ceea47ea2b.php:134
 msgid "Ready to publish"
 msgstr "Bereit zur Veröffentlichung"
@@ -2097,68 +2118,59 @@ msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:39
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:40
 msgid "Your browser does not support uploading files to Lorry."
 msgstr "Dein Browser unterstützt das Hochladen von Dateien zu Lorry nicht."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:43
-msgid "Uploading files should be possible with Firefox 4+ and Chrome 11+."
-msgstr ""
-"Das Hochladen von Dateien sollte mit Firefox 4+ und Chrome 11+ möglich sein."
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:50
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:48
 msgid "File upload is disabled."
 msgstr "Das Hochladen von Dateien ist deaktiviert."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:61
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:59
 msgid "Select file to continue upload"
 msgstr "Datei zum Fortsetzen des Uploads auswählen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:69
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:67
 msgid "Can be continued"
 msgstr "Kann fortgesetzt werden"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:73
-msgid "Remove"
-msgstr "Entfernen"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:77
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:75
 msgid "Are you sure you want to remove this file?"
 msgstr "Möchtest du diese Datei wirklich entfernen?"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:81
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:79
 msgid "File could not be removed."
 msgstr "Datei konnte nicht entfernt werden."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:85
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:83
 msgid "File already exists."
 msgstr "Datei existiert bereits."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:91
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:89
 msgid "Loading files&hellip;"
 msgstr "Lade Dateien&hellip;"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:96
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:94
 msgid "Error loading file list."
 msgstr "Fehler beim Laden der Dateiliste."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:101
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:99
 msgid "No files uploaded."
 msgstr "Keine Dateien hochgeladen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:115
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:113
 msgid "Select file&hellip;"
 msgstr "Datei auswählen&hellip;"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:119
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:117
 msgid "Upload"
 msgstr "Hochladen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:123
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:121
 msgid "Pause"
 msgstr "Pausieren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:127
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:125
 msgid ""
 "Files will only be made availabe after publishing this release and cannot be "
 "changed afterwards."
@@ -2764,8 +2776,8 @@ msgid "No dependencies added."
 msgstr "Keine Abhängigkeiten hinzugefügt."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:52
-msgid "Add addon"
-msgstr "Erweiterung hinzufügen"
+msgid "Add"
+msgstr "Hinzufügen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:59
 msgid "Users may download the release together with it's dependencies."
@@ -3547,6 +3559,37 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Originally published"
+#~ msgstr "Ursprünglich veröffentlicht"
+
+#~ msgid "Original release date"
+#~ msgstr "Ursprüngliches Veröffentlichungsdatum"
+
+#~ msgid "All uploaded files will be removed."
+#~ msgstr "Alle hochgeladenen Dateien werden entfernt."
+
+#~ msgid ""
+#~ "<strong>This release will be permanently removed.</strong> All files will "
+#~ "be deleted."
+#~ msgstr ""
+#~ "<strong>Dieser Release wird permanent entfernt.</strong> Alle Dateien "
+#~ "werden gelöscht."
+
+#~ msgid ""
+#~ "<strong>This release will be permanently removed.</strong> Any files will "
+#~ "be lost."
+#~ msgstr ""
+#~ "<strong>Dieser Release wird permanent entfernt.</strong> Alle Dateien "
+#~ "werden gelöscht."
+
+#~ msgid "Uploading files should be possible with Firefox 4+ and Chrome 11+."
+#~ msgstr ""
+#~ "Das Hochladen von Dateien sollte mit Firefox 4+ und Chrome 11+ möglich "
+#~ "sein."
+
+#~ msgid "Add addon"
+#~ msgstr "Erweiterung hinzufügen"
 
 #~ msgid ""
 #~ "The files will only be made availabe after publishing this release and "

@@ -3,9 +3,9 @@
 	<input type="hidden" name="basic-form">
 	<input type="hidden" name="state" value="{{state}}">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-8">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="version">{% trans %}Version{% endtrans %}</label>
 						<input type="text" class="form-control" name="version" id="version" value="{{new_version}}" required>
@@ -13,20 +13,38 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="version">{% trans %}Original release date{% endtrans %}</label>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" id="archive"> {% trans %}This release was already published somewhere else{% endtrans %}
+					</label>
+				</div>
+			</div>
+			<div class="collapse">
 				<div class="row">
-					<div class="col-sm-4">
-						<input type="date" class="form-control" name="initial" id="initial">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="version">{% trans %}Original publishing date{% endtrans %}</label>
+							<input type="date" class="form-control" name="initial" id="initial">
+						</div>
 					</div>
 				</div>
-			</div>		
+			</div>
 		</div>
-		<div class="col-md-6">
-
+		<div class="col-md-4">
+			<div class="form-group">
+				<label for="version">{% trans %}Remove{% endtrans %}</label>
+				<p><a href="#remove-release" data-toggle="collapse" data-target="#remove-release">{% trans %}Would you like to remove this release?{% endtrans %}</a></p>
+				<div id="remove-release" class="collapse">
+					<div class="alert alert-warning">
+						{% trans %}All uploaded files will be deleted.{% endtrans %}
+					</div>
+					<button type="submit" class="btn btn-danger">{% trans "Remove release" %}</button>
+				</div>
+			</div>	
 		</div>
 	</div>
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
 		<p class="help-block">{% trans %}These settings cannot be changed once the release has been published.{% endtrans %}</p>
+		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
 	</div>
 </form>
