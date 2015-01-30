@@ -2,4 +2,5 @@
 /vendor
 /cache
 /logs
+/upload
 /.capistrano
