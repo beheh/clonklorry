@@ -5,12 +5,6 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="row">
-				<div class="col-md-8">
-					<div class="form-group">
-						<label for="title">{% trans %}Addon{% endtrans %}</label>
-						<p class="form-control-static">{{addon.title}} {% include 'functions/tags/game.twig' with {'game' : addon.game}%}</p>
-					</div>
-				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="version">{% trans %}Version{% endtrans %}</label>
@@ -31,8 +25,8 @@
 
 		</div>
 	</div>
-	<p class="help-block">{% trans %}These settings cannot be changed once the release has been published.{% endtrans %}</p>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+		<p class="help-block">{% trans %}These settings cannot be changed once the release has been published.{% endtrans %}</p>
 	</div>
 </form>

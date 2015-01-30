@@ -9,30 +9,14 @@
 		<li class="list-group-item text-muted" id="dependencies-none-text">{% trans %}No dependencies added.{% endtrans %}</li>
 	</ul>
 </div>
-<div class="row">
-	<div class="col-md-8">
-		<div class="form-group">
-			<label for="add-dependency">{% trans %}Addon{% endtrans %}</label>
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Hazard" id="add-dependency">
-				<span class="input-group-btn">
-					<button class="btn btn-primary" id="add-dependency-select" type="button">&#10004;</span></button>
-					<button class="btn btn-default" id="add-dependency-reset" type="button">&times;</button>
-				</span>
-			</div>
-		</div>
+<div class="form-inline">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Hazard" id="add-dependency">
 	</div>
-	<div class="col-md-4">
-		<div class="form-group">
-			<span id="message-text-dependencies-select-first" class="hidden">{% trans %}Select an addon first&hellip;{% endtrans %}</span>
-			<span id="message-text-dependencies-loading-releases" class="hidden">{% trans %}Loading releases&hellip;{% endtrans %}</span>
-			<span id="message-text-dependencies-loading-releases-failed" class="hidden">{% trans %}Error loading the list of releases{% endtrans %}</span>
-			<label for="add-dependency-version">{% trans %}Version{% endtrans %}</label>
-			<select class="form-control" id="add-dependency-version" disabled>
-				<option disabled>{% trans %}Javascript needs to be enabled{% endtrans %}</option>
-			</select>
-		</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success inline" name="add-dependency-add">{% trans %}Add addon{% endtrans %}</button>
 	</div>
 </div>
-<button type="submit" class="btn btn-success inline" name="add-dependency-add" disabled>{% trans %}Add dependency{% endtrans %}</button>
-<p class="help-block">{% trans %}Users may download the release together with it's dependencies.{% endtrans %}</p>
+<div class="form-group">
+	<p class="help-block">{% trans %}Users may download the release together with it's dependencies.{% endtrans %}</p>
+</div>

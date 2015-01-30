@@ -1,1 +1,1 @@
-<a href="{% block url %}{{base}}{% endblock %}" class="badge {% block class %}badge-default{% endblock %}">{% block title %}Untitled{% endblock %}</a>
+<{% if nolink %}span{% else %}a href="{% block url %}{{base}}{% endblock %}"{% endif %} class="badge {% block class %}badge-default{% endblock %}">{% block title %}Untitled{% endblock %}</{% if nolink %}span{% else %}a{% endif %}>

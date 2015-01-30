@@ -165,8 +165,16 @@ textarea {
 .media-heading a:first-child {
   color: black;
 }
-h1 small .label {
+h1 small .label,
+h1 small .badge {
+  display: inline;
   vertical-align: text-top;
+  font-size: 75%;
+  padding: .2em .6em .3em;
+  line-height: 1em;
+}
+h1 small .badge {
+  border-radius: 20px;
 }
 label.btn {
   width: 50%;

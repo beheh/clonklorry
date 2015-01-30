@@ -195,8 +195,18 @@ textarea {
 	color: black;
 }
 
-h1 small .label {
-	vertical-align: text-top;
+h1 small {
+	.label, .badge {
+		display: inline;
+		vertical-align: text-top;
+		font-size: 75%;
+		padding: .2em .6em .3em;
+		line-height: 1em;
+	}
+	
+	.badge {
+		border-radius: 20px;
+	}
 }
 
 label.btn {
