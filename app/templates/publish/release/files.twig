@@ -30,10 +30,12 @@
 		<ul class="list-group" id="resumable-files">
 		</ul>
 		{% if enable.upload and can_upload %}
-			<button type="button" id="resumable-select" class="btn btn-default" disabled>{% trans "Select" %}</button>
-			<button type="button" id="resumable-upload" class="btn btn-success" disabled>{% trans "Upload / Continue" %}</button>
-			<button type="button" id="resumable-pause" class="btn btn-success" disabled><span class="glyphicon glyphicon-pause"></span> {% trans "Pause" %}</button>
-			<p class="help-block">{% trans %}The files will only be made availabe after publishing this release and cannot be changed afterwards.{% endtrans %}</p>
+			<div class="form-group">
+				<button type="button" id="resumable-select" class="btn btn-default" disabled>{% trans "Select file" %}</button>
+				<button type="button" id="resumable-upload" class="btn btn-success" disabled>{% trans "Upload" %}</button>
+				<button type="button" id="resumable-pause" class="btn btn-success" disabled>{% trans "Pause" %}</button>
+				<p class="help-block">{% trans %}The files will only be made availabe after publishing this release and cannot be changed afterwards.{% endtrans %}</p>
+			</div>
 		{% endif %}
 	</div>
 </div>
