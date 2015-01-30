@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-31 00:11+0100\n"
-"PO-Revision-Date: 2015-01-31 00:11+0100\n"
+"POT-Creation-Date: 2015-01-31 00:18+0100\n"
+"PO-Revision-Date: 2015-01-31 00:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2780,7 +2780,7 @@ msgid "Add"
 msgstr "Hinzufügen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:59
-msgid "Users may download the release together with it's dependencies."
+msgid "Users may download the release together with its dependencies."
 msgstr ""
 "Benutzer können diesen Release zusammen mit den Abhängigkeiten herunterladen."
 
@@ -3559,6 +3559,11 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Users may download the release together with it's dependencies."
+#~ msgstr ""
+#~ "Benutzer können diesen Release zusammen mit den Abhängigkeiten "
+#~ "herunterladen."
 
 #~ msgid "Originally published"
 #~ msgstr "Ursprünglich veröffentlicht"
