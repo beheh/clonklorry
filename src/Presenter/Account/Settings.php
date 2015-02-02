@@ -212,7 +212,7 @@ class Settings extends Presenter {
 						$this->session->clearResetPassword();
 						$user->save();
 						$this->session->identify();
-						$this->session->regenerateState();
+						$this->context['state'] = $this->session->regenerateState();
 						if($has_password) {
 							$this->success('password', gettext('Your password was changed.'));
 						} else {
@@ -234,11 +234,11 @@ class Settings extends Presenter {
 		if(isset($_POST['remote-logout-form'])) {
 			$user->regenerateSecret();
 			$user->save();
-			$this->session->regenerateState();
+			$this->session->refresh();
+			$this->context['state'] = $this->session->regenerateState();
 
 			$this->success('remote-logout', gettext('All other devices were logged out.'));
 
-			$this->session->refresh($user);
 		}
 
 		$this->get();

@@ -64,6 +64,7 @@ class SessionService {
 		$this->ensureSession();
 		$this->ensureSecret($user);
 		session_regenerate_id(true);
+		$this->regenerateState();
 		$this->user = $user;
 		$_SESSION['user'] = $user->getId();
 		$_SESSION['secret'] = $user->getSecret();
