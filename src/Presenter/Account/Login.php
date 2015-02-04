@@ -85,12 +85,16 @@ class Login extends Presenter {
 		} else {
 			// login by username and password
 			$username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
-			$user = ModelFactory::build('User')->byUsername($username);
 			$remember = filter_input(INPUT_POST, 'remember', FILTER_VALIDATE_BOOLEAN) || false;
 			// take username to next page
 			$this->context['username'] = $username;
 			// set remember checkmark to persist after post
 			$this->context['remember'] = $remember;
+			$user = ModelFactory::build('User')->byUsername($username);
+			if(!$user) {
+				// try email address instead
+				$user = ModelFactory::build('User')->byEmail($username);
+			}
 			if($user) {
 				$this->context['username_exists'] = true;
 				if($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
@@ -116,7 +120,7 @@ class Login extends Presenter {
 				}
 			} else {
 				// user does not exist
-				$this->error('login', gettext('Username unknown.'));
+				$this->error('login', gettext('Username unknown. You can enter your email address instead.'));
 			}
 		}
 		$this->get();

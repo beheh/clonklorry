@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-01-31 00:18+0100\n"
-"PO-Revision-Date: 2015-01-31 00:18+0100\n"
+"POT-Creation-Date: 2015-02-04 11:32+0100\n"
+"PO-Revision-Date: 2015-02-04 11:32+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2855,7 +2855,7 @@ msgid "not a valid OAuth provider"
 msgstr "kein gültiger OAuth-Provider"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter.php:175
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:115
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:119
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:195
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:230
 msgid "Password wrong."
@@ -2889,9 +2889,10 @@ msgstr "Anmeldung per E-Mail fehlgeschlagen."
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:119
-msgid "Username unknown."
-msgstr "Benutzername unbekannt."
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:123
+msgid "Username unknown. You can enter your email address instead."
+msgstr ""
+"Benutzername unbekannt. Du kannst alternativ deine E-Mail-Addresse eingeben."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:74
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:69
@@ -3006,7 +3007,7 @@ msgstr "Dein Passwort wurde geändert."
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:239
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:240
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -3559,6 +3560,28 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Username unknown. You can use your email address instead."
+#~ msgstr ""
+#~ "Benutzername unbekannt. Du kannst alternativ deine E-Mail-Addresse nutzen."
+
+#~ msgid "Log in without a password"
+#~ msgstr "Ohne Passwort anmelden"
+
+#~ msgid "Username unknown."
+#~ msgstr "Benutzername unbekannt."
+
+#~ msgid "Username / Email address"
+#~ msgstr "Benutzername / E-Mail-Adresse"
+
+#~ msgid "Username / Email address unknown."
+#~ msgstr "Benutzername / E-Mail-Adresse unbekannt."
+
+#~ msgid "Username or email address unknown."
+#~ msgstr "Benutzername oder E-Mail-Add"
+
+#~ msgid "Username or email address"
+#~ msgstr "Benutzername oder E-Mail-Adresse"
 
 #~ msgid "Users may download the release together with it's dependencies."
 #~ msgstr ""
