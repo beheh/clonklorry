@@ -91,12 +91,12 @@ class PresenterFactory {
 	 */
 	public static function build($presenter) {
 		if(!self::valid($presenter)) {
-			throw new Exception('unknown presenter');
+			throw new Exception('unknown presenter "'.$presenter.'"');
 		}
 		$class = '\\Lorry\\Presenter\\'.$presenter;
 		$instance = new $class();
 		if(!$instance instanceof Presenter) {
-			throw new Exception('presenter does not implement base class');
+			throw new Exception('presenter "'.$presenter.'" does not implement base class');
 		}
 		$instance->setConfigService(self::$config);
 		$instance->setLocalisationService(self::$localisation);

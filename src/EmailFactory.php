@@ -58,12 +58,12 @@ class EmailFactory {
 	 */
 	public static function build($email) {
 		if(!self::valid($email)) {
-			throw new Exception('unknown email');
+			throw new Exception('unknown email "'.$email.'"');
 		}
 		$class = '\\Lorry\\Email\\'.$email;
 		$instance = new $class();
 		if(!$instance instanceof Email) {
-			throw new Exception('email does not implement base class');
+			throw new Exception('email "'.$email.'" does not implement base class');
 		}
 		$instance->setConfigService(self::$config);
 		$instance->setLocalisationService(self::$localisation);
