@@ -1,6 +1,7 @@
 <?php
 
 namespace Lorry\Job;
+use Lorry\Email;
 
 class ActivateJob extends UserEmailJob {
 	
@@ -15,8 +16,18 @@ class ActivateJob extends UserEmailJob {
 		}
 	}
 
-	public function getActivationToken() {
-		
+	public function prepareEmail(Email $email, $args) {
+		parent::prepareEmail($email, $args);
+		$email->setUrl($this->getActivationUrl());
+	}
+
+	public function getActivationUrl() {
+		$user = $this->user;
+		$expires = time() + 10 * 60;
+		$address = $this->getRecipent();
+		$hash = $this->security->signActivation($user, $expires, $address);
+		$url = $this->config->get('base').'/users/'.$user->getUsername().'/activate?address='.urlencode($address).'&expires='.$expires.'&hash='.$hash;
+		return $url;
 	}
 
 }

@@ -20,12 +20,12 @@ abstract class Job {
 	 * @var \Lorry\Service\PersistenceService
 	 */
 	protected $persistence;
-	
+
 	/**
 	 * @var \Lorry\Service\LocalisationService
 	 */
 	protected $localisation;
-	
+
 	/**
 	 * @var \Twig_Environment
 	 */
@@ -35,7 +35,12 @@ abstract class Job {
 	 * @var \Lorry\Service\CdnService
 	 */
 	protected $cdn;
-	
+
+	/**
+	 * @var \Lorry\Service\SecurityService
+	 */
+	protected $security;
+
 	public final function setUp() {
 		$environment = new Environment();
 		$environment->setup();
@@ -43,8 +48,9 @@ abstract class Job {
 		$this->mail = $environment->getMail();
 		$this->persistence = $environment->getPersistence();
 		$this->localisation = $environment->getLocalisation();
-		$this->templating = $environment->getTemplating();				
+		$this->templating = $environment->getTemplating();
 		$this->cdn = $environment->getCdn();
+		$this->security = $environment->getSecurity();
 	}
 
 	abstract function perform();

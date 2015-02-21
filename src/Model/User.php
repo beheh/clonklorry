@@ -11,7 +11,6 @@ class User extends Model {
 	const PERMISSION_READ = 1;
 	const PERMISSION_MODERATE = 2;
 	const PERMISSION_ADMINISTRATE = 3;
-	
 	const FLAG_ALPHA = 1;
 	const FLAG_BETA = 2;
 	const FLAG_VIP = 4;
@@ -31,6 +30,7 @@ class User extends Model {
 			'language' => 'string(5,5)',
 			'permissions' => 'int',
 			'flags' => 'int',
+			'counter' => 'int',
 			'oauth-openid' => 'string(255)',
 			'oauth-google' => 'string(255)',
 			'oauth-facebook' => 'string(255)'));
@@ -57,6 +57,7 @@ class User extends Model {
 		} else {
 			$hash = null;
 		}
+		$this->incrementCounter();
 		$this->setValue('password', $hash);
 	}
 
@@ -109,6 +110,7 @@ class User extends Model {
 
 	public final function regenerateSecret() {
 		$secret = base64_encode(openssl_random_pseudo_bytes(64));
+		$this->incrementCounter();
 		return $this->setValue('secret', $secret);
 	}
 
@@ -173,6 +175,18 @@ class User extends Model {
 
 	public final function hasFlag($flag) {
 		return !!($this->getFlags() & $flag);
+	}
+
+	public final function getCounter() {
+		return $this->getValue('counter');
+	}
+
+	public final function incrementCounter() {
+		return $this->setValue('counter', $this->getValue('counter') + 1);
+	}
+
+	public final function verifyCounter($counter) {
+		return $this->getValue('counter') <= $counter;
 	}
 
 	public final function setClonkforgeUrl($clonkforge) {

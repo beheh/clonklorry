@@ -43,7 +43,7 @@ persistence:
 
 # job queue and underlying redis database
 job:
-    dsn: /tmp/redis.sock
+    dsn: localhost
 
 # for outgoing mails
 mail:
@@ -70,3 +70,8 @@ oauth:
     facebook:
         id:
         secret:
+
+# token signature
+tokens:
+    algorithm: sha512
+    key: changeme

@@ -5,6 +5,8 @@ namespace Lorry\Service;
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
+use Lorry\Exception;
+use Lorry\Model\User;
 
 class SecurityService {
 
@@ -100,6 +102,29 @@ class SecurityService {
 		/* if($user->uploadedFiles() > 5) {
 		  throw new ForbiddenException(gettext('you have too many unreleased files'));
 		  } */
+	}
+
+	public function signActivation(User $user, $expires, $address) {
+		if(!$user || !$expires || !$address) {
+			throw new Exception('incomplete activation signing request');
+		}
+		return $this->sign($user->getId().':'.intval($expires).':'.$address);
+	}
+	
+	public function signLogin(User $user, $expires, $counter, $reset = false) {
+		if(!$user || !$expires || !$counter) {
+			throw new Exception('incomplete login signing request');
+		}
+		return $this->sign($user->getId().':'.intval($expires).':'.intval($counter).':'.intval($reset));
+	}
+
+	public function sign($data) {
+		$algo = $this->config->get('tokens/algorithm');
+		$key = $this->config->get('tokens/key');
+		if(!$algo || !$key || !$data) {
+			throw new Exception('missing token signature algorithm or key');
+		}
+		return hash_hmac($algo, $data, $key);
 	}
 
 }

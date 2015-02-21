@@ -17,6 +17,7 @@ CREATE TABLE `user` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`username` varchar(32) NOT NULL,
 	`secret` varchar(255) DEFAULT NULL,
+	`counter` int(11) NOT NULL DEFAULT '1',
 	`password` varchar(255) DEFAULT NULL,
 	`email` varchar(255) NOT NULL,
 	`registration` datetime NULL,

@@ -11,8 +11,8 @@ class Activate extends Email {
 		$this->render('activate.twig');
 	}
 
-	public function setToken($token) {
-		$this->context['token'] = $token;
+	public function setUrl($url) {
+		$this->context['url'] = $url;
 	}
 
 }

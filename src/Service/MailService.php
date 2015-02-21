@@ -6,6 +6,7 @@ use Lorry\Email;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
+use Analog\Analog;
 use Exception;
 
 class MailService {
@@ -71,10 +72,13 @@ class MailService {
 			$message->setReplyTo($replyto);
 		}
 
+		Analog::debug('sending mail with content: '.$body);
+
 		try {
 			return $this->mailer->send($message);
 		}
 		catch(Exception $ex) {
+			Analog::error('error sending mail: '.$ex->getMessage());
 			return false;
 		}
 	}

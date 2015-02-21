@@ -2,8 +2,7 @@
 
 {% block subject %}{% trans %}{{brand}}: Confirm your (new) email address{% endtrans %}{% endblock %}
 
-{% set url %}{{base}}/activate?token={{token}}{% endset %}
-{% set this_link %}<a href="{{url}}">{% trans %}this link{% endtrans %}</a>{% endset %}
+{% set this_link %}<a href="{{url|raw}}">{% trans %}this link{% endtrans %}</a>{% endset %}
 
 {% block body %}
 	<p>{% trans %}You set your email address to {{email}}.{% endtrans %}</p>
@@ -11,5 +10,5 @@
 	<p>{% trans %}To use all features of {{brand}} you need to activate this new address.{% endtrans %}<br>
 	{% trans %}Please open {{this_link}} to activate your address or paste the following url into your browser:{% endtrans %}</p>
 
-	<p><strong>{{url}}</strong></p>
+	<p><strong>{{url|raw}}</strong></p>
 {% endblock %}

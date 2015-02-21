@@ -10,16 +10,16 @@ abstract class UserEmailJob extends EmailJob {
 	/**
 	 * @var \Lorry\Model\User;
 	 */
-	protected $recipent;
+	protected $user;
 
 	public function getRecipent() {
-		return $this->recipent->getEmail();
+		return $this->user->getEmail();
 	}
 	
 	public function prepareEmail(Email $email, $args) {
 		$user = ModelFactory::build('User')->byId($args['user']);
+		$this->user = $user;
 		$this->localisation->silentLocalize($user->getLanguage());
-		$this->recipent = $user;
 		$email->setUsername($user->getUsername());
 		parent::prepareEmail($email);
 	}
