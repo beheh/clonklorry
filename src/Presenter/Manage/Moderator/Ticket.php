@@ -24,7 +24,7 @@ class Ticket extends Presenter {
 
 		$ticket = $this->getTicket($id);
 		$this->context['number'] = $ticket->getId();
-		$this->context['request'] = $ticket->getRequest();
+		$this->context['message'] = $ticket->getMessage();
 		$this->context['acknowledged'] = $ticket->isAcknowledged();
 		$this->context['escalated'] = $ticket->isEscalated();
 
@@ -59,7 +59,7 @@ class Ticket extends Presenter {
 					$mail->setUser($user);
 				}
 				
-				$mail->setMessage($ticket->getRequest());
+				$mail->setMessage($ticket->getMessage());
 				$mail->setStaff($staff);
 				
 				if($this->mail->send($mail)) {
@@ -73,6 +73,14 @@ class Ticket extends Presenter {
 			$ticket->setStaff($staff->getId());
 			if($ticket->modified()) {
 				$ticket->save();
+			}
+		}
+		else {
+			if(isset($_POST['return'])) {
+				$ticket->dispute();
+				if($ticket->modified()) {
+					$ticket->save();
+				}
 			}
 		}
 

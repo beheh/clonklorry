@@ -17,7 +17,7 @@
 				<form method="post">
 					{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
 					<div class="form-group">
-						<textarea class="form-control contact-form" name="feedback" rows="10" required></textarea>
+						<textarea class="form-control contact-form" name="message" rows="10" required>{{message}}</textarea>
 					</div>
 					{% if by %}
 						{% set sender = by|escape('html') %}

@@ -39,8 +39,10 @@ class Contact extends Presenter {
 			$ticket->setUser($user->getId());
 		}
 
+		$message = htmlspecialchars(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING));
+
 		try {
-			$ticket->setRequest(htmlspecialchars(filter_input(INPUT_POST, 'feedback', FILTER_SANITIZE_STRING)));
+			$ticket->setMessage($message);
 		} catch(ModelValueInvalidException $e) {
 			$errors[] = sprintf(gettext('Message text is %s.'), $e->getMessage());
 		}
@@ -59,6 +61,7 @@ class Contact extends Presenter {
 				$this->error('contact', gettext('Sorry, your message couldn\'t be saved.'));
 			}
 		} else {
+			$this->context['message'] = $message;
 			$this->error('contact', implode('<br>', $errors));
 		}
 

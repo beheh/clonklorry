@@ -43,7 +43,7 @@ class Portal extends Presenter {
 			$result = array(
 				'id' => $ticket->getId(),
 				'submitted' => date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $ticket->getSubmitted()),
-				'request' => $ticket->getRequest()
+				'message' => $ticket->getMessage()
 			);
 			$user = $ticket->fetchUser();
 			if($user) {

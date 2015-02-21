@@ -8,7 +8,7 @@ class Ticket extends Model {
 
 	public function __construct() {
 		parent::__construct('ticket', array(
-			'request' => 'text',
+			'message' => 'text',
 			'hash' => 'varchar',
 			'user' => 'int',
 			'submitted' => 'datetime',
@@ -30,14 +30,14 @@ class Ticket extends Model {
 		return $this->byValues($constraints);
 	}
 	
-	public function setRequest($request) {
-		$this->validateString($request, 10, 2048);
-		$this->setValue('request', $request);
-		$this->setValue('hash', sha1($request));
+	public function setMessage($message) {
+		$this->validateString($message, 10, 2048);
+		$this->setValue('message', $message);
+		$this->setValue('hash', sha1($message));
 	}
 
-	public function getRequest() {
-		return $this->getValue('request');
+	public function getMessage() {
+		return $this->getValue('message');
 	}
 	
 	public function getHash() {
@@ -78,6 +78,10 @@ class Ticket extends Model {
 
 	public function isAcknowledged() {
 		return $this->getValue('acknowledged') !== null;
+	}
+
+	public function dispute() {
+		$this->setValue('acknowledged', null);
 	}
 
 	public function setStaff($staff) {

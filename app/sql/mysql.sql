@@ -89,7 +89,7 @@ CREATE TABLE `dependency` (
 CREATE TABLE `ticket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` int(11) DEFAULT NULL,
-  `request` text NOT NULL,
+  `message` text NOT NULL,
   `hash` varchar(64) NOT NULL,
   `submitted` datetime NOT NULL,
   `escalated` datetime DEFAULT NULL,

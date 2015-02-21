@@ -35,11 +35,11 @@
 				{% if tickets %}
 					<table class="table">
 						<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Message{% endtrans %}</th><th>{% trans %}User{% endtrans %}</th></tr>
-						{% for request in tickets %}
+						{% for message in tickets %}
 						<tr>
-							<td>{{request.submitted}}</td>
-							<td><a href="{{base}}/moderator/ticket/{{request.id}}" class="text">"{{ request.request|length > 50 ? request.request|slice(0, 50) ~ '…' : request.request }}"</a></td>
-							<td>{% if request.user %}{% include 'functions/user.twig' with {'user': request.user} %}{% else %}{% trans "Anonymous" %}{% endif %}</td>
+							<td>{{message.submitted}}</td>
+							<td><a href="{{base}}/moderator/tickets/{{message.id}}" class="text">"{{ message.message|length > 50 ? message.message|slice(0, 50) ~ '…' : message.message }}"</a></td>
+							<td>{% if message.user %}{% include 'functions/user.twig' with {'user': message.user} %}{% else %}{% trans "Anonymous" %}{% endif %}</td>
 						</tr>
 						{% endfor %}
 					</table>
