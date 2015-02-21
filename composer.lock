@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "analog/analog",
-            "version": "1.0.4-stable",
+            "version": "1.0.6-stable",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jbroadway/analog.git",
-                "reference": "b33febc06cb47593e23c74cccaceaaf618220b07"
+                "reference": "1fcc97fd842f37013587d64aba5f3f1fa6b0d911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jbroadway/analog/zipball/b33febc06cb47593e23c74cccaceaaf618220b07",
-                "reference": "b33febc06cb47593e23c74cccaceaaf618220b07",
+                "url": "https://api.github.com/repos/jbroadway/analog/zipball/1fcc97fd842f37013587d64aba5f3f1fa6b0d911",
+                "reference": "1fcc97fd842f37013587d64aba5f3f1fa6b0d911",
                 "shasum": ""
             },
             "require": {
@@ -38,8 +38,7 @@
                 {
                     "name": "Johnny Broadway",
                     "email": "johnny@johnnybroadway.com",
-                    "homepage": "http://www.johnnybroadway.com/",
-                    "role": "Main Developer"
+                    "homepage": "http://www.johnnybroadway.com/"
                 }
             ],
             "description": "PHP 5.3+ micro logging class that can be extended via closures. Includes several pre-built handlers including file, mail, syslog, HTTP post, and MongoDB.",
@@ -54,20 +53,20 @@
                 "logging",
                 "syslog"
             ],
-            "time": "2014-01-24 22:41:50"
+            "time": "2015-02-13 20:34:48"
         },
         {
             "name": "aura/sqlquery",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auraphp/Aura.SqlQuery.git",
-                "reference": "72286cc7b928fe9884d603cabf4d5969b93cc3af"
+                "reference": "666d2995e255fef7ae05038b370bf140c2b80876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.SqlQuery/zipball/72286cc7b928fe9884d603cabf4d5969b93cc3af",
-                "reference": "72286cc7b928fe9884d603cabf4d5969b93cc3af",
+                "url": "https://api.github.com/repos/auraphp/Aura.SqlQuery/zipball/666d2995e255fef7ae05038b370bf140c2b80876",
+                "reference": "666d2995e255fef7ae05038b370bf140c2b80876",
                 "shasum": ""
             },
             "require": {
@@ -121,20 +120,20 @@
                 "sqlserver",
                 "update"
             ],
-            "time": "2014-08-24 20:35:43"
+            "time": "2015-02-12 20:25:15"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.7.17",
+            "version": "2.7.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "eddf89846ed0f15e8e2b8cbe6d08125eaa20ad80"
+                "reference": "a3275993df4414bcaa61177df5a8d2ce502f927b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eddf89846ed0f15e8e2b8cbe6d08125eaa20ad80",
-                "reference": "eddf89846ed0f15e8e2b8cbe6d08125eaa20ad80",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a3275993df4414bcaa61177df5a8d2ce502f927b",
+                "reference": "a3275993df4414bcaa61177df5a8d2ce502f927b",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +187,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-01-27 20:14:01"
+            "time": "2015-02-20 18:30:16"
         },
         {
             "name": "chrisboulton/php-resque",
@@ -196,12 +195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chrisboulton/php-resque.git",
-                "reference": "c335bc35558e0683f95c3fd5dd11a5817c0a761f"
+                "reference": "a8322cd4e7aa32ec88d98aa4b0cb2c6251b08509"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chrisboulton/php-resque/zipball/c335bc35558e0683f95c3fd5dd11a5817c0a761f",
-                "reference": "c335bc35558e0683f95c3fd5dd11a5817c0a761f",
+                "url": "https://api.github.com/repos/chrisboulton/php-resque/zipball/a8322cd4e7aa32ec88d98aa4b0cb2c6251b08509",
+                "reference": "a8322cd4e7aa32ec88d98aa4b0cb2c6251b08509",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +243,7 @@
                 "redis",
                 "resque"
             ],
-            "time": "2014-09-25 02:24:50"
+            "time": "2015-02-04 18:56:54"
         },
         {
             "name": "colinmollenhour/credis",
@@ -462,16 +461,16 @@
         },
         {
             "name": "league/oauth2-client",
-            "version": "0.7.1",
+            "version": "0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "0a8e12a4f86302227991895a4166dfe22c28de03"
+                "reference": "bb2d4e4be7a4af05260de9eaa4337920bc5e0ad1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/0a8e12a4f86302227991895a4166dfe22c28de03",
-                "reference": "0a8e12a4f86302227991895a4166dfe22c28de03",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/bb2d4e4be7a4af05260de9eaa4337920bc5e0ad1",
+                "reference": "bb2d4e4be7a4af05260de9eaa4337920bc5e0ad1",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +485,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.7.x-dev"
+                    "dev-master": "0.8.x-dev"
                 }
             },
             "autoload": {
@@ -517,7 +516,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2015-01-06 15:58:40"
+            "time": "2015-02-12 17:10:16"
         },
         {
             "name": "lightopenid/lightopenid",
@@ -638,17 +637,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.3",
+            "version": "v2.6.4",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "6ac6491ff60c0e5a941db3ccdc75a07adbb61476"
+                "reference": "e44154bfe3e41e8267d7a3794cd9da9a51cfac34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/6ac6491ff60c0e5a941db3ccdc75a07adbb61476",
-                "reference": "6ac6491ff60c0e5a941db3ccdc75a07adbb61476",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/e44154bfe3e41e8267d7a3794cd9da9a51cfac34",
+                "reference": "e44154bfe3e41e8267d7a3794cd9da9a51cfac34",
                 "shasum": ""
             },
             "require": {
@@ -691,21 +690,21 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-06 17:50:02"
+            "time": "2015-01-25 04:39:26"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.6.3",
+            "version": "v2.6.4",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "40ff70cadea3785d83cac1c8309514b36113064e"
+                "reference": "f75989f3ab2743a82fe0b03ded2598a2b1546813"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/40ff70cadea3785d83cac1c8309514b36113064e",
-                "reference": "40ff70cadea3785d83cac1c8309514b36113064e",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/f75989f3ab2743a82fe0b03ded2598a2b1546813",
+                "reference": "f75989f3ab2743a82fe0b03ded2598a2b1546813",
                 "shasum": ""
             },
             "require": {
@@ -749,21 +748,21 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-05 14:28:40"
+            "time": "2015-02-01 16:10:57"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.6.3",
+            "version": "v2.6.4",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "82462a90848a52c2533aa6b598b107d68076b018"
+                "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/82462a90848a52c2533aa6b598b107d68076b018",
-                "reference": "82462a90848a52c2533aa6b598b107d68076b018",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/60ed7751671113cf1ee7d7778e691642c2e9acd8",
+                "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8",
                 "shasum": ""
             },
             "require": {
@@ -796,7 +795,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-03 15:33:07"
+            "time": "2015-01-25 04:39:26"
         },
         {
             "name": "twig/extensions",
