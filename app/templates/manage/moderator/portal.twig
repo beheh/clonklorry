@@ -34,7 +34,7 @@
 				<h3>{% trans %}Contact form{% endtrans %}</h3>
 				{% if tickets %}
 					<table class="table">
-						<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Request{% endtrans %}</th><th>{% trans %}User{% endtrans %}</th></tr>
+						<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Message{% endtrans %}</th><th>{% trans %}User{% endtrans %}</th></tr>
 						{% for request in tickets %}
 						<tr>
 							<td>{{request.submitted}}</td>
