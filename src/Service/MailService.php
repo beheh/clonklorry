@@ -6,6 +6,7 @@ use Lorry\Email;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
+use Exception;
 
 class MailService {
 
@@ -70,7 +71,12 @@ class MailService {
 			$message->setReplyTo($replyto);
 		}
 
-		return $this->mailer->send($message);
+		try {
+			return $this->mailer->send($message);
+		}
+		catch(Exception $ex) {
+			return false;
+		}
 	}
 
 }
