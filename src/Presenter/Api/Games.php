@@ -13,7 +13,7 @@ class Games extends Presenter {
 			throw new FileNotFoundException(sprintf(gettext('This endpoint does not support api version %d.'), $api_version));
 		}
 
-		$games = ModelFactory::build('Game')->byAnything();
+		$games = $this->persistence->build('Game')->byAnything();
 
 		$result = array();
 		$result['games'] = array();

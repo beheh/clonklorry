@@ -6,8 +6,12 @@ use Lorry\Model;
 
 class Ticket extends Model {
 
-	public function __construct() {
-		parent::__construct('ticket', array(
+	public function getTable() {
+		return 'ticket';
+	}
+
+	public function getSchema() {
+		return array(
 			'message' => 'text',
 			'hash' => 'varchar',
 			'user' => 'int',
@@ -15,13 +19,13 @@ class Ticket extends Model {
 			'escalated' => 'datetime',
 			'staff' => 'int',
 			'acknowledged' => 'datetime'
-		));
+		);
 	}
 
 	protected function onInsert() {
 		$this->setValue('submitted', time());
 	}
-	
+
 	public function byNew() {
 		$constraints = array();
 		$constraints['acknowledged'] = null;
@@ -29,7 +33,7 @@ class Ticket extends Model {
 		$this->all()->order('submitted');
 		return $this->byValues($constraints);
 	}
-	
+
 	public function setMessage($message) {
 		$this->validateString($message, 10, 2048);
 		$this->setValue('message', $message);
@@ -39,11 +43,11 @@ class Ticket extends Model {
 	public function getMessage() {
 		return $this->getValue('message');
 	}
-	
+
 	public function getHash() {
 		return $this->getValue('hash');
 	}
-	
+
 	public function byHash($hash) {
 		return $this->byValue('hash', $hash);
 	}
@@ -59,7 +63,7 @@ class Ticket extends Model {
 	public function fetchUser() {
 		return $this->fetch('User', 'user');
 	}
-	
+
 	public function getSubmitted() {
 		return $this->getValue('submitted');
 	}

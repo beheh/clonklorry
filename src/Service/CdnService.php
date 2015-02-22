@@ -5,15 +5,18 @@ namespace Lorry\Service;
 use Aws\S3\S3Client;
 use Aws\S3\Model\MultipartUpload\UploadBuilder;
 use Lorry\Model\File;
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 
-class CdnService {
+class CdnService extends Service {
 
 	/**
 	 * @var \Lorry\Service\ConfigService
 	 */
 	protected $config;
 
-	public function setConfigService(ConfigService $config) {
+	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config) {
+		parent::__construct($loggerFactory);
 		$this->config = $config;
 	}
 

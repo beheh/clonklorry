@@ -12,8 +12,8 @@ use Lorry\Exception\ModelValueInvalidException;
 
 class Edit extends Presenter {
 
-	public static function getAddon($id, User $user) {
-		$addon = ModelFactory::build('Addon')->byId($id);
+	public static function getAddon($persistence, $id, User $user) {
+		$addon = $persistence->build('Addon')->byId($id);
 		if(!$addon) {
 			throw new FileNotFoundException();
 		}
@@ -36,7 +36,7 @@ class Edit extends Presenter {
 	public function get($id) {
 		$this->security->requireLogin();
 
-		$addon = Edit::getAddon($id, $this->session->getUser());
+		$addon = Edit::getAddon($this->persistence, $id, $this->session->getUser());
 
 		/* Approval */
 
@@ -71,7 +71,7 @@ class Edit extends Presenter {
 			$this->context['namespace'] = $addon->getProposedShort();
 		}
 
-		$games = ModelFactory::build('Game')->all()->byAnything();
+		$games = $this->persistence->build('Game')->all()->byAnything();
 		$this->context['games'] = array();
 		foreach($games as $game) {
 			$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
@@ -115,7 +115,7 @@ class Edit extends Presenter {
 		}
 
 		// fetch all releasees for this addon and roughly sort them
-		$releases_raw = ModelFactory::build('Release')->all()->order('timestamp')->order('version')->byAddon($addon->getId());
+		$releases_raw = $this->persistence->build('Release')->all()->order('timestamp')->order('version')->byAddon($addon->getId());
 		// move unpublished releases to end of list
 		$releases = array();
 		$unreleased = array();
@@ -127,7 +127,7 @@ class Edit extends Presenter {
 			}
 		}
 		$releases = array_merge($releases, $unreleased);
-		$latest = ModelFactory::build('Release')->latest($addon->getId());
+		$latest = $this->persistence->build('Release')->latest($addon->getId());
 		$this->context['releases'] = array();
 		foreach($releases as $release) {
 			$this->context['releases'][$release->getId()] = array(
@@ -145,7 +145,7 @@ class Edit extends Presenter {
 
 		$this->security->requireValidState();
 
-		$addon = Edit::getAddon($id, $this->session->getUser());
+		$addon = Edit::getAddon($this->persistence, $id, $this->session->getUser());
 
 		// @todo released?
 		$released = false;
@@ -224,7 +224,7 @@ class Edit extends Presenter {
 				}
 
 				try {
-					$game = ModelFactory::build('Game')->byShort(filter_input(INPUT_POST, 'game'));
+					$game = $this->persistence->build('Game')->byShort(filter_input(INPUT_POST, 'game'));
 					if(!$game) {
 						throw new ModelValueInvalidException('invalid');
 					}
@@ -246,7 +246,7 @@ class Edit extends Presenter {
 				if(empty($errors)) {
 					if($addon->modified()) {
 						if($submitted) {
-							$existing = ModelFactory::build('Addon')->byShort($addon->getProposedShort());
+							$existing = $this->persistence->build('Addon')->byShort($addon->getProposedShort());
 							if($existing) {
 								$addon->reject(gettext('An addon has already reserved this namespace.'));
 							}
@@ -322,7 +322,7 @@ class Edit extends Presenter {
 		if(isset($_POST['releases-form'])) {
 			$version = trim(filter_input(INPUT_POST, 'version'));
 
-			$release = ModelFactory::build('Release');
+			$release = $this->persistence->build('Release');
 			$release->setAddon($addon->getId());
 
 			$errors = array();
@@ -335,7 +335,7 @@ class Edit extends Presenter {
 			}
 			$this->context['version'] = $version;
 
-			if(ModelFactory::build('Release')->byVersion($version, $addon->getId()) !== null) {
+			if($this->persistence->build('Release')->byVersion($version, $addon->getId()) !== null) {
 				$errors[] = gettext('Version already exists.');
 			}
 

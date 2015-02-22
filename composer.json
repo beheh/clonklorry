@@ -14,14 +14,18 @@
 		"swiftmailer/swiftmailer": "~5.3",
 		"lightopenid/lightopenid": "~0.7",
 		"league/oauth2-client": "~0.7",
-		"analog/analog": "~1.0.4-stable",
+		"psr/log": "~1.0",
+		"monolog/monolog": "~1.12",
 		"symfony/yaml": "~2.6",
 		"symfony/console": "~2.6",
         "vend/resque": "~2.1",
 		"predis/predis": "~1.0",
 		"aura/sqlquery": "~2.1",
 		"aws/aws-sdk-php": "~2",
-		"league/flysystem": "~1.0"
+		"league/flysystem": "~1.0",
+		"container-interop/container-interop": "~1.0",
+		"mnapoli/php-di": "~4.0",
+		"symfony/http-foundation": "~2.6"
     },
 	"suggest": {
 		"ext-gettext": "Localisation",

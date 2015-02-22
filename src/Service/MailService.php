@@ -2,14 +2,15 @@
 
 namespace Lorry\Service;
 
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Email;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
-use Analog\Analog;
 use Exception;
 
-class MailService {
+class MailService extends Service {
 
 	/**
 	 *
@@ -17,17 +18,15 @@ class MailService {
 	 */
 	protected $config;
 
-	public function setConfigService(ConfigService $config) {
-		$this->config = $config;
-	}
-
 	/**
 	 *
 	 * @var \Lorry\Service\LocalisationService
 	 */
 	protected $localisation;
 
-	public function setLocalisationService(LocalisationService $localisation) {
+	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, LocalisationService $localisation) {
+		parent::__construct($loggerFactory);
+		$this->config = $config;
 		$this->localisation = $localisation;
 	}
 
@@ -72,13 +71,12 @@ class MailService {
 			$message->setReplyTo($replyto);
 		}
 
-		Analog::debug('sending mail with content: '.$body);
+		$this->logger->info('sending "'.get_class($email).'" email to "'.$email->getRecipent().'"');
 
 		try {
 			return $this->mailer->send($message);
-		}
-		catch(Exception $ex) {
-			Analog::error('error sending mail: '.$ex->getMessage());
+		} catch(Exception $ex) {
+			$this->logger->error('error sending "'.get_class($email).'" email to "'.$email->getRecipent().'"');
 			return false;
 		}
 	}

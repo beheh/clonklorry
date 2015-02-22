@@ -11,7 +11,7 @@ use Lorry\Service\LocalisationService;
 class Profile extends Presenter {
 
 	public function get($username) {
-		$user = ModelFactory::build('User')->byUsername($username);
+		$user = $this->persistence->build('User')->byUsername($username);
 		if(!$user) {
 			throw new FileNotFoundException('user '.$username);
 		}
@@ -48,7 +48,7 @@ class Profile extends Presenter {
 				'url' => sprintf($this->config->get('github/url'), urlencode($user->getGithub())));
 		}
 
-		$releases = ModelFactory::build('Release')->all()->byOwner($user->getId());
+		$releases = $this->persistence->build('Release')->all()->byOwner($user->getId());
 		$this->context['addons'] = array();
 		foreach($releases as $release) {
 			$addon = $release->fetchAddon();
@@ -66,7 +66,7 @@ class Profile extends Presenter {
 			$this->context['addons'][] = $user_addon;
 		}
 
-		$comments = ModelFactory::build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
+		$comments = $this->persistence->build('Comment')->all()->order('timestamp', true)->byOwner($user->getId());
 		$this->context['comments'] = array();
 		foreach($comments as $comment) {
 			$user_comment = array();

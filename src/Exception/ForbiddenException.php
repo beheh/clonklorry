@@ -6,7 +6,7 @@ use Lorry\Exception;
 
 class ForbiddenException extends Exception {
 	public function getPresenter() {
-		return 'Error\Forbidden';
+		return 'Lorry\Presenter\Error\Forbidden';
 	}
 
 	public function getApiType() {

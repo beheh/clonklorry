@@ -2,7 +2,6 @@
 
 namespace Lorry\Presenter\Account;
 
-use Analog\Analog;
 use Lorry\Presenter;
 use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
@@ -68,9 +67,9 @@ class Register extends Presenter {
 			$oauth = $_SESSION['register_oauth'];
 		}
 
-		$user = ModelFactory::build('User');
+		$user = $this->persistence->build('User');
 
-		if(ModelFactory::build('User')->byUsername($username)) {
+		if($this->persistence->build('User')->byUsername($username)) {
 			$errors[] = gettext('Username already taken.');
 		} else {
 			try {
@@ -80,7 +79,7 @@ class Register extends Presenter {
 			}
 		}
 
-		if($email && ModelFactory::build('User')->byEmail($email)) {
+		if($email && $this->persistence->build('User')->byEmail($email)) {
 			$errors[] = sprintf(gettext('Email address is already in use.'));
 		} else {
 			try {
@@ -109,7 +108,7 @@ class Register extends Presenter {
 		if(empty($errors)) {
 			$user->setRegistration(time());
 			if($user->save()) {
-				Analog::info('adding user "'.$user->getUsername().'"');
+				$this->notice('creating user "'.$user->getUsername().'"');
 				try {
 					$this->job->submit('Welcome', array('user' => $user->getId()));
 				}

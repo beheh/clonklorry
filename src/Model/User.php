@@ -17,8 +17,12 @@ class User extends Model {
 	const FLAG_CODER = 8;
 	const FLAG_REPORTER = 16;
 
-	public function __construct() {
-		parent::__construct('user', array(
+	public function getTable() {
+		return 'user';
+	}
+
+	public function getSchema() {
+		return array(
 			'username' => 'string(3,16)',
 			'secret' => 'string(255)',
 			'password' => 'string(255)',
@@ -33,7 +37,7 @@ class User extends Model {
 			'counter' => 'int',
 			'oauth-openid' => 'string(255)',
 			'oauth-google' => 'string(255)',
-			'oauth-facebook' => 'string(255)'));
+			'oauth-facebook' => 'string(255)');
 	}
 
 	public function setUsername($username) {

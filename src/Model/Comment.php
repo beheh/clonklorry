@@ -6,11 +6,15 @@ use Lorry\Model;
 
 class Comment extends Model {
 
-	public function __construct() {
-		parent::__construct('comment', array(
+	public function getTable() {
+		return 'comment';
+	}
+
+	public function getSchema() {
+		return array(
 			'owner' => 'int',
 			'content' => 'text',
-			'timestamp' => 'int'));
+			'timestamp' => 'int');
 	}
 
 	public function setOwner($owner) {

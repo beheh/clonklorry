@@ -17,7 +17,7 @@ abstract class UserEmailJob extends EmailJob {
 	}
 	
 	public function prepareEmail(Email $email, $args) {
-		$user = ModelFactory::build('User')->byId($args['user']);
+		$user = $this->persistence->build('User')->byId($args['user']);
 		$this->user = $user;
 		$this->localisation->silentLocalize($user->getLanguage());
 		$email->setUsername($user->getUsername());

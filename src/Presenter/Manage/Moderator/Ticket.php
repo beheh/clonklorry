@@ -9,8 +9,8 @@ use Lorry\EmailFactory;
 
 class Ticket extends Presenter {
 
-	public static function getTicket($id) {
-		$ticket = ModelFactory::build('Ticket')->byId($id);
+	public static function getTicket($persistence, $id) {
+		$ticket = $persistence->build('Ticket')->byId($id);
 		if(!$ticket) {
 			throw new FileNotFoundException();
 		}
@@ -22,7 +22,7 @@ class Ticket extends Presenter {
 		$this->offerIdentification();
 		$this->security->requireIdentification();
 
-		$ticket = $this->getTicket($id);
+		$ticket = self::getTicket($this->persistence, $id);
 		$this->context['number'] = $ticket->getId();
 		$this->context['message'] = $ticket->getMessage();
 		$this->context['acknowledged'] = $ticket->isAcknowledged();
@@ -46,7 +46,7 @@ class Ticket extends Presenter {
 
 		$this->security->requireValidState();
 
-		$ticket = $this->getTicket($id);
+		$ticket = self::getTicket($this->persistence, $id);
 		
 		if(!$ticket->isEscalated() && !$ticket->isAcknowledged()) {
 			$staff = $this->session->getUser();

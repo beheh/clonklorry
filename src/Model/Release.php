@@ -3,20 +3,23 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
-use Lorry\ModelFactory;
 
 class Release extends Model {
 
-	public function __construct() {
-		parent::__construct('release', array(
-			'addon' => 'int',
-			'version' => 'string',
-			'timestamp' => 'datetime',
-			'ready' => 'boolean',
-			'shipping' => 'boolean',
-			'assetsecret' => 'string',
-			'changelog' => 'text',
-			'whatsnew' => 'text'));
+	public function getTable() {
+		return 'release';
+	}
+
+	public function getSchema() {
+		return array(
+		'addon' => 'int',
+		'version' => 'string',
+		'timestamp' => 'datetime',
+		'ready' => 'boolean',
+		'shipping' => 'boolean',
+		'assetsecret' => 'string',
+		'changelog' => 'text',
+		'whatsnew' => 'text');
 	}
 
 	public final function setAddon($addon) {
@@ -39,21 +42,23 @@ class Release extends Model {
 	}
 
 	public final function byGame($game) {
-		$addons = ModelFactory::build('Addon')->all()->byGame($game);
+		$addons = $this->persistence->build('Addon')->all()->byGame($game);
 		$releases = array();
 		foreach($addons as $addon) {
-			$release = ModelFactory::build('Release')->latest($addon->getId());
-			if($release) $releases[] = $release;
+			$release = $this->persistence->build('Release')->latest($addon->getId());
+			if($release)
+				$releases[] = $release;
 		}
 		return $releases;
 	}
 
 	public final function byOwner($owner) {
-		$addons = ModelFactory::build('Addon')->all()->byOwner($owner);
+		$addons = $this->persistence->build('Addon')->all()->byOwner($owner);
 		$releases = array();
 		foreach($addons as $addon) {
-			$release = ModelFactory::build('Release')->latest($addon->getId());
-			if($release) $releases[] = $release;
+			$release = $this->persistence->build('Release')->latest($addon->getId());
+			if($release)
+				$releases[] = $release;
 		}
 		return $releases;
 	}
@@ -134,11 +139,11 @@ class Release extends Model {
 	}
 
 	public function fetchRequirements() {
-		return ModelFactory::build('Dependency')->all()->byRelease($this->getId());
+		return $this->persistence->build('Dependency')->all()->byRelease($this->getId());
 	}
 
 	public function fetchDependencies() {
-		return ModelFactory::build('Dependency')->all()->byRequired($this->getId());
+		return $this->persistence->build('Dependency')->all()->byRequired($this->getId());
 	}
 
 	public function onInsert() {
@@ -148,11 +153,11 @@ class Release extends Model {
 	public function getAssetSecret() {
 		return $this->getValue('assetsecret');
 	}
-	
+
 	public function setShipping($shipping) {
 		$this->setValue('shipping', $shipping);
 	}
-	
+
 	public function isShipping() {
 		return $this->getValue('shipping');
 	}

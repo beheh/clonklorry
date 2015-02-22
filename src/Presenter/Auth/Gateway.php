@@ -81,6 +81,7 @@ class Gateway extends Presenter {
 			}
 		} catch(AuthentificationFailedException $exception) {
 			if($this->session->authenticated()) {
+				$this->logger->error($exception);
 				return $this->redirect('/settings?update-oauth=failed#oauth');
 			}
 			throw $exception;

@@ -13,7 +13,7 @@ class Portal extends Presenter {
 		$this->offerIdentification();
 		$this->security->requireIdentification();
 
-		$game_objects = ModelFactory::build('Game')->byAnything();
+		$game_objects = $this->persistence->build('Game')->byAnything();
 		$games = array();
 		foreach($game_objects as $game) {
 			$games[$game->getId()] = $game->forPresenter();
@@ -21,7 +21,7 @@ class Portal extends Presenter {
 		$this->context['games'] = $games;
 		
 		$addons = array();
-		foreach(ModelFactory::build('Addon')->bySubmittedForApproval() as $addon) {
+		foreach($this->persistence->build('Addon')->bySubmittedForApproval() as $addon) {
 			$result = array(
 				'addon' => 
 					array('id' => $addon->getId(),
@@ -39,7 +39,7 @@ class Portal extends Presenter {
 		$this->context['addons'] = $addons;
 		
 		$tickets = array();
-		foreach(ModelFactory::build('Ticket')->byNew() as $ticket) {
+		foreach($this->persistence->build('Ticket')->byNew() as $ticket) {
 			$result = array(
 				'id' => $ticket->getId(),
 				'submitted' => date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $ticket->getSubmitted()),

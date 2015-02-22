@@ -3,11 +3,10 @@
 namespace Lorry\Presenter\Site;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 
 class Front extends Presenter {
 	public function get() {
-		$release = ModelFactory::build('Release')->all()->order('timestamp', true)->byAnything();
+		$release = $this->persistence->build('Release')->all()->order('timestamp', true)->byAnything();
 		$addons = array();
 		foreach($release as $release) {
 			if(!$release->isReleased()) continue;

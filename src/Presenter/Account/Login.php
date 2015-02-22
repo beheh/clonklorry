@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 
 class Login extends Presenter {
 
@@ -63,7 +62,7 @@ class Login extends Presenter {
 			// login by email token
 			$this->context['email_focus'] = true;
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-			$user = ModelFactory::build('User')->byEmail($email);
+			$user = $this->persistence->build('User')->byEmail($email);
 			$reset = filter_input(INPUT_POST, 'reset_password', FILTER_VALIDATE_BOOLEAN) || false;
 			if($user) {
 				try {
@@ -90,10 +89,10 @@ class Login extends Presenter {
 			$this->context['username'] = $username;
 			// set remember checkmark to persist after post
 			$this->context['remember'] = $remember;
-			$user = ModelFactory::build('User')->byUsername($username);
+			$user = $this->persistence->build('User')->byUsername($username);
 			if(!$user) {
 				// try email address instead
-				$user = ModelFactory::build('User')->byEmail($username);
+				$user = $this->persistence->build('User')->byEmail($username);
 			}
 			if($user) {
 				$this->context['username_exists'] = true;

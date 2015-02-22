@@ -7,7 +7,7 @@ use Lorry\Exception;
 class FileNotFoundException extends Exception {
 
 	public function getPresenter() {
-		return 'Error\FileNotFound';
+		return 'Lorry\Presenter\Error\FileNotFound';
 	}
 
 	public function getApiType() {

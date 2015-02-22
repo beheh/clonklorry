@@ -6,10 +6,14 @@ use Lorry\Model;
 
 class Dependency extends Model {
 
-	public function __construct() {
-		parent::__construct('dependency', array(
+	public function getTable() {
+		return 'dependency';
+	}
+
+	public function getSchema() {
+		return array(
 			'release' => 'int',
-			'requires' => 'int'));
+			'requires' => 'int');
 	}
 
 	public function setRelease($release) {

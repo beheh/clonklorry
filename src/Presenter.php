@@ -2,7 +2,9 @@
 
 namespace Lorry;
 
+use Psr\Log\LoggerInterface;
 use Lorry\Service\ConfigService;
+use Lorry\Service\PersistenceService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Lorry\Service\SessionService;
@@ -16,13 +18,21 @@ abstract class Presenter {
 
 	/**
 	 *
+	 * @var \Psr\Log\LoggerInterface
+	 */
+	protected $logger;
+
+	/**
+	 *
 	 * @var \Lorry\Service\ConfigService
 	 */
 	protected $config;
 
-	public final function setConfigService(ConfigService $config) {
-		$this->config = $config;
-	}
+	/**
+	 *
+	 * @var \Lorry\Service\PersistenceService
+	 */
+	protected $persistence;
 
 	/**
 	 *
@@ -30,19 +40,11 @@ abstract class Presenter {
 	 */
 	protected $localisation;
 
-	public final function setLocalisationService(LocalisationService $localisation) {
-		$this->localisation = $localisation;
-	}
-
 	/**
 	 *
 	 * @var \Lorry\Service\SecurityService
 	 */
 	protected $security;
-
-	public final function setSecurityService(SecurityService $security) {
-		$this->security = $security;
-	}
 
 	/**
 	 *
@@ -50,19 +52,11 @@ abstract class Presenter {
 	 */
 	protected $session;
 
-	public final function setSessionService(SessionService $session) {
-		$this->session = $session;
-	}
-
 	/**
 	 *
 	 * @var \Lorry\Service\MailService
 	 */
 	protected $mail;
-
-	public final function setMailService(MailService $mail) {
-		$this->mail = $mail;
-	}
 
 	/**
 	 *
@@ -70,18 +64,22 @@ abstract class Presenter {
 	 */
 	protected $job;
 
-	public final function setJobService(JobService $job) {
-		$this->job = $job;
-	}
-
 	/**
 	 *
 	 * @var \Twig_Environment;
 	 */
 	protected $twig;
 
-	public final function setTwig(Twig_Environment $twig) {
-		$this->twig = $twig;
+	public function __construct(LoggerInterface $logger, ConfigService $config, PersistenceService $persistence, LocalisationService $localisation, SecurityService $security, SessionService $session, MailService $mail, JobService $job, Twig_Environment $template) {
+		$this->logger = $logger;
+		$this->config = $config;
+		$this->persistence = $persistence;
+		$this->localisation = $localisation;
+		$this->security = $security;
+		$this->session = $session;
+		$this->mail = $mail;
+		$this->job = $job;
+		$this->twig = $template;
 	}
 
 	/**
@@ -165,7 +163,8 @@ abstract class Presenter {
 		if(isset($_POST['return'])) {
 			$this->context['return'] = filter_input(INPUT_POST, 'return');
 		} else {
-			$this->context['return'] = Router::getPath();
+			// @todo
+			//$this->context['return'] = $request->getPathInfo();
 		}
 
 		$this->context['password'] = false;
@@ -178,4 +177,5 @@ abstract class Presenter {
 		$this->display('account/identify.twig');
 		throw new OutputCompleteException;
 	}
+
 }

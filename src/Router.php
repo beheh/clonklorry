@@ -2,60 +2,57 @@
 
 namespace Lorry;
 
+use Interop\Container\ContainerInterface;
+use Psr\Log\LoggerInterface;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\OutputCompleteException;
+use Symfony\Component\HttpFoundation\Request;
 
-abstract class Router {
+class Router {
 
-	private static $routes = array();
+	/**
+	 *
+	 * @var \Psr\Log\LoggerInterface
+	 */
+	protected $logger;
 
-	public function __construct() {
+	/**
+	 *
+	 * @var \Interop\Container\ContainerInterface
+	 */
+	protected $container;
 
+	public function __construct(LoggerInterface $logger, ContainerInterface $container) {
+		$this->logger = $logger;
+		$this->container = $container;
 	}
 
-	public static function addRoutes($route) {
-		self::$routes = array_merge($route, self::$routes);
+	private $routes = array();
+
+	public function addRoutes($route) {
+		$this->routes = array_merge($route, $this->routes);
 	}
 
-	private static $matches;
+	private $matches;
 
-	public static function getMatches() {
-		return self::$matches;
+	public function getMatches() {
+		return $this->matches;
 	}
 
-	public static function getPath() {
-		$path = '';
-		$path_info = filter_input(INPUT_SERVER, 'PATH_INFO');
-		if($path_info) {
-			// fallback if no mod_rewrite
-			$path = $path_info;
-		} else {
-			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
-			// don't pass get parameters
-			if(strpos($request_uri, '?') !== false) {
-				$request_uri = substr($request_uri, 0, strpos($request_uri, '?'));
-			}
-			// filter out prefix directory if exists
-			$base = filter_input(INPUT_SERVER, 'BASE');
-			if($base) {
-				$path = substr($request_uri, strlen($base));
-			} else {
-				$path = $request_uri;
-			}
-		}
-		$path = trim($path);
-		if(!$path) {
-			$path = '/';
-		}
-		return $path;
+	protected $prefix;
+
+	public function setPrefix($prefix) {
+		$prefix = rtrim($prefix, '\\');
+		$prefix .= '\\';
+		$this->prefix = $prefix;
 	}
 
 	/**
 	 * Returns the presenter matching to the request.
-	 * @return \Lorry\Presenter
+	 * @return string
 	 */
-	public static function route() {
-		$path = self::getPath();
+	public function route(Request $request) {
+		$path = $request->getPathInfo();
 
 		if($path != '/' && substr($path, strlen($path) - 1, 1) == '/') {
 			$request_uri = filter_input(INPUT_SERVER, 'REQUEST_URI');
@@ -70,16 +67,17 @@ abstract class Router {
 			':version' => '([a-zA-Z0-9-.]+)'
 		);
 
-		foreach(self::$routes as $pattern => $presenter) {
+		foreach($this->routes as $pattern => $presenter) {
 			$pattern = strtr($pattern, $tokens);
 			if(preg_match('#^/?'.$pattern.'/?$#', $path, $matches)) {
 				unset($matches[0]);
-				self::$matches = $matches;
-				return PresenterFactory::build($presenter);
+				$this->matches = $matches;
+				$this->logger->debug('matched route to '.$presenter);
+				return $this->prefix.$presenter;
 			}
 		}
 
-		throw new FileNotFoundException('no matching presenter for path "'.$path.'"');
+		throw new FileNotFoundException('no match for path "'.$path.'"');
 	}
 
 }

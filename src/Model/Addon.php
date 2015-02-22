@@ -3,13 +3,16 @@
 namespace Lorry\Model;
 
 use Lorry\Model;
-use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Addon extends Model {
 
-	public function __construct() {
-		parent::__construct('addon', array(
+	public function getTable() {
+		return 'addon';
+	}
+
+	public function getSchema() {
+		return array(
 			'owner' => 'string',
 			'short' => 'string',
 			'title_en' => 'string',
@@ -24,7 +27,7 @@ class Addon extends Model {
 			'forum' => 'url',
 			'proposed_short' => 'string',
 			'approval_submit' => 'datetime',
-			'approval_comment' => 'text'));
+			'approval_comment' => 'text');
 	}
 
 	public function setOwner($owner) {
@@ -227,7 +230,6 @@ class Addon extends Model {
 		return $this->getValue('forum');
 	}
 
-
 	public function isApproved() {
 		return $this->getShort() !== null;
 	}
@@ -313,7 +315,7 @@ class Addon extends Model {
 	}
 
 	public function __toString() {
-		return $this->getTitle() . '';
+		return $this->getTitle().'';
 	}
 
 	public function forApi($detailed = false) {
@@ -331,11 +333,11 @@ class Addon extends Model {
 		}
 
 		$dependencies = array();
-		foreach(ModelFactory::build('Release')->all()->byRelease($this->getId()) as $dependency) {
+		foreach($this->persistence->build('Release')->all()->byRelease($this->getId()) as $dependency) {
 			$dependencies[] = $dependency->fetchRequires()->getId();
 		}
 		$result['dependencies'] = $dependencies;
-		
+
 		return $result;
 	}
 

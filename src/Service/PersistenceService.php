@@ -2,27 +2,41 @@
 
 namespace Lorry\Service;
 
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 use PDO;
 use RuntimeException;
 use InvalidArgumentException;
 use PDOException;
 use Lorry\Model;
 use Aura\SqlQuery\QueryFactory;
-use Analog\Analog;
+use Interop\Container\ContainerInterface;
 
-class PersistenceService {
+class PersistenceService extends Service {
 
 	/**
 	 *
 	 * @var ConfigService
 	 */
 	protected $config;
-	protected $cache;
 
-	public function setConfigService(ConfigService $config) {
+	/**
+	 *
+	 * @var \Interop\Container\ContainerInterface
+	 */
+	protected $container;
+
+	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, ContainerInterface $container) {
+		parent::__construct($loggerFactory);
 		$this->config = $config;
-		$this->cache = array();
+		$this->container = $container;
 	}
+
+	public function getLogChannel() {
+		return 'persistence';
+	}
+
+	protected $cache;
 
 	/**
 	 *
@@ -46,9 +60,17 @@ class PersistenceService {
 			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->factory = new QueryFactory(strstr($dsn, ':', true));
 		} catch(PDOException $ex) {
-			// catch the pdo exception to prevent credential leaking
+			// catch the pdo exception to prevent credential leaking (either logs or debug frontend)
 			throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
 		}
+	}
+
+	public function build($model) {
+		$model = '\\Lorry\\Model\\'.$model;
+		if(!class_exists($model)) {
+			throw new RuntimeException('unknown model "'.$model.'"');
+		}
+		return new $model($this->config, $this);
 	}
 
 	/**
@@ -148,7 +170,7 @@ class PersistenceService {
 		$query->where('id = :id');
 		$query->bindValue('id', $model->getId());
 
-		Analog::debug('updating a '.get_class($model).' model, changes are '.print_r($changes, true));
+		$this->logger->info('updating a '.get_class($model).' model, changes are '.print_r($changes, true));
 
 		$statement = $this->connection->prepare($query->__toString());
 		$statement->execute($query->getBindValues());
@@ -177,7 +199,7 @@ class PersistenceService {
 
 		$query->cols($values);
 
-		Analog::debug('inserting a '.get_class($model).' model, values are '.print_r($values, true));
+		$this->logger->info('inserting a '.get_class($model).' model, values are '.print_r($values, true));
 
 		$statement = $this->connection->prepare($query->__toString());
 		$statement->execute($query->getBindValues());

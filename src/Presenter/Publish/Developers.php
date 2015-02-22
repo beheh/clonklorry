@@ -9,7 +9,7 @@ use Lorry\Exception\ModelValueInvalidException;
 class Developers extends Presenter {
 
 	public function get() {
-		$games = ModelFactory::build('Game')->all()->byAnything();
+		$games = $this->persistence->build('Game')->all()->byAnything();
 		$this->context['games'] = array();
 		foreach($games as $game) {
 			$this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
@@ -54,7 +54,7 @@ class Developers extends Presenter {
 		$errors = array();
 
 
-		$addon = ModelFactory::build('Addon');
+		$addon = $this->persistence->build('Addon');
 
 		$addon->setOwner($user->getId());
 
@@ -76,7 +76,7 @@ class Developers extends Presenter {
 		}
 
 		try {
-			$game = ModelFactory::build('Game')->byShort(filter_input(INPUT_POST, 'game'));
+			$game = $this->persistence->build('Game')->byShort(filter_input(INPUT_POST, 'game'));
 			if(!$game) {
 				throw new ModelValueInvalidException('invalid');
 			}
@@ -86,7 +86,7 @@ class Developers extends Presenter {
 			$errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
 		}
 
-		$existing = ModelFactory::build('Addon')->all()->byTitle($title, $user->getId(), $game->getId());
+		$existing = $this->persistence->build('Addon')->all()->byTitle($title, $user->getId(), $game->getId());
 		if(count($existing) > 0) {
 			$errors[] = gettext('You have already created an addon with this title for this game.');
 			$this->context['focus_title'] = true;

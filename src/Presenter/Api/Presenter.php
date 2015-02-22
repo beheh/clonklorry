@@ -4,7 +4,6 @@ namespace Lorry\Presenter\Api;
 
 use Lorry\Presenter as LorryPresenter;
 use Lorry\Exception;
-use Analog\Analog;
 
 class Presenter extends LorryPresenter {
 
@@ -25,7 +24,7 @@ class Presenter extends LorryPresenter {
 			$this->display($error);
 		} catch(\Exception $ex) {
 			$message = get_class($ex).': '.$ex->getMessage().' in '.$ex->getTraceAsString();
-			Analog::error($message);
+			$this->logger->error($message);
 			header('HTTP/1.1 500 Internal Server Error');
 			$error = array('error' => 'internal', 'message' => 'internal error');
 			$this->display($error);

@@ -11,7 +11,7 @@ class Table extends Presenter {
 	public function get() {
 		$this->security->requireLogin();
 		
-		$users = ModelFactory::build('User');
+		$users = $this->persistence->build('User');
 
 		$filter = filter_input(INPUT_GET, 'filter');
 		if($filter) {

@@ -31,7 +31,7 @@ class Contact extends Presenter {
 			$user = $this->session->getUser();
 		}
 
-		$ticket = ModelFactory::build('Ticket');
+		$ticket = $this->persistence->build('Ticket');
 
 		$errors = array();
 
@@ -48,7 +48,7 @@ class Contact extends Presenter {
 		}
 
 		if(empty($errors)) {
-			$existing = ModelFactory::build('Ticket')->byHash($ticket->getHash());
+			$existing = $this->persistence->build('Ticket')->byHash($ticket->getHash());
 			if($existing) {
 				$errors[] = gettext('This message has already been sent.');
 			}

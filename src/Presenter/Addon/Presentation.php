@@ -9,14 +9,14 @@ use Lorry\Exception\FileNotFoundException;
 class Presentation extends Presenter {
 
 	public function get($gamename, $addonname, $version = 'latest') {
-		$game = ModelFactory::build('Game')->byShort($gamename);
+		$game = $this->persistence->build('Game')->byShort($gamename);
 		if(!$game) {
 			throw new FileNotFoundException('game '.$gamename);
 		}
 
-		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
+		$addon = $this->persistence->build('Addon')->byShort($addonname, $game->getId());
 		if(!$addon) {
-			$addon = ModelFactory::build('Addon')->byAbbreviation($addonname, $game->getId());
+			$addon = $this->persistence->build('Addon')->byAbbreviation($addonname, $game->getId());
 			if($addon) {
 				return $this->redirect('/addons/'.$game->getShort().'/'.$addon->getShort());
 			}
@@ -24,9 +24,9 @@ class Presentation extends Presenter {
 		}
 
 		if($version == 'latest') {
-			$release = ModelFactory::build('Release')->latest($addon->getId());
+			$release = $this->persistence->build('Release')->latest($addon->getId());
 		} else {
-			$release = ModelFactory::build('Release')->byVersion($version, $addon->getId());
+			$release = $this->persistence->build('Release')->byVersion($version, $addon->getId());
 		}
 		if(!$release || !$release->isScheduled()) {
 			throw new FileNotFoundException('release with version '.$version);
@@ -38,7 +38,7 @@ class Presentation extends Presenter {
 		$this->context['addon'] = array('id' => $addon->getId(), 'title' => $addon->getTitle(), 'short' => $addon->getShort());
 
 
-		$owner = ModelFactory::build('User')->byId($addon->getOwner());
+		$owner = $this->persistence->build('User')->byId($addon->getOwner());
 
 		if($owner) {
 			$this->context['developer'] = array('name' => $owner->getUsername(), 'url' => $owner->getProfileUrl());

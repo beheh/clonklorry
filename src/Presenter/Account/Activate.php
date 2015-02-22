@@ -11,7 +11,7 @@ use Lorry\Exception\BadRequestException;
 class Activate extends Presenter {
 
 	public function get($username) {
-		$user = ModelFactory::build('User')->byUsername($username);
+		$user = $this->persistence->build('User')->byUsername($username);
 		if(!$user) {
 			throw new FileNotFoundException('user '.$username);
 		}

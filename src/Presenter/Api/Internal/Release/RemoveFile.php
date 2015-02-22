@@ -8,7 +8,6 @@ use Lorry\Exception\FileNotFoundException;
 use Lorry\Environment;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local as LocalAdapter;
-use Analog\Analog;
 use RuntimeException;
 
 class RemoveFile extends Presenter {
@@ -58,7 +57,7 @@ class RemoveFile extends Presenter {
 			throw new RuntimeException('unknown filetype at '.$filename);
 		}
 
-		Analog::info('removed file "'.$filename.'" for "'.$user->getUsername().'"');
+		$this->logger->info('removed file "'.$filename.'" for "'.$user->getUsername().'"');
 
 		$this->display(array('file' => 'removed'));
 	}

@@ -11,7 +11,6 @@ use LightOpenID;
 use ErrorException;
 use League\OAuth2\Client\Provider\Google;
 use League\OAuth2\Client\Provider\Facebook;
-use Analog\Analog;
 
 class Callback extends Presenter {
 
@@ -115,7 +114,6 @@ class Callback extends Presenter {
 			}
 		} catch(AuthentificationFailedException $exception) {
 			if($this->session->authenticated()) {
-				Analog::error(get_class($exception).': '.$exception->getMessage());
 				return $this->redirect('/settings?update-oauth=failed#oauth');
 			}
 			throw $exception;
@@ -126,7 +124,7 @@ class Callback extends Presenter {
 			unset($_SESSION['returnto']);
 
 			// test, if other user has already used this uid
-			$test_user = ModelFactory::build('User')->byOauth($provider, $uid);
+			$test_user = $this->persistence->build('User')->byOauth($provider, $uid);
 			if($test_user) {
 				$this->redirect('/settings?update-oauth=duplicate#oauth');
 				return;
@@ -141,7 +139,7 @@ class Callback extends Presenter {
 			return;
 		} else {
 			// grab user with openid data fitting
-			$user = ModelFactory::build('User')->byOauth($provider, $uid);
+			$user = $this->persistence->build('User')->byOauth($provider, $uid);
 
 			if($user instanceof User) {
 				$url = '/';
@@ -152,7 +150,7 @@ class Callback extends Presenter {
 				$this->redirect($url.'#');
 				return;
 			} else {
-				$user = ModelFactory::build('User')->byEmail($email);
+				$user = $this->persistence->build('User')->byEmail($email);
 				if($user instanceof User) {
 					$this->redirect('/login?unknown-oauth&returnto=/settings#');
 					return;

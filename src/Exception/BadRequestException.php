@@ -7,7 +7,7 @@ use Lorry\Exception;
 class BadRequestException extends Exception {
 
 	public function getPresenter() {
-		return 'Error\BadRequest';
+		return 'Lorry\Presenter\Error\BadRequest';
 	}
 
 }

@@ -4,7 +4,6 @@ namespace Lorry\Presenter\Api;
 
 use Lorry\Presenter\Api\Presenter;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\ModelFactory;
 
 class Game extends Presenter {
 
@@ -13,12 +12,12 @@ class Game extends Presenter {
 			throw new FileNotFoundException(sprintf(gettext('This endpoint does not support api version %d.'), $api_version));
 		}
 
-		$game = ModelFactory::build('Game')->byShort($name);
+		$game = $this->persistence->build('Game')->byShort($name);
 		if(!$game) {
 			throw new FileNotFoundException(gettext('Game does not exist.'));
 		}
 
-		$query = ModelFactory::build('Release')->all();
+		$query = $this->persistence->build('Release')->all();
 
 		$releases = $query->byGame($game->getId());
 

@@ -9,7 +9,6 @@ use Lorry\Model\Addon;
 use Lorry\Model\Release;
 use Lorry\Model\User;
 use RuntimeException;
-use Analog\Analog;
 
 class UploadFile extends Presenter {
 
@@ -46,7 +45,7 @@ class UploadFile extends Presenter {
 		// the size of the last part is between chunkSize and 2*$chunkSize
 		if($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
 
-			Analog::info('attempting to assemble file "'.$file_name.'"');
+			$this->logger->info('attempting to assemble file "'.$file_name.'"');
 			
 			// create the final destination file
 			$final = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release).'/'.$file_name;
@@ -55,7 +54,7 @@ class UploadFile extends Presenter {
 					fwrite($fp, file_get_contents($chunk_directory.'/'.$file_name.'.part'.$i));
 				}
 				fclose($fp);
-				Analog::info('uploaded file "'.$file_name.'" for "'.$user->getUsername().'"');
+				$this->logger->info('uploaded file "'.$file_name.'" for "'.$user->getUsername().'"');
 			} else {
 				throw new RuntimeException('could not create final file at '.$final);
 			}

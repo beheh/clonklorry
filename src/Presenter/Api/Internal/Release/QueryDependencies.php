@@ -13,8 +13,8 @@ class QueryDependencies extends Presenter {
 		}
 
 		$user = $this->session->getUser();
-		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
-		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
+		$addon = \Lorry\Presenter\Publish\Edit::getAddon($this->persistence, $id, $user);
+		$release = \Lorry\Presenter\Publish\Release::getRelease($this->persistence, $addon->getId(), $version);
 
 		$dependencies = array();
 

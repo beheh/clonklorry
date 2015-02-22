@@ -2,143 +2,130 @@
 
 namespace Lorry;
 
-use Analog\Analog;
 use Lorry\Exception\NotImplementedException;
+use Psr\Log\LogLevel;
+use Interop\Container\ContainerInterface;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
+use Lorry\Router;
+use Lorry\Service\ConfigService;
+use Lorry\Logger\MonologLoggerFactory;
 
 class Environment {
-
-	/**
-	 * @var \Lorry\Service\ConfigService;
-	 */
-	private $config;
-
-	/**
-	 * @var \Lorry\Service\PersistenceService;
-	 */
-	private $persistence;
-
-	/**
-	 * @var \Lorry\Service\LocalisationService;
-	 */
-	private $localisation;
-
-	/**
-	 * @var \Twig_Environment
-	 */
-	private $twig;
-
-	/**
-	 * @var \Lorry\Service\SecurityService;
-	 */
-	private $security;
-
-	/**
-	 * @var \Lorry\Service\SecurityService;
-	 */
-	private $mail;
-
-	/**
-	 * @var \Lorry\Service\JobService;
-	 */
-	private $job;
-
-	/**
+	/*
 	 * @var 
 	 */
+
 	const PROJECT_ROOT = __DIR__.'/..';
 
+	/**
+	 *
+	 * @var \Psr\Log\LoggerInterface
+	 */
+	protected $logger;
+
+	/**
+	 *
+	 * @var \Interop\Container\ContainerInterface
+	 */
+	protected $container;
+
 	public function setup() {
-		$config = new Service\ConfigService();
-		$loglevel = $config->get('debug') ? Analog::DEBUG : Analog::INFO;
-		Analog::handler(\Analog\Handler\Threshold::init(
-						\Analog\Handler\File::init(self::PROJECT_ROOT.'/logs/lorry.log'), $loglevel
-		));
-		$this->config = $config;
+		$loggerFactory = new MonologLoggerFactory();
+		$this->logger = $loggerFactory->build('environment');
+		$this->logger->info('starting up');
 
-		// error handling
+		$config = new ConfigService($loggerFactory);
+
+		$builder = new \DI\ContainerBuilder();
+
+		if(!$config->get('debug') && function_exists('apc_store')) {
+			$cache = new \Doctrine\Common\Cache\ApcCache();
+			$cache->setNamespace($config->get('brand'));
+			$builder->setDefinitionCache($cache);
+		}
+
+		$container = $builder->build();
+		$container->set('Lorry\\Service\\ConfigService', $config);
+		$this->container = $container;
+
 		error_reporting(E_ALL ^ E_STRICT);
-		set_error_handler(array('Lorry\Environment', 'handleError'), E_ALL ^ E_STRICT);
-		
-		// persistence
-		$persistence = new Service\PersistenceService();
-		$persistence->setConfigService($config);
-		ModelFactory::setConfigService($config);
-		ModelFactory::setPersistenceService($persistence);
-		$this->persistence = $persistence;
 
-		// localisation
-		$localisation = new Service\LocalisationService();
-		$this->localisation = $localisation;
+		$container->set('Interop\\Container\\ContainerInterface', $container);
+		$container->set('Lorry\\ServiceInterface', \DI\object('Lorry\\Service'));
+		$container->set('Lorry\\Logger\\LoggerFactoryInterface', $loggerFactory);
 
-		// templating
-		$loader = new Twig_Loader_Filesystem(self::PROJECT_ROOT.'/app/templates');
-		$twig = new Twig_Environment($loader, array('cache' => self::PROJECT_ROOT.'/cache/twig', 'debug' => $config->get('debug')));
-		$twig->addExtension(new \Twig_Extension_Escaper(true));
-		$twig->addExtension(new \Twig_Extensions_Extension_I18n());
-		$twig->addGlobal('brand', htmlspecialchars($config->get('brand')));
-		$twig->addGlobal('base', htmlspecialchars($config->get('base')));
-		$twig->addGlobal('resources', htmlspecialchars($config->get('base').'/resources'));
-		$twig->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
-		$twig->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
-		$twig->addGlobal('site_enabled', $config->get('enable/site'));
-		$twig->addGlobal('site_notice', $config->get('notice/text'));
-		$twig->addGlobal('site_notice_class', $config->get('notice/class'));
-		$twig->addGlobal('site_tracking', $config->getTracking());
-		$twig->addGlobal('enable', array('upload' => $config->get('enable/upload')));
+		$container->set('Psr\\Log\\LoggerInterface', \DI\factory(function() use ($loggerFactory) {
+					return $loggerFactory->build('default');
+				}));
+		$container->set('loggerFactory', \DI\link('Lorry\\Logger\\LoggerFactoryInterface'));
+		$container->set('logger', \DI\link('Psr\\Log\\LoggerInterface'));
 
-		$this->twig = $twig;
+		$container->set('config', \DI\link('Lorry\\Service\\ConfigService'));
+		$container->set('persistence', \DI\link('Lorry\\Service\\PersistenceService'));
+		$container->set('localisation', \DI\link('Lorry\\Service\\LocalisationService'));
+		$container->set('mail', \DI\link('Lorry\\Service\\MailService'));
+		$container->set('job', \DI\link('Lorry\\Service\\JobService'));
+		$container->set('session', \DI\link('Lorry\\Service\\SessionService'));
+		$container->set('security', \DI\link('Lorry\\Service\\SecurityService'));
+		$container->set('cdn', \DI\link('Lorry\\Service\\CdnService'));
+		$container->set('router', new Router($loggerFactory->build('router'), $container));
 
-		// security
-		$security = new Service\SecurityService();
-		$security->setConfigService($config);
-		$this->security = $security;
+		$container->set('template', \DI\factory(function() use ($container) {
+					$loader = new Twig_Loader_Filesystem(__DIR__.'/../app/templates');
+					$twig = new Twig_Environment($loader, array('cache' => __DIR__.'/../cache/twig', 'debug' => $container->get('config')->get('debug')));
+					$twig->addExtension(new \Twig_Extension_Escaper(true));
+					$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-		// mail
-		$mail = new Service\MailService();
-		$mail->setConfigService($config);
-		$mail->setLocalisationService($localisation);
-		EmailFactory::setConfigService($config);
-		EmailFactory::setLocalisationService($localisation);
-		EmailFactory::setSecurityService($security);
-		EmailFactory::setTwig($twig);
-		$this->mail = $mail;
+					return $twig;
+				}));
 
-		// jobs
-		$job = new Service\JobService();
-		$job->setConfigService($config);
-		$this->job = $job;
+		$container->set('Twig_Environment', \DI\link('template'));
 
-		// content delivery
-		$cdn = new Service\CdnService();
-		$cdn->setConfigService($config);
-		$this->cdn = $cdn;
+		$config = $container->get('config');
+
+		\Monolog\ErrorHandler::register($loggerFactory->build('errorHandler'));
+
+		$templating = $container->get('template');
+		$templating->addGlobal('brand', htmlspecialchars($config->get('brand')));
+		$templating->addGlobal('base', htmlspecialchars($config->get('base')));
+		$templating->addGlobal('resources', htmlspecialchars($config->get('base').'/resources'));
+		$templating->addGlobal('site_copyright', htmlspecialchars('© '.date('Y')));
+		$templating->addGlobal('site_trademark', '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
+		$templating->addGlobal('site_enabled', $config->get('enable/site'));
+		$templating->addGlobal('site_notice', $config->get('notice/text'));
+		$templating->addGlobal('site_notice_class', $config->get('notice/class'));
+		$templating->addGlobal('site_tracking', $config->getTracking());
+		$templating->addGlobal('enable', array('upload' => $config->get('enable/upload')));
+
+		$this->logger->debug('startup complete');
 	}
 
 	public function handle() {
-		$config = $this->config;
+		$this->logger->info('handling request');
 
-		$session = new Service\SessionService();
+		$request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
+
+		$router = $this->container->get('router');
+		$router->setPrefix('Lorry\\Presenter\\');
 
 		// localize depending on viewer
-		$localisation = $this->localisation;
-		$localisation->setSessionService($session);
+		$localisation = $this->container->get('localisation');
 		$localisation->localize();
 
-		// security based on login
-		$security = $this->security;
-		$security->setSessionService($session);
+		$config = $this->container->get('config');
 
-		$twig = $this->twig;
-		$twig->addGlobal('path', explode('/', trim(Router::getPath(), '/')));
-		$twig->addGlobal('origpath', trim(Router::getPath()));
+		$twig = $this->container->get('template');
+		$twig->addGlobal('path', explode('/', trim($request->getPathInfo(), '/')));
+		$twig->addGlobal('origpath', trim($request->getPathInfo()));
 		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
 		$language = $localisation->getDisplayLanguage();
 		$twig->addGlobal('locale', str_replace('-', '_', $language));
 		$languages = $localisation->getAvailableLanguages();
 		$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages) + 1) % count($languages)], '-', true));
 		$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
+
+		$session = $this->container->get('session');
 		$twig->addGlobal('knows_clonk', $session->getFlag('knows_clonk'));
 
 		if($session->authenticated()) {
@@ -151,20 +138,10 @@ class Environment {
 			$twig->addGlobal('state', $session->getState());
 		}
 
-		$mail = $this->mail;
-		$job = $this->job;
-		PresenterFactory::setConfigService($config);
-		PresenterFactory::setLocalisationService($localisation);
-		PresenterFactory::setSecurityService($security);
-		PresenterFactory::setSessionService($session);
-		PresenterFactory::setMailService($mail);
-		PresenterFactory::setJobService($job);
-		PresenterFactory::setTwig($twig);
-
 		// routing
 		if($config->get('enable/site')) {
 			// generic routes
-			Router::addRoutes(array(
+			$router->addRoutes(array(
 				'/' => 'Site\Front',
 				'/addons' => 'Addon\Portal',
 				'/addons/:alpha' => 'Addon\Game',
@@ -203,21 +180,21 @@ class Environment {
 				'/contact' => 'Site\Contact',
 				'/language' => 'Site\Language',
 			));
-			Router::addRoutes(array(
+			$router->addRoutes(array(
 				'/api/internal/addons/:number/:version/query' => 'Api\Internal\Release\QueryFile',
 				'/api/internal/addons/:number/:version/remove' => 'Api\Internal\Release\RemoveFile',
 				'/api/internal/addons/:number/:version/upload' => 'Api\Internal\Release\UploadFile',
 				'/api/internal/addons/:number/:version/dependencies' => 'Api\Internal\Release\QueryDependencies',
 			));
 			// api routes
-			Router::addRoutes(array(
-				'/api/v([0-9]+)/games' => 'Api\Games',
-				'/api/v([0-9]+)/addons/:alpha' => 'Api\Game',
-				'/api/v([0-9]+)/addons/:alpha/:alpha' => 'Api\Release',				
-				'/api/v([0-9]+)/addons/:alpha/:alpha/:version' => 'Api\Release',
+			$router->addRoutes(array(
+				'/api/v([0-9]+)/games\\.json' => 'Api\Games',
+				'/api/v([0-9]+)/addons/:alpha\\.json' => 'Api\Game',
+				'/api/v([0-9]+)/addons/:alpha/:alpha\\.json' => 'Api\Release',
+				'/api/v([0-9]+)/addons/:alpha/:alpha/:version\\.json' => 'Api\Release',
 			));
 		} else {
-			Router::addRoutes(array(
+			$router->addRoutes(array(
 				'/' => 'Site\Disabled'
 			));
 		}
@@ -227,59 +204,30 @@ class Environment {
 
 		try {
 			// determine the controller
-			$presenter = Router::route();
+			$presenterClass = $router->route($request);
+
+			if(!$this->container->has($presenterClass)) {
+				throw new FileNotFoundException('presenter matched but was not found');
+			}
 
 			// check if method is supported
-			if(!method_exists($presenter, $method) || ($method !== 'get' && $method !== 'post')) {
-				throw new NotImplementedException(get_class($presenter).'->'.$method.'()');
+			if(!method_exists($presenterClass, $method) || ($method !== 'get' && $method !== 'post')) {
+				throw new NotImplementedException($presenterClass.'->'.$method.'()');
 			}
 
 			// execute the RESTful method
-			return $presenter->handle($method, Router::getMatches());
+			$presenter = $this->container->get($presenterClass);
+			$presenter->handle($method, $router->getMatches());
+			$this->logger->debug('successfully handled request');
 		} catch(Exception $exception) {
-			$presenter = $exception->getPresenter();
-			if(PresenterFactory::valid($presenter)) {
-				return PresenterFactory::build($exception->getPresenter())->get($exception);
+			$presenterClass = $exception->getPresenter();
+
+			if($this->container->has($presenterClass)) {
+				$this->container->get($presenterClass)->get($exception);
 			}
 		} catch(\Exception $exception) {
-			return PresenterFactory::build('Error')->get($exception);
+			$this->container->get('\\Lorry\\Presenter\\Error')->get($exception);
 		}
-	}
-	
-	public function handleError($code, $message, $file, $line, $context) {
-		throw new \Exception('PHP Error #'.$code.': '.$message);
-	}
-
-	public function getConfig() {
-		return $this->config;
-	}
-
-	public function getPersistence() {
-		return $this->persistence;
-	}
-
-	public function getLocalisation() {
-		return $this->localisation;
-	}
-
-	public function getTemplating() {
-		return $this->twig;
-	}
-
-	public function getSecurity() {
-		return $this->security;
-	}
-
-	public function getMail() {
-		return $this->mail;
-	}
-
-	public function getJob() {
-		return $this->job;
-	}
-
-	public function getCdn() {
-		return $this->cdn;
 	}
 
 }

@@ -2,13 +2,14 @@
 
 namespace Lorry\Service;
 
-use Lorry\ModelFactory;
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use InvalidArgumentException;
 use Exception;
 
-class SessionService {
+class SessionService extends Service {
 
 	/**
 	 *
@@ -16,16 +17,15 @@ class SessionService {
 	 */
 	protected $config;
 
-	public function setConfigService(ConfigService $config) {
+	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, PersistenceService $persistence) {
+		parent::__construct($loggerFactory);
 		$this->config = $config;
+		$this->persistence = $persistence;
+		session_name('lorry_session');
 	}
 
 	protected $started = false;
 	protected $user = false;
-
-	public function __construct() {
-		session_name('lorry_session');
-	}
 
 	/**
 	 * 
@@ -210,7 +210,7 @@ class SessionService {
 			return;
 		}
 		if(isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
-			$user = ModelFactory::build('User')->byId($_SESSION['user']);
+			$user = $this->persistence->build('User')->byId($_SESSION['user']);
 			if($user && $user->matchSecret($_SESSION['secret'])) {
 				$this->user = $user;
 			} else {
@@ -220,7 +220,7 @@ class SessionService {
 			$user = false;
 			$login = explode('$', $_COOKIE['lorry_login']);
 			if(count($login) == 3 && is_numeric($login[1])) {
-				$user = ModelFactory::build('User')->byId($login[1]);
+				$user = $this->persistence->build('User')->byId($login[1]);
 				if($user && !empty($login[2]) && $user->matchSecret($login[2])) {
 					$this->authenticate($user);
 				}
@@ -312,9 +312,10 @@ class SessionService {
 	}
 
 	protected $flags = array();
-	
+
 	protected final function getFlagName($flag) {
-		return 'lorry_flag_'.$flag;;
+		return 'lorry_flag_'.$flag;
+		;
 	}
 
 	public final function setFlag($flag, $persistent = false) {

@@ -2,7 +2,10 @@
 
 namespace Lorry\Service;
 
-class LocalisationService {
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
+
+class LocalisationService extends Service {
 
 	/**
 	 *
@@ -10,7 +13,8 @@ class LocalisationService {
 	 */
 	protected $session;
 
-	public final function setSessionService(SessionService $session) {
+	public function __construct(LoggerFactoryInterface $loggerFactory, SessionService $session) {
+		parent::__construct($loggerFactory);
 		$this->session = $session;
 	}
 
@@ -125,7 +129,7 @@ class LocalisationService {
 		}
 
 		$requested = $this->getDisplayLanguage();
-		header('Content-Language: ' . $requested);
+		header('Content-Language: '.$requested);
 
 		$this->localized = true;
 
@@ -148,11 +152,11 @@ class LocalisationService {
 		}
 
 		$language = str_replace('-', '_', $language);
-		putenv('LC_ALL=' . $language);
-		setlocale(LC_ALL, $language . '.UTF-8');
+		putenv('LC_ALL='.$language);
+		setlocale(LC_ALL, $language.'.UTF-8');
 
-		$textdomain = 'lorry-' . $language;
-		bindtextdomain($textdomain, __DIR__ . '/../../app/locale');
+		$textdomain = 'lorry-'.$language;
+		bindtextdomain($textdomain, __DIR__.'/../../app/locale');
 		bind_textdomain_codeset($textdomain, 'UTF-8');
 		textdomain($textdomain);
 

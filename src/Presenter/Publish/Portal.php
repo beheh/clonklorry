@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 
 class Portal extends Presenter {
 
@@ -16,7 +15,7 @@ class Portal extends Presenter {
 		$this->security->requireLogin();
 		$user = $this->session->getUser();
 
-		$games = ModelFactory::build('Game')->byAnything();
+		$games = $this->persistence->build('Game')->byAnything();
 
 		$this->context['games'] = array();
 		foreach($games as $game) {
@@ -30,7 +29,7 @@ class Portal extends Presenter {
 			$this->success('addons', gettext('Addon created.'));
 		}
 
-		$addons = ModelFactory::build('Addon')->all()->byOwner($user->getId());
+		$addons = $this->persistence->build('Addon')->all()->byOwner($user->getId());
 
 		$this->context['addons'] = array();
 		foreach($addons as $addon) {

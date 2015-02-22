@@ -4,12 +4,11 @@ namespace Lorry\Presenter\Addon;
 
 use Lorry\Presenter;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\ModelFactory;
 
 class Game extends Presenter {
 
 	public function get($name) {
-		$game = ModelFactory::build('Game')->byShort($name);
+		$game = $this->persistence->build('Game')->byShort($name);
 		if(!$game) {
 			throw new FileNotFoundException('game '.$game);
 		}
@@ -18,7 +17,7 @@ class Game extends Presenter {
 		$this->context['game'] = $game->getTitle();
 		$this->context['short'] = $game->getShort();
 
-		$query = ModelFactory::build('Release')->all();
+		$query = $this->persistence->build('Release')->all();
 
 		/*$sort = isset($_GET['sort']) ? $_GET['sort'] : 'date';
 		$reverse = isset($_GET['reverse']) && $_GET['reverse'] == 1 ? true : false;

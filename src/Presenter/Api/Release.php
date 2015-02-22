@@ -13,14 +13,14 @@ class Release extends Presenter {
 			throw new FileNotFoundException(sprintf(gettext('This endpoint does not support api version %d.'), $api_version));
 		}
 
-		$game = ModelFactory::build('Game')->byShort($gamename);
+		$game = $this->persistence->build('Game')->byShort($gamename);
 		if(!$game) {
 			throw new FileNotFoundException(gettext('Game does not exist.'));
 		}
 
-		$addon = ModelFactory::build('Addon')->byShort($addonname, $game->getId());
+		$addon = $this->persistence->build('Addon')->byShort($addonname, $game->getId());
 		if(!$addon) {
-			$addon = ModelFactory::build('Addon')->byAbbreviation($addonname, $game->getId());
+			$addon = $this->persistence->build('Addon')->byAbbreviation($addonname, $game->getId());
 			if($addon) {
 				return $this->redirect('/addons/'.$game->getShort().'/'.$addon->getShort());
 			}
@@ -28,9 +28,9 @@ class Release extends Presenter {
 		}
 
 		if($version == 'latest') {
-			$release = ModelFactory::build('Release')->latest($addon->getId());
+			$release = $this->persistence->build('Release')->latest($addon->getId());
 		} else {
-			$release = ModelFactory::build('Release')->byVersion($version, $addon->getId());
+			$release = $this->persistence->build('Release')->byVersion($version, $addon->getId());
 		}
 		if(!$release || !$release->isScheduled()) {
 			throw new FileNotFoundException(gettext('Release does not exist.'));

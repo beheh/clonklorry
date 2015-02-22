@@ -15,7 +15,7 @@ class Edit extends Presenter {
 		$this->offerIdentification();
 		$this->security->requireIdentification();
 
-		$user = ModelFactory::build('User')->byUsername($username);
+		$user = $this->persistence->build('User')->byUsername($username);
 		if(!$user) {
 			throw new FileNotFoundException('user '.$username);
 		}
@@ -51,7 +51,7 @@ class Edit extends Presenter {
 		$this->security->requireModerator();
 		$this->security->requireValidState();
 
-		$user = ModelFactory::build('User')->byUsername($username);
+		$user = $this->persistence->build('User')->byUsername($username);
 		if(!$user) {
 			throw new FileNotFoundException('user '.$username);
 		}
@@ -65,7 +65,7 @@ class Edit extends Presenter {
 		if(isset($_POST['change-username-submit']) && $username != $new_username) {
 			$this->context['username_edit'] = $new_username;
 
-			if(ModelFactory::build('User')->byUsername($new_username)) {
+			if($this->persistence->build('User')->byUsername($new_username)) {
 				$errors[] = gettext('Username already taken.');
 			} else {
 				try {
@@ -135,7 +135,7 @@ class Edit extends Presenter {
 			$errors = array();
 
 			$previous_email = $user->getEmail();
-			if(ModelFactory::build('User')->byEmail($email)) {
+			if($this->persistence->build('User')->byEmail($email)) {
 				$errors[] = gettext('Email address already used.');
 			} else {
 				try {

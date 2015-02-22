@@ -17,19 +17,11 @@ abstract class Model {
 	 */
 	protected $config;
 
-	public function setConfigService(ConfigService $config) {
-		$this->config = $config;
-	}
-
 	/**
 	 *
 	 * @var \Lorry\Service\PersistenceService
 	 */
 	protected $persistence;
-
-	public function setPersistenceService(PersistenceService $persistence) {
-		$this->persistence = $persistence;
-	}
 
 	private $table;
 	private $schema;
@@ -37,11 +29,14 @@ abstract class Model {
 	private $changes;
 	private $loaded;
 
-	public function __construct($table, $rows) {
+	public function __construct(ConfigService $config, PersistenceService $persistence) {
+		$this->config = $config;
+		$this->persistence = $persistence;
+
 		$this->loaded = false;
 
-		$this->table = $table;
-		$this->schema = $rows;
+		$this->table = $this->getTable();
+		$this->schema = $this->getSchema();
 
 		$this->values = array();
 		foreach($this->schema as $key => $row) {
@@ -52,27 +47,21 @@ abstract class Model {
 	}
 
 	/**
+	 * @return string
+	 */
+	abstract public function getSchema();
+
+	/**
+	 * @return array
+	 */
+	abstract public function getTable();
+
+	/**
 	 * 
 	 * @return bool
 	 */
 	public final function isLoaded() {
 		return $this->loaded;
-	}
-
-	/**
-	 * 
-	 * @return string
-	 */
-	public final function getTable() {
-		return $this->table;
-	}
-
-	/**
-	 * 
-	 * @return array
-	 */
-	public final function getSchema() {
-		return $this->schema;
 	}
 
 	/**
@@ -457,7 +446,7 @@ abstract class Model {
 	protected final function fetch($model, $row) {
 		$this->ensureLoaded();
 		$this->ensureField($row);
-		$object = ModelFactory::build($model)->byId($this->getValue($row));
+		$object = $this->persistence->build($model)->byId($this->getValue($row));
 		return $object;
 	}
 

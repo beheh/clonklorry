@@ -5,18 +5,21 @@ namespace Lorry\Service;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
 use Lorry\Environment;
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 
-class ConfigService {
+class ConfigService extends Service {
 
-	private $config;
+	private $configuration;
 
-	public function __construct() {
-		$this->config = array();
+	public function __construct(LoggerFactoryInterface $loggerFactory) {
+		$this->configuration = array();
 		$file = Environment::PROJECT_ROOT.'/config/lorry.yml';
 		if(!file_exists($file)) {
 			throw new InvalidArgumentException('config file not found (at '.$file.')');
 		}
-		$this->config = Yaml::parse(file_get_contents($file));
+		$this->configuration = Yaml::parse(file_get_contents($file));
+		parent::__construct($loggerFactory);
 	}
 
 	/**
@@ -27,7 +30,7 @@ class ConfigService {
 	 */
 	public function get($key) {
 		$keys = explode('/', $key);
-		$subset = $this->config;
+		$subset = $this->configuration;
 		foreach($keys as $current) {
 			if(!isset($subset[$current])) {
 				return null;

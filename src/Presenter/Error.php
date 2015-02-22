@@ -4,7 +4,6 @@ namespace Lorry\Presenter;
 
 use Lorry\Presenter;
 use Exception;
-use Analog\Analog;
 
 class Error extends Presenter {
 
@@ -32,17 +31,14 @@ class Error extends Presenter {
 
 		if($exception) {
 			if(get_class($this) == __CLASS__) {
-				$message = get_class($exception).': '.$exception->getMessage().' in '.$exception->getTraceAsString();
-				Analog::error($message);
-			}
-			else {
-				Analog::debug(get_class($exception).': '.$exception->getMessage());
+				$this->logger->error($exception);
+			} else {
+				$this->logger->debug($exception);
 			}
 			if($this->config->get('debug')) {
 				$this->context['raw'] = '<pre>'.get_class($exception).': '.$exception->getMessage().'<br><br>'.$exception->getTraceAsString().'</pre>';
 			}
 		}
-
 		$this->context['hide_greeter'] = true;
 
 		$this->display('generic/hero.twig');

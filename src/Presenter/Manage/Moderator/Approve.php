@@ -13,13 +13,14 @@ class Approve extends Presenter {
 
 	/**
 	 * 
-	 * @param type $id
+	 * @param Lorry\Service\PersistenceService $persistence
+	 * @param int $id
 	 * @return \Lorry\Model\Addon
 	 * @throws FileNotFoundException
 	 * @throws ForbiddenException
 	 */
-	public static function getAddon($id) {
-		$addon = ModelFactory::build('Addon')->byId($id);
+	public static function getAddon($persistence, $id) {
+		$addon = $persistence->build('Addon')->byId($id);
 		if(!$addon) {
 			throw new FileNotFoundException();
 		}
@@ -34,7 +35,7 @@ class Approve extends Presenter {
 		$this->offerIdentification();
 		$this->security->requireIdentification();
 
-		$addon = self::getAddon($id);
+		$addon = self::getAddon($this->persistence, $id);
 		// if not submitted
 
 		$game = $addon->fetchGame();
@@ -51,9 +52,9 @@ class Approve extends Presenter {
 			$this->context['namespace'] = $addon->getShort();
 		} else {
 			$this->context['namespace'] = $addon->getProposedShort();
-			$duplicate['namespace'] = (ModelFactory::build('Addon')->byShort($addon->getProposedShort()) !== null);
-			$duplicate['title_en'] = count(ModelFactory::build('Addon')->all()->byTitle($addon->getTitle('en'), 0, 0, 'en')) > 1;
-			$duplicate['title_de'] = count(ModelFactory::build('Addon')->all()->byTitle($addon->getTitle('de'), 0, 0, 'de')) > 1;
+			$duplicate['namespace'] = ($this->persistence->build('Addon')->byShort($addon->getProposedShort()) !== null);
+			$duplicate['title_en'] = count($this->persistence->build('Addon')->all()->byTitle($addon->getTitle('en'), 0, 0, 'en')) > 1;
+			$duplicate['title_de'] = count($this->persistence->build('Addon')->all()->byTitle($addon->getTitle('de'), 0, 0, 'de')) > 1;
 		}
 		$this->context['duplicate'] = $duplicate;
 
@@ -76,7 +77,7 @@ class Approve extends Presenter {
 
 		$this->security->requireValidState();
 
-		$addon = self::getAddon($id);
+		$addon = self::getAddon($this->persistence, $id);
 
 		$errors = array();
 
@@ -100,7 +101,7 @@ class Approve extends Presenter {
 			$errors[] = sprintf(gettext('Comment is %s.'), $ex->getMessage());
 		}
 
-		if((isset($_POST['approve']) && ModelFactory::build('Addon')->byShort($addon->getProposedShort()) !== null)) {
+		if((isset($_POST['approve']) && $this->persistence->build('Addon')->byShort($addon->getProposedShort()) !== null)) {
 			$errors[] = gettext('The requested namespace has already been reserved for another addon.');
 		}
 

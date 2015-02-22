@@ -16,17 +16,14 @@ class SecurityService {
 	 */
 	protected $config;
 
-	public function setConfigService(ConfigService $config) {
-		$this->config = $config;
-	}
-
 	/**
 	 *
 	 * @var \Lorry\Service\SessionService
 	 */
 	protected $session;
 
-	public function setSessionService(SessionService $session) {
+	public function __construct(ConfigService $config, SessionService $session) {
+		$this->config = $config;
 		$this->session = $session;
 	}
 
@@ -110,7 +107,7 @@ class SecurityService {
 		}
 		return $this->sign($user->getId().':'.intval($expires).':'.$address);
 	}
-	
+
 	public function signLogin(User $user, $expires, $counter, $reset = false) {
 		if(!$user || !$expires || !$counter) {
 			throw new Exception('incomplete login signing request');

@@ -2,21 +2,24 @@
 
 namespace Lorry\Service;
 
-use Analog\Analog;
+use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 use Resque\Resque;
 use Predis\Client;
 use Lorry\Exception;
 
-class JobService {
+class JobService extends Service {
 
 	/**
 	 * @var \Lorry\Service\ConfigService
 	 */
 	protected $config;
 	
-	public function setConfigService(ConfigService $config) {
+	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config) {
+		parent::__construct($loggerFactory);
 		$this->config = $config;
 	}
+
 
 	/**
 	 *
@@ -51,7 +54,7 @@ class JobService {
 		$this->ensureConnected();
 		$class_name = $this->build($job_name);
 		$result = $this->resque->enqueue($this->getQueue($class_name), $class_name, $args);
-		Analog::debug('queuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
+		$this->logger->notice('queuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
 		return $result;
 	}
 	
@@ -64,7 +67,7 @@ class JobService {
 		$class_name = $this->build($job_name);
 		$filter = array($class_name => $args);
 		//$result = $this->resque->dequeue($this->getQueue($class_name), $filter);
-		//Analog::debug('dequeuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
+		//$this->logger->notice('dequeuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
 		//return $result;
 		return false;
 	}

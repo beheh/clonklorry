@@ -6,11 +6,15 @@ use Lorry\Model;
 
 class Game extends Model {
 
-	public function __construct() {
-		parent::__construct('game', array(
+	public function getTable() {
+		return 'game';
+	}
+
+	public function getSchema() {
+		return array(
 			'short' => 'varchar(16)',
 			'title' => 'varchar(16)'
-		));
+		);
 	}
 
 	public function setShort($short) {
@@ -48,5 +52,5 @@ class Game extends Model {
 	public function forPresenter() {
 		return array('short' => $this->getShort(), 'title' => $this->getTitle());
 	}
-	
+
 }

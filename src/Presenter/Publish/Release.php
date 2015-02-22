@@ -11,8 +11,8 @@ use Lorry\Exception\ForbiddenException;
 
 class Release extends Presenter {
 
-	public static function getRelease($id, $version) {
-		$release = ModelFactory::build('Release')->byVersion($version, $id);
+	public static function getRelease($persistence, $id, $version) {
+		$release = $persistence->build('Release')->byVersion($version, $id);
 		if(!$release) {
 			throw new FileNotFoundException();
 		}
@@ -22,8 +22,8 @@ class Release extends Presenter {
 	public function get($id, $version) {
 		$this->security->requireLogin();
 
-		$addon = Edit::getAddon($id, $this->session->getUser());
-		$release = Release::getRelease($addon->getId(), $version);
+		$addon = Edit::getAddon($this->persistence, $id, $this->session->getUser());
+		$release = Release::getRelease($this->persistence, $addon->getId(), $version);
 		$game = $addon->fetchGame();
 
 		if($addon->isApproved()) {
@@ -41,7 +41,7 @@ class Release extends Presenter {
 										'game' => $game->forPresenter());
 		$this->context['version'] = $release->getVersion();
 
-		$latest = ModelFactory::build('Release')->latest($addon->getId());
+		$latest = $this->persistence->build('Release')->latest($addon->getId());
 		$this->context['latest'] = ($latest && $latest->getId() == $release->getId());
 		$this->context['scheduled'] = $release->isScheduled();
 
@@ -83,8 +83,8 @@ class Release extends Presenter {
 		$this->security->requireLogin();
 		$this->security->requireValidState();
 
-		$addon = Edit::getAddon($id, $this->session->getUser());
-		$release = Release::getRelease($addon->getId(), $version);
+		$addon = Edit::getAddon($this->persistence, $id, $this->session->getUser());
+		$release = Release::getRelease($this->persistence, $addon->getId(), $version);
 
 		/* Basic */
 
@@ -95,7 +95,7 @@ class Release extends Presenter {
 			$errors = array();
 
 			try {
-				$existing = ModelFactory::build('Release')->byVersion($new_version, $id);
+				$existing = $this->persistence->build('Release')->byVersion($new_version, $id);
 				if($existing && $existing->getId() != $release->getId()) {
 					$errors[] = gettext('Version already exists.');
 				}
