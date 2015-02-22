@@ -3,7 +3,8 @@
 namespace Lorry\Service;
 
 use Analog\Analog;
-use Resque;
+use Resque\Resque;
+use Predis\Client;
 use Lorry\Exception;
 
 class JobService {
@@ -17,12 +18,15 @@ class JobService {
 		$this->config = $config;
 	}
 
-	private $setup = false;
+	/**
+	 *
+	 * @var \Resque\Resque;
+	 */
+	private $resque;
 
-	public function ensureSetup() {
-		if($this->setup) return;
-		Resque::setBackend($this->config->get('job/dsn'));
-		$this->setup = true;
+	public function ensureConnected() {
+		if($this->resque) return;
+		$this->resque = new Resque(new Client($this->config->get('job/dsn')));
 	}
 	
 	public function build($job_name) {
@@ -44,9 +48,9 @@ class JobService {
 		if(!is_array($args)) {
 			throw new Exception('invalid arguments (not an array)');
 		}
-		$this->ensureSetup();
+		$this->ensureConnected();
 		$class_name = $this->build($job_name);
-		$result = Resque::enqueue($this->getQueue($class_name), $class_name, $args);
+		$result = $this->resque->enqueue($this->getQueue($class_name), $class_name, $args);
 		Analog::debug('queuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
 		return $result;
 	}
@@ -55,12 +59,14 @@ class JobService {
 		if(!is_array($args)) {
 			throw new Exception('invalid arguments (not an array)');
 		}
-		$this->ensureSetup();
+		$this->ensureConnected();
+		//@todo implement dequeuing
 		$class_name = $this->build($job_name);
 		$filter = array($class_name => $args);
-		$result = Resque::dequeue($this->getQueue($class_name), $filter);
-		Analog::debug('dequeuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
-		return $result;
+		//$result = $this->resque->dequeue($this->getQueue($class_name), $filter);
+		//Analog::debug('dequeuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
+		//return $result;
+		return false;
 	}
 
 }

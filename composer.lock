@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "11adc13b07755e9ab90fb303c1b05aa9",
+    "hash": "575bd7accd3ad4036fcead829274156a",
     "packages": [
         {
             "name": "analog/analog",
@@ -188,101 +188,6 @@
                 "sdk"
             ],
             "time": "2015-02-20 18:30:16"
-        },
-        {
-            "name": "chrisboulton/php-resque",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chrisboulton/php-resque.git",
-                "reference": "a8322cd4e7aa32ec88d98aa4b0cb2c6251b08509"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chrisboulton/php-resque/zipball/a8322cd4e7aa32ec88d98aa4b0cb2c6251b08509",
-                "reference": "a8322cd4e7aa32ec88d98aa4b0cb2c6251b08509",
-                "shasum": ""
-            },
-            "require": {
-                "colinmollenhour/credis": "~1.2",
-                "ext-pcntl": "*",
-                "php": ">=5.3.0",
-                "psr/log": "1.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "ext-proctitle": "Allows php-resque to rename the title of UNIX processes to show the status of a worker.",
-                "ext-redis": "Native PHP extension for Redis connectivity. Credis will automatically utilize when available."
-            },
-            "bin": [
-                "bin/resque"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Resque": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Boulton",
-                    "email": "chris@bigcommerce.com"
-                }
-            ],
-            "description": "Redis backed library for creating background jobs and processing them later. Based on resque for Ruby.",
-            "homepage": "http://www.github.com/chrisboulton/php-resque/",
-            "keywords": [
-                "background",
-                "job",
-                "redis",
-                "resque"
-            ],
-            "time": "2015-02-04 18:56:54"
-        },
-        {
-            "name": "colinmollenhour/credis",
-            "version": "1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/colinmollenhour/credis.git",
-                "reference": "7bd47b61fc3dad28aa881de45c71026256ad27cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/colinmollenhour/credis/zipball/7bd47b61fc3dad28aa881de45c71026256ad27cc",
-                "reference": "7bd47b61fc3dad28aa881de45c71026256ad27cc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "Client.php",
-                    "Cluster.php",
-                    "Sentinel.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Colin Mollenhour",
-                    "email": "colin@mollenhour.com"
-                }
-            ],
-            "description": "Credis is a lightweight interface to the Redis key-value store which wraps the phpredis library when available for better performance.",
-            "homepage": "https://github.com/colinmollenhour/credis",
-            "time": "2014-11-13 18:40:25"
         },
         {
             "name": "guzzle/guzzle",
@@ -544,6 +449,56 @@
                 "OpenId"
             ],
             "time": "2013-10-27 16:25:49"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "7a170b3d8123c556597b4fbdb88631f99de180c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/7a170b3d8123c556597b4fbdb88631f99de180c2",
+                "reference": "7a170b3d8123c556597b4fbdb88631f99de180c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete PHP client library for Redis",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2015-01-02 12:51:34"
         },
         {
             "name": "psr/log",
@@ -905,21 +860,77 @@
                 "templating"
             ],
             "time": "2015-01-25 17:32:08"
+        },
+        {
+            "name": "vend/resque",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vend/php-resque.git",
+                "reference": "6e3557c7aed17d1a6cb644a3c220977762d4017a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vend/php-resque/zipball/6e3557c7aed17d1a6cb644a3c220977762d4017a",
+                "reference": "6e3557c7aed17d1a6cb644a3c220977762d4017a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcntl": "*",
+                "php": ">=5.3.7",
+                "psr/log": ">=1.0.0",
+                "symfony/console": ">=2.5.6"
+            },
+            "require-dev": {
+                "colinmollenhour/credis": "1.3.*",
+                "monolog/monolog": "1.7.*",
+                "phpunit/phpunit": "4.3.*",
+                "predis/predis": ">=0.8.6"
+            },
+            "suggest": {
+                "colinmoullenhour/credis": "Alternative Redis client",
+                "ext-phpiredis": "Better performance for Predis",
+                "ext-phpredis": "Better performance for Credis",
+                "ext-proctitle": "Allows php-resque to rename the title of UNIX processes to show the status of a worker.",
+                "predis/predis": "Suggested Redis client"
+            },
+            "bin": [
+                "resque"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev",
+                    "dev-2.0": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Resque\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boulton",
+                    "email": "chris@bigcommerce.com"
+                },
+                {
+                    "name": "Vend Devteam",
+                    "email": "devteam@vendhq.com"
+                }
+            ],
+            "description": "Namespaced port of chrisbolton/php-resque, supports Predis, more DI",
+            "time": "2015-02-10 22:32:07"
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "alias": "1.2.x-dev",
-            "alias_normalized": "1.2.9999999.9999999-dev",
-            "version": "9999999-dev",
-            "package": "chrisboulton/php-resque"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "chrisboulton/php-resque": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

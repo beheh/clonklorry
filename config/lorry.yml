@@ -43,7 +43,7 @@ persistence:
 
 # job queue and underlying redis database
 job:
-    dsn: localhost
+    dsn: tcp://localhost
 
 # for outgoing mails
 mail:

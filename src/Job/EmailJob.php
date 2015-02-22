@@ -12,7 +12,7 @@ abstract class EmailJob extends Job {
 
 	abstract function getRecipent();
 
-	public final static function getQueue() {
+	public function getQueue() {
 		return 'email';
 	}
 

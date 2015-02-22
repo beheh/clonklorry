@@ -2,9 +2,9 @@
 
 namespace Lorry;
 
-abstract class Job {
+use Resque\AbstractJob;
 
-	abstract static function getQueue();
+abstract class Job extends AbstractJob {
 
 	/**
 	 * @var \Lorry\Service\ConfigService
@@ -52,8 +52,6 @@ abstract class Job {
 		$this->cdn = $environment->getCdn();
 		$this->security = $environment->getSecurity();
 	}
-
-	abstract function perform();
 
 	public function tearDown() {
 		

@@ -7,7 +7,7 @@ use Lorry\ModelFactory;
 
 class ReleaseJob extends Job {
 
-	public final static function getQueue() {
+	public function getQueue() {
 		return 'release';
 	}
 
