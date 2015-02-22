@@ -7,7 +7,11 @@ $(document).ready(function () {
 	$.ajax(filesEndpoint + '/query',
 			{
 				success: function (data) {
-					console.log(data);
+					if (typeof data.files != 'object') {
+						$('#resumable-files-none-text').text($('#message-text-files-loading-failed').text());
+						return;
+					}
+					loaded = true;
 					releaseFilesExisting = data.files;
 					$(releaseFilesExisting).each(function (id, file) {
 						releaseFilesAdd(file);
