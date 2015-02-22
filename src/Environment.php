@@ -38,6 +38,7 @@ class Environment {
 		$config = new ConfigService($loggerFactory);
 
 		$builder = new \DI\ContainerBuilder();
+		$builder->useAnnotations(false);
 
 		if(!$config->get('debug') && function_exists('apc_store')) {
 			$cache = new \Doctrine\Common\Cache\ApcCache();
@@ -102,107 +103,107 @@ class Environment {
 	}
 
 	public function handle() {
-		$this->logger->info('handling request');
-
-		$request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
-
-		$router = $this->container->get('router');
-		$router->setPrefix('Lorry\\Presenter\\');
-
-		// localize depending on viewer
-		$localisation = $this->container->get('localisation');
-		$localisation->localize();
-
-		$config = $this->container->get('config');
-
-		$twig = $this->container->get('template');
-		$twig->addGlobal('path', explode('/', trim($request->getPathInfo(), '/')));
-		$twig->addGlobal('origpath', trim($request->getPathInfo()));
-		$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
-		$language = $localisation->getDisplayLanguage();
-		$twig->addGlobal('locale', str_replace('-', '_', $language));
-		$languages = $localisation->getAvailableLanguages();
-		$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages) + 1) % count($languages)], '-', true));
-		$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
-
-		$session = $this->container->get('session');
-		$twig->addGlobal('knows_clonk', $session->getFlag('knows_clonk'));
-
-		if($session->authenticated()) {
-			$user = $session->getUser();
-			$twig->addGlobal('user_login', true);
-			$twig->addGlobal('user_name', $user->getUsername());
-			$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
-			$twig->addGlobal('user_administrator', $user->isAdministrator());
-			$twig->addGlobal('user_moderator', $user->isModerator());
-			$twig->addGlobal('state', $session->getState());
-		}
-
-		// routing
-		if($config->get('enable/site')) {
-			// generic routes
-			$router->addRoutes(array(
-				'/' => 'Site\Front',
-				'/addons' => 'Addon\Portal',
-				'/addons/:alpha' => 'Addon\Game',
-				'/addons/:alpha/:alpha' => 'Addon\Presentation',
-				'/addons/:alpha/:alpha/:version' => 'Addon\Presentation',
-				'/download' => 'Redirect\Front',
-				'/download/:alpha/:alpha' => 'Addon\Download',
-				'/download/:alpha/:alpha/:version' => 'Addon\Download',
-				'/developers' => 'Publish\Developers',
-				'/publish' => 'Publish\Portal',
-				'/publish/:number' => 'Publish\Edit',
-				'/publish/:number/:version' => 'Publish\Release',
-				'/users' => 'User\Table',
-				'/users/:alpha' => 'User\Profile',
-				'/users/:alpha/edit' => 'User\Edit',
-				'/users/:alpha/activate' => 'Account\Activate',
-				'/administrator' => 'Manage\Administrator\Portal',
-				'/administrator/logs' => 'Manage\Administrator\Logs',
-				'/moderator' => 'Manage\Moderator\Portal',
-				'/moderator/approve/:number' => 'Manage\Moderator\Approve',
-				'/moderator/tickets/:number' => 'Manage\Moderator\Ticket',
-				'/register' => 'Account\Register',
-				'/login' => 'Account\Login',
-				'/logout' => 'Account\Logout',
-				'/settings' => 'Account\Settings',
-				'/identify' => 'Account\Identify',
-				'/auth' => 'Error\BadRequest',
-				'/auth/gateway' => 'Error\BadRequest',
-				'/auth/callback' => 'Error\BadRequest',
-				'/auth/gateway/:alpha' => 'Auth\Gateway',
-				'/auth/callback/:alpha' => 'Auth\Callback',
-				'/about' => 'Site\About',
-				'/about/api' => 'Site\Api',
-				'/about/clonk' => 'Site\Clonk',
-				'/privacy' => 'Site\Privacy',
-				'/contact' => 'Site\Contact',
-				'/language' => 'Site\Language',
-			));
-			$router->addRoutes(array(
-				'/api/internal/addons/:number/:version/query' => 'Api\Internal\Release\QueryFile',
-				'/api/internal/addons/:number/:version/remove' => 'Api\Internal\Release\RemoveFile',
-				'/api/internal/addons/:number/:version/upload' => 'Api\Internal\Release\UploadFile',
-				'/api/internal/addons/:number/:version/dependencies' => 'Api\Internal\Release\QueryDependencies',
-			));
-			// api routes
-			$router->addRoutes(array(
-				'/api/v([0-9]+)/games\\.json' => 'Api\Games',
-				'/api/v([0-9]+)/addons/:alpha\\.json' => 'Api\Game',
-				'/api/v([0-9]+)/addons/:alpha/:alpha\\.json' => 'Api\Release',
-				'/api/v([0-9]+)/addons/:alpha/:alpha/:version\\.json' => 'Api\Release',
-			));
-		} else {
-			$router->addRoutes(array(
-				'/' => 'Site\Disabled'
-			));
-		}
-
-		// determine the RESTful method
-		$method = strtolower(filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_STRING));
 
 		try {
+			$this->logger->info('handling request');
+			$request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
+
+			$router = $this->container->get('router');
+			$router->setPrefix('Lorry\\Presenter\\');
+
+			// localize depending on viewer
+			$localisation = $this->container->get('localisation');
+			$localisation->localize();
+
+			$config = $this->container->get('config');
+
+			$twig = $this->container->get('template');
+			$twig->addGlobal('path', explode('/', trim($request->getPathInfo(), '/')));
+			$twig->addGlobal('origpath', trim($request->getPathInfo()));
+			$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
+			$language = $localisation->getDisplayLanguage();
+			$twig->addGlobal('locale', str_replace('-', '_', $language));
+			$languages = $localisation->getAvailableLanguages();
+			$twig->addGlobal('nextlocale', strstr($languages[(array_search($language, $languages) + 1) % count($languages)], '-', true));
+			$twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
+
+			$session = $this->container->get('session');
+			$twig->addGlobal('knows_clonk', $session->getFlag('knows_clonk'));
+
+			if($session->authenticated()) {
+				$user = $session->getUser();
+				$twig->addGlobal('user_login', true);
+				$twig->addGlobal('user_name', $user->getUsername());
+				$twig->addGlobal('user_profile', $config->get('base').'/users/'.$user->getUsername());
+				$twig->addGlobal('user_administrator', $user->isAdministrator());
+				$twig->addGlobal('user_moderator', $user->isModerator());
+				$twig->addGlobal('state', $session->getState());
+			}
+
+			// routing
+			if($config->get('enable/site')) {
+				// generic routes
+				$router->addRoutes(array(
+					'/' => 'Site\Front',
+					'/addons' => 'Addon\Portal',
+					'/addons/:alpha' => 'Addon\Game',
+					'/addons/:alpha/:alpha' => 'Addon\Presentation',
+					'/addons/:alpha/:alpha/:version' => 'Addon\Presentation',
+					'/download' => 'Redirect\Front',
+					'/download/:alpha/:alpha' => 'Addon\Download',
+					'/download/:alpha/:alpha/:version' => 'Addon\Download',
+					'/developers' => 'Publish\Developers',
+					'/publish' => 'Publish\Portal',
+					'/publish/:number' => 'Publish\Edit',
+					'/publish/:number/:version' => 'Publish\Release',
+					'/users' => 'User\Table',
+					'/users/:alpha' => 'User\Profile',
+					'/users/:alpha/edit' => 'User\Edit',
+					'/users/:alpha/activate' => 'Account\Activate',
+					'/administrator' => 'Manage\Administrator\Portal',
+					'/administrator/logs' => 'Manage\Administrator\Logs',
+					'/moderator' => 'Manage\Moderator\Portal',
+					'/moderator/approve/:number' => 'Manage\Moderator\Approve',
+					'/moderator/tickets/:number' => 'Manage\Moderator\Ticket',
+					'/register' => 'Account\Register',
+					'/login' => 'Account\Login',
+					'/logout' => 'Account\Logout',
+					'/settings' => 'Account\Settings',
+					'/identify' => 'Account\Identify',
+					'/auth' => 'Error\BadRequest',
+					'/auth/gateway' => 'Error\BadRequest',
+					'/auth/callback' => 'Error\BadRequest',
+					'/auth/gateway/:alpha' => 'Auth\Gateway',
+					'/auth/callback/:alpha' => 'Auth\Callback',
+					'/about' => 'Site\About',
+					'/about/api' => 'Site\Api',
+					'/about/clonk' => 'Site\Clonk',
+					'/privacy' => 'Site\Privacy',
+					'/contact' => 'Site\Contact',
+					'/language' => 'Site\Language',
+				));
+				$router->addRoutes(array(
+					'/api/internal/addons/:number/:version/query' => 'Api\Internal\Release\QueryFile',
+					'/api/internal/addons/:number/:version/remove' => 'Api\Internal\Release\RemoveFile',
+					'/api/internal/addons/:number/:version/upload' => 'Api\Internal\Release\UploadFile',
+					'/api/internal/addons/:number/:version/dependencies' => 'Api\Internal\Release\QueryDependencies',
+				));
+				// api routes
+				$router->addRoutes(array(
+					'/api/v([0-9]+)/games\\.json' => 'Api\Games',
+					'/api/v([0-9]+)/addons/:alpha\\.json' => 'Api\Game',
+					'/api/v([0-9]+)/addons/:alpha/:alpha\\.json' => 'Api\Release',
+					'/api/v([0-9]+)/addons/:alpha/:alpha/:version\\.json' => 'Api\Release',
+				));
+			} else {
+				$router->addRoutes(array(
+					'/' => 'Site\Disabled'
+				));
+			}
+
+			// determine the RESTful method
+			$method = strtolower(filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_STRING));
+
 			// determine the controller
 			$presenterClass = $router->route($request);
 
@@ -226,6 +227,10 @@ class Environment {
 				$this->container->get($presenterClass)->get($exception);
 			}
 		} catch(\Exception $exception) {
+			if($this->container->get('persistence')->hasFailed()) {
+				$this->container->get('template')->addGlobal('site_enabled', false);
+				$this->logger->alert('cannot reach database');
+			}
 			$this->container->get('\\Lorry\\Presenter\\Error')->get($exception);
 		}
 	}

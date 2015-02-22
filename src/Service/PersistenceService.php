@@ -50,6 +50,12 @@ class PersistenceService extends Service {
 	 */
 	private $factory = null;
 
+	private $hasFailed = false;
+
+	public function hasFailed() {
+		return $this->hasFailed;
+	}
+
 	public function ensureConnected() {
 		if($this->connection !== null) {
 			return true;
@@ -60,6 +66,7 @@ class PersistenceService extends Service {
 			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->factory = new QueryFactory(strstr($dsn, ':', true));
 		} catch(PDOException $ex) {
+			$this->hasFailed = true;
 			// catch the pdo exception to prevent credential leaking (either logs or debug frontend)
 			throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
 		}

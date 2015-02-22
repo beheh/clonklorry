@@ -64,11 +64,16 @@ class LocalisationService extends Service {
 			return $available[0];
 		}
 
-		if($this->session->authenticated()) {
-			$language = $this->session->getUser()->getLanguage();
-			if($this->setDisplayLanguage($language)) {
-				return $language;
+		try {
+			if($this->session->authenticated()) {
+				$language = $this->session->getUser()->getLanguage();
+				if($this->setDisplayLanguage($language)) {
+					return $language;
+				}
 			}
+		}
+		catch(\RuntimeException $exception) {
+			$this->logger->warning($exception);
 		}
 
 		if(isset($_COOKIE['lorry_language'])) {
