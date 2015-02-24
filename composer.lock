@@ -4,57 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "717cae73029604aa9af0eb3a4bc07eea",
+    "hash": "21b14ca28d3224fd089b0c5b48dfdeb0",
     "packages": [
-        {
-            "name": "analog/analog",
-            "version": "1.0.6-stable",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jbroadway/analog.git",
-                "reference": "1fcc97fd842f37013587d64aba5f3f1fa6b0d911"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jbroadway/analog/zipball/1fcc97fd842f37013587d64aba5f3f1fa6b0d911",
-                "reference": "1fcc97fd842f37013587d64aba5f3f1fa6b0d911",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "psr/log": "1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Analog": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Johnny Broadway",
-                    "email": "johnny@johnnybroadway.com",
-                    "homepage": "http://www.johnnybroadway.com/"
-                }
-            ],
-            "description": "PHP 5.3+ micro logging class that can be extended via closures. Includes several pre-built handlers including file, mail, syslog, HTTP post, and MongoDB.",
-            "homepage": "https://github.com/jbroadway/analog",
-            "keywords": [
-                "alerts",
-                "debug",
-                "debugging",
-                "error",
-                "log",
-                "logger",
-                "logging",
-                "syslog"
-            ],
-            "time": "2015-02-13 20:34:48"
-        },
         {
             "name": "aura/sqlquery",
             "version": "2.2.0",
@@ -124,16 +75,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.7.19",
+            "version": "2.7.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a3275993df4414bcaa61177df5a8d2ce502f927b"
+                "reference": "2c9d93fbe680f64a84f5877209904f414d5cf92f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a3275993df4414bcaa61177df5a8d2ce502f927b",
-                "reference": "a3275993df4414bcaa61177df5a8d2ce502f927b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2c9d93fbe680f64a84f5877209904f414d5cf92f",
+                "reference": "2c9d93fbe680f64a84f5877209904f414d5cf92f",
                 "shasum": ""
             },
             "require": {
@@ -187,7 +138,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-02-20 18:30:16"
+            "time": "2015-02-24 00:04:06"
         },
         {
             "name": "container-interop/container-interop",
