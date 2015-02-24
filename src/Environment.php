@@ -5,8 +5,6 @@ namespace Lorry;
 use Lorry\Exception\NotImplementedException;
 use Psr\Log\LogLevel;
 use Interop\Container\ContainerInterface;
-use Twig_Loader_Filesystem;
-use Twig_Environment;
 use Lorry\Router;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
@@ -52,42 +50,38 @@ class Environment {
 
 		error_reporting(E_ALL ^ E_STRICT);
 
-		$container->set('Interop\\Container\\ContainerInterface', $container);
-		$container->set('Lorry\\ServiceInterface', \DI\object('Lorry\\Service'));
-		$container->set('Lorry\\Logger\\LoggerFactoryInterface', $loggerFactory);
+		$container->set('Interop\Container\ContainerInterface', $container);
+		$container->set('Lorry\ServiceInterface', \DI\object('Lorry\Service'));
+		$container->set('Lorry\Logger\LoggerFactoryInterface', $loggerFactory);
 
-		$container->set('Psr\\Log\\LoggerInterface', \DI\factory(function() use ($loggerFactory) {
+		$container->set('Psr\Log\LoggerInterface', \DI\factory(function() use ($loggerFactory) {
 					return $loggerFactory->build('default');
 				}));
-		$container->set('loggerFactory', \DI\link('Lorry\\Logger\\LoggerFactoryInterface'));
-		$container->set('logger', \DI\link('Psr\\Log\\LoggerInterface'));
+		$container->set('loggerFactory', \DI\link('Lorry\Logger\LoggerFactoryInterface'));
+		$container->set('logger', \DI\link('Psr\Log\LoggerInterface'));
 
-		$container->set('config', \DI\link('Lorry\\Service\\ConfigService'));
-		$container->set('persistence', \DI\link('Lorry\\Service\\PersistenceService'));
-		$container->set('localisation', \DI\link('Lorry\\Service\\LocalisationService'));
-		$container->set('mail', \DI\link('Lorry\\Service\\MailService'));
-		$container->set('job', \DI\link('Lorry\\Service\\JobService'));
-		$container->set('session', \DI\link('Lorry\\Service\\SessionService'));
-		$container->set('security', \DI\link('Lorry\\Service\\SecurityService'));
-		$container->set('cdn', \DI\link('Lorry\\Service\\CdnService'));
+		$container->set('config', \DI\link('Lorry\Service\ConfigService'));
+		$container->set('persistence', \DI\link('Lorry\Service\PersistenceService'));
+		$container->set('localisation', \DI\link('Lorry\Service\LocalisationService'));
+		$container->set('mail', \DI\link('Lorry\Service\MailService'));
+		$container->set('job', \DI\link('Lorry\Service\JobService'));
+		$container->set('session', \DI\link('Lorry\Service\SessionService'));
+		$container->set('security', \DI\link('Lorry\Service\SecurityService'));
+		$container->set('cdn', \DI\link('Lorry\Service\CdnService'));
 		$container->set('router', new Router($loggerFactory->build('router'), $container));
 
-		$container->set('template', \DI\factory(function() use ($container) {
-					$loader = new Twig_Loader_Filesystem(__DIR__.'/../app/templates');
-					$twig = new Twig_Environment($loader, array('cache' => __DIR__.'/../cache/twig', 'debug' => $container->get('config')->get('debug')));
+		$container->set('Lorry\TemplateEngineInterface', \DI\factory(function() use ($config) {
+					$loader = new \Twig_Loader_Filesystem(__DIR__.'/../app/templates');
+					$twig = new Adapter\TwigTemplatingEngineAdapter($loader, array('cache' => __DIR__.'/../cache/twig', 'debug' => $config->get('debug')));
 					$twig->addExtension(new \Twig_Extension_Escaper(true));
 					$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
 					return $twig;
 				}));
 
-		$container->set('Twig_Environment', \DI\link('template'));
-
-		$config = $container->get('config');
-
 		\Monolog\ErrorHandler::register($loggerFactory->build('errorHandler'));
 
-		$templating = $container->get('template');
+		$templating = $container->get('Lorry\TemplateEngineInterface');
 		$templating->addGlobal('brand', htmlspecialchars($config->get('brand')));
 		$templating->addGlobal('base', htmlspecialchars($config->get('base')));
 		$templating->addGlobal('resources', htmlspecialchars($config->get('base').'/resources'));
@@ -109,7 +103,7 @@ class Environment {
 			$request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 			$router = $this->container->get('router');
-			$router->setPrefix('Lorry\\Presenter\\');
+			$router->setPrefix('Lorry\Presenter');
 
 			// localize depending on viewer
 			$localisation = $this->container->get('localisation');
@@ -117,7 +111,7 @@ class Environment {
 
 			$config = $this->container->get('config');
 
-			$twig = $this->container->get('template');
+			$twig = $this->container->get('Lorry\TemplateEngineInterface');
 			$twig->addGlobal('path', explode('/', trim($request->getPathInfo(), '/')));
 			$twig->addGlobal('origpath', trim($request->getPathInfo()));
 			$twig->addGlobal('filename', htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')));
@@ -233,6 +227,14 @@ class Environment {
 			}
 			$this->container->get('\\Lorry\\Presenter\\Error')->get($exception);
 		}
+	}
+
+	/**
+	 * 
+	 * @return \Interop\Container\ContainerInterface
+	 */
+	public function getContainer() {
+		return $this->container;
 	}
 
 }

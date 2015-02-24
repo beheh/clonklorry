@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use Psr\Log\LoggerInterface;
+use Interop\Container\ContainerInterface;
 use Lorry\Service\ConfigService;
 use Lorry\Service\PersistenceService;
 use Lorry\Service\LocalisationService;
@@ -11,8 +12,8 @@ use Lorry\Service\SessionService;
 use Lorry\Service\MailService;
 use Lorry\Service\JobService;
 use Lorry\Exception\OutputCompleteException;
+use Lorry\TemplateEngineInterface;
 use Lorry\Router;
-use Twig_Environment;
 
 abstract class Presenter {
 
@@ -66,20 +67,20 @@ abstract class Presenter {
 
 	/**
 	 *
-	 * @var \Twig_Environment;
+	 * @var \Lorry\TemplateEngineInterface;
 	 */
 	protected $twig;
 
-	public function __construct(LoggerInterface $logger, ConfigService $config, PersistenceService $persistence, LocalisationService $localisation, SecurityService $security, SessionService $session, MailService $mail, JobService $job, Twig_Environment $template) {
+	public function __construct(LoggerInterface $logger, ContainerInterface $container) {
 		$this->logger = $logger;
-		$this->config = $config;
-		$this->persistence = $persistence;
-		$this->localisation = $localisation;
-		$this->security = $security;
-		$this->session = $session;
-		$this->mail = $mail;
-		$this->job = $job;
-		$this->twig = $template;
+		$this->config = $container->get('config');
+		$this->persistence = $container->get('persistence');
+		$this->localisation = $container->get('localisation');
+		$this->security = $container->get('security');
+		$this->session = $container->get('session');
+		$this->mail = $container->get('mail');
+		$this->job = $container->get('job');
+		$this->twig = $container->get('Lorry\TemplateEngineInterface');
 	}
 
 	/**
