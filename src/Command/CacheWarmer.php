@@ -22,10 +22,11 @@ class CacheWarmer extends Command {
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		$lorry = new Environment();
 		$lorry->setup();
-
+		$templateEngine = $lorry->getContainer()->get('Lorry\TemplateEngineInterface');
+		
 		$base = $lorry::PROJECT_ROOT.'/app/templates';
 
-		$lorry->getTemplating()->clearTemplateCache();
+		$templateEngine->clearTemplateCache();
 
 		if($output->isDebug()) {
 			$output->writeln('Looking for templates in '.$base);
@@ -49,8 +50,7 @@ class CacheWarmer extends Command {
 			if($output->isVerbose()) {
 				$progress->setMessage($template, 'file');
 			}
-			//sleep(1);
-			$lorry->getTemplating()->loadTemplate($template);
+			$templateEngine->loadTemplate($template);
 			if($output->isVerbose()) {
 				$progress->advance();
 			}

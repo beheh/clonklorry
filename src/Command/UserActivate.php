@@ -23,9 +23,10 @@ class UserActivate extends Command {
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		$lorry = new Environment();
 		$lorry->setup();
+		$persistence = $lorry->getContainer()->get('persistence');
 
 		$username = $input->getArgument('username');
-		$user = ModelFactory::build('User')->byUsername($username, true);
+		$user = $persistence->build('User')->byUsername($username, true);
 		if($user === null) {
 			throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
 		}
