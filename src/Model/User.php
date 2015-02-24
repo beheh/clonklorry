@@ -186,6 +186,9 @@ class User extends Model {
 	}
 
 	public final function incrementCounter() {
+		if(!$this->isLoaded()) {
+			return true;
+		}
 		return $this->setValue('counter', $this->getValue('counter') + 1);
 	}
 
