@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Auth;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Model\User;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;

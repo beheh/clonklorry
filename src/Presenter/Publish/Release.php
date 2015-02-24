@@ -4,7 +4,6 @@ namespace Lorry\Presenter\Publish;
 
 use DateTime;
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ModelValueInvalidException;
 use Lorry\Exception\ForbiddenException;

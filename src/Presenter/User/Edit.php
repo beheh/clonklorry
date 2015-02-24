@@ -4,7 +4,6 @@ namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
 use Lorry\Model\User;
-use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ModelValueInvalidException;
 

@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
 class Table extends Presenter {

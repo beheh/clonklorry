@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Site;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Contact extends Presenter {

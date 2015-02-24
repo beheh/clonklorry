@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Model\User;
 use Lorry\Model\Addon;
 use Lorry\Exception\FileNotFoundException;

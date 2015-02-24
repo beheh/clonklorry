@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Manage\Moderator;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Service\LocalisationService;
 
 class Portal extends Presenter {

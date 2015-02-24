@@ -2,7 +2,6 @@
 
 namespace Lorry\Job;
 
-use Lorry\ModelFactory;
 use Lorry\Email;
 
 abstract class UserEmailJob extends EmailJob {

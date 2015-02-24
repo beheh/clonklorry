@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Manage\Moderator;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\EmailFactory;
 

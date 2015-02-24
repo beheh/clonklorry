@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Api;
 
 use Lorry\Presenter\Api\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
 class Release extends Presenter {

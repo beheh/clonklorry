@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Addon;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\FileNotFoundException;
 
 class Presentation extends Presenter {

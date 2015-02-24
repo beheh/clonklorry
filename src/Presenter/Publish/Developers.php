@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Exception\ModelValueInvalidException;
 
 class Developers extends Presenter {

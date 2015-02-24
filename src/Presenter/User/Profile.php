@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
-use Lorry\ModelFactory;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Service\LocalisationService;
