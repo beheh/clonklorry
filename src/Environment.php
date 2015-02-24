@@ -51,7 +51,6 @@ class Environment {
 		error_reporting(E_ALL ^ E_STRICT);
 
 		$container->set('Interop\Container\ContainerInterface', $container);
-		$container->set('Lorry\ServiceInterface', \DI\object('Lorry\Service'));
 		$container->set('Lorry\Logger\LoggerFactoryInterface', $loggerFactory);
 
 		$container->set('Psr\Log\LoggerInterface', \DI\factory(function() use ($loggerFactory) {
@@ -158,6 +157,7 @@ class Environment {
 					'/administrator/logs' => 'Manage\Administrator\Logs',
 					'/moderator' => 'Manage\Moderator\Portal',
 					'/moderator/approve/:number' => 'Manage\Moderator\Approve',
+					'/moderator/tickets' => 'Manage\Moderator\Tickets',
 					'/moderator/tickets/:number' => 'Manage\Moderator\Ticket',
 					'/register' => 'Account\Register',
 					'/login' => 'Account\Login',
