@@ -33,6 +33,7 @@ class Callback extends Presenter {
 			unset($_SESSION['returnto']);
 		}
 
+		$this->logger->debug('handling authorization callback');
 		try {
 			switch($provider) {
 				case 'openid':
@@ -79,6 +80,7 @@ class Callback extends Presenter {
 			}
 
 			if($oauth_provider) {
+				$this->logger->debug('authorization provider is "'.$provider_title.'"');
 				if(!$this->session->verifyAuthorizationState(filter_input(INPUT_GET, 'state'))) {
 					throw new AuthentificationFailedException('invalid state (csrf?)');
 				}
@@ -118,7 +120,8 @@ class Callback extends Presenter {
 			}
 			throw $exception;
 		}
-
+		
+		$this->logger->debug('authorization successful');
 		if($this->session->authenticated()) {
 			// we ignore returnto
 			unset($_SESSION['returnto']);
