@@ -108,7 +108,7 @@ class Register extends Presenter {
 		if(empty($errors)) {
 			$user->setRegistration(time());
 			if($user->save()) {
-				$this->notice('creating user "'.$user->getUsername().'"');
+				$this->logger->notice('creating user "'.$user->getUsername().'"');
 				try {
 					$this->job->submit('Welcome', array('user' => $user->getId()));
 				}
