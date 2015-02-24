@@ -30,7 +30,7 @@ class UserAdmin extends Command {
 		if($user === null) {
 			throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
 		}
-		$user->setPermission(User::PERMISSION_ADMINISTRATE);
+		$user->setPermission(\Lorry\Model\User::PERMISSION_ADMINISTRATE);
 		if($user->save()) {
 			$output->writeln('<info>'.$user->getUsername().' is now an administrator</info>');
 		}
