@@ -4,15 +4,7 @@ namespace Lorry;
 
 use Psr\Log\LoggerInterface;
 use Interop\Container\ContainerInterface;
-use Lorry\Service\ConfigService;
-use Lorry\Service\PersistenceService;
-use Lorry\Service\LocalisationService;
-use Lorry\Service\SecurityService;
-use Lorry\Service\SessionService;
-use Lorry\Service\MailService;
-use Lorry\Service\JobService;
 use Lorry\Exception\OutputCompleteException;
-use Lorry\TemplateEngineInterface;
 use Lorry\Router;
 
 abstract class Presenter {

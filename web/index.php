@@ -1,7 +1,5 @@
 <?php
 
-use Analog\Logger;
-
 require '../app/bootstrap.php';
 
 $lorry = null;

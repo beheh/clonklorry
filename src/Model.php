@@ -23,7 +23,6 @@ abstract class Model {
 	 */
 	protected $persistence;
 
-	private $table;
 	private $schema;
 	private $values;
 	private $changes;

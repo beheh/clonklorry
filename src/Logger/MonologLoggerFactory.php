@@ -2,7 +2,6 @@
 
 namespace Lorry\Logger;
 
-use Interop\Container\ContainerInterface;
 use Psr\Log\LogLevel;
 use Lorry\Environment;
 
