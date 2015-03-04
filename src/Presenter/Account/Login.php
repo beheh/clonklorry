@@ -39,6 +39,7 @@ class Login extends Presenter {
 			if(!empty($username)) {
 				$this->context['username_exists'] = true;
 			}
+			$this->context['registered'] = true;
 			$this->context['username'] = $username;
 			if(!$this->hasAlert('login')) {
 				$this->success('login', gettext('Registration successful! We\'ll send you an email for you to activate your account.'));
@@ -119,7 +120,7 @@ class Login extends Presenter {
 				}
 			} else {
 				// user does not exist
-				$this->error('login', gettext('Username unknown. You can enter your email address instead.'));
+				$this->error('login', gettext('Username or email address unknown.'));
 			}
 		}
 		$this->get();

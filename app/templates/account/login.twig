@@ -16,12 +16,12 @@
 				{% include 'functions/alert.twig' with {'selector' : 'login'} %}
 				<form id="form-login" method="post" role="form">
 					<div class="form-group">
-						<label for="username">{% trans "Username" %}</label>
-						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not (username_exists or email) and not email_focus %} autofocus{% endif %} required>
+						<label for="username" id="username-label" data-text-username="{% trans "Username" %}" data-text-email="{% trans "Email address"%}">{% trans "Username / Email address" %}</label>
+						<input type="text" class="form-control" name="username" id="username" placeholder="{% trans "Username / Email address" %}"{% if username %} value="{{ username|escape }}"{% endif %}{% if not (username_exists or email) and not email_focus %} autofocus{% endif %} required>
 					</div>
 					<div class="form-group">
 						<label for="password">{% trans "Password" %}</label>
-						<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}" {% if username and username_exists %} autofocus{% endif %} required>
+						<input type="password" class="form-control" name="password" id="password" placeholder="{% trans "Password" %}"{% if username and username_exists %} autofocus{% endif %} required>
 					</div>
 					<div class="checkbox">
 						<label>
@@ -30,25 +30,20 @@
 					</div>
 					<p><button class="btn btn-lg btn-primary" type="submit">{% trans "Login" %}</button>
 					{% if not (email or email_visible) %}
-						<a href="#by-email" class="btn btn-link visible-js" data-toggle="collapse" data-target="#by-email">{% if username or forgot_password %}{% trans "Forgot your password?" %}{% else %}{% trans "Login via email&hellip;" %}{% endif %}</a>
+						<a href="#by-email" class="btn btn-link visible-js" data-toggle="collapse" data-target="#by-email">{% trans "Forgot your password?" %}</a>
 					{% endif %}
 					</p>
 				</form>
 				<hr>
 				<div id="by-email" class="collapse in">
-					<h4>{% if email_visible and (reset_password or username) %}{% trans "Forgot your password?" %}{% else %}{% trans "Use your email account to log in:" %}{% endif %}</h4>
+					<h4>{% trans "Reset password" %}</h4>
 					{% include 'functions/alert.twig' with {'selector' : 'email'} %}
 					<form method="post" role="form">
 						<div class="form-group">
 							<label for="email">{% trans "Email address" %}</label>
 							<input type="email" class="form-control" name="email" id="email"{% if email %} value="{{email}}"{% endif %} placeholder="{% trans "Email address" %}" required{% if email_focus %} autofocus{% endif %}>
 						</div>
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" name="reset_password" value="yes"{% if (forgot_password or username or reset_password) %} checked{% endif %}> {% trans "Reset password" %}
-							</label>
-						</div>
-						<button class="btn btn-primary" type="submit" name="email-submit">{% trans "Send one-time login" %}</button>
+						<button class="btn btn-primary" type="submit" name="email-submit">{% trans "Reset password" %}</button>
 					</form>
 					<hr>
 				</div>
@@ -61,16 +56,14 @@
 				<hr class="visible-sm visible-xs">
 				{% if connect %}
 				{% else %}
+					{% if registered %}
+				<h2>{% trans %}Nearly there&hellip;{% endtrans %}</h2>
+				<p class="lead">{% trans %}You can now sign in with your username or email address and password.{% endtrans %}</p>
+					{% else %}
 				<h2>{% trans %}Not registered yet?{% endtrans %}</h2>
-				<p class="lead">{% trans %}Registering takes only a few moments and lets you to take part in the Clonk community.{% endtrans %}</p>
+				<p class="lead">{% trans %}Registering only takes a few moments. A Clonk registration key is not required.{% endtrans %}</p>
 				<p><a href="{{base}}/register{% if returnto %}?returnto={{returnto}}{% endif %}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a></p>
-				<hr>
-				<div class="row">
-					<div class="col-md-6">
-						<h3>{% trans %}Did you know&hellip;{% endtrans %}</h3>
-						<p>{% trans %}You can sign into {{brand}} using only your email address in case you're using a public computer. We'll send you a code which you can use a single time instead of your password.{% endtrans %}</p>
-					</div>
-				</div>
+					{% endif %}
 				{% endif %}
 			</div>
 		</div>
@@ -82,4 +75,13 @@
 	{% if not (email_visible or email) %}
 	$('#by-email').removeClass('in');
 	{% endif %}
+
+	var usernameLabelOriginal = $('#username-label').text();
+	var usernameLabelUpdate = function() {
+		var val = $('#username').val();
+		var label = $('#username-label');
+		label.text(val.length > 0 ? (val.indexOf('@') > -1 ? label.data('text-email') : label.data('text-username')) : usernameLabelOriginal);
+	};
+	usernameLabelUpdate();
+	$('#username').on('keyup change', usernameLabelUpdate);
 {% endblock %}
