@@ -75,16 +75,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.7.21",
+            "version": "2.7.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9dc3bb6dd6e16a7ed2f6fab73c2ee385145e26c0"
+                "reference": "7c97f11ca46c47209e597ebab6e74e164cdf6216"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9dc3bb6dd6e16a7ed2f6fab73c2ee385145e26c0",
-                "reference": "9dc3bb6dd6e16a7ed2f6fab73c2ee385145e26c0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7c97f11ca46c47209e597ebab6e74e164cdf6216",
+                "reference": "7c97f11ca46c47209e597ebab6e74e164cdf6216",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-03-05 00:07:56"
+            "time": "2015-03-12 19:51:58"
         },
         {
             "name": "beheh/flaps",
@@ -146,12 +146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/beheh/flaps.git",
-                "reference": "e2da9523ece3d06386504f257fec029cfd7ac602"
+                "reference": "26762d9e3ae0b3d8c50585375ddf768f9f91a8f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beheh/flaps/zipball/e2da9523ece3d06386504f257fec029cfd7ac602",
-                "reference": "e2da9523ece3d06386504f257fec029cfd7ac602",
+                "url": "https://api.github.com/repos/beheh/flaps/zipball/26762d9e3ae0b3d8c50585375ddf768f9f91a8f4",
+                "reference": "26762d9e3ae0b3d8c50585375ddf768f9f91a8f4",
                 "shasum": ""
             },
             "require": {
@@ -184,14 +184,14 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Fully configurable library for rate limiting requests in your application",
+            "description": "Modular library for rate limiting requests in applications",
             "homepage": "https://github.com/beheh/flaps",
             "keywords": [
                 "http",
                 "rate limit",
                 "throttle"
             ],
-            "time": "2015-03-10 10:06:36"
+            "time": "2015-03-12 14:48:46"
         },
         {
             "name": "container-interop/container-interop",
@@ -506,16 +506,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "efa1d394bb45b0984a863854c608c607b9c2a9a4"
+                "reference": "51cd7cd7ee0defbaafc6ec0d3620110a5d71e11a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/efa1d394bb45b0984a863854c608c607b9c2a9a4",
-                "reference": "efa1d394bb45b0984a863854c608c607b9c2a9a4",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/51cd7cd7ee0defbaafc6ec0d3620110a5d71e11a",
+                "reference": "51cd7cd7ee0defbaafc6ec0d3620110a5d71e11a",
                 "shasum": ""
             },
             "require": {
@@ -527,21 +527,21 @@
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "~2.0.0",
                 "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "~4.1",
                 "predis/predis": "~1.0",
                 "tedivm/stash": "~0.12.0"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
-                "league/flysystem-aws-s3-v2": "Use S3 storage with AWS SDK v2",
-                "league/flysystem-aws-s3-v3": "Use S3 storage with AWS SDK v3",
+                "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+                "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
                 "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
                 "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
                 "league/flysystem-copy": "Allows you to use Copy.com storage",
-                "league/flysystem-dropbox": "Use Dropbox storage",
+                "league/flysystem-dropbox": "Allows you to use Dropbox storage",
                 "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
                 "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-                "league/flysystem-sftp": "Allows SFTP server storage via phpseclib",
+                "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
                 "league/flysystem-webdav": "Allows you to use WebDAV storage",
                 "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
                 "predis/predis": "Allows you to use Predis for caching"
@@ -585,20 +585,20 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-01-23 09:43:34"
+            "time": "2015-03-10 11:04:14"
         },
         {
             "name": "league/oauth2-client",
-            "version": "0.9.0",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "a86dbd4e582acb2e6fb78cec68923dc27c26f86c"
+                "reference": "76af6059fb3f797ef6f5e05c3a0d2a5fc17b8958"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/a86dbd4e582acb2e6fb78cec68923dc27c26f86c",
-                "reference": "a86dbd4e582acb2e6fb78cec68923dc27c26f86c",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/76af6059fb3f797ef6f5e05c3a0d2a5fc17b8958",
+                "reference": "76af6059fb3f797ef6f5e05c3a0d2a5fc17b8958",
                 "shasum": ""
             },
             "require": {
@@ -644,7 +644,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2015-02-24 16:34:58"
+            "time": "2015-03-10 21:23:08"
         },
         {
             "name": "lightopenid/lightopenid",
@@ -758,16 +758,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae"
+                "reference": "c31a2c4e8db5da8b46c74cf275d7f109c0f249ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c41c218e239b50446fd883acb1ecfd4b770caeae",
-                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c31a2c4e8db5da8b46c74cf275d7f109c0f249ac",
+                "reference": "c31a2c4e8db5da8b46c74cf275d7f109c0f249ac",
                 "shasum": ""
             },
             "require": {
@@ -827,7 +827,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-03-05 01:12:12"
+            "time": "2015-03-09 09:58:04"
         },
         {
             "name": "myclabs/php-enum",
