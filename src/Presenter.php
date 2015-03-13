@@ -63,8 +63,15 @@ abstract class Presenter {
 	 */
 	protected $twig;
 
+    /**
+     *
+     * @var \Interop\Container\ContainerInterface
+     */
+    protected $container;
+
 	public function __construct(LoggerInterface $logger, ContainerInterface $container) {
 		$this->logger = $logger;
+        $this->container = $container;
 		$this->config = $container->get('config');
 		$this->persistence = $container->get('persistence');
 		$this->localisation = $container->get('localisation');

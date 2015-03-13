@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-04 16:52+0100\n"
-"PO-Revision-Date: 2015-03-04 16:53+0100\n"
+"POT-Creation-Date: 2015-03-04 17:03+0100\n"
+"PO-Revision-Date: 2015-03-04 17:03+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -3518,6 +3518,14 @@ msgstr "Nicht implementiert"
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/NotImplemented.php:22
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/TooManyRequests.php:18
+msgid "Too many requests"
+msgstr "Zu viele Anfragen"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/TooManyRequests.php:22
+msgid "You have exceeded the allowed number of requests."
+msgstr "Du hast die erlaubte Anzahl an Anfragen überschritten."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:68
 #, php-format

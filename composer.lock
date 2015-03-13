@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "21b14ca28d3224fd089b0c5b48dfdeb0",
+    "hash": "4f9a6844a6b25423b1e07b6a1d319f88",
     "packages": [
         {
             "name": "aura/sqlquery",
@@ -75,16 +75,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.7.20",
+            "version": "2.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2c9d93fbe680f64a84f5877209904f414d5cf92f"
+                "reference": "9dc3bb6dd6e16a7ed2f6fab73c2ee385145e26c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2c9d93fbe680f64a84f5877209904f414d5cf92f",
-                "reference": "2c9d93fbe680f64a84f5877209904f414d5cf92f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9dc3bb6dd6e16a7ed2f6fab73c2ee385145e26c0",
+                "reference": "9dc3bb6dd6e16a7ed2f6fab73c2ee385145e26c0",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,60 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-02-24 00:04:06"
+            "time": "2015-03-05 00:07:56"
+        },
+        {
+            "name": "beheh/flaps",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beheh/flaps.git",
+                "reference": "e2da9523ece3d06386504f257fec029cfd7ac602"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beheh/flaps/zipball/e2da9523ece3d06386504f257fec029cfd7ac602",
+                "reference": "e2da9523ece3d06386504f257fec029cfd7ac602",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.4",
+                "phpunit/phpunit": "~4.0",
+                "predis/predis": "~1.0"
+            },
+            "suggest": {
+                "doctrine/cache": "Enables a wide variety of caching systems as storage",
+                "predis/predis": "Enable Redis as storage system"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BehEh\\Flaps\\": "src/Flaps"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Benedict Etzel",
+                    "email": "developer@beheh.de",
+                    "homepage": "https://beheh.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fully configurable library for rate limiting requests in your application",
+            "homepage": "https://github.com/beheh/flaps",
+            "keywords": [
+                "http",
+                "rate limit",
+                "throttle"
+            ],
+            "time": "2015-03-10 10:06:36"
         },
         {
             "name": "container-interop/container-interop",
@@ -536,16 +589,16 @@
         },
         {
             "name": "league/oauth2-client",
-            "version": "0.8.1",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "bb2d4e4be7a4af05260de9eaa4337920bc5e0ad1"
+                "reference": "a86dbd4e582acb2e6fb78cec68923dc27c26f86c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/bb2d4e4be7a4af05260de9eaa4337920bc5e0ad1",
-                "reference": "bb2d4e4be7a4af05260de9eaa4337920bc5e0ad1",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/a86dbd4e582acb2e6fb78cec68923dc27c26f86c",
+                "reference": "a86dbd4e582acb2e6fb78cec68923dc27c26f86c",
                 "shasum": ""
             },
             "require": {
@@ -591,7 +644,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2015-02-12 17:10:16"
+            "time": "2015-02-24 16:34:58"
         },
         {
             "name": "lightopenid/lightopenid",
@@ -705,16 +758,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f"
+                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
-                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c41c218e239b50446fd883acb1ecfd4b770caeae",
+                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae",
                 "shasum": ""
             },
             "require": {
@@ -731,6 +784,7 @@
                 "phpunit/phpunit": "~4.0",
                 "raven/raven": "~0.5",
                 "ruflin/elastica": "0.90.*",
+                "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
             },
             "suggest": {
@@ -747,7 +801,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12.x-dev"
+                    "dev-master": "1.13.x-dev"
                 }
             },
             "autoload": {
@@ -773,7 +827,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-12-29 21:29:35"
+            "time": "2015-03-05 01:12:12"
         },
         {
             "name": "myclabs/php-enum",
@@ -1561,7 +1615,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "beheh/flaps": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
