@@ -15,54 +15,6 @@ abstract class Presenter {
 	 */
 	protected $logger;
 
-	/**
-	 *
-	 * @var \Lorry\Service\ConfigService
-	 */
-	protected $config;
-
-	/**
-	 *
-	 * @var \Lorry\Service\PersistenceService
-	 */
-	protected $persistence;
-
-	/**
-	 *
-	 * @var \Lorry\Service\LocalisationService
-	 */
-	protected $localisation;
-
-	/**
-	 *
-	 * @var \Lorry\Service\SecurityService
-	 */
-	protected $security;
-
-	/**
-	 *
-	 * @var \Lorry\Service\SessionService
-	 */
-	protected $session;
-
-	/**
-	 *
-	 * @var \Lorry\Service\MailService
-	 */
-	protected $mail;
-
-	/**
-	 *
-	 * @var \Lorry\Service\JobService
-	 */
-	protected $job;
-
-	/**
-	 *
-	 * @var \Lorry\TemplateEngineInterface;
-	 */
-	protected $twig;
-
     /**
      *
      * @var \Interop\Container\ContainerInterface
@@ -72,15 +24,13 @@ abstract class Presenter {
 	public function __construct(LoggerInterface $logger, ContainerInterface $container) {
 		$this->logger = $logger;
         $this->container = $container;
-		$this->config = $container->get('config');
-		$this->persistence = $container->get('persistence');
-		$this->localisation = $container->get('localisation');
-		$this->security = $container->get('security');
-		$this->session = $container->get('session');
-		$this->mail = $container->get('mail');
-		$this->job = $container->get('job');
-		$this->twig = $container->get('Lorry\TemplateEngineInterface');
 	}
+
+    public function __get($name) {
+        if($this->container->has($name)) {
+            return $this->container->get($name);
+        }
+    }
 
 	/**
 	 * Handle the RESTful method
