@@ -23,7 +23,7 @@
 				<h3 id="distributionplatform">{% trans %}Distribution platform{% endtrans %}</h3>
 				<p>{% trans %}We want to provide Clonk players with a simple, clean interface to find and download the best addons and keep them up-to-date as they progress.{% endtrans %}</p>
 				<p>{% trans %}It should also serve as an archive, to enable players to go back and find forgotten gems of the past.{% endtrans %}</p>
-				<p><a href="{{base}}/addons" class="btn btn-info">{% trans "Discover the addons" %}</a> <a href="{{base}}/about/api" class="btn btn-default">{% trans "API reference" %}</a></p>
+				<p><a href="{{base}}/addons" class="btn btn-info">{% trans "Discover the addons" %}</a></p>
 			</div>
 			<div class="col-md-4">
 				<h3 id="onlinecommunity">{% trans %}Online community{% endtrans %}</h3>
@@ -37,50 +37,54 @@
 			</div>
 		</div>
 		<hr>
-		<p class="lead">{% trans %}This project was only made possible with a number of technologies and free resources:{% endtrans %}</p>
+		<p class="lead">{% trans %}This project was only made possible by a number of technologies, libraries and resources:{% endtrans %}</p>
 		<div class="row">
 			<div class="col-md-4">
 				<h3 id="technologies">{% trans "Technologies" %}</h3>
 				<dl>
 					<dt><a href="http://php.net/">PHP</a></dt>
 					<dd>by the <a href="http://php.net/credits.php">PHP Group</a>,</dd>
-					<dt><a href="http://twig.sensiolabs.org">Twig</a>, <a href="http://swiftmailer.org/">Swift Mailer</a> & <a href="http://symfony.com/components">various Symfony components</a></dt>
-					<dd>by <a href="http://fabien.potencier.org/">Fabien Potencier</a> and <a href="http://sensiolabs.com/">SensioLabs</a>,</dd>
-					<dt><a href="http://auraphp.com/">Aura</a>.<a href="https://github.com/auraphp/Aura.SqlQuery/">SqlQuery</a></dt>
-					<dd>by the <a href="http://auraphp.com/community">Aura community</a>,</dd>
-					<dt><a href="https://github.com/thephpleague/flysystem">Flysystem</a> & <a href="https://github.com/thephpleague/oauth2-client">OAuth 2.0 Client</a></dt>
-					<dd>by <a href="http://thephpleague.com/">the PHP League</a>,</dd>
-					<dt><a href="https://code.google.com/p/lightopenid/">LightOpenID</a></dt>
-					<dd>by <a href="https://code.google.com/u/103055401176250561450/">the anonymous author</a>,</dd>
-					<dt><a href="https://github.com/Seldaek/monolog">Monolog</a></dt>
-					<dd>by <a href="http://seld.be/">Jordi Boggiano</a>,</dd>
 					<dt><a href="http://redis.io/">Redis</a></dt>
 					<dd>by <a href="http://invece.org/">Salvatore Sanfilippo</a>,</dd>
-					<dt><a href="https://github.com/resque/resque">Resque</a> via <a href="https://github.com/chrisboulton/php-resque">resque-php</a></dt>
-					<dd>by <a href="https://github.com/resque/resque/graphs/contributors">Team Resque</a> / <a href="http://chrisboulton.com/">Chris Boulton</a>,</dd>
 					<dt><a href="http://lesscss.org/">Less</a></dt>
 					<dd>by the <a href="http://lesscss.org/about/#team">core less team</a>.</dd>
 				</dl>
-			</div>
-			<div class="col-md-4">
+				<hr class="hidden-xs hidden-sm">
 				<h3 id="resources">{% trans "Resources" %}</h3>
 				<dl>
 					<dt><a href="http://getbootstrap.com/">Bootstrap</a></dt>
 					<dd>by <a href="http://twitter.com/mda">@mda</a>, <a href="http://twitter.com/fat">@fat</a> and <a href="https://github.com/orgs/twbs/people">team</a>,</dd>
 					<dt><a href="http://glyphicons.com/">Glyphicons</a></dt>
 					<dd>by Jan Kovařík,</dd>
-					<dt><a href="https://jquery.com/">jQuery</a></dt>
-					<dd>by the <a href="https://jquery.org/team/">jQuery team</a>,</dd>
-					<dt><a href="http://resumablejs.com/">Resumable.js</a></dt>
-					<dd>by <a href="http://www.23company.com/">23</a>,</dd>
-					<dt><a href="https://twitter.github.io/typeahead.js/">Typeahead.js</a></dt>
-					<dd>by <a href="https://twitter.com/">Twitter</a>,</dd>
 					<dt><a href="http://www.clonk.de/cr.php?lng={% trans "en" %}">Clonk Rage logo</a></dt>
 					<dd>with friendly permission from <a href="http://www.clonk.de/redwolf.php?lng={% trans "en" %}">RedWolfDesign</a>,</dd>
 					<dt><a href="http://git.openclonk.org/openclonk-resources.git/blob/HEAD:/graphics/OpenClonkLogo.xcf">OpenClonk logo</a></dt>
 					<dd>by "<a href="http://forum.openclonk.org/user_info.pl?uid=37">MrBeast</a>" at <a href="http://openclonk.org/">openclonk.org</a>,</dd>
 					<dt><a href="http://subtlepatterns.com/debut-light/">Debut Light</a>  <span class="text-muted">(background texture)</span></dt>
 					<dd>by <a href="http://lukemcdonald.com/">Luke McDonald</a> via <a href="http://subtlepatterns.com/">Subtle Patterns</a>.</dd>
+				</dl>
+			</div>
+			<div class="col-md-4">
+				<h3 id="libraries">{% trans "Libraries" %}</h3>
+				<dl>
+					<dt><a href="http://twig.sensiolabs.org">Twig</a>, <a href="http://swiftmailer.org/">Swift Mailer</a> & <a href="http://symfony.com/components">various Symfony components</a></dt>
+					<dd>by <a href="http://fabien.potencier.org/">Fabien Potencier</a> and <a href="http://sensiolabs.com/">SensioLabs</a>,</dd>
+					<dt><a href="http://auraphp.com/">Aura</a>.<a href="https://github.com/auraphp/Aura.SqlQuery/">SqlQuery</a></dt>
+					<dd>by the <a href="http://auraphp.com/community">Aura community</a>,</dd>
+					<dt><a href="https://github.com/resque/resque">Resque</a> via <a href="https://github.com/chrisboulton/php-resque">vend/resque</a></dt>
+					<dd>by <a href="https://github.com/resque/resque/graphs/contributors">Team Resque</a> / <a href="http://chrisboulton.com/">Chris Boulton</a>,</dd>
+					<dt><a href="https://github.com/thephpleague/flysystem">Flysystem</a> & <a href="https://github.com/thephpleague/oauth2-client">OAuth 2.0 Client</a></dt>
+					<dd>by <a href="http://thephpleague.com/">the PHP League</a>,</dd>
+					<dt><a href="https://code.google.com/p/lightopenid/">LightOpenID</a></dt>
+					<dd>by <a href="https://code.google.com/u/103055401176250561450/">the anonymous author</a>,</dd>
+					<dt><a href="https://jquery.com/">jQuery</a></dt>
+					<dd>by the <a href="https://jquery.org/team/">jQuery team</a>,</dd>
+					<dt><a href="http://resumablejs.com/">Resumable.js</a></dt>
+					<dd>by <a href="http://www.23company.com/">23</a>,</dd>
+					<dt><a href="https://twitter.github.io/typeahead.js/">Typeahead.js</a></dt>
+					<dd>by <a href="https://twitter.com/">Twitter</a>,</dd>
+					<dt><a href="https://github.com/Seldaek/monolog">Monolog</a></dt>
+					<dd>by <a href="http://seld.be/">Jordi Boggiano</a>.</dd>
 				</dl>
 			</div>
 			<div class="col-md-4">
@@ -94,11 +98,13 @@
 				<h3 id="credits">{% trans "Credits" %}</h3>
 				<dl>
 					<dt><span class="text-muted">thanking the</span> <a href="http://clonkspot.org/">Clonkspot community</a>
-					<dd>for feedback and thoughts,</dd>
+					<dd>for much-needed feedback and thoughts,</dd>
 					<dt><span class="text-muted">thanking the</span> <a href="http://forum.openclonk.org/">OpenClonk community</a></dt>
 					<dd>for inspiration and for creating OpenClonk,</dd>
-					<dt><span class="text-muted">thanking</span> Matthes Bender</dt>
-					<dd>for creating Clonk.</dd>
+					<dt><span class="text-muted">thanking all</span> content creators</dt>
+					<dd>for making Clonk an immortal game,</dd>
+					<dt><span class="text-muted">and thanking</span> Matthes Bender</dt>
+					<dd>for imagining and creating Clonk.</dd>
 				</dl>
 			</div>
 		</div>
