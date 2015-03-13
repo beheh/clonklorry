@@ -59,8 +59,8 @@ class Login extends Presenter {
 	}
 
 	public function post() {
-        $flaps = $this->container->get('BehEh\Flaps\Flaps');
-        $flap = $flaps->getFlap('auth');
+        $flaps = $this->flaps;
+        $flap = $flaps->getFlap('login');
         $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(3, '5s'));
         $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(10, '60s'));
         $flap->limit($_SERVER['REMOTE_ADDR']);

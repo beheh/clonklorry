@@ -69,6 +69,7 @@ class Environment
         $container->set('cdn', \DI\link('Lorry\Service\CdnService'));
         $container->set('router', new Router($loggerFactory->build('router'), $container));
         $container->set('twig', \DI\link('Lorry\TemplateEngineInterface'));
+        $container->set('flaps', \DI\link('BehEh\Flaps\Flaps'));
 
         $container->set('Predis\Client', \DI\factory(function() use ($config) {
                     return new \Predis\Client($config->get('job/dsn'));

@@ -19,7 +19,7 @@ abstract class Presenter {
      *
      * @var \Interop\Container\ContainerInterface
      */
-    protected $container;
+    private $container;
 
 	public function __construct(LoggerInterface $logger, ContainerInterface $container) {
 		$this->logger = $logger;
