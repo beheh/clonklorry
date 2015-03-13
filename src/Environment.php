@@ -3,8 +3,6 @@
 namespace Lorry;
 
 use Lorry\Exception\NotImplementedException;
-use Psr\Log\LogLevel;
-use Interop\Container\ContainerInterface;
 use Lorry\Router;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
@@ -47,7 +45,7 @@ class Environment
         }
 
         $container = $builder->build();
-        $container->set('Lorry\\Service\\ConfigService', $config);
+        $container->set('Lorry\Service\ConfigService', $config);
         $this->container = $container;
 
         error_reporting(E_ALL ^ E_STRICT);
@@ -239,7 +237,7 @@ class Environment
                 $this->container->get('template')->addGlobal('site_enabled', false);
                 $this->logger->alert('cannot reach database');
             }
-            $this->container->get('\\Lorry\\Presenter\\Error')->get($exception);
+            $this->container->get('Lorry\Presenter\Error')->get($exception);
         }
     }
 
