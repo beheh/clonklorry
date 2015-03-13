@@ -6,6 +6,12 @@ use Lorry\Presenter;
 
 class Login extends Presenter {
 
+    /**
+     * @Inject
+     * @var BehEh\Flaps\Flaps
+     */
+    private $flaps;
+
 	public function get() {
 		if(isset($_SESSION['register_oauth'])) {
 			unset($_SESSION['register_oauth']);
