@@ -233,7 +233,7 @@ class Environment
             }
         } catch (\Exception $exception) {
             if ($this->container->get('persistence')->hasFailed()) {
-                $this->container->get('template')->addGlobal('site_enabled', false);
+                $this->container->get('Lorry\TemplateEngineInterface')->addGlobal('site_enabled', false);
                 $this->logger->alert('cannot reach database');
             }
             $this->container->get('Lorry\Presenter\Error')->get($exception);
