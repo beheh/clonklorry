@@ -4,7 +4,6 @@ namespace Lorry\Job;
 
 use Lorry\Job;
 use Lorry\Email;
-use Lorry\EmailFactory;
 
 abstract class EmailJob extends Job {
 
@@ -21,7 +20,7 @@ abstract class EmailJob extends Job {
 	}
 
 	public function perform() {
-		$email = EmailFactory::build($this->getEmail());
+		$email = $this->mail->build($this->getEmail());
 		$this->prepareEmail($email, $this->args);
 		$this->mail->send($email);
 	}

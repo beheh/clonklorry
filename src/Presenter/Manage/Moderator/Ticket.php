@@ -50,7 +50,7 @@ class Ticket extends Presenter {
 		if(!$ticket->isEscalated() && !$ticket->isAcknowledged()) {
 			$staff = $this->session->getUser();
 			if(isset($_POST['escalate'])) {
-				$mail = EmailFactory::build('Ticket');
+				$mail = $this->mail->build('Ticket');
 
 				$user = $ticket->fetchUser();
 				if($user) {

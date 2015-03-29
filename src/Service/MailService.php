@@ -5,6 +5,7 @@ namespace Lorry\Service;
 use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Email;
+use Lorry\TemplateEngineInterface;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
@@ -13,21 +14,31 @@ use Exception;
 class MailService extends Service {
 
 	/**
-	 *
-	 * @var \Lorry\Service\Config
+	 * @var Lorry\Service\Config
 	 */
 	protected $config;
 
 	/**
-	 *
-	 * @var \Lorry\Service\LocalisationService
+	 * @var Lorry\Service\LocalisationService
 	 */
 	protected $localisation;
 
-	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, LocalisationService $localisation) {
+    /**
+     * @var Lorry\Service\SecurityService
+     */
+    protected $security;
+
+    /**
+     * @var Lorry\TemplateEngineInterface
+     */
+    protected $templating;
+
+	public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, LocalisationService $localisation, SecurityService $security, TemplateEngineInterface $templating) {
 		parent::__construct($loggerFactory);
 		$this->config = $config;
 		$this->localisation = $localisation;
+        $this->security = $security;
+        $this->templating = $templating;
 	}
 
 	/**
@@ -46,6 +57,19 @@ class MailService extends Service {
 		$this->mailer = new Swift_Mailer($transport);
 		return true;
 	}
+
+    public function build($email) {
+        $class = '\\Lorry\\Email\\'.$email;
+        if(!class_exists($class)) {
+            throw new RuntimeException('unknown email "'.$class.'"');
+        }
+        $instance = new $class();
+        $instance->setConfigService($this->config);
+        $instance->setLocalisationService($this->localisation);
+        $instance->setSecurityService($this->security);
+        $instance->setTwig($this->templating);
+        return $instance;
+    }
 
 	/**
 	 * 
