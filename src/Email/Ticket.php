@@ -18,6 +18,10 @@ class Ticket extends Email {
 	public function setStaff($staff) {
 		$this->context['staff'] = $staff->forPresenter();
 	}
+
+    public function setTicketId($id) {
+        $this->context['ticketid'] = $id;
+    }
 	
 	public function setMessage($message) {
 		$this->context['message'] = nl2br(htmlspecialchars($message));

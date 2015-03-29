@@ -3,8 +3,9 @@
 {% block subject %}{% trans %}{{brand}}: Escalated ticket{% endtrans %}{% endblock %}
 
 {% block body %}
+{% set ticket %}<a href="{{base}}/moderator/tickets/{{ticketid}}">{% trans "ticket" %}</a>{% endset %}
 {% set staffname %}<a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a>{% endset %}
-<p>{% trans %}The following ticket was escalated by {{staffname}}:{% endtrans %}</p>
+<p>{% trans %}The following {{ticket}} was escalated by {{staffname}}:{% endtrans %}</p>
 
 <blockquote>
 	<p>"{{message|raw}}"</p>

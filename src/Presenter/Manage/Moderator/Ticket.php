@@ -52,8 +52,9 @@ class Ticket extends Presenter {
 			if(isset($_POST['escalate'])) {
 				$mail = $this->mail->build('Ticket');
 
+				$mail->setTicketId($ticket->getId());
 				$user = $ticket->fetchUser();
-				if($user) {
+                if($user) {
 					$mail->setReplyTo($user->getEmail());
 					$mail->setUser($user);
 				}
