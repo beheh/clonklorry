@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 14:12+0100\n"
-"PO-Revision-Date: 2015-03-30 15:13+0100\n"
+"POT-Creation-Date: 2015-03-30 15:17+0100\n"
+"PO-Revision-Date: 2015-03-30 15:18+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1380,11 +1380,11 @@ msgstr "<strong>Anmeldedienste</strong> (nur, falls du Konten verknüpft hast)"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:83
 msgid ""
-"The following data is saved as linked to your account, but cannot be "
-"correlated once you delete your account:"
+"The following data is linked to you and will remain after you delete your "
+"account, but will be unlinked if you decide to delete your account:"
 msgstr ""
-"Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht "
-"mehr zugeordnet werden wenn du dein Konto löschst:"
+"Die folgenden Daten werden mit dir verknüpft und bleiben bestehen, falls du "
+"dein Konto löschst, aber werden nicht mehr verknüpft falls du Konto löschst:"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:88
 msgid ""
@@ -3276,6 +3276,13 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:97
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid ""
+#~ "The following data is saved as linked to your account, but cannot be "
+#~ "correlated once you delete your account:"
+#~ msgstr ""
+#~ "Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht "
+#~ "mehr zugeordnet werden wenn du dein Konto löschst:"
 
 #~ msgid ""
 #~ "We know it's not always easy to build something awesome. With the "
