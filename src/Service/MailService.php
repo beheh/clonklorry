@@ -10,6 +10,7 @@ use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
 use Exception;
+use RuntimeException;
 
 class MailService extends Service {
 
