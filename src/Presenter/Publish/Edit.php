@@ -201,7 +201,7 @@ class Edit extends Presenter {
 						try {
 							$addon->setTitle($addon->getTitle(), 'de');
 						} catch(ModelValueInvalidException $ex) {
-							
+							// don't care - see above
 						}
 					}
 					if($addon->getProposedShort() === null) {
