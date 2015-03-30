@@ -307,7 +307,7 @@ class SessionService extends Service {
 			if($_SESSION['password_reset_token'] > time() - 5 * 60) {
 				return true;
 			} else {
-				$this->clearPasswordReset();
+				$this->clearResetPassword();
 			}
 		}
 		return false;
