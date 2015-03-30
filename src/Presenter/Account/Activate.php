@@ -16,13 +16,12 @@ class Activate extends Presenter {
 		}
 
 		$expires = filter_input(INPUT_GET, 'expires');
-		$address = urldecode(filter_input(INPUT_GET, 'address'));
+		$address = filter_input(INPUT_GET, 'address');
 
 		$hash = filter_input(INPUT_GET, 'hash');
 		if(empty($hash)) {
 			throw new BadRequestException();
 		}
-		$hash = $hash ? $hash : '';
 
 		$expected = $this->security->signActivation($user, $expires, $address);
 
