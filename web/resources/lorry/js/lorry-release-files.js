@@ -155,11 +155,15 @@ function updateReleaseResumableState() {
 		$('#resumable-files').show();
 		$('#resumable-files-none').hide();
 		$('#resumable-files-count').show();
+        $('.files-some').show();
+        $('.files-none').hide();
 	}
 	else {
 		$('#resumable-files').hide();
 		$('#resumable-files-none').show();
 		$('#resumable-files-count').hide();
+        $('.files-none').show();
+        $('.files-some').hide();
 	}
 
 	if (releaseResumable.isUploading()) {

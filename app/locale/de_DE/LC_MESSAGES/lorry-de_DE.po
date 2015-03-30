@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2015-03-30 14:12+0100\n"
-"PO-Revision-Date: 2015-03-30 14:12+0100\n"
+"PO-Revision-Date: 2015-03-30 15:13+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2274,7 +2274,7 @@ msgstr "muss eingereicht werden"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:99
 msgid "The addon %needs_to_be_submitted% in order to be quickly released."
 msgstr ""
-"Die Erweiterung %needs_to_be_submitted% um eine schnelle Veröffentlichung "
+"Die Erweiterung %needs_to_be_submitted%, um eine schnelle Veröffentlichung "
 "durchzuführen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:127
@@ -2311,7 +2311,8 @@ msgstr "muss bestätigt werden"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:179
 msgid "The addon %needs_to_be_approved% in order to schedule a release."
 msgstr ""
-"Die Erweiterung %needs_to_be_approved% um eine Veröffentlichung zu planen."
+"Die Erweiterung %needs_to_be_approved%, damit eine Veröffentlichung geplant "
+"werden kann."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:187
 msgid "Date and time"
