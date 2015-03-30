@@ -24,8 +24,15 @@ class SessionService extends Service {
 		session_name('lorry_session');
 	}
 
+    /**
+     * @var bool
+     */
 	protected $started = false;
-	protected $user = false;
+
+    /**
+     * @var \Lorry\Model\User
+     */
+	protected $user = null;
 
 	/**
 	 * 
