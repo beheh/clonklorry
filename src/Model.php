@@ -34,7 +34,6 @@ abstract class Model {
 
 		$this->loaded = false;
 
-		$this->table = $this->getTable();
 		$this->schema = $this->getSchema();
 
 		$this->values = array();
@@ -51,7 +50,7 @@ abstract class Model {
 	abstract public function getSchema();
 
 	/**
-	 * @return array
+	 * @return string
 	 */
 	abstract public function getTable();
 
