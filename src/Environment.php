@@ -223,6 +223,7 @@ class Environment
 
             // execute the RESTful method
             $presenter = $this->container->get($presenterClass);
+            $presenter->setRequest($request);
             $presenter->handle($method, $router->getMatches());
             $this->logger->debug('successfully handled request');
         } catch (Exception $exception) {

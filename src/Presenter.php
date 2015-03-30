@@ -6,6 +6,7 @@ use Psr\Log\LoggerInterface;
 use Interop\Container\ContainerInterface;
 use Lorry\Exception\OutputCompleteException;
 use Lorry\Router;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @param \Lorry\Service\ConfigService $config
@@ -33,6 +34,7 @@ abstract class Presenter {
      */
     private $container;
 
+
 	public function __construct(LoggerInterface $logger, ContainerInterface $container) {
 		$this->logger = $logger;
         $this->container = $container;
@@ -42,6 +44,16 @@ abstract class Presenter {
         if($this->container->has($name)) {
             return $this->container->get($name);
         }
+    }
+
+    /**
+     *
+     * @var \Symfony\Component\HttpFoundation\Request
+     */
+    private $request;
+
+    public function setRequest(Request $request) {
+        $this->request = $request;
     }
 
 	/**
@@ -125,8 +137,9 @@ abstract class Presenter {
 		if(isset($_POST['return'])) {
 			$this->context['return'] = filter_input(INPUT_POST, 'return');
 		} else {
-			// @todo
-			//$this->context['return'] = $request->getPathInfo();
+            if($this->request) {
+                $this->context['return'] = $this->request->getPathInfo();
+            }
 		}
 
 		$this->context['password'] = false;
