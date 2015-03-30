@@ -36,10 +36,16 @@ class Activate extends Presenter {
 		if($address != $user->getEmail()) {
 			throw new ForbiddenException('token is for another email address');
 		}
-
+        
 		$user->activate();
 		$user->save();
-		$this->redirect('/settings');
+        
+        if($this->session->authenticated()) {
+            $this->redirect('/settings');
+        }
+        else {
+            $this->redirect('/login?returnto=/settings');
+        }
 	}
 
 }
