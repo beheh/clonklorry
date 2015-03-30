@@ -1,6 +1,5 @@
 namespace :lorry do
 	task :console, :command, :params, :role do |t, args|
-
 		ask(:cmd, "cache:clear")
 		command = args[:command] || fetch(:cmd)
 		role = args[:role] || :all
@@ -22,4 +21,16 @@ namespace :lorry do
 		  invoke "lorry:console", "cache:warmup"
 		end
 	end
-		end
+
+    namespace :resque do
+        task :restart do
+            paths = fetch(:resque_workers);
+            
+            if paths
+                on roles(:app) do
+                    paths.each{ |path| execute :svc, "-h", path }
+                end
+            end
+        end
+    end
+end
