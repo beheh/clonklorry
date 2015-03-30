@@ -105,7 +105,7 @@ class LocalisationService extends Service {
 
 	/**
 	 * 
-	 * @param type $language
+	 * @param string $language
 	 * @return bool
 	 */
 	final public function setDisplayLanguage($language) {
@@ -257,7 +257,7 @@ class LocalisationService extends Service {
 	/**
 	 * 
 	 * @param int $number
-	 * @return type
+	 * @return string
 	 */
 	final public function countedNumber($number) {
 		switch($number) {

@@ -225,8 +225,8 @@ abstract class Model {
 
 	/**
 	 * 
-	 * @param type $row
-	 * @param type $value
+	 * @param string $row
+	 * @param any $value
 	 * @return bool
 	 */
 	final protected function match($row, $value) {
@@ -247,9 +247,9 @@ abstract class Model {
 
 	/**
 	 * 
-	 * @param type $row
-	 * @param type $value
-	 * @return type
+	 * @param string $row
+	 * @param any $value
+	 * @return any
 	 */
 	final protected function ensureType($row, $value) {
 		$this->ensureField($row);
@@ -437,8 +437,8 @@ abstract class Model {
 
 	/**
 	 * 
-	 * @param type $model The model to create and load
-	 * @param type $row The row which maps the target models id
+	 * @param string $model The model to create and load
+	 * @param string $row The row which maps the target models id
 	 * @return Model
 	 */
 	final protected function fetch($model, $row) {
@@ -452,9 +452,9 @@ abstract class Model {
 
 	/**
 	 *
-	 * @param type $string The string to validate
-	 * @param type $minlength The minimum length of the string
-	 * @param type $maxlength The maximum length of the string
+	 * @param string $string The string to validate
+	 * @param int $minlength The minimum length of the string
+	 * @param int $maxlength The maximum length of the string
 	 * @throws ModelValueInvalidException
 	 */
 	final protected function validateString($string, $minlength, $maxlength) {

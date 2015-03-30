@@ -221,7 +221,7 @@ class PersistenceService extends Service {
 	/**
 	 * 
 	 * @param Model $model
-	 * @return type
+	 * @return bool
 	 * @throws Exception
 	 */
 	public function delete(Model $model) {
