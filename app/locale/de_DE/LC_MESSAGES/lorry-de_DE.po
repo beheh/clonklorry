@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 14:04+0100\n"
-"PO-Revision-Date: 2015-03-30 14:05+0100\n"
+"POT-Creation-Date: 2015-03-30 14:12+0100\n"
+"PO-Revision-Date: 2015-03-30 14:12+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -87,16 +87,24 @@ msgstr "Erweiterung bearbeiten"
 msgid "Manage releases"
 msgstr "Releases verwalten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:161
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:159
+msgid "developer portal"
+msgstr "Entwicklerportal"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:164
+msgid "You can create addons at the %developer_portal%."
+msgstr "Du kannst Erweiterungen im %developer_portal% anlegen."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:174
 msgid "Your addons will appear here"
 msgstr "Hier werden deine Erweiterungen erscheinen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:165
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:178
 msgid "Visit the developer portal to get started with a new addon."
 msgstr ""
 "Besuche das Entwicklerportal, um mit einer neuen Erweiterung loszulegen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:171
+#: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:184
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:34
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:192
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:154

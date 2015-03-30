@@ -34,6 +34,8 @@
 					</li>
 				{% endfor %}
 			</ul>
+            {% set developer_portal %}<a href="{{base}}/developers?create">{% trans %}developer portal{% endtrans %}</a>{% endset %}
+            <p class="help-block">{% trans %}You can create addons at the {{developer_portal}}.{% endtrans %}</p>
 		</div>
 	{% else %}
 		<div class="jumbotron">
