@@ -9,16 +9,16 @@ use Lorry\Router;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @param \Lorry\Service\ConfigService $config
- * @param \Lorry\Service\PersistenceService $persistence
- * @param \Lorry\Service\LocalisationService $localisation
- * @param \Lorry\Service\MailService $mail
- * @param \Lorry\Service\JobService $job
- * @param \Lorry\Service\SessionService $session
- * @param \Lorry\Service\SecurityService $security
- * @param \Lorry\Service\CdnService $cdn
- * @param \Lorry\Router $router
- * @param \Lorry\TemplateEngineInterface $twig
+ * @property \Lorry\Service\ConfigService $config
+ * @property \Lorry\Service\PersistenceService $persistence
+ * @property \Lorry\Service\LocalisationService $localisation
+ * @property \Lorry\Service\MailService $mail
+ * @property \Lorry\Service\JobService $job
+ * @property \Lorry\Service\SessionService $session
+ * @property \Lorry\Service\SecurityService $security
+ * @property \Lorry\Service\CdnService $cdn
+ * @property \Lorry\Router $router
+ * @property \Lorry\TemplateEngineInterface $twig
  */
 abstract class Presenter {
 
