@@ -456,7 +456,6 @@ abstract class Model {
 	 * @param type $string The string to validate
 	 * @param type $minlength The minimum length of the string
 	 * @param type $maxlength The maximum length of the string
-	 * @param type $regexp The (optional) regexp to match the string agains
 	 * @throws ModelValueInvalidException
 	 */
 	final protected function validateString($string, $minlength, $maxlength) {
