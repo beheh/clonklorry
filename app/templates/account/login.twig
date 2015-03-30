@@ -29,7 +29,7 @@
 						</label>
 					</div>
 					<p><button class="btn btn-lg btn-primary" type="submit">{% trans "Login" %}</button>
-					{% if not (email or email_visible) %}
+					{% if not (email_visible) %}
 						<a href="#by-email" class="btn btn-link visible-js" data-toggle="collapse" data-target="#by-email">{% trans "Forgot your password?" %}</a>
 					{% endif %}
 					</p>
@@ -72,7 +72,7 @@
 
 {% block javascript %}
 	$('#by-openid').removeClass('in');
-	{% if not (email_visible or email) %}
+	{% if not (email_visible) %}
 	$('#by-email').removeClass('in');
 	{% endif %}
 

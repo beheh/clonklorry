@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 17:53+0100\n"
-"PO-Revision-Date: 2015-03-30 17:53+0100\n"
+"POT-Creation-Date: 2015-03-30 22:58+0100\n"
+"PO-Revision-Date: 2015-03-30 23:00+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1761,7 +1761,7 @@ msgstr ""
 "verifizieren. Bitte füge ein sicheres Passwort hinzu, um fortzufahren."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:38
-#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:40
+#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:38
 #: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:46
 msgid "this link"
 msgstr "diesen Link"
@@ -1926,26 +1926,22 @@ msgid "Search addons by name, game, tags&hellip;"
 msgstr "Suche Erweiterungen nach Name, Spiel, Tags&hellip;"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:48
-msgid "login page"
-msgstr "Anmeldeseite"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:58
 msgid "%brand%: One-time login"
 msgstr "%brand%: Einmalige Anmeldung"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:66
+#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:56
 msgid "You (or somebody else) requested a one-time login for your account."
 msgstr ""
 "Du (oder jemand anderes) hat eine Einmal-Anmeldung für dein Konto "
 "angefordert."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:71
+#: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:60
 msgid ""
-"Either open %this_link% or use the following single-use code instead of your "
-"password on the %login_page%:"
+"Please open %this_link% access your account; or paste the following url into "
+"your browser:"
 msgstr ""
-"Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
-"deines Passworts auf der %login_page%;"
+"Bitte öffne %this_link% um auf dein Konto zuzugreifen; oder füge die "
+"folgende URL in deinen Browser ein:"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/ab/ce/bdaa43c3eb1769a3d5545eb538b9f7bc6b569e948ec1616d82da56cf90fd.php:45
 msgid "Release scheduled"
@@ -2554,13 +2550,13 @@ msgid "not a valid OAuth provider"
 msgstr "kein gültiger OAuth-Provider"
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter.php:149
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:135
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:136
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:195
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:230
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:55
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:58
 msgid ""
 "Registration successful! We'll send you an email for you to activate your "
 "account."
@@ -2568,27 +2564,27 @@ msgstr ""
 "Registrierung erfolgreich! Wir werden dir eine E-Mail zur Aktivierung deines "
 "Kontos senden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:61
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:64
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:65
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:68
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:88
-msgid "You should receive a link shortly."
-msgstr "Du solltest einen Link in Kürze erhalten."
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:90
+msgid "You should receive an email shortly."
+msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:94
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:92
 msgid "Login via email failed."
 msgstr "Anmeldung per E-Mail fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:98
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:96
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:139
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:140
 msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
@@ -3268,13 +3264,33 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:94
+#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:97
+#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "You should receive a link shortly."
+#~ msgstr "Du solltest receive an"
+
+#~ msgid ""
+#~ "Please open %this_link% or paste the following url into your browser to "
+#~ "access your account:"
+#~ msgstr ""
+#~ "Bitte öffne %this_link% oder füge die folgende URL in deinen Browser ein "
+#~ "um auf dein Konto zuzugreifen:"
+
+#~ msgid "login page"
+#~ msgstr "Anmeldeseite"
+
+#~ msgid ""
+#~ "Either open %this_link% or use the following single-use code instead of "
+#~ "your password on the %login_page%:"
+#~ msgstr ""
+#~ "Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
+#~ "deines Passworts auf der %login_page%;"
 
 #~ msgid ""
 #~ "Please open %this_link% to activate your address or paste the following "

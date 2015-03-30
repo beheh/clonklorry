@@ -7,7 +7,7 @@ use Exception as PHPException;
 class Exception extends PHPException {
 
 	public function getPresenter() {
-		return 'Error';
+		return 'Lorry\Presenter\Error';
 	}
 
 	public function getApiType() {

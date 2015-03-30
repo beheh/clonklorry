@@ -6,6 +6,7 @@ use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception;
+use \InvalidArgumentException;
 use Lorry\Model\User;
 
 class SecurityService {
@@ -103,14 +104,14 @@ class SecurityService {
 
 	public function signActivation(User $user, $expires, $address) {
 		if(!$user || !$expires || !$address) {
-			throw new Exception('incomplete activation signing request');
+			throw new InvalidArgumentException('incomplete activation signing request');
 		}
 		return $this->sign($user->getId().':'.intval($expires).':'.$address);
 	}
 
 	public function signLogin(User $user, $expires, $counter, $reset = false) {
 		if(!$user || !$expires || !$counter) {
-			throw new Exception('incomplete login signing request');
+			throw new InvalidArgumentException('incomplete login signing request');
 		}
 		return $this->sign($user->getId().':'.intval($expires).':'.intval($counter).':'.intval($reset));
 	}

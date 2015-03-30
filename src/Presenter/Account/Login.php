@@ -3,6 +3,8 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
+use Lorry\Exception\ForbiddenException;
+use Lorry\Exception\BadRequestException;
 
 class Login extends Presenter
 {
@@ -28,16 +30,17 @@ class Login extends Presenter
             return $this->redirect($this->session->handleOauth());
         }
 
+        if (isset($_GET['hash'])) {
+            $this->attemptTokenLogin();
+        }
+
         if (isset($_GET['returnto'])) {
             $this->context['returnto'] = filter_input(INPUT_GET, 'returnto');
         }
         if (!isset($this->context['remember']) && !$this->session->getFlag('login_forget')) {
             $this->context['remember'] = true;
         }
-        if (isset($_POST['email_submit']) || $this->session->getFlag('login_email')) {
-            $this->context['email_visible'] = true;
-        }
-        if (isset($_POST['reset_password']) || isset($_GET['forgot'])) {
+        if (isset($_POST['email-submit']) || isset($_GET['forgot'])) {
             $this->context['reset_password'] = true;
             $this->context['email_visible'] = true;
             $this->context['email_focus'] = true;
@@ -81,15 +84,10 @@ class Login extends Presenter
             $this->context['email_focus'] = true;
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $user = $this->persistence->build('User')->byEmail($email);
-            $reset = filter_input(INPUT_POST, 'reset_password', FILTER_VALIDATE_BOOLEAN) || false;
             if ($user) {
                 try {
-                    $this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => $reset));
-                    $this->success('email', gettext('You should receive a link shortly.'));
-                    if (!$reset) {
-                        // show email by default in future
-                        $this->session->setFlag('login_email');
-                    }
+                    $this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true));
+                    $this->success('email', gettext('You should receive an email shortly.'));
                 } catch (\Exception $ex) {
                     $this->error('email', gettext('Login via email failed.'));
                 }
@@ -110,6 +108,9 @@ class Login extends Presenter
             if (!$user) {
                 // try email address instead
                 $user = $this->persistence->build('User')->byEmail($username);
+                if($user) {
+                    $this->context['email'] = $username;
+                }
             }
             if ($user) {
                 $this->context['username_exists'] = true;
@@ -142,4 +143,51 @@ class Login extends Presenter
         $this->get();
     }
 
+    public function attemptTokenLogin() {
+        $username = filter_input(INPUT_GET, 'username');
+        $user = $this->persistence->build('User')->byUsername($username);
+		if(!$user) {
+			throw new FileNotFoundException('user '.$username);
+		}
+
+		$expires = filter_input(INPUT_GET, 'expires');
+		$counter = filter_input(INPUT_GET, 'counter');
+        $reset = filter_input(INPUT_GET, 'reset', FILTER_VALIDATE_BOOLEAN);
+
+		$hash = filter_input(INPUT_GET, 'hash');
+		if(empty($hash)) {
+			throw new BadRequestException();
+		}
+
+        try {
+            $expected = $this->security->signLogin($user, $expires, $counter, $reset);
+        }
+        catch(\InvalidArgumentException $ex) {
+            throw new BadRequestException();
+        }
+
+		if(hash_equals($expected, $hash) !== true) {
+			throw new ForbiddenException('hash does not match expected value');
+		}
+
+		if($expires < time()) {
+			throw new ForbiddenException('token expired');
+		}
+
+        if($counter < $user->getCounter()) {
+            throw new ForbiddenException('counter is not current');
+        }
+
+        $user->incrementCounter();
+        $user->save();
+
+        $this->session->start($user, false, false);
+
+        if($reset) {
+            $this->session->authorizeResetPassword();
+            $this->redirect('/settings');
+        }
+
+        $this->redirect('/');
+    }
 }

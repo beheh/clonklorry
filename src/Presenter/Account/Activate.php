@@ -23,7 +23,12 @@ class Activate extends Presenter {
 			throw new BadRequestException();
 		}
 
-		$expected = $this->security->signActivation($user, $expires, $address);
+        try {
+            $expected = $this->security->signActivation($user, $expires, $address);
+        }
+        catch(\InvalidArgumentException $ex) {
+            throw new BadRequestException();
+        }
 
 		if(hash_equals($expected, $hash) !== true) {
 			throw new ForbiddenException('hash does not match expected value');
