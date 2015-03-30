@@ -232,6 +232,9 @@ class Environment
             if ($this->container->has($presenterClass)) {
                 $this->container->get($presenterClass)->get($exception);
             }
+            elseif(!empty($presenterClass)) {
+                throw new \Exception('failed to get error presenter "'.$presenterClass.'"');
+            }
         } catch (\Exception $exception) {
             if ($this->container->get('persistence')->hasFailed()) {
                 $this->container->get('Lorry\TemplateEngineInterface')->addGlobal('site_enabled', false);
