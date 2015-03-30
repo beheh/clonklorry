@@ -47,7 +47,10 @@ class LocalisationService extends Service {
 		return false;
 	}
 
-	private $display_language = false;
+    /**
+     * @var string
+     */
+	private $display_language = null;
 
 	/**
 	 * 

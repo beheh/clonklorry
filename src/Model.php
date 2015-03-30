@@ -226,7 +226,7 @@ abstract class Model {
 	/**
 	 * 
 	 * @param string $row
-	 * @param any $value
+	 * @param mixed $value
 	 * @return bool
 	 */
 	final protected function match($row, $value) {
@@ -248,8 +248,8 @@ abstract class Model {
 	/**
 	 * 
 	 * @param string $row
-	 * @param any $value
-	 * @return any
+	 * @param mixed $value
+	 * @return mixed
 	 */
 	final protected function ensureType($row, $value) {
 		$this->ensureField($row);
