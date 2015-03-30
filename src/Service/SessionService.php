@@ -108,7 +108,7 @@ class SessionService extends Service {
 		if(!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
 			return false;
 		$this->ensureUser();
-		return $this->user !== false;
+		return $this->user !== null;
 	}
 
 	/**
@@ -224,7 +224,7 @@ class SessionService extends Service {
 				$this->logout();
 			}
 		} else if(isset($_COOKIE['lorry_login'])) {
-			$user = false;
+			$user = null;
 			$login = explode('$', $_COOKIE['lorry_login']);
 			if(count($login) == 3 && is_numeric($login[1])) {
 				$user = $this->persistence->build('User')->byId($login[1]);
@@ -232,7 +232,7 @@ class SessionService extends Service {
 					$this->authenticate($user);
 				}
 			}
-			if($this->user === false) {
+			if($this->user === null) {
 				$this->logout();
 			}
 		}
