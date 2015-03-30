@@ -2,12 +2,10 @@
 
 namespace Lorry\Email;
 
-use Lorry\Email;
-
-class Welcome extends Email {
+class Welcome extends Activate {
 
 	public function write() {
-		$this->context['contact'] = '<a href="'.$this->config->get('base').'/contact">'.$this->config->get('base').'/contact</a>';
+		$this->context['contact_url'] = $this->config->get('base').'/contact';
 		$this->render('welcome.twig');
 	}
 

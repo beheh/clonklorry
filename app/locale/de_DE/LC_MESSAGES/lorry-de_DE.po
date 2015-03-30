@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 15:21+0100\n"
-"PO-Revision-Date: 2015-03-30 15:21+0100\n"
+"POT-Creation-Date: 2015-03-30 17:53+0100\n"
+"PO-Revision-Date: 2015-03-30 17:53+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1762,8 +1762,9 @@ msgstr ""
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:38
 #: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:40
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:46
 msgid "this link"
-msgstr "diesem Link"
+msgstr "diesen Link"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:48
 msgid "%brand%: Confirm your (new) email address"
@@ -1781,10 +1782,10 @@ msgstr ""
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:65
 msgid ""
-"Please open %this_link% to activate your address or paste the following url "
+"Please open %this_link% to activate your address; or paste the following url "
 "into your browser:"
 msgstr ""
-"Please open %this_link% um deine Addresse zu aktivieren oder füge die "
+"Bitte öffne %this_link% um deine Addresse zu aktivieren; oder füge die "
 "folgende URL in deinen Browser ein:"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/9a/9f/863086124cd81abfa41283d5c93bb6bc602837baf56357458f6c6e52e897.php:45
@@ -1940,78 +1941,76 @@ msgstr ""
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:71
 msgid ""
-"Either follow %this_link% or use the following single-use code instead of "
-"your password on the %login_page%:"
+"Either open %this_link% or use the following single-use code instead of your "
+"password on the %login_page%:"
 msgstr ""
-"Folge entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
+"Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
 "deines Passworts auf der %login_page%;"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/ab/ce/bdaa43c3eb1769a3d5545eb538b9f7bc6b569e948ec1616d82da56cf90fd.php:45
 msgid "Release scheduled"
 msgstr "Veröffentlichung geplant"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:39
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:38
+msgid "contact page"
+msgstr "Kontaktseite"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:56
 msgid "Welcome to %brand%"
 msgstr "Willkommen bei %brand%"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:47
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:64
 msgid "Welcome to %brand%!"
 msgstr "Willkommen bei %brand%!"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:52
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:69
 msgid ""
-"Although this project is still in development, thank you for helping us test "
-"the platform."
+"First things first: Please activate your account by opening %this_link%; or "
+"paste the following url into your browser:"
 msgstr ""
-"Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für deine "
-"Mithilfe beim Testen der Plattform."
+"Das Wichtigste zuerst: Bitte aktivieren dein Konto indem du %this_link% "
+"öffnest; oder füge die folgende URL in deinen  Browser ein:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:56
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:79
 msgid ""
+"Now that thats out of the way, thank you for helping us test the platform. "
 "If you'd like to learn more about the project or Clonk visit the about pages "
 "at the bottom of the site."
 msgstr ""
+"Jetzt wo das erledigt ist, danke für deine Hilfe beim Testen der Plattform. "
 "Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche einfach "
-"die Info-Seiten am unteren Rand der Seite."
+"die Infoseiten am unteren Rand der Seite."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:61
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:84
 msgid ""
 "%brand% works a bit differently compared to other download sites. In order "
-"to publish a scenario or pack you first need to create a corresponding addon."
+"to publish a scenario or pack you first need to create a corresponding "
+"addon. The addons tracks general information, like the title, an "
+"introduction and which game it belongs to. You can then create a release for "
+"the addon, which has a version number, a detailed description and tracks the "
+"actual files. Once you have created a release you can publish it. When "
+"players search for your addon, they will always be pointed to the latest "
+"release."
 msgstr ""
 "%brand% funktioniert etwas anders als andere Downloadseiten. Um ein Szenario "
 "oder Pack zu veröffentlichen, musst du zuerst eine zugehörige Erweiterung "
-"erstellen."
+"erstellen. Die Erweiterung speichert grundlegende Informationen, wie den "
+"Titel, eine Einführung und zu welchem Spiel sie gehört. Du kannst dann einen "
+"Release für die Erweiterung erstellen, welcher die Versionsnummer, eine "
+"ausführliche Beschreibung und die eigentlichen Dateien speichert. Nachdem du "
+"einen Release erstellt hast, kannst du ihn veröffentlichen. Wenn Spieler "
+"nach deiner Erweiterung suchen, werden sie immer zum neuesten Release "
+"gebracht."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:65
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:89
 msgid ""
-"The addons tracks general information, like the title, an introduction and "
-"which game it belongs to. You can then create a release for the addon, which "
-"has a version number, a detailed description and tracks the actual files."
+"You can send us any feedback you have on the %contact_page%. Let's make "
+"%brand% a useful and awesome site."
 msgstr ""
-"Die Erweiterung speichert grundlegende Informationen, wie den Titel, eine "
-"Einführung und zu welchem Spiel sie gehört. Du kannst dann einen Release für "
-"die Erweiterung erstellen, welcher die Versionsnummer, eine ausführliche "
-"Beschreibung und die eigentlichen Dateien speichert."
+"Du kannst uns jederzeit Feedback auf der %contact_page% zusenden. Lass uns "
+"%brand% eine nützliche und tolle Seite machen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:69
-msgid ""
-"Once you have created a release you can publish it. When players search for "
-"your addon, they will always be pointed to the latest release."
-msgstr ""
-"Nachdem du einen Release erstellt hast, kannst du ihn veröffentlichen. Wenn "
-"Spieler nach deiner Erweiterung suchen, werden sie immer zum neuesten "
-"Release gebracht."
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:74
-msgid ""
-"You can send us any feedback you have on the contact page at %contact%. "
-"Let's make %brand% a useful and awesome site."
-msgstr ""
-"Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% einsenden. "
-"Lass uns %brand% eine nützliche und tolle Seite machen."
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:79
+#: /home/benedict/Dokumente/clonklorry/cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:94
 msgid "Once again, thank you for testing %brand%!"
 msgstr "Noch einmal, vielen Dank für das Testen von %brand%!"
 
@@ -3276,6 +3275,96 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:97
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid ""
+#~ "Please open %this_link% to activate your address or paste the following "
+#~ "url into your browser:"
+#~ msgstr ""
+#~ "Bitte öffne %this_link% um deine Addresse zu aktivieren oder füge die "
+#~ "folgende URL in deinen Browser ein:"
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link%, "
+#~ "or paste the following url into your browser:"
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktivieren dein Konto indem du %this_link% "
+#~ "öffnest oder füge die folgende URL in deinen  Browser ein:"
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link% "
+#~ "(or %activation_url%)."
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktiviere dein Konto indem du %this_link% "
+#~ "öffnest (oder %activation_url%)."
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link%."
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktiviere dein Konto indem du %this_link% "
+#~ "öffnest."
+
+#~ msgid ""
+#~ "Either follow %this_link% or use the following single-use code instead of "
+#~ "your password on the %login_page%:"
+#~ msgstr ""
+#~ "Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
+#~ "deines Passworts auf der %login_page%;"
+
+#~ msgid ""
+#~ "To get started, you still need to activate your account using %this_link"
+#~ "%. That's it."
+#~ msgstr ""
+#~ "Um loszulegen musst du noch dein Konto mit %this_link% aktivieren. Das "
+#~ "war's."
+
+#~ msgid ""
+#~ "Although this project is still in development, thank you for helping us "
+#~ "test the platform."
+#~ msgstr ""
+#~ "Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für "
+#~ "deine Mithilfe beim Testen der Plattform."
+
+#~ msgid ""
+#~ "If you'd like to learn more about the project or Clonk visit the about "
+#~ "pages at the bottom of the site."
+#~ msgstr ""
+#~ "Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche "
+#~ "einfach die Info-Seiten am unteren Rand der Seite."
+
+#~ msgid ""
+#~ "%brand% works a bit differently compared to other download sites. In "
+#~ "order to publish a scenario or pack you first need to create a "
+#~ "corresponding addon."
+#~ msgstr ""
+#~ "%brand% funktioniert etwas anders als andere Downloadseiten. Um ein "
+#~ "Szenario oder Pack zu veröffentlichen, musst du zuerst eine zugehörige "
+#~ "Erweiterung erstellen."
+
+#~ msgid ""
+#~ "The addons tracks general information, like the title, an introduction "
+#~ "and which game it belongs to. You can then create a release for the "
+#~ "addon, which has a version number, a detailed description and tracks the "
+#~ "actual files."
+#~ msgstr ""
+#~ "Die Erweiterung speichert grundlegende Informationen, wie den Titel, eine "
+#~ "Einführung und zu welchem Spiel sie gehört. Du kannst dann einen Release "
+#~ "für die Erweiterung erstellen, welcher die Versionsnummer, eine "
+#~ "ausführliche Beschreibung und die eigentlichen Dateien speichert."
+
+#~ msgid ""
+#~ "Once you have created a release you can publish it. When players search "
+#~ "for your addon, they will always be pointed to the latest release."
+#~ msgstr ""
+#~ "Nachdem du einen Release erstellt hast, kannst du ihn veröffentlichen. "
+#~ "Wenn Spieler nach deiner Erweiterung suchen, werden sie immer zum "
+#~ "neuesten Release gebracht."
+
+#~ msgid ""
+#~ "You can send us any feedback you have on the contact page at %contact%. "
+#~ "Let's make %brand% a useful and awesome site."
+#~ msgstr ""
+#~ "Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% "
+#~ "einsenden. Lass uns %brand% eine nützliche und tolle Seite machen."
 
 #~ msgid "You should receive your code shortly."
 #~ msgstr "Du solltest deinen Code bald erhalten."

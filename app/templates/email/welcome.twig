@@ -2,19 +2,23 @@
 
 {% block subject %}{% trans %}Welcome to {{brand}}{% endtrans %}{% endblock %}
 
+{% set contact_page %}<a href="{{contact_url|raw}}">{% trans %}contact page{% endtrans%}</a>{% endset %}
+{% set this_link %}<a href="{{activation_url|raw}}">{% trans %}this link{% endtrans %}</a>{% endset %}
+
 {% block body %}
 <p>{% trans %}Welcome to {{brand}}!{% endtrans %}</p>
 
-<p>{% trans %}Although this project is still in development, thank you for helping us test the platform.{% endtrans %}<br>
-{% trans %}If you'd like to learn more about the project or Clonk visit the about pages at the bottom of the site.{% endtrans %}</p>
+<p>{% trans %}First things first: Please activate your account by opening {{this_link}}; or paste the following url into your browser:{% endtrans %}</p>
 
-<p>{% trans %}{{brand}} works a bit differently compared to other download sites. In order to publish a scenario or pack you first need to create a corresponding addon.{% endtrans %}<br>
-{% trans %}The addons tracks general information, like the title, an introduction and which game it belongs to. You can then create a release for the addon, which has a version number, a detailed description and tracks the actual files.{% endtrans %}<br>
-{% trans %}Once you have created a release you can publish it. When players search for your addon, they will always be pointed to the latest release.{% endtrans %}</p>
+<p><strong>{{activation_url|raw}}</strong></p>
 
-<p>{% trans %}You can send us any feedback you have on the contact page at {{contact}}. Let's make {{brand}} a useful and awesome site.{% endtrans %}</p>
+<p>{% trans %}Now that thats out of the way, thank you for helping us test the platform. If you'd like to learn more about the project or Clonk visit the about pages at the bottom of the site.{% endtrans %}</p>
+
+<p>{% trans %}{{brand}} works a bit differently compared to other download sites. In order to publish a scenario or pack you first need to create a corresponding addon. The addons tracks general information, like the title, an introduction and which game it belongs to. You can then create a release for the addon, which has a version number, a detailed description and tracks the actual files. Once you have created a release you can publish it. When players search for your addon, they will always be pointed to the latest release.{% endtrans %}</p>
+
+<p>{% trans %}You can send us any feedback you have on the {{contact_page}}. Let's make {{brand}} a useful and awesome site.{% endtrans %}</p>
 
 <p>{% trans %}Once again, thank you for testing {{brand}}!{% endtrans %}</p>
 
-<p>B_E<p>
+<p>B_E</p>
 {% endblock %}

@@ -12,7 +12,7 @@ class Activate extends Email {
 	}
 
 	public function setUrl($url) {
-		$this->context['url'] = $url;
+		$this->context['activation_url'] = $url;
 	}
 
 }
