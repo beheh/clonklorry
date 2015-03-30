@@ -3,10 +3,7 @@
 {% block content %}
 	<div class="page-header">
 		<div class="container">
-			<h1>
-				{{title}}
-				{% if user_login %}<small class="hidden-xs"><a href="{{base}}/developers?create={{short}}"><span class="glyphicon glyphicon-plus"></span></a></small>{% endif %}
-			</h1>
+			<h1>{{title}}</h1>
 		</div>
 	</div>
 	{% if addons %}
