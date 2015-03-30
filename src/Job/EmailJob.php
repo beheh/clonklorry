@@ -15,13 +15,13 @@ abstract class EmailJob extends Job {
 		return 'email';
 	}
 
-	public function prepareEmail(Email $email) {
+	public function prepareEmail(Email $email, $args) {
 		$email->setRecipent($this->getRecipent());
 	}
 
-	public function perform() {
+	final public function execute() {
 		$email = $this->mail->build($this->getEmail());
-		$this->prepareEmail($email, $this->args);
+		$this->prepareEmail($email, $this->payload['args']);
 		$this->mail->send($email);
 	}
 

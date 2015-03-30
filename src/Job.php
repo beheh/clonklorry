@@ -5,59 +5,46 @@ namespace Lorry;
 use Resque\AbstractJob;
 
 /**
- * @property array $args
+ * @property \Lorry\Service\ConfigService $config
+ * @property \Lorry\Service\PersistenceService $persistence
+ * @property \Lorry\Service\LocalisationService $localisation
+ * @property \Lorry\Service\MailService $mail
+ * @property \Lorry\Service\JobService $job
+ * @property \Lorry\Service\SessionService $session
+ * @property \Lorry\Service\SecurityService $security
+ * @property \Lorry\Service\CdnService $cdn
+ * @property \Lorry\Router $router
+ * @property \Lorry\TemplateEngineInterface $twig
+ * 
  */
-abstract class Job extends AbstractJob {
+abstract class Job extends AbstractJob
+{
 
-	/**
-	 * @var \Lorry\Service\ConfigService
-	 */
-	protected $config;
+    public abstract function execute();
+    protected $container;
 
-	/**
-	 * @var \Lorry\Service\MailService
-	 */
-	protected $mail;
+    final public function perform()
+    {
+        try {
+            $environment = new Environment();
+            $environment->setup();
+            $this->container = $environment->getContainer();
+            $this->execute();
+        } catch (\Exception $ex) {
+            // throw on if we can't access the LoggerBuilder, so Exception appears in the worker log
+            if(!$this->container) {
+                throw $ex;
+            }
+            $loggerFactory = $this->container->get('Lorry\Logger\LoggerFactoryInterface');
+            $logger = $loggerFactory->build('job');
+            $logger->error($ex);
+        }
+    }
 
-	/**
-	 * @var \Lorry\Service\PersistenceService
-	 */
-	protected $persistence;
-
-	/**
-	 * @var \Lorry\Service\LocalisationService
-	 */
-	protected $localisation;
-
-	/**
-	 * @var \Twig_Environment
-	 */
-	protected $templating;
-
-	/**
-	 * @var \Lorry\Service\CdnService
-	 */
-	protected $cdn;
-
-	/**
-	 * @var \Lorry\Service\SecurityService
-	 */
-	protected $security;
-
-	final public function setUp() {
-		$environment = new Environment();
-		$environment->setup();
-		$this->config = $environment->getConfig();
-		$this->mail = $environment->getMail();
-		$this->persistence = $environment->getPersistence();
-		$this->localisation = $environment->getLocalisation();
-		$this->templating = $environment->getTemplating();
-		$this->cdn = $environment->getCdn();
-		$this->security = $environment->getSecurity();
-	}
-
-	public function tearDown() {
-		
-	}
-
+    public function __get($name)
+    {
+        if ($this->container->has($name)) {
+            return $this->container->get($name);
+        }
+    }
 }

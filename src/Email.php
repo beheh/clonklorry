@@ -89,8 +89,8 @@ abstract class Email {
 		return $this->message;
 	}
 
-	protected function render($template) {
-		$template = $this->twig->loadTemplate('email/'.$template);
+	protected function render($name) {
+		$template = $this->twig->loadTemplate('email/'.$name);
 		$this->subject = $template->renderBlock('subject', array_merge(array('brand' => $this->config->get('brand')), $this->context));
 		$this->message = $template->render($this->context);
 	}

@@ -20,7 +20,7 @@ abstract class UserEmailJob extends EmailJob {
 		$this->user = $user;
 		$this->localisation->silentLocalize($user->getLanguage());
 		$email->setUsername($user->getUsername());
-		parent::prepareEmail($email);
+		parent::prepareEmail($email, $args);
 	}
 
 }

@@ -10,7 +10,7 @@ class ReleaseJob extends Job {
 		return 'release';
 	}
 
-	public function perform() {
+	public function execute() {
 		$release = $this->persistence->build('Release')->byId(1);
 		//$this->cdn->transfer('addon1/release1/ModernCombat.c4d');		
 		$release->setShipping(false);

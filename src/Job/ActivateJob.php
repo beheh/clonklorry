@@ -10,14 +10,14 @@ class ActivateJob extends UserEmailJob {
 	}
 	
 	public function beforePerform() {
-		if(isset($this->args['address']) && $this->args['address'] != $this->getRecipent()) {
+		if(isset($this->payload['address']) && $this->payload['address'] != $this->getRecipent()) {
 			// user has since changed his address, no need to execute
 			throw new \Resque_Job_DontPerform;
 		}
 	}
 
-	public function prepareEmail(Email $email, $args) {
-		parent::prepareEmail($email, $args);
+	public function prepareEmail(Email $email, $payload) {
+		parent::prepareEmail($email, $payload);
 		$email->setUrl($this->getActivationUrl());
 	}
 
