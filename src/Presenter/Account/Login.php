@@ -85,7 +85,7 @@ class Login extends Presenter
             if ($user) {
                 try {
                     $this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => $reset));
-                    $this->success('email', gettext('You should receive your code shortly.'));
+                    $this->success('email', gettext('You should receive a link shortly.'));
                     if (!$reset) {
                         // show email by default in future
                         $this->session->setFlag('login_email');

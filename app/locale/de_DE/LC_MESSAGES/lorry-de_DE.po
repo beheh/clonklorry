@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 15:17+0100\n"
-"PO-Revision-Date: 2015-03-30 15:18+0100\n"
+"POT-Creation-Date: 2015-03-30 15:21+0100\n"
+"PO-Revision-Date: 2015-03-30 15:21+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2578,8 +2578,8 @@ msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:88
-msgid "You should receive your code shortly."
-msgstr "Du solltest deinen Code bald erhalten."
+msgid "You should receive a link shortly."
+msgstr "Du solltest einen Link in Kürze erhalten."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:94
 msgid "Login via email failed."
@@ -3276,6 +3276,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:97
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "You should receive your code shortly."
+#~ msgstr "Du solltest deinen Code bald erhalten."
 
 #~ msgid ""
 #~ "The following data is saved as linked to your account, but cannot be "
