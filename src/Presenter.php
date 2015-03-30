@@ -7,6 +7,18 @@ use Interop\Container\ContainerInterface;
 use Lorry\Exception\OutputCompleteException;
 use Lorry\Router;
 
+/**
+ * @param \Lorry\Service\ConfigService $config
+ * @param \Lorry\Service\PersistenceService $persistence
+ * @param \Lorry\Service\LocalisationService $localisation
+ * @param \Lorry\Service\MailService $mail
+ * @param \Lorry\Service\JobService $job
+ * @param \Lorry\Service\SessionService $session
+ * @param \Lorry\Service\SecurityService $security
+ * @param \Lorry\Service\CdnService $cdn
+ * @param \Lorry\Router $router
+ * @param \Lorry\TemplateEngineInterface $twig
+ */
 abstract class Presenter {
 
 	/**
