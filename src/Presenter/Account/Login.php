@@ -9,7 +9,7 @@ class Login extends Presenter
 
     /**
      * @Inject
-     * @var BehEh\Flaps\Flaps
+     * @var \BehEh\Flaps\Flaps
      */
     private $flaps;
 
