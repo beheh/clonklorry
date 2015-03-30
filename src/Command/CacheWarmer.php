@@ -41,23 +41,24 @@ class CacheWarmer extends Command {
 			$templates[] = ltrim(substr($file->getPathname(), strlen($base)), '/');
 		}
 
+        $progress = null;
 		if($output->isVerbose()) {
 			$progress = new ProgressBar($output, count($templates));
 			$progress->start();
 		}
 		$i = 0;
 		foreach($templates as $template) {
-			if($output->isVerbose()) {
+			if($progress) {
 				$progress->setMessage($template, 'file');
 			}
 			$templateEngine->loadTemplate($template);
-			if($output->isVerbose()) {
+			if($progress) {
 				$progress->advance();
 			}
 			$i++;
 		}
-		if($output->isVerbose()) {
-			$progress->finish();
+		if($progress) {
+            $progress->finish();
 			$output->writeln('');
 		}
 
