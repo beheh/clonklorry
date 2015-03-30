@@ -45,7 +45,7 @@ abstract class Model {
 	}
 
 	/**
-	 * @return string
+	 * @return array
 	 */
 	abstract public function getSchema();
 
