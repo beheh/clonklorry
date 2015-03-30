@@ -34,7 +34,7 @@ class SessionService extends Service {
 	 * @param bool $identify
 	 * @throws Exception
 	 */
-	public final function start(User $user, $remember = false, $identify = false) {
+	final public function start(User $user, $remember = false, $identify = false) {
 		$this->ensureSession();
 		if(!$user->isLoaded()) {
 			throw new InvalidArgumentException('user is not loaded or does not exist');
@@ -48,7 +48,7 @@ class SessionService extends Service {
 		}
 	}
 
-	public final function refresh() {
+	final public function refresh() {
 		$this->ensureSession();
 		$this->ensureUser();
 		$this->ensureSecret($this->user);
@@ -60,7 +60,7 @@ class SessionService extends Service {
 	 * 
 	 * @param \Lorry\Model\User $user
 	 */
-	protected final function authenticate(User $user) {
+	final protected function authenticate(User $user) {
 		$this->ensureSession();
 		$this->ensureSecret($user);
 		session_regenerate_id(true);
@@ -72,7 +72,7 @@ class SessionService extends Service {
 		$this->setFlag('knows_clonk', true);
 	}
 
-	public final function identify() {
+	final public function identify() {
 		$this->ensureSession();
 		$_SESSION['identified'] = true;
 	}
@@ -81,12 +81,12 @@ class SessionService extends Service {
 	 * 
 	 * @return bool
 	 */
-	public final function identified() {
+	final public function identified() {
 		$this->ensureUser();
 		return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified'] === true;
 	}
 
-	public final function remember() {
+	final public function remember() {
 		$this->ensureUser();
 		$this->ensureSecret($this->user);
 		$secret = $this->user->getSecret();
@@ -97,7 +97,7 @@ class SessionService extends Service {
 	 * 
 	 * @return bool
 	 */
-	public final function authenticated() {
+	final public function authenticated() {
 		if(!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
 			return false;
 		$this->ensureUser();
@@ -108,12 +108,12 @@ class SessionService extends Service {
 	 * 
 	 * @return string
 	 */
-	protected final function castState() {
+	final protected function castState() {
 		$state = bin2hex(openssl_random_pseudo_bytes(16));
 		return $state;
 	}
 
-	protected final function ensureState() {
+	final protected function ensureState() {
 		$this->ensureSession();
 		if(!isset($_SESSION['state']) || !$_SESSION['state']) {
 			$this->regenerateState();
@@ -124,7 +124,7 @@ class SessionService extends Service {
 	 * 
 	 * @return string
 	 */
-	public final function getState() {
+	final public function getState() {
 		$this->ensureState();
 		return $_SESSION['state'];
 	}
@@ -133,7 +133,7 @@ class SessionService extends Service {
 	 * 
 	 * @return string
 	 */
-	public final function regenerateState() {
+	final public function regenerateState() {
 		$this->ensureSession();
 		$state = $this->castState();
 		$_SESSION['state'] = $state;
@@ -145,7 +145,7 @@ class SessionService extends Service {
 	 * @param string $state
 	 * @return bool
 	 */
-	public final function verifyState($state) {
+	final public function verifyState($state) {
 		$this->ensureSession();
 		if(!isset($_SESSION['state']) || !is_string($state)) {
 			return false;
@@ -160,7 +160,7 @@ class SessionService extends Service {
 	 * 
 	 * @param string $state
 	 */
-	public final function setAuthorizationState($state) {
+	final public function setAuthorizationState($state) {
 		$this->ensureSession();
 		$_SESSION['authorization_state'] = $state;
 	}
@@ -170,7 +170,7 @@ class SessionService extends Service {
 	 * @param string $state
 	 * @return bool
 	 */
-	public final function verifyAuthorizationState($state) {
+	final public function verifyAuthorizationState($state) {
 		$this->ensureSession();
 		if(!isset($_SESSION['authorization_state'])) {
 			return false;
@@ -183,7 +183,7 @@ class SessionService extends Service {
 		return false;
 	}
 
-	public final function clearAuthorizationState() {
+	final public function clearAuthorizationState() {
 		$this->ensureSession();
 		unset($_SESSION['authorization_state']);
 	}
@@ -193,7 +193,7 @@ class SessionService extends Service {
 	 * @return \Lorry\Model\User
 	 * @throws Exception
 	 */
-	public final function getUser() {
+	final public function getUser() {
 		if(!$this->authenticated()) {
 			throw new Exception('session is not authenticated');
 		}
@@ -204,7 +204,7 @@ class SessionService extends Service {
 	/**
 	 * Ensures that a possibly availabe user is loaded.
 	 */
-	protected final function ensureUser() {
+	final protected function ensureUser() {
 		$this->ensureSession();
 		if($this->user) {
 			return;
@@ -236,30 +236,30 @@ class SessionService extends Service {
 	 * 
 	 * @param \Lorry\Model\User $user
 	 */
-	protected final function ensureSecret(User $user) {
+	final protected function ensureSecret(User $user) {
 		if(empty($user->getSecret())) {
 			$user->regenerateSecret();
 			$user->save();
 		}
 	}
 
-	public final function ensureSession() {
+	final public function ensureSession() {
 		if(!$this->started) {
 			session_start();
 			$this->started = true;
 		}
 	}
 
-	public final function logout() {
+	final public function logout() {
 		$this->forget();
 		$this->end();
 	}
 
-	public final function forget() {
+	final public function forget() {
 		setcookie('lorry_login', '', 0, '/');
 	}
 
-	public final function end() {
+	final public function end() {
 		if(session_status() == PHP_SESSION_ACTIVE) {
 			session_unset();
 			session_destroy();
@@ -269,7 +269,7 @@ class SessionService extends Service {
 
 	private static $OAUTH_PROVIDERS = array('openid', 'google', 'facebook');
 
-	public final function handleOauth() {
+	final public function handleOauth() {
 		$provider = filter_input(INPUT_GET, 'oauth');
 		if(!in_array($provider, self::$OAUTH_PROVIDERS)) {
 			throw new FileNotFoundException();
@@ -290,11 +290,11 @@ class SessionService extends Service {
 		return $gateway;
 	}
 
-	public final function authorizeResetPassword() {
+	final public function authorizeResetPassword() {
 		$_SESSION['password_reset_token'] = time();
 	}
 
-	public final function canResetPassword() {
+	final public function canResetPassword() {
 		if(isset($_SESSION['password_reset_token'])) {
 			// password reset is only valid for 5 minutes
 			if($_SESSION['password_reset_token'] > time() - 5 * 60) {
@@ -306,19 +306,19 @@ class SessionService extends Service {
 		return false;
 	}
 
-	public final function clearResetPassword() {
+	final public function clearResetPassword() {
 		$_SESSION['password_reset_token'] = 0;
 		unset($_SESSION['password_reset_token']);
 	}
 
 	protected $flags = array();
 
-	protected final function getFlagName($flag) {
+	final protected function getFlagName($flag) {
 		return 'lorry_flag_'.$flag;
 		;
 	}
 
-	public final function setFlag($flag, $persistent = false) {
+	final public function setFlag($flag, $persistent = false) {
 		$time = 0;
 		if($persistent) {
 			$time = time() + 60 * 60 * 24 * 365;
@@ -327,12 +327,12 @@ class SessionService extends Service {
 		setcookie($this->getFlagName($flag), '1', $time, '/');
 	}
 
-	public final function unsetFlag($flag) {
+	final public function unsetFlag($flag) {
 		$this->flags[$flag] = false;
 		setcookie($this->getFlagName($flag), '', 0, '/');
 	}
 
-	public final function getFlag($flag) {
+	final public function getFlag($flag) {
 		if(isset($this->flags[$flag]) && $this->flags[$flag] === true) {
 			return true;
 		}

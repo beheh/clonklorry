@@ -46,7 +46,7 @@ class User extends Model {
 		$this->setValue('username', $username);
 	}
 
-	public final function byUsername($username) {
+	final public function byUsername($username) {
 		return $this->byValue('username', $username);
 	}
 
@@ -54,7 +54,7 @@ class User extends Model {
 		return $this->getValue('username');
 	}
 
-	public final function setPassword($password) {
+	final public function setPassword($password) {
 		$this->validateString($password, 8, 72);
 		if(!empty($password)) {
 			$hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
@@ -65,11 +65,11 @@ class User extends Model {
 		$this->setValue('password', $hash);
 	}
 
-	public final function hasPassword() {
+	final public function hasPassword() {
 		return $this->getValue('password') !== null;
 	}
 
-	public final function matchPassword($password) {
+	final public function matchPassword($password) {
 		if(empty($password)) {
 			return false;
 		}
@@ -88,7 +88,7 @@ class User extends Model {
 		return $this->getValue('email');
 	}
 
-	public final function byEmail($email) {
+	final public function byEmail($email) {
 		return $this->byValue('email', $email);
 	}
 
@@ -100,44 +100,44 @@ class User extends Model {
 		return $this->getValue('registration');
 	}
 
-	public final function isActivated() {
+	final public function isActivated() {
 		return $this->getValue('activated');
 	}
 
-	public final function activate() {
+	final public function activate() {
 		return $this->setValue('activated', true);
 	}
 
-	public final function deactivate() {
+	final public function deactivate() {
 		return $this->setValue('activated', false);
 	}
 
-	public final function regenerateSecret() {
+	final public function regenerateSecret() {
 		$secret = base64_encode(openssl_random_pseudo_bytes(64));
 		$this->incrementCounter();
 		return $this->setValue('secret', $secret);
 	}
 
-	public final function getSecret() {
+	final public function getSecret() {
 		return $this->getValue('secret');
 	}
 
-	public final function matchSecret($secret) {
+	final public function matchSecret($secret) {
 		if(empty($secret)) {
 			return false;
 		}
 		return hash_equals($this->getValue('secret'), $secret);
 	}
 
-	public final function setPermission($permission) {
+	final public function setPermission($permission) {
 		return $this->setValue('permissions', $permission);
 	}
 
-	public final function getPermissions() {
+	final public function getPermissions() {
 		return $this->getValue('permissions');
 	}
 
-	public final function hasPermission($permission) {
+	final public function hasPermission($permission) {
 		return $this->getPermissions() >= $permission;
 	}
 
@@ -145,7 +145,7 @@ class User extends Model {
 	 * 
 	 * @return bool
 	 */
-	public final function isAdministrator() {
+	final public function isAdministrator() {
 		return $this->hasPermission(User::PERMISSION_ADMINISTRATE);
 	}
 
@@ -153,50 +153,50 @@ class User extends Model {
 	 * 
 	 * @return bool
 	 */
-	public final function isModerator() {
+	final public function isModerator() {
 		return $this->hasPermission(User::PERMISSION_MODERATE);
 	}
 
-	public final function setFlag($flag) {
+	final public function setFlag($flag) {
 		$flags = $this->getFlags();
 		$flags = $flags | $flag;
 		return $this->setFlags($flags);
 	}
 
-	public final function unsetFlag($flag) {
+	final public function unsetFlag($flag) {
 		$flags = $this->getFlags();
 		$flags = $flags xor $flag;
 		return $this->setFlags($flags);
 	}
 
-	public final function setFlags($flags) {
+	final public function setFlags($flags) {
 		return $this->setValue('flags', $flags);
 	}
 
-	public final function getFlags() {
+	final public function getFlags() {
 		return $this->getValue('flags');
 	}
 
-	public final function hasFlag($flag) {
+	final public function hasFlag($flag) {
 		return !!($this->getFlags() & $flag);
 	}
 
-	public final function getCounter() {
+	final public function getCounter() {
 		return $this->getValue('counter');
 	}
 
-	public final function incrementCounter() {
+	final public function incrementCounter() {
 		if(!$this->isLoaded()) {
 			return true;
 		}
 		return $this->setValue('counter', $this->getValue('counter') + 1);
 	}
 
-	public final function verifyCounter($counter) {
+	final public function verifyCounter($counter) {
 		return $this->getValue('counter') <= $counter;
 	}
 
-	public final function setClonkforgeUrl($clonkforge) {
+	final public function setClonkforgeUrl($clonkforge) {
 		$scanned = array();
 		$id = null;
 		if($clonkforge) {
@@ -215,7 +215,7 @@ class User extends Model {
 		}
 	}
 
-	public final function setClonkforge($clonkforge) {
+	final public function setClonkforge($clonkforge) {
 		if($clonkforge) {
 			$this->validateNumber($clonkforge);
 			if($clonkforge < 1) {
@@ -227,11 +227,11 @@ class User extends Model {
 		return $this->setValue('clonkforge', $clonkforge);
 	}
 
-	public final function getClonkforge() {
+	final public function getClonkforge() {
 		return $this->getValue('clonkforge');
 	}
 
-	public final function getClonkforgeUrl() {
+	final public function getClonkforgeUrl() {
 		$clonkforge = $this->getClonkforge();
 		if($clonkforge) {
 			return sprintf($this->config->get('clonkforge/url'), $this->getClonkforge());
@@ -239,7 +239,7 @@ class User extends Model {
 		return '';
 	}
 
-	public final function setGithub($github) {
+	final public function setGithub($github) {
 		if($github) {
 			$this->validateString($github, 1, 255);
 			if(!preg_match('#^'.$this->config->get('github/name').'$#', $github)) {
@@ -251,11 +251,11 @@ class User extends Model {
 		return $this->setValue('github', $github);
 	}
 
-	public final function getGithub() {
+	final public function getGithub() {
 		return $this->getValue('github');
 	}
 
-	public final function hasOauth($provider) {
+	final public function hasOauth($provider) {
 		switch($provider) {
 			case 'openid':
 				return $this->getValue('oauth-openid') !== null;
@@ -270,7 +270,7 @@ class User extends Model {
 		throw new Exception('invalid OAuth provider');
 	}
 
-	public final function byOauth($provider, $uid) {
+	final public function byOauth($provider, $uid) {
 		switch($provider) {
 			case 'openid':
 				return $this->byValue('oauth-openid', $uid);
@@ -285,7 +285,7 @@ class User extends Model {
 		throw new Exception('invalid OAuth provider');
 	}
 
-	public final function setOauth($provider, $uid) {
+	final public function setOauth($provider, $uid) {
 		if(!$uid && !$this->hasPassword() && !$this->hasRemainingOauth($provider)) {
 			// dissallow last oauth to be removed without a password
 			throw new ModelValueInvalidException(gettext('the last remaining login method'));
@@ -304,7 +304,7 @@ class User extends Model {
 		throw new ModelValueInvalidException(gettext('not a valid OAuth provider'));
 	}
 
-	protected final function hasRemainingOauth($except) {
+	final protected function hasRemainingOauth($except) {
 		$providers = array('openid', 'google', 'facebook');
 		$provider_count = 0;
 		foreach($providers as $provider) {
@@ -318,7 +318,7 @@ class User extends Model {
 		return $provider_count > 0;
 	}
 
-	public final function setLanguage($language) {
+	final public function setLanguage($language) {
 		$this->validateLanguage($language);
 		return $this->setValue('language', $language);
 	}
@@ -331,7 +331,7 @@ class User extends Model {
 	 * 
 	 * @return string
 	 */
-	public final function getLanguage() {
+	final public function getLanguage() {
 		return $this->getValue('language');
 	}
 

@@ -41,7 +41,7 @@ abstract class Job extends AbstractJob {
 	 */
 	protected $security;
 
-	public final function setUp() {
+	final public function setUp() {
 		$environment = new Environment();
 		$environment->setup();
 		$this->config = $environment->getConfig();

@@ -22,11 +22,11 @@ class LocalisationService extends Service {
 	 * 
 	 * @return array
 	 */
-	public final function getAvailableLanguages() {
+	final public function getAvailableLanguages() {
 		return array('en-US', 'de-DE');
 	}
 
-	public final function getLocalizedCountries() {
+	final public function getLocalizedCountries() {
 		$countries = array();
 		foreach($this->getAvailableLanguages() as $language) {
 			$exploded = explode('-', $language);
@@ -40,7 +40,7 @@ class LocalisationService extends Service {
 	 * @param string $language
 	 * @return bool
 	 */
-	public final function verifyLanguage($language) {
+	final public function verifyLanguage($language) {
 		if(in_array($language, $this->getAvailableLanguages())) {
 			return $language;
 		}
@@ -108,7 +108,7 @@ class LocalisationService extends Service {
 	 * @param type $language
 	 * @return bool
 	 */
-	public final function setDisplayLanguage($language) {
+	final public function setDisplayLanguage($language) {
 		if($this->verifyLanguage($language)) {
 			$this->display_language = $language;
 			if(!isset($_COOKIE['lorry_language']) || $_COOKIE['lorry_language'] != $language) {
@@ -119,7 +119,7 @@ class LocalisationService extends Service {
 		return false;
 	}
 
-	public final function resetDisplayLanguage() {
+	final public function resetDisplayLanguage() {
 		setcookie('lorry_language', '', 0, '/');
 	}
 
@@ -128,7 +128,7 @@ class LocalisationService extends Service {
 	/**
 	 * 
 	 */
-	public final function localize() {
+	final public function localize() {
 		if($this->localized) {
 			return false;
 		}
@@ -148,7 +148,7 @@ class LocalisationService extends Service {
 	 * @param string $language
 	 * @return bool
 	 */
-	public final function silentLocalize($language) {
+	final public function silentLocalize($language) {
 		if($language == $this->current_language) {
 			return true;
 		}
@@ -174,7 +174,7 @@ class LocalisationService extends Service {
 	 * 
 	 * @return bool
 	 */
-	public final function resetLocalize() {
+	final public function resetLocalize() {
 		return $this->silentLocalize($this->getDisplayLanguage());
 	}
 
@@ -187,7 +187,7 @@ class LocalisationService extends Service {
 	 * @param int $format
 	 * @return string
 	 */
-	public final function getFormat($format) {
+	final public function getFormat($format) {
 		switch($format) {
 			case self::FORMAT_DATETIME:
 				return gettext('d-m-Y H:i');
@@ -206,7 +206,7 @@ class LocalisationService extends Service {
 	 * @param string $language
 	 * @return string
 	 */
-	public final function namedLanguage($language) {
+	final public function namedLanguage($language) {
 		switch($language) {
 			case 'en-US':
 				return gettext('English');
@@ -225,7 +225,7 @@ class LocalisationService extends Service {
 	 * @param int $month
 	 * @return string
 	 */
-	public final function namedMonth($month) {
+	final public function namedMonth($month) {
 		switch($month) {
 			case 1:
 				return gettext('January');
@@ -259,7 +259,7 @@ class LocalisationService extends Service {
 	 * @param int $number
 	 * @return type
 	 */
-	public final function countedNumber($number) {
+	final public function countedNumber($number) {
 		switch($number) {
 			case 1:
 				return gettext('1st');

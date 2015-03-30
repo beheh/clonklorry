@@ -59,7 +59,7 @@ abstract class Model {
 	 * 
 	 * @return bool
 	 */
-	public final function isLoaded() {
+	final public function isLoaded() {
 		return $this->loaded;
 	}
 
@@ -67,7 +67,7 @@ abstract class Model {
 	 * 
 	 * @return int
 	 */
-	public final function getId() {
+	final public function getId() {
 		return $this->getValue('id');
 	}
 
@@ -76,7 +76,7 @@ abstract class Model {
 	 * @param int $id
 	 * @return Model
 	 */
-	public final function byId($id) {
+	final public function byId($id) {
 		return $this->byValue('id', $id);
 	}
 
@@ -85,7 +85,7 @@ abstract class Model {
 	 * @param string $name
 	 * @param mixed $value
 	 */
-	protected final function setValue($name, $value) {
+	final protected function setValue($name, $value) {
 		$this->ensureField($name);
 		$value = $this->ensureType($name, $value);
 		if($this->loaded && $this->getValue($name) === $value) {
@@ -99,7 +99,7 @@ abstract class Model {
 	 * @param string $name
 	 * @return mixed
 	 */
-	protected final function getValue($name) {
+	final protected function getValue($name) {
 		$this->ensureField($name);
 		if(array_key_exists($name, $this->changes))
 			return $this->changes[$name];
@@ -109,7 +109,7 @@ abstract class Model {
 
 	private $multiple = false;
 
-	public final function all() {
+	final public function all() {
 		$this->ensureUnloaded();
 
 		$this->multiple = true;
@@ -124,7 +124,7 @@ abstract class Model {
 	 * @param bool $descending
 	 * @return \Lorry\Model
 	 */
-	public final function order($row, $descending = false) {
+	final public function order($row, $descending = false) {
 		$this->ensureField($row);
 		$this->order[] = $descending ? $row.' DESC' : $row;
 		return $this;
@@ -139,7 +139,7 @@ abstract class Model {
 	 * @param int $limit
 	 * @return \Lorry\Model
 	 */
-	public final function limit($from, $limit = null) {
+	final public function limit($from, $limit = null) {
 		if($limit === null) {
 			$limit = $from;
 		} else {
@@ -153,7 +153,7 @@ abstract class Model {
 	 * 
 	 * @return array
 	 */
-	public final function byAnything() {
+	final public function byAnything() {
 		$this->all();
 		return $this->byValues();
 	}
@@ -165,7 +165,7 @@ abstract class Model {
 	 * @return \Lorry\Model|array
 	 * @throws Exception
 	 */
-	protected final function byValue($row, $value) {
+	final protected function byValue($row, $value) {
 		if(!is_string($row)) {
 			throw new Exception('invalid row name');
 		}
@@ -177,7 +177,7 @@ abstract class Model {
 	 * @param array $pairs
 	 * @return \Lorry\Model|array
 	 */
-	protected final function byValues($pairs = array()) {
+	final protected function byValues($pairs = array()) {
 		$this->ensureUnloaded();
 		foreach($pairs as $row => $value) {
 			$this->ensureField($row);
@@ -230,7 +230,7 @@ abstract class Model {
 	 * @param type $value
 	 * @return bool
 	 */
-	protected final function match($row, $value) {
+	final protected function match($row, $value) {
 		$this->ensureLoaded();
 		$this->ensureField($row);
 
@@ -252,7 +252,7 @@ abstract class Model {
 	 * @param type $value
 	 * @return type
 	 */
-	protected final function ensureType($row, $value) {
+	final protected function ensureType($row, $value) {
 		$this->ensureField($row);
 		if($row == 'id' || $value === null) {
 			return $value;
@@ -276,7 +276,7 @@ abstract class Model {
 	 * @param mixed $value
 	 * @return mixed
 	 */
-	private final function decodeType($row, $value) {
+	private function decodeType($row, $value) {
 		$this->ensureField($row);
 		if($row == 'id' || $value === NULL) {
 			return $value;
@@ -295,7 +295,7 @@ abstract class Model {
 	 * @param mixed $value
 	 * @return mixed
 	 */
-	private final function encodeType($row, $value) {
+	private function encodeType($row, $value) {
 		$this->ensureField($row);
 		if($row == 'id' || $value === NULL) {
 			return $value;
@@ -314,7 +314,7 @@ abstract class Model {
 	 * @param string $field
 	 * @throws InvalidArgumentException
 	 */
-	public final function ensureField($field) {
+	final public function ensureField($field) {
 		if(!array_key_exists($field, $this->schema) && $field != 'id') {
 			throw new InvalidArgumentException('field "'.$field.'" does not exist in model "'.get_class($this).'"');
 		}
@@ -324,7 +324,7 @@ abstract class Model {
 	 * 
 	 * @throws Exception
 	 */
-	public final function ensureLoaded() {
+	final public function ensureLoaded() {
 		if(!$this->loaded) {
 			throw new Exception('model has not been loaded');
 		}
@@ -334,7 +334,7 @@ abstract class Model {
 	 * 
 	 * @throws Exception
 	 */
-	public final function ensureUnloaded() {
+	final public function ensureUnloaded() {
 		if($this->loaded) {
 			throw new Exception('model has already been loaded');
 		}
@@ -345,7 +345,7 @@ abstract class Model {
 	 * @param array $row
 	 * @return bool True,
 	 */
-	public final function unserialize($row) {
+	final public function unserialize($row) {
 		if(empty($row) || !isset($row['id']) || !is_numeric($row['id'])) {
 			return false;
 		}
@@ -365,7 +365,7 @@ abstract class Model {
 	 * 
 	 * @return array
 	 */
-	public final function getChanges() {
+	final public function getChanges() {
 		return $this->changes;
 	}
 
@@ -373,14 +373,14 @@ abstract class Model {
 	 * Returns whether unsaved changes remain.
 	 * @return bool True, if unsaved changes are present.
 	 */
-	public final function modified() {
+	final public function modified() {
 		return !empty($this->changes);
 	}
 
 	/**
 	 * Unsets all changes since last load() or save()
 	 */
-	public final function rollback() {
+	final public function rollback() {
 		$this->changes = array();
 	}
 
@@ -388,7 +388,7 @@ abstract class Model {
 	 * Ensure that all changes to model are persistent.
 	 * @return bool True, if all changes will be persistent
 	 */
-	public final function save() {
+	final public function save() {
 		if(!$this->modified())
 			return true;
 
@@ -421,7 +421,7 @@ abstract class Model {
 	 * Removes the model.
 	 * @return bool True, if the model does not exist any more
 	 */
-	public final function delete() {
+	final public function delete() {
 		if(!$this->loaded) {
 			throw new RuntimeException('model is not persistent');
 		}
@@ -442,7 +442,7 @@ abstract class Model {
 	 * @param type $row The row which maps the target models id
 	 * @return Model
 	 */
-	protected final function fetch($model, $row) {
+	final protected function fetch($model, $row) {
 		$this->ensureLoaded();
 		$this->ensureField($row);
 		$object = $this->persistence->build($model)->byId($this->getValue($row));
@@ -459,7 +459,7 @@ abstract class Model {
 	 * @param type $regexp The (optional) regexp to match the string agains
 	 * @throws ModelValueInvalidException
 	 */
-	protected final function validateString($string, $minlength, $maxlength) {
+	final protected function validateString($string, $minlength, $maxlength) {
 		$string = (string) $string;
 		if(strlen($string) < $minlength) {
 			throw new ModelValueInvalidException(gettext('too short'));
@@ -474,7 +474,7 @@ abstract class Model {
 	 * @param string $email
 	 * @throws ModelValueInvalidException
 	 */
-	protected final function validateEmail($email) {
+	final protected function validateEmail($email) {
 		$email = (string) $email;
 
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -487,7 +487,7 @@ abstract class Model {
 	 * @param string $url
 	 * @throws ModelValueInvalidException
 	 */
-	protected final function validateUrl($url) {
+	final protected function validateUrl($url) {
 		$url = (string) $url;
 
 		if(!filter_var($url, FILTER_VALIDATE_URL)) {
@@ -500,7 +500,7 @@ abstract class Model {
 	 * @param int $number
 	 * @throws ModelValueInvalidException
 	 */
-	protected final function validateNumber($number) {
+	final protected function validateNumber($number) {
 		if(!is_int($number)) {
 			throw new ModelValueInvalidException(gettext('not a valid number'));
 		}
@@ -513,7 +513,7 @@ abstract class Model {
 	 * @throws Exception
 	 * @throws ModelValueInvalidException
 	 */
-	protected final function validateRegexp($value, $regexp) {
+	final protected function validateRegexp($value, $regexp) {
 		$result = preg_match($regexp, $value);
 		if($result === false) {
 			throw new Exception('error matching the regular expression');
@@ -526,11 +526,11 @@ abstract class Model {
 	 * 
 	 * @param string $language
 	 */
-	protected final function validateLanguage($language) {
+	final protected function validateLanguage($language) {
 		$this->validateString($language, 5, 5);
 	}
 
-	protected final function localizeField($field, $language = null) {
+	final protected function localizeField($field, $language = null) {
 		if($language === null) {
 			$language = gettext('en');
 		}

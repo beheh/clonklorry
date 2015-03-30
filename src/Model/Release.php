@@ -22,26 +22,26 @@ class Release extends Model {
 		'whatsnew' => 'text');
 	}
 
-	public final function setAddon($addon) {
+	final public function setAddon($addon) {
 		return $this->setValue('addon', $addon);
 	}
 
-	public final function byAddon($addon) {
+	final public function byAddon($addon) {
 		return $this->byValue('addon', $addon);
 	}
 
-	public final function getAddon() {
+	final public function getAddon() {
 		return $this->getValue('addon');
 	}
 
 	/**
 	 * @return Addon
 	 */
-	public final function fetchAddon() {
+	final public function fetchAddon() {
 		return $this->fetch('Addon', 'addon');
 	}
 
-	public final function byGame($game) {
+	final public function byGame($game) {
 		$addons = $this->persistence->build('Addon')->all()->byGame($game);
 		$releases = array();
 		foreach($addons as $addon) {
@@ -52,7 +52,7 @@ class Release extends Model {
 		return $releases;
 	}
 
-	public final function byOwner($owner) {
+	final public function byOwner($owner) {
 		$addons = $this->persistence->build('Addon')->all()->byOwner($owner);
 		$releases = array();
 		foreach($addons as $addon) {
@@ -63,22 +63,22 @@ class Release extends Model {
 		return $releases;
 	}
 
-	public final function setVersion($version) {
+	final public function setVersion($version) {
 		$version = trim($version);
 		$this->validateString($version, 1, 20);
 		$this->validateRegexp($version, '/^([a-zA-Z0-9-][a-zA-Z0-9-.]*)$/');
 		return $this->setValue('version', $version);
 	}
 
-	public final function byVersion($version, $addon) {
+	final public function byVersion($version, $addon) {
 		return $this->byValues(array('addon' => $addon, 'version' => $version));
 	}
 
-	public final function getVersion() {
+	final public function getVersion() {
 		return $this->getValue('version');
 	}
 
-	public final function latest($addon) {
+	final public function latest($addon) {
 		$releases = $this->order('timestamp', true)->all()->byValue('addon', $addon);
 		foreach($releases as $release) {
 			if(!$release->isReleased()) {
@@ -89,7 +89,7 @@ class Release extends Model {
 		return null;
 	}
 
-	public final function isReleased() {
+	final public function isReleased() {
 		if($this->getTimestamp() === null) {
 			return false;
 		}

@@ -76,27 +76,27 @@ abstract class Presenter {
 		$this->twig->display($template, $this->context);
 	}
 
-	protected final function info($selector, $message) {
+	final protected function info($selector, $message) {
 		$this->alert($selector, $message, 'info');
 	}
 
-	protected final function warning($selector, $message) {
+	final protected function warning($selector, $message) {
 		$this->alert($selector, $message, 'warning');
 	}
 
-	protected final function error($selector, $message) {
+	final protected function error($selector, $message) {
 		$this->alert($selector, $message, 'danger');
 	}
 
-	protected final function success($selector, $message) {
+	final protected function success($selector, $message) {
 		$this->alert($selector, $message, 'success');
 	}
 
-	protected final function hasAlert($selector) {
+	final protected function hasAlert($selector) {
 		return isset($this->context['alerts'][$selector]);
 	}
 
-	private final function alert($selector, $message, $type) {
+	private function alert($selector, $message, $type) {
 		if(!array_key_exists('alerts', $this->context)) {
 			$this->context['alerts'] = array();
 		}
@@ -107,7 +107,7 @@ abstract class Presenter {
 	 * Sends a 301 Moved Permanently redirect.
 	 * @param string $location
 	 */
-	protected final function redirect($location, $absolute = false) {
+	final protected function redirect($location, $absolute = false) {
 		// @todo stricter filtering, remove newlines
 		if(!$absolute) {
 			$location = $this->config->get('base').$location;
@@ -121,14 +121,14 @@ abstract class Presenter {
 	/**
 	 * Sends a 301 Moved Permanently redirect to the current url.
 	 */
-	protected final function reload() {
+	final protected function reload() {
 		return $this->redirect(Router::getPath());
 	}
 
 	/**
 	 * Offers the user to identify his session.
 	 */
-	protected final function offerIdentification() {
+	final protected function offerIdentification() {
 		if(!$this->session->authenticated() || $this->session->identified()) {
 			return;
 		}
