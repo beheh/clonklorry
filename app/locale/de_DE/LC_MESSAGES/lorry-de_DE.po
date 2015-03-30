@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 13:40+0100\n"
-"PO-Revision-Date: 2015-03-30 13:41+0100\n"
+"POT-Creation-Date: 2015-03-30 14:04+0100\n"
+"PO-Revision-Date: 2015-03-30 14:05+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -739,14 +739,12 @@ msgstr ""
 "veröffentlicht werden können."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:133
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:251
-msgid "Title (English)"
-msgstr "Titel (Englisch)"
+msgid "English title"
+msgstr "Englischer Titel"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:149
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:263
-msgid "Title (German)"
-msgstr "Titel (Deutsch)"
+msgid "German title"
+msgstr "Deutscher Titel"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:166
 msgid "The title will be shown in many various places around the site."
@@ -821,8 +819,9 @@ msgid "%Contact_us% to add an abbreviation."
 msgstr "%Contact_us%, um eine Abkürzung hinzuzufügen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:356
-msgid "Please only enter an abbreviation if it is well known."
-msgstr "Bitte gib nur dann eine Abkürzung ein, falls sie bekannt ist."
+msgid "Please only enter an abbreviation if it is (to some extent) well known."
+msgstr ""
+"Bitte gib nur dann eine Abkürzung ein, falls sie (einigermaßen) bekannt ist."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:365
 msgid "These settings cannot be changed after approval."
@@ -1057,6 +1056,14 @@ msgstr "Möchtest du diese Erweiterung wirklich ablehnen?"
 msgid "Reject"
 msgstr "Ablehnen"
 
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:251
+msgid "Title (English)"
+msgstr "Titel (Englisch)"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:263
+msgid "Title (German)"
+msgstr "Titel (Deutsch)"
+
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:286
 msgid "Example url"
 msgstr "Beispiel-URL"
@@ -1177,15 +1184,15 @@ msgstr "Aller Anfang ist schwer"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:202
 msgid ""
 "We know it's not always easy to build something awesome. With the "
-"introduction on ClonkSpot you should at least have a rough idea how "
+"introduction on Clonkspot you should at least have a rough idea how "
 "everything works."
 msgstr ""
 "Wir wissen, dass es nicht immer leicht ist etwas Tolles zu bauen. Mit der "
-"Einführung auf ClonkSpot solltest du zumindest eine grobe Idee haben, wie "
+"Einführung auf Clonkspot solltest du zumindest eine grobe Idee haben, wie "
 "alles funktioniert."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:206
-msgid "Introduction on ClonkSpot"
+msgid "Introduction on Clonkspot"
 msgstr "Einführung auf Clonkspot"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:212
@@ -1681,25 +1688,25 @@ msgstr "Fehler beim Laden der Dateiliste."
 msgid "No files uploaded."
 msgstr "Keine Dateien hochgeladen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:113
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:108
+msgid ""
+"The files will be made freely availabe and archived after publishing this "
+"release. They cannot be changed afterwards."
+msgstr ""
+"Die Dateien werden nach der Veröffentlichung dieses Releases frei verfügbar "
+"gemacht und archiviert. Sie können danach nicht mehr geändert werden."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:117
 msgid "Select file&hellip;"
 msgstr "Datei auswählen&hellip;"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:117
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:121
 msgid "Upload"
 msgstr "Hochladen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:121
+#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:125
 msgid "Pause"
 msgstr "Pausieren"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:125
-msgid ""
-"Files will only be made availabe after publishing this release and cannot be "
-"changed afterwards."
-msgstr ""
-"Dateien werden erst nach der Veröffentlichung dieses Releases freigegeben "
-"und können dann nicht mehr geändert werden."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:35
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:136
@@ -2457,14 +2464,16 @@ msgstr "Fehler beim Laden der Abhängigkeitsliste."
 msgid "No dependencies added."
 msgstr "Keine Abhängigkeiten hinzugefügt."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:52
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:47
+msgid ""
+"Help new players by specifying any other addons required for this release."
+msgstr ""
+"Hilf neuen Spielern indem du alle anderen Erweiterungen angibst, die von "
+"diesem Release benötigt werden."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:56
 msgid "Add"
 msgstr "Hinzufügen"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:59
-msgid "Users may download the release together with its dependencies."
-msgstr ""
-"Benutzer können diesen Release zusammen mit den Abhängigkeiten herunterladen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f7/f5/f4ff8bcdce65e9a04321346f8a82e266bd52097781136a02b5d65c92b13d.php:45
 msgid "Duplicate"
@@ -3258,6 +3267,48 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:97
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid ""
+#~ "We know it's not always easy to build something awesome. With the "
+#~ "introduction on ClonkSpot you should at least have a rough idea how "
+#~ "everything works."
+#~ msgstr ""
+#~ "Wir wissen, dass es nicht immer leicht ist etwas Tolles zu bauen. Mit der "
+#~ "Einführung auf ClonkSpot solltest du zumindest eine grobe Idee haben, wie "
+#~ "alles funktioniert."
+
+#~ msgid "Introduction on ClonkSpot"
+#~ msgstr "Einführung auf Clonkspot"
+
+#~ msgid "Please only enter an abbreviation if it is well known."
+#~ msgstr "Bitte gib nur dann eine Abkürzung ein, falls sie bekannt ist."
+
+#~ msgid ""
+#~ "The files will be made availabe and archived after publishing this "
+#~ "release. They cannot be changed afterwards."
+#~ msgstr ""
+#~ "Die Dateien werden nach der Veröffentlichung dieses Releases frei "
+#~ "verfügbar gemacht und archiviert. Sie können danach nicht mehr geändert "
+#~ "werden."
+
+#~ msgid ""
+#~ "All files will be made availabe and archived after publishing this "
+#~ "release. They cannot be changed afterwards."
+#~ msgstr ""
+#~ "Alle Dateien werden nach der Veröffentlichung dieses Releases verfügbar "
+#~ "gemacht und archiviert. Sie können danach nicht mehr geändert werden."
+
+#~ msgid ""
+#~ "Files will only be made availabe after publishing this release and cannot "
+#~ "be changed afterwards."
+#~ msgstr ""
+#~ "Dateien werden erst nach der Veröffentlichung dieses Releases freigegeben "
+#~ "und können dann nicht mehr geändert werden."
+
+#~ msgid "Users may download the release together with its dependencies."
+#~ msgstr ""
+#~ "Benutzer können diesen Release zusammen mit den Abhängigkeiten "
+#~ "herunterladen."
 
 #~ msgid "No release created"
 #~ msgstr "Kein Release erstellt"

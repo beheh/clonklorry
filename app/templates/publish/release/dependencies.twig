@@ -9,14 +9,12 @@
 		<li class="list-group-item text-muted" id="dependencies-none-text">{% trans %}No dependencies added.{% endtrans %}</li>
 	</ul>
 </div>
-<div class="form-inline">
+<p class="help-block">{% trans %}Help new players by specifying any other addons required for this release.{% endtrans %}</p>
+<div class="form-inline form-group">
 	<div class="form-group">
 		<input type="text" class="form-control" placeholder="Hazard" id="add-dependency">
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-success inline" id="add-dependency-find">{% trans %}Add{% endtrans %}</button>
 	</div>
-</div>
-<div class="form-group">
-	<p class="help-block">{% trans %}Users may download the release together with its dependencies.{% endtrans %}</p>
 </div>
