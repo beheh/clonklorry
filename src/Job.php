@@ -4,6 +4,9 @@ namespace Lorry;
 
 use Resque\AbstractJob;
 
+/**
+ * @param array $args
+ */
 abstract class Job extends AbstractJob {
 
 	/**
