@@ -61,6 +61,8 @@ class Edit extends Presenter {
 
 		$new_username = trim(filter_input(INPUT_POST, 'username'));
 
+        $errors = array();
+
 		if(isset($_POST['change-username-submit']) && $username != $new_username) {
 			$this->context['username_edit'] = $new_username;
 
@@ -79,7 +81,7 @@ class Edit extends Presenter {
 					$this->redirect('/users/'.$new_username.'/edit?username-changed');
 					return;
 				} else {
-					$this->error(gettext('Username could not be changed.'));
+					$this->error('username', gettext('Username could not be changed.'));
 				}
 			} else {
 				$this->error('username', implode('<br>', $errors));
