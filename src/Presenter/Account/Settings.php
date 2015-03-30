@@ -68,7 +68,7 @@ class Settings extends Presenter {
 
 		$this->context['password_exists'] = $user->hasPassword();
 		$this->context['identified'] = $identified = $this->session->identified();
-		if((isset($_GET['add-password']) && !$user->hasPassword()) || ($identified && isset($_GET['change-password']))) {
+		if((isset($_GET['add-password']) && !$user->hasPassword()) || (($this->session->canResetPassword()) && isset($_GET['change-password']))) {
 			$this->context['focus_password_new'] = true;
 		}
 

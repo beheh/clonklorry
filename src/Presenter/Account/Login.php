@@ -185,7 +185,7 @@ class Login extends Presenter
 
         if($reset) {
             $this->session->authorizeResetPassword();
-            $this->redirect('/settings');
+            $this->redirect('/settings?change-password#password');
         }
 
         $this->redirect('/');
