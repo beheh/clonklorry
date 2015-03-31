@@ -4,23 +4,24 @@ namespace Lorry\Job;
 
 use Lorry\Email;
 
-abstract class UserEmailJob extends EmailJob {
+abstract class UserEmailJob extends EmailJob
+{
+    /**
+     * @var \Lorry\Model\User;
+     */
+    protected $user;
 
-	/**
-	 * @var \Lorry\Model\User;
-	 */
-	protected $user;
+    public function getRecipent()
+    {
+        return $this->user->getEmail();
+    }
 
-	public function getRecipent() {
-		return $this->user->getEmail();
-	}
-	
-	public function prepareEmail(Email $email, $args) {
-		$user = $this->persistence->build('User')->byId($args['user']);
-		$this->user = $user;
-		$this->localisation->silentLocalize($user->getLanguage());
-		$email->setUsername($user->getUsername());
-		parent::prepareEmail($email, $args);
-	}
-
+    public function prepareEmail(Email $email, $args)
+    {
+        $user = $this->persistence->build('User')->byId($args['user']);
+        $this->user = $user;
+        $this->localisation->silentLocalize($user->getLanguage());
+        $email->setUsername($user->getUsername());
+        parent::prepareEmail($email, $args);
+    }
 }

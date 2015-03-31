@@ -10,154 +10,174 @@ use Lorry\Model\Release;
 use Lorry\Model\User;
 use RuntimeException;
 
-class UploadFile extends Presenter {
+class UploadFile extends Presenter
+{
 
-	public static function removeChunkDirectory($chunk_directory) {
-		if(!is_dir($chunk_directory)) {
-			return false;
-		}
+    public static function removeChunkDirectory($chunk_directory)
+    {
+        if (!is_dir($chunk_directory)) {
+            return false;
+        }
 
-		if(rename($chunk_directory, $chunk_directory.'.tmp')) {
-			$chunk_directory .= '.tmp';
-		}
+        if (rename($chunk_directory, $chunk_directory.'.tmp')) {
+            $chunk_directory .= '.tmp';
+        }
 
-		foreach(scandir($chunk_directory) as $file) {
-			$chunk_file = $chunk_directory.'/'.$file;
-			if(is_file($chunk_file)) {
-				unlink($chunk_file);
-			}
-		}
+        foreach (scandir($chunk_directory) as $file) {
+            $chunk_file = $chunk_directory.'/'.$file;
+            if (is_file($chunk_file)) {
+                unlink($chunk_file);
+            }
+        }
 
-		return rmdir($chunk_directory);
-	}
+        return rmdir($chunk_directory);
+    }
 
-	private function attemptAssembleFile(User $user, Addon $addon, Release $release, $chunk_directory, $file_name, $chunk_size, $total_size) {
+    private function attemptAssembleFile(User $user, Addon $addon,
+        Release $release, $chunk_directory, $file_name, $chunk_size, $total_size)
+    {
 
-		// count all the parts of this file
-		$total_files = 0;
-		foreach(scandir($chunk_directory) as $file) {
-			if(stripos($file, $file_name) !== false) {
-				$total_files++;
-			}
-		}
+        // count all the parts of this file
+        $total_files = 0;
+        foreach (scandir($chunk_directory) as $file) {
+            if (stripos($file, $file_name) !== false) {
+                $total_files++;
+            }
+        }
 
-		// check that all the parts are present
-		// the size of the last part is between chunkSize and 2*$chunkSize
-		if($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
+        // check that all the parts are present
+        // the size of the last part is between chunkSize and 2*$chunkSize
+        if ($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
 
-			$this->logger->info('attempting to assemble file "'.$file_name.'"');
-			
-			// create the final destination file
-			$final = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release).'/'.$file_name;
-			if(($fp = fopen($final, 'w')) !== false) {
-				for($i = 1; $i <= $total_files; $i++) {
-					fwrite($fp, file_get_contents($chunk_directory.'/'.$file_name.'.part'.$i));
-				}
-				fclose($fp);
-				$this->logger->info('uploaded file "'.$file_name.'" for "'.$user->getUsername().'"');
-			} else {
-				throw new RuntimeException('could not create final file at '.$final);
-			}
+            $this->logger->info('attempting to assemble file "'.$file_name.'"');
 
-			UploadFile::removeChunkDirectory($chunk_directory);
-		}
+            // create the final destination file
+            $final = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon,
+                    $release).'/'.$file_name;
+            if (($fp = fopen($final, 'w')) !== false) {
+                for ($i = 1; $i <= $total_files; $i++) {
+                    fwrite($fp,
+                        file_get_contents($chunk_directory.'/'.$file_name.'.part'.$i));
+                }
+                fclose($fp);
+                $this->logger->info('uploaded file "'.$file_name.'" for "'.$user->getUsername().'"');
+            } else {
+                throw new RuntimeException('could not create final file at '.$final);
+            }
 
-		return true;
-	}
+            UploadFile::removeChunkDirectory($chunk_directory);
+        }
 
-	public function get($id, $version) {
-		$this->security->requireLogin();
+        return true;
+    }
 
-		$user = $this->session->getUser();
-		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
-		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
+    public function get($id, $version)
+    {
+        $this->security->requireLogin();
 
-		$identifier = QueryFile::sanitizePath(filter_input(INPUT_GET, 'resumableIdentifier'));
-		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_GET, 'resumableFilename'));
+        $user = $this->session->getUser();
+        $addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
+        $release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(),
+                $version);
 
-		if(!$identifier || !$file_name) {
-			throw new FileNotFoundException;
-		}
+        $identifier = QueryFile::sanitizePath(filter_input(INPUT_GET,
+                    'resumableIdentifier'));
+        $file_name = QueryFile::sanitizeFilename(filter_input(INPUT_GET,
+                    'resumableFilename'));
 
-		$target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release);
+        if (!$identifier || !$file_name) {
+            throw new FileNotFoundException;
+        }
 
-		$chunk_directory = $target_directory.'/'.$file_name.'.parts';
-		$part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
+        $target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon,
+                $release);
 
-		if(!file_exists($part_file)) {
-			throw new FileNotFoundException;
-		}
-		$this->display(array('chunk' => 'exists'));
-	}
+        $chunk_directory = $target_directory.'/'.$file_name.'.parts';
+        $part_file = $chunk_directory.'/'.$file_name.'.part'.filter_input(INPUT_GET,
+                'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
 
-	public function post($id, $version) {
-		$this->security->requireLogin();
-		$this->security->requireValidState();
-		$this->security->requireUploadRights();
+        if (!file_exists($part_file)) {
+            throw new FileNotFoundException;
+        }
+        $this->display(array('chunk' => 'exists'));
+    }
 
-		$user = $this->session->getUser();
-		$addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
-		$release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(), $version);
+    public function post($id, $version)
+    {
+        $this->security->requireLogin();
+        $this->security->requireValidState();
+        $this->security->requireUploadRights();
 
-		$file_name = QueryFile::sanitizeFilename(filter_input(INPUT_POST, 'resumableFilename'));
+        $user = $this->session->getUser();
+        $addon = \Lorry\Presenter\Publish\Edit::getAddon($id, $user);
+        $release = \Lorry\Presenter\Publish\Release::getRelease($addon->getId(),
+                $version);
 
-		$file = $_FILES['file'];
+        $file_name = QueryFile::sanitizeFilename(filter_input(INPUT_POST,
+                    'resumableFilename'));
 
-		if($file['error'] != 0) {
-			throw new Exception(gettext('error receiving file chunk'));
-		}
+        $file = $_FILES['file'];
 
-		$target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon, $release);
-		
-		if(!is_dir($target_directory)) {
-			mkdir($target_directory, 0777, true);
-		}
+        if ($file['error'] != 0) {
+            throw new Exception(gettext('error receiving file chunk'));
+        }
 
-		if(is_file($target_directory.'/'.$file_name)) {
-			throw new Exception(gettext('file already exists'));
-		}
+        $target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon,
+                $release);
 
-		$identifier = QueryFile::sanitizePath(filter_input(INPUT_POST, 'resumableIdentifier'));
+        if (!is_dir($target_directory)) {
+            mkdir($target_directory, 0777, true);
+        }
 
-		$chunk_directory = $target_directory.'/'.$file_name.'.parts';
-		if(!is_dir($chunk_directory)) {
-			mkdir($chunk_directory);
-		}
+        if (is_file($target_directory.'/'.$file_name)) {
+            throw new Exception(gettext('file already exists'));
+        }
 
-		// final check
-		if(!is_dir($chunk_directory)) {
-			throw new Exception(gettext('could not create upload directory'));
-		}
+        $identifier = QueryFile::sanitizePath(filter_input(INPUT_POST,
+                    'resumableIdentifier'));
 
-		$chunk_number = filter_input(INPUT_POST, 'resumableChunkNumber', FILTER_SANITIZE_NUMBER_INT);
-		$chunk_size = filter_input(INPUT_POST, 'resumableChunkSize', FILTER_SANITIZE_NUMBER_INT);
-		$total_size = filter_input(INPUT_POST, 'resumableTotalSize', FILTER_SANITIZE_NUMBER_INT);
+        $chunk_directory = $target_directory.'/'.$file_name.'.parts';
+        if (!is_dir($chunk_directory)) {
+            mkdir($chunk_directory);
+        }
 
-		if($total_size > $this->config->getSize('upload/datasize')) {
-			throw new Exception(gettext('file too big'));
-		}
-		if($chunk_number > 1000) {
-			throw new Exception(gettext('file chunk count too big'));
-		}
-		if($chunk_size < 1 || $total_size < 1) {
-			throw new Exception(gettext('invalid file chunk size'));
-		}
-		if(($chunk_number * $chunk_size) > ($total_size + $chunk_size)) {
-			throw new Exception(gettext('file chunk exceeds total size'));
-		}
+        // final check
+        if (!is_dir($chunk_directory)) {
+            throw new Exception(gettext('could not create upload directory'));
+        }
 
-		$part_file = $chunk_directory.'/'.$file_name.'.part'.$chunk_number;
+        $chunk_number = filter_input(INPUT_POST, 'resumableChunkNumber',
+            FILTER_SANITIZE_NUMBER_INT);
+        $chunk_size = filter_input(INPUT_POST, 'resumableChunkSize',
+            FILTER_SANITIZE_NUMBER_INT);
+        $total_size = filter_input(INPUT_POST, 'resumableTotalSize',
+            FILTER_SANITIZE_NUMBER_INT);
 
-		if(!move_uploaded_file($file['tmp_name'], $part_file)) {
-			throw new Exception(gettext('error saving file chunk'));
-		}
+        if ($total_size > $this->config->getSize('upload/datasize')) {
+            throw new Exception(gettext('file too big'));
+        }
+        if ($chunk_number > 1000) {
+            throw new Exception(gettext('file chunk count too big'));
+        }
+        if ($chunk_size < 1 || $total_size < 1) {
+            throw new Exception(gettext('invalid file chunk size'));
+        }
+        if (($chunk_number * $chunk_size) > ($total_size + $chunk_size)) {
+            throw new Exception(gettext('file chunk exceeds total size'));
+        }
+
+        $part_file = $chunk_directory.'/'.$file_name.'.part'.$chunk_number;
+
+        if (!move_uploaded_file($file['tmp_name'], $part_file)) {
+            throw new Exception(gettext('error saving file chunk'));
+        }
 
 
-		if(!$this->attemptAssembleFile($user, $addon, $release, $chunk_directory, $file_name, $chunk_size, $total_size)) {
-			throw new Exception(gettext('error assembling file'));
-		}
+        if (!$this->attemptAssembleFile($user, $addon, $release,
+                $chunk_directory, $file_name, $chunk_size, $total_size)) {
+            throw new Exception(gettext('error assembling file'));
+        }
 
-		$this->display(array('chunk' => 'received'));
-	}
-
+        $this->display(array('chunk' => 'received'));
+    }
 }

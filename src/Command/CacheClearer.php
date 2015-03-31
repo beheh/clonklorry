@@ -9,6 +9,7 @@ use Lorry\Environment;
 
 class CacheClearer extends Command
 {
+
     protected function configure()
     {
         $this
@@ -19,9 +20,9 @@ class CacheClearer extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-		$lorry = new Environment();
-		$lorry->setup();
-		$lorry->getContainer()->get('Lorry\TemplateEngineInterface')->clearCacheFiles();
+        $lorry = new Environment();
+        $lorry->setup();
+        $lorry->getContainer()->get('Lorry\TemplateEngineInterface')->clearCacheFiles();
         $output->writeln('Cleared cache');
     }
 }

@@ -7,92 +7,97 @@ use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Twig_Environment;
 
-abstract class Email {
+abstract class Email
+{
+    /**
+     *
+     * @var \Lorry\Service\ConfigService
+     */
+    protected $config;
 
-	/**
-	 *
-	 * @var \Lorry\Service\ConfigService
-	 */
-	protected $config;
+    public function setConfigService(ConfigService $config)
+    {
+        $this->config = $config;
+    }
+    /**
+     *
+     * @var \Lorry\Service\LocalisationService
+     */
+    protected $localisation;
 
-	public function setConfigService(ConfigService $config) {
-		$this->config = $config;
-	}
+    public function setLocalisationService(LocalisationService $localisation)
+    {
+        $this->localisation = $localisation;
+    }
+    /**
+     *
+     * @var \Lorry\Service\SecurityService
+     */
+    protected $security;
 
-	/**
-	 *
-	 * @var \Lorry\Service\LocalisationService
-	 */
-	protected $localisation;
+    public function setSecurityService(SecurityService $security)
+    {
+        $this->security = $security;
+    }
+    /**
+     *
+     * @var \Twig_Environment;
+     */
+    private $twig;
 
-	public function setLocalisationService(LocalisationService $localisation) {
-		$this->localisation = $localisation;
-	}
+    public function setTwig(Twig_Environment $twig)
+    {
+        $this->twig = $twig;
+    }
+    private $recipent;
 
-	/**
-	 *
-	 * @var \Lorry\Service\SecurityService
-	 */
-	protected $security;
+    public function setRecipent($recipent)
+    {
+        $this->recipent = $recipent;
+    }
 
-	public function setSecurityService(SecurityService $security) {
-		$this->security = $security;
-	}
+    public function getRecipent()
+    {
+        return $this->recipent;
+    }
+    private $replyto;
 
-	/**
-	 *
-	 * @var \Twig_Environment;
-	 */
-	private $twig;
+    public function setReplyTo($replyto)
+    {
+        $this->replyto = $replyto;
+    }
 
-	public function setTwig(Twig_Environment $twig) {
-		$this->twig = $twig;
-	}
+    public function getReplyTo()
+    {
+        return $this->replyto;
+    }
 
-	private $recipent;
+    public function setUsername($username)
+    {
+        $this->context['username'] = $username;
+    }
+    protected $context = array();
 
-	public function setRecipent($recipent) {
-		$this->recipent = $recipent;
-	}
+    public abstract function write();
+    private $subject;
 
-	public function getRecipent() {
-		return $this->recipent;
-	}
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+    private $message;
 
-	private $replyto;
+    public function getMessage()
+    {
+        return $this->message;
+    }
 
-	public function setReplyTo($replyto) {
-		$this->replyto = $replyto;
-	}
-
-	public function getReplyTo() {
-		return $this->replyto;
-	}
-
-	public function setUsername($username) {
-		$this->context['username'] = $username;
-	}
-
-	protected $context = array();
-
-	public abstract function write();
-
-	private $subject;
-
-	public function getSubject() {
-		return $this->subject;
-	}
-
-	private $message;
-
-	public function getMessage() {
-		return $this->message;
-	}
-
-	protected function render($name) {
-		$template = $this->twig->loadTemplate('email/'.$name);
-		$this->subject = $template->renderBlock('subject', array_merge(array('brand' => $this->config->get('brand')), $this->context));
-		$this->message = $template->render($this->context);
-	}
-
+    protected function render($name)
+    {
+        $template = $this->twig->loadTemplate('email/'.$name);
+        $this->subject = $template->renderBlock('subject',
+            array_merge(array('brand' => $this->config->get('brand')),
+                $this->context));
+        $this->message = $template->render($this->context);
+    }
 }

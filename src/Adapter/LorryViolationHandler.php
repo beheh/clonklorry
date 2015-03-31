@@ -12,5 +12,4 @@ class LorryViolationHandler implements ViolationHandlerInterface
     {
         throw new TooManyRequestsException;
     }
-
 }

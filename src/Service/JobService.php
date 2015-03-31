@@ -10,14 +10,14 @@ use Lorry\Exception;
 
 class JobService extends Service
 {
-
     /**
      *
      * @var \Resque\Resque;
      */
     private $resque;
 
-    public function __construct(LoggerFactoryInterface $loggerFactory, Client $client)
+    public function __construct(LoggerFactoryInterface $loggerFactory,
+        Client $client)
     {
         parent::__construct($loggerFactory);
         $this->resque = new Resque($client);
@@ -46,8 +46,10 @@ class JobService extends Service
             throw new Exception('invalid arguments (not an array)');
         }
         $class_name = $this->build($job_name);
-        $result = $this->resque->enqueue($this->getQueue($class_name), $class_name, $args);
-        $this->logger->notice('queuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result, true));
+        $result = $this->resque->enqueue($this->getQueue($class_name),
+            $class_name, $args);
+        $this->logger->notice('queuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result,
+                true));
         return $result;
     }
 
@@ -64,5 +66,4 @@ class JobService extends Service
         //return $result;
         return false;
     }
-
 }

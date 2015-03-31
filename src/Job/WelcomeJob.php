@@ -2,15 +2,17 @@
 
 namespace Lorry\Job;
 
-class WelcomeJob extends ActivateJob {
+class WelcomeJob extends ActivateJob
+{
 
-	public function getEmail() {
-		return 'Welcome';
-	}
+    public function getEmail()
+    {
+        return 'Welcome';
+    }
 
-	// always perform the initial Welcome message
-	public function beforePerform() {
-		return;
-	}
-	
+    // always perform the initial Welcome message
+    public function beforePerform()
+    {
+        return;
+    }
 }

@@ -32,7 +32,7 @@ abstract class Job extends AbstractJob
             $this->execute();
         } catch (\Exception $ex) {
             // throw on if we can't access the LoggerBuilder, so Exception appears in the worker log
-            if(!$this->container) {
+            if (!$this->container) {
                 throw $ex;
             }
             $loggerFactory = $this->container->get('Lorry\Logger\LoggerFactoryInterface');

@@ -2,11 +2,12 @@
 
 namespace Lorry;
 
-interface TemplateEngineInterface {
+interface TemplateEngineInterface
+{
 
-	public function addGlobal($name, $value);
-	
-	public function loadTemplate($name, $index = null);
+    public function addGlobal($name, $value);
 
-	public function clearCacheFiles();
+    public function loadTemplate($name, $index = null);
+
+    public function clearCacheFiles();
 }

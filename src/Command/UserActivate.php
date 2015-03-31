@@ -8,35 +8,37 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Lorry\Environment;
 
-class UserActivate extends Command {
+class UserActivate extends Command
+{
 
-	protected function configure() {
-		$this
-				->setName('user:activate')
-				->setDescription('Activate a user account')
-				->addArgument(
-						'username', InputArgument::REQUIRED, 'The username of the account to activate'
-				)
-		;
-	}
+    protected function configure()
+    {
+        $this
+            ->setName('user:activate')
+            ->setDescription('Activate a user account')
+            ->addArgument(
+                'username', InputArgument::REQUIRED,
+                'The username of the account to activate'
+            )
+        ;
+    }
 
-	protected function execute(InputInterface $input, OutputInterface $output) {
-		$lorry = new Environment();
-		$lorry->setup();
-		$persistence = $lorry->getContainer()->get('persistence');
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $lorry = new Environment();
+        $lorry->setup();
+        $persistence = $lorry->getContainer()->get('persistence');
 
-		$username = $input->getArgument('username');
-		$user = $persistence->build('User')->byUsername($username, true);
-		if($user === null) {
-			throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
-		}
-		$user->activate();
-		if($user->save()) {
-			$output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
-		}
-		else {
-			$output->writeln('<error>Error saving the user</error>');
-		}
-	}
-
+        $username = $input->getArgument('username');
+        $user = $persistence->build('User')->byUsername($username, true);
+        if ($user === null) {
+            throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
+        }
+        $user->activate();
+        if ($user->save()) {
+            $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
+        } else {
+            $output->writeln('<error>Error saving the user</error>');
+        }
+    }
 }

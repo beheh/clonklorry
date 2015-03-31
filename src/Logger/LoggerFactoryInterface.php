@@ -2,7 +2,8 @@
 
 namespace Lorry\Logger;
 
-interface LoggerFactoryInterface {
+interface LoggerFactoryInterface
+{
 
-	public function build($channel);
+    public function build($channel);
 }

@@ -4,15 +4,17 @@ namespace Lorry\Email;
 
 use Lorry\Email;
 
-class Activate extends Email {
+class Activate extends Email
+{
 
-	public function write() {
-		$this->context['email'] = $this->getRecipent();
-		$this->render('activate.twig');
-	}
+    public function write()
+    {
+        $this->context['email'] = $this->getRecipent();
+        $this->render('activate.twig');
+    }
 
-	public function setUrl($url) {
-		$this->context['activation_url'] = $url;
-	}
-
+    public function setUrl($url)
+    {
+        $this->context['activation_url'] = $url;
+    }
 }

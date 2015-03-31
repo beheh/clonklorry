@@ -4,22 +4,26 @@ namespace Lorry\Exception;
 
 use Lorry\Exception;
 
-class FileNotFoundException extends Exception {
+class FileNotFoundException extends Exception
+{
 
-	public function getPresenter() {
-		return 'Lorry\Presenter\Error\FileNotFound';
-	}
+    public function getPresenter()
+    {
+        return 'Lorry\Presenter\Error\FileNotFound';
+    }
 
-	public function getApiType() {
-		return 'filenotfound';
-	}
+    public function getApiType()
+    {
+        return 'filenotfound';
+    }
 
-	public function getHttpCode() {
-		return 404;
-	}
+    public function getHttpCode()
+    {
+        return 404;
+    }
 
-	public function getHttpMessage() {
-		return 'File Not Found';
-	}
-
+    public function getHttpMessage()
+    {
+        return 'File Not Found';
+    }
 }

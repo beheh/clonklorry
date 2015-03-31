@@ -5,26 +5,28 @@ namespace Lorry\Logger;
 use Psr\Log\LogLevel;
 use Lorry\Environment;
 
-class MonologLoggerFactory implements LoggerFactoryInterface {
+class MonologLoggerFactory implements LoggerFactoryInterface
+{
+    protected $handlers = array();
 
-	protected $handlers = array();
+    public function __construct()
+    {
+        $streamHandler = new \Monolog\Handler\StreamHandler(Environment::PROJECT_ROOT.'/logs/lorry.log');
+        $streamHandler->setFormatter(new \Monolog\Formatter\LineFormatter());
+        $fingersCrossedHandler = new \Monolog\Handler\FingersCrossedHandler($streamHandler,
+            new \Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy(LogLevel::ERROR));
 
-	public function __construct() {
-		$streamHandler = new \Monolog\Handler\StreamHandler(Environment::PROJECT_ROOT.'/logs/lorry.log');
-		$streamHandler->setFormatter(new \Monolog\Formatter\LineFormatter());
-		$fingersCrossedHandler = new \Monolog\Handler\FingersCrossedHandler($streamHandler, new \Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy(LogLevel::ERROR));
+        $this->handlers[] = $fingersCrossedHandler;
+    }
 
-		$this->handlers[] = $fingersCrossedHandler;
-	}
+    public function build($channel)
+    {
+        $logger = new \Monolog\Logger($channel);
 
-	public function build($channel) {
-		$logger = new \Monolog\Logger($channel);
+        foreach ($this->handlers as $handler) {
+            $logger->pushHandler($handler);
+        }
 
-		foreach($this->handlers as $handler) {
-			$logger->pushHandler($handler);
-		}
-
-		return $logger;
-	}
-
+        return $logger;
+    }
 }

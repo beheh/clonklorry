@@ -8,7 +8,6 @@ use Lorry\Exception\BadRequestException;
 
 class Login extends Presenter
 {
-
     /**
      * @Inject
      * @var \BehEh\Flaps\Flaps
@@ -47,7 +46,7 @@ class Login extends Presenter
         }
         if (isset($_GET['registered'])) {
             $this->context['registered'] = true;
-            if(!isset($this->context['username'])) {
+            if (!isset($this->context['username'])) {
                 $username = filter_input(INPUT_GET, 'registered');
                 if (!empty($username)) {
                     $this->context['username_exists'] = true;
@@ -55,7 +54,8 @@ class Login extends Presenter
                 $this->context['username'] = $username;
             }
             if (!$this->hasAlert('login')) {
-                $this->success('login', gettext('Registration successful! We\'ll send you an email for you to activate your account.'));
+                $this->success('login',
+                    gettext('Registration successful! We\'ll send you an email for you to activate your account.'));
             }
         }
         if (isset($_GET['connect'])) {
@@ -65,7 +65,8 @@ class Login extends Presenter
             }
         }
         if (isset($_GET['unknown-oauth']) && !$this->hasAlert('login')) {
-            $this->warning('login', gettext('Sign in to link this login service to your account.'));
+            $this->warning('login',
+                gettext('Sign in to link this login service to your account.'));
         }
 
         $this->display('account/login.twig');
@@ -75,8 +76,10 @@ class Login extends Presenter
     {
         $flaps = $this->flaps;
         $flap = $flaps->getFlap('login');
-        $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(3, '5s'));
-        $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(10, '60s'));
+        $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(3,
+            '5s'));
+        $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(10,
+            '60s'));
         $flap->limit($_SERVER['REMOTE_ADDR']);
 
         if (isset($_POST['email-submit'])) {
@@ -86,8 +89,10 @@ class Login extends Presenter
             $user = $this->persistence->build('User')->byEmail($email);
             if ($user) {
                 try {
-                    $this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true));
-                    $this->success('email', gettext('You should receive an email shortly.'));
+                    $this->job->submit('LoginByEmail',
+                        array('user' => $user->getId(), 'reset' => true));
+                    $this->success('email',
+                        gettext('You should receive an email shortly.'));
                 } catch (\Exception $ex) {
                     $this->error('email', gettext('Login via email failed.'));
                 }
@@ -99,7 +104,8 @@ class Login extends Presenter
         } else {
             // login by username and password
             $username = filter_input(INPUT_POST, 'username', FILTER_DEFAULT);
-            $remember = filter_input(INPUT_POST, 'remember', FILTER_VALIDATE_BOOLEAN) || false;
+            $remember = filter_input(INPUT_POST, 'remember',
+                    FILTER_VALIDATE_BOOLEAN) || false;
             // take username to next page
             $this->context['username'] = $username;
             // set remember checkmark to persist after post
@@ -108,13 +114,14 @@ class Login extends Presenter
             if (!$user) {
                 // try email address instead
                 $user = $this->persistence->build('User')->byEmail($username);
-                if($user) {
+                if ($user) {
                     $this->context['email'] = $username;
                 }
             }
             if ($user) {
                 $this->context['username_exists'] = true;
-                if ($user->matchPassword(filter_input(INPUT_POST, 'password', FILTER_DEFAULT))) {
+                if ($user->matchPassword(filter_input(INPUT_POST, 'password',
+                            FILTER_DEFAULT))) {
                     // do not show email login by default
                     $this->session->unsetFlag('login_email');
                     // log user in
@@ -137,44 +144,46 @@ class Login extends Presenter
                 }
             } else {
                 // user does not exist
-                $this->error('login', gettext('Username or email address unknown.'));
+                $this->error('login',
+                    gettext('Username or email address unknown.'));
             }
         }
         $this->get();
     }
 
-    public function attemptTokenLogin() {
+    public function attemptTokenLogin()
+    {
         $username = filter_input(INPUT_GET, 'username');
         $user = $this->persistence->build('User')->byUsername($username);
-		if(!$user) {
-			throw new FileNotFoundException('user '.$username);
-		}
+        if (!$user) {
+            throw new FileNotFoundException('user '.$username);
+        }
 
-		$expires = filter_input(INPUT_GET, 'expires');
-		$counter = filter_input(INPUT_GET, 'counter');
+        $expires = filter_input(INPUT_GET, 'expires');
+        $counter = filter_input(INPUT_GET, 'counter');
         $reset = filter_input(INPUT_GET, 'reset', FILTER_VALIDATE_BOOLEAN);
 
-		$hash = filter_input(INPUT_GET, 'hash');
-		if(empty($hash)) {
-			throw new BadRequestException();
-		}
-
-        try {
-            $expected = $this->security->signLogin($user, $expires, $counter, $reset);
-        }
-        catch(\InvalidArgumentException $ex) {
+        $hash = filter_input(INPUT_GET, 'hash');
+        if (empty($hash)) {
             throw new BadRequestException();
         }
 
-		if(hash_equals($expected, $hash) !== true) {
-			throw new ForbiddenException('hash does not match expected value');
-		}
+        try {
+            $expected = $this->security->signLogin($user, $expires, $counter,
+                $reset);
+        } catch (\InvalidArgumentException $ex) {
+            throw new BadRequestException();
+        }
 
-		if($expires < time()) {
-			throw new ForbiddenException('token expired');
-		}
+        if (hash_equals($expected, $hash) !== true) {
+            throw new ForbiddenException('hash does not match expected value');
+        }
 
-        if($counter < $user->getCounter()) {
+        if ($expires < time()) {
+            throw new ForbiddenException('token expired');
+        }
+
+        if ($counter < $user->getCounter()) {
             throw new ForbiddenException('counter is not current');
         }
 
@@ -183,7 +192,7 @@ class Login extends Presenter
 
         $this->session->start($user, false, false);
 
-        if($reset) {
+        if ($reset) {
             $this->session->authorizeResetPassword();
             $this->redirect('/settings?change-password#password');
         }
