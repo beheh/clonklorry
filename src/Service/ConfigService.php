@@ -67,7 +67,7 @@ class ConfigService extends Service
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getTracking()

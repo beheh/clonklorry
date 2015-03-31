@@ -59,9 +59,13 @@ class Presentation extends Presenter
         $dependencies = $release->fetchDependencies();
         foreach ($dependencies as $dependency) {
             $dependency_release = $dependency->fetchRelease();
-            if (!$dependency_release) continue;
+            if (!$dependency_release) {
+                continue;
+            }
             $dependency_addon = $dependency_release->fetchAddon();
-            if (!$dependency_addon) continue;
+            if (!$dependency_addon) {
+                continue;
+            }
             $this->context['dependencies'][] = array('title' => $dependency_addon->getTitle(),
                 'short' => $dependency_addon->getShort());
         }

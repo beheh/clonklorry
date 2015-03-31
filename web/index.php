@@ -7,7 +7,6 @@ try {
     $lorry->setup();
     $lorry->handle();
 } catch (Exception $e) {
-
     header('HTTP/1.1 500 Internal Server Error');
     header('Content-Type: text/plain');
 

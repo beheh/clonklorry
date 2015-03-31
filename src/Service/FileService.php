@@ -13,7 +13,6 @@ class FileService
 
     public function getBaseUpload(Addon $addon, Release $release)
     {
-        
     }
 
     public function getFilesystemHandler(Addon $addon, Release $release)

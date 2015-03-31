@@ -13,7 +13,9 @@ class Front extends Presenter
                 true)->byAnything();
         $addons = array();
         foreach ($release as $release) {
-            if (!$release->isReleased()) continue;
+            if (!$release->isReleased()) {
+                continue;
+            }
             $addon = $release->fetchAddon();
             $game = $addon->fetchGame();
             $addons[] = array(

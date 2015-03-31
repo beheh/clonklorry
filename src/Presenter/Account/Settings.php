@@ -158,7 +158,6 @@ class Settings extends Presenter
                         $this->job->remove('Activate',
                             array('user' => $user->getId(), 'address' => $previous_email));
                     } catch (\Exception $ex) {
-                        
                     }
                     // submit new activation job
                     if ($user->isActivated()) {
@@ -172,7 +171,6 @@ class Settings extends Presenter
                                 $submitted = true;
                             }
                         } catch (\Exception $ex) {
-
                         }
                         if ($submitted) {
                             $this->success('contact',
@@ -185,7 +183,7 @@ class Settings extends Presenter
                 } else {
                     $this->error('contact', implode('<br>', $errors));
                 }
-            } else if (isset($_POST['resend'])) {
+            } elseif (isset($_POST['resend'])) {
                 $args = array('user' => $user->getId(), 'address' => $user->getEmail());
                 // remove any previous activation jobs, if any
                 $this->job->remove('Activate', $args);

@@ -36,7 +36,7 @@ class SessionService extends Service
     protected $user = null;
 
     /**
-     * 
+     *
      * @param \Lorry\Model\User $user
      * @param bool $remember
      * @param bool $identify
@@ -67,7 +67,7 @@ class SessionService extends Service
     }
 
     /**
-     * 
+     *
      * @param \Lorry\Model\User $user
      */
     final protected function authenticate(User $user)
@@ -115,8 +115,9 @@ class SessionService extends Service
      */
     final public function authenticated()
     {
-        if (!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login']))
-                return false;
+        if (!isset($_COOKIE['lorry_session']) && !isset($_COOKIE['lorry_login'])) {
+            return false;
+        }
         $this->ensureUser();
         return $this->user !== null;
     }
@@ -140,7 +141,7 @@ class SessionService extends Service
     }
 
     /**
-     * 
+     *
      * @return string
      */
     final public function getState()
@@ -162,7 +163,7 @@ class SessionService extends Service
     }
 
     /**
-     * 
+     *
      * @param string $state
      * @return bool
      */
@@ -189,7 +190,7 @@ class SessionService extends Service
     }
 
     /**
-     * 
+     *
      * @param string $state
      * @return bool
      */
@@ -243,7 +244,7 @@ class SessionService extends Service
             } else {
                 $this->logout();
             }
-        } else if (isset($_COOKIE['lorry_login'])) {
+        } elseif (isset($_COOKIE['lorry_login'])) {
             $user = null;
             $login = explode('$', $_COOKIE['lorry_login']);
             if (count($login) == 3 && is_numeric($login[1])) {

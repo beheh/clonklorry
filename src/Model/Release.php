@@ -65,7 +65,9 @@ class Release extends Model
         $releases = array();
         foreach ($addons as $addon) {
             $release = $this->persistence->build('Release')->latest($addon->getId());
-            if ($release) $releases[] = $release;
+            if ($release) {
+                $releases[] = $release;
+            }
         }
         return $releases;
     }
@@ -79,7 +81,9 @@ class Release extends Model
         $releases = array();
         foreach ($addons as $addon) {
             $release = $this->persistence->build('Release')->latest($addon->getId());
-            if ($release) $releases[] = $release;
+            if ($release) {
+                $releases[] = $release;
+            }
         }
         return $releases;
     }

@@ -413,7 +413,7 @@ class User extends Model
     }
 
     /**
-     * 
+     *
      * @return array
      */
     public function forPresenter()

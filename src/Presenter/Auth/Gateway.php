@@ -15,7 +15,6 @@ class Gateway extends Presenter
 
     public function get($provider)
     {
-
         try {
             $login_hint = false;
             if ($this->session->authenticated()) {

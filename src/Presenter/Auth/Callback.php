@@ -16,7 +16,6 @@ class Callback extends Presenter
 
     public function get($provider)
     {
-
         $this->session->ensureSession();
         if (isset($_SESSION['register_oauth'])) {
             unset($_SESSION['register_oauth']);

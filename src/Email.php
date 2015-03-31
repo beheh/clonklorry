@@ -78,7 +78,7 @@ abstract class Email
     }
     protected $context = array();
 
-    public abstract function write();
+    abstract public function write();
     private $subject;
 
     public function getSubject()

@@ -6,5 +6,4 @@ use Lorry\Exception;
 
 class ModelValueInvalidException extends Exception
 {
-
 }

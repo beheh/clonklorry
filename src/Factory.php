@@ -3,7 +3,7 @@
 abstract class Factory
 {
 
-    abstract static function getNamespace();
+    abstract public static function getNamespace();
 
-    abstract static function build($model);
+    abstract public static function build($model);
 }

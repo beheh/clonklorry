@@ -118,7 +118,6 @@ class Register extends Presenter
                     $this->job->submit('Welcome',
                         array('user' => $user->getId()));
                 } catch (\Exception $ex) {
-
                 }
                 $this->session->setFlag('new_user', false);
                 $returnto = filter_input(INPUT_GET, 'returnto');

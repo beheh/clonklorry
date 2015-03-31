@@ -27,7 +27,6 @@ class Contact extends Presenter
 
     public function post()
     {
-
         $user = false;
         if ($this->session->authenticated()) {
             $user = $this->session->getUser();

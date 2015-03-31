@@ -37,7 +37,7 @@ class SecurityService
     }
 
     /**
-     * 
+     *
      * @throws \Lorry\Exception\ForbiddenException
      */
     public function requireIdentification()

@@ -7,5 +7,4 @@ use Lorry\TemplateEngineInterface;
 
 class TwigTemplatingEngineAdapter extends Twig_Environment implements TemplateEngineInterface
 {
-
 }

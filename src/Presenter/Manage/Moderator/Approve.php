@@ -12,7 +12,7 @@ class Approve extends Presenter
 {
 
     /**
-     * 
+     *
      * @param Lorry\Service\PersistenceService $persistence
      * @param int $id
      * @return \Lorry\Model\Addon
@@ -102,7 +102,7 @@ class Approve extends Presenter
                 } else {
                     $addon->reject($comment);
                 }
-            } else if (isset($_POST['approve'])) {
+            } elseif (isset($_POST['approve'])) {
                 $addon->approve($comment);
             }
         } catch (ModelValueInvalidException $ex) {

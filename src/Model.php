@@ -99,15 +99,16 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $name
      * @return mixed
      */
     final protected function getValue($name)
     {
         $this->ensureField($name);
-        if (array_key_exists($name, $this->changes))
-                return $this->changes[$name];
+        if (array_key_exists($name, $this->changes)) {
+            return $this->changes[$name];
+        }
         $this->ensureLoaded();
         return $this->values[$name];
     }
@@ -155,7 +156,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @return \Lorry\Model[]
      */
     final public function byAnything()
@@ -235,7 +236,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $row
      * @param mixed $value
      * @return bool
@@ -258,7 +259,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $row
      * @param mixed $value
      * @return mixed
@@ -283,7 +284,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $row
      * @param mixed $value
      * @return mixed
@@ -291,7 +292,7 @@ abstract class Model
     private function decodeType($row, $value)
     {
         $this->ensureField($row);
-        if ($row == 'id' || $value === NULL) {
+        if ($row == 'id' || $value === null) {
             return $value;
         }
         switch ($this->schema[$row]) {
@@ -303,7 +304,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $row
      * @param mixed $value
      * @return mixed
@@ -311,7 +312,7 @@ abstract class Model
     private function encodeType($row, $value)
     {
         $this->ensureField($row);
-        if ($row == 'id' || $value === NULL) {
+        if ($row == 'id' || $value === null) {
             return $value;
         }
         switch ($this->schema[$row]) {
@@ -412,7 +413,9 @@ abstract class Model
      */
     final public function save()
     {
-        if (!$this->modified()) return true;
+        if (!$this->modified()) {
+            return true;
+        }
 
         $changes = array();
         if (!$this->loaded) {
@@ -459,7 +462,7 @@ abstract class Model
     /* Chainloading */
 
     /**
-     * 
+     *
      * @param string $model The model to create and load
      * @param string $row The row which maps the target models id
      * @return Model
@@ -492,7 +495,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $email
      * @throws ModelValueInvalidException
      */
@@ -506,7 +509,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $url
      * @throws ModelValueInvalidException
      */
@@ -532,7 +535,7 @@ abstract class Model
     }
 
     /**
-     * 
+     *
      * @param string $value
      * @param string $regexp
      * @throws Exception
@@ -543,7 +546,7 @@ abstract class Model
         $result = preg_match($regexp, $value);
         if ($result === false) {
             throw new Exception('error matching the regular expression');
-        } else if (!$result) {
+        } elseif (!$result) {
             throw new ModelValueInvalidException(gettext('invalid'));
         }
     }
@@ -587,6 +590,5 @@ abstract class Model
 
     protected function onInsert()
     {
-        
     }
 }

@@ -7,7 +7,7 @@ use Symfony\Component\Console\Application;
 
 $application = new Application('Lorry');
 $application->addCommands(array(
-	new Command\CacheClearer, new Command\CacheWarmer,
-	new Command\UserAdmin, new Command\UserActivate
+    new Command\CacheClearer, new Command\CacheWarmer,
+    new Command\UserAdmin, new Command\UserActivate
 ));
 $application->run();

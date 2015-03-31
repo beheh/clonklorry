@@ -7,7 +7,7 @@ use Lorry\Presenter;
 abstract class Redirect extends Presenter
 {
 
-    public abstract function getLocation();
+    abstract public function getLocation();
 
     public function get()
     {

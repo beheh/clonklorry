@@ -10,7 +10,7 @@ use Lorry\Logger\MonologLoggerFactory;
 class Environment
 {
     /*
-     * @var 
+     * @var
      */
     const PROJECT_ROOT = __DIR__.'/..';
 
@@ -53,7 +53,7 @@ class Environment
         $container->set('Lorry\Logger\LoggerFactoryInterface', $loggerFactory);
 
         $container->set('Psr\Log\LoggerInterface',
-            \DI\factory(function() use ($loggerFactory) {
+            \DI\factory(function () use ($loggerFactory) {
                 return $loggerFactory->build('default');
             }));
         $container->set('loggerFactory',
@@ -75,12 +75,12 @@ class Environment
         $container->set('twig', \DI\link('Lorry\TemplateEngineInterface'));
 
         $container->set('Predis\Client',
-            \DI\factory(function() use ($config) {
+            \DI\factory(function () use ($config) {
                 return new \Predis\Client($config->get('job/dsn'));
             }));
 
         $container->set('BehEh\Flaps\Flaps',
-            \DI\factory(function() use ($container) {
+            \DI\factory(function () use ($container) {
                 $adapter = new \BehEh\Flaps\Storage\PredisStorage($container->get('Predis\Client'),
                     array('prefix' => 'clonklorry:'));
                 $flaps = new \BehEh\Flaps\Flaps($adapter);
@@ -89,7 +89,7 @@ class Environment
             }));
 
         $container->set('Lorry\TemplateEngineInterface',
-            \DI\factory(function() use ($config) {
+            \DI\factory(function () use ($config) {
                 $loader = new \Twig_Loader_Filesystem(__DIR__.'/../app/templates');
                 $twig = new Adapter\TwigTemplatingEngineAdapter($loader,
                     array('cache' => __DIR__.'/../cache/twig', 'debug' => $config->get('debug')));

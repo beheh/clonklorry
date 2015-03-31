@@ -32,7 +32,7 @@ class Release extends Presenter
 
         if ($addon->isApproved()) {
             $this->context['approved'] = true;
-        } else if ($addon->isSubmittedForApproval()) {
+        } elseif ($addon->isSubmittedForApproval()) {
             $this->context['submitted'] = true;
         }
         $this->context['released'] = $release->isReleased();

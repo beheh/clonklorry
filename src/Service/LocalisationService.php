@@ -21,7 +21,7 @@ class LocalisationService extends Service
     }
 
     /**
-     * 
+     *
      * @return array
      */
     final public function getAvailableLanguages()
@@ -182,7 +182,7 @@ class LocalisationService extends Service
     }
 
     /**
-     * 
+     *
      * @return bool
      */
     final public function resetLocalize()

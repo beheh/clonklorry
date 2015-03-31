@@ -48,7 +48,6 @@ class UploadFile extends Presenter
         // check that all the parts are present
         // the size of the last part is between chunkSize and 2*$chunkSize
         if ($total_files * $chunk_size >= ($total_size - $chunk_size + 1)) {
-
             $this->logger->info('attempting to assemble file "'.$file_name.'"');
 
             // create the final destination file

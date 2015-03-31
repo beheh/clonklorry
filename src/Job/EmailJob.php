@@ -8,9 +8,9 @@ use Lorry\Email;
 abstract class EmailJob extends Job
 {
 
-    abstract function getEmail();
+    abstract public function getEmail();
 
-    abstract function getRecipent();
+    abstract public function getRecipent();
 
     public function getQueue()
     {

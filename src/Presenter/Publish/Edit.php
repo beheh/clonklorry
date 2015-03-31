@@ -165,7 +165,7 @@ class Edit extends Presenter
                     $addon->withdrawSubmission();
                     $addon->save();
                 }
-            } else if (!$released && !isset($_POST['withdraw'])) {
+            } elseif (!$released && !isset($_POST['withdraw'])) {
                 $errors = array();
 
                 $title_en = trim(filter_input(INPUT_POST, 'title_en'));

@@ -146,7 +146,7 @@ class PersistenceService extends Service
     }
 
     /**
-     * 
+     *
      * @param Model $model
      * @param array $pairs
      * @param array $order
@@ -160,7 +160,7 @@ class PersistenceService extends Service
         $rows = $this->loadAll($model, $pairs, $order, $offset, $limit);
         if (count($rows) > 1 && $limit === null && $offset === null) {
             throw new RuntimeException('result ambiguity: expected unique identifier');
-        } else if (count($rows) == 1) {
+        } elseif (count($rows) == 1) {
             return $rows[0];
         }
 
@@ -168,7 +168,7 @@ class PersistenceService extends Service
     }
 
     /**
-     * 
+     *
      * @param Model $model
      * @param array $changes
      * @return bool
@@ -202,7 +202,7 @@ class PersistenceService extends Service
     }
 
     /**
-     * 
+     *
      * @param Model $model
      * @param array $values
      * @return bool

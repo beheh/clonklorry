@@ -15,12 +15,12 @@ use Resque\AbstractJob;
  * @property \Lorry\Service\FileService $file
  * @property \Lorry\Router $router
  * @property \Lorry\TemplateEngineInterface $twig
- * 
+ *
  */
 abstract class Job extends AbstractJob
 {
 
-    public abstract function execute();
+    abstract public function execute();
     protected $container;
 
     final public function perform()

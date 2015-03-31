@@ -135,7 +135,6 @@ class Edit extends Presenter
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
         if (isset($_POST['change-contact-submit']) && $email != $user->getEmail()) {
-
             $this->context['email'] = $email;
 
             $require_activation = filter_input(INPUT_POST, 'require-activation',
@@ -157,7 +156,6 @@ class Edit extends Presenter
             }
 
             if ($user->modified() && empty($errors)) {
-
                 if ($require_activation) {
                     $user->deactivate();
                 } else {
