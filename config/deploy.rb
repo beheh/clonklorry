@@ -28,7 +28,7 @@ set :keep_releases, 5
 SSHKit.config.command_map[:composer] = "composer"
 
 # Custom composer options
-# set :composer_install_flags, '--no-dev --prefer-dist --no-interaction --quit --optimize-autoloader'
+set :composer_install_flags, '--no-dev --prefer-dist --no-interaction --optimize-autoloader'
 
 # Transfer config files to server
 before 'deploy:check:linked_files', 'config:push'
