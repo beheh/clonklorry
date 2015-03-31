@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-30 22:58+0100\n"
-"PO-Revision-Date: 2015-03-30 23:00+0100\n"
+"POT-Creation-Date: 2015-03-31 13:05+0100\n"
+"PO-Revision-Date: 2015-03-31 13:07+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -92,8 +92,8 @@ msgid "developer portal"
 msgstr "Entwicklerportal"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:164
-msgid "You can create addons at the %developer_portal%."
-msgstr "Du kannst Erweiterungen im %developer_portal% anlegen."
+msgid "You can create new addons at the %developer_portal%."
+msgstr "Du kannst neue Erweiterungen im %developer_portal% anlegen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:174
 msgid "Your addons will appear here"
@@ -288,7 +288,7 @@ msgstr ""
 "werden."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:103
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:374
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:365
 #: /home/benedict/Dokumente/clonklorry/cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:113
 #: /home/benedict/Dokumente/clonklorry/cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:64
 msgid "Save"
@@ -411,7 +411,7 @@ msgid "by rating"
 msgstr "nach Bewertung"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:123
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:287
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:275
 msgid "create a new addon"
 msgstr "erstelle eine neue Erweiterung"
 
@@ -763,15 +763,11 @@ msgstr ""
 msgid "Namespace"
 msgstr "Kennung"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:207
-msgid "The addon is available under the URL %url%."
-msgstr "Die Erweiterung ist unter der URL %url% verfügbar."
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:204
+msgid "The addon will be published at %url%."
+msgstr "Die Erweiterung wird unter %url% veröffentlicht."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:213
-msgid "The addon will be available under the URL %url%."
-msgstr "Die Erweiterung wird unter der URL %url% verfügbar sein."
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:222
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:210
 msgid ""
 "The namespace will be used as a unique identifier for your addon and its "
 "releases. It will appear in various urls. Please choose a short namespace, "
@@ -781,16 +777,16 @@ msgstr ""
 "die Releases genutzt. Sie wird in verschiedenen URLs erscheinen. Bitte wähle "
 "eine kurze Kennung, idealerweise der Dateiname der Erweiterung."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:234
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:222
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:88
 msgid "Game"
 msgstr "Spiel"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:277
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:265
 msgid "The addon is playable with <strong>%gametitle%</strong>."
 msgstr "Die Erweiterung ist unter <strong>%gametitle%</strong> spielbar."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:292
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:280
 msgid ""
 "The addon must be for a specific Clonk game. Consider choosing a different "
 "title if you create a version for a different game so players don't get "
@@ -800,43 +796,43 @@ msgstr ""
 "einen anderen Titel zu wählen falls du eine Version für ein anderes Spiel "
 "erstellst um Spieler nicht zu verwirren und %create_a_new_addon%."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:304
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:292
 msgid "Abbreviation"
 msgstr "Abkürzung"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:306
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:294
 msgid "(optional)"
 msgstr "(optional)"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:314
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:302
 msgid "Not set"
 msgstr "Nicht gesetzt"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:332
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:320
 msgid ""
 "Players will be able to search for your addon by using the abbreviation."
 msgstr "Spieler werden deine Erweiterung mithilfe der Abkürzung suchen können."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:342
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:330
 #: /home/benedict/Dokumente/clonklorry/cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:115
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:347
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:335
 msgid "%Contact_us% to add an abbreviation."
-msgstr "%Contact_us%, um eine Abkürzung hinzuzufügen."
+msgstr "%Contact_us% um eine Abkürzung hinzuzufügen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:356
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:344
 msgid "Please only enter an abbreviation if it is (to some extent) well known."
 msgstr ""
 "Bitte gib nur dann eine Abkürzung ein, falls sie (einigermaßen) bekannt ist."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:365
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:356
 msgid "These settings cannot be changed after approval."
 msgstr ""
 "Diese Einstellungen können nach der Bestätigung nicht mehr geändert werden."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:378
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:369
 msgid ""
 "The details on this page cannot be changed anymore once the addon has been "
 "submitted and approved."
@@ -844,21 +840,25 @@ msgstr ""
 "Die Einstellungen auf dieser Seite können nicht mehr geändert werden, "
 "nachdem die Erweiterung eingereicht und bestätigt wurde."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:380
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:371
 msgid "All other settings can still be changed."
 msgstr "Alle anderen Einstellungen können noch geändert werden."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:382
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:373
 msgid "Are you sure you want to submit this addon?"
 msgstr "Möchtest du diese Erweiterung wirklich einreichen?"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:388
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:379
 msgid "Submit for approval"
 msgstr "Zur Bestätigung einreichen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:392
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:383
 msgid "Would you like to remove this addon?"
 msgstr "Möchtest du diese Erweiterung entfernen?"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:390
+msgid "These settings cannot be changed anymore."
+msgstr "Diese Einstellungen können nicht mehr geändert werden."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:108
 msgid "No matching users"
@@ -3271,6 +3271,15 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "The addon is available under the URL %url%."
+#~ msgstr "Die Erweiterung ist unter der URL %url% verfügbar."
+
+#~ msgid "The addon will be available under the URL %url%."
+#~ msgstr "Die Erweiterung wird unter der URL %url% verfügbar sein."
+
+#~ msgid "You can create addons at the %developer_portal%."
+#~ msgstr "Du kannst Erweiterungen im %developer_portal% anlegen."
 
 #~ msgid "You should receive a link shortly."
 #~ msgstr "Du solltest receive an"

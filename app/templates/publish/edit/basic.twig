@@ -64,11 +64,7 @@
 		<div class="col-lg-8">
 			{% if approved %}
 				{% set url %}<samp>&hellip;/addons/{{game.short}}/<strong>{{namespace}}</strong></samp>{% endset %}
-				{% if released %}
-					<p>{% trans %}The addon is available under the URL {{url}}.{% endtrans %}</p>
-				{% else %}
-					<p>{% trans %}The addon will be available under the URL {{url}}.{% endtrans %}</p>
-				{% endif %}
+				<p>{% trans %}The addon will be published at {{url}}.{% endtrans %}</p>
 			{% else %}
 				<p>{% trans %}The namespace will be used as a unique identifier for your addon and its releases. It will appear in various urls. Please choose a short namespace, ideally the filename of the addon.{% endtrans %}</p>
 			{% endif %}
@@ -115,10 +111,14 @@
 			{% endif %}
 		</div>
 	</div>
-	<p class="help-block"><span class="glyphicon glyphicon-lock"></span> <strong>{% trans %}These settings cannot be changed after approval.{% endtrans %}</strong></p>
+    {% if not approved %}
+    <p class="help-block"><span class="glyphicon glyphicon-lock"></span> <strong>{% trans %}These settings cannot be changed after approval.{% endtrans %}</strong></p>
 	<div class="form-group">
 		<button type="submit" name="save" class="btn btn-primary"{% if submitted or approved %} disabled{% endif %}>{% trans "Save" %}</button>
-		<button type="submit" name="submit" class="btn btn-default lorry-js-warn" data-warning="{% trans %}The details on this page cannot be changed anymore once the addon has been submitted and approved.{% endtrans %}\n\n{% trans %}All other settings can still be changed.{% endtrans %}\n\n{% trans%}Are you sure you want to submit this addon?{% endtrans %}" {% if submitted or approved %} disabled{% endif %}>{% trans "Submit for approval" %}</button>
+		<button type="submit" name="submit" class="btn btn-success lorry-js-warn" data-warning="{% trans %}The details on this page cannot be changed anymore once the addon has been submitted and approved.{% endtrans %}\n\n{% trans %}All other settings can still be changed.{% endtrans %}\n\n{% trans%}Are you sure you want to submit this addon?{% endtrans %}" {% if submitted or approved %} disabled{% endif %}>{% trans "Submit for approval" %}</button>
 		<!--<a href="#" class="btn btn-link">{% trans %}Would you like to remove this addon?{% endtrans %}</a>!-->
 	</div>
+    {% else %}
+    <p class="help-block">{% trans %}These settings cannot be changed anymore.{% endtrans %}</strong></p>
+    {% endif %}
 </form>
