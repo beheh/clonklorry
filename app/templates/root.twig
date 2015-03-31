@@ -4,12 +4,17 @@
 		<meta charset="utf-8">
 		<title>{{title|default(brand)}}</title>
 		<link href="{{resources}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="{{resources}}/lorry/css/lorry.css?3" rel="stylesheet">
+		<link href="{{resources}}/lorry/css/lorry.css?4" rel="stylesheet">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="{{base}}/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" href="{{resources}}/lorry/img/lorry-128x128-touch.png">
 		<meta name="apple-mobile-web-app-title" content="{{brand}}">
+        <meta name="application-name" content="{{brand}}">
+        <meta name="msapplication-starturl" content="{{base}}">
+        <meta name="msapplication-square70x70logo" content="{{resources}}/lorry/img/lorry-70x70.png">
+        <meta name="msapplication-square150x150logo" content="{{resources}}/lorry/img/lorry-150x150.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
 		{% if fbid %}<meta property="fb:app_id" content="{{fbid}}">{% endif %}
 		<meta property="og:title" content="{{title|default(brand)}}">
 		<meta property="og:locale" content="{{locale}}">
@@ -19,7 +24,6 @@
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="{{resources}}/lorry/img/lorry-512x512.png">
 		{% endblock %}
-		<meta name="msapplication-TileColor" content="firebrick">
 		<script>var base = '{{base}}', state = '{{state}}';</script>
 	</head>
 	<body>
