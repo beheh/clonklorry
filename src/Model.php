@@ -161,7 +161,7 @@ abstract class Model {
 	 * 
 	 * @param string $row
 	 * @param mixed $value
-	 * @return \Lorry\Model|array
+	 * @return \Lorry\Model|\Lorry\Model[]
 	 * @throws Exception
 	 */
 	final protected function byValue($row, $value) {
