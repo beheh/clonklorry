@@ -9,7 +9,7 @@
 			</button>
 			<a class="navbar-brand" href="{{base}}">
 				{% include 'functions/logo.svg' %}
-				<strong>{{brand}}</strong>
+                {% if user_moderator or user_administrator %}<strong class="hidden-sm">{{brand}}</strong>{% else %}<strong>{{brand}}</strong>{% endif %}
 			</a>			
 		</div>
 		<div class="collapse navbar-collapse main-navbar-collapse">
