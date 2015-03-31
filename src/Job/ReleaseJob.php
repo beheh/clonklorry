@@ -12,7 +12,7 @@ class ReleaseJob extends Job {
 
 	public function execute() {
 		$release = $this->persistence->build('Release')->byId(1);
-		//$this->cdn->transfer('addon1/release1/ModernCombat.c4d');		
+		//$this->files->transfer('addon1/release1/ModernCombat.c4d');
 		$release->setShipping(false);
 		$release->save();
 	}

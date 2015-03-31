@@ -12,7 +12,7 @@ use Resque\AbstractJob;
  * @property \Lorry\Service\JobService $job
  * @property \Lorry\Service\SessionService $session
  * @property \Lorry\Service\SecurityService $security
- * @property \Lorry\Service\CdnService $cdn
+ * @property \Lorry\Service\FileService $file
  * @property \Lorry\Router $router
  * @property \Lorry\TemplateEngineInterface $twig
  * 

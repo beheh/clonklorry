@@ -66,7 +66,7 @@ class Environment
         $container->set('job', \DI\link('Lorry\Service\JobService'));
         $container->set('session', \DI\link('Lorry\Service\SessionService'));
         $container->set('security', \DI\link('Lorry\Service\SecurityService'));
-        $container->set('cdn', \DI\link('Lorry\Service\CdnService'));
+        $container->set('file', \DI\link('Lorry\Service\FileService'));
         $container->set('router', new Router($loggerFactory->build('router'), $container));
         $container->set('twig', \DI\link('Lorry\TemplateEngineInterface'));
 
