@@ -100,4 +100,18 @@ class Ticket extends Model {
 		return $this->fetch('User', 'staff');
 	}
 
+    public function forPresenter($dateformat = null) {
+        $result = array('id' => $this->getId(),
+            'message' => $this->getMessage()
+        );
+        if($dateformat !== null) {
+            $result['submitted'] = date($dateformat, $this->getSubmitted());
+        }
+        $user = $this->fetchUser();
+        if($user) {
+            $result['user'] = $user->forPresenter();
+        }
+        return $result;
+    }
+
 }

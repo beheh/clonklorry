@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-31 13:05+0100\n"
-"PO-Revision-Date: 2015-03-31 13:07+0100\n"
+"POT-Creation-Date: 2015-03-31 14:27+0100\n"
+"PO-Revision-Date: 2015-03-31 14:27+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,42 +20,50 @@ msgstr ""
 msgid "Ticket #%number%"
 msgstr "Ticket #%number%"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:64
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:81
+msgid "Originally sent by %username%."
+msgstr "Ursprünglich von %username% gesendet."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:87
+msgid "Originally sent by an anonymous visitor."
+msgstr "Ursprünglich von einem anonymen Besucher gesendet."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:102
 msgid "Ticket acknowledged"
 msgstr "Ticket erledigt"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:87
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:125
 msgid "The following ticket was acknowledged by <strong>%staffname%</strong>:"
 msgstr "Das folgende Ticket wurde von <strong>%staffname%</strong> erledigt:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:98
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:141
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:140
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:187
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:97
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:123
 msgid "Return to moderation portal"
-msgstr "Zurück zum Moderationsportal"
+msgstr "Zurück zum Moderatorportal"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:102
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:144
 msgid "Dispute"
 msgstr "Widersprechen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:116
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:158
 msgid "Ticket escalated"
 msgstr "Ticket eskaliert"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:131
-msgid "The following ticket was escalated by <strong>%staffname%</strong>:"
-msgstr "Das folgende Ticket wurde von <strong>%staffname%</strong> eskaliert:"
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:173
+msgid "The following ticket was escalated by %staffname%:"
+msgstr "Das folgende Ticket wurde von %staffname% eskaliert:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:165
-msgid "<strong>%username%</strong> has sent the following message:"
-msgstr "<strong>%username%</strong> hat die folgende Nachricht gesendet:"
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:200
+msgid "%username% has sent the following message:"
+msgstr "%username% hat die folgende Nachricht gesendet:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:171
-msgid "An anonymous user has sent the following message:"
-msgstr "Ein anonymer Benutzer hat die folgende Nachricht gesendet:"
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:206
+msgid "An anonymous visitor has sent the following message:"
+msgstr "Ein anonymer Besucher hat die folgende Nachricht gesendet:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:192
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:227
 msgid ""
 "Please escalate this ticket if there is any technical problem, error message "
 "or complaint."
@@ -63,11 +71,11 @@ msgstr ""
 "Bitte eskaliere dieses Ticket falls es um sich um ein technisches Problem, "
 "eine Fehlermeldung oder eine Beschwerde handelt."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:197
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:232
 msgid "Acknowledge"
 msgstr "Erledigt"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:201
+#: /home/benedict/Dokumente/clonklorry/cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:236
 msgid "Escalate"
 msgstr "Eskalieren"
 
@@ -112,12 +120,8 @@ msgid "Developer portal"
 msgstr "Entwicklerportal"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:33
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:199
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:90
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:60
-#: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:43
-msgid "Moderator"
-msgstr "Moderator"
+msgid "Moderator portal"
+msgstr "Moderatorportal"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:55
 #: /home/benedict/Dokumente/clonklorry/cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:33
@@ -179,14 +183,22 @@ msgstr "Zeitstempel"
 msgid "Message"
 msgstr "Nachricht"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:202
-#: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:105
-msgid "Anonymous"
-msgstr "Anonym"
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:203
+#: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:106
+msgid "Anonymous visitor"
+msgstr "Anonymer Besucher"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:225
-msgid "There are no new messages in the queue."
-msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:227
+msgid "There are no new messages in the support queue."
+msgstr "Es sind keine neuen Nachrichten in der Support-Warteschlange."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:237
+msgid "completed tickets"
+msgstr "erledigten Tickets"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:242
+msgid "Review the %completed_tickets%."
+msgstr "Betrache die %completed_tickets%."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:54
 msgid "Would you like to show the world what you've built?"
@@ -216,11 +228,11 @@ msgstr "Anmelden"
 msgid "Tickets"
 msgstr "Tickets"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:132
+#: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:134
 msgid "No tickets"
 msgstr "Keine Tickets"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:136
+#: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:138
 msgid "There have been no submitted tickets yet."
 msgstr "Es wurden noch keine Tickets eingereicht."
 
@@ -436,31 +448,31 @@ msgstr "Es sind noch keine Erweiterungen für dieses Spiel verfügbar."
 msgid "New %game% addon"
 msgstr "Neue %game%-Erweiterung"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:107
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:109
 msgid "Javascript needs to be enabled in order to edit addons and releases."
 msgstr ""
 "Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:119
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:121
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:230
 msgid "Release"
 msgstr "Release"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:127
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:129
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:22
 msgid "Files"
 msgstr "Dateien"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:139
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:141
 #: /home/benedict/Dokumente/clonklorry/cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:22
 msgid "Dependencies"
 msgstr "Abhängigkeiten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:151
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:153
 msgid "Changes"
 msgstr "Änderungen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:159
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:161
 msgid "Publish"
 msgstr "Veröffentlichen"
 
@@ -527,8 +539,14 @@ msgstr "Berechtigungen"
 msgid "Normal user"
 msgstr "Normaler Benutzer"
 
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:199
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:90
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:60
+#: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:43
+msgid "Moderator"
+msgstr "Moderator"
+
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:211
-#: /home/benedict/Dokumente/clonklorry/cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:103
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:54
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:37
@@ -602,6 +620,10 @@ msgstr "Betrachte die Erweiterungen"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/32/e7/3a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:106
 msgid "No games available"
 msgstr "Keine Spiele verfügbar"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:33
+msgid "Administrator portal"
+msgstr "Administratorportal"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:55
 msgid "Management"
@@ -3272,6 +3294,25 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
+#~ msgid "The following ticket was escalated by <strong>%staffname%</strong>:"
+#~ msgstr ""
+#~ "Das folgende Ticket wurde von <strong>%staffname%</strong> eskaliert:"
+
+#~ msgid "<strong>%username%</strong> has sent the following message:"
+#~ msgstr "<strong>%username%</strong> hat die folgende Nachricht gesendet:"
+
+#~ msgid "An anonymous user has sent the following message:"
+#~ msgstr "Ein anonymer Benutzer hat die folgende Nachricht gesendet:"
+
+#~ msgid "Anonymous"
+#~ msgstr "Anonym"
+
+#~ msgid "View %completed_tickets%."
+#~ msgstr "Betrache die %completed_tickets%."
+
+#~ msgid "There are no new messages in the queue."
+#~ msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
+
 #~ msgid "The addon is available under the URL %url%."
 #~ msgstr "Die Erweiterung ist unter der URL %url% verfügbar."
 
@@ -3455,9 +3496,6 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr ""
 #~ "Dieses Projekt ist nur dank zahlreicher Technologien und freier "
 #~ "Ressourcen möglich geworden:"
-
-#~ msgid "The following ticket was escalated by %staffname%:"
-#~ msgstr "Das folgende Ticket wurde von %staffname% eskaliert:"
 
 #~ msgid "create one now"
 #~ msgstr "erstellst du nicht gleich eine"
@@ -3683,12 +3721,6 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ "interne Endpunkte unter <code>/api/internal/...</code>. Diese Endpunkte "
 #~ "sollten nicht genutzt werden, da sie eine spezielle Authentifizierung "
 #~ "benötigen werden und sich jederzeit ohne Ankündigung ändern können."
-
-#~ msgid "Moderator portal"
-#~ msgstr "Moderatorportal"
-
-#~ msgid "Administrator portal"
-#~ msgstr "Administratorportal"
 
 #~ msgid "Administrators"
 #~ msgstr "Administratoren"

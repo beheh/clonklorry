@@ -1,6 +1,6 @@
 {% extends 'root.twig' %}
 
-{% set title = 'Moderator'|trans %}
+{% set title = 'Moderator portal'|trans %}
 
 {% block content %}
 	<div class="page-header">
@@ -39,13 +39,15 @@
 						<tr>
 							<td>{{message.submitted}}</td>
 							<td><a href="{{base}}/moderator/tickets/{{message.id}}" class="text">"{{ message.message|length > 50 ? message.message|slice(0, 50) ~ '…' : message.message }}"</a></td>
-							<td>{% if message.user %}{% include 'functions/user.twig' with {'user': message.user} %}{% else %}{% trans "Anonymous" %}{% endif %}</td>
+							<td>{% if message.user %}{% include 'functions/user.twig' with {'user': message.user} %}{% else %}<em>{% trans "Anonymous visitor" %}</em>{% endif %}</td>
 						</tr>
 						{% endfor %}
 					</table>
 				{% else %}
-					<p class="alert alert-info">{% trans %}There are no new messages in the queue.{% endtrans %}</p>
+					<p class="alert alert-info">{% trans %}There are no new messages in the support queue.{% endtrans %}</p>
 				{% endif %}
+                {% set completed_tickets %}<a href="{{base}}/moderator/tickets/">{% trans %}completed tickets{% endtrans %}</a>{% endset %}
+                <p class="help-block">{% trans %}Review the {{completed_tickets}}.{% endtrans %}</p>
 			</div>
 		</div>
 	</div>

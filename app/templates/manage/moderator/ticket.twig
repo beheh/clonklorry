@@ -4,11 +4,21 @@
 
 {% block content %}
 	<div class="page-header">
-		<div class="breakout"><a href="{{base}}/moderator"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+		<div class="breakout"><a href="{{base}}/moderator/tickets"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
 			<h1>{{title}}</h1>
 		</div>
 	</div>
+    {% if user %}
+      {% set username %}<strong><a href="{{base}}/users/{{user.name}}">{{user.name}}</a></strong>{% endset %}
+    {% endif %}
+    {% set original_author %}
+        {% if user %}
+        <p class="help-block">{% trans %}Originally sent by {{username}}.{% endtrans %}</p>
+        {% else %}
+        <p class="help-block">{% trans %}Originally sent by an anonymous visitor.{% endtrans %}</p>
+        {% endif %}
+    {% endset %}
 	{% if acknowledged %}
 		<div class="jumbotron">
 			<div class="container">
@@ -18,6 +28,7 @@
 					{% set staffname %}<a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a>{% endset %}
 					<p>{% trans %}The following ticket was acknowledged by <strong>{{staffname}}</strong>:{% endtrans %}</p>
 					<div class="well">{{message}}</div>
+                    {{original_author}}
 					<p>
 						<a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a>
 						<button type="submit" class="btn btn-lg btn-default" name="return">{% trans %}Dispute{% endtrans %}</button>
@@ -29,19 +40,19 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>{% trans %}Ticket escalated{% endtrans %}</h1>
-				{% set staffname %}<a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a>{% endset %}
-				<p>{% trans %}The following ticket was escalated by <strong>{{staffname}}</strong>:{% endtrans %}</p>
+				{% set staffname %}<strong><a href="{{base}}/users/{{staff.name}}" class="text">{{staff.name}}</a></strong>{% endset %}
+				<p>{% trans %}The following ticket was escalated by {{staffname}}:{% endtrans %}</p>
 				<div class="well">{{message}}</div>
-				<p><a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>				
+                {{original_author}}
+                <p><a class="btn btn-primary btn-lg" href="{{base}}/moderator">{% trans %}Return to moderation portal{% endtrans %}</a></p>				
 			</div>
 		</div>
 	{% else %}
 		<div class="container">
 			{% if user %}
-			{% set username %}<a href="{{base}}/users/{{user.name}}" class="text">{{user.name}}</a>{% endset %}
-			<p class="lead">{% trans %}<strong>{{username}}</strong> has sent the following message:{% endtrans %}</p>
+			<p class="lead">{% trans %}{{username}} has sent the following message:{% endtrans %}</p>
 			{% else %}
-			<p class="lead">{% trans %}An anonymous user has sent the following message:{% endtrans %}</p>			
+			<p class="lead">{% trans %}An anonymous visitor has sent the following message:{% endtrans %}</p>			
 			{% endif %}
 			{% include 'functions/alert.twig' with {'selector' : 'ticket'} %}
 			<form role="form" method="post" action="{{filename}}">

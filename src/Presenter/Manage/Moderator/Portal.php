@@ -38,17 +38,8 @@ class Portal extends Presenter {
 		$this->context['addons'] = $addons;
 		
 		$tickets = array();
-		foreach($this->persistence->build('Ticket')->byNew() as $ticket) {
-			$result = array(
-				'id' => $ticket->getId(),
-				'submitted' => date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $ticket->getSubmitted()),
-				'message' => $ticket->getMessage()
-			);
-			$user = $ticket->fetchUser();
-			if($user) {
-				$result['user'] = $user->forPresenter();
-			}
-			$tickets[] = $result;
+    	foreach($this->persistence->build('Ticket')->all()->byNew() as $ticket) {
+			$tickets[] = $ticket->forPresenter($this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME));
 		}
 		
 		$this->context['tickets'] = $tickets;

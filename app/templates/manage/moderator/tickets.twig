@@ -1,0 +1,33 @@
+{% extends 'root.twig' %}
+
+{% set title = 'Tickets'|trans %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="breakout"><a href="{{base}}/moderator"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+		<div class="container">
+			<h1>{{title}}</h1>
+		</div>
+	</div>
+	{% if tickets %}
+	<div class="container">
+		<table class="table">
+			<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Message{% endtrans %}</th><th>{% trans %}User{% endtrans %}</th></tr>
+			{% for message in tickets %}
+			<tr>
+				<td>{{message.submitted}}</td>
+				<td><a href="{{base}}/moderator/tickets/{{message.id}}" class="text">"{{ message.message|length > 50 ? message.message|slice(0, 50) ~ '…' : message.message }}"</a></td>
+				<td>{% if message.user %}{% include 'functions/user.twig' with {'user': message.user} %}{% else %}<em>{% trans "Anonymous visitor" %}</em>{% endif %}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	{% else %}
+		<div class="jumbotron">
+			<div class="container">
+				<h1>{% trans %}No tickets{% endtrans %}</h1>
+				<p>{% trans %}There have been no submitted tickets yet.{% endtrans %}</p>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}
