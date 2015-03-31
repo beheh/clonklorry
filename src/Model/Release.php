@@ -4,6 +4,10 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 
+/*
+ * @method \Lorry\Model\Release byId(int $id)
+ * @method \Lorry\Model\Release[] byAnything()
+ */
 class Release extends Model {
 
 	public function getTable() {
@@ -26,6 +30,9 @@ class Release extends Model {
 		return $this->setValue('addon', $addon);
 	}
 
+    /**
+     * @return \Lorry\Model\Release[]
+     */
 	final public function byAddon($addon) {
 		return $this->byValue('addon', $addon);
 	}
@@ -35,12 +42,15 @@ class Release extends Model {
 	}
 
 	/**
-	 * @return Addon
+	 * @return \Lorry\Model\Addon
 	 */
 	final public function fetchAddon() {
 		return $this->fetch('Addon', 'addon');
 	}
 
+    /**
+     * @return \Lorry\Model\Release[]
+     */
 	final public function byGame($game) {
 		$addons = $this->persistence->build('Addon')->all()->byGame($game);
 		$releases = array();
@@ -52,6 +62,9 @@ class Release extends Model {
 		return $releases;
 	}
 
+    /**
+     * @return \Lorry\Model\Release[]
+     */
 	final public function byOwner($owner) {
 		$addons = $this->persistence->build('Addon')->all()->byOwner($owner);
 		$releases = array();
@@ -70,6 +83,9 @@ class Release extends Model {
 		return $this->setValue('version', $version);
 	}
 
+    /**
+     * @return \Lorry\Model\Release
+     */
 	final public function byVersion($version, $addon) {
 		return $this->byValues(array('addon' => $addon, 'version' => $version));
 	}

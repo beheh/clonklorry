@@ -4,6 +4,10 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 
+/*
+ * @method \Lorry\Model\Game byId(int $id)
+ * @method \Lorry\Model\Game[] byAnything()
+ */
 class Game extends Model {
 
 	public function getTable() {
@@ -21,6 +25,9 @@ class Game extends Model {
 		return $this->setValue('short', $short);
 	}
 
+    /**
+     * @return \Lorry\Model\Game
+     */
 	public function byShort($short) {
 		return $this->byValue('short', $short);
 	}

@@ -5,6 +5,10 @@ namespace Lorry\Model;
 use Lorry\Model;
 use Lorry\Exception\ModelValueInvalidException;
 
+/*
+ * @method \Lorry\Model\Addon byId(int $id)
+ * @method \Lorry\Model\Addon[] byAnything()
+ */
 class Addon extends Model {
 
 	public function getTable() {
@@ -34,6 +38,9 @@ class Addon extends Model {
 		return $this->setValue('owner', $owner);
 	}
 
+    /**
+     * @return \Lorry\Model\Addon[]
+     */
 	public function byOwner($owner) {
 		return $this->byValue('owner', $owner);
 	}
@@ -64,6 +71,9 @@ class Addon extends Model {
 		return $this->setValue('short', $short);
 	}
 
+    /**
+     * @return \Lorry\Model\Addon
+     */
 	public function byShort($short, $game = null) {
 		$constraints = array('short' => $short);
 		if($game !== null) {
@@ -108,6 +118,9 @@ class Addon extends Model {
 		return $title;
 	}
 
+    /**
+     * @return \Lorry\Model\Addon|\Lorry\Model\Addon[]
+     */
 	public function byTitle($title, $owner = 0, $game = 0, $language = null) {
 		$constraints = array($this->localizeField('title', $language) => $title);
 		if($owner != 0) {
@@ -133,6 +146,9 @@ class Addon extends Model {
 		return $this->getValue('abbreviation');
 	}
 
+    /**
+     * @return \Lorry\Model\Addon|\Lorry\Model\Addon[]
+     */
 	public function byAbbreviation($abbreviation, $game) {
 		$constraints = array('abbreviation' => $abbreviation, 'game' => $game);
 		return $this->byValues($constraints);
@@ -142,6 +158,9 @@ class Addon extends Model {
 		return $this->setValue('game', $game);
 	}
 
+    /**
+     * @return \Lorry\Model\Addon[]
+     */
 	public function byGame($game) {
 		return $this->byValue('game', $game);
 	}
@@ -260,6 +279,9 @@ class Addon extends Model {
 		return $this->getValue('approval_submit');
 	}
 
+    /**
+     * @return \Lorry\Model\Addon[]
+     */
 	public function bySubmittedForApproval() {
 		$constraints = array('short' => null, 'approval_submit' => array('!=', null));
 		$this->all()->order('approval_submit');

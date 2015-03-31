@@ -6,6 +6,10 @@ use Lorry\Model;
 use Lorry\Exception\ModelValueInvalidException;
 use Exception;
 
+/*
+ * @method \Lorry\Model\User byId(int $id)
+ * @method \Lorry\Model\User[] byAnything()
+ */
 class User extends Model {
 
 	const PERMISSION_READ = 1;
@@ -46,6 +50,9 @@ class User extends Model {
 		$this->setValue('username', $username);
 	}
 
+    /**
+     * @return \Lorry\Model\User
+     */
 	final public function byUsername($username) {
 		return $this->byValue('username', $username);
 	}
@@ -88,6 +95,9 @@ class User extends Model {
 		return $this->getValue('email');
 	}
 
+    /**
+     * @return \Lorry\Model\User
+     */
 	final public function byEmail($email) {
 		return $this->byValue('email', $email);
 	}
@@ -270,6 +280,9 @@ class User extends Model {
 		throw new Exception('invalid OAuth provider');
 	}
 
+    /**
+     * @return \Lorry\Model\User
+     */
 	final public function byOauth($provider, $uid) {
 		switch($provider) {
 			case 'openid':

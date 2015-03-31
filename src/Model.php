@@ -150,7 +150,7 @@ abstract class Model {
 
 	/**
 	 * 
-	 * @return array
+	 * @return \Lorry\Model[]
 	 */
 	final public function byAnything() {
 		$this->all();
