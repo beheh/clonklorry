@@ -75,7 +75,7 @@ CREATE TABLE `addon` (
 	PRIMARY KEY (`id`),
 	KEY `owner` (`owner`),
 	UNIQUE KEY `short` (`short`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `release` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
