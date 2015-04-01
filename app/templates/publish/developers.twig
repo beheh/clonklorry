@@ -37,6 +37,8 @@
 				{% else %}
 					<h2>{% trans %}You have an awesome idea?{% endtrans %}</h2>
 					<p class="lead">{% trans %}You can create new addons here after you've registered.{% endtrans %}</p>
+					{% set exampletitle %}<strong>{{exampletitle}}</strong>{% endset %}
+					<p class="help-block">{% trans %}How about {{exampletitle}}?{% endtrans %}</p>
 					<p>
 						<a href="{{base}}/register?returnto={{origpath}}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
 						<a href="{{base}}/login?returnto={{origpath}}" class="btn btn-lg btn-primary">{% trans %}Login{% endtrans %}</a>
