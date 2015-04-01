@@ -4,6 +4,7 @@ namespace Lorry;
 
 use Lorry\Service\ConfigService;
 use Lorry\Service\PersistenceService;
+use Lorry\Service\RequestCacheService;
 use Lorry\Exception\ModelValueInvalidException;
 use InvalidArgumentException;
 use RuntimeException;
@@ -22,16 +23,24 @@ abstract class Model
      * @var \Lorry\Service\PersistenceService
      */
     protected $persistence;
+
+    /**
+     *
+     * @var \Lorry\Service\RequestCacheService
+     */
+    protected $cache;
     private $schema;
     private $values;
     private $changes;
     private $loaded;
 
     public function __construct(ConfigService $config,
-        PersistenceService $persistence)
+        PersistenceService $persistence,
+        RequestCacheService $cache)
     {
         $this->config = $config;
         $this->persistence = $persistence;
+        $this->cache = $cache;
 
         $this->loaded = false;
 
@@ -188,6 +197,15 @@ abstract class Model
     final protected function byValues($pairs = array())
     {
         $this->ensureUnloaded();
+
+        // could this instance be in the cache?
+        if(count($pairs) === 1 && isset($pairs['id'])) {
+            $result = $this->cache->getById($this->getTable(), $pairs['id']);
+            if($result) {
+                return $result;
+            }
+        }
+
         foreach ($pairs as $row => $value) {
             $this->ensureField($row);
             // do not allow abstract objects
@@ -213,6 +231,7 @@ abstract class Model
             foreach ($rows as $row) {
                 $instance = clone $this;
                 $instance->unserialize($row);
+                $this->cache->put($instance->getTable(), $instance);
                 $instances[] = $instance;
             }
 
@@ -230,6 +249,7 @@ abstract class Model
             }
 
             $this->unserialize($row);
+            $this->cache->put($this->getTable(), $this);
 
             return $this;
         }
@@ -471,6 +491,7 @@ abstract class Model
     {
         $this->ensureLoaded();
         $this->ensureField($row);
+
         $object = $this->persistence->build($model)->byId($this->getValue($row));
         return $object;
     }

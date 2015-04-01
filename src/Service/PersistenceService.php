@@ -38,7 +38,6 @@ class PersistenceService extends Service
     {
         return 'persistence';
     }
-    protected $cache;
 
     /**
      *
@@ -90,7 +89,7 @@ class PersistenceService extends Service
         if (!class_exists($model)) {
             throw new RuntimeException('unknown model "'.$model.'"');
         }
-        return new $model($this->config, $this);
+        return new $model($this->container->get('config'), $this, $this->container->get('Lorry\Service\RequestCacheService'));
     }
 
     /**
