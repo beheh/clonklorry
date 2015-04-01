@@ -144,7 +144,7 @@ class Release extends Presenter
             try {
                 $release->setWhatsnew($whatsnew);
             } catch (ModelValueInvalidException $ex) {
-                $errors[] = sprintf(gettext('"%s" is %s.'),
+                $errors[] = sprintf(gettext('&quot;%s&quot; is %s.'),
                     gettext('What\'s new?'), $ex->getMessage());
             }
             try {

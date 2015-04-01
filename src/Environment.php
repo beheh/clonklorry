@@ -108,7 +108,7 @@ class Environment
         $templating->addGlobal('site_copyright',
             htmlspecialchars('© '.date('Y')));
         $templating->addGlobal('site_trademark',
-            '<a class="text" href="http://clonk.de">'.gettext('"Clonk" is a registered trademark of Matthes Bender').'</a>');
+            '<a class="text" href="http://clonk.de">'.gettext('&quot;Clonk&quot; is a registered trademark of Matthes Bender').'</a>');
         $templating->addGlobal('site_enabled', $config->get('enable/site'));
         $templating->addGlobal('site_notice', $config->get('notice/text'));
         $templating->addGlobal('site_notice_class', $config->get('notice/class'));
