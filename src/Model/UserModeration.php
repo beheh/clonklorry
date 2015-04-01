@@ -43,7 +43,8 @@ class UserModeration extends Model
         return $this->getValue('user');
     }
 
-    public function fetchUser() {
+    public function fetchUser()
+    {
         return $this->fetch('User', 'user');
     }
 
@@ -77,15 +78,18 @@ class UserModeration extends Model
         return $this->getValue('to');
     }
 
-    public function setExecutor($executor) {
+    public function setExecutor($executor)
+    {
         return $this->setValue('executor', $executor);
     }
 
-    public function getExecutor() {
+    public function getExecutor()
+    {
         return $this->getValue('executor');
     }
 
-    public function fetchExecutor() {
+    public function fetchExecutor()
+    {
         return $this->fetch('User', 'executor');
     }
 
@@ -94,7 +98,8 @@ class UserModeration extends Model
         return $this->getValue('timestamp');
     }
 
-    public function forPresenter($dateFormat = null) {
+    public function forPresenter($dateFormat = null)
+    {
         $result = array();
         $result['user'] = $this->fetchUser()->forPresenter();
         $result['action'] = $this->getAction();
@@ -104,10 +109,9 @@ class UserModeration extends Model
             $result['timestamp'] = date($dateFormat, $this->getTimestamp());
         }
         $executor = $this->fetchExecutor();
-        if($executor) {
+        if ($executor) {
             $result['executor'] = $executor->forPresenter();
         }
         return $result;
     }
-
 }

@@ -143,7 +143,8 @@ class SecurityService
         return hash_hmac($algo, $data, $key);
     }
 
-    public function trackUserModeration($user, $action, $from, $to, $executor) {
+    public function trackUserModeration($user, $action, $from, $to, $executor)
+    {
         $entry = $this->persistence->build('UserModeration');
         $entry->setUser($user->getId());
         $entry->setAction($action);

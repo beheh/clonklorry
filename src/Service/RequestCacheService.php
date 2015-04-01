@@ -41,5 +41,4 @@ class RequestCacheService extends Service
         }
         return false;
     }
-
 }

@@ -89,10 +89,9 @@ class Login extends Presenter
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $user = $this->persistence->build('User')->byEmail($email);
             if ($user) {
-                if($this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true))) {
+                if ($this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true))) {
                     $this->success('email', gettext('You should receive an email shortly.'));
-                }
-                else {
+                } else {
                     $this->error('email', gettext('Error sending the email.'));
                 }
             } else {

@@ -35,7 +35,7 @@ class Edit extends Presenter
 
         $moderation_entries = array();
         $format = $this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME);
-        foreach($this->persistence->build('UserModeration')->all()->order('timestamp', true)->byUser($user->getId()) as $entry) {
+        foreach ($this->persistence->build('UserModeration')->all()->order('timestamp', true)->byUser($user->getId()) as $entry) {
             $moderation_entries[] = $entry->forPresenter($format);
         }
         $this->context['moderation_entries'] = $moderation_entries;
@@ -174,14 +174,13 @@ class Edit extends Presenter
             }
         }
 
-        if(isset($_POST['password-reset-submit'])) {
-            if($this->job->submit('LoginByEmail',
+        if (isset($_POST['password-reset-submit'])) {
+            if ($this->job->submit('LoginByEmail',
                         array('user' => $user->getId(), 'reset' => true))) {
                 $this->security->trackUserModeration($user, 'password_reset', null, null, $self);
 
                 $this->success('reset', gettext('The user should receive an email shortly.'));
-            }
-            else {
+            } else {
                 $this->error('reset', gettext('Error sending the email.'));
             }
         }

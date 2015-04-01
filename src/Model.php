@@ -199,9 +199,9 @@ abstract class Model
         $this->ensureUnloaded();
 
         // could this instance be in the cache?
-        if(count($pairs) === 1 && isset($pairs['id'])) {
+        if (count($pairs) === 1 && isset($pairs['id'])) {
             $result = $this->cache->getById($this->getTable(), $pairs['id']);
-            if($result) {
+            if ($result) {
                 return $result;
             }
         }

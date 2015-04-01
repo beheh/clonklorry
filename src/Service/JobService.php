@@ -51,8 +51,7 @@ class JobService extends Service
         try {
             $result = $this->resque->enqueue($this->getQueue($class_name),
                 $class_name, $args);
-        }
-        catch(\Exception $ex) {
+        } catch (\Exception $ex) {
             $this->logger->error($ex);
             return false;
         }
