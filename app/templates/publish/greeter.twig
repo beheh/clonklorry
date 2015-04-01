@@ -10,11 +10,11 @@
 	</div>
 	<div class="jumbotron">
 		<div class="container">
-			<h1>{% trans %}Would you like to show the world what you've built?{% endtrans %}</h1>
-			<p>{% trans %}After registering you can find all your addons here.{% endtrans %}</p>
+			<h1>{% trans %}Your addons will appear here{% endtrans %}</h1>
+			<p>{% trans %}You can manage all your addons here after you've logged in.{% endtrans %}</p>
 			<p>
-				<a href="{{base}}/register?returnto={{origpath}}" class="btn btn-lg btn-success">{% trans %}Register now{% endtrans %}</a>
 				<a href="{{base}}/login?returnto={{origpath}}" class="btn btn-lg btn-primary">{% trans %}Login{% endtrans %}</a>
+				<a href="{{base}}/register?returnto={{origpath}}" class="btn btn-lg btn-success">{% trans %}Not registered yet?{% endtrans %}</a>
 			</p>
 		</div>
 	</div>

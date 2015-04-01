@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-03-31 14:27+0100\n"
-"PO-Revision-Date: 2015-03-31 14:27+0100\n"
+"POT-Creation-Date: 2015-04-01 14:50+0100\n"
+"PO-Revision-Date: 2015-04-01 14:50+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -81,8 +81,8 @@ msgstr "Eskalieren"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:33
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:130
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:132
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:138
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:140
 msgid "My addons"
 msgstr "Meine Erweiterungen"
 
@@ -104,13 +104,13 @@ msgid "You can create new addons at the %developer_portal%."
 msgstr "Du kannst neue Erweiterungen im %developer_portal% anlegen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:174
+#: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:54
 msgid "Your addons will appear here"
 msgstr "Hier werden deine Erweiterungen erscheinen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:178
-msgid "Visit the developer portal to get started with a new addon."
-msgstr ""
-"Besuche das Entwicklerportal, um mit einer neuen Erweiterung loszulegen."
+msgid "Visit the developer portal to get started."
+msgstr "Besuche das Entwicklerportal um loszulegen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:184
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:34
@@ -200,29 +200,23 @@ msgstr "erledigten Tickets"
 msgid "Review the %completed_tickets%."
 msgstr "Betrache die %completed_tickets%."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:54
-msgid "Would you like to show the world what you've built?"
-msgstr "Möchtest du der Welt zeigen, was du gebaut hast?"
-
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:58
-msgid "After registering you can find all your addons here."
-msgstr "Nach der Registrierung kannst du alle deine Erweiterungen hier finden."
+msgid "You can manage all your addons here after you've logged in."
+msgstr ""
+"Du kannst alle deine Erweiterungen nach deiner Anmeldung hier verwalten."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:67
-#: /home/benedict/Dokumente/clonklorry/cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:137
-#: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:147
-#: /home/benedict/Dokumente/clonklorry/cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:221
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:215
-msgid "Register now"
-msgstr "Jetzt registrieren"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:75
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:178
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:186
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:155
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:51
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:114
 msgid "Login"
 msgstr "Anmelden"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:75
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:200
+msgid "Not registered yet?"
+msgstr "Noch nicht registriert?"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:33
 msgid "Tickets"
@@ -540,14 +534,14 @@ msgid "Normal user"
 msgstr "Normaler Benutzer"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:199
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:90
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:98
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:60
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:43
 msgid "Moderator"
 msgstr "Moderator"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:211
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:103
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:111
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:54
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:37
 msgid "Administrator"
@@ -981,6 +975,13 @@ msgstr ""
 msgid "View your profile"
 msgstr "Betrachte dein Profil"
 
+#: /home/benedict/Dokumente/clonklorry/cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:137
+#: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:147
+#: /home/benedict/Dokumente/clonklorry/cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:221
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:215
+msgid "Register now"
+msgstr "Jetzt registrieren"
+
 #: /home/benedict/Dokumente/clonklorry/cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:147
 msgid ""
 "This project was only made possible by a number of technologies, libraries "
@@ -1002,7 +1003,7 @@ msgstr "Ressourcen"
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:26
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:30
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:82
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:533
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:566
 msgid "en"
 msgstr "de"
 
@@ -1044,7 +1045,7 @@ msgstr ""
 "für eine Erweiterung reservieren."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:164
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:104
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:114
 msgid "The requested namespace has already been reserved for another addon."
 msgstr ""
 "Die gewünschte Kennung wurde bereits für eine andere Erweiterung reserviert."
@@ -1098,19 +1099,19 @@ msgstr "Titel (Deutsch)"
 msgid "Example url"
 msgstr "Beispiel-URL"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:113
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:128
 msgid "You have unsaved changes."
 msgstr "Du hast ungespeicherte Änderungen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:115
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:130
 msgid "Preparing upload"
 msgstr "Hochladen wird vorbereitet"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:117
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:132
 msgid "You are still uploading files."
 msgstr "Du lädst noch Dateien hoch."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:207
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:222
 msgid ""
 "Lorry is a fan site for Clonk, a unique game series with hundreds of worlds "
 "created by other players."
@@ -1118,11 +1119,11 @@ msgstr ""
 "Lorry ist eine Fanseite für Clonk, eine einzigartige Spieleserie mit "
 "hunderten von spielererstellten Welten."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:212
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:227
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:220
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:235
 msgid "Hide"
 msgstr "Verstecken"
 
@@ -1130,34 +1131,34 @@ msgstr "Verstecken"
 msgid "Toggle navigation"
 msgstr "Navigation umschalten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:58
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:66
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:63
 msgid "Clonk Rage"
 msgstr "Clonk Rage"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:68
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:76
 #: /home/benedict/Dokumente/clonklorry/cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:95
 msgid "OpenClonk"
 msgstr "OpenClonk"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:78
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:86
 msgid "Developers"
 msgstr "Entwickler"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:142
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:144
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:150
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:152
 #: /home/benedict/Dokumente/clonklorry/cache/twig/5e/31/429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:63
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:34
 #: /home/benedict/Dokumente/clonklorry/cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:96
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:154
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:156
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:162
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:164
 msgid "Log out"
 msgstr "Abmelden"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:168
+#: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:176
 #: /home/benedict/Dokumente/clonklorry/cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:78
 #: /home/benedict/Dokumente/clonklorry/cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:179
 msgid "Register"
@@ -1176,24 +1177,24 @@ msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:134
-msgid "Let's get started"
-msgstr "Lass uns loslegen"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:138
-msgid "%brand% is ready to publish your addons."
-msgstr "%brand% ist bereit zur Veröffentlichung deiner Erweiterungen."
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:171
 msgid "You have an awesome idea?"
 msgstr "Du hast eine tolle Idee?"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:138
+msgid "You can create new addons here after you've registered."
+msgstr "Du kannst neue Erweiterungen nach deiner Registrierung hier anlegen."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:171
+msgid "Let's get started!"
+msgstr "Lass uns loslegen!"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:175
 msgid ""
 "Whether it's magic caves or exploding Wipfs, %brand% is the place to publish "
-"your addons."
+"all your best addons."
 msgstr ""
 "Egal ob es magische Höhlen oder explodierende Wipfe sind, auf %brand% kannst "
-"du deine Erweiterungen veröffentlichen."
+"du all deine besten Erweiterungen veröffentlichen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:180
 msgid "Clonk Rage documentation"
@@ -1580,12 +1581,12 @@ msgid "View site in"
 msgstr "Betrachte Seite auf"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:234
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:215
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:225
 msgid "English"
 msgstr "Englisch"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:242
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:218
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:228
 msgid "German"
 msgstr "Deutsch"
 
@@ -1739,7 +1740,7 @@ msgid "Pause"
 msgstr "Pausieren"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:35
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:136
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:148
 msgid "What's new?"
 msgstr "Was ist neu?"
 
@@ -2378,10 +2379,6 @@ msgstr ""
 "Du kannst dich jetzt mit deinem Benutzernamen oder deiner E-Mail-Adresse und "
 "deinem Passwort anmelden."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:200
-msgid "Not registered yet?"
-msgstr "Noch nicht registriert?"
-
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:204
 msgid ""
 "Registering only takes a few moments. A Clonk registration key is not "
@@ -2505,76 +2502,76 @@ msgstr "Hinzufügen"
 msgid "Duplicate"
 msgstr "Duplikat"
 
-#: /home/benedict/Dokumente/clonklorry/src/Environment.php:99
+#: /home/benedict/Dokumente/clonklorry/src/Environment.php:111
 msgid "\"Clonk\" is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:463
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:490
 msgid "too short"
 msgstr "zu kurz"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:466
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:493
 msgid "too long"
 msgstr "zu lang"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:479
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:507
 msgid "not a valid email address"
 msgstr "keine gültige E-Mail-Adresse"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:492
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:521
 msgid "not a valid URL"
 msgstr "keine gültige URL"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:503
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:533
 msgid "not a valid number"
 msgstr "keine gültige Zahl"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model.php:519
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:87
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:102
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:113
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:134
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:107
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:145
+#: /home/benedict/Dokumente/clonklorry/src/Model.php:550
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:92
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:115
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:127
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:149
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:115
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:154
 msgid "invalid"
 msgstr "ungültig"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/Addon.php:106
+#: /home/benedict/Dokumente/clonklorry/src/Model/Addon.php:131
 msgid "Unnamed addon"
 msgstr "Unbenannte Erweiterung"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/Addon.php:275
+#: /home/benedict/Dokumente/clonklorry/src/Model/Addon.php:342
 msgid "required"
 msgstr "benötigt"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:207
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:253
 msgid "not a matching Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:214
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:260
 msgid "not a valid Clonk Forge URL"
 msgstr "keine gültige Clonk Forge URL"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:222
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:269
 msgid "not a valid Clonk Forge profile id"
 msgstr "keine gültige ClonkForge Profil-ID"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:246
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:297
 msgid "not a valid GitHub name"
 msgstr "kein gültiger GitHub-Name"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:291
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:349
 msgid "the last remaining login method"
 msgstr "die letzte Anmeldemöglichtkeit"
 
-#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:304
+#: /home/benedict/Dokumente/clonklorry/src/Model/User.php:362
 msgid "not a valid OAuth provider"
 msgstr "kein gültiger OAuth-Provider"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter.php:149
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:136
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:195
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:230
+#: /home/benedict/Dokumente/clonklorry/src/Presenter.php:162
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:143
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:220
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:259
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -2590,109 +2587,109 @@ msgstr ""
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:68
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:69
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:90
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:95
 msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:92
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:97
 msgid "Login via email failed."
 msgstr "Anmeldung per E-Mail fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:96
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:101
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:140
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:148
 msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:72
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:70
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:76
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:75
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:77
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:75
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:81
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:80
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:82
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:86
 #, php-format
 msgid "Email address is already in use."
 msgstr "E-Mail-Adresse wird bereits genutzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:87
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:134
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:145
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:91
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:148
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:153
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:93
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:226
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:98
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:255
 msgid "Passwords do not match."
 msgstr "Passwörter stimmen nicht überein."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:98
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:222
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:103
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:250
 #, php-format
 msgid "Password is %s."
 msgstr "Passwort ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:136
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:141
 msgid "Registration failed."
 msgstr "Registrierung fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:25
 msgid "Connected with login service."
 msgstr "Mit Anmeldedienst verbunden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:29
 msgid "Login service is already linked to another account."
 msgstr "Anmeldedienst bereits mit anderem Konto verknüpft."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:28
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:33
 msgid "Authentification with login service failed."
 msgstr "Authentifizierung mit Anmeldedienst ist fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:41
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:47
 msgid "Removed login service."
 msgstr "Anmeldedienst entfernt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:45
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:52
 #, php-format
 msgid "%s is %s."
 msgstr "%s ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:102
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:114
 #, php-format
 msgid "Clonk Forge profile url is %s."
 msgstr "Clonk Forge Profil-URL ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:113
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:127
 #, php-format
 msgid "GitHub name is %s."
 msgstr "GitHub-Name ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:119
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:133
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:147
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:168
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:165
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:180
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:156
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:177
 msgid "Contact details were changed. Please remember to activate your account."
 msgstr "Kontaktdaten geändert. Bitte vergesse nicht, dein Konto zu aktivieren."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:158
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:180
 msgid ""
 "Contact details were changed, but we couldn't send you an email to activate "
 "your account. Pleasy try again later."
@@ -2700,494 +2697,530 @@ msgstr ""
 "Kontaktdaten geändert, wir konnten dir jedoch keine E-Mail zur Aktivierung "
 "senden. Bitte versuche es später erneut."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:169
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:192
 msgid "You should receive the confirmation email soon."
 msgstr "Du solltest die Bestätigungs-E-Mail bald erhalten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:171
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:195
 msgid "We can't send you a confirmation email right now. Try again later."
 msgstr ""
 "Wir können dir gerade keine E-Mail zur Bestätigung senden. Versuche es "
 "später erneut."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:198
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:167
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:223
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:182
 msgid "Confirmation required."
 msgstr "Bestätigung erforderlich."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:217
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:243
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:219
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:246
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:240
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:270
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Addon/Presentation.php:80
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Addon/Presentation.php:92
 msgid "%day% of %month% %year%"
 msgstr "%day% %month% %year%"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Game.php:12
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Games.php:12
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:12
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Game.php:14
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Games.php:14
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:14
 #, php-format
 msgid "This endpoint does not support api version %d."
 msgstr "Dieser Endpunkt unterstützt die API-Version %d nicht."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Game.php:17
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:17
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Game.php:20
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:20
 msgid "Game does not exist."
 msgstr "Spiel existiert nicht."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:20
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:22
 msgid "invalid path"
 msgstr "ungültiger Pfad"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:23
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:25
 msgid "filename too long"
 msgstr "Dateiname zu lang"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:28
 msgid "filename too short"
 msgstr "Dateiname zu kurz"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:35
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:38
 msgid "please upload the individual files instead of an archive"
 msgstr "Bitte lade die einzelnen Dateien anstelle eines Archivs hoch"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:38
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/QueryFile.php:42
 msgid "file must end with a clonk extension"
 msgstr "Datei muss auf Clonk-Erweiterung enden"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:121
+msgid "error receiving file chunk"
+msgstr "Fehler beim Empfangen eines Dateiabschnitts"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:132
+msgid "file already exists"
+msgstr "Datei existiert bereits"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:145
+msgid "could not create upload directory"
+msgstr "konnte Verzeichnis zum Hochladen nicht erstellen"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:156
+msgid "file too big"
+msgstr "Datei zu groß"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:159
+msgid "file chunk count too big"
+msgstr "Dateiabschnittszahl zu hoch"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:162
+msgid "invalid file chunk size"
+msgstr "ungültige Dateiabschnittsgröße"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:165
+msgid "file chunk exceeds total size"
+msgstr "Dateiabschnitt übertrifft Gesamtgröße"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:171
+msgid "error saving file chunk"
+msgstr "Fehler beim Speichern eines Dateiabschnitts"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Internal/Release/UploadFile.php:177
+msgid "error assembling file"
+msgstr "Fehler beim Zusammensetzen der Datei"
+
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:31
 msgid "Addon does not exist."
 msgstr "Erweiterung existiert nicht."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:35
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Api/Release.php:41
 msgid "Release does not exist."
 msgstr "Release existiert nicht."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error.php:19
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error.php:23
 msgid "Internal server error"
 msgstr "Interner Serverfehler"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error.php:23
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error.php:28
 msgid "The server encountered an internal error processing the request."
 msgstr "Bei der Verarbeitung der Anfrage trat ein interner Serverfehler auf."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/AuthFailed.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/AuthFailed.php:22
 msgid "Authentification failed"
 msgstr "Authentifizierung fehlgeschlagen"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/AuthFailed.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/AuthFailed.php:27
 msgid "The authentification with the login service failed."
 msgstr "Die Authentifizierung mit dem Anmeldedienst ist fehlgeschlagen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/BadRequest.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/BadRequest.php:22
 msgid "Bad Request"
 msgstr "Ungültige Anforderung"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/BadRequest.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/BadRequest.php:27
 msgid ""
 "The request was invalid. It may be malformed or missing required parameters."
 msgstr ""
 "Die Anforderung war ungültig. Möglicherweise ist sie deformiert oder es "
 "fehlen erforderliche Parameter."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/FileNotFound.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/FileNotFound.php:22
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/FileNotFound.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/FileNotFound.php:27
 msgid "The file you requested could not be found."
 msgstr "Die von dir angeforderte Datei konnte nicht gefunden werden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/Forbidden.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/Forbidden.php:22
 msgid "Forbidden"
 msgstr "Zugriff verweigert"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/Forbidden.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/Forbidden.php:27
 msgid "You do not have the permissions necessary to access this document."
 msgstr ""
 "Du verfügst nicht über die notwendigen Berechtigungen zum Zugriff auf dieses "
 "Dokument."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/NotImplemented.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/NotImplemented.php:22
 msgid "Not implemented"
 msgstr "Nicht implementiert"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/NotImplemented.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/NotImplemented.php:27
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/TooManyRequests.php:18
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/TooManyRequests.php:22
 msgid "Too many requests"
 msgstr "Zu viele Anfragen"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/TooManyRequests.php:22
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Error/TooManyRequests.php:27
 msgid "You have exceeded the allowed number of requests."
 msgstr "Du hast die erlaubte Anzahl an Anfragen überschritten."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:68
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:75
 #, php-format
 msgid "Please comment in %s, the users language."
 msgstr "Bitte kommentiere in %s, der Sprache des Benutzers."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:92
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:101
 msgid "Comment can't be empty when rejecting the addon."
 msgstr "Kommentar kann nicht leer sein, wenn die Erweiterung abgelehnt wird."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:100
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Approve.php:109
 #, php-format
 msgid "Comment is %s."
 msgstr "Kommentar ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Ticket.php:68
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Manage/Moderator/Ticket.php:73
 msgid "The ticket could not be escalated."
 msgstr "Das Ticket konnte nicht eskaliert werden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
 msgid "Wipf"
 msgstr "Wipf"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
 msgid "Monster"
 msgstr "Monster"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
 msgid "Bridge"
 msgstr "Brückensegmente"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
 msgid "Tower"
 msgstr "Turm"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
 msgid "Stage"
 msgstr "Etagen"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
 msgid "Pressurewave"
 msgstr "Druckwellen"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
 msgid "Fantasy"
 msgstr "Fantasy"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:29
 msgid "Stippel"
 msgstr "Stippel"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:25
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:29
 msgid "Quake"
 msgstr "Quake"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:30
 #, php-format
 msgid "%s pack"
 msgstr "%spack"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:30
 #, php-format
 msgid "%s of despair"
 msgstr "%s der Verzweiflung"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:30
 #, php-format
 msgid "%s Infinity"
 msgstr "%s Infinity"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:31
 #, php-format
 msgid "%sarena"
 msgstr "%s-Arena"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:31
 #, php-format
 msgid "%s fight"
 msgstr "%skampf"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:31
 #, php-format
 msgid "%s race"
 msgstr "%srennen"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:31
 #, php-format
 msgid "%s Party"
 msgstr "%sparty"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:32
 #, php-format
 msgid "%s Valley"
 msgstr "%s Valley"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:32
 #, php-format
 msgid "%s lands"
 msgstr "%sinseln"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:26
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:32
 #, php-format
 msgid "%s defense"
 msgstr "%sverteidigung"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:33
 msgid "Wipfs"
 msgstr "Wipfe"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:33
 msgid "Monsters"
 msgstr "Monster"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:33
 msgid "Bridges"
 msgstr "Brückensegmente"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:34
 msgid "Towers"
 msgstr "Türme"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:34
 msgid "Pressurewaves"
 msgstr "Druckwellen"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:34
 msgid "Flints"
 msgstr "Flints"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:34
 msgid "Knights"
 msgstr "Ritter"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:35
 msgid "Clonks"
 msgstr "Clonks"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:27
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:35
 msgid "Stippels"
 msgstr "Stippel"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:36
 #, php-format
 msgid "Metal & %s"
 msgstr "Metall & %s"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:36
 #, php-format
 msgid "Left 2 %s"
 msgstr "Left 2 %s"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:36
 #, php-format
 msgid "%s descend from the top"
 msgstr "%s kommen von oben runter"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:28
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:37
 #, php-format
 msgid "%s rise from the bottom"
 msgstr "%s kommen von unten hoch"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:37
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:47
 #, php-format
 msgid "%s Extreme"
 msgstr "%s Extreme"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:37
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:47
 #, php-format
 msgid "Codename: %s"
 msgstr "Codename: %s"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:37
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:47
 #, php-format
 msgid "%s Remake"
 msgstr "%s Remake"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:37
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:48
 #, php-format
 msgid "%s Reloaded"
 msgstr "%s Reloaded"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:66
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:78
 #, php-format
 msgid "Title is %s."
 msgstr "Titel ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:74
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:86
 #, php-format
 msgid "Type is %s."
 msgstr "Typ ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:85
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:233
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:98
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:245
 #, php-format
 msgid "Game is %s."
 msgstr "Spiel ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:90
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Developers.php:104
 msgid "You have already created an addon with this title for this game."
 msgstr ""
 "Du hast bereits eine Erweiterung mit diesem Titel für dieses Spiel angelegt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:58
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:36
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:63
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:41
 #, php-format
 msgid "Edit %s"
 msgstr "%s bearbeiten"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:169
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:176
 #, php-format
 msgid "English title is %s."
 msgstr "Englischer Titel ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:178
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:186
 #, php-format
 msgid "German title is %s."
 msgstr "Deutscher Titel ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:188
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:198
 #, php-format
 msgid "Namespace is %s."
 msgstr "Kennung ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:221
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:232
 msgid "Namespace required."
 msgstr "Kennung benötigt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:241
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:254
 #, php-format
 msgid "Abbreviation is %s."
 msgstr "Abkürzung ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:250
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:264
 msgid "An addon has already reserved this namespace."
 msgstr "Eine Erweiterung hat diese Kennung bereits reserviert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:255
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:269
 msgid "Addon saved."
 msgstr "Erweiterung gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:274
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:288
 #, php-format
 msgid "Introduction is %s."
 msgstr "Vorstellungstext ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:282
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:297
 #, php-format
 msgid "Description is %s."
 msgstr "Beschreibung ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:290
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:306
 #, php-format
 msgid "Website is %s."
 msgstr "Webseite ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:298
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:314
 #, php-format
 msgid "Bugtracker is %s."
 msgstr "Bugtracker ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:306
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:323
 #, php-format
 msgid "Forum is %s."
 msgstr "Forum ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:312
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:330
 msgid "Presentation saved."
 msgstr "Präsentation gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:333
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:104
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:351
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:114
 #, php-format
 msgid "Version is %s."
 msgstr "Version ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:338
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:99
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:357
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:109
 msgid "Version already exists."
 msgstr "Version existiert bereits."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:343
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Edit.php:362
 msgid "Release created."
 msgstr "Release erstellt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Portal.php:29
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Portal.php:31
 msgid "Addon created."
 msgstr "Erweiterung angelegt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:53
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:59
 msgid "Release saved."
 msgstr "Release gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:110
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:120
 msgid "Version saved."
 msgstr "Version gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:113
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:124
 msgid "Error saving the release."
 msgstr "Fehler beim Speichern des Releases."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:136
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:147
 #, php-format
 msgid "\"%s\" is %s."
 msgstr "\"%s\" ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:141
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:153
 #, php-format
 msgid "Changelog is %s."
 msgstr "Änderungsprotokoll ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:147
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:160
 msgid "Changes saved."
 msgstr "Änderungen gespeichert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:149
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Publish/Release.php:163
 msgid "Error saving the changes."
 msgstr "Fehler beim Speichern der Änderungen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:46
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:49
 #, php-format
 msgid "Message text is %s."
 msgstr "Nachrichtentext ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:52
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:55
 msgid "This message has already been sent."
 msgstr "Diese Nachricht wurde bereits gesendet."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:58
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:62
 msgid "Thank you for your message, we'll take a look at it."
 msgstr "Danke für deine Nachricht, wir kümmern uns darum."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:60
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/Site/Contact.php:65
 msgid "Sorry, your message couldn't be saved."
 msgstr "Entschuldigung, deine Nachricht konnte nicht gespeichert werden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:31
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:33
 msgid "Username was changed."
 msgstr "Benutzername wurde geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:84
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:91
 msgid "Username could not be changed."
 msgstr "Benutzername konnte nicht geändert werden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:107
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:115
 #, php-format
 msgid "Permission is %s."
 msgstr "Berechtigung ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:123
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:131
 msgid "Permissions changed."
 msgstr "Berechtigungen geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:140
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:148
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:163
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:173
 msgid ""
 "Contact details were changed. We sent an email to the user to confirm this "
 "new address."
@@ -3195,307 +3228,117 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
 "diese neue Adresse zu bestätigen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:165
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:176
 msgid "Contact details were changed, but we couldn't send the user an email."
 msgstr ""
 "Kontaktdaten geändert, wir konnten dem Benutzer jedoch keine E-Mail senden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Profile.php:41
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Profile.php:45
 #, php-format
 msgid "%s on the ClonkForge"
 msgstr "%s auf der ClonkForge"
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Profile.php:46
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Profile.php:52
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s auf GitHub"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:196
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:205
 msgid "d-m-Y H:i"
 msgstr "d.m.Y H:i"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:199
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:208
 msgid "d-m-Y"
 msgstr "d.m.Y"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:202
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:211
 msgid "H:i"
 msgstr "H:i"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:234
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:245
 msgid "January"
 msgstr "Januar"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:236
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:247
 msgid "February"
 msgstr "Februar"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:238
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:249
 msgid "March"
 msgstr "März"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:240
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:251
 msgid "April"
 msgstr "April"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:242
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:253
 msgid "May"
 msgstr "Mai"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:244
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:255
 msgid "June"
 msgstr "Juni"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:246
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:257
 msgid "July"
 msgstr "Juli"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:248
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:259
 msgid "August"
 msgstr "August"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:250
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:261
 msgid "September"
 msgstr "September"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:252
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:263
 msgid "October"
 msgstr "Oktober"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:254
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:265
 msgid "November"
 msgstr "November"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:256
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:267
 msgid "December"
 msgstr "Dezember"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:268
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:280
 msgid "1st"
 msgstr "1."
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:270
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:282
 msgid "2nd"
 msgstr "2."
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:272
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:284
 msgid "3rd"
 msgstr "3."
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:274
+#: /home/benedict/Dokumente/clonklorry/src/Service/LocalisationService.php:286
 msgid "%n%th"
 msgstr "%n%."
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:95
+#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:102
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:98
+#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:105
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
-#~ msgid "The following ticket was escalated by <strong>%staffname%</strong>:"
+#~ msgid "Tickets please"
+#~ msgstr "Tickets please"
+
+#~ msgid "Would you like to show the world what you've built?"
+#~ msgstr "Möchtest du der Welt zeigen, was du gebaut hast?"
+
+#~ msgid "After registering you can find all your addons here."
 #~ msgstr ""
-#~ "Das folgende Ticket wurde von <strong>%staffname%</strong> eskaliert:"
+#~ "Nach der Registrierung kannst du alle deine Erweiterungen hier finden."
 
-#~ msgid "<strong>%username%</strong> has sent the following message:"
-#~ msgstr "<strong>%username%</strong> hat die folgende Nachricht gesendet:"
-
-#~ msgid "An anonymous user has sent the following message:"
-#~ msgstr "Ein anonymer Benutzer hat die folgende Nachricht gesendet:"
-
-#~ msgid "Anonymous"
-#~ msgstr "Anonym"
-
-#~ msgid "View %completed_tickets%."
-#~ msgstr "Betrache die %completed_tickets%."
-
-#~ msgid "There are no new messages in the queue."
-#~ msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
-
-#~ msgid "The addon is available under the URL %url%."
-#~ msgstr "Die Erweiterung ist unter der URL %url% verfügbar."
-
-#~ msgid "The addon will be available under the URL %url%."
-#~ msgstr "Die Erweiterung wird unter der URL %url% verfügbar sein."
-
-#~ msgid "You can create addons at the %developer_portal%."
-#~ msgstr "Du kannst Erweiterungen im %developer_portal% anlegen."
-
-#~ msgid "You should receive a link shortly."
-#~ msgstr "Du solltest receive an"
-
-#~ msgid ""
-#~ "Please open %this_link% or paste the following url into your browser to "
-#~ "access your account:"
-#~ msgstr ""
-#~ "Bitte öffne %this_link% oder füge die folgende URL in deinen Browser ein "
-#~ "um auf dein Konto zuzugreifen:"
-
-#~ msgid "login page"
-#~ msgstr "Anmeldeseite"
-
-#~ msgid ""
-#~ "Either open %this_link% or use the following single-use code instead of "
-#~ "your password on the %login_page%:"
-#~ msgstr ""
-#~ "Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
-#~ "deines Passworts auf der %login_page%;"
-
-#~ msgid ""
-#~ "Please open %this_link% to activate your address or paste the following "
-#~ "url into your browser:"
-#~ msgstr ""
-#~ "Bitte öffne %this_link% um deine Addresse zu aktivieren oder füge die "
-#~ "folgende URL in deinen Browser ein:"
-
-#~ msgid ""
-#~ "First things first: Please activate your account by opening %this_link%, "
-#~ "or paste the following url into your browser:"
-#~ msgstr ""
-#~ "Das Wichtigste zuerst: Bitte aktivieren dein Konto indem du %this_link% "
-#~ "öffnest oder füge die folgende URL in deinen  Browser ein:"
-
-#~ msgid ""
-#~ "First things first: Please activate your account by opening %this_link% "
-#~ "(or %activation_url%)."
-#~ msgstr ""
-#~ "Das Wichtigste zuerst: Bitte aktiviere dein Konto indem du %this_link% "
-#~ "öffnest (oder %activation_url%)."
-
-#~ msgid ""
-#~ "First things first: Please activate your account by opening %this_link%."
-#~ msgstr ""
-#~ "Das Wichtigste zuerst: Bitte aktiviere dein Konto indem du %this_link% "
-#~ "öffnest."
-
-#~ msgid ""
-#~ "Either follow %this_link% or use the following single-use code instead of "
-#~ "your password on the %login_page%:"
-#~ msgstr ""
-#~ "Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
-#~ "deines Passworts auf der %login_page%;"
-
-#~ msgid ""
-#~ "To get started, you still need to activate your account using %this_link"
-#~ "%. That's it."
-#~ msgstr ""
-#~ "Um loszulegen musst du noch dein Konto mit %this_link% aktivieren. Das "
-#~ "war's."
-
-#~ msgid ""
-#~ "Although this project is still in development, thank you for helping us "
-#~ "test the platform."
-#~ msgstr ""
-#~ "Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für "
-#~ "deine Mithilfe beim Testen der Plattform."
-
-#~ msgid ""
-#~ "If you'd like to learn more about the project or Clonk visit the about "
-#~ "pages at the bottom of the site."
-#~ msgstr ""
-#~ "Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche "
-#~ "einfach die Info-Seiten am unteren Rand der Seite."
-
-#~ msgid ""
-#~ "%brand% works a bit differently compared to other download sites. In "
-#~ "order to publish a scenario or pack you first need to create a "
-#~ "corresponding addon."
-#~ msgstr ""
-#~ "%brand% funktioniert etwas anders als andere Downloadseiten. Um ein "
-#~ "Szenario oder Pack zu veröffentlichen, musst du zuerst eine zugehörige "
-#~ "Erweiterung erstellen."
-
-#~ msgid ""
-#~ "The addons tracks general information, like the title, an introduction "
-#~ "and which game it belongs to. You can then create a release for the "
-#~ "addon, which has a version number, a detailed description and tracks the "
-#~ "actual files."
-#~ msgstr ""
-#~ "Die Erweiterung speichert grundlegende Informationen, wie den Titel, eine "
-#~ "Einführung und zu welchem Spiel sie gehört. Du kannst dann einen Release "
-#~ "für die Erweiterung erstellen, welcher die Versionsnummer, eine "
-#~ "ausführliche Beschreibung und die eigentlichen Dateien speichert."
-
-#~ msgid ""
-#~ "Once you have created a release you can publish it. When players search "
-#~ "for your addon, they will always be pointed to the latest release."
-#~ msgstr ""
-#~ "Nachdem du einen Release erstellt hast, kannst du ihn veröffentlichen. "
-#~ "Wenn Spieler nach deiner Erweiterung suchen, werden sie immer zum "
-#~ "neuesten Release gebracht."
-
-#~ msgid ""
-#~ "You can send us any feedback you have on the contact page at %contact%. "
-#~ "Let's make %brand% a useful and awesome site."
-#~ msgstr ""
-#~ "Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% "
-#~ "einsenden. Lass uns %brand% eine nützliche und tolle Seite machen."
-
-#~ msgid "You should receive your code shortly."
-#~ msgstr "Du solltest deinen Code bald erhalten."
-
-#~ msgid ""
-#~ "The following data is saved as linked to your account, but cannot be "
-#~ "correlated once you delete your account:"
-#~ msgstr ""
-#~ "Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht "
-#~ "mehr zugeordnet werden wenn du dein Konto löschst:"
-
-#~ msgid ""
-#~ "We know it's not always easy to build something awesome. With the "
-#~ "introduction on ClonkSpot you should at least have a rough idea how "
-#~ "everything works."
-#~ msgstr ""
-#~ "Wir wissen, dass es nicht immer leicht ist etwas Tolles zu bauen. Mit der "
-#~ "Einführung auf ClonkSpot solltest du zumindest eine grobe Idee haben, wie "
-#~ "alles funktioniert."
-
-#~ msgid "Introduction on ClonkSpot"
-#~ msgstr "Einführung auf Clonkspot"
-
-#~ msgid "Please only enter an abbreviation if it is well known."
-#~ msgstr "Bitte gib nur dann eine Abkürzung ein, falls sie bekannt ist."
-
-#~ msgid ""
-#~ "The files will be made availabe and archived after publishing this "
-#~ "release. They cannot be changed afterwards."
-#~ msgstr ""
-#~ "Die Dateien werden nach der Veröffentlichung dieses Releases frei "
-#~ "verfügbar gemacht und archiviert. Sie können danach nicht mehr geändert "
-#~ "werden."
-
-#~ msgid ""
-#~ "All files will be made availabe and archived after publishing this "
-#~ "release. They cannot be changed afterwards."
-#~ msgstr ""
-#~ "Alle Dateien werden nach der Veröffentlichung dieses Releases verfügbar "
-#~ "gemacht und archiviert. Sie können danach nicht mehr geändert werden."
-
-#~ msgid ""
-#~ "Files will only be made availabe after publishing this release and cannot "
-#~ "be changed afterwards."
-#~ msgstr ""
-#~ "Dateien werden erst nach der Veröffentlichung dieses Releases freigegeben "
-#~ "und können dann nicht mehr geändert werden."
-
-#~ msgid "Users may download the release together with its dependencies."
-#~ msgstr ""
-#~ "Benutzer können diesen Release zusammen mit den Abhängigkeiten "
-#~ "herunterladen."
-
-#~ msgid "No release created"
-#~ msgstr "Kein Release erstellt"
-
-#~ msgid "API reference"
-#~ msgstr "API-Referenz"
-
-#~ msgid ""
-#~ "This project was only made possible with a number of technologies and "
-#~ "free resources:"
-#~ msgstr ""
-#~ "Dieses Projekt ist nur dank zahlreicher Technologien und freier "
-#~ "Ressourcen möglich geworden:"
+#~ msgid "%brand% is ready to publish your addons."
+#~ msgstr "%brand% ist bereit zur Veröffentlichung deiner Erweiterungen."
 
 #~ msgid "create one now"
 #~ msgstr "erstellst du nicht gleich eine"
@@ -3507,11 +3350,50 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Edit releases"
 #~ msgstr "Releases bearbeiten"
 
+#~ msgid ""
+#~ "The following data is saved as linked to your account, but cannot be "
+#~ "correlated once you delete your account:"
+#~ msgstr ""
+#~ "Die folgenden Daten werden mit deinem Konto verknüpft, können aber nicht "
+#~ "mehr zugeordnet werden wenn du dein Konto löschst:"
+
 #~ msgid "Overview"
 #~ msgstr "Übersicht"
 
+#~ msgid "login page"
+#~ msgstr "Anmeldeseite"
+
+#~ msgid ""
+#~ "Either follow %this_link% or use the following single-use code instead of "
+#~ "your password on the %login_page%:"
+#~ msgstr ""
+#~ "Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
+#~ "deines Passworts auf der %login_page%;"
+
 #~ msgid "Banned users"
 #~ msgstr "Gebannte Benutzer"
+
+#~ msgid "There are no new messages in the queue."
+#~ msgstr "Es sind keine neuen Nachrichten in der Warteschlange."
+
+#~ msgid "The addon is available under the URL %url%."
+#~ msgstr "Die Erweiterung ist unter der URL %url% verfügbar."
+
+#~ msgid "The addon will be available under the URL %url%."
+#~ msgstr "Die Erweiterung wird unter der URL %url% verfügbar sein."
+
+#~ msgid "Please only enter an abbreviation if it is well known."
+#~ msgstr "Bitte gib nur dann eine Abkürzung ein, falls sie bekannt ist."
+
+#~ msgid "API reference"
+#~ msgstr "API-Referenz"
+
+#~ msgid ""
+#~ "This project was only made possible with a number of technologies and "
+#~ "free resources:"
+#~ msgstr ""
+#~ "Dieses Projekt ist nur dank zahlreicher Technologien und freier "
+#~ "Ressourcen möglich geworden:"
 
 #~ msgid "%brand%: Site feedback"
 #~ msgstr "%brand%: Seitenfeedback"
@@ -3530,6 +3412,18 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgstr ""
 #~ "Die Dateien werden erst nach der Veröffentlichung dieses Releases "
 #~ "freigegeben und können dann nicht mehr geändert werden."
+
+#~ msgid ""
+#~ "We know it's not always easy to build something awesome. With the "
+#~ "introduction on ClonkSpot you should at least have a rough idea how "
+#~ "everything works."
+#~ msgstr ""
+#~ "Wir wissen, dass es nicht immer leicht ist etwas Tolles zu bauen. Mit der "
+#~ "Einführung auf ClonkSpot solltest du zumindest eine grobe Idee haben, wie "
+#~ "alles funktioniert."
+
+#~ msgid "Introduction on ClonkSpot"
+#~ msgstr "Einführung auf Clonkspot"
 
 #~ msgid "Javascript needs to be enabled"
 #~ msgstr "Javascript muss aktiviert sein"
@@ -3590,6 +3484,16 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Date"
 #~ msgstr "Datum"
 
+#~ msgid "No release created"
+#~ msgstr "Kein Release erstellt"
+
+#~ msgid ""
+#~ "Please open %this_link% to activate your address or paste the following "
+#~ "url into your browser:"
+#~ msgstr ""
+#~ "Bitte öffne %this_link% um deine Addresse zu aktivieren oder füge die "
+#~ "folgende URL in deinen Browser ein:"
+
 #~ msgid "Login via email&hellip;"
 #~ msgstr "Anmeldung per E-Mail&hellip;"
 
@@ -3609,6 +3513,7 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ msgid "Did you know&hellip;"
 #~ msgstr "Wusstest du schon&hellip;"
 
+#, fuzzy
 #~ msgid ""
 #~ "You can sign into %brand% using only your email address in case you're "
 #~ "using a public computer. We'll send you a code which you can use a single "
@@ -3618,35 +3523,150 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 #~ "E-Mail-Adresse bei %brand% anmelden. Wir senden dir einen Code welchen du "
 #~ "einmalig anstelle deines Passworts nutzen kannst. "
 
+#~ msgid ""
+#~ "Although this project is still in development, thank you for helping us "
+#~ "test the platform."
+#~ msgstr ""
+#~ "Auch wenn sich das Projekt noch in der Entwicklung befindet, danke für "
+#~ "deine Mithilfe beim Testen der Plattform."
+
+#~ msgid ""
+#~ "If you'd like to learn more about the project or Clonk visit the about "
+#~ "pages at the bottom of the site."
+#~ msgstr ""
+#~ "Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche "
+#~ "einfach die Info-Seiten am unteren Rand der Seite."
+
+#~ msgid ""
+#~ "%brand% works a bit differently compared to other download sites. In "
+#~ "order to publish a scenario or pack you first need to create a "
+#~ "corresponding addon."
+#~ msgstr ""
+#~ "%brand% funktioniert etwas anders als andere Downloadseiten. Um ein "
+#~ "Szenario oder Pack zu veröffentlichen, musst du zuerst eine zugehörige "
+#~ "Erweiterung erstellen."
+
+#~ msgid ""
+#~ "The addons tracks general information, like the title, an introduction "
+#~ "and which game it belongs to. You can then create a release for the "
+#~ "addon, which has a version number, a detailed description and tracks the "
+#~ "actual files."
+#~ msgstr ""
+#~ "Die Erweiterung speichert grundlegende Informationen, wie den Titel, eine "
+#~ "Einführung und zu welchem Spiel sie gehört. Du kannst dann einen Release "
+#~ "für die Erweiterung erstellen, welcher die Versionsnummer, eine "
+#~ "ausführliche Beschreibung und die eigentlichen Dateien speichert."
+
+#~ msgid ""
+#~ "Once you have created a release you can publish it. When players search "
+#~ "for your addon, they will always be pointed to the latest release."
+#~ msgstr ""
+#~ "Nachdem du einen Release erstellt hast, kannst du ihn veröffentlichen. "
+#~ "Wenn Spieler nach deiner Erweiterung suchen, werden sie immer zum "
+#~ "neuesten Release gebracht."
+
+#~ msgid ""
+#~ "You can send us any feedback you have on the contact page at %contact%. "
+#~ "Let's make %brand% a useful and awesome site."
+#~ msgstr ""
+#~ "Du kannst jederzeit Feedback auf der Kontaktseite unter %contact% "
+#~ "einsenden. Lass uns %brand% eine nützliche und tolle Seite machen."
+
 #~ msgid "Original release date"
 #~ msgstr "Ursprüngliches Veröffentlichungsdatum"
 
-#~ msgid "error receiving file chunk"
-#~ msgstr "Fehler beim Empfangen eines Dateiabschnitts"
+#~ msgid "The following ticket was escalated by <strong>%staffname%</strong>:"
+#~ msgstr ""
+#~ "Das folgende Ticket wurde von <strong>%staffname%</strong> eskaliert:"
 
-#~ msgid "file already exists"
-#~ msgstr "Datei existiert bereits"
+#~ msgid "<strong>%username%</strong> has sent the following message:"
+#~ msgstr "<strong>%username%</strong> hat die folgende Nachricht gesendet:"
 
-#~ msgid "could not create upload directory"
-#~ msgstr "konnte Verzeichnis zum Hochladen nicht erstellen"
+#~ msgid "An anonymous user has sent the following message:"
+#~ msgstr "Ein anonymer Benutzer hat die folgende Nachricht gesendet:"
 
-#~ msgid "file too big"
-#~ msgstr "Datei zu groß"
+#~ msgid ""
+#~ "Files will only be made availabe after publishing this release and cannot "
+#~ "be changed afterwards."
+#~ msgstr ""
+#~ "Dateien werden erst nach der Veröffentlichung dieses Releases freigegeben "
+#~ "und können dann nicht mehr geändert werden."
 
-#~ msgid "file chunk count too big"
-#~ msgstr "Dateiabschnittszahl zu hoch"
+#~ msgid "Users may download the release together with its dependencies."
+#~ msgstr ""
+#~ "Benutzer können diesen Release zusammen mit den Abhängigkeiten "
+#~ "herunterladen."
 
-#~ msgid "invalid file chunk size"
-#~ msgstr "ungültige Dateiabschnittsgröße"
+#~ msgid "Anonymous"
+#~ msgstr "Anonym"
 
-#~ msgid "file chunk exceeds total size"
-#~ msgstr "Dateiabschnitt übertrifft Gesamtgröße"
+#~ msgid "View %completed_tickets%."
+#~ msgstr "Betrache die %completed_tickets%."
 
-#~ msgid "error saving file chunk"
-#~ msgstr "Fehler beim Speichern eines Dateiabschnitts"
+#~ msgid "You can create addons at the %developer_portal%."
+#~ msgstr "Du kannst Erweiterungen im %developer_portal% anlegen."
 
-#~ msgid "error assembling file"
-#~ msgstr "Fehler beim Zusammensetzen der Datei"
+#~ msgid "You should receive a link shortly."
+#~ msgstr "Du solltest receive an"
+
+#~ msgid ""
+#~ "Please open %this_link% or paste the following url into your browser to "
+#~ "access your account:"
+#~ msgstr ""
+#~ "Bitte öffne %this_link% oder füge die folgende URL in deinen Browser ein "
+#~ "um auf dein Konto zuzugreifen:"
+
+#~ msgid ""
+#~ "Either open %this_link% or use the following single-use code instead of "
+#~ "your password on the %login_page%:"
+#~ msgstr ""
+#~ "Öffne entweder %this_link% oder nutze den folgenden Einmal-Code anstelle "
+#~ "deines Passworts auf der %login_page%;"
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link%, "
+#~ "or paste the following url into your browser:"
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktivieren dein Konto indem du %this_link% "
+#~ "öffnest oder füge die folgende URL in deinen  Browser ein:"
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link% "
+#~ "(or %activation_url%)."
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktiviere dein Konto indem du %this_link% "
+#~ "öffnest (oder %activation_url%)."
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link%."
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktiviere dein Konto indem du %this_link% "
+#~ "öffnest."
+
+#~ msgid ""
+#~ "To get started, you still need to activate your account using %this_link"
+#~ "%. That's it."
+#~ msgstr ""
+#~ "Um loszulegen musst du noch dein Konto mit %this_link% aktivieren. Das "
+#~ "war's."
+
+#~ msgid "You should receive your code shortly."
+#~ msgstr "Du solltest deinen Code bald erhalten."
+
+#~ msgid ""
+#~ "The files will be made availabe and archived after publishing this "
+#~ "release. They cannot be changed afterwards."
+#~ msgstr ""
+#~ "Die Dateien werden nach der Veröffentlichung dieses Releases frei "
+#~ "verfügbar gemacht und archiviert. Sie können danach nicht mehr geändert "
+#~ "werden."
+
+#~ msgid ""
+#~ "All files will be made availabe and archived after publishing this "
+#~ "release. They cannot be changed afterwards."
+#~ msgstr ""
+#~ "Alle Dateien werden nach der Veröffentlichung dieses Releases verfügbar "
+#~ "gemacht und archiviert. Sie können danach nicht mehr geändert werden."
 
 #, fuzzy
 #~ msgid "Ready to go!"
