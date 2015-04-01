@@ -137,10 +137,6 @@ class Edit extends Presenter
         if (isset($_POST['change-contact-submit']) && $email != $user->getEmail()) {
             $this->context['email'] = $email;
 
-            $require_activation = filter_input(INPUT_POST, 'require-activation',
-                    FILTER_VALIDATE_BOOLEAN) ? true : false;
-            $this->context['require_activation'] = $require_activation;
-
             $errors = array();
 
             $previous_email = $user->getEmail();

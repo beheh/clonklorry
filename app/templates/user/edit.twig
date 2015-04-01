@@ -47,11 +47,6 @@
 								<label for="email">{% trans "Email address" %}</label>
 								<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
 							</div>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="require-activation" value="yes"{% if require_activation %} checked{% endif %}> {% trans %}New email address has to be activated{% endtrans %}
-								</label>
-							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary" name="change-contact-submit">{% trans "Change email address" %}</button>
 							</div>
@@ -80,7 +75,7 @@
 									</label>
 								</div>
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary" name="permissions-submit">{% trans "Change permissions" %}</button>
+									<button type="submit" class="btn btn-primary{% if self %} lorry-js-warn" data-warning="{% trans %}Warning: You are editing your own permissions. If you modify your own permissions you may not be able to access this page anymore.{% endtrans %}\n\n{% trans %}Are you sure you want to continue?{% endtrans %}"{% else %}"{% endif%} name="permissions-submit">{% trans "Change permissions" %}</button>
 								</div>
 							</form>
 						</div>

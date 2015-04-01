@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-04-01 14:50+0100\n"
-"PO-Revision-Date: 2015-04-01 14:50+0100\n"
+"POT-Creation-Date: 2015-04-01 15:06+0100\n"
+"PO-Revision-Date: 2015-04-01 15:07+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -173,7 +173,7 @@ msgstr "Kontaktformular"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:159
 #: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:62
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:319
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:317
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:306
 msgid "Timestamp"
 msgstr "Zeitstempel"
@@ -516,90 +516,99 @@ msgstr "Kontaktdaten"
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:148
-msgid "New email address has to be activated"
-msgstr "Neue E-Mail-Adresse muss aktiviert werden"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:155
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:143
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:186
 msgid "Change email address"
 msgstr "E-Mail-Adresse ändern"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:168
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:156
 msgid "Permissions"
 msgstr "Berechtigungen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:187
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:175
 msgid "Normal user"
 msgstr "Normaler Benutzer"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:199
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:187
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:98
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:60
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:43
 msgid "Moderator"
 msgstr "Moderator"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:211
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:199
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:111
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:54
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:37
 msgid "Administrator"
 msgstr "Administrator"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:218
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:208
+msgid ""
+"Warning: You are editing your own permissions. If you modify your own "
+"permissions you may not be able to access this page anymore."
+msgstr ""
+"Achtung: Du bearbeist deine eigenen Berechtigungen. Falls du deine eigenen "
+"Berechtigungen veränderst, kannst du auf diese Seite möglicherweise nicht "
+"mehr zugreifen."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:210
+msgid "Are you sure you want to continue?"
+msgstr "Möchtest du wirklich fortfahren?"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:216
 msgid "Change permissions"
 msgstr "Berechtigungen ändern"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:236
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:234
 msgid "Support"
 msgstr "Support"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:242
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:240
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:252
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:285
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:250
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:283
 msgid "Please type the username to confirm:"
 msgstr "Bitte gib den Benutzernamen zur Bestätigung ein:"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:259
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:257
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:132
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:161
 msgid "Reset password"
 msgstr "Password zurücksetzen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:263
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:261
 msgid "Remove login services"
 msgstr "Anmeldedienste entfernen"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:275
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:273
 msgid "Disable"
 msgstr "Deaktivieren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:290
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:288
 msgid ""
 "The account \"%username%\" will be <strong>permanently disabled</strong>."
 msgstr "Das Konto „%username%“ wird <strong>dauerhaft deaktiviert</strong>."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:296
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:294
 msgid "Disable account permamently"
 msgstr "Konto dauerhaft deaktivieren"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:314
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:312
 msgid "Moderation log"
 msgstr "Moderationsprotokoll"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:321
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:319
 msgid "Action"
 msgstr "Aktion"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:323
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:321
 msgid "Executed by"
 msgstr "Ausgeführt von"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:328
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:326
 msgid "This account has not been moderated in the past."
 msgstr "Dieses Konto wurde noch nicht moderiert."
 
@@ -2532,7 +2541,7 @@ msgstr "keine gültige Zahl"
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:127
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:149
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:115
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:154
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:150
 msgid "invalid"
 msgstr "ungültig"
 
@@ -2625,7 +2634,7 @@ msgstr "E-Mail-Adresse wird bereits genutzt."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:91
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:148
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:153
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:149
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
@@ -2681,7 +2690,7 @@ msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:165
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:180
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:176
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
@@ -3216,11 +3225,11 @@ msgstr "Berechtigung ist %s."
 msgid "Permissions changed."
 msgstr "Berechtigungen geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:148
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:144
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:173
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:169
 msgid ""
 "Contact details were changed. We sent an email to the user to confirm this "
 "new address."
@@ -3228,7 +3237,7 @@ msgstr ""
 "Kontaktdaten geändert. Wir haben eine E-Mail an den Benutzer gesendet, um "
 "diese neue Adresse zu bestätigen."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:176
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:172
 msgid "Contact details were changed, but we couldn't send the user an email."
 msgstr ""
 "Kontaktdaten geändert, wir konnten dem Benutzer jedoch keine E-Mail senden."
@@ -3326,6 +3335,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:105
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "New email address has to be activated"
+#~ msgstr "Neue E-Mail-Adresse muss aktiviert werden"
 
 #~ msgid "Tickets please"
 #~ msgstr "Tickets please"
