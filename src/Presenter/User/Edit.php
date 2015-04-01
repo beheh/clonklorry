@@ -36,10 +36,6 @@ class Edit extends Presenter
         $this->context['email'] = isset($_POST['email']) ? filter_input(INPUT_POST,
                 'email') : $user->getEmail();
 
-        if (!isset($this->context['require_activation'])) {
-            $this->context['require_activation'] = !$user->isActivated();
-        }
-
         $this->context['self'] = $this->session->authenticated() && $user->getId()
             == $this->session->getUser()->getId();
 
@@ -152,35 +148,24 @@ class Edit extends Presenter
             }
 
             if ($user->modified() && empty($errors)) {
-                if ($require_activation) {
-                    $user->deactivate();
-                } else {
-                    $user->activate();
-                }
-
                 $user->save();
 
-                $this->job->remove('Activate',
-                    array('user' => $user->getId(), 'address' => $previous_email));
-                if ($require_activation) {
-                    if ($this->job->submit('Activate',
-                            array('user' => $user->getId(), 'address' => $user->getEmail()))) {
-                        $this->warning('contact',
-                            gettext('Contact details were changed. We sent an email to the user to confirm this new address.'));
-                    } else {
-                        $this->warning('contact',
-                            gettext('Contact details were changed, but we couldn\'t send the user an email.'));
-                    }
-                } else {
-                    $this->success('contact',
+                $this->success('contact',
                         gettext('Contact details were changed.'));
-                }
             } else {
                 $this->error('contact', implode('<br>', $errors));
             }
         }
 
-
+        if(isset($_POST['password-reset-submit'])) {
+            if($this->job->submit('LoginByEmail',
+                        array('user' => $user->getId(), 'reset' => true))) {
+                $this->success('reset', gettext('The user should receive an email shortly.'));
+            }
+            else {
+                $this->error('reset', gettext('Error sending the email.'));
+            }
+        }
 
         $this->get($username);
     }

@@ -3,6 +3,7 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
+use Lorry\Exception;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\BadRequestException;
 
@@ -88,13 +89,11 @@ class Login extends Presenter
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $user = $this->persistence->build('User')->byEmail($email);
             if ($user) {
-                try {
-                    $this->job->submit('LoginByEmail',
-                        array('user' => $user->getId(), 'reset' => true));
-                    $this->success('email',
-                        gettext('You should receive an email shortly.'));
-                } catch (\Exception $ex) {
-                    $this->error('email', gettext('Login via email failed.'));
+                if($this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true))) {
+                    $this->success('email', gettext('You should receive an email shortly.'));
+                }
+                else {
+                    $this->error('email', gettext('Error sending the email.'));
                 }
             } else {
                 // email is unknown

@@ -46,10 +46,16 @@ class JobService extends Service
             throw new Exception('invalid arguments (not an array)');
         }
         $class_name = $this->build($job_name);
-        $result = $this->resque->enqueue($this->getQueue($class_name),
-            $class_name, $args);
-        $this->logger->notice('queuing "'.$job_name.'" (queue "'.$this->getQueue($class_name).'"): result is '.print_r($result,
-                true));
+        $this->logger->notice('queuing "'.$job_name.'" in queue "'.$this->getQueue($class_name).'"');
+        $result = false;
+        try {
+            $result = $this->resque->enqueue($this->getQueue($class_name),
+                $class_name, $args);
+        }
+        catch(\Exception $ex) {
+            $this->logger->error($ex);
+            return false;
+        }
         return $result;
     }
 
