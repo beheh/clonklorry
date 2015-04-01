@@ -78,6 +78,12 @@ class PersistenceService extends Service
         }
     }
 
+    /**
+     *
+     * @param string $model
+     * @return \Lorry\Model
+     * @throws RuntimeException
+     */
     public function build($model)
     {
         $model = '\\Lorry\\Model\\'.$model;

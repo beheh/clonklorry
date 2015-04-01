@@ -120,10 +120,20 @@
 		</div>
 		<hr>
 		<h2>{% trans %}Moderation log{% endtrans %}</h2>
+		{% if moderation_entries%}
 		<table class="table">
 			<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Action{% endtrans %}</th><th>{% trans %}Executed by{% endtrans %}</th></tr>
+			{% for entry in moderation_entries %}
+				<tr>
+					<td>{{entry.timestamp}}</td>
+					<td>{{entry.action}}{% if entry.from or entry.to %}: "{{entry.from}}" &rarr; "{{entry.to}}"{% endif %}</td>
+					<td>{% if entry.executor %}{% include 'functions/user.twig' with {'user' : entry.executor} %}{% else %}<em>{% trans %}Administrator{% endtrans %}</em>{% endif %}</td>
+				</tr>
+			{% endfor %}
 		</table>
+		{% else %}
 		<div class="alert alert-info">{% trans %}This account has not been moderated in the past.{% endtrans %}</div>
+		{% endif %}
 	</div>
 </div>
 

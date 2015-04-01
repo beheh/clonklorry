@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-04-01 15:26+0100\n"
-"PO-Revision-Date: 2015-04-01 15:26+0100\n"
+"POT-Creation-Date: 2015-04-01 16:23+0100\n"
+"PO-Revision-Date: 2015-04-01 16:23+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -173,7 +173,7 @@ msgstr "Kontaktformular"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:159
 #: /home/benedict/Dokumente/clonklorry/cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:62
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:314
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:318
 #: /home/benedict/Dokumente/clonklorry/cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:306
 msgid "Timestamp"
 msgstr "Zeitstempel"
@@ -599,15 +599,19 @@ msgstr "Konto dauerhaft deaktivieren"
 msgid "Moderation log"
 msgstr "Moderationsprotokoll"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:316
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:320
 msgid "Action"
 msgstr "Aktion"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:318
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:322
 msgid "Executed by"
 msgstr "Ausgeführt von"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:323
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:365
+msgid "Unknown user"
+msgstr "Unbekannter Benutzer"
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:389
 msgid "This account has not been moderated in the past."
 msgstr "Dieses Konto wurde noch nicht moderiert."
 
@@ -2476,8 +2480,8 @@ msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:48
-msgid "Somebody"
-msgstr "Jemand"
+msgid "Invalid user"
+msgstr "Ungültiger Benutzer"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e3/60/4afc89825edb449b159a2e43da973de48c5b5c0b7d1a50d1b2468f44ba06.php:45
 msgid "Published"
@@ -2539,8 +2543,8 @@ msgstr "keine gültige Zahl"
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:115
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:127
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:149
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:111
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:146
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:125
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:161
 msgid "invalid"
 msgstr "ungültig"
 
@@ -2604,7 +2608,7 @@ msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Login.php:96
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:166
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:185
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
@@ -2617,12 +2621,12 @@ msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:76
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:71
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:81
 msgid "Username already taken."
 msgstr "Benutzername bereits vergeben."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:81
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:76
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:86
 #, php-format
 msgid "Username is %s."
 msgstr "Benutzername ist %s."
@@ -2634,7 +2638,7 @@ msgstr "E-Mail-Adresse wird bereits genutzt."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Register.php:91
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:148
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:145
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:160
 #, php-format
 msgid "Email address is %s."
 msgstr "E-Mail-Adresse ist %s."
@@ -2690,7 +2694,7 @@ msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
 #: /home/benedict/Dokumente/clonklorry/src/Presenter/Account/Settings.php:165
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:154
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:171
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
@@ -3212,24 +3216,24 @@ msgstr "Entschuldigung, deine Nachricht konnte nicht gespeichert werden."
 msgid "Username was changed."
 msgstr "Benutzername wurde geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:87
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:100
 msgid "Username could not be changed."
 msgstr "Benutzername konnte nicht geändert werden."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:111
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:125
 #, php-format
 msgid "Permission is %s."
 msgstr "Berechtigung ist %s."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:127
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:142
 msgid "Permissions changed."
 msgstr "Berechtigungen geändert."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:140
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:155
 msgid "Email address already used."
 msgstr "E-Mail-Adresse bereits genutzt."
 
-#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:163
+#: /home/benedict/Dokumente/clonklorry/src/Presenter/User/Edit.php:182
 msgid "The user should receive an email shortly."
 msgstr "Der Benutzer solltest in Kürze eine E-Mail erhalten."
 
@@ -3319,13 +3323,16 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:102
+#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:110
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:105
+#: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:113
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid "Somebody"
+#~ msgstr "Jemand"
 
 #~ msgid "Login via email failed."
 #~ msgstr "Anmeldung per E-Mail fehlgeschlagen."
@@ -4725,9 +4732,6 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
 #~ msgid "Welcome back, %s!"
 #~ msgstr "Willkommen zurück, %s!"
-
-#~ msgid "Unknown username."
-#~ msgstr "Unbekannter Benutzername."
 
 #~ msgid "We have sent a one-time login to %s."
 #~ msgstr "Wir haben eine einmalige Anmeldung an %s gesendet."

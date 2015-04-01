@@ -34,6 +34,19 @@ CREATE TABLE `user` (
 	UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `user_moderation` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`user` int(11) NOT NULL,
+	`action` varchar(255) NOT NULL,
+	`from` varchar(255) DEFAULT NULL,
+	`to` varchar(255) DEFAULT NULL,
+	`executor` int(11) DEFAULT NULL,
+	`timestamp` datetime NOT NULL,
+	PRIMARY KEY (`id`),
+	KEY `user` (`user`),
+	KEY `executor` (`executor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `comment` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`owner` int(11) NOT NULL,

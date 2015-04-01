@@ -40,8 +40,9 @@ class Portal extends Presenter
         $this->context['addons'] = $addons;
 
         $tickets = array();
+        $format = $this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME);
         foreach ($this->persistence->build('Ticket')->all()->byNew() as $ticket) {
-            $tickets[] = $ticket->forPresenter($this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME));
+            $tickets[] = $ticket->forPresenter($format);
         }
 
         $this->context['tickets'] = $tickets;

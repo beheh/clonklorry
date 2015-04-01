@@ -33,6 +33,13 @@ class Edit extends Presenter
             $this->success('username', gettext('Username was changed.'));
         }
 
+        $moderation_entries = array();
+        $format = $this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME);
+        foreach($this->persistence->build('UserModeration')->all()->order('timestamp', true)->byUser($user->getId()) as $entry) {
+            $moderation_entries[] = $entry->forPresenter($format);
+        }
+        $this->context['moderation_entries'] = $moderation_entries;
+
         $this->context['email'] = isset($_POST['email']) ? filter_input(INPUT_POST,
                 'email') : $user->getEmail();
 
@@ -51,6 +58,8 @@ class Edit extends Presenter
         $this->security->requireModerator();
         $this->security->requireValidState();
 
+        $self = $this->session->getUser();
+
         $user = $this->persistence->build('User')->byUsername($username);
         if (!$user) {
             throw new FileNotFoundException('user '.$username);
@@ -60,6 +69,7 @@ class Edit extends Presenter
             $this->security->requireAdministrator();
         }
 
+        $previous_username = $username;
         $new_username = trim(filter_input(INPUT_POST, 'username'));
 
         $errors = array();
@@ -79,7 +89,10 @@ class Edit extends Presenter
             }
 
             if (empty($errors)) {
-                if ($user->modified() && $user->save()) {
+                if ($user->modified()) {
+                    $user->save();
+                    $this->security->trackUserModeration($user, 'change_username', $previous_username, $new_username, $self);
+
                     $this->redirect('/users/'.$new_username.'/edit?username-changed');
                     return;
                 } else {
@@ -94,6 +107,7 @@ class Edit extends Presenter
         if (isset($_POST['permissions-submit'])) {
             $this->security->requireAdministrator();
 
+            $previous_permissions = $user->isAdministrator() ? 'administrator' : ($user->isModerator() ? 'moderator' : 'user');
             $permissions = filter_input(INPUT_POST, 'permissions');
 
             switch ($permissions) {
@@ -114,6 +128,7 @@ class Edit extends Presenter
 
             if ($user->modified()) {
                 $user->save();
+                $this->security->trackUserModeration($user, 'change_permissions', $previous_permissions, $permissions, $self);
 
                 if ($this->session->getUser()->getId() == $user->getId()) {
                     if ($user->isAdministrator()) {
@@ -150,6 +165,8 @@ class Edit extends Presenter
             if ($user->modified() && empty($errors)) {
                 $user->save();
 
+                $this->security->trackUserModeration($user, 'change_email', $previous_email, $email, $self);
+
                 $this->success('contact',
                         gettext('Contact details were changed.'));
             } else {
@@ -160,6 +177,8 @@ class Edit extends Presenter
         if(isset($_POST['password-reset-submit'])) {
             if($this->job->submit('LoginByEmail',
                         array('user' => $user->getId(), 'reset' => true))) {
+                $this->security->trackUserModeration($user, 'password_reset', null, null, $self);
+
                 $this->success('reset', gettext('The user should receive an email shortly.'));
             }
             else {

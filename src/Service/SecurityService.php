@@ -4,6 +4,7 @@ namespace Lorry\Service;
 
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
+use Lorry\Service\PersistenceService;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception;
 use \InvalidArgumentException;
@@ -23,10 +24,17 @@ class SecurityService
      */
     protected $session;
 
-    public function __construct(ConfigService $config, SessionService $session)
+    /**
+     *
+     * @var \Lorry\Service\PersistenceService
+     */
+    protected $persistence;
+
+    public function __construct(ConfigService $config, SessionService $session, PersistenceService $persistence)
     {
         $this->config = $config;
         $this->session = $session;
+        $this->persistence = $persistence;
     }
 
     public function requireLogin()
@@ -133,5 +141,15 @@ class SecurityService
             throw new Exception('missing token signature algorithm or key');
         }
         return hash_hmac($algo, $data, $key);
+    }
+
+    public function trackUserModeration($user, $action, $from, $to, $executor) {
+        $entry = $this->persistence->build('UserModeration');
+        $entry->setUser($user->getId());
+        $entry->setAction($action);
+        $entry->setFrom($from);
+        $entry->setTo($to);
+        $entry->setExecutor($executor->getId());
+        return $entry->save();
     }
 }
