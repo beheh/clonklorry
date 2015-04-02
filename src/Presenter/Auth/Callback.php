@@ -6,10 +6,6 @@ use Lorry\Presenter;
 use Lorry\Model\User;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
-use LightOpenID;
-use ErrorException;
-use League\OAuth2\Client\Provider\Google;
-use League\OAuth2\Client\Provider\Facebook;
 
 class Callback extends Presenter
 {
@@ -36,31 +32,17 @@ class Callback extends Presenter
         $this->logger->debug('handling authorization callback');
         try {
             switch ($provider) {
-                case 'openid':
-                    try {
-                        $provider_title = 'OpenID';
-                        $openid = new LightOpenID($this->config->get('base'));
-                        if ($openid->mode == 'cancel') {
-                            return $this->redirect('/register');
-                        }
-                        if (!$openid->mode || !$openid->validate()) {
-                            throw new AuthentificationFailedException('OpenID validation failed (mode is "'.$openid->mode.'")');
-                        }
-                        $uid = $openid->identity;
-                        $attributes = $openid->getAttributes();
-                        if (isset($attributes['contact/email'])) {
-                            $email = $attributes['contact/email'];
-                        }
-                        if (isset($attributes['namePerson/friendly'])) {
-                            $nickname = $attributes['namePerson/friendly'];
-                        }
-                    } catch (ErrorException $ex) {
-                        throw new AuthentificationFailedException($ex->getMessage());
-                    }
+                case 'github':
+                    $provider_title = 'GitHub';
+                    $oauth_provider = new \League\OAuth2\Client\Provider\Github(array(
+                        'clientId' => $this->config->get('oauth/github/id'),
+                        'clientSecret' => $this->config->get('oauth/github/secret'),
+                        'redirectUri' => $this->config->get('base').'/auth/callback/github'
+                    ));
                     break;
                 case 'google':
                     $provider_title = 'Google';
-                    $oauth_provider = new Google(array(
+                    $oauth_provider = new \League\OAuth2\Client\Provider\Google(array(
                         'clientId' => $this->config->get('oauth/google/id'),
                         'clientSecret' => $this->config->get('oauth/google/secret'),
                         'redirectUri' => $this->config->get('base').'/auth/callback/google'
@@ -68,7 +50,7 @@ class Callback extends Presenter
                     break;
                 case 'facebook':
                     $provider_title = 'Facebook';
-                    $oauth_provider = new Facebook(array(
+                    $oauth_provider = new \League\OAuth2\Client\Provider\Facebook(array(
                         'clientId' => $this->config->get('oauth/facebook/id'),
                         'clientSecret' => $this->config->get('oauth/facebook/secret'),
                         'redirectUri' => $this->config->get('base').'/auth/callback/facebook'
@@ -100,8 +82,9 @@ class Callback extends Presenter
 
                 try {
                     // uppercase Authorization_Code: workaround for https://github.com/thephpleague/oauth2-client/issues/84
-                    $token = $oauth_provider->getAccessToken('Authorization_Code',
-                        array('code' => filter_input(INPUT_GET, 'code')));
+                   /* $token = $oauth_provider->getAccessToken('Authorization_Code',
+                        array('code' => filter_input(INPUT_GET, 'code')));*/
+                    $token = $oauth_provider->getAccessToken($grant = 'authorization_code', array('code' => filter_input(INPUT_GET, 'code')));
                 } catch (\Exception $ex) {
                     throw new AuthentificationFailedException('could net get access token ('.$ex->getMessage().')');
                 }
@@ -119,6 +102,7 @@ class Callback extends Presenter
             }
         } catch (AuthentificationFailedException $exception) {
             if ($this->session->authenticated()) {
+                $this->logger->error($exception);
                 return $this->redirect('/settings?update-oauth=failed#oauth');
             }
             throw $exception;
@@ -145,7 +129,7 @@ class Callback extends Presenter
             $this->redirect('/settings?update-oauth=success#oauth');
             return;
         } else {
-            // grab user with openid data fitting
+            // grab user by oauth data
             $user = $this->persistence->build('User')->byOauth($provider, $uid);
 
             if ($user instanceof User) {

@@ -138,6 +138,7 @@ class PersistenceService extends Service
         $query->offset($offset);
         $query->limit($limit);
 
+        $this->logger->debug('preparing sql query "'.$query.'"');
         $statement = $this->connection->prepare($query->__toString());
         $statement->execute($query->getBindValues());
 

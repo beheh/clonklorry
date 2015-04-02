@@ -1,21 +1,6 @@
 {% set oauth_warn%}data-warning="{% trans %}Are you sure you want to remove this login service from your account?{% endtrans %}"{% endset %}
 <p id="oauth">
-	{% if oauth.openid %}
-	<a href="?remove-oauth=openid&state={{state}}#oauth" class="btn btn-default lorry-js-warn" {{oauth_warn}}>{% trans "OpenID" %} <span class="glyphicon glyphicon-link"></span></a>
-	{% else %}
-	<a href="#by-openid" class="btn btn-default visible-js" data-toggle="collapse" data-target="#by-openid">{% trans "OpenID" %}</a>
-	{% endif %}	
+	<a href="?{% if oauth.github %}remove-{% endif %}oauth=github{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.github %}&state={{state}}#oauth{% endif %}" class="btn btn-default{% if oauth.github %} lorry-js-warn{% endif %}"{% if oauth.google %} {{oauth_warn}}{% endif%}>{% trans "GitHub" %}{% if oauth.github %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 	<a href="?{% if oauth.google %}remove-{% endif %}oauth=google{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.google %}&state={{state}}#oauth{% endif %}" class="btn btn-google{% if oauth.google %} lorry-js-warn{% endif %}"{% if oauth.google %} {{oauth_warn}}{% endif%}>{% trans "Google" %}{% if oauth.google %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 	<a href="?{% if oauth.facebook %}remove-{% endif %}oauth=facebook{% if returnto %}&returnto={{returnto}}{% endif %}{% if oauth.facebook %}&state={{state}}#oauth{% endif %}" class="btn btn-facebook{% if oauth.facebook %} lorry-js-warn{% endif %}"{% if oauth.facebook %} {{oauth_warn}}{% endif%}>{% trans "Facebook" %}{% if oauth.facebook %} <span class="glyphicon glyphicon-link"></span>{% endif %}</a>
 </p>
-{% if not oauth.openid %}<div id="by-openid" class="collapse in">
-	<form role="form" action="{{filename}}?oauth=openid{% if returnto %}&returnto={{returnto}}{% endif %}" method="post" class="form-inline">
-		<input type="hidden" name="state" value="{{state}}">
-		<noscript><p class="help-block"><strong>{% trans %}or{% endtrans %}</strong></p></noscript>
-		<div class="form-group">
-			<label for="openid-provider" class="sr-only">{% trans %}OpenID url{% endtrans %}</label>
-			<input type="url" class="form-control" name="openid-identity" id="openid-provider" placeholder="{% trans %}OpenID url{% endtrans %}" value="http://" required>
-		</div>
-		<button type="submit" class="btn btn-default">{% trans %}Login with OpenID{% endtrans %}</button>
-	</form>
-</div>{% endif %}

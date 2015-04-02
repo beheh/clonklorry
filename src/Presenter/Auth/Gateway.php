@@ -6,9 +6,6 @@ use ErrorException;
 use Lorry\Presenter;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
-use LightOpenID;
-use League\OAuth2\Client\Provider\Google;
-use Lorry\Override\Facebook;
 
 class Gateway extends Presenter
 {
@@ -28,27 +25,27 @@ class Gateway extends Presenter
                 }
             }
             switch ($provider) {
-                case 'openid':
-                    try {
-                        $openid = new LightOpenID($this->config->get('base'));
-                        $openid->identity = filter_input(INPUT_GET, 'identity',
-                            FILTER_VALIDATE_URL);
-                        $openid->realm = $this->config->get('base');
-                        if (!$this->session->authenticated()) {
-                            $openid->optional = array('namePerson/friendly', 'contact/email');
-                        }
-                        $openid->returnUrl = $this->config->get('base').'/auth/callback/openid';
-                        $this->redirect($openid->authUrl(), true);
-                    } catch (ErrorException $ex) {
-                        throw new AuthentificationFailedException($ex->getMessage());
+                case 'github':
+                    $scopes = array();
+                    if (!$this->session->authenticated()) {
+                        $scopes[] = 'user:email';
                     }
+                    $github = new \League\OAuth2\Client\Provider\Github(array(
+                        'clientId' => $this->config->get('oauth/github/id'),
+                        'clientSecret' => $this->config->get('oauth/github/secret'),
+                        'redirectUri' => $this->config->get('base').'/auth/callback/github',
+                        'scopes' => $scopes
+                    ));
+                    $authorizationUrl = $github->getAuthorizationUrl();
+                    $this->session->setAuthorizationState($github->state);
+                    $this->redirect($authorizationUrl, true);
                     break;
                 case 'google':
                     $scopes = array('profile');
                     if (!$this->session->authenticated()) {
                         $scopes[] = 'email';
                     }
-                    $google = new Google(array(
+                    $google = new \League\OAuth2\Client\Provider\Google(array(
                         'clientId' => $this->config->get('oauth/google/id'),
                         'clientSecret' => $this->config->get('oauth/google/secret'),
                         'redirectUri' => $this->config->get('base').'/auth/callback/google',
@@ -67,7 +64,7 @@ class Gateway extends Presenter
                     if (!$this->session->authenticated()) {
                         $scopes[] = 'email';
                     }
-                    $facebook = new Facebook(array(
+                    $facebook = new \League\OAuth2\Client\Provider\Facebook(array(
                         'clientId' => $this->config->get('oauth/facebook/id'),
                         'clientSecret' => $this->config->get('oauth/facebook/secret'),
                         'redirectUri' => $this->config->get('base').'/auth/callback/facebook',

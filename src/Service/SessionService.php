@@ -299,7 +299,7 @@ class SessionService extends Service
         }
         setcookie('lorry_session', '', 0, '/');
     }
-    private static $OAUTH_PROVIDERS = array('openid', 'google', 'facebook');
+    private static $OAUTH_PROVIDERS = array('github', 'google', 'facebook');
 
     final public function handleOauth()
     {
@@ -310,9 +310,7 @@ class SessionService extends Service
         $params = array();
 
         $gateway = '/auth/gateway/'.$provider;
-        if ($provider == 'openid') {
-            $params[] = 'identity='.filter_input(INPUT_POST, 'openid-identity');
-        }
+
         $returnto = filter_input(INPUT_GET, 'returnto');
         if ($returnto) {
             $params[] = 'returnto='.$returnto;

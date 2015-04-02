@@ -42,9 +42,9 @@ class User extends Model
             'permissions' => 'int',
             'flags' => 'int',
             'counter' => 'int',
-            'oauth-openid' => 'string(255)',
-            'oauth-google' => 'string(255)',
-            'oauth-facebook' => 'string(255)');
+            'oauth_github' => 'string(255)',
+            'oauth_google' => 'string(255)',
+            'oauth_facebook' => 'string(255)');
     }
 
     public function setUsername($username)
@@ -309,18 +309,8 @@ class User extends Model
 
     final public function hasOauth($provider)
     {
-        switch ($provider) {
-            case 'openid':
-                return $this->getValue('oauth-openid') !== null;
-                break;
-            case 'google':
-                return $this->getValue('oauth-google') !== null;
-                break;
-            case 'facebook':
-                return $this->getValue('oauth-facebook') !== null;
-                break;
-        }
-        throw new Exception('invalid OAuth provider');
+        $this->ensureField('oauth_'.$provider);
+        return $this->getValue('oauth_'.$provider) !== null;
     }
 
     /**
@@ -328,18 +318,8 @@ class User extends Model
      */
     final public function byOauth($provider, $uid)
     {
-        switch ($provider) {
-            case 'openid':
-                return $this->byValue('oauth-openid', $uid);
-                break;
-            case 'google':
-                return $this->byValue('oauth-google', $uid);
-                break;
-            case 'facebook':
-                return $this->byValue('oauth-facebook', $uid);
-                break;
-        }
-        throw new Exception('invalid OAuth provider');
+        $this->ensureField('oauth_'.$provider);
+        return $this->byValue('oauth_'.$provider, $uid);
     }
 
     final public function setOauth($provider, $uid)
@@ -348,29 +328,21 @@ class User extends Model
             // dissallow last oauth to be removed without a password
             throw new ModelValueInvalidException(gettext('the last remaining login method'));
         }
-        switch ($provider) {
-            case 'openid':
-                return $this->setValue('oauth-openid', $uid);
-                break;
-            case 'google':
-                return $this->setValue('oauth-google', $uid);
-                break;
-            case 'facebook':
-                return $this->setValue('oauth-facebook', $uid);
-                break;
+        if(!$this->isFieldValid('oauth_'.$provider)) {
+            throw new ModelValueInvalidException(gettext('not a valid OAuth provider'));
         }
-        throw new ModelValueInvalidException(gettext('not a valid OAuth provider'));
+        $this->setValue('oauth_'.$provider, $uid);
     }
 
     final protected function hasRemainingOauth($except)
     {
-        $providers = array('openid', 'google', 'facebook');
+        $providers = array('github', 'google', 'facebook');
         $provider_count = 0;
         foreach ($providers as $provider) {
             if ($provider == $except) {
                 continue;
             }
-            if ($this->getValue('oauth-'.$provider) !== null) {
+            if ($this->getValue('oauth_'.$provider) !== null) {
                 $provider_count++;
             }
         }

@@ -344,6 +344,10 @@ abstract class Model
         return $value;
     }
 
+    final public function isFieldValid($field) {
+        return $field == 'id' || array_key_exists($field, $this->schema);
+    }
+
     /**
      *
      * @param string $field
@@ -351,7 +355,7 @@ abstract class Model
      */
     final public function ensureField($field)
     {
-        if (!array_key_exists($field, $this->schema) && $field != 'id') {
+        if(!$this->isFieldValid($field)) {
             throw new InvalidArgumentException('field "'.$field.'" does not exist in model "'.get_class($this).'"');
         }
     }

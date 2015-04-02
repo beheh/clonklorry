@@ -84,7 +84,7 @@ class Settings extends Presenter
 
         $this->context['can_reset_password'] = $this->session->canResetPassword();
 
-        $oauth = array('openid', 'google', 'facebook');
+        $oauth = array('github', 'google', 'facebook');
         $this->context['oauth'] = array();
         foreach ($oauth as $provider) {
             $this->context['oauth'][$provider] = $user->hasOauth($provider);
