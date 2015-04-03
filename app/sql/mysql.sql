@@ -26,9 +26,9 @@ CREATE TABLE `user` (
 	`github` varchar(255) DEFAULT NULL,
 	`permissions` int(11) NOT NULL DEFAULT '0',
 	`flags` int(11) NOT NULL DEFAULT '0',
-	`oauth-openid` varchar(255) DEFAULT NULL,
-	`oauth-google` varchar(255) DEFAULT NULL,
-	`oauth-facebook` varchar(255) DEFAULT NULL,
+	`oauth_github` varchar(255) DEFAULT NULL,
+	`oauth_google` varchar(255) DEFAULT NULL,
+	`oauth_facebook` varchar(255) DEFAULT NULL,
 	`language` varchar(5) NOT NULL DEFAULT 'en-US',
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `username` (`username`)
