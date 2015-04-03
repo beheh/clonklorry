@@ -21,24 +21,24 @@
 			<div class="col-md-4">
 				<h2>{% trans %}User{% endtrans %}</h2>
 				<ul class="list-group">
-					{% if registration %}
-						<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-user"></span> {% trans %}Registered on {{registration}}{% endtrans %}</li>
-						{% endif %}
 						{% if flags.founder %}
-						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><span class="glyphicon glyphicon-fire"></span> <a href="{{base}}/about#development" class="text">{% trans %}Founder of Lorry{% endtrans %}</a></li>
+						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><a href="{{base}}/about#development" class="text"><span class="glyphicon glyphicon-king"></span> {% trans %}Founder of Lorry{% endtrans %}</a></li>
 						{% elseif flags.alpha %}
-						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-heart"></span> {% trans %}Took part in Lorry Alpha{% endtrans %}</li>
+						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-knight"></span> {% trans %}Took part in Lorry Alpha{% endtrans %}</li>
 						{% elseif flags.beta %}
-						<li class="list-group-item" title="{% trans %}Registered on the beta site{% endtrans %}"><span class="glyphicon glyphicon-heart-empty"></span> {% trans %}Took part in Lorry Beta{% endtrans %}</li>
+						<li class="list-group-item" title="{% trans %}Registered on the beta site{% endtrans %}"><span class="glyphicon glyphicon-pawn"></span> {% trans %}Took part in Lorry Beta{% endtrans %}</li>
 						{% endif %}
 						{% if flags.vip %}
 						<li class="list-group-item" title="{% trans %}Built something awesome for the Clonk community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
 						{% endif %}
 						{% if flags.coder %}
-						<li class="list-group-item" title="{% trans %}Knows Google-fu{% endtrans %}"><span class="glyphicon glyphicon-cog"></span> {% trans %}Lorry hacker{% endtrans %}</li>
+						<li class="list-group-item" title="{% trans %}Knows Google-fu{% endtrans %}"><a href="https://github.com/beheh/clonklorry/graphs/contributors" class="text"><span class="glyphicon glyphicon-cog"></span> {% trans %}Lorry developer{% endtrans %}</a></li>
 						{% endif %}
 						{% if flags.reporter %}
-						<li class="list-group-item" title="{% trans %}&quot;Hey, what's that button do?&quot;{% endtrans %}"><span class="glyphicon glyphicon-flag"></span> {% trans %}Reported a bug in Lorry{% endtrans %}</li>
+						<li class="list-group-item" title="{% trans %}&quot;Hey, what's that button do?&quot;{% endtrans %}"><a href="https://github.com/beheh/clonklorry/issues" class="text"><span class="glyphicon glyphicon-flag"></span> {% trans %}Bugreporter{% endtrans %}</a></li>
+						{% endif %}
+						{% if registration %}
+						<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-user"></span> {% trans %}Registered since {{registration}}{% endtrans %}</li>
 						{% endif %}
 				</ul>
 				{% if clonkforge or github %}
@@ -49,7 +49,6 @@
 					</ul>
 				{% endif %}
 				{% if (user_moderator and moderator == false) or user_administrator %}
-					<h3 id="moderate">{% trans %}Moderation{% endtrans %}</h3>
 					<p>
 						<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
 					</p>
@@ -65,6 +64,8 @@
 					</ul>
 				{% elseif self %}
 					<div class="alert alert-info">{% trans %}You have not released any addons yet.{% endtrans %}</a></div>
+					{% set developer_portal %}<a href="{{base}}/developers">{% trans %}developer portal{% endtrans %}</a>{% endset %}
+					<p class="help-block">{% trans %}Visit the {{developer_portal}} to get started.{% endtrans %}</p>
 				{% else %}
 					<div class="alert alert-info">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
 				{% endif %}
