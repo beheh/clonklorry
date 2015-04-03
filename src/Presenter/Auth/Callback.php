@@ -124,6 +124,12 @@ class Callback extends Presenter
             // we now trust provider and user
             $user = $this->session->getUser();
             $user->setOauth($provider, $uid);
+
+            // we might be able to add the users github profile
+            if($provider == 'github' && !$user->getGithub()) {
+                $user->setGithub($profile->nickname);
+            }
+
             $user->save();
 
             $this->redirect('/settings?update-oauth=success#oauth');
