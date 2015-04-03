@@ -301,13 +301,17 @@ class SessionService extends Service
     }
     private static $OAUTH_PROVIDERS = array('github', 'google', 'facebook');
 
-    final public function handleOauth()
+    final public function handleOauth($register = false)
     {
         $provider = filter_input(INPUT_GET, 'oauth');
         if (!in_array($provider, self::$OAUTH_PROVIDERS)) {
             throw new FileNotFoundException();
         }
+
         $params = array();
+        if($register) {
+            $params[] = 'register=1';
+        }
 
         $gateway = '/auth/gateway/'.$provider;
 

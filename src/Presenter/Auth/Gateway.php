@@ -27,9 +27,7 @@ class Gateway extends Presenter
             switch ($provider) {
                 case 'github':
                     $scopes = array();
-                    if (!$this->session->authenticated()) {
-                        $scopes[] = 'user:email';
-                    }
+                    // don't ask for a scope here, since GitHub will send any public address
                     $github = new \League\OAuth2\Client\Provider\Github(array(
                         'clientId' => $this->config->get('oauth/github/id'),
                         'clientSecret' => $this->config->get('oauth/github/secret'),
@@ -41,9 +39,9 @@ class Gateway extends Presenter
                     $this->redirect($authorizationUrl, true);
                     break;
                 case 'google':
-                    $scopes = array('profile');
-                    if (!$this->session->authenticated()) {
-                        $scopes[] = 'email';
+                    $scopes = array('https://www.googleapis.com/auth/plus.me');
+                    if (isset($_GET['register'])) {
+                        $scopes[] = 'https://www.googleapis.com/auth/userinfo.email';
                     }
                     $google = new \League\OAuth2\Client\Provider\Google(array(
                         'clientId' => $this->config->get('oauth/google/id'),
@@ -55,13 +53,13 @@ class Gateway extends Presenter
                     if ($login_hint) {
                         $custom .= '&login_hint='.$login_hint;
                     }
-                    $authorizationUrl = $google->getAuthorizationUrl();
+                    $authorizationUrl = $google->getAuthorizationUrl().$custom;
                     $this->session->setAuthorizationState($google->state);
                     $this->redirect($authorizationUrl, true);
                     break;
                 case 'facebook':
                     $scopes = array('public_profile');
-                    if (!$this->session->authenticated()) {
+                    if (isset($_GET['register'])) {
                         $scopes[] = 'email';
                     }
                     $facebook = new \League\OAuth2\Client\Provider\Facebook(array(

@@ -15,7 +15,7 @@ class Register extends Presenter
         }
 
         if (isset($_GET['oauth'])) {
-            return $this->redirect($this->session->handleOauth());
+            return $this->redirect($this->session->handleOauth(true));
         }
 
         if (isset($_GET['returnto'])) {
