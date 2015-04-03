@@ -24,7 +24,7 @@ CREATE TABLE `user` (
 	`activated` bit(1) NOT NULL DEFAULT b'0',
 	`clonkforge` int(11) DEFAULT NULL,
 	`github` varchar(255) DEFAULT NULL,
-	`permissions` int(11) NOT NULL DEFAULT '0',
+	`permissions` int(11) NOT NULL DEFAULT '1',
 	`flags` int(11) NOT NULL DEFAULT '0',
 	`oauth_github` varchar(255) DEFAULT NULL,
 	`oauth_google` varchar(255) DEFAULT NULL,
