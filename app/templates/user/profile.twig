@@ -56,6 +56,7 @@
 			</div>
 			<div class="col-md-8">
 				<h2>{% trans %}Activity{% endtrans %}</h2>
+				{% set developer_portal %}<a href="{{base}}/developers">{% trans %}developer portal{% endtrans %}</a>{% endset %}
 				{% if addons %}
 					<ul class="media-list">
 						{% for addon in addons %}
@@ -64,10 +65,10 @@
 					</ul>
 				{% elseif self %}
 					<div class="alert alert-info">{% trans %}You have not released any addons yet.{% endtrans %}</a></div>
-					{% set developer_portal %}<a href="{{base}}/developers">{% trans %}developer portal{% endtrans %}</a>{% endset %}
 					<p class="help-block">{% trans %}Visit the {{developer_portal}} to get started.{% endtrans %}</p>
 				{% else %}
 					<div class="alert alert-info">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
+					<p class="help-block">{% trans %}Learn more at the {{developer_portal}}.{% endtrans %}</p>
 				{% endif %}
 			</div>
 		</div>

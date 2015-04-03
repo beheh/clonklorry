@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-04-03 14:23+0100\n"
-"PO-Revision-Date: 2015-04-03 14:23+0100\n"
+"POT-Creation-Date: 2015-04-03 14:35+0100\n"
+"PO-Revision-Date: 2015-04-03 14:35+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -96,7 +96,7 @@ msgid "Manage releases"
 msgstr "Releases verwalten"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:159
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:277
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:225
 msgid "developer portal"
 msgstr "Entwicklerportal"
 
@@ -1550,7 +1550,7 @@ msgid "Edit own user"
 msgstr "Eigenen Benutzer bearbeiten"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:101
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:173
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:187
 msgid "Links"
 msgstr "Links"
 
@@ -2449,29 +2449,29 @@ msgstr "Willkommen bei Lorry!"
 msgid "Registered since %registration%"
 msgstr "Registriert seit %registration%"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:203
-msgid "Moderation"
-msgstr "Moderation"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:210
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:177
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:220
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:217
 msgid "Activity"
 msgstr "Aktivität"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:269
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:275
 msgid "You have not released any addons yet."
 msgstr "Du hast noch keine Erweiterungen veröffentlicht."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:282
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:279
 msgid "Visit the %developer_portal% to get started."
 msgstr "Besuche das %developer_portal% um loszulegen."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:288
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:285
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
+
+#: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:289
+msgid "Learn more at the %developer_portal%."
+msgstr "Erfahre mehr im %developer_portal%."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:48
 msgid "Invalid user"
@@ -3332,6 +3332,9 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
+#~ msgid "Moderation"
+#~ msgstr "Moderation"
+
 #~ msgid "OpenID"
 #~ msgstr "OpenID"
 
@@ -3662,9 +3665,6 @@ msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
 #~ msgid "View %completed_tickets%."
 #~ msgstr "Betrache die %completed_tickets%."
-
-#~ msgid "You can create addons at the %developer_portal%."
-#~ msgstr "Du kannst Erweiterungen im %developer_portal% anlegen."
 
 #~ msgid "You should receive a link shortly."
 #~ msgstr "Du solltest receive an"
