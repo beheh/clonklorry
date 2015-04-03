@@ -170,6 +170,10 @@ class User extends Model
         return $this->getValue('permissions');
     }
 
+    final public function byPermission($permission) {
+        return $this->byValues(array('permissions' => array('>=', $permission)));
+    }
+
     final public function hasPermission($permission)
     {
         return $this->getPermissions() >= $permission;
