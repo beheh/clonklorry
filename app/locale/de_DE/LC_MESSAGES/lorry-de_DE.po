@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-04-03 14:35+0100\n"
-"PO-Revision-Date: 2015-04-03 14:35+0100\n"
+"POT-Creation-Date: 2015-04-03 18:31+0100\n"
+"PO-Revision-Date: 2015-04-03 18:31+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -111,7 +111,7 @@ msgstr "Hier werden deine Erweiterungen erscheinen"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:178
 msgid "Visit the developer portal to get started."
-msgstr "Besuche das Entwicklerportal um loszulegen."
+msgstr "Besuche das Entwicklerportal, um loszulegen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:184
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:34
@@ -232,9 +232,10 @@ msgid "There have been no submitted tickets yet."
 msgstr "Es wurden noch keine Tickets eingereicht."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/12/ce/ac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:58
-msgid "Javascript needs to be activated in order to edit addons and releases."
+#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:109
+msgid "Javascript needs to be enabled in order to edit addons and releases."
 msgstr ""
-"Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
+"Javascript muss aktiviert sein, um Erweiterungen und Releases zu bearbeiten."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/12/ce/ac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:68
 msgid "Presentation"
@@ -442,11 +443,6 @@ msgstr "Es sind noch keine Erweiterungen für dieses Spiel verfügbar."
 #: /home/benedict/Dokumente/clonklorry/cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:202
 msgid "New %game% addon"
 msgstr "Neue %game%-Erweiterung"
-
-#: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:109
-msgid "Javascript needs to be enabled in order to edit addons and releases."
-msgstr ""
-"Javascript muss aktiviert sein um Erweiterungen und Releases zu bearbeiten."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:121
 #: /home/benedict/Dokumente/clonklorry/cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:230
@@ -834,12 +830,12 @@ msgstr "Kontaktiere uns"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:335
 msgid "%Contact_us% to add an abbreviation."
-msgstr "%Contact_us% um eine Abkürzung hinzuzufügen."
+msgstr "%Contact_us%, um eine Abkürzung hinzuzufügen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:344
 msgid "Please only enter an abbreviation if it is (to some extent) well known."
 msgstr ""
-"Bitte gib nur dann eine Abkürzung ein, falls sie (einigermaßen) bekannt ist."
+"Bitte gib nur dann eine Abkürzung ein falls sie (einigermaßen) bekannt ist."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:356
 msgid "These settings cannot be changed after approval."
@@ -874,11 +870,11 @@ msgstr "Möchtest du diese Erweiterung entfernen?"
 msgid "These settings cannot be changed anymore."
 msgstr "Diese Einstellungen können nicht mehr geändert werden."
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:123
+#: /home/benedict/Dokumente/clonklorry/cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:126
 msgid "No matching users"
 msgstr "Keine passenden Benutzer"
 
-#: /home/benedict/Dokumente/clonklorry/cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:127
+#: /home/benedict/Dokumente/clonklorry/cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:130
 msgid "No user currently matches your filtering critera."
 msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
 
@@ -1350,7 +1346,7 @@ msgstr "Aktivierung erforderlich"
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/5e/31/429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:50
 msgid "Please activate your account by confirming your email address."
-msgstr "Bitte aktiviere dein Konto indem du deine E-Mail-Adresse bestätigst."
+msgstr "Bitte aktiviere dein Konto, indem du deine E-Mail-Adresse bestätigst."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:33
 #: /home/benedict/Dokumente/clonklorry/cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:122
@@ -2463,7 +2459,7 @@ msgstr "Du hast noch keine Erweiterungen veröffentlicht."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:279
 msgid "Visit the %developer_portal% to get started."
-msgstr "Besuche das %developer_portal% um loszulegen."
+msgstr "Besuche das %developer_portal%, um loszulegen."
 
 #: /home/benedict/Dokumente/clonklorry/cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:285
 msgid "This user has not released any addons yet."
@@ -3331,6 +3327,12 @@ msgstr "Hochladen von Dateien ist deaktiviert"
 #: /home/benedict/Dokumente/clonklorry/src/Service/SecurityService.php:113
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
+
+#~ msgid ""
+#~ "Javascript needs to be activated in order to edit addons and releases."
+#~ msgstr ""
+#~ "Javascript muss aktiviert sein, um Erweiterungen und Releases zu "
+#~ "bearbeiten."
 
 #~ msgid "Moderation"
 #~ msgstr "Moderation"
