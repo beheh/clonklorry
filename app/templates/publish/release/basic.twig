@@ -1,35 +1,16 @@
 <form role="form" method="post" action="{{filename}}#basic">
-	{% include 'functions/alert.twig' with {'selector' : 'version'} %}
+	{% include 'functions/alert.twig' with {'selector' : 'basic'} %}
 	<input type="hidden" name="basic-form">
 	<input type="hidden" name="state" value="{{state}}">
 	<div class="row">
-		<div class="col-md-8">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="version">{% trans %}Version{% endtrans %}</label>
-						<input type="text" class="form-control" name="version" id="version" value="{{new_version}}" required>
-					</div>
-				</div>
-			</div>
+		<div class="col-md-4">
 			<div class="form-group">
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" id="archive"> {% trans %}This release was already published somewhere else{% endtrans %}
-					</label>
-				</div>
-			</div>
-			<div class="collapse">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<label for="version">{% trans %}Original publishing date{% endtrans %}</label>
-							<input type="date" class="form-control" name="initial" id="initial">
-						</div>
-					</div>
-				</div>
+				<label for="version">{% trans %}Version{% endtrans %}</label>
+				<input type="text" class="form-control" name="version" id="version" value="{{new_version}}" required{% if published %} disabled{% endif %}>
 			</div>
 		</div>
+		<div class="col-md-4">
+			</div>
 		<div class="col-md-4">
 			<div class="form-group">
 				<label for="version">{% trans %}Remove{% endtrans %}</label>
@@ -38,13 +19,34 @@
 					<div class="alert alert-warning files-some">
 						{% trans %}All uploaded files will be deleted.{% endtrans %}
 					</div>
-					<button type="submit" class="btn btn-danger">{% trans "Remove release" %}</button>
+					<button type="submit" name="release-remove" class="btn btn-danger">{% trans "Remove release" %}</button>
 				</div>
-			</div>	
+			</div>
 		</div>
 	</div>
+	<div class="form-group">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="archive-confirm" name="archive-confirm" {% if initial or archive_confirm %} checked{% endif %}{% if published %} disabled{% endif %}> {% trans %}This release was already published somewhere else{% endtrans %}
+			</label>
+		</div>
+	</div>
+	<div id="archive">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="initial">{% trans %}Original publishing date{% endtrans %}</label>
+					<input type="date" class="form-control" id="initial" name="initial" placeholder="{{date}}" value="{{initial}}"{% if initial %} required{% endif %}{% if published %} disabled{% endif %}>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if published %}
+	<p class="help-block">{% trans %}These settings cannot be changed anymore.{% endtrans %}</p>
+	{% else %}
 	<div class="form-group">
 		<p class="help-block">{% trans %}These settings cannot be changed once the release has been published.{% endtrans %}</p>
 		<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
 	</div>
+	{% endif %}
 </form>

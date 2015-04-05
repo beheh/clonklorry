@@ -81,6 +81,7 @@ CREATE TABLE `release` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `addon` int(11) NOT NULL,
   `version` varchar(255) NOT NULL,
+  `initial` date DEFAULT NULL,
   `timestamp` datetime DEFAULT NULL,
   `shipping` bit(1) NOT NULL DEFAULT b'0',
   `assetsecret` varchar(64) NOT NULL,

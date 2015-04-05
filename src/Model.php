@@ -109,6 +109,17 @@ abstract class Model
 
     /**
      *
+     * @param string $baseName
+     * @param mixed $value
+     * @param string|null $language
+     */
+    final protected function setLocalizedValue($baseName, $value, $language = null) {
+        $field = $this->localizeField($baseName, $language);
+        $this->setValue($field, $value);
+    }
+
+    /**
+     *
      * @param string $name
      * @return mixed
      */
@@ -121,6 +132,17 @@ abstract class Model
         $this->ensureLoaded();
         return $this->values[$name];
     }
+
+    /**
+     *
+     * @param string $baseName
+     * @param string|null $language
+     * @return mixed
+     */
+    final protected function getLocalizedValue($baseName, $language = null) {
+        return $this->getValue($this->localizeField($baseName, $language));
+    }
+
     private $multiple = false;
 
     final public function all()
@@ -295,6 +317,9 @@ abstract class Model
             case 'datetime':
                 $value = intval($value);
                 $this->validateNumber($value);
+                break;
+            case 'date':
+                $this->validateRegexp($value, '/^[1-9][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[01])$/');
                 break;
             case 'boolean':
                 $value = ($value ? true : false);

@@ -22,6 +22,7 @@ class Release extends Model
         return array(
             'addon' => 'int',
             'version' => 'string',
+            'initial' => 'date',
             'timestamp' => 'datetime',
             'ready' => 'boolean',
             'shipping' => 'boolean',
@@ -132,6 +133,16 @@ class Release extends Model
             return false;
         }
         return true;
+    }
+
+    public function setInitial($initial)
+    {
+        return $this->setValue('initial', $initial);
+    }
+
+    public function getInitial()
+    {
+        return $this->getValue('initial');
     }
 
     public function setTimestamp($timestamp)

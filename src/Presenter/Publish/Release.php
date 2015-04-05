@@ -35,7 +35,7 @@ class Release extends Presenter
         } elseif ($addon->isSubmittedForApproval()) {
             $this->context['submitted'] = true;
         }
-        $this->context['released'] = $release->isReleased();
+        $this->context['published'] = $release->isReleased();
 
 
         $this->context['title'] = sprintf(gettext('Edit %s'),
@@ -57,6 +57,13 @@ class Release extends Presenter
         }
         if (isset($_GET['version-changed'])) {
             $this->success('version', gettext('Release saved.'));
+        }
+
+        $this->context['date'] = date('Y-m-d', strtotime('first day of this month')); // for date input fields
+
+
+        if(!isset($this->context['initial'])) {
+            $this->context['initial'] = $release->getInitial();
         }
 
         /* Files */
@@ -97,6 +104,12 @@ class Release extends Presenter
         /* Basic */
 
         if (isset($_POST['basic-form'])) {
+            if(isset($_POST['release-remove'])) {
+                $release->delete();
+                $this->redirect('/publish/'.$id.'#releases');
+                return;
+            }
+
             $new_version = filter_input(INPUT_POST, 'version');
             $this->context['new_version'] = $new_version;
 
@@ -114,18 +127,29 @@ class Release extends Presenter
                 $errors[] = sprintf(gettext('Version is %s.'), $ex->getMessage());
             }
 
+            $archive_confirm = filter_input(INPUT_POST, 'archive-confirm', FILTER_VALIDATE_BOOLEAN);
+            $initial = filter_input(INPUT_POST, 'initial');
+            if(!$initial || !$archive_confirm) {
+                $initial = null;
+            }
+            $this->context['initial_confirm'] = $archive_confirm;
+            $this->context['initial'] = $initial;
+            try {
+                $release->setInitial($initial);
+            } catch (ModelValueInvalidException $ex) {
+                $errors[] = sprintf(gettext('Initial release date is %s.'), $ex->getMessage());
+            }
+
             if (empty($errors)) {
                 if ($release->modified()) {
                     if ($release->save()) {
-                        $this->success('version', gettext('Version saved.'));
-                        $this->redirect('/publish/'.$addon->getId().'/'.$new_version.'?version-changed');
+                        $this->success('basic', gettext('Release saved.'));
                     } else {
-                        $this->error('version',
-                            gettext('Error saving the release.'));
+                        $this->error('version', gettext('Error saving the release.'));
                     }
                 }
             } else {
-                $this->error('version', implode($errors, '<br>'));
+                $this->error('basic', implode($errors, '<br>'));
             }
         }
 

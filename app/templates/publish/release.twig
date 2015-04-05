@@ -11,7 +11,7 @@
 					{{addon.title}}
 				</a>
 				<small><a href="#basic">{% include 'functions/labels/version.twig' with {'version' : version} %}</a>
-					<a href="#publish">{% if released %}
+					<a href="#publish">{% if published %}
 						{% if latest %}
 							{% include "functions/labels/latest.twig" %}
 						{% endif %}
@@ -66,7 +66,18 @@
 
 {% block javascript %}
 	$('.tab-pane form').areYouSure({'message':translation.unsavedChanges});
-	
+
+	$('#archive-confirm').change(function() {
+		if($(this).prop('checked')) {
+			$('#archive').show();
+			$('#initial').attr('required', true);
+		} else {
+			$('#archive').hide();
+			$('#initial').removeAttr('required');
+		}
+	});
+	$('#archive-confirm').trigger('change');
+
 	$('#publish-quick-confirm').prop('checked', false);
 	$('#publish-quick-confirm').change(function() {
 		if($(this).prop('checked')) {
