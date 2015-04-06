@@ -101,19 +101,17 @@ class Settings extends Presenter
         $user = $this->session->getUser();
 
         if (isset($_POST['profiles-form'])) {
-            $error = false;
+            $errors = array();
 
             // Clonk Forge profile url
-            $clonkforge = trim(filter_input(INPUT_POST, 'clonkforge'));
+            $clonkforge = trim(filter_input(INPUT_POST, 'clonkforge', FILTER_VALIDATE_URL));
             $this->context['clonkforge'] = $clonkforge;
             try {
                 $user->setClonkforgeUrl($clonkforge);
                 $this->context['clonkforge'] = $user->getClonkforgeUrl();
             } catch (ModelValueInvalidException $e) {
-                $this->error('profiles',
-                    sprintf(gettext('Clonk Forge profile url is %s.'),
-                        gettext('invalid')));
-                $error = true;
+                $errors[] = sprintf(gettext('Clonk Forge profile url is %s.'),
+                        gettext('invalid'));
             }
 
             // GitHub name
@@ -123,12 +121,13 @@ class Settings extends Presenter
                 $user->setGithub($github);
                 $this->context['github'] = $user->getGithub();
             } catch (ModelValueInvalidException $e) {
-                $this->error('profiles',
-                    sprintf(gettext('GitHub name is %s.'), gettext('invalid')));
-                $error = true;
+                $errors[] = sprintf(gettext('GitHub name is %s.'), $e->getMessage());
             }
 
-            if ($user->modified() && !$error) {
+            if(!empty($errors)) {
+                $this->error('profiles', implode('<br>', $errors));
+            }
+            else if ($user->modified()) {
                 $user->save();
                 $this->success('profiles', gettext('Your links were saved.'));
             }
@@ -209,12 +208,9 @@ class Settings extends Presenter
 
         if (isset($_POST['remove-account-form'])) {
             $this->context['show_remove_account'] = true;
-            $password = filter_input(INPUT_POST, 'password');
 
-            $confirm = filter_input(INPUT_POST, 'confirm',
-                    FILTER_VALIDATE_BOOLEAN) || false;
-            if ($confirm) {
-                if (!$user->hasPassword() || $user->matchPassword($password)) {
+            if (filter_input(INPUT_POST, 'confirm', FILTER_VALIDATE_BOOLEAN)) {
+                if (!$user->hasPassword() || $user->matchPassword(filter_input(INPUT_POST, 'password'))) {
                     $this->warning('remove-account', 'Not yet implemented.');
                 } else {
                     $this->error('remove-account', gettext('Password wrong.'));
