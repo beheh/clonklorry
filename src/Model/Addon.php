@@ -100,8 +100,6 @@ class Addon extends Model
 
     public function setTitle($title, $language = null)
     {
-        $field = $this->localizeField('title', $language);
-
         $title = ucfirst(trim($title));
         if (empty($title)) {
             $title = null;
@@ -111,7 +109,7 @@ class Addon extends Model
             == 'de' && !empty($this->getTitle('en'))) || $title) {
             $this->validateString($title, 3, 50);
         }
-        return $this->setValue($field, $title);
+        return $this->setLocalizedValue('title', $title, $language);
     }
 
     public function getTitle($language = null)
@@ -126,7 +124,7 @@ class Addon extends Model
                 return $title_de;
             }
         }
-        $title = $this->getValue($this->localizeField('title', $language));
+        $title = $this->getLocalizedValue('title', $language);
         if ($language === null && empty($title)) {
             return gettext('Unnamed addon');
         }
