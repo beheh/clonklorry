@@ -4,25 +4,29 @@
 	{% include 'functions/alert.twig' with {'selector' : 'presentation'} %}
 	<div class="row">
 		<div class="col-md-8">
-			<!--<div class="col-sm-3">
-				<div class="form-group">
-					<label for="title">{% trans "Title image" %}</label>
-					<img class="media-object" src="http://placehold.it/76x57" width="76" height="57">
-					<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span> {% trans %}Select{% endtrans %}</button>
-				</div>
-			</div>
-			<div class="col-sm-9">
-				<div class="form-group">
-					<label for="introduction">{% trans "Sitewide intro" %}</label>
-					<textarea class="form-control" id="introduction" name="introduction" rows="2" placeholder="{% trans %}Short intro text, will be used around the site alongside the title image.{% endtrans %}">{{introduction}}</textarea>
-				</div>
-			</div>!-->
 			<div class="form-group">
-				<label for="description">{% trans "Description" %}</label>
-				<textarea class="form-control" id="description" name="description" rows="8" placeholder="{% trans %}Explain the general idea behind this addon.{% endtrans %}">{{description}}</textarea>
+				<label for="introduction_en">{% trans "Introduction (English)" %}</label>
+				<textarea class="form-control" id="introduction_en" name="introduction_en" rows="4" placeholder="{% trans %}Briefly introduce English users into this addon's setting.{% endtrans %}">{{introduction_en}}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="introduction_de">{% trans "Introduction (German)" %}</label>
+				<textarea class="form-control" id="introduction_de" name="introduction_de" rows="4" placeholder="{% trans %}Briefly introduce German users into this addon's setting.{% endtrans %}">{{introduction_de}}</textarea>
 			</div>
 		</div>
 		<div class="col-md-4">
+			<div class="form-group">
+				{% set x = 200 %}{% set y = 150%}
+				<label for="title">{% trans %}Title image ({{x}}&times;{{y}}){% endtrans %}</label>
+				<div>
+					{% if image %}
+					<img class="media-object" src="http://placehold.it/200x150" width="76" height="57"></p>
+					{% endif %}
+					<p>
+						<button class="btn btn-success">{% trans %}Select file&hellip;{% endtrans %}</button>
+						{% if image %}<button class="btn btn-default">{% trans %}Remove{% endtrans %}</button>{% endif %}
+					</p>
+				</div>
+			</div>
 			<div class="form-group">
 				<label for="website-url">{%trans "Website" %}</label>
 				<input type="url" class="form-control" name="website-url" id="website-url" value="{{website}}" placeholder="http://clonkforge.net/pr.php?pr=">
