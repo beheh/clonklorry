@@ -106,7 +106,7 @@ class Release extends Presenter
         if (isset($_POST['basic-form'])) {
             if(isset($_POST['release-remove'])) {
                 $release->delete();
-                $this->redirect('/publish/'.$id.'#releases');
+                $this->redirect('/publish/'.$id.'?release-removed#releases');
                 return;
             }
 

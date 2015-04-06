@@ -118,6 +118,10 @@ class Edit extends Presenter
             $this->context['focus_version'] = true;
         }
 
+        if (isset($_GET['release-removed'])) {
+            $this->success('release', gettext('Removed release.'));
+        }
+
         // fetch all releasees for this addon and roughly sort them
         $releases_raw = $this->persistence->build('Release')->all()->order('timestamp')->order('version')->byAddon($addon->getId());
         // move unpublished releases to end of list
@@ -359,7 +363,7 @@ class Edit extends Presenter
 
             if (empty($errors)) {
                 $release->save();
-                $this->success('release', gettext('Release created.'));
+                $this->success('release', gettext('Release planned.'));
             } else {
                 $this->error('release', implode('<br>', $errors));
                 $this->context['focus_version'] = true;
