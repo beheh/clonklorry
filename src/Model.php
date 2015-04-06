@@ -458,12 +458,11 @@ abstract class Model
 
     /**
      * Ensure that all changes to model are persistent.
-     * @return bool True, if all changes will be persistent
      */
     final public function save()
     {
         if (!$this->modified()) {
-            return true;
+            return;
         }
 
         $changes = array();
@@ -475,20 +474,20 @@ abstract class Model
         }
         if ($this->loaded) {
             if (!$this->persistence->update($this, $changes)) {
-                return false;
+                throw new RuntimeException('error updating table '.$this->getTable().' (with id '.$this->getId().')');
             }
         } else {
             $id = $this->persistence->insert($this, $changes);
             if (!$id) {
-                return false;
+                throw new RuntimeException('error inserting into '.$this->getTable());
             }
             $this->changes['id'] = $id;
         }
+        // persist values
         $this->values = array_merge($this->values, $this->changes);
 
         $this->rollback();
         $this->loaded = true;
-        return true;
     }
 
     /**

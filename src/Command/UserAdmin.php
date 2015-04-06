@@ -35,10 +35,7 @@ class UserAdmin extends Command
             throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
         }
         $user->setPermission(\Lorry\Model\User::PERMISSION_ADMINISTRATE);
-        if ($user->save()) {
-            $output->writeln('<info>'.$user->getUsername().' is now an administrator</info>');
-        } else {
-            $output->writeln('<error>Error saving the user</error>');
-        }
+        $user->save();
+        $output->writeln('<info>'.$user->getUsername().' is now an administrator</info>');
     }
 }

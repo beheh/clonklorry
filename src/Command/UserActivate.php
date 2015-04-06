@@ -35,10 +35,7 @@ class UserActivate extends Command
             throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
         }
         $user->activate();
-        if ($user->save()) {
-            $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
-        } else {
-            $output->writeln('<error>Error saving the user</error>');
-        }
+        $user->save();
+        $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
     }
 }
