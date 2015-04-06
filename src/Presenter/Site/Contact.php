@@ -57,13 +57,9 @@ class Contact extends Presenter
         }
 
         if (empty($errors)) {
-            if ($ticket->save()) {
-                $this->success('contact',
+            $ticket->save();
+            $this->success('contact',
                     gettext('Thank you for your message, we\'ll take a look at it.'));
-            } else {
-                $this->error('contact',
-                    gettext('Sorry, your message couldn\'t be saved.'));
-            }
         } else {
             $this->context['message'] = $message;
             $this->error('contact', implode('<br>', $errors));

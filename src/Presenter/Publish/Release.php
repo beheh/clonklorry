@@ -142,11 +142,8 @@ class Release extends Presenter
 
             if (empty($errors)) {
                 if ($release->modified()) {
-                    if ($release->save()) {
-                        $this->success('basic', gettext('Release saved.'));
-                    } else {
-                        $this->error('version', gettext('Error saving the release.'));
-                    }
+                    $release->save();
+                    $this->success('basic', gettext('Release saved.'));
                 }
             } else {
                 $this->error('basic', implode($errors, '<br>'));
@@ -180,12 +177,8 @@ class Release extends Presenter
 
             if (empty($errors)) {
                 if ($release->modified()) {
-                    if ($release->save()) {
-                        $this->success('changes', gettext('Changes saved.'));
-                    } else {
-                        $this->error('changes',
-                            gettext('Error saving the changes.'));
-                    }
+                    $release->save();
+                    $this->success('changes', gettext('Changes saved.'));
                 }
             } else {
                 $this->error('changes', implode($errors, '<br>'));
