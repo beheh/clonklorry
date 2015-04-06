@@ -60,6 +60,7 @@ class Contact extends Presenter
             $ticket->save();
             $this->success('contact',
                     gettext('Thank you for your message, we\'ll take a look at it.'));
+            $this->context['hide_form'] = true;
         } else {
             $this->context['message'] = $message;
             $this->error('contact', implode('<br>', $errors));
