@@ -10,6 +10,21 @@
 						<li data-target="#featured-front" data-slide-to="1"></li>
 					</ol>
 					<div class="carousel-inner">
+						{% for banner in banners%}
+						<div class="item">
+							<a href="{{banner.url}}">
+								<img src="{{banner.img}}" alt="{{bannner.alt}}">
+							</a>
+							<div class="carousel-caption">
+								<h3>
+									{% if banner.heading%}<strong>{{banner.heading}}</strong>{% endif %}
+									{% if banner.description %}<br>{{banner.description}}{% endif %}
+								<h3>
+							</div>
+						</div>
+						{% else %}
+							
+						{% endfor %}
 						<div class="item active">
 							<a href="{{base}}/about">
 								<img src="{{resources}}/lorry/img/banner.png" alt="Lorry">
