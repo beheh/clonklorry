@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
 use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Model\User;
 
 class Settings extends Presenter
 {
@@ -45,7 +46,7 @@ class Settings extends Presenter
                     if ($user->modified()) {
                         $this->success('oauth',
                             gettext('Removed login service.'));
-                        $user->save();
+                        $this->manager->flush();
                     }
                 } catch (ModelValueInvalidException $ex) {
                     $this->error('oauth',
@@ -61,7 +62,7 @@ class Settings extends Presenter
             $this->context['clonkforge'] = $user->getClonkforgeUrl();
         }
         if (!isset($this->context['github'])) {
-            $this->context['github'] = $user->getGithub();
+            $this->context['github'] = $user->getGithubName();
         }
 
         $this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge/url'),
@@ -84,10 +85,10 @@ class Settings extends Presenter
 
         $this->context['can_reset_password'] = $this->session->canResetPassword();
 
-        $oauth = array('github', 'google', 'facebook');
+        $oauth = array('github' => User::PROVIDER_GITHUB, 'google' => User::PROVIDER_GOOGLE, 'facebook' => User::PROVIDER_FACEBOOK);
         $this->context['oauth'] = array();
-        foreach ($oauth as $provider) {
-            $this->context['oauth'][$provider] = $user->hasOauth($provider);
+        foreach ($oauth as $name => $provider) {
+            $this->context['oauth'][$name] = $user->hasOauth($provider);
         }
 
         $this->display('account/settings.twig');
@@ -128,7 +129,7 @@ class Settings extends Presenter
                 $this->error('profiles', implode('<br>', $errors));
             }
             else if ($user->modified()) {
-                $user->save();
+                $this->manager->flush();
                 $this->success('profiles', gettext('Your links were saved.'));
             }
         }
@@ -150,7 +151,7 @@ class Settings extends Presenter
 
             if ($user->modified()) {
                 if (empty($errors)) {
-                    $user->save();
+                    $this->manager->flush();
 
                     // remove activation jobs with previous address, if any
                     try {
@@ -200,7 +201,7 @@ class Settings extends Presenter
             $language = filter_input(INPUT_POST, 'language');
             if ($this->localisation->setDisplayLanguage($language)) {
                 $user->setLanguage($language);
-                $user->save();
+                $this->manager->flush();
                 $this->redirect('/settings');
                 return;
             }
@@ -231,7 +232,7 @@ class Settings extends Presenter
                     try {
                         $user->setPassword($password_new);
                         $this->session->clearResetPassword();
-                        $user->save();
+                        $this->manager->flush();
                         $this->session->identify();
                         $this->context['state'] = $this->session->regenerateState();
                         if ($has_password) {
@@ -258,7 +259,7 @@ class Settings extends Presenter
 
         if (isset($_POST['remote-logout-form'])) {
             $user->regenerateSecret();
-            $user->save();
+            $this->manager->flush();
             $this->session->refresh();
             $this->context['state'] = $this->session->regenerateState();
 

@@ -2,60 +2,36 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
+use Lorry\Model2;
 
-/*
- * @method \Lorry\Model\Game byId(int $id)
- * @method \Lorry\Model\Game[] byAnything()
+/**
+ * @Entity
  */
-
-class Game extends Model
+class Game extends Model2 implements Lorry\ApiObjectInterface
 {
 
-    public function getTable()
-    {
-        return 'game';
+    /** @Column(type="string", length=16, unique=true) */
+    protected $short;
+
+    public function setShort($short) {
+        $this->short = $short;
     }
 
-    public function getSchema()
-    {
-        return array(
-            'short' => 'varchar(16)',
-            'title' => 'varchar(16)'
-        );
+    public function getShort() {
+        return $this->short;
     }
 
-    public function setShort($short)
-    {
-        return $this->setValue('short', $short);
+    public function setTitle($title) {
+        $this->title = $title;
     }
 
-    /**
-     * @return \Lorry\Model\Game
-     */
-    public function byShort($short)
-    {
-        return $this->byValue('short', $short);
-    }
-
-    public function getShort()
-    {
-        return $this->getValue('short');
-    }
-
-    public function setTitle($title)
-    {
-        return $this->setValue('title', $title);
-    }
-
-    public function getTitle()
-    {
-        return $this->getValue('title');
+    public function getTitle() {
+        return $this->title;
     }
 
     public function __toString()
     {
-        return $this->getTitle().'';
+        return (string) $this->getTitle();
     }
 
     public function forApi()

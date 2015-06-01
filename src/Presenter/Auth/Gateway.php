@@ -6,11 +6,12 @@ use ErrorException;
 use Lorry\Presenter;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Model\User;
 
 class Gateway extends Presenter
 {
 
-    public function get($provider)
+    public function get($providerName)
     {
         try {
             $login_hint = false;
@@ -24,8 +25,19 @@ class Gateway extends Presenter
                     $_SESSION['returnto'] = $returnto;
                 }
             }
-            switch ($provider) {
+
+            $provider = 0;
+            switch($providerName) {
                 case 'github':
+                    $provider = User::PROVIDER_GITHUB;
+                case 'google':
+                    $provider = User::PROVIDER_GOOGLE;
+                case 'facebook':
+                    $provider = User::PROVIDER_FACEBOOK;
+            }
+
+            switch ($provider) {
+                case User::PROVIDER_GITHUB:
                     $scopes = array();
                     // don't ask for a scope here, since GitHub will send any public address
                     $github = new \League\OAuth2\Client\Provider\Github(array(
@@ -38,7 +50,7 @@ class Gateway extends Presenter
                     $this->session->setAuthorizationState($github->state);
                     $this->redirect($authorizationUrl, true);
                     break;
-                case 'google':
+                case User::PROVIDER_GOOGLE:
                     $scopes = array('https://www.googleapis.com/auth/plus.me');
                     if (isset($_GET['register'])) {
                         $scopes[] = 'https://www.googleapis.com/auth/userinfo.email';
@@ -57,7 +69,7 @@ class Gateway extends Presenter
                     $this->session->setAuthorizationState($google->state);
                     $this->redirect($authorizationUrl, true);
                     break;
-                case 'facebook':
+                case User::PROVIDER_FACEBOOK:
                     $scopes = array('public_profile');
                     if (isset($_GET['register'])) {
                         $scopes[] = 'email';

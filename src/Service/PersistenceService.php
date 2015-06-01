@@ -4,13 +4,12 @@ namespace Lorry\Service;
 
 use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
-use PDO;
 use RuntimeException;
 use InvalidArgumentException;
-use PDOException;
 use Lorry\Model;
 use Aura\SqlQuery\QueryFactory;
 use Interop\Container\ContainerInterface;
+use \PDO;
 
 class PersistenceService extends Service
 {
@@ -50,31 +49,14 @@ class PersistenceService extends Service
      * @var QueryFactory
      */
     private $factory = null;
-    private $hasFailed = false;
-
-    public function hasFailed()
-    {
-        return $this->hasFailed;
-    }
 
     public function ensureConnected()
     {
         if ($this->connection !== null) {
             return true;
         }
-        try {
-            $dsn = $this->config->get('persistence/dsn');
-            $this->connection = new PDO($dsn,
-                $this->config->get('persistence/username'),
-                $this->config->get('persistence/password'));
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE,
-                PDO::ERRMODE_EXCEPTION);
-            $this->factory = new QueryFactory(strstr($dsn, ':', true));
-        } catch (PDOException $ex) {
-            $this->hasFailed = true;
-            // catch the pdo exception to prevent credential leaking (either logs or debug frontend)
-            throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
-        }
+        $this->connection = $this->container->get('PDO');
+        $this->factory = new QueryFactory(strstr($this->config->get('persistence/dsn'), ':', true));
     }
 
     /**

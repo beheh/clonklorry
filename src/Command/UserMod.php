@@ -7,17 +7,17 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Lorry\Model\User;
 
-class UserAdmin extends UserModifyCommand
+class UserMod extends UserModifyCommand
 {
 
     protected function configure()
     {
         $this
-            ->setName('user:admin')
-            ->setDescription('Make a user administrator')
+            ->setName('user:mod')
+            ->setDescription('Make a user moderator')
             ->addArgument(
                 'username', InputArgument::REQUIRED,
-                'The username of the new administrator'
+                'The username of the new moderator'
             )
         ;
     }
@@ -26,6 +26,6 @@ class UserAdmin extends UserModifyCommand
         OutputInterface $output)
     {
         $user->setPermission(User::PERMISSION_MODERATE);
-        $output->writeln('<info>'.$user->getUsername().' is now an administrator</info>');
+        $output->writeln('<info>'.$user->getUsername().' is now a moderator</info>');
     }
 }

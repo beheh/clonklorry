@@ -20,9 +20,6 @@ notice:
 # default urls for links
 clonkforge:
     url: http://clonkforge.net/user.php?usr=%d
-github:
-    url: https://github.com/%s
-    name: ([a-zA-Z0-9][a-zA-Z0-9-]*)
 
 # directories for user data, should be writeable
 upload:
@@ -63,6 +60,10 @@ cdn:
 
 # oauth secrets
 oauth:
+    github:
+        id:
+        secret:
+
     google:
         id:
         secret:

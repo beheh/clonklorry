@@ -6,6 +6,8 @@ use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\UnitOfWork;
 use InvalidArgumentException;
 use Exception;
 
@@ -17,12 +19,14 @@ class SessionService extends Service
      */
     protected $config;
 
+    protected $manager;
+
     public function __construct(LoggerFactoryInterface $loggerFactory,
-        ConfigService $config, PersistenceService $persistence)
+        ConfigService $config, ObjectManager $manager)
     {
         parent::__construct($loggerFactory);
         $this->config = $config;
-        $this->persistence = $persistence;
+        $this->manager = $manager;
         session_name('lorry_session');
     }
     /**
@@ -45,8 +49,8 @@ class SessionService extends Service
     final public function start(User $user, $remember = false, $identify = false)
     {
         $this->ensureSession();
-        if (!$user->isLoaded()) {
-            throw new InvalidArgumentException('user is not loaded or does not exist');
+        if ($this->manager->getUnitOfWork()->getEntityState($user) !== UnitOfWork::STATE_MANAGED) {
+            throw new InvalidArgumentException('user is not managed');
         }
         $this->authenticate($user);
         if ($identify) {
@@ -238,7 +242,8 @@ class SessionService extends Service
             return;
         }
         if (isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
-            $user = $this->persistence->build('User')->byId($_SESSION['user']);
+            $user = $this->manager->find('Lorry\Model\User', $_SESSION['user']);
+            //$user = $this->persistence->build('User')->byId($_SESSION['user']);
             if ($user && $user->matchSecret($_SESSION['secret'])) {
                 $this->user = $user;
             } else {
@@ -248,7 +253,8 @@ class SessionService extends Service
             $user = null;
             $login = explode('$', $_COOKIE['lorry_login']);
             if (count($login) == 3 && is_numeric($login[1])) {
-                $user = $this->persistence->build('User')->byId($login[1]);
+                $user = $this->manager->find('Lorry\Model\User', $login[1]);
+                //$user = $this->persistence->build('User')->byId($login[1]);
                 if ($user && !empty($login[2]) && $user->matchSecret($login[2])) {
                     $this->authenticate($user);
                 }
@@ -268,7 +274,8 @@ class SessionService extends Service
     {
         if (empty($user->getSecret())) {
             $user->regenerateSecret();
-            $user->save();
+            $this->manager->persist($user);
+            $this->manager->flush();
         }
     }
 

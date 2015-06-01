@@ -5,16 +5,37 @@ namespace Lorry\Model;
 use Lorry\Model;
 use Lorry\Exception\ModelValueInvalidException;
 
-/*
- * @method \Lorry\Model\Addon byId(int $id)
- * @method \Lorry\Model\Addon[] byAnything()
+/**
+ * @Entity
+ * @HasLifecycleCallbacks
  */
-
 class Addon extends Model
 {
 
-    public function getTable()
-    {
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="ownedAddons")
+     **/
+    protected $owner;
+
+    /** @Column(type="string", length=64, unique=true) */
+    protected $short;
+
+    /** @Column(type="integer") */
+    protected $game;
+
+    /** @Column(type="string") */
+    protected $title;
+
+    /** @Column(type="string") */
+    protected $website;
+
+    /** @Column(type="string") */
+    protected $forum;
+
+    /** @Column(type="string") */
+    protected $bugtracker;
+
+    public function getTable() {
         return 'addon';
     }
 

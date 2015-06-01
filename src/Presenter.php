@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @property \Lorry\Service\FileService $file
  * @property \Lorry\Router $router
  * @property \Lorry\TemplateEngineInterface $twig
+ * @property \Doctrine\Common\Persistence\ObjectManager $manager
  */
 abstract class Presenter
 {

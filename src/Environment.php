@@ -6,6 +6,7 @@ use Lorry\Exception\NotImplementedException;
 use Lorry\Router;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
+use RuntimeException;
 
 class Environment
 {
@@ -61,6 +62,31 @@ class Environment
         $container->set('logger', \DI\link('Psr\Log\LoggerInterface'));
 
         $container->set('config', \DI\link('Lorry\Service\ConfigService'));
+
+        $container->set('PDO',
+            \DI\factory(function() use ($config) {
+                try {
+                    $dsn = $config->get('persistence/dsn');
+                    $dbh = new \PDO($dsn,
+                        $config->get('persistence/username'),
+                        $config->get('persistence/password'));
+                    $dbh->setAttribute(\PDO::ATTR_ERRMODE,
+                        \PDO::ERRMODE_EXCEPTION);
+                    return $dbh;
+                } catch (\PDOException $ex) {
+                    // catch the pdo exception to prevent credential leaking (either logs or debug frontend)
+                    throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
+                }
+            }));
+            
+        $container->set('Doctrine\Common\Persistence\ObjectManager',
+            \DI\factory(function() use ($config, $container) {
+                $doctrine_config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(array(self::PROJECT_ROOT.'/src/Model'), $config->get('debug'));
+                $connectionParams = array('pdo' => $container->get('PDO'));
+                return \Doctrine\ORM\EntityManager::create($connectionParams, $doctrine_config);
+            }));
+        $container->set('manager', \DI\link('Doctrine\Common\Persistence\ObjectManager'));
+
         $container->set('persistence',
             \DI\link('Lorry\Service\PersistenceService'));
         $container->set('localisation',
@@ -256,7 +282,8 @@ class Environment
                 throw new \Exception('failed to get error presenter "'.$presenterClass.'"');
             }
         } catch (\Exception $exception) {
-            if ($this->container->get('persistence')->hasFailed()) {
+            if (false) {
+                // @todo: PDO connection failed
                 $this->container->get('Lorry\TemplateEngineInterface')->addGlobal('site_enabled',
                     false);
                 $this->logger->alert('cannot reach database');

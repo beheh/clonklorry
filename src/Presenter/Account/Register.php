@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
 use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Model\User;
 
 class Register extends Presenter
 {
@@ -70,9 +71,10 @@ class Register extends Presenter
             $oauth = $_SESSION['register_oauth'];
         }
 
-        $user = $this->persistence->build('User');
+        $user = new User();
+        $users = $this->manager->getRepository('Lorry\Model\User');
 
-        if ($this->persistence->build('User')->byUsername($username)) {
+        if (count($users->findBy(array('username' => $username))) > 0) {
             $errors[] = gettext('Username already taken.');
         } else {
             try {
@@ -82,7 +84,7 @@ class Register extends Presenter
             }
         }
 
-        if ($email && $this->persistence->build('User')->byEmail($email)) {
+        if ($email && count($users->findOneBy(array('email' => $email))) > 0) {
             $errors[] = sprintf(gettext('Email address is already in use.'));
         } else {
             try {
@@ -111,8 +113,9 @@ class Register extends Presenter
         $user->setLanguage($this->localisation->getDisplayLanguage());
 
         if (empty($errors)) {
-            $user->setRegistration(time());
-            if ($user->save()) {
+            $this->manager->persist($user);
+            $this->manager->flush();
+            if (true) {
                 $this->logger->notice('creating user "'.$user->getUsername().'"');
                 try {
                     $this->job->submit('Welcome',

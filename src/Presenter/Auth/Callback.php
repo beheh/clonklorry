@@ -10,7 +10,7 @@ use Lorry\Exception\FileNotFoundException;
 class Callback extends Presenter
 {
 
-    public function get($provider)
+    public function get($providerName)
     {
         $this->session->ensureSession();
         if (isset($_SESSION['register_oauth'])) {
@@ -29,10 +29,20 @@ class Callback extends Presenter
             unset($_SESSION['returnto']);
         }
 
+        $provider = 0;
+        switch($providerName) {
+            case 'github':
+                $provider = User::PROVIDER_GITHUB;
+            case 'google':
+                $provider = User::PROVIDER_GOOGLE;
+            case 'facebook':
+                $provider = User::PROVIDER_FACEBOOK;
+        }
+
         $this->logger->debug('handling authorization callback');
         try {
             switch ($provider) {
-                case 'github':
+                case User::PROVIDER_GITHUB:
                     $provider_title = 'GitHub';
                     $oauth_provider = new \League\OAuth2\Client\Provider\Github(array(
                         'clientId' => $this->config->get('oauth/github/id'),
@@ -40,7 +50,7 @@ class Callback extends Presenter
                         'redirectUri' => $this->config->get('base').'/auth/callback/github'
                     ));
                     break;
-                case 'google':
+                case User::PROVIDER_GOOGLE:
                     $provider_title = 'Google';
                     $oauth_provider = new \League\OAuth2\Client\Provider\Google(array(
                         'clientId' => $this->config->get('oauth/google/id'),
@@ -48,7 +58,7 @@ class Callback extends Presenter
                         'redirectUri' => $this->config->get('base').'/auth/callback/google'
                     ));
                     break;
-                case 'facebook':
+                case User::PROVIDER_FACEBOOK:
                     $provider_title = 'Facebook';
                     $oauth_provider = new \League\OAuth2\Client\Provider\Facebook(array(
                         'clientId' => $this->config->get('oauth/facebook/id'),
@@ -113,30 +123,33 @@ class Callback extends Presenter
             // we ignore returnto
             unset($_SESSION['returnto']);
 
-            // test, if other user has already used this uid
-            $test_user = $this->persistence->build('User')->byOauth($provider,
-                $uid);
-            if ($test_user) {
-                $this->redirect('/settings?update-oauth=duplicate#oauth');
-                return;
-            }
+            // @todo test, if other user has already used this uid
+            /*$users = $this->manager->getRepository('Lorry\Model\User');
+
+                if ($test_user) {
+                    $this->redirect('/settings?update-oauth=duplicate#oauth');
+                    return;
+                }
+            }*/
 
             // we now trust provider and user
             $user = $this->session->getUser();
             $user->setOauth($provider, $uid);
 
             // we might be able to add the users github profile
-            if($provider == 'github' && !$user->getGithub()) {
-                $user->setGithub($profile->nickname);
+            if($provider == 'github' && !$user->getGithubName()) {
+                $user->setGithubName($profile->nickname);
             }
 
-            $user->save();
+            $this->manager->flush();
 
             $this->redirect('/settings?update-oauth=success#oauth');
             return;
         } else {
+            $users = $this->manager->getRepository('Lorry\Model\User');
+
             // grab user by oauth data
-            $user = $this->persistence->build('User')->byOauth($provider, $uid);
+            $user = $users->findOneBy(array('oauth'.ucfirst($providerName) => $uid));
 
             if ($user instanceof User) {
                 $url = '/';

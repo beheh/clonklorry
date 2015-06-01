@@ -25,6 +25,7 @@
 		"container-interop/container-interop": "~1.0",
 		"mnapoli/php-di": "~4.0",
 		"symfony/http-foundation": "~2.6",
+		"doctrine/orm": "~2.5",
 		"beheh/flaps": "~0.1"
     },
 	"suggest": {

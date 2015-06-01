@@ -108,10 +108,11 @@ class Login extends Presenter
             $this->context['username'] = $username;
             // set remember checkmark to persist after post
             $this->context['remember'] = $remember;
-            $user = $this->persistence->build('User')->byUsername($username);
+            $users = $this->manager->getRepository('Lorry\Model\User');
+            $user = $users->findOneBy(array('username' => $username));
             if (!$user) {
                 // try email address instead
-                $user = $this->persistence->build('User')->byEmail($username);
+               $user = $users->findOneBy(array('email' => $username));
                 if ($user) {
                     $this->context['email'] = $username;
                 }

@@ -2,13 +2,12 @@
 
 namespace Lorry\Command;
 
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Lorry\Environment;
+use Lorry\Model\User;
 
-class UserActivate extends Command
+class UserActivate extends UserModifyCommand
 {
 
     protected function configure()
@@ -23,19 +22,10 @@ class UserActivate extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    function modifyUser(User $user, InputInterface $input,
+        OutputInterface $output)
     {
-        $lorry = new Environment();
-        $lorry->setup();
-        $persistence = $lorry->getContainer()->get('persistence');
-
-        $username = $input->getArgument('username');
-        $user = $persistence->build('User')->byUsername($username, true);
-        if ($user === null) {
-            throw new \RuntimeException('Couldn\'t find user with username "'.$username.'".');
-        }
-        $user->activate();
-        $user->save();
+        $user->setPermission(User::PERMISSION_MODERATE);
         $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
     }
 }
