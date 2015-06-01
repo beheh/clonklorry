@@ -79,7 +79,7 @@
 	var usernameLabelUpdate = function() {
 		var val = $('#username').val();
 		var label = $('#username-label');
-		label.text(val.length > 0 ? (val.indexOf('@') > -1 ? label.data('text-email') : label.data('text-username')) : usernameLabelOriginal);
+		label.text(val.indexOf('@') > -1 ? label.data('text-email') : usernameLabelOriginal);
 	};
 	usernameLabelUpdate();
 	$('#username').on('keyup change', usernameLabelUpdate);
