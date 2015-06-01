@@ -97,10 +97,30 @@ class LocalisationService extends Service
         } else {
             $language = $available[0];
             if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-                $accept = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-                foreach ($available as $i => $current) {
-                    if (strpos($accept, $current) === 0) {
-                        $language = $available[$i];
+                $accept = str_replace(' ', '', explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']));
+                // sort by quality
+                $priorities = array();
+                foreach($accept as $part) {
+                    $q = 1;
+                    if(substr_count($part, ';q=') == 1) {
+                        $parts = explode(';q=', $part);
+                        $part = $parts[0];
+                        $q = floatval($parts[1]);
+                    }
+                    $priorities[$part] = $q;
+                }
+                arsort($priorities);
+                foreach ($priorities as $current => $val) {
+                    $found = false;
+                    foreach($available as $j => $offered) {
+                        if(strpos($offered, $current) === 0) {
+                            $language = $offered;
+                            $found = true;
+                            break;
+                        }
+                    }
+                    if($found) {
+                        break;
                     }
                 }
             }
