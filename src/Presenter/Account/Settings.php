@@ -119,8 +119,8 @@ class Settings extends Presenter
             $github = trim(filter_input(INPUT_POST, 'github'));
             $this->context['github'] = $github;
             try {
-                $user->setGithub($github);
-                $this->context['github'] = $user->getGithub();
+                $user->setGithubName($github);
+                $this->context['github'] = $user->getGithubName();
             } catch (ModelValueInvalidException $e) {
                 $errors[] = sprintf(gettext('GitHub name is %s.'), $e->getMessage());
             }

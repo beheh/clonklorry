@@ -14,7 +14,9 @@ class Portal extends Presenter
         $this->offerIdentification();
         $this->security->requireIdentification();
 
-        $game_objects = $this->persistence->build('Game')->byAnything();
+        $games = $this->manager->getRepository('Lorry\Model\Game');
+
+        $game_objects = $games->findAll();
         $games = array();
         foreach ($game_objects as $game) {
             $games[$game->getId()] = $game->forPresenter();
@@ -22,7 +24,7 @@ class Portal extends Presenter
         $this->context['games'] = $games;
 
         $addons = array();
-        foreach ($this->persistence->build('Addon')->bySubmittedForApproval() as $addon) {
+        /*foreach ($this->persistence->build('Addon')->bySubmittedForApproval() as $addon) {
             $result = array(
                 'addon' =>
                 array('id' => $addon->getId(),
@@ -36,7 +38,7 @@ class Portal extends Presenter
                 $result['user'] = $owner->forPresenter();
             }
             $addons[] = $result;
-        }
+        }*/
         $this->context['addons'] = $addons;
 
         $tickets = array();

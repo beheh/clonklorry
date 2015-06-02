@@ -2,25 +2,27 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
+use Lorry\Model2;
 use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Model\User;
+use Lorry\ApiObjectInterface;
 
 /**
  * @Entity
- * @HasLifecycleCallbacks
  */
-class Addon extends Model
+class Addon extends Model2 implements ApiObjectInterface
 {
 
     /**
      * @ManyToOne(targetEntity="User", inversedBy="ownedAddons")
+     * @var Lorry\Model\User
      **/
     protected $owner;
 
     /** @Column(type="string", length=64, unique=true) */
     protected $short;
 
-    /** @Column(type="integer") */
+    /** @ManyToOne(targetEntity="Game") */
     protected $game;
 
     /** @Column(type="string") */
@@ -35,13 +37,8 @@ class Addon extends Model
     /** @Column(type="string") */
     protected $bugtracker;
 
-    public function getTable() {
-        return 'addon';
-    }
 
-    public function getSchema()
-    {
-        return array(
+    /*    return array(
             'owner' => 'string',
             'short' => 'string',
             'title_en' => 'string',
@@ -57,32 +54,16 @@ class Addon extends Model
             'proposed_short' => 'string',
             'approval_submit' => 'datetime',
             'approval_comment' => 'text');
-    }
+    */
 
-    public function setOwner($owner)
+    public function setOwner(User $owner)
     {
-        return $this->setValue('owner', $owner);
-    }
-
-    /**
-     * @return \Lorry\Model\Addon[]
-     */
-    public function byOwner($owner)
-    {
-        return $this->byValue('owner', $owner);
+        return $this->owner = $owner;
     }
 
     public function getOwner()
     {
-        return $this->getValue('owner');
-    }
-
-    /**
-     * @return User
-     */
-    public function fetchOwner()
-    {
-        return $this->fetch('User', 'owner');
+        return $this->owner;
     }
 
     public function validateAddonShort($short)
@@ -99,24 +80,12 @@ class Addon extends Model
         } else {
             $short = null;
         }
-        return $this->setValue('short', $short);
-    }
-
-    /**
-     * @return \Lorry\Model\Addon
-     */
-    public function byShort($short, $game = null)
-    {
-        $constraints = array('short' => $short);
-        if ($game !== null) {
-            $constraints['game'] = $game;
-        }
-        return $this->byValues($constraints);
+        $this->short = $short;
     }
 
     public function getShort()
     {
-        return $this->getValue('short');
+        return $this->short;
     }
 
     public function setTitle($title, $language = null)

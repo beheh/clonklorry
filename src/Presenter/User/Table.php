@@ -13,21 +13,21 @@ class Table extends Presenter
     {
         $this->security->requireLogin();
 
-        $users = $this->persistence->build('User');
+        $users = $this->manager->getRepository('Lorry\Model\User');
 
         $filter = filter_input(INPUT_GET, 'filter');
         switch ($filter) {
             case 'administrators':
                 $this->context['filter'] = gettext('Administrators');
-                $users = $users->all()->byPermission(User::PERMISSION_ADMINISTRATE);
+                $users = $users->getAllAdministrators();
                 break;
             case 'moderators':
                 $this->context['filter'] = gettext('Moderators');
-                $users = $users->all()->byPermission(User::PERMISSION_MODERATE);
+                $users = $users->getAllModerators();
                 break;
             case '':
             case 'users':
-                $users = $users->all()->byAnything();
+                $users = $users->findAll();
                 break;
             default:
                 throw new FileNotFoundException();

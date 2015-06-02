@@ -3,15 +3,19 @@
 namespace Lorry\Model;
 
 use Lorry\Model2;
+use Lorry\ApiObjectInterface;
 
 /**
  * @Entity
  */
-class Game extends Model2 implements Lorry\ApiObjectInterface
+class Game extends Model2 implements ApiObjectInterface
 {
 
     /** @Column(type="string", length=16, unique=true) */
     protected $short;
+
+    /** @Column(type="string", unique=true) */
+    protected $title;
 
     public function setShort($short) {
         $this->short = $short;

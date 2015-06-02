@@ -25,7 +25,7 @@ class UserAdmin extends UserModifyCommand
     function modifyUser(User $user, InputInterface $input,
         OutputInterface $output)
     {
-        $user->setPermission(User::PERMISSION_MODERATE);
+        $user->setPermission(User::PERMISSION_ADMINISTRATE);
         $output->writeln('<info>'.$user->getUsername().' is now an administrator</info>');
     }
 }

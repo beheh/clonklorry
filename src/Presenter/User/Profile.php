@@ -10,14 +10,20 @@ use Lorry\Service\LocalisationService;
 class Profile extends Presenter
 {
 
+    /**
+     *
+     * @param string $username
+     * @throws FileNotFoundException
+     */
     public function get($username)
     {
-        $user = $this->persistence->build('User')->byUsername($username);
+        /* @var $user \Lorry\Model\User */
+        $user = $this->manager->getRepository('Lorry\Model\User')->findOneBy(array('username' => $username));
+
         if (!$user) {
             throw new FileNotFoundException('user '.$username);
         }
 
-        $this->context['title'] = $user->getUsername();
         $this->context['username'] = $user->getUsername();
         $this->context['self'] = $this->session->authenticated() && $user->getId()
             == $this->session->getUser()->getId();
@@ -35,26 +41,25 @@ class Profile extends Presenter
         $this->context['flags'] = $flags;
 
         if ($user->getRegistration()) {
-            $this->context['registration'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATE),
-                $user->getRegistration());
+            $this->context['registration'] = $user->getRegistration()->format($this->localisation->getFormat(LocalisationService::FORMAT_DATE));
         }
 
         $this->context['profiles'] = array();
-        if ($user->getClonkforge()) {
+        if ($user->getClonkforgeUrl()) {
             $this->context['clonkforge'] = array(
                 'profile' => sprintf(gettext('%s on the ClonkForge'),
                     $user->getUsername()),
                 'url' => sprintf($this->config->get('clonkforge/url'),
                     urlencode($user->getClonkforge())));
         }
-        if ($user->getGithub()) {
+        if ($user->getGithubName()) {
             $this->context['github'] = array(
                 'profile' => sprintf(gettext('%s on GitHub'), $user->getGithub()),
                 'url' => sprintf($this->config->get('github/url'),
                     urlencode($user->getGithub())));
         }
 
-        $releases = $this->persistence->build('Release')->all()->byOwner($user->getId());
+        /*$releases = $this->persistence->build('Release')->all()->byOwner($user->getId());
         $this->context['addons'] = array();
         foreach ($releases as $release) {
             $addon = $release->fetchAddon();
@@ -70,7 +75,7 @@ class Profile extends Presenter
             }
 
             $this->context['addons'][] = $user_addon;
-        }
+        }*/
 
         $comments = $this->persistence->build('Comment')->all()->order('timestamp',
                 true)->byOwner($user->getId());

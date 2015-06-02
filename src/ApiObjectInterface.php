@@ -2,6 +2,8 @@
 
 namespace Lorry;
 
-interface ApiObjectInterface {
-    abstract function forApi();
+interface ApiObjectInterface
+{
+
+    public function forApi();
 }

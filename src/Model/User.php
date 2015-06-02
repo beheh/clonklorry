@@ -8,7 +8,8 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="Lorry\Model\UserRepository")
+ * @HasLifecycleCallbacks
  */
 class User extends Model2
 {
@@ -40,7 +41,7 @@ class User extends Model2
 
     /* State */
 
-    /** @Column(type="datetime") */
+    /**@Column(type="datetime") */
     protected $registration;
 
     /** @Column(type="datetime", nullable=true) */
@@ -66,14 +67,14 @@ class User extends Model2
     protected $flags = 0;
 
     /* Data */
+
     /**
      * @OneToMany(targetEntity="Addon", mappedBy="owner")
      * @var Addon[]
      * */
-    //protected $ownedAddons = null;
+    protected $ownedAddons = null;
 
     /* Consts */
-
     const PERMISSION_READ = 1;
     const PERMISSION_MODERATE = 2;
     const PERMISSION_ADMINISTRATE = 3;
@@ -88,21 +89,20 @@ class User extends Model2
 
     /* Getters/Setters */
 
-    final public function setUsername($username)
+    public function setUsername($username)
     {
         //$this->validateString($username, 3, 16);
         //$this->validateRegexp($username, '/^[a-z0-9_]+$/i');
         $this->username = $username;
     }
 
-    final public function getUsername()
+    public function getUsername()
     {
         return $this->username;
     }
 
-    final public function setPassword($password)
+    public function setPassword($password)
     {
-        //$this->validateString($password, 8, 72);
         if (!empty($password)) {
             $hash = password_hash($password, PASSWORD_BCRYPT,
                 array('cost' => 12));
@@ -113,12 +113,12 @@ class User extends Model2
         $this->passwordHash = $hash;
     }
 
-    final public function hasPassword()
+    public function hasPassword()
     {
         return $this->passwordHash !== null;
     }
 
-    final public function matchPassword($password)
+    public function matchPassword($password)
     {
         if (empty($password)) {
             return false;
@@ -128,7 +128,6 @@ class User extends Model2
 
     public function setEmail($email)
     {
-        //$this->validateEmail($email);
         $this->email = $email;
     }
 
@@ -145,39 +144,43 @@ class User extends Model2
         $this->registration = new \DateTime();
     }
 
+    /**
+     *
+     * @return \DateTime
+     */
     public function getRegistration()
     {
         return $this->registration;
     }
 
-    final public function isActivated()
+    public function isActivated()
     {
         return $this->activation !== null;
     }
 
-    final public function activate()
+    public function activate()
     {
         return $this->activation = new \DateTime();
     }
 
-    final public function deactivate()
+    public function deactivate()
     {
         return $this->activation = null;
     }
 
-    final public function regenerateSecret()
+    public function regenerateSecret()
     {
         $secret = base64_encode(openssl_random_pseudo_bytes(64));
         $this->secret = $secret;
         $this->incrementCounter();
     }
 
-    final public function getSecret()
+    public function getSecret()
     {
         return $this->secret;
     }
 
-    final public function matchSecret($secret)
+    public function matchSecret($secret)
     {
         if (empty($secret) || empty($this->secret)) {
             return false;
@@ -185,76 +188,76 @@ class User extends Model2
         return hash_equals($this->secret, $secret);
     }
 
-    final public function setPermission($permission)
+    public function setPermission($permission)
     {
         return $this->permissions = $permission;
     }
 
-    final public function getPermissions()
+    public function getPermissions()
     {
         return $this->permissions;
     }
 
-    final public function hasPermission($permission)
+    public function hasPermission($permission)
     {
         return $this->getPermissions() >= $permission;
     }
 
-    final public function isAdministrator()
+    public function isAdministrator()
     {
         return $this->hasPermission(self::PERMISSION_ADMINISTRATE);
     }
 
-    final public function isModerator()
+    public function isModerator()
     {
         return $this->hasPermission(self::PERMISSION_MODERATE);
     }
 
-    final public function setFlags($flags)
+    public function setFlags($flags)
     {
         $this->flags = $flags;
     }
 
-    final public function getFlags()
+    public function getFlags()
     {
         return $this->flags;
     }
 
-    final public function setFlag($flag)
+    public function setFlag($flag)
     {
         $flags = $this->getFlags();
         $flags = $flags | $flag;
         $this->setFlags($flags);
     }
 
-    final public function unsetFlag($flag)
+    public function unsetFlag($flag)
     {
         $flags = $this->getFlags();
         $flags = $flags xor $flag;
         $this->setFlags($flags);
     }
 
-    final public function hasFlag($flag)
+    public function hasFlag($flag)
     {
         return !!($this->getFlags() & $flag);
     }
 
-    final public function getCounter()
+    public function getCounter()
     {
         return $this->counter;
     }
 
-    final public function incrementCounter()
+    public function incrementCounter()
     {
         return $this->counter++;
     }
 
-    final public function verifyCounter($counter)
+    public function verifyCounter($counter)
     {
         return $this->counter <= $counter;
     }
 
-    final public function setClonkforgeUrl($clonkforge)
+    public function setClonkforgeUrl($clonkforge)
     {
         $scanned = array();
         $id = null;
@@ -275,7 +278,7 @@ class User extends Model2
         }
     }
 
-    final public function setClonkforgeId($id)
+    public function setClonkforgeId($id)
     {
         if ($id) {
             $this->validateNumber($id);
@@ -288,22 +291,22 @@ class User extends Model2
         $this->clonkforgeId = $id;
     }
 
-    final public function getClonkforge()
+    public function getClonkforgeId()
     {
         return $this->clonkforgeId;
     }
 
-    final public function getClonkforgeUrl()
+    public function getClonkforgeUrl()
     {
-        $clonkforge = $this->getClonkforge();
-        if ($clonkforge) {
+        $id = $this->getClonkforgeId();
+        if ($id !== null) {
             return sprintf($this->config->get('clonkforge/url'),
-                $this->getClonkforge());
+                $id());
         }
         return '';
     }
 
-    final public function setGithubName($name)
+    public function setGithubName($name)
     {
         if ($name) {
             //validate to pattern ([a-zA-Z0-9][a-zA-Z0-9-]*)
@@ -317,12 +320,12 @@ class User extends Model2
         return $this->githubName = $name;
     }
 
-    final public function getGithubName()
+    public function getGithubName()
     {
         return $this->githubName;
     }
 
-    final public function hasOauth($provider)
+    public function hasOauth($provider)
     {
         switch ($provider) {
             case self::PROVIDER_GITHUB:
@@ -335,7 +338,7 @@ class User extends Model2
         return false;
     }
 
-    final public function setOauth($provider, $uid)
+    public function setOauth($provider, $uid)
     {
         if (!$uid && !$this->hasPassword() && !$this->hasRemainingOauth($provider)) {
             // do not allow last oauth to be removed without a password
@@ -356,7 +359,7 @@ class User extends Model2
         }
     }
 
-    final protected function hasRemainingOauth($exclude)
+    protected function hasRemainingOauth($exclude)
     {
         $providers = array(self::PROVIDER_GITHUB, self::PROVIDER_GOOGLE, self::PROVIDER_FACEBOOK);
         $provider_count = 0;
@@ -368,24 +371,19 @@ class User extends Model2
         return $provider_count > 0;
     }
 
-    final public function setLanguage($language)
+    public function setLanguage($language)
     {
-        //$this->validateLanguage($language);
         $this->language = $language;
     }
 
-    final public function getProfileUrl()
-    {
-        return $this->config->get('base').'/users/'.$this->getUsername().'';
-    }
-
-    /**
-     *
-     * @return string
-     */
-    final public function getLanguage()
+    public function getLanguage()
     {
         return $this->language;
+    }
+
+    public function getProfileUrl()
+    {
+        return $this->config->get('base').'/users/'.$this->getUsername().'';
     }
 
     public function __toString()
@@ -416,21 +414,19 @@ class User extends Model2
 class UserRepository extends EntityRepository
 {
 
-    public function getUsers()
+    public function getAllAdministrators($firstResult = null, $maxResults = null)
     {
-        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u')
+        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = '.User::PERMISSION_ADMINISTRATE.'')
+                ->setFirstResult($firstResult)
+                ->setMaxResults($maxResults)
                 ->getResult();
     }
 
-    public function getAdministrators()
+    public function getAllModerators($firstResult = null, $maxResults = null)
     {
-        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = "'.User::PERMISSION_ADMINISTRATE.'"')
-                ->getResult();
-    }
-
-    public function getModerators()
-    {
-        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = "'.User::PERMISSION_MODERATE.'"')
+        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = '.User::PERMISSION_MODERATE.'')
+                ->setFirstResult($firstResult)
+                ->setMaxResults($maxResults)
                 ->getResult();
     }
 }
