@@ -10,7 +10,7 @@ abstract class Model2
      */
     protected $id;
 
-    public function getId() {
+    final public function getId() {
         return $this->id;
     }
 }

@@ -4,51 +4,41 @@
 	<div class="container" id="front">
 		<div class="row">
 			<div class="col-md-8 col-sm-12">
+                {% if banners %}
 				<div id="featured-front" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#featured-front" data-slide-to="0" class="active"></li>
-						<li data-target="#featured-front" data-slide-to="1"></li>
-					</ol>
+					{% if banners|length > 1 %}
+                    <ol class="carousel-indicators">
+                        {% for i in 0..banners|length - 1 %}
+						<li data-target="#featured-front" data-slide-to="{{i}}"{% if i == 0 %} class="active"{% endif %}></li>
+                        {% endfor %}
+ 					</ol>
+                    {% endif %}
 					<div class="carousel-inner">
-						{% for banner in banners%}
-						<div class="item">
-							<a href="{{banner.url}}">
-								<img src="{{banner.img}}" alt="{{bannner.alt}}">
-							</a>
-							<div class="carousel-caption">
-								<h3>
-									{% if banner.heading%}<strong>{{banner.heading}}</strong>{% endif %}
-									{% if banner.description %}<br>{{banner.description}}{% endif %}
-								<h3>
-							</div>
-						</div>
-						{% else %}
-							
-						{% endfor %}
+						{% for banner in banners %}
+                        {% set url = banner.url|default(banner.defaultUrl) %}
 						<div class="item active">
-							<a href="{{base}}/about">
-								<img src="{{resources}}/lorry/img/banner.png" alt="Lorry">
-							</a>
+                            {% if url %}<a href="{{url}}">{% endif %}
+								<img src="{{banner.imageUrl|default(banner.defaultImageUrl)}}" alt="{{bannner.alt}}">
+                            {% if url %}</a>{% endif %}
 							<div class="carousel-caption">
-								<h3><strong>{% trans %}This is Lorry{% endtrans %}</strong><br>{% trans %}Welcome back to Clonk{% endtrans %}</h3>
+								<h3>
+									{% if banner.title%}<strong>{{banner.title}}</strong>{% endif %}
+									{% if banner.subtitle%}<br>{{banner.subtitle}}{% endif %}
+								<h3>
 							</div>
 						</div>
-						<div class="item">
-							<a href="{{base}}/addons/rage/moderncombat">
-								<img src="http://placehold.it/900x500/77/00&text=CMC" alt="Codename: Modern Combat">
-							</a>
-							<div class="carousel-caption">
-								<h3><strong>Codename: Modern Combat R1.6</strong><br>{% trans %}Now available{% endtrans %}</h3>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
+                    {% if banners|length > 1 %}
 					<a class="left carousel-control" href="#featured-front" data-slide="prev">
 						<span class="glyphicon glyphicon-chevron-left"></span>
 					</a>
 					<a class="right carousel-control" href="#featured-front" data-slide="next">
 						<span class="glyphicon glyphicon-chevron-right"></span>
 					</a>
+                    {% endif %}
 				</div>
+                {% endif %}
 				<h3>{% trans %}Latest releases{% endtrans %}</h3>
 				{% if new_addons %}
 					<ul class="media-list addons-small">

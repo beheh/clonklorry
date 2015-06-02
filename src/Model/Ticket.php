@@ -4,11 +4,6 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 
-/*
- * @method \Lorry\Model\Ticket byId(int $id)
- * @method \Lorry\Model\Ticket[] byAnything()
- */
-
 class Ticket extends Model
 {
 

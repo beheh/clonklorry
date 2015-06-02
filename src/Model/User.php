@@ -5,7 +5,6 @@ namespace Lorry\Model;
 use Lorry\Exception\ModelValueInvalidException;
 use Lorry\Model2;
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @Entity(repositoryClass="Lorry\Model\UserRepository")
@@ -416,7 +415,8 @@ class UserRepository extends EntityRepository
 
     public function getAllAdministrators($firstResult = null, $maxResults = null)
     {
-        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = '.User::PERMISSION_ADMINISTRATE.'')
+        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = :permission')
+                ->setParameter('permission', User::PERMISSION_ADMINISTRATE)
                 ->setFirstResult($firstResult)
                 ->setMaxResults($maxResults)
                 ->getResult();
@@ -424,7 +424,8 @@ class UserRepository extends EntityRepository
 
     public function getAllModerators($firstResult = null, $maxResults = null)
     {
-        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = '.User::PERMISSION_MODERATE.'')
+        return $this->_em->createQuery('SELECT u FROM Lorry\Model\User u WHERE u.permissions = :permission')
+                ->setParameter('permission', User::PERMISSION_MODERATE)
                 ->setFirstResult($firstResult)
                 ->setMaxResults($maxResults)
                 ->getResult();

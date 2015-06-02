@@ -2,26 +2,34 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
+use Lorry\Model2;
+use Lorry\ApiObjectInterface;
+use Doctrine\ORM\EntityRepository;
 
-/*
- * @method \Lorry\Model\Release byId(int $id)
- * @method \Lorry\Model\Release[] byAnything()
+/**
+ * @Entity(repositoryClass="Lorry\Model\ReleaseRepository")
+ * @HasLifecycleCallbacks
+ * @Table(name="`Release`",uniqueConstraints={@UniqueConstraint(name="addon_version", columns={"addon_id", "version"})})
  */
-
-class Release extends Model
+class Release extends Model2 implements ApiObjectInterface
 {
-
-    /** @ManyToOne(targetEntity="Addon", reversedBy="releases") */
+    /**
+     * @ManyToOne(targetEntity="Addon", inversedBy="releases")
+     * @JoinColumn(nullable=false)
+     * @var Addon
+     */
     protected $addon;
 
-    public function getTable()
-    {
-        return 'release';
-    }
+    /** @Column(type="string") */
+    protected $version;
 
-    public function getSchema()
-    {
+    /**
+     * @Column(type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    protected $published;
+
+    /*
         return array(
             'addon' => 'int',
             'version' => 'string',
@@ -32,85 +40,36 @@ class Release extends Model
             'assetsecret' => 'string',
             'changelog' => 'text',
             'whatsnew' => 'text');
+    */
+
+    public function setAddon($addon)
+    {
+        $this->addon = $addon;
     }
 
-    final public function setAddon($addon)
+    public function getAddon()
     {
-        return $this->setValue('addon', $addon);
+        return $this->addon;
     }
 
-    /**
-     * @return \Lorry\Model\Release[]
-     */
-    final public function byAddon($addon)
-    {
-        return $this->byValue('addon', $addon);
+    public function setVersion($version) {
+        $this->version = $version;
     }
 
-    final public function getAddon()
-    {
-        return $this->getValue('addon');
+    public function getVersion() {
+        return $this->version;
     }
 
-    /**
-     * @return \Lorry\Model\Addon
-     */
-    final public function fetchAddon()
-    {
-        return $this->fetch('Addon', 'addon');
+    public function publish() {
+        $this->setPublished(new \DateTime());
     }
 
-    /**
-     * @return \Lorry\Model\Release[]
-     */
-    final public function byGame($game)
-    {
-        $addons = $this->persistence->build('Addon')->all()->byGame($game);
-        $releases = array();
-        foreach ($addons as $addon) {
-            $release = $this->persistence->build('Release')->latest($addon->getId());
-            if ($release) {
-                $releases[] = $release;
-            }
-        }
-        return $releases;
+    public function setPublished($published) {
+        $this->published = $published;
     }
 
-    /**
-     * @return \Lorry\Model\Release[]
-     */
-    final public function byOwner($owner)
-    {
-        $addons = $this->persistence->build('Addon')->all()->byOwner($owner);
-        $releases = array();
-        foreach ($addons as $addon) {
-            $release = $this->persistence->build('Release')->latest($addon->getId());
-            if ($release) {
-                $releases[] = $release;
-            }
-        }
-        return $releases;
-    }
-
-    final public function setVersion($version)
-    {
-        $version = trim($version);
-        $this->validateString($version, 1, 20);
-        $this->validateRegexp($version, '/^([a-zA-Z0-9-][a-zA-Z0-9-.]*)$/');
-        return $this->setValue('version', $version);
-    }
-
-    /**
-     * @return \Lorry\Model\Release
-     */
-    final public function byVersion($version, $addon)
-    {
-        return $this->byValues(array('addon' => $addon, 'version' => $version));
-    }
-
-    final public function getVersion()
-    {
-        return $this->getValue('version');
+    public function getPublished() {
+        return $this->published;
     }
 
     final public function latest($addon)
@@ -221,5 +180,23 @@ class Release extends Model
     public function isShipping()
     {
         return $this->getValue('shipping');
+    }
+
+    public function forApi()
+    {
+        return array(
+            'addon' => $this->addon->getShort()
+        );
+    }
+}
+
+class ReleaseRepository extends EntityRepository
+{
+
+    public function getLatestUniquePublishedReleases()
+    {
+        return $this->_em->createQuery('SELECT r FROM Lorry\Model\Release r WHERE r.published > :now ORDER BY r.published DESC')
+                ->setParameter('now', new \DateTime())
+                ->getResult();
     }
 }
