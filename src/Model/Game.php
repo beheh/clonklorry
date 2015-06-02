@@ -6,7 +6,7 @@ use Lorry\Model2;
 use Lorry\ApiObjectInterface;
 
 /**
- * @Entity
+ * @Entity(readOnly=true)
  */
 class Game extends Model2 implements ApiObjectInterface
 {
@@ -32,6 +32,9 @@ class Game extends Model2 implements ApiObjectInterface
     public function getTitle() {
         return $this->title;
     }
+
+    /** @OneToMany(targetEntity="Addon", mappedBy="game", fetch="EXTRA_LAZY", orphanRemoval=false) */
+    protected $addons;
 
     public function __toString()
     {

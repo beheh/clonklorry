@@ -9,13 +9,13 @@ use Lorry\ApiObjectInterface;
 
 /**
  * @Entity
+ * @HasLifecycleCallbacks
  */
 class Addon extends Model2 implements ApiObjectInterface
 {
 
     /**
      * @ManyToOne(targetEntity="User", inversedBy="ownedAddons")
-     * @var Lorry\Model\User
      **/
     protected $owner;
 
@@ -37,7 +37,6 @@ class Addon extends Model2 implements ApiObjectInterface
     /** @Column(type="string") */
     protected $bugtracker;
 
-
     /*    return array(
             'owner' => 'string',
             'short' => 'string',
@@ -56,9 +55,9 @@ class Addon extends Model2 implements ApiObjectInterface
             'approval_comment' => 'text');
     */
 
-    public function setOwner(User $owner)
+    public function setOwner($owner)
     {
-        return $this->owner = $owner;
+        $this->owner = $owner;
     }
 
     public function getOwner()
