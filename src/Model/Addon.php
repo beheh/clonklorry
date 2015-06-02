@@ -64,6 +64,9 @@ class Addon extends Model
         return $this->setValue('owner', $owner);
     }
 
+    /** @OneToMany(targetEntity="Release", mappedBy="addon", fetch="LAZY", orphanRemoval=true, cascade={"all"}) */
+    protected $releases;
+
     /**
      * @return \Lorry\Model\Addon[]
      */

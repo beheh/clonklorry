@@ -12,6 +12,9 @@ use Lorry\Model;
 class Release extends Model
 {
 
+    /** @ManyToOne(targetEntity="Addon", reversedBy="releases") */
+    protected $addon;
+
     public function getTable()
     {
         return 'release';
