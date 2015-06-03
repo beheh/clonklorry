@@ -10,14 +10,10 @@ class Developers extends Presenter
 
     public function get()
     {
-        $games = $this->persistence->build('Game')->all()->byAnything();
-        $this->context['games'] = array();
-        foreach ($games as $game) {
-            $this->context['games'][$game->getShort()] = array('title' => $game->getTitle());
-        }
+        $this->context['games'] = $this->manager->getRepository('Lorry\Model\Game')->findAll();
 
-        if (!isset($this->context['game'])) {
-            $this->context['game'] = filter_input(INPUT_GET, 'create');
+        if (!isset($this->context['selected_game'])) {
+            $this->context['selected_game'] = filter_input(INPUT_GET, 'create');
         }
 
         if (isset($_GET['create']) && !isset($this->context['focus_title'])) {
@@ -92,7 +88,7 @@ class Developers extends Presenter
             if (!$game) {
                 throw new ModelValueInvalidException('invalid');
             }
-            $this->context['game'] = $game->getShort();
+            $this->context['selected_game'] = $game->getShort();
             $addon->setGame($game->getId());
         } catch (ModelValueInvalidException $ex) {
             $errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
