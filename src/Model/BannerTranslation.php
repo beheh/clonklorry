@@ -12,6 +12,7 @@ class BannerTranslation extends Model2
 {
     /**
      * @ManyToOne(targetEntity="Banner", inversedBy="translations")
+     * @JoinColumn(nullable=false)
      * @var Banner
      */
     protected $banner;
