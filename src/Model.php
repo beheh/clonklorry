@@ -24,23 +24,17 @@ abstract class Model
      */
     protected $persistence;
 
-    /**
-     *
-     * @var \Lorry\Service\RequestCacheService
-     */
-    protected $cache;
+
     private $schema;
     private $values;
     private $changes;
     private $loaded;
 
     public function __construct(ConfigService $config,
-        PersistenceService $persistence,
-        RequestCacheService $cache)
+        PersistenceService $persistence)
     {
         $this->config = $config;
         $this->persistence = $persistence;
-        $this->cache = $cache;
 
         $this->loaded = false;
 
@@ -220,14 +214,6 @@ abstract class Model
     {
         $this->ensureUnloaded();
 
-        // could this instance be in the cache?
-        if (count($pairs) === 1 && isset($pairs['id'])) {
-            $result = $this->cache->getById($this->getTable(), $pairs['id']);
-            if ($result) {
-                return $result;
-            }
-        }
-
         foreach ($pairs as $row => $value) {
             $this->ensureField($row);
             // do not allow abstract objects
@@ -252,8 +238,6 @@ abstract class Model
             $instances = array();
             foreach ($rows as $row) {
                 $instance = clone $this;
-                $instance->unserialize($row);
-                $this->cache->put($instance->getTable(), $instance);
                 $instances[] = $instance;
             }
 
@@ -271,7 +255,6 @@ abstract class Model
             }
 
             $this->unserialize($row);
-            $this->cache->put($this->getTable(), $this);
 
             return $this;
         }
