@@ -87,8 +87,6 @@ class Environment
             }));
         $container->set('manager', \DI\link('Doctrine\Common\Persistence\ObjectManager'));
 
-        $container->set('persistence',
-            \DI\link('Lorry\Service\PersistenceService'));
         $container->set('localisation',
             \DI\link('Lorry\Service\LocalisationService'));
         $container->set('mail', \DI\link('Lorry\Service\MailService'));

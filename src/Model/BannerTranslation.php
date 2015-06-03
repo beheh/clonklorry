@@ -2,13 +2,13 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model2;
+use Lorry\Model;
 
 /**
  * @Entity
  * @Table(name="BannerTranslation",uniqueConstraints={@UniqueConstraint(name="banner_language", columns={"banner_id", "language"})})
  */
-class BannerTranslation extends Model2
+class BannerTranslation extends Model
 {
     /**
      * @ManyToOne(targetEntity="Banner", inversedBy="translations")

@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @property \Lorry\Service\ConfigService $config
- * @property \Lorry\Service\PersistenceService $persistence
  * @property \Lorry\Service\LocalisationService $localisation
  * @property \Lorry\Service\MailService $mail
  * @property \Lorry\Service\JobService $job

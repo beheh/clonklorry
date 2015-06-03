@@ -2,14 +2,14 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model2;
+use Lorry\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
 
 /**
  * @Entity(repositoryClass="Lorry\Model\BannerRepository")
  */
-class Banner extends Model2
+class Banner extends Model
 {
     /**
      * @Column(type="datetime", name="show_from", nullable=true)

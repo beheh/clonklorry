@@ -3,14 +3,14 @@
 namespace Lorry\Model;
 
 use Lorry\Exception\ModelValueInvalidException;
-use Lorry\Model2;
+use Lorry\Model;
 use Doctrine\ORM\EntityRepository;
 
 /**
  * @Entity(repositoryClass="Lorry\Model\UserRepository")
  * @HasLifecycleCallbacks
  */
-class User extends Model2
+class User extends Model
 {
     /** @Column(type="string", length=16, unique=true) */
     protected $username;

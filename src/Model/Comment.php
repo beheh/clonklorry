@@ -2,14 +2,14 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model2;
+use Lorry\Model;
 use Lorry\ApiObjectInterface;
 
 /**
  * @Entity
  * @HasLifecycleCallbacks
  */
-class Comment extends Model2 implements ApiObjectInterface
+class Comment extends Model implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="User")
@@ -25,6 +25,11 @@ class Comment extends Model2 implements ApiObjectInterface
      * @Column(type="datetime")
      */
     protected $written;
+
+    /**
+     * @ManyToOne(targetEntity="release")
+     */
+    protected $release;
 
     /**
      *

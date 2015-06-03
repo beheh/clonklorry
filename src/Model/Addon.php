@@ -2,15 +2,16 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model2;
+use Lorry\Model;
 use Lorry\ApiObjectInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\EntityRepository;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="Lorry\Model\AddonRepository")
  * @HasLifecycleCallbacks
  */
-class Addon extends Model2 implements ApiObjectInterface
+class Addon extends Model implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="User", inversedBy="ownedAddons")
@@ -41,9 +42,10 @@ class Addon extends Model2 implements ApiObjectInterface
 
     /**
      * @OneToOne(targetEntity="Release")
+     * @JoinColumn(name="latest_release_id")
      * @var Release
      */
-    protected $latest;
+    protected $latestRelease;
 
     /**
      * @OneToMany(targetEntity="Release", mappedBy="addon", cascade={"all"}))
@@ -125,21 +127,41 @@ class Addon extends Model2 implements ApiObjectInterface
     /**
      * @param \Lorry\Model\Release $latest
      */
-    public function setLatest($latest)
+    public function setLatestRelease($latest)
     {
-        $this->latest = $latest;
+        $this->latestRelease = $latest;
     }
 
     /**
      * @return \Lorry\Model\Release
      */
-    public function getLatest()
+    public function getLatestRelease()
     {
-        return $this->latest;
+        return $this->latestRelease;
     }
 
     public function forApi()
     {
         return array();
+    }
+}
+
+class AddonRepository extends EntityRepository
+{
+
+    public function getAllByGame($game)
+    {
+        //SELECT a.short, r.version FROM Lorry\Model\Addon a LEFT JOIN a.latestRelease r')
+        
+        $qb = $this->_em->createQueryBuilder()
+            ->select('a.short, a.title, r.version')
+            ->from('Lorry\Model\Addon', 'a')
+            ->leftJoin('a.latestRelease', 'r')
+            ->where('a.game = :game')
+            //->andWhere('r.published > :now')
+            //->orderBy('a.title', 'DESC')
+            //->setParameter('now', new \DateTime())
+            ->setParameter('game', $game);
+        return $qb->getQuery()->getResult();
     }
 }

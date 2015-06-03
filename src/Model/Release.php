@@ -2,7 +2,7 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model2;
+use Lorry\Model;
 use Lorry\ApiObjectInterface;
 use Doctrine\ORM\EntityRepository;
 
@@ -11,7 +11,7 @@ use Doctrine\ORM\EntityRepository;
  * @HasLifecycleCallbacks
  * @Table(name="`Release`",uniqueConstraints={@UniqueConstraint(name="addon_version", columns={"addon_id", "version"})})
  */
-class Release extends Model2 implements ApiObjectInterface
+class Release extends Model implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="Addon", inversedBy="releases")
