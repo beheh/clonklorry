@@ -18,15 +18,14 @@ class Profile extends Presenter
     public function get($username)
     {
         /* @var $user \Lorry\Model\User */
-        $user = $this->manager->getRepository('Lorry\Model\User')->findOneBy(array('username' => $username));
+        $user = $this->manager->getRepository('Lorry\Model\User')-> findOneBy(array('username' => $username));
 
         if (!$user) {
             throw new FileNotFoundException('user '.$username);
         }
 
         $this->context['username'] = $user->getUsername();
-        $this->context['self'] = $this->session->authenticated() && $user->getId()
-            == $this->session->getUser()->getId();
+        $this->context['self'] = $this->session->authenticated() && $user->getId() == $this->session->getUser()->getId();
 
         $this->context['administrator'] = $user->isAdministrator();
         $this->context['moderator'] = $user->isModerator();
@@ -77,10 +76,8 @@ class Profile extends Presenter
             $this->context['addons'][] = $user_addon;
         }*/
 
-        $comments = $this->persistence->build('Comment')->all()->order('timestamp',
-                true)->byOwner($user->getId());
         $this->context['comments'] = array();
-        foreach ($comments as $comment) {
+        foreach ($user->getWrittenComments() as $comment) {
             $user_comment = array();
             $user_comment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME),
                 $comment->getTimestamp());

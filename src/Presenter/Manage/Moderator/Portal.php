@@ -14,14 +14,7 @@ class Portal extends Presenter
         $this->offerIdentification();
         $this->security->requireIdentification();
 
-        $games = $this->manager->getRepository('Lorry\Model\Game');
-
-        $game_objects = $games->findAll();
-        $games = array();
-        foreach ($game_objects as $game) {
-            $games[$game->getId()] = $game->forPresenter();
-        }
-        $this->context['games'] = $games;
+        $this->context['games'] = $this->manager->getRepository('Lorry\Model\Game')->findAll();
 
         $addons = array();
         /*foreach ($this->persistence->build('Addon')->bySubmittedForApproval() as $addon) {
@@ -43,9 +36,9 @@ class Portal extends Presenter
 
         $tickets = array();
         $format = $this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME);
-        foreach ($this->persistence->build('Ticket')->all()->byNew() as $ticket) {
+        /*foreach ($this->manager->getRepository('Lorry\Model\Ticket')->getAllNewTickets() as $ticket) {
             $tickets[] = $ticket->forPresenter($format);
-        }
+        }*/
 
         $this->context['tickets'] = $tickets;
 

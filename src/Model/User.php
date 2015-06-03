@@ -40,7 +40,7 @@ class User extends Model
 
     /* State */
 
-    /**@Column(type="datetime") */
+    /*     * @Column(type="datetime") */
     protected $registration;
 
     /** @Column(type="datetime", nullable=true) */
@@ -65,13 +65,19 @@ class User extends Model
     /** @Column(type="integer") */
     protected $flags = 0;
 
-    /* Data */
+    /* Ownership */
 
     /**
      * @OneToMany(targetEntity="Addon", mappedBy="owner")
      * @var Addon[]
      * */
-    protected $ownedAddons = null;
+    protected $ownedAddons;
+
+    /**
+     * @OneToMany(targetEntity="Comment", mappedBy="author")
+     * @var Addon[]
+     * */
+    protected $writtenComments;
 
     /* Consts */
     const PERMISSION_READ = 1;
@@ -86,6 +92,13 @@ class User extends Model
     const PROVIDER_GOOGLE = 1;
     const PROVIDER_FACEBOOK = 1;
 
+    /* Initialize Collections */
+
+    public function __construct()
+    {
+        $this->ownedAddons = new ArrayCollection();
+        $this->writtenComments = new ArrayCollection();
+    }
     /* Getters/Setters */
 
     public function setUsername($username)
@@ -299,8 +312,7 @@ class User extends Model
     {
         $id = $this->getClonkforgeId();
         if ($id !== null) {
-            return sprintf($this->config->get('clonkforge/url'),
-                $id());
+            return sprintf($this->config->get('clonkforge/url'), $id());
         }
         return '';
     }
@@ -383,6 +395,16 @@ class User extends Model
     public function getProfileUrl()
     {
         return $this->config->get('base').'/users/'.$this->getUsername().'';
+    }
+
+    public function getWrittenComments()
+    {
+        return $this->writtenComments;
+    }
+
+    public function getOwnedAddons()
+    {
+        return $this->ownedAddons;
     }
 
     public function __toString()
