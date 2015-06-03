@@ -4,7 +4,6 @@ namespace Lorry\Service;
 
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
-use Lorry\Service\PersistenceService;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception;
 use \InvalidArgumentException;
@@ -24,17 +23,10 @@ class SecurityService
      */
     protected $session;
 
-    /**
-     *
-     * @var \Lorry\Service\PersistenceService
-     */
-    protected $persistence;
-
-    public function __construct(ConfigService $config, SessionService $session, PersistenceService $persistence)
+    public function __construct(ConfigService $config, SessionService $session)
     {
         $this->config = $config;
         $this->session = $session;
-        $this->persistence = $persistence;
     }
 
     public function requireLogin()

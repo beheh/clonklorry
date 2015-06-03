@@ -243,7 +243,6 @@ class SessionService extends Service
         }
         if (isset($_SESSION['user']) && is_numeric($_SESSION['user'])) {
             $user = $this->manager->find('Lorry\Model\User', $_SESSION['user']);
-            //$user = $this->persistence->build('User')->byId($_SESSION['user']);
             if ($user && $user->matchSecret($_SESSION['secret'])) {
                 $this->user = $user;
             } else {
@@ -254,7 +253,6 @@ class SessionService extends Service
             $login = explode('$', $_COOKIE['lorry_login']);
             if (count($login) == 3 && is_numeric($login[1])) {
                 $user = $this->manager->find('Lorry\Model\User', $login[1]);
-                //$user = $this->persistence->build('User')->byId($login[1]);
                 if ($user && !empty($login[2]) && $user->matchSecret($login[2])) {
                     $this->authenticate($user);
                 }
