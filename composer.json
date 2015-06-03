@@ -19,7 +19,7 @@
 		"symfony/console": "~2.6",
         "vend/resque": "~2.1",
 		"predis/predis": "~1.0",
-		"aura/sqlquery": "~2.4",
+		"respect/validation": "~0.7",
 		"aws/aws-sdk-php": "~2",
 		"league/flysystem": "~1.0",
 		"container-interop/container-interop": "~1.0",
