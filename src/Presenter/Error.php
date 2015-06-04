@@ -36,7 +36,8 @@ class Error extends Presenter
         $this->context['description'] = $this->getLocalizedDescription();
 
         if ($exception) {
-            if (get_class($this) == __CLASS__) {
+            // only log on uncaught exceptions (otherwise we assume the user was informed about the error)
+            if (get_class($this) == __CLASS__ || $this->config->get('debug')) {
                 $this->logger->error($exception);
             } else {
                 $this->logger->debug($exception);
