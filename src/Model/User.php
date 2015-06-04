@@ -403,6 +403,10 @@ class User extends Model
         return $this->writtenComments;
     }
 
+    /**
+     *
+     * @return \Doctrine\Common\Collections\Collection|Addon[]
+     */
     public function getOwnedAddons()
     {
         return $this->ownedAddons;

@@ -21,7 +21,7 @@ class Portal extends Presenter
             $this->success('addons', gettext('Addon created.'));
         }
 
-        $this->context['addons'] = $user->getOwnedAddons();
+        $this->context['addons'] = $user->getOwnedAddons()->toArray();
 
         $this->display('publish/portal.twig');
     }
