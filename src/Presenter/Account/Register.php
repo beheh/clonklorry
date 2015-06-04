@@ -58,7 +58,7 @@ class Register extends Presenter
         $username = filter_input(INPUT_POST, 'username');
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $password = filter_input(INPUT_POST, 'password');
-        $password_repeat = filter_input(INPUT_POST, 'password-repeat');
+        $repeatedPassword = filter_input(INPUT_POST, 'password-repeat');
 
         $this->context['username'] = $username;
         $this->context['email'] = $email;
@@ -72,42 +72,29 @@ class Register extends Presenter
         }
 
         $user = new User();
-        $users = $this->manager->getRepository('Lorry\Model\User');
+        $userRepository = $this->manager->getRepository('Lorry\Model\User');
 
-        if (count($users->findBy(array('username' => $username))) > 0) {
+        if (count($userRepository->findBy(array('username' => $username))) > 0) {
             $errors[] = gettext('Username already taken.');
         } else {
-            try {
-                $user->setUsername($username);
-            } catch (ModelValueInvalidException $e) {
-                $errors[] = sprintf(gettext('Username is %s.'), $e->getMessage());
-            }
+            $user->setUsername($username);
         }
 
-        if ($email && count($users->findOneBy(array('email' => $email))) > 0) {
+        if ($email && count($userRepository->findOneBy(array('email' => $email))) > 0) {
             $errors[] = sprintf(gettext('Email address is already in use.'));
         } else {
-            try {
-                $user->setEmail($email);
-            } catch (ModelValueInvalidException $e) {
-                $errors[] = sprintf(gettext('Email address is %s.'),
-                    gettext('invalid'));
-            }
+            $user->setEmail($email);
         }
 
-        if (!$oauth) {
-            if ($password !== $password_repeat) {
+        if ($oauth) {
+            $user->setOauth(strtolower($oauth['provider']), $oauth['uid']);
+        }
+        else {
+            if ($password !== $repeatedPassword) {
                 $errors[] = gettext('Passwords do not match.');
             } else {
-                try {
-                    $user->setPassword($password);
-                } catch (ModelValueInvalidException $e) {
-                    $errors[] = sprintf(gettext('Password is %s.'),
-                        $e->getMessage());
-                }
+                $user->setPassword($password);
             }
-        } else {
-            $user->setOauth(strtolower($oauth['provider']), $oauth['uid']);
         }
 
         $user->setLanguage($this->localisation->getDisplayLanguage());

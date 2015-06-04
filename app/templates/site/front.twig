@@ -15,11 +15,10 @@
                     {% endif %}
 					<div class="carousel-inner">
 						{% for banner in banners %}
-                        {% set url = banner.url|default(banner.defaultUrl) %}
 						<div class="item{% if loop.first %} active{% endif %}">
-                            {% if url %}<a href="{{url}}">{% endif %}
-								<img src="{{banner.imageUrl|default(banner.defaultImageUrl)}}" alt="{{bannner.alt}}">
-                            {% if url %}</a>{% endif %}
+                            {% if banner.url %}<a href="{{banner.url}}">{% endif %}
+								<img src="{{banner.imageUrl}}" alt="{{bannner.alt}}">
+                            {% if banner.url %}</a>{% endif %}
 							<div class="carousel-caption">
 								<h3>
 									{% if banner.title%}<strong>{{banner.title}}</strong>{% endif %}

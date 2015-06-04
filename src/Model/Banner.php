@@ -35,7 +35,7 @@ class Banner extends Model
     protected $translations;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", nullable=true)
      * @var string
      */
     protected $defaultUrl;
@@ -139,7 +139,7 @@ class BannerRepository extends EntityRepository
     {
         //SELECT t.title, t.subtitle, t.url, b.defaultUrl FROM Lorry\Model\Banner b LEFT JOIN b.translations t WHERE t.language = :language ORDER BY b.showFrom DESC')
         $qb = $this->_em->createQueryBuilder()
-            ->select('t.title, t.subtitle, t.imageUrl, b.defaultImageUrl, t.url, b.defaultUrl')
+            ->select('COALESCE(t.url, b.defaultUrl) as url, COALESCE(t.imageUrl, b.defaultImageUrl) as imageUrl, t.title, t.subtitle')
             ->from('Lorry\Model\Banner', 'b')
             ->leftJoin('b.translations', 't')
             ->where('t.language = :language')
@@ -148,6 +148,6 @@ class BannerRepository extends EntityRepository
             ->orderBy('b.showFrom', 'DESC')
             ->setParameter('language', $language)
             ->setParameter('now', new \DateTime());
-        return $qb->getQuery()->getResult();
+        return $qb->getQuery()->getScalarResult();
     }
 }
