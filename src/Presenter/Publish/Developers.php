@@ -4,6 +4,7 @@ namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
 use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Model\Addon;
 
 class Developers extends Presenter
 {
@@ -19,6 +20,8 @@ class Developers extends Presenter
         if (isset($_GET['create']) && !isset($this->context['focus_title'])) {
             $this->context['focus_title'] = true;
         }
+
+        /* random name generation */
 
         $singular_objects = array(gettext('Wipf'), gettext('Monster'), gettext('Bridge'),
             gettext('Tower'), gettext('Stage'), gettext('Pressurewave'), gettext('Fantasy'),
@@ -48,6 +51,8 @@ class Developers extends Presenter
 
         $this->context['exampletitle'] = $example;
 
+        /* end random name generation */
+
         $this->display('publish/developers.twig');
     }
 
@@ -60,10 +65,9 @@ class Developers extends Presenter
 
         $errors = array();
 
+        $addon = new Addon();
 
-        $addon = $this->persistence->build('Addon');
-
-        $addon->setOwner($user->getId());
+        $addon->setOwner($user);
 
         $title = filter_input(INPUT_POST, 'title');
         try {
@@ -75,36 +79,28 @@ class Developers extends Presenter
             $this->context['focus_title'] = true;
         }
 
-        $type = filter_input(INPUT_POST, 'type');
         try {
-            $this->context['type'] = $type;
-        } catch (ModelValueInvalidException $ex) {
-            $errors[] = sprintf(gettext('Type is %s.'), $ex->getMessage());
-        }
-
-        try {
-            $game = $this->persistence->build('Game')->byShort(filter_input(INPUT_POST,
-                    'game'));
+            $game = $this->manager->getRepository('Lorry\Model\Game')->findOneBy(array('short' => filter_input(INPUT_POST, 'game')));
             if (!$game) {
                 throw new ModelValueInvalidException('invalid');
             }
             $this->context['selected_game'] = $game->getShort();
-            $addon->setGame($game->getId());
+            $addon->setGame($game);
         } catch (ModelValueInvalidException $ex) {
             $errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
         }
 
-        $existing = $this->persistence->build('Addon')->all()->byTitle($title,
-            $user->getId(), $game->getId());
+        /*$existing = $this->manager->getRepository('Lorry\Model\Addon')->findBy
         if (count($existing) > 0) {
             $errors[] = gettext('You have already created an addon with this title for this game.');
             $this->context['focus_title'] = true;
-        }
+        }*/
 
         if (!empty($errors)) {
             $this->error('creation', implode('<br>', $errors));
         } else {
-            $addon->save();
+            $this->manager->persist($addon);
+            $this->manager->flush();
             $this->redirect('/publish?created='.$addon->getId());
         }
 
