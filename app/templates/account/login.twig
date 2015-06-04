@@ -12,7 +12,7 @@
 	</div>
 	<div class="container">
 		<div class="row" id="login">
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 				{% include 'functions/alert.twig' with {'selector' : 'login'} %}
 				<form id="form-login" method="post" role="form">
 					<div class="form-group">
@@ -52,8 +52,8 @@
 					{% include 'functions/oauth.twig' %}
 				</div>
 			</div>
-			<div class="col-md-8">
-				<hr class="visible-sm visible-xs">
+			<div class="col-md-8 col-sm-6">
+				<hr class="visible-xs">
 				{% if connect %}
 				{% else %}
 					{% if registered %}

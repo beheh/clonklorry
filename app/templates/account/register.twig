@@ -24,7 +24,7 @@
 		</div>
 		<div class="container">
 			<div class="row" id="register">
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-6">
 					{% include 'functions/alert.twig' with {'selector' : 'register'} %}
 					<form id="form-register" method="post" role="form">
 						<div class="form-group">
@@ -67,8 +67,8 @@
 						{% endif %}
 					</div>
 				</div>
-				<div class="col-md-8">
-					<hr class="visible-sm visible-xs">
+				<div class="col-md-8 col-sm-6">
+					<hr class="visible-xs">
 					{% if oauth %}
 						<h2>{% trans %}Nearly done&hellip;{% endtrans %}</h2>
 						<p class="lead">{% trans %}You still need to choose your username and enter or verify your email address.{% endtrans %}</p>
