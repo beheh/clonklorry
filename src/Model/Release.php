@@ -14,7 +14,7 @@ use Doctrine\ORM\EntityRepository;
 class Release extends Model implements ApiObjectInterface
 {
     /**
-     * @ManyToOne(targetEntity="Addon", inversedBy="releases")
+     * @ManyToOne(targetEntity="Addon", inversedBy="releases", fetch="EAGER")
      * @JoinColumn(nullable=false)
      * @var Addon
      */

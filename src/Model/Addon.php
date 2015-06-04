@@ -23,7 +23,7 @@ class Addon extends Model implements ApiObjectInterface
     protected $short;
 
     /**
-     * @ManyToOne(targetEntity="Game", inversedBy="addons")
+     * @ManyToOne(targetEntity="Game", inversedBy="addons", fetch="EAGER")
      * @var Game
      */
     protected $game;
