@@ -8,18 +8,19 @@ use Lorry\Exception\FileNotFoundException;
 class Game extends Presenter
 {
 
-    public function get($name)
+    public function get($short)
     {
-        $game = $this->persistence->build('Game')->byShort($name);
+        /* @var $game \Lorry\Model\Game */
+        $game = $this->manager->getRepository('Lorry\Model\Game')->findOneBy(array('short' => $short));
         if (!$game) {
-            throw new FileNotFoundException('game '.$game);
+            throw new FileNotFoundException('game '.$short);
         }
 
         $this->context['title'] = $game->getTitle();
         $this->context['game'] = $game->getTitle();
         $this->context['short'] = $game->getShort();
 
-        $query = $this->persistence->build('Release')->all();
+        //$query = $this->persistence->build('Release')->all();
 
         /* $sort = isset($_GET['sort']) ? $_GET['sort'] : 'date';
           $reverse = isset($_GET['reverse']) && $_GET['reverse'] == 1 ? true : false;
@@ -39,17 +40,7 @@ class Game extends Presenter
           $this->context['sort'] = $sort;
           $this->context['reverse'] = $reverse; */
 
-        $releases = $query->byGame($game->getId());
-        $this->context['addons'] = array();
-        foreach ($releases as $release) {
-            $addon = $release->fetchAddon();
-            $this->context['addons'][] = array(
-                'title' => $addon->getTitle(),
-                'version' => $release->getVersion(),
-                'short' => $addon->getShort(),
-                'introduction' => $addon->getIntroduction()
-            );
-        }
+        $this->context['addons'] = $game->getAddons()->toArray();
 
         $this->display('addon/game.twig');
     }
