@@ -89,8 +89,8 @@ class User extends Model
     const FLAG_CODER = 8;
     const FLAG_REPORTER = 16;
     const PROVIDER_GITHUB = 1;
-    const PROVIDER_GOOGLE = 1;
-    const PROVIDER_FACEBOOK = 1;
+    const PROVIDER_GOOGLE = 2;
+    const PROVIDER_FACEBOOK = 3;
 
     /* Initialize Collections */
 

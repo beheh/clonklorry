@@ -30,7 +30,7 @@ class Callback extends Presenter
         }
 
         $provider = 0;
-        switch($providerName) {
+        switch ($providerName) {
             case 'github':
                 $provider = User::PROVIDER_GITHUB;
             case 'google':
@@ -73,8 +73,7 @@ class Callback extends Presenter
 
             if ($oauth_provider) {
                 $this->logger->debug('authorization provider is "'.$provider_title.'"');
-                if (!$this->session->verifyAuthorizationState(filter_input(INPUT_GET,
-                            'state'))) {
+                if (!$this->session->verifyAuthorizationState(filter_input(INPUT_GET, 'state'))) {
                     throw new AuthentificationFailedException('invalid state (csrf?)');
                 }
 
@@ -86,14 +85,13 @@ class Callback extends Presenter
                             return $this->redirect('/register');
                         }
                     }
-                    throw new AuthentificationFailedException(filter_input(INPUT_GET,
-                        'error'));
+                    throw new AuthentificationFailedException(filter_input(INPUT_GET, 'error'));
                 }
 
                 try {
                     // uppercase Authorization_Code: workaround for https://github.com/thephpleague/oauth2-client/issues/84
-                   /* $token = $oauth_provider->getAccessToken('Authorization_Code',
-                        array('code' => filter_input(INPUT_GET, 'code')));*/
+                    /* $token = $oauth_provider->getAccessToken('Authorization_Code',
+                      array('code' => filter_input(INPUT_GET, 'code'))); */
                     $token = $oauth_provider->getAccessToken($grant = 'authorization_code', array('code' => filter_input(INPUT_GET, 'code')));
                 } catch (\Exception $ex) {
                     throw new AuthentificationFailedException('could net get access token ('.$ex->getMessage().')');
@@ -124,20 +122,20 @@ class Callback extends Presenter
             unset($_SESSION['returnto']);
 
             // @todo test, if other user has already used this uid
-            /*$users = $this->manager->getRepository('Lorry\Model\User');
+            /* $users = $this->manager->getRepository('Lorry\Model\User');
 
-                if ($test_user) {
-                    $this->redirect('/settings?update-oauth=duplicate#oauth');
-                    return;
-                }
-            }*/
+              if ($test_user) {
+              $this->redirect('/settings?update-oauth=duplicate#oauth');
+              return;
+              }
+              } */
 
             // we now trust provider and user
             $user = $this->session->getUser();
             $user->setOauth($provider, $uid);
 
             // we might be able to add the users github profile
-            if($provider == 'github' && !$user->getGithubName()) {
+            if ($provider == 'github' && !$user->getGithubName()) {
                 $user->setGithubName($profile->nickname);
             }
 
@@ -146,10 +144,10 @@ class Callback extends Presenter
             $this->redirect('/settings?update-oauth=success#oauth');
             return;
         } else {
-            $users = $this->manager->getRepository('Lorry\Model\User');
+            $userRepository = $this->manager->getRepository('Lorry\Model\User');
 
             // grab user by oauth data
-            $user = $users->findOneBy(array('oauth'.ucfirst($providerName) => $uid));
+            $user = $userRepository->findOneBy(array('oauth'.ucfirst($providerName) => $uid));
 
             if ($user instanceof User) {
                 $url = '/';
@@ -160,7 +158,7 @@ class Callback extends Presenter
                 $this->redirect($url.'#');
                 return;
             } else {
-                $user = $this->persistence->build('User')->byEmail($email);
+                $user = $userRepository->findOneBy(array('email' => $email));
                 if ($user instanceof User) {
                     $this->redirect('/login?unknown-oauth&returnto=/settings#');
                     return;
@@ -178,4 +176,5 @@ class Callback extends Presenter
             }
         }
     }
+
 }

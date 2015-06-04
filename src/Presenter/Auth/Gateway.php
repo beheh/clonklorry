@@ -30,10 +30,13 @@ class Gateway extends Presenter
             switch($providerName) {
                 case 'github':
                     $provider = User::PROVIDER_GITHUB;
+                    break;
                 case 'google':
                     $provider = User::PROVIDER_GOOGLE;
+                    break;
                 case 'facebook':
                     $provider = User::PROVIDER_FACEBOOK;
+                    break;
             }
 
             switch ($provider) {
