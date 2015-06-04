@@ -19,7 +19,7 @@ class Addon extends Model implements ApiObjectInterface
      */
     protected $owner;
 
-    /** @Column(type="string", length=64, unique=true) */
+    /** @Column(type="string", length=64, unique=true, nullable=true) */
     protected $short;
 
     /**
