@@ -70,7 +70,7 @@ class Game extends Model implements ApiObjectInterface
 
     /**
      *
-     * @return Addon[]
+     * @return \Doctrine\Common\Collections\Collection|Addon[]
      */
     public function getAddons()
     {
