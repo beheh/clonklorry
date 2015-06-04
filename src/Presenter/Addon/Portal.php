@@ -9,15 +9,7 @@ class Portal extends Presenter
 
     public function get()
     {
-        $games = $this->persistence->build('Game')->byAnything();
-
-        $this->context['games'] = array();
-        foreach ($games as $game) {
-            $this->context['games'][] = array(
-                'short' => $game->getShort(),
-                'title' => $game->getTitle(),
-            );
-        }
+        $this->context['games'] = $this->manager->getRepository('Lorry\Model\Game')->findAll();
 
         $this->display('addon/portal.twig');
     }
