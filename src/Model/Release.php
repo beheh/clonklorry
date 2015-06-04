@@ -29,6 +29,12 @@ class Release extends Model implements ApiObjectInterface
      */
     protected $published;
 
+    /**
+     * @OneToMany(targetEntity="Comment", mappedBy="release", fetch="EXTRA_LAZY", orphanRemoval=false)
+     * @var Comment[]
+     */
+    protected $comments;
+
     /*
         return array(
             'addon' => 'int',
@@ -41,6 +47,11 @@ class Release extends Model implements ApiObjectInterface
             'changelog' => 'text',
             'whatsnew' => 'text');
     */
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+    }
 
     public function setAddon($addon)
     {

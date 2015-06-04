@@ -12,7 +12,7 @@ use Lorry\ApiObjectInterface;
 class Comment extends Model implements ApiObjectInterface
 {
     /**
-     * @ManyToOne(targetEntity="User")
+     * @ManyToOne(targetEntity="User", fetch="EAGER")
      */
     protected $author;
 
@@ -27,7 +27,7 @@ class Comment extends Model implements ApiObjectInterface
     protected $written;
 
     /**
-     * @ManyToOne(targetEntity="release")
+     * @ManyToOne(targetEntity="Release", inversedBy="comments")
      */
     protected $release;
 
