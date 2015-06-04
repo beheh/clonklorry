@@ -19,8 +19,10 @@
 							<label for="title">{% trans "Title" %}</label>
 							<input type="text" class="form-control input-lg" name="title" id="title" value="{{addontitle}}" placeholder="{{exampletitle}}" required{% if focus_title %} autofocus{% endif %}>
 						</div>
+						{% if games|length != 1 %}
 						<div class="form-group">
 							<label for="game">{% trans "Game" %}</label>
+							{% if games %}
 							<div class="btn-group" data-toggle="buttons">
 								{% for game in games %}
 									<label class="btn btn-default">
@@ -29,9 +31,17 @@
 									</label>
 								{% endfor %}
 							</div>
+							{% else %}
+							<select class="form-control">
+								<option>{% trans %}There are no games available{% endtrans %}</option>
+							</select>
+							{% endif %}
 						</div>
+						{% else %}
+							<input type="hidden" name="game" value="{{games.0.short}}">
+						{% endif %}
 						<div class="form-group">
-							<button type="submit" class="btn btn-lg btn-success">{% trans "Create addon" %}</button>
+							<button type="submit" class="btn btn-lg btn-success"{% if not games %} disabled{% endif %}>{% trans "Create addon" %}</button>
 						</div>
 					</form>					
 				{% else %}
