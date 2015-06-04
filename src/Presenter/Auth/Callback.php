@@ -33,10 +33,13 @@ class Callback extends Presenter
         switch ($providerName) {
             case 'github':
                 $provider = User::PROVIDER_GITHUB;
+                break;
             case 'google':
                 $provider = User::PROVIDER_GOOGLE;
+                break;
             case 'facebook':
                 $provider = User::PROVIDER_FACEBOOK;
+                break;
         }
 
         $this->logger->debug('handling authorization callback');
@@ -88,12 +91,12 @@ class Callback extends Presenter
                     throw new AuthentificationFailedException(filter_input(INPUT_GET, 'error'));
                 }
 
+                $code = filter_input(INPUT_GET, 'code');
                 try {
-                    // uppercase Authorization_Code: workaround for https://github.com/thephpleague/oauth2-client/issues/84
-                    /* $token = $oauth_provider->getAccessToken('Authorization_Code',
-                      array('code' => filter_input(INPUT_GET, 'code'))); */
-                    $token = $oauth_provider->getAccessToken($grant = 'authorization_code', array('code' => filter_input(INPUT_GET, 'code')));
+                    $token = $oauth_provider->getAccessToken($grant = 'authorization_code', array('code' => $code));
                 } catch (\Exception $ex) {
+                    $this->logger->debug('error getting acces token with authorization code "'.$code.'"');
+                    $this->logger->debug($ex);
                     throw new AuthentificationFailedException('could net get access token ('.$ex->getMessage().')');
                 }
                 if (!$token) {
