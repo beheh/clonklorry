@@ -7,7 +7,7 @@ use Lorry\ApiObjectInterface;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * @Entity(repositoryClass="Lorry\Model\ReleaseRepository")
+ * @Entity(repositoryClass="Lorry\Repository\ReleaseRepository")
  * @HasLifecycleCallbacks
  * @Table(name="`Release`",uniqueConstraints={@UniqueConstraint(name="addon_version", columns={"addon_id", "version"})})
  */
@@ -198,16 +198,5 @@ class Release extends Model implements ApiObjectInterface
         return array(
             'addon' => $this->addon->getShort()
         );
-    }
-}
-
-class ReleaseRepository extends EntityRepository
-{
-
-    public function getLatestUniquePublishedReleases()
-    {
-        return $this->_em->createQuery('SELECT r FROM Lorry\Model\Release r WHERE r.published > :now ORDER BY r.published DESC')
-                ->setParameter('now', new \DateTime())
-                ->getResult();
     }
 }
