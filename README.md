@@ -6,24 +6,25 @@ A web platform to host and showcase released Clonk addons and their required pac
 
 Lorry can be easily deployed with [Capistrano](http://capistranorb.com/).
 
+### Requirements
+
+Your server(s) require [PHP](http://php.net/), [Composer](http://getcomposer.org/), an sql-backed database supported by [Doctrine](https://doctrine-dbal.readthedocs.org/en/latest/reference/configuration.html#driver) and [Redis](http://redis.io/).
+
 ### Prepare your deployment system
 
-First, clone this repository to your deployment system. It contains all the files required for Lorry to run.
+*The deployment system is the machine, you'll be running your deployments from. It will connect to your webserver(s) and deploy Lorry onto them.*
+
+First, clone this repository to your deployment system. It contains all the files required to deploy Lorry.
 
 [Install Capistrano](http://capistranorb.com/documentation/getting-started/installation/) and [Bundler](http://bundler.io/) on your deployment system (you may have to install [Ruby](https://www.ruby-lang.org/) first).
 
 Execute `bundle` in the root of the cloned repository. It should install all the gems necessary for deployment.
 
-### Installing the servers
-
-Your servers require [PHP](http://php.net/), an installed version of [Composer](http://getcomposer.org/), a database set up for PHP's PDO and [Redis](http://redis.io/).
-Choose a folder where Capistrano should deploy to and configure your webserver to point incoming requests to `<deployfolder>/current/web`.
-
-### Setting up your stages
+### Set up the stages
 
 Each deployment stage (such as testing, staging, production) requires a configuration file in `config/deploy`, for example `config/deploy/production.rb`.
 
-The file should contain the target server(s), folders and other options:
+The file should contain the target server(s), folders and any other options:
 
 ```ruby
 # Target server(s)
@@ -36,26 +37,28 @@ set :deploy_to, '/var/www/lorry'
 set :default_env, { path: "/usr/bin:$HOME/bin:$PATH" }
 ```
 
-### Configuring Lorry
+### Configure your webserver
+
+Configure your webserver so it points incoming requests to `<deploy_to>/current/web` (<deploy_to> being the target directory from the previous step).
+
+### Configure Lorry
 
 Execute `cap <stagename> config:init` in the repository root. It should copy the example files and inform you where you can find the created files.
 Edit the configuration files according to their documentation.
 
-### Push to server
+### Push to server(s)
 
 You are now ready to deploy Lorry on your server(s): `cap <stagename> deploy`.
 
-## Running the workers
+### Run the worker(s)
 
 The platform uses workers for asynchronous handling of various tasks (such as sending mails or publishing releases).
-These workers are backed by a [PHP port](https://github.com/chrisboulton/php-resque) of [Resque](https://github.com/resque/resque) running on Redis.
+These workers are backed by a [PHP port](https://github.com/vend/php-resque) of [Resque](https://github.com/resque/resque) running on Redis.
 
-php-resque provides an executable file at `vendor/bin/resque`. You can invoke it like this: `QUEUE=* APP_INCLUDE=<deploydir>/current/app/bootstrap.php php bin/resque`.
-See the [php-resque documentation on workers](https://github.com/chrisboulton/php-resque#workers) for additional parameters.
+To launch a worker for all tasks, execute `php <deploy_to>/current/app/worker worker --queue=*` (remember to escape the * in your shell if necessary).
+Remember to restart any workers after every deployment, so that they don't run outdated code.
 
-Remember to restart the worker after every deployment.
-
-## Copying
+## Licensing
 
 Copyright (C) 2013-2015  Benedict Etzel
 
