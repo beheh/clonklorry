@@ -16,7 +16,23 @@
 		</div>
 	</div>
 	{% if users %}
+		{% set width = 2 %}
 		<div class="container">
+			<nav>
+				<ul class="pagination">
+					{% if page - width > 1 %}
+					<li><a href="{{self}}?page=1">1</a></li>
+					{% if page - width != 2 %}<li class="disabled"><a href="">&hellip;</a></li>{% endif %}
+					{% endif %}
+					{% for i in page - width..page + width %}
+					<li{% if i == page %} class="active"{% endif %}><a href="{{self}}?page={{i}}">{{i}}{% if i == page %} <span class="sr-only">(current)</span>{% endif %}</a></li>
+					{% endfor %}
+					{% if page + width < lastPage %}
+					{% if page + width != lastPage - 1 %}<li class="disabled"><a href="">&hellip;</a></li>{% endif %}
+					<li><a href="{{self}}?page={{lastPage}}">{{lastPage}}</a></li>
+					{% endif %}
+				</ul>
+			</nav>
 			<ul class="list-group">
 				{% for user in users %}
 					<a href="{{base}}/users/{{user.name}}" class="list-group-item">

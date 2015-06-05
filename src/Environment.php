@@ -203,7 +203,7 @@ class Environment
                     '/publish' => 'Publish\Portal',
                     '/publish/:number' => 'Publish\Edit',
                     '/publish/:number/:version' => 'Publish\Release',
-                    '/users' => 'User\Table',
+                    '/users' => 'User\ListX',
                     '/users/:alpha' => 'User\Profile',
                     '/users/:alpha/edit' => 'User\Edit',
                     '/users/:alpha/activate' => 'Account\Activate',

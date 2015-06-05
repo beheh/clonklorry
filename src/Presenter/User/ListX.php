@@ -6,33 +6,44 @@ use Lorry\Presenter;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Model\User;
 
-class Table extends Presenter
+class ListX extends Presenter
 {
 
     public function get()
     {
         $this->security->requireLogin();
 
-        $users = $this->manager->getRepository('Lorry\Model\User');
+        $userRepository = $this->manager->getRepository('Lorry\Model\User');
 
         $filter = filter_input(INPUT_GET, 'filter');
+
+        $page = isset($_GET['page']) ? filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT) : 1;
+        $width = 10;
+        $this->context['page'] = $page;
+        $first = ($page - 1)*$width;
+
         switch ($filter) {
             case 'administrators':
                 $this->context['filter'] = gettext('Administrators');
-                $users = $users->getAllAdministrators();
+                $users = $userRepository->getAllAdministrators($width, $first);
                 break;
             case 'moderators':
                 $this->context['filter'] = gettext('Moderators');
-                $users = $users->getAllModerators();
+                $users = $userRepository->getAllModerators($width, $first);
                 break;
             case '':
             case 'users':
-                $users = $users->findAll();
+                $users = $userRepository->getAll($width, $first);
                 break;
             default:
                 throw new FileNotFoundException();
                 break;
         }
+
+        $this->context['lastPage'] = 501;
+        /*$this->context['lastPage'] = floor(count($users) / $width);
+        echo $this->context['lastPage'];*/
+
         foreach ($users as $user) {
             $this->context['users'][] = array(
                 'name' => $user->getUsername(),
@@ -42,6 +53,6 @@ class Table extends Presenter
         }
 
 
-        $this->display('user/table.twig');
+        $this->display('user/list.twig');
     }
 }
