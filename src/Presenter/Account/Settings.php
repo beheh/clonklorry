@@ -3,8 +3,9 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
-use Lorry\Exception\ModelValueInvalidException;
 use Lorry\Model\User;
+use Lorry\Validator\UserValidator;
+use Lorry\Exception\ValidationException;
 
 class Settings extends Presenter
 {
@@ -22,16 +23,13 @@ class Settings extends Presenter
         if (isset($_GET['update-oauth'])) {
             switch (filter_input(INPUT_GET, 'update-oauth')) {
                 case 'success':
-                    $this->success('oauth',
-                        gettext('Connected with login service.'));
+                    $this->success('oauth', gettext('Connected with login service.'));
                     break;
                 case 'duplicate':
-                    $this->error('oauth',
-                        gettext('Login service is already linked to another account.'));
+                    $this->error('oauth', gettext('Login service is already linked to another account.'));
                     break;
                 case 'failed':
-                    $this->error('oauth',
-                        gettext('Authentification with login service failed.'));
+                    $this->error('oauth', gettext('Authentification with login service failed.'));
                     break;
             }
         }
@@ -44,14 +42,11 @@ class Settings extends Presenter
                 try {
                     $user->setOauth($provider, null);
                     if ($user->modified()) {
-                        $this->success('oauth',
-                            gettext('Removed login service.'));
+                        $this->success('oauth', gettext('Removed login service.'));
                         $this->manager->flush();
                     }
                 } catch (ModelValueInvalidException $ex) {
-                    $this->error('oauth',
-                        sprintf(gettext('%s is %s.'), ucfirst($provider),
-                            $ex->getMessage()));
+                    $this->error('oauth', sprintf(gettext('%s is %s.'), ucfirst($provider), $ex->getMessage()));
                 }
             }
         }
@@ -65,8 +60,7 @@ class Settings extends Presenter
             $this->context['github'] = $user->getGithubName();
         }
 
-        $this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge/url'),
-            0);
+        $this->context['clonkforge_placeholder'] = sprintf($this->config->get('clonkforge/url'), 0);
         $this->context['github_placeholder'] = $user->getUsername();
 
         if (!isset($this->context['email'])) {
@@ -78,8 +72,7 @@ class Settings extends Presenter
 
         $this->context['password_exists'] = $user->hasPassword();
         $this->context['identified'] = $identified = $this->session->identified();
-        if ((isset($_GET['add-password']) && !$user->hasPassword()) || (($this->session->canResetPassword())
-            && isset($_GET['change-password']))) {
+        if ((isset($_GET['add-password']) && !$user->hasPassword()) || (($this->session->canResetPassword()) && isset($_GET['change-password']))) {
             $this->context['focus_password_new'] = true;
         }
 
@@ -100,38 +93,47 @@ class Settings extends Presenter
         $this->security->requireValidState();
 
         $user = $this->session->getUser();
+        $userValidator = new UserValidator();
 
         if (isset($_POST['profiles-form'])) {
-            $errors = array();
-
             // Clonk Forge profile url
-            $clonkforge = trim(filter_input(INPUT_POST, 'clonkforge', FILTER_VALIDATE_URL));
-            $this->context['clonkforge'] = $clonkforge;
-            try {
-                $user->setClonkforgeUrl($clonkforge);
-                $this->context['clonkforge'] = $user->getClonkforgeUrl();
-            } catch (ModelValueInvalidException $e) {
-                $errors[] = sprintf(gettext('Clonk Forge profile url is %s.'),
-                        gettext('invalid'));
+            $clonkforgeUrl = trim(filter_input(INPUT_POST, 'clonkforge', FILTER_VALIDATE_URL));
+
+            if (!empty($clonkforgeUrl)) {
+                $clonkforgeUrl = preg_replace('|^(http://)?(www\.)?(.*)$|', 'http://$3', $clonkforgeUrl);
+
+                $scanned = sscanf($clonkforgeUrl, $this->config->get('clonkforge/url'));
+                if (count($scanned) != 1 || empty($scanned[0])) {
+                    $userValidator->fail(gettext('Clonk Forge profile url is invalid'));
+                } else {
+                    $user->setClonkforgeId($scanned[0]);
+                }
+            } else {
+                $user->setClonkforgeId(null);
             }
+            $this->context['clonkforge'] = $clonkforgeUrl;
 
             // GitHub name
-            $github = trim(filter_input(INPUT_POST, 'github'));
-            $this->context['github'] = $github;
-            try {
-                $user->setGithubName($github);
-                $this->context['github'] = $user->getGithubName();
-            } catch (ModelValueInvalidException $e) {
-                $errors[] = sprintf(gettext('GitHub name is %s.'), $e->getMessage());
+            $githubName = trim(filter_input(INPUT_POST, 'github'));
+            if (!empty($githubName)) {
+                if (!preg_match('#^'.'([a-zA-Z0-9][a-zA-Z0-9-]*)'.'$#', $githubName)) {
+                    $userValidator->fail('GitHub name is invalid');
+                }
+                $this->context['github'] = $githubName;
+                $user->setGithubName($githubName);
+            } else {
+                $user->setGithubName(null);
             }
 
-            if(!empty($errors)) {
-                $this->error('profiles', implode('<br>', $errors));
-            }
-            else if ($user->modified()) {
+            try {
+                $userValidator->validate($user);
                 $this->manager->flush();
                 $this->success('profiles', gettext('Your links were saved.'));
+            } catch (ValidationException $ex) {
+                $this->error('profiles', implode('.<br>', $ex->getFails()).'.');
+                $this->manager->refresh($user);
             }
+            $this->manager->flush();
         }
 
         if (isset($_POST['contact-form'])) {
@@ -145,8 +147,7 @@ class Settings extends Presenter
             try {
                 $user->setEmail($email);
             } catch (ModelValueInvalidException $e) {
-                $errors[] = sprintf(gettext('Email address is %s.'),
-                    gettext('invalid'));
+                $errors[] = sprintf(gettext('Email address is %s.'), gettext('invalid'));
             }
 
             if ($user->modified()) {
@@ -155,29 +156,26 @@ class Settings extends Presenter
 
                     // remove activation jobs with previous address, if any
                     try {
-                        $this->job->remove('Activate',
-                            array('user' => $user->getId(), 'address' => $previous_email));
+                        $this->job->remove('Activate', array('user' => $user->getId(), 'address' => $previous_email));
                     } catch (\Exception $ex) {
+
                     }
                     // submit new activation job
                     if ($user->isActivated()) {
-                        $this->success('contact',
-                            gettext('Contact details were changed.'));
+                        $this->success('contact', gettext('Contact details were changed.'));
                     } else {
                         $submitted = false;
                         try {
-                            if ($this->job->submit('Activate',
-                                    array('user' => $user->getId(), 'address' => $user->getEmail()))) {
+                            if ($this->job->submit('Activate', array('user' => $user->getId(), 'address' => $user->getEmail()))) {
                                 $submitted = true;
                             }
                         } catch (\Exception $ex) {
+
                         }
                         if ($submitted) {
-                            $this->success('contact',
-                                gettext('Contact details were changed. Please remember to activate your account.'));
+                            $this->success('contact', gettext('Contact details were changed. Please remember to activate your account.'));
                         } else {
-                            $this->warning('contact',
-                                gettext('Contact details were changed, but we couldn\'t send you an email to activate your account. Pleasy try again later.'));
+                            $this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to activate your account. Pleasy try again later.'));
                         }
                     }
                 } else {
@@ -188,11 +186,9 @@ class Settings extends Presenter
                 // remove any previous activation jobs, if any
                 $this->job->remove('Activate', $args);
                 if ($this->job->submit('Activate', $args)) {
-                    $this->success('contact',
-                        gettext('You should receive the confirmation email soon.'));
+                    $this->success('contact', gettext('You should receive the confirmation email soon.'));
                 } else {
-                    $this->alert('contact',
-                        gettext('We can\'t send you a confirmation email right now. Try again later.'));
+                    $this->alert('contact', gettext('We can\'t send you a confirmation email right now. Try again later.'));
                 }
             }
         }
@@ -236,16 +232,12 @@ class Settings extends Presenter
                         $this->session->identify();
                         $this->context['state'] = $this->session->regenerateState();
                         if ($has_password) {
-                            $this->success('password',
-                                gettext('Your password was changed.'));
+                            $this->success('password', gettext('Your password was changed.'));
                         } else {
-                            $this->success('password',
-                                gettext('Your password was set.'));
+                            $this->success('password', gettext('Your password was set.'));
                         }
                     } catch (ModelValueInvalidException $ex) {
-                        $this->error('password',
-                            sprintf(gettext('Password is %s.'),
-                                $ex->getMessage()));
+                        $this->error('password', sprintf(gettext('Password is %s.'), $ex->getMessage()));
                     }
                 } else {
                     $this->context['focus_password'] = true;
@@ -263,10 +255,10 @@ class Settings extends Presenter
             $this->session->refresh();
             $this->context['state'] = $this->session->regenerateState();
 
-            $this->success('remote-logout',
-                gettext('All other devices were logged out.'));
+            $this->success('remote-logout', gettext('All other devices were logged out.'));
         }
 
         $this->get();
     }
+
 }

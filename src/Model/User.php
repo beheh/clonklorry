@@ -269,37 +269,8 @@ class User extends Model
         return $this->counter <= $counter;
     }
 
-    public function setClonkforgeUrl($clonkforge)
-    {
-        $scanned = array();
-        $id = null;
-        if ($clonkforge) {
-            $this->validateUrl($clonkforge);
-            $clonkforge = preg_replace('|^(http://)?(www\.)?(.*)$|',
-                'http://$3', $clonkforge);
-            $scanned = sscanf($clonkforge, $this->config->get('clonkforge/url'));
-            if (count($scanned) != 1 || empty($scanned[0])) {
-                throw new ModelValueInvalidException(gettext('not a matching Clonk Forge URL'));
-            }
-            $id = $scanned[0];
-        }
-        try {
-            $this->setClonkforgeId($id);
-        } catch (ModelValueInvalidException $e) {
-            throw new ModelValueInvalidException(gettext('not a valid Clonk Forge URL'));
-        }
-    }
-
     public function setClonkforgeId($id)
     {
-        if ($id) {
-            $this->validateNumber($id);
-            if ($id < 1) {
-                throw new ModelValueInvalidException(gettext('not a valid Clonk Forge profile id'));
-            }
-        } else {
-            $id = null;
-        }
         $this->clonkforgeId = $id;
     }
 
@@ -319,16 +290,7 @@ class User extends Model
 
     public function setGithubName($name)
     {
-        if ($name) {
-            //validate to pattern ([a-zA-Z0-9][a-zA-Z0-9-]*)
-            //$this->validateString($name, 1, 255);
-            if (!preg_match('#^'.'([a-zA-Z0-9][a-zA-Z0-9-]*)'.'$#', $name)) {
-                throw new ModelValueInvalidException(gettext('not a valid GitHub name'));
-            }
-        } else {
-            $name = null;
-        }
-        return $this->githubName = $name;
+        $this->githubName = $name;
     }
 
     public function getGithubName()

@@ -3,8 +3,10 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
-use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Exception\ForbiddenException;
 use Lorry\Model\User;
+use Lorry\Validator\UserValidator;
+use Lorry\Exception\ValidationException;
 
 class Register extends Presenter
 {
@@ -52,7 +54,7 @@ class Register extends Presenter
     public function post()
     {
         if (!$this->config->get('enable/registration')) {
-            return $this->get();
+            throw new ForbiddenException('registration is disabled');
         }
 
         $username = filter_input(INPUT_POST, 'username');
@@ -63,77 +65,67 @@ class Register extends Presenter
         $this->context['username'] = $username;
         $this->context['email'] = $email;
 
-        $errors = array();
-
         $oauth = false;
-        if (isset($_SESSION['register_oauth']) && filter_input(INPUT_POST,
-                'use-oauth')) {
+        if (isset($_SESSION['register_oauth']) && filter_input(INPUT_POST, 'use-oauth')) {
             $oauth = $_SESSION['register_oauth'];
         }
 
         $user = new User();
         $userRepository = $this->manager->getRepository('Lorry\Model\User');
+        $userValidator = new UserValidator();
 
+        $user->setUsername($username);
         if (count($userRepository->findBy(array('username' => $username))) > 0) {
-            $errors[] = gettext('Username already taken.');
-        } else {
-            $user->setUsername($username);
+            $userValidator->fail(gettext('Username is already taken'));
         }
 
+        $user->setEmail($email);
         if ($email && count($userRepository->findOneBy(array('email' => $email))) > 0) {
-            $errors[] = sprintf(gettext('Email address is already in use.'));
-        } else {
-            $user->setEmail($email);
+            $userValidator->fail(gettext('Email address is already in use'));
         }
 
         if ($oauth) {
             $user->setOauth(strtolower($oauth['provider']), $oauth['uid']);
-        }
-        else {
+        } else {
+            $user->setPassword($password);
             if ($password !== $repeatedPassword) {
-                $errors[] = gettext('Passwords do not match.');
-            } else {
-                $user->setPassword($password);
+                $userValidator->fail(gettext('Passwords do not match'));
+            } else if(strlen($password) < 6) {
+                $userValidator->fail(gettext('Password too short'));
             }
         }
 
         $user->setLanguage($this->localisation->getDisplayLanguage());
 
-        if (empty($errors)) {
+        try {
+            $userValidator->validate($user);
             $this->manager->persist($user);
             $this->manager->flush();
-            if (true) {
-                $this->logger->notice('creating user "'.$user->getUsername().'"');
-                try {
-                    $this->job->submit('Welcome',
-                        array('user' => $user->getId()));
-                } catch (\Exception $ex) {
+            $this->session->setFlag('new_user', false);
+            $this->job->submit('Welcome', array('user' => $user->getId()));
+            // return user to previous page
+            $returnto = filter_input(INPUT_GET, 'returnto');
+            if ($oauth) {
+                $url = '/';
+                if ($returnto) {
+                    $url = $returnto;
                 }
-                $this->session->setFlag('new_user', false);
-                $returnto = filter_input(INPUT_GET, 'returnto');
-                if ($oauth) {
-                    $url = '/';
-                    if ($returnto) {
-                        $url = $returnto;
-                    }
-                    $this->session->start($user, false, false);
-                    $this->redirect($url);
-                    return;
-                } else {
-                    $url = '/login?registered='.$user->getUsername();
-                    if ($returnto) {
-                        $url .= '&returnto='.$returnto;
-                    }
-                    $this->redirect($url);
-                    return;
-                }
+                $this->session->start($user, false, false);
+                $this->redirect($url);
+                return;
             } else {
-                $this->error('register', gettext('Registration failed.'));
+                $url = '/login?registered='.$user->getUsername();
+                if ($returnto) {
+                    $url .= '&returnto='.$returnto;
+                }
+                $this->redirect($url);
+                return;
             }
-        } else {
-            $this->error('register', implode('<br>', $errors));
+        } catch (ValidationException $ex) {
+            $this->error('register', implode('.<br>', $ex->getFails()).'.');
         }
 
         $this->get();
     }
+
 }
