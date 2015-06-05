@@ -3,6 +3,7 @@
 namespace Lorry\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Lorry\Model\Banner;
 
 class BannerRepository extends EntityRepository
 {
@@ -15,11 +16,13 @@ class BannerRepository extends EntityRepository
             ->from('Lorry\Model\Banner', 'b')
             ->leftJoin('b.translations', 't')
             ->leftJoin('b.release', 'r')
-            ->where('t.language = :language')
+            ->where('b.visibility = :visibility')
+            ->andWhere('t.language = :language')
             ->andWhere('b.release IS NULL OR (b.release = r.id AND :now >= r.published)')
             ->andWhere('b.showFrom < :now OR b.showFrom IS NULL')
             ->andWhere('b.showUntil > :now OR b.showUntil IS NULL')
             ->orderBy('b.showFrom', 'DESC')
+            ->setParameter('visibility', Banner::VISIBILITY_PUBLIC)
             ->setParameter('language', $language)
             ->setParameter('now', new \DateTime());
         return $qb->getQuery()->getScalarResult();

@@ -10,6 +10,15 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Banner extends Model
 {
+    const VISIBILITY_HIDDEN = 0;
+    const VISIBILITY_PUBLIC = 1;
+    // reserved for VISIBILITY_USERS
+
+    /**
+     * @Column(type="integer")
+     */
+    protected $visibility;
+
     /**
      * @Column(type="datetime", name="show_from", nullable=true)
      * @var \DateTime
@@ -48,6 +57,14 @@ class Banner extends Model
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+    }
+
+    public function setVisibility($visibility) {
+        $this->visibility = $visibility;
+    }
+
+    public function getVisibility() {
+        return $this->visibility;
     }
 
     public function setShowFrom($showFrom)
