@@ -23,9 +23,9 @@ class Banner extends Model
     protected $showUntil;
 
     /**
-     * @ManyToOne(targetEntity="Addon")
+     * @ManyToOne(targetEntity="Release")
      */
-    protected $addon;
+    protected $release;
 
     /**
      * @OneToMany(targetEntity="BannerTranslation", mappedBy="banner", cascade={"all"})
@@ -72,20 +72,20 @@ class Banner extends Model
 
     /**
      *
-     * @param Addon $addon
+     * @param Release $release
      */
-    public function setAddon($addon)
+    public function setRelease($release)
     {
-        $this->addon = $addon;
+        $this->release = $release;
     }
 
     /**
      *
-     * @return Addon
+     * @return Release
      */
-    public function getAddon()
+    public function getRelease()
     {
-        return $this->addon;
+        return $this->release;
     }
 
     /**
