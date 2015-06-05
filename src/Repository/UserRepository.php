@@ -3,6 +3,7 @@
 namespace Lorry\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Lorry\Model\User;
 
 class UserRepository extends EntityRepository
 {
