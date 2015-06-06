@@ -14,6 +14,7 @@ abstract class UserModifyCommand extends Command
     protected $manager;
 
     abstract function modifyUser(User $user, InputInterface $input, OutputInterface $output);
+    abstract function checkResult(User $user, InputInterface $input, OutputInterface $output);
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -28,5 +29,6 @@ abstract class UserModifyCommand extends Command
         }
         $this->modifyUser($user, $input, $output);
         $this->manager->flush();
+        $this->checkResult($user, $input, $output);
     }
 }

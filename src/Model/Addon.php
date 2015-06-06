@@ -14,6 +14,7 @@ class Addon extends Model implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="User", inversedBy="ownedAddons")
+     * @JoinColumn(onDelete="SET NULL")
      * @var User
      */
     protected $owner;
@@ -40,8 +41,8 @@ class Addon extends Model implements ApiObjectInterface
     protected $bugtracker;
 
     /**
-     * @OneToOne(targetEntity="Release")
-     * @JoinColumn(name="latest_release_id")
+     * @OneToOne(targetEntity="Release", orphanRemoval=true)
+     * @JoinColumn(name="latest_release_id", onDelete="SET NULL")
      * @var Release
      */
     protected $latestRelease;

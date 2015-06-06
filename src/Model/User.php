@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @Entity(repositoryClass="Lorry\Repository\UserRepository")
  * @HasLifecycleCallbacks
+ * @ChangeTrackingPolicy("NOTIFY")
  */
 class User extends Model
 {
@@ -69,7 +70,6 @@ class User extends Model
 
     /**
      * @OneToMany(targetEntity="Addon", mappedBy="owner")
-     * @var Addon[]
      * */
     protected $ownedAddons;
 
@@ -103,9 +103,10 @@ class User extends Model
 
     public function setUsername($username)
     {
-        //$this->validateString($username, 3, 16);
-        //$this->validateRegexp($username, '/^[a-z0-9_]+$/i');
-        $this->username = $username;
+        if ($username != $this->username) {
+            $this->_onPropertyChanged('username', $this->username, $username);
+            $this->username = $username;
+        }
     }
 
     public function getUsername()
@@ -116,11 +117,11 @@ class User extends Model
     public function setPassword($password)
     {
         if (!empty($password)) {
-            $hash = password_hash($password, PASSWORD_BCRYPT,
-                array('cost' => 12));
+            $hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
         } else {
             $hash = null;
         }
+        $this->_onPropertyChanged('password', $this->passwordHash, $hash);
         $this->incrementCounter();
         $this->passwordHash = $hash;
     }
@@ -140,7 +141,10 @@ class User extends Model
 
     public function setEmail($email)
     {
-        $this->email = $email;
+        if ($email != $this->email) {
+            $this->_onPropertyChanged('email', $this->email, $email);
+            $this->email = $email;
+        }
     }
 
     public function getEmail()
@@ -172,18 +176,27 @@ class User extends Model
 
     public function activate()
     {
-        return $this->activation = new \DateTime();
+        $this->setActivation(new \DateTime());
     }
 
     public function deactivate()
     {
-        return $this->activation = null;
+        $this->setActivation(null);
+    }
+
+    protected function setActivation($activation)
+    {
+        if ($activation != $this->activation) {
+            $this->_onPropertyChanged('activation', $this->activation, $activation);
+            $this->activation = $activation;
+        }
     }
 
     public function regenerateSecret()
     {
         $secret = base64_encode(openssl_random_pseudo_bytes(64));
         $this->secret = $secret;
+        $this->_onPropertyChanged('secret', $this->secret, $secret);
         $this->incrementCounter();
     }
 
@@ -202,7 +215,10 @@ class User extends Model
 
     public function setPermission($permission)
     {
-        return $this->permissions = $permission;
+        if ($permission != $this->permissions) {
+            $this->_onPropertyChanged('permission', $this->permissions, $permission);
+            $this->permissions = $permission;
+        }
     }
 
     public function getPermissions()
@@ -256,12 +272,18 @@ class User extends Model
 
     public function getCounter()
     {
-        return $this->counter;
+        $this->counter;
     }
 
     public function incrementCounter()
     {
-        return $this->counter++;
+        $this->setCounter($this->counter + 1);
+    }
+
+    private function setCounter($counter)
+    {
+        $this->_onPropertyChanged('counter', $this->counter, $counter);
+        $this->counter = $counter;
     }
 
     public function verifyCounter($counter)
@@ -269,9 +291,12 @@ class User extends Model
         return $this->counter <= $counter;
     }
 
-    public function setClonkforgeId($id)
+    public function setClonkforgeId($clonkforgeId)
     {
-        $this->clonkforgeId = $id;
+        if ($clonkforgeId != $this->clonkforgeId) {
+            $this->_onPropertyChanged('clonkforgeId', $this->clonkforgeId, $clonkforgeId);
+            $this->clonkforgeId = $clonkforgeId;
+        }
     }
 
     public function getClonkforgeId()
@@ -288,9 +313,12 @@ class User extends Model
         return '';
     }
 
-    public function setGithubName($name)
+    public function setGithubName($githubName)
     {
-        $this->githubName = $name;
+        if ($githubName != $this->githubName) {
+            $this->_onPropertyChanged('githubName', $this->githubName, $githubName);
+            $this->githubName = $githubName;
+        }
     }
 
     public function getGithubName()
@@ -346,7 +374,10 @@ class User extends Model
 
     public function setLanguage($language)
     {
-        $this->language = $language;
+        if ($language != $this->language) {
+            $this->_onPropertyChanged('language', $this->language, $language);
+            $this->language = $language;
+        }
     }
 
     public function getLanguage()

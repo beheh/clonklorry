@@ -33,6 +33,7 @@ class Banner extends Model
 
     /**
      * @ManyToOne(targetEntity="Release")
+     * @JoinColumn(onDelete="CASCADE")
      */
     protected $release;
 

@@ -16,16 +16,22 @@ class UserMod extends UserModifyCommand
             ->setName('user:mod')
             ->setDescription('Make a user moderator')
             ->addArgument(
-                'username', InputArgument::REQUIRED,
-                'The username of the new moderator'
+                'username', InputArgument::REQUIRED, 'The username of the new moderator'
             )
         ;
     }
 
-    function modifyUser(User $user, InputInterface $input,
-        OutputInterface $output)
+    function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
         $user->setPermission(User::PERMISSION_MODERATE);
-        $output->writeln('<info>'.$user->getUsername().' is now a moderator</info>');
+    }
+
+    function checkResult(User $user, InputInterface $input, OutputInterface $output)
+    {
+        if ($user->isModerator()) {
+            $output->writeln('<info>'.$user->getUsername().' is now a moderator</info>');
+        } else {
+            $output->writeln('<error>Failed to make '.$user->getUsername().' a moderator</error>');
+        }
     }
 }

@@ -6,6 +6,7 @@ use Lorry\Presenter;
 use Lorry\Model\User;
 use Lorry\Validator\UserValidator;
 use Lorry\Exception\ValidationException;
+use Lorry\ModificationListener;
 
 class Settings extends Presenter
 {
@@ -93,6 +94,9 @@ class Settings extends Presenter
         $this->security->requireValidState();
 
         $user = $this->session->getUser();
+        $userRepository = $this->manager->getRepository('Lorry\Model\User');
+        $modificationListener = new ModificationListener($user);
+
         $userValidator = new UserValidator();
 
         if (isset($_POST['profiles-form'])) {
@@ -116,9 +120,6 @@ class Settings extends Presenter
             // GitHub name
             $githubName = trim(filter_input(INPUT_POST, 'github'));
             if (!empty($githubName)) {
-                if (!preg_match('#^'.'([a-zA-Z0-9][a-zA-Z0-9-]*)'.'$#', $githubName)) {
-                    $userValidator->fail('GitHub name is invalid');
-                }
                 $this->context['github'] = $githubName;
                 $user->setGithubName($githubName);
             } else {
@@ -127,69 +128,39 @@ class Settings extends Presenter
 
             try {
                 $userValidator->validate($user);
-                $this->manager->flush();
-                $this->success('profiles', gettext('Your links were saved.'));
+                if ($modificationListener->isNotified()) {
+                    $this->manager->flush();
+                    $this->success('profiles', gettext('Your links were saved.'));
+                }
             } catch (ValidationException $ex) {
-                $this->error('profiles', implode('.<br>', $ex->getFails()).'.');
                 $this->manager->refresh($user);
+                $this->error('profiles', implode('.<br>', $ex->getFails()).'.');
             }
-            $this->manager->flush();
         }
 
         if (isset($_POST['contact-form'])) {
-            $errors = array();
+            $email = trim(filter_input(INPUT_POST, 'email'));
+            $previousEmail = $user->getEmail();
 
-            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $this->context['email'] = $email;
-
-            $previous_email = $user->getEmail();
-
-            try {
-                $user->setEmail($email);
-            } catch (ModelValueInvalidException $e) {
-                $errors[] = sprintf(gettext('Email address is %s.'), gettext('invalid'));
+            $user->setEmail($email);
+            if ($email && $email !== $previousEmail && count($userRepository->findBy(array('email' => $email))) > 0) {
+                $userValidator->fail('Email address is already in use');
             }
 
-            if ($user->modified()) {
-                if (empty($errors)) {
+            try {
+                $userValidator->validate($user);
+                if ($modificationListener->isNotified()) {
                     $this->manager->flush();
-
-                    // remove activation jobs with previous address, if any
-                    try {
-                        $this->job->remove('Activate', array('user' => $user->getId(), 'address' => $previous_email));
-                    } catch (\Exception $ex) {
-
-                    }
-                    // submit new activation job
                     if ($user->isActivated()) {
                         $this->success('contact', gettext('Contact details were changed.'));
                     } else {
-                        $submitted = false;
-                        try {
-                            if ($this->job->submit('Activate', array('user' => $user->getId(), 'address' => $user->getEmail()))) {
-                                $submitted = true;
-                            }
-                        } catch (\Exception $ex) {
-
-                        }
-                        if ($submitted) {
-                            $this->success('contact', gettext('Contact details were changed. Please remember to activate your account.'));
-                        } else {
-                            $this->warning('contact', gettext('Contact details were changed, but we couldn\'t send you an email to activate your account. Pleasy try again later.'));
-                        }
+                        $this->warning('contact', gettext('Contact details were changed. Please still activate your account.'));
+                        // @todo send activation email if not activated
                     }
-                } else {
-                    $this->error('contact', implode('<br>', $errors));
                 }
-            } elseif (isset($_POST['resend'])) {
-                $args = array('user' => $user->getId(), 'address' => $user->getEmail());
-                // remove any previous activation jobs, if any
-                $this->job->remove('Activate', $args);
-                if ($this->job->submit('Activate', $args)) {
-                    $this->success('contact', gettext('You should receive the confirmation email soon.'));
-                } else {
-                    $this->alert('contact', gettext('We can\'t send you a confirmation email right now. Try again later.'));
-                }
+            } catch (ValidationException $ex) {
+                $this->manager->refresh($user);
+                $this->error('contact', implode('.<br>', $ex->getFails()).'.');
             }
         }
 
@@ -197,9 +168,19 @@ class Settings extends Presenter
             $language = filter_input(INPUT_POST, 'language');
             if ($this->localisation->setDisplayLanguage($language)) {
                 $user->setLanguage($language);
-                $this->manager->flush();
-                $this->redirect('/settings');
-                return;
+            } else {
+                $userValidator->fail(gettext('Language is invalid'));
+            }
+            try {
+                $userValidator->validate($user);
+                if ($modificationListener->isNotified()) {
+                    $this->manager->flush();
+                    $this->redirect('/settings');
+                    return;
+                }
+            } catch (ValidationException $ex) {
+                $this->manager->refresh($user);
+                $this->error('language', implode('.<br>', $ex->getFails()).'.');
             }
         }
 
@@ -208,7 +189,17 @@ class Settings extends Presenter
 
             if (filter_input(INPUT_POST, 'confirm', FILTER_VALIDATE_BOOLEAN)) {
                 if (!$user->hasPassword() || $user->matchPassword(filter_input(INPUT_POST, 'password'))) {
-                    $this->warning('remove-account', 'Not yet implemented.');
+                    if ($user->isActivated()) {
+                        $this->warning('remove-account', gettext('Okay. We\'ll send you one final email to confirm.'));
+                        // @todo send removal confirmation
+                    } else {
+                        $this->manager->remove($user);
+                        $this->manager->flush();
+                        $this->session->end();
+                        // goodbye, old friend
+                        $this->redirect('/');
+                        return;
+                    }
                 } else {
                     $this->error('remove-account', gettext('Password wrong.'));
                 }
@@ -222,36 +213,42 @@ class Settings extends Presenter
             $password_old = filter_input(INPUT_POST, 'password-old');
             $password_new = filter_input(INPUT_POST, 'password-new');
             $password_confirm = filter_input(INPUT_POST, 'password-confirm');
-            $can_reset = $this->session->canResetPassword();
-            if (!$has_password || $user->matchPassword($password_old) || $can_reset) {
-                if ($password_new === $password_confirm) {
-                    try {
-                        $user->setPassword($password_new);
-                        $this->session->clearResetPassword();
-                        $this->manager->flush();
-                        $this->session->identify();
-                        $this->context['state'] = $this->session->regenerateState();
-                        if ($has_password) {
-                            $this->success('password', gettext('Your password was changed.'));
-                        } else {
-                            $this->success('password', gettext('Your password was set.'));
-                        }
-                    } catch (ModelValueInvalidException $ex) {
-                        $this->error('password', sprintf(gettext('Password is %s.'), $ex->getMessage()));
-                    }
-                } else {
-                    $this->context['focus_password'] = true;
-                    $this->error('password', gettext('Passwords do not match.'));
-                }
-            } else {
+
+            if ($has_password && !$user->matchPassword($password_old) && !$this->session->canResetPassword()) {
+                $userValidator->fail(gettext('Password wrong'));
                 $this->context['focus_password'] = true;
-                $this->error('password', gettext('Password wrong.'));
+            }
+
+            if ($password_new !== $password_confirm) {
+                $userValidator->fail(gettext('New passwords do not match'));
+                $this->context['focus_password'] = true;
+            }
+
+            $user->setPassword($password_new);
+
+            try {
+                $userValidator->validate($user);
+                $this->session->clearResetPassword();
+                $this->manager->flush();
+
+                $this->context['state'] = $this->session->regenerateState();
+                $this->session->identify();
+
+                if ($has_password) {
+                    $this->success('password', gettext('Your password was changed.'));
+                } else {
+                    $this->success('password', gettext('Your password was set.'));
+                }
+            } catch (ValidationException $ex) {
+                $this->manager->refresh($user);
+                $this->error('password', implode('.<br>', $ex->getFails()).'.');
             }
         }
 
         if (isset($_POST['remote-logout-form'])) {
             $user->regenerateSecret();
             $this->manager->flush();
+
             $this->session->refresh();
             $this->context['state'] = $this->session->regenerateState();
 
@@ -260,5 +257,4 @@ class Settings extends Presenter
 
         $this->get();
     }
-
 }

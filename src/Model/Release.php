@@ -15,7 +15,7 @@ class Release extends Model implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="Addon", inversedBy="releases", fetch="EAGER")
-     * @JoinColumn(nullable=false)
+     * @JoinColumn(nullable=false, onDelete="CASCADE")
      * @var Addon
      */
     protected $addon;

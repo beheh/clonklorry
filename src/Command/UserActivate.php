@@ -16,16 +16,23 @@ class UserActivate extends UserModifyCommand
             ->setName('user:activate')
             ->setDescription('Activate a user account')
             ->addArgument(
-                'username', InputArgument::REQUIRED,
-                'The username of the account to activate'
+                'username', InputArgument::REQUIRED, 'The username of the account to activate'
             )
         ;
     }
 
-    function modifyUser(User $user, InputInterface $input,
-        OutputInterface $output)
+    function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
-        $user->setPermission(User::PERMISSION_MODERATE);
-        $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
+        $user->activate();
+    }
+
+    function checkResult(User $user, InputInterface $input, OutputInterface $output)
+    {
+        if($user->isActivated()) {
+            $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');
+        }
+        else {
+            $output->writeln('<error>Failed to activate '.$user->getUsername().'\'s account</error>');
+        }
     }
 }

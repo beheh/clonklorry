@@ -73,7 +73,8 @@
 					</div>
 					<div class="col-md-12 col-sm-6">
 						<h3 id="language">{% trans "Language" %}</h3>
-						<form role=form" method="post">
+						{% include 'functions/alert.twig' with {'selector' : 'language'} %}
+                        <form role=form" method="post">
 							<input type="hidden" name="language-form">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
@@ -112,7 +113,7 @@
 							</div>
 						{% endif %}
 						<div class="form-group">
-							<button type="submit" class="btn btn-danger remove-form-element">{% trans "Permanently remove account"%}</button>
+							<button type="submit" class="btn btn-danger remove-form-element">{% if activated %}{% trans "Send confirmation email"%}{% else %}{% trans "Permanently remove account"%}{% endif %}</button>
 						</div>
 						{% include 'functions/alert.twig' with {'selector' : 'remove-account'} %}
 					</form>
