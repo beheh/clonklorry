@@ -165,12 +165,10 @@ class Environment
             $twig->addGlobal('filename',
                 htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'],
                             PHP_URL_PATH), '/')));
-            $language = $localisation->getDisplayLanguage();
-            $twig->addGlobal('locale', str_replace('-', '_', $language));
+            $displayLanguage = $localisation->getDisplayLanguage();
+            $twig->addGlobal('locale', str_replace('-', '_', $displayLanguage));
+            $twig->addGlobal('display_language', $displayLanguage);
             $languages = $localisation->getAvailableLanguages();
-            $twig->addGlobal('nextlocale',
-                strstr($languages[(array_search($language, $languages) + 1) % count($languages)],
-                    '-', true));
             $twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
 
             $session = $this->container->get('session');

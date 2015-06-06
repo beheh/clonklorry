@@ -93,6 +93,7 @@ class Developers extends Presenter
 
         try {
             $translationValidator->validate($translation);
+            $addon->setDefaultTranslation($translation);
             $addon->addTranslation($translation);
             $addonValidator->validate($addon);
             $this->manager->persist($addon);

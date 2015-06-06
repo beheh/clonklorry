@@ -6,7 +6,7 @@ use Lorry\Model;
 
 /**
  * @Entity
- * @Table(name="BannerTranslation",uniqueConstraints={@UniqueConstraint(name="banner_language", columns={"banner_id", "language"})})
+ * @Table(name="BannerTranslation",uniqueConstraints={@UniqueConstraint(name="banner_language", columns={"banner_id", "language_id"})})
  */
 class BannerTranslation extends Model
 {
@@ -18,8 +18,8 @@ class BannerTranslation extends Model
     protected $banner;
 
     /**
-     * @Column(type="string")
-     * @var string
+     * @ManyToOne(targetEntity="Language")
+     * @var Language
      */
     protected $language;
 
@@ -67,7 +67,7 @@ class BannerTranslation extends Model
 
     /**
      *
-     * @param string $language
+     * @param Language $language
      */
     public function setLanguage($language)
     {
@@ -76,7 +76,7 @@ class BannerTranslation extends Model
 
     /**
      *
-     * @return string
+     * @return Language
      */
     public function getLanguage()
     {

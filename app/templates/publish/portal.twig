@@ -24,7 +24,7 @@
 							</a>
 						</div>
 						<div class="media-body">
-                            {% set _addon_translation = attribute(addon, 'getTranslation', [locale]) %}                            
+                            {% set _addon_translation = attribute(addon, 'getTranslation', [display_language]) %}
 							<h4 class="media-heading"><a href="{{filename}}/{{addon.id}}">{{_addon_translation.title}}</a></h4>
 							{% include 'functions/tags/game.twig' with {'game' : addon.game}%}
 							<p>

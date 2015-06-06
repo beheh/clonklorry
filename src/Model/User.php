@@ -41,7 +41,7 @@ class User extends Model
 
     /* State */
 
-    /*     * @Column(type="datetime") */
+    /** @Column(type="datetime") */
     protected $registration;
 
     /** @Column(type="datetime", nullable=true) */
@@ -49,7 +49,10 @@ class User extends Model
 
     /* Settings */
 
-    /** @Column(type="string") */
+    /**
+     * @ManyToOne(targetEntity="Language")
+     * @var Language
+     */
     protected $language;
 
     /** @Column(type="integer", name="clonkforge_id", nullable=true) */
@@ -171,7 +174,9 @@ class User extends Model
      */
     public function register()
     {
-        $this->registration = new \DateTime();
+        $now = new \DateTime();
+        $this->_onPropertyChanged('registration', null, $now);
+        $this->registration = $now;
     }
 
     /**
@@ -431,14 +436,15 @@ class User extends Model
         return $this->ownedAddons;
     }
 
-    public function getModerations() {
+    public function getModerations()
+    {
         return $this->moderations;
     }
-    
-    public function getExecutedModerations() {
+
+    public function getExecutedModerations()
+    {
         return $this->executedModerations;
     }
-
 
     public function __toString()
     {

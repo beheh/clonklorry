@@ -1,5 +1,5 @@
 {% set _addon_url %}{{base}}/addons/{% if addon.game %}{{addon.game.short}}{% else %}{{short}}{% endif %}/{{addon.short}}{% if addon.version %}/{{addon.version}}{% endif %}{% endset %}
-{% set _addon_translation = attribute(addon, 'getTranslation', [locale]) %}
+{% set _addon_translation = attribute(addon, 'getTranslation', [display_language]) %}
 <li class="media media-addon">
     <a href="{{_addon_url}}" class="pull-left">
         {% include 'functions/svg/addon.twig' %}

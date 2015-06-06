@@ -52,7 +52,14 @@ class Addon extends Model implements ApiObjectInterface
     protected $releases;
 
     /**
-     * @OneToMany(targetEntity="AddonTranslation", mappedBy="addon", cascade={"all"}))
+     * @OneToOne(targetEntity="AddonTranslation")
+     * @JoinColumn(name="default_translation_id", onDelete="SET NULL")
+     * @var AddonTranslation
+     */
+    protected $defaultTranslation;
+
+    /**
+     * @OneToMany(targetEntity="AddonTranslation", mappedBy="addon", cascade={"all"}, fetch="EAGER")
      * @var \Doctrine\Common\Collections\ArrayCollection
      */
     protected $translations;
@@ -86,9 +93,10 @@ class Addon extends Model implements ApiObjectInterface
     public function getTranslation($language)
     {
         $criteria = Criteria::create()
-            ->where(Criteria::expr()->eq('language', str_replace('_', '-', $language)))
+            ->where(Criteria::expr()->eq('language', $language))
             ->setMaxResults(1);
-        return $this->translations->matching($criteria)->first();
+        $translation = $this->translations->matching($criteria)->first();
+        return $translation ? $translation : $this->defaultTranslation;
     }
 
     public function setGame($game)
@@ -141,6 +149,16 @@ class Addon extends Model implements ApiObjectInterface
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function setDefaultTranslation($defaultTranslation)
+    {
+        $this->defaultTranslation = $defaultTranslation;
+    }
+
+    public function getDefaultTranslation()
     {
         return $this->translations;
     }

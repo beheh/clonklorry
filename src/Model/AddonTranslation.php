@@ -6,7 +6,7 @@ use Lorry\Model;
 
 /**
  * @Entity
- * @Table(name="AddonTranslation",uniqueConstraints={@UniqueConstraint(name="addon_language", columns={"addon_id", "language"})})
+ * @Table(name="AddonTranslation",uniqueConstraints={@UniqueConstraint(name="addon_language", columns={"addon_id", "language_id"})})
  */
 class AddonTranslation extends Model
 {
@@ -18,8 +18,8 @@ class AddonTranslation extends Model
     protected $addon;
 
     /**
-     * @Column(type="string")
-     * @var string
+     * @ManyToOne(targetEntity="Language")
+     * @var Language
      */
     protected $language;
 

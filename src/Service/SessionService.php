@@ -19,10 +19,13 @@ class SessionService extends Service
      */
     protected $config;
 
+    /**
+     *
+     * @var \Doctrine\Common\Persistence\ObjectManager
+     */
     protected $manager;
 
-    public function __construct(LoggerFactoryInterface $loggerFactory,
-        ConfigService $config, ObjectManager $manager)
+    public function __construct(LoggerFactoryInterface $loggerFactory, ObjectManager $manager, ConfigService $config)
     {
         parent::__construct($loggerFactory);
         $this->config = $config;
@@ -100,8 +103,7 @@ class SessionService extends Service
     final public function identified()
     {
         $this->ensureUser();
-        return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified']
-            === true;
+        return $this->user->hasPassword() && isset($_SESSION['identified']) && $_SESSION['identified'] === true;
     }
 
     final public function remember()
@@ -109,8 +111,7 @@ class SessionService extends Service
         $this->ensureUser();
         $this->ensureSecret($this->user);
         $secret = $this->user->getSecret();
-        setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret,
-            time() + 60 * 60 * 24 * 365, '/');
+        setcookie('lorry_login', '$'.$this->user->getId().'$'.$secret, time() + 60 * 60 * 24 * 365, '/');
     }
 
     /**
@@ -314,7 +315,7 @@ class SessionService extends Service
         }
 
         $params = array();
-        if($register) {
+        if ($register) {
             $params[] = 'register=1';
         }
 

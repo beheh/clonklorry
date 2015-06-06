@@ -4,6 +4,7 @@ namespace Lorry\Service;
 
 use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class LocalisationService extends Service
 {
@@ -13,20 +14,26 @@ class LocalisationService extends Service
      */
     protected $session;
 
-    public function __construct(LoggerFactoryInterface $loggerFactory,
-        SessionService $session)
+    /**
+     *
+     * @var \Doctrine\Common\Persistence\ObjectManager
+     */
+    protected $manager;
+
+    public function __construct(LoggerFactoryInterface $loggerFactory, ObjectManager $manager, SessionService $session)
     {
         parent::__construct($loggerFactory);
+        $this->manager = $manager;
         $this->session = $session;
     }
 
     /**
      *
-     * @return array
+     * @return \Lorry\Model\Language[]
      */
     final public function getAvailableLanguages()
     {
-        return array('en-US', 'de-DE');
+        return $this->manager->getRepository('Lorry\Model\Language')->findAll();
     }
 
     final public function getLocalizedCountries()
@@ -51,10 +58,15 @@ class LocalisationService extends Service
         }
         return false;
     }
+
+    final public function getLanguage($language) {
+        return $this->manager->getRepository('Lorry\Model\Language')->findOneBy(array('key' => $language));
+    } 
+
     /**
-     * @var string
+     * @var Language
      */
-    private $display_language = null;
+    private $displayLanguage = null;
 
     /**
      *
@@ -62,8 +74,8 @@ class LocalisationService extends Service
      */
     public function getDisplayLanguage()
     {
-        if ($this->display_language) {
-            return $this->display_language;
+        if ($this->displayLanguage) {
+            return $this->displayLanguage;
         }
 
         $available = $this->getAvailableLanguages();
@@ -100,9 +112,9 @@ class LocalisationService extends Service
                 $accept = str_replace(' ', '', explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']));
                 // sort by quality
                 $priorities = array();
-                foreach($accept as $part) {
+                foreach ($accept as $part) {
                     $q = 1;
-                    if(substr_count($part, ';q=') == 1) {
+                    if (substr_count($part, ';q=') == 1) {
                         $parts = explode(';q=', $part);
                         $part = $parts[0];
                         $q = floatval($parts[1]);
@@ -112,14 +124,14 @@ class LocalisationService extends Service
                 arsort($priorities);
                 foreach ($priorities as $current => $val) {
                     $found = false;
-                    foreach($available as $j => $offered) {
-                        if(strpos($offered, $current) === 0) {
+                    foreach ($available as $j => $offered) {
+                        if (strpos($offered, $current) === 0) {
                             $language = $offered;
                             $found = true;
                             break;
                         }
                     }
-                    if($found) {
+                    if ($found) {
                         break;
                     }
                 }
@@ -127,7 +139,7 @@ class LocalisationService extends Service
         }
 
         $this->setDisplayLanguage($language);
-        return $this->display_language;
+        return $this->displayLanguage;
     }
 
     /**
@@ -138,11 +150,9 @@ class LocalisationService extends Service
     final public function setDisplayLanguage($language)
     {
         if ($this->verifyLanguage($language)) {
-            $this->display_language = $language;
-            if (!isset($_COOKIE['lorry_language']) || $_COOKIE['lorry_language']
-                != $language) {
-                setcookie('lorry_language', $language,
-                    time() + 60 * 60 * 24 * 365, '/');
+            $this->displayLanguage = $language;
+            if (!isset($_COOKIE['lorry_language']) || $_COOKIE['lorry_language'] != $language) {
+                setcookie('lorry_language', $language, time() + 60 * 60 * 24 * 365, '/');
             }
             return true;
         }
