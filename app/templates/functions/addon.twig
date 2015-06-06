@@ -5,7 +5,7 @@
         {% include 'functions/svg/addon.twig' %}
     </a>
     <div class="media-body">
-        <h4 class="media-heading"><a href="{{_addon_url}}">{{_addon_translation.title}}{% if addon.version %} {% include 'functions/labels/version.twig' with {'version' : addon.version} %}{% endif %}</a>
+        <h4 class="media-heading"><a href="{{_addon_url}}">{{_addon_translation.title}}</a>
         {% if addon.game %}{% include 'functions/tags/game.twig' with {'game' : addon.game} %}{% endif %}
     </h4>
     <p>{{_addon_translation.introduction}}</p>
