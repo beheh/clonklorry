@@ -6,7 +6,7 @@
 	<div class="page-header">
 		<div class="breakout"><a href="{{base}}/users"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
 		<div class="container">
-			<h1>{{ username }}
+			<h1><a href="{{filename}}">{{ username }}</a>
 					<small>
 						{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
 						{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
