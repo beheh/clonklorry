@@ -213,11 +213,11 @@ class User extends Model
         return hash_equals($this->secret, $secret);
     }
 
-    public function setPermission($permission)
+    public function setPermissions($permissions)
     {
-        if ($permission != $this->permissions) {
-            $this->_onPropertyChanged('permission', $this->permissions, $permission);
-            $this->permissions = $permission;
+        if ($permissions != $this->permissions) {
+            $this->_onPropertyChanged('permissions', $this->permissions, $permissions);
+            $this->permissions = $permissions;
         }
     }
 

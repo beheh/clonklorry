@@ -23,7 +23,7 @@ class UserAdmin extends UserModifyCommand
 
     function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
-        $user->setPermission(User::PERMISSION_ADMINISTRATE);
+        $user->setPermissions(User::PERMISSION_ADMINISTRATE);
     }
 
     function checkResult(User $user, InputInterface $input, OutputInterface $output)

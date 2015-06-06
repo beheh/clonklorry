@@ -23,7 +23,7 @@ class UserMod extends UserModifyCommand
 
     function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
-        $user->setPermission(User::PERMISSION_MODERATE);
+        $user->setPermissions(User::PERMISSION_MODERATE);
     }
 
     function checkResult(User $user, InputInterface $input, OutputInterface $output)

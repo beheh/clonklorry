@@ -112,13 +112,13 @@ class Edit extends Presenter
 
             switch ($permissions) {
                 case 'administrator':
-                    $user->setPermission(User::PERMISSION_ADMINISTRATE);
+                    $user->setPermissions(User::PERMISSION_ADMINISTRATE);
                     break;
                 case 'moderator':
-                    $user->setPermission(User::PERMISSION_MODERATE);
+                    $user->setPermissions(User::PERMISSION_MODERATE);
                     break;
                 case 'user':
-                    $user->setPermission(User::PERMISSION_READ);
+                    $user->setPermissions(User::PERMISSION_READ);
                     break;
                 default:
                     $this->error('permissions',
