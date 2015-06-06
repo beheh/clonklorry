@@ -19,7 +19,7 @@ class Front extends Presenter
         /* New releases */
 
         $releaseRepository = $this->manager->getRepository('Lorry\Model\Release');
-        $this->context['latest_releases'] = $releaseRepository->getLatestUniquePublishedReleases();
+        $this->context['latest_releases'] = $releaseRepository->getLatestReleases();
 
         $this->display('site/front.twig');
     }

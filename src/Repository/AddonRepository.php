@@ -6,20 +6,18 @@ use Doctrine\ORM\EntityRepository;
 
 class AddonRepository extends EntityRepository
 {
-
     public function getAllByGame($game)
     {
-        //SELECT a.short, r.version FROM Lorry\Model\Addon a LEFT JOIN a.latestRelease r')
-
         $qb = $this->_em->createQueryBuilder()
-            ->select('a.short, a.title, r.version')
+            ->select('a')
             ->from('Lorry\Model\Addon', 'a')
             ->leftJoin('a.latestRelease', 'r')
+            ->leftJoin('a.game', 'g')
             ->where('a.game = :game')
-            //->andWhere('r.published > :now')
-            //->orderBy('a.title', 'DESC')
-            //->setParameter('now', new \DateTime())
+            ->andWhere(':now >= r.published')
+            ->orderBy('a.title', 'DESC')
+            ->setParameter('now', new \DateTime())
             ->setParameter('game', $game);
-        return $qb->getQuery()->getResult();
+        return $qb->getQuery()->getScalarResult();
     }
 }

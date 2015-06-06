@@ -40,7 +40,8 @@ class Game extends Presenter
           $this->context['sort'] = $sort;
           $this->context['reverse'] = $reverse; */
 
-        $this->context['addons'] = $game->getAddons()->toArray();
+        $addonRepository = $this->manager->getRepository('Lorry\Model\Addon');
+        $this->context['addons'] = $addonRepository->getAllByGame($game);
 
         $this->display('addon/game.twig');
     }

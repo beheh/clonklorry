@@ -38,15 +38,13 @@
                     {% endif %}
 				</div>
                 {% endif %}
-				<h3>{% trans %}Latest releases{% endtrans %}</h3>
-				{% if new_addons %}
+				{% if latest_releases %}
+    				<h3>{% trans %}Latest releases{% endtrans %}</h3>
 					<ul class="media-list addons-small">
-						{% for addon in new_addons %}
-							{% include "functions/addon.twig" %}
+						{% for release in latest_releases %}
+							{% include "functions/release.twig" %}
 						{% endfor %}
 					</ul>
-				{% else %}
-					<p class="alert alert-warning">{% trans %}There are no new releases.{% endtrans %}</p>
 				{% endif %}
 			</div>
 			<div class="col-md-4 col-sm-12">

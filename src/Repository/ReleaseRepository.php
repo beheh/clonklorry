@@ -7,10 +7,16 @@ use Doctrine\ORM\EntityRepository;
 class ReleaseRepository extends EntityRepository
 {
 
-    public function getLatestUniquePublishedReleases()
+    public function getLatestReleases()
     {
-        return $this->_em->createQuery('SELECT r FROM Lorry\Model\Release r WHERE r.published > :now ORDER BY r.published DESC')
-                ->setParameter('now', new \DateTime())
-                ->getResult();
+        $qb = $this->_em->createQueryBuilder()
+            ->select('r')
+            ->from('Lorry\Model\Release', 'r')
+            ->leftJoin('r.addon', 'a')
+            ->leftJoin('a.game', 'g')
+            ->where(':now >= r.published')
+            ->orderBy('r.published', 'DESC')
+            ->setParameter('now', new \DateTime());
+         return $qb->getQuery()->getResult();
     }
 }
