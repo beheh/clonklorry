@@ -23,9 +23,9 @@ class UserValidator extends Validator
     protected function validateUsername($username)
     {
         $this->validateStringLength($username, 3, 16, array(
-            'tooShort' => gettext('Username too short'),
-            'tooLong' => gettext('Username too long')));
-        $this->validateStringPattern($username, '/^[a-zA-Z0-9_]+$/', gettext('Username is invalid'));
+            'tooShort' => gettext('Username too short.'),
+            'tooLong' => gettext('Username too long.')));
+        $this->validateStringPattern($username, '/^[a-zA-Z0-9_]+$/', gettext('Username is invalid.'));
     }
 
     protected function validateClonkforgeId($clonkforgeId)
@@ -34,9 +34,9 @@ class UserValidator extends Validator
             return;
         }
         $this->validateNumber($clonkforgeId, 1, null, array(
-            'noInt' => gettext('Clonkforge id is not a number'),
-            'tooSmall' => gettext('Clonkforge id too small'),
-            'tooLarge' => gettext('Clonkforge id too large')
+            'noInt' => gettext('Clonkforge id is not a number.'),
+            'tooSmall' => gettext('Clonkforge id too small.'),
+            'tooLarge' => gettext('Clonkforge id too large.')
         ));
     }
 
@@ -45,6 +45,6 @@ class UserValidator extends Validator
         if ($githubName === null) {
             return;
         }
-        $this->validateStringPattern($githubName, '#^'.'([a-zA-Z0-9][a-zA-Z0-9-]*)'.'$#', gettext('GitHub name is invalid'));
+        $this->validateStringPattern($githubName, '#^'.'([a-zA-Z0-9][a-zA-Z0-9-]*)'.'$#', gettext('GitHub name is invalid.'));
     }
 }

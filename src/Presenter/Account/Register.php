@@ -76,12 +76,12 @@ class Register extends Presenter
 
         $user->setUsername($username);
         if (count($userRepository->findBy(array('username' => $username))) > 0) {
-            $userValidator->fail(gettext('Username is already taken'));
+            $userValidator->fail(gettext('Username is already taken.'));
         }
 
         $user->setEmail($email);
         if ($email && count($userRepository->findBy(array('email' => $email))) > 0) {
-            $userValidator->fail(gettext('Email address is already in use'));
+            $userValidator->fail(gettext('Email address is already in use.'));
         }
 
         if ($oauth) {
@@ -89,9 +89,9 @@ class Register extends Presenter
         } else {
             $user->setPassword($password);
             if ($password !== $repeatedPassword) {
-                $userValidator->fail(gettext('Passwords do not match'));
+                $userValidator->fail(gettext('Passwords do not match.'));
             } else if(strlen($password) < 6) {
-                $userValidator->fail(gettext('Password too short'));
+                $userValidator->fail(gettext('Password too short.'));
             }
         }
 
@@ -122,7 +122,7 @@ class Register extends Presenter
                 return;
             }
         } catch (ValidationException $ex) {
-            $this->error('register', implode('.<br>', $ex->getFails()).'.');
+            $this->error('register', implode('<br>', $ex->getFails()));
         }
 
         $this->get();

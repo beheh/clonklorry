@@ -108,7 +108,7 @@ class Settings extends Presenter
 
                 $scanned = sscanf($clonkforgeUrl, $this->config->get('clonkforge/url'));
                 if (count($scanned) != 1 || empty($scanned[0])) {
-                    $userValidator->fail(gettext('Clonk Forge profile url is invalid'));
+                    $userValidator->fail(gettext('Clonk Forge profile url is invalid.'));
                 } else {
                     $user->setClonkforgeId($scanned[0]);
                 }
@@ -134,7 +134,7 @@ class Settings extends Presenter
                 }
             } catch (ValidationException $ex) {
                 $this->manager->refresh($user);
-                $this->error('profiles', implode('.<br>', $ex->getFails()).'.');
+                $this->error('profiles', implode('<br>', $ex->getFails()));
             }
         }
 
@@ -144,7 +144,7 @@ class Settings extends Presenter
 
             $user->setEmail($email);
             if ($email && $email !== $previousEmail && count($userRepository->findBy(array('email' => $email))) > 0) {
-                $userValidator->fail('Email address is already in use');
+                $userValidator->fail('Email address is already in use.');
             }
 
             try {
@@ -160,7 +160,7 @@ class Settings extends Presenter
                 }
             } catch (ValidationException $ex) {
                 $this->manager->refresh($user);
-                $this->error('contact', implode('.<br>', $ex->getFails()).'.');
+                $this->error('contact', implode('<br>', $ex->getFails()));
             }
         }
 
@@ -169,7 +169,7 @@ class Settings extends Presenter
             if ($this->localisation->setDisplayLanguage($language)) {
                 $user->setLanguage($language);
             } else {
-                $userValidator->fail(gettext('Language is invalid'));
+                $userValidator->fail(gettext('Language is invalid.'));
             }
             try {
                 $userValidator->validate($user);
@@ -180,7 +180,7 @@ class Settings extends Presenter
                 }
             } catch (ValidationException $ex) {
                 $this->manager->refresh($user);
-                $this->error('language', implode('.<br>', $ex->getFails()).'.');
+                $this->error('language', implode('<br>', $ex->getFails()));
             }
         }
 
@@ -215,12 +215,12 @@ class Settings extends Presenter
             $password_confirm = filter_input(INPUT_POST, 'password-confirm');
 
             if ($has_password && !$user->matchPassword($password_old) && !$this->session->canResetPassword()) {
-                $userValidator->fail(gettext('Password wrong'));
+                $userValidator->fail(gettext('Password wrong.'));
                 $this->context['focus_password'] = true;
             }
 
             if ($password_new !== $password_confirm) {
-                $userValidator->fail(gettext('New passwords do not match'));
+                $userValidator->fail(gettext('New passwords do not match.'));
                 $this->context['focus_password'] = true;
             }
 
@@ -241,7 +241,7 @@ class Settings extends Presenter
                 }
             } catch (ValidationException $ex) {
                 $this->manager->refresh($user);
-                $this->error('password', implode('.<br>', $ex->getFails()).'.');
+                $this->error('password', implode('<br>', $ex->getFails()));
             }
         }
 
