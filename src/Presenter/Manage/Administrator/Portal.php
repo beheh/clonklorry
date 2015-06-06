@@ -12,6 +12,8 @@ class Portal extends Presenter
         $this->security->requireAdministrator();
         $this->offerIdentification();
         $this->security->requireIdentification();
+        
+        $this->context['statistics'] = $this->config->get('admin/statistics');
 
         $this->display('manage/administrator/portal.twig');
     }

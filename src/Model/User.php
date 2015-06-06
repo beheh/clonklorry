@@ -434,6 +434,11 @@ class User extends Model
     public function getModerations() {
         return $this->moderations;
     }
+    
+    public function getExecutedModerations() {
+        return $this->executedModerations;
+    }
+
 
     public function __toString()
     {

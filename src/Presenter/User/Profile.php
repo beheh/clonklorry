@@ -87,6 +87,8 @@ class Profile extends Presenter
             $this->context['comments'][] = $user_comment;
         }
 
+        $this->context['moderations'] = $user->getExecutedModerations();
+
         $this->display('user/profile.twig');
     }
 }

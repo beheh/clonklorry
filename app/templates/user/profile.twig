@@ -57,7 +57,7 @@
 				{% endif %}
 			</div>
 			<div class="col-md-8">
-				<h2>{% trans %}Activity{% endtrans %}</h2>
+				<h2 id="activity">{% trans %}Activity{% endtrans %}</h2>
 				{% set developer_portal %}<a href="{{base}}/developers">{% trans %}developer portal{% endtrans %}</a>{% endset %}
 				{% if addons %}
 					<ul class="media-list">
@@ -72,6 +72,27 @@
 					<div class="alert alert-info">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
 					<p class="help-block">{% trans %}Learn more at the {{developer_portal}}.{% endtrans %}</p>
 				{% endif %}
+                {% if user_administrator and (moderator or moderations|length > 0) %}
+                <h2 id="moderator">{% trans %}Moderator log{% endtrans %} <small><span class="glyphicon glyphicon-lock" title="{% trans %}Can only seen by administrators{% endtrans %}" aria-hidden="true"></span></small></h2>
+                {% if moderations|length > 0 %}
+                <table class="table">
+                    <tr>
+                        <th>{% trans %}User{% endtrans %}</th>
+                        <th>{% trans %}Action{% endtrans %}</th>
+                        <th>{% trans %}Timestamp{% endtrans %}</th>
+                    </tr>
+                    {% for moderation in moderations %}
+                        <tr>
+                            <td>{% if moderation.user %}{% include 'functions/user.twig' with {'user' : moderation.user, 'link' : base ~ '/users/' ~ moderation.user.username ~ '/edit#moderations'} %}{% else %}<em>{% trans %}Unknown user{% endtrans %}</em>{% endif %}</td>
+                            <td>{{moderation.action}}{% if moderation.originalValue or moderation.finalValue %}: "{{moderation.originalValue}}" &rarr; "{{moderation.finalValue}}"{% endif %}</td>
+                            <td>{{moderation.timestamp|date(format_datetime)}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <div class="alert alert-info">{% trans %}This user has not moderated any other users yet.{% endtrans %}</div>
+                {% endif %}
+                {% endif %}
 			</div>
 		</div>
 	</div>

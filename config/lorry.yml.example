@@ -18,8 +18,14 @@ notice:
     class: danger
 
 # default urls for links
+github:
+    url: https://github.com/%s
 clonkforge:
     url: http://clonkforge.net/user.php?usr=%d
+
+# admin links
+admin:
+    statistics: 
 
 # directories for user data, should be writeable
 upload:
