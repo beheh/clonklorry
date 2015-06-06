@@ -19,7 +19,7 @@
 					<div class="col-md-12 col-sm-6">
 						<h3>{% trans "Appearance" %}</h3>
 						{% include 'functions/alert.twig' with {'selector' : 'username'} %}
-						<form role=form" method="post">
+						<form role=form" action="{{filename}}" method="post">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
 								<div class="form-group">
@@ -41,7 +41,7 @@
 					<div class="col-md-12 col-sm-6">
 						<h3>{% trans "Contact details" %}</h3>
 						{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-						<form role=form" method="post">
+						<form role=form" action="{{filename}}" method="post">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
 								<label for="email">{% trans "Email address" %}</label>
@@ -57,7 +57,7 @@
 						<div class="col-md-12 col-sm-6">
 							<h3>{% trans "Permissions" %}</h3>
 							{% include 'functions/alert.twig' with {'selector' : 'permissions'} %}
-							<form role=form" method="post">
+							<form role=form" action="{{filename}}" method="post">
 								<input type="hidden" name="state" value="{{state}}">
 								<div class="radio">
 									<label>
@@ -90,7 +90,7 @@
 						<div class="col-md-12 col-sm-6">
 							<h3>{% trans %}Reset{% endtrans%}</h3>
 							{% include 'functions/alert.twig' with {'selector' : 'reset'} %}
-							<form method="post">
+							<form role="form" action="{{filename}}" method="post">
 								<input type="hidden" name="state" value="{{state}}">
 								<div class="form-group">
 									<button type="submit" class="btn btn-warning btn-block support-button" name="password-reset-submit">{% trans %}Reset password{% endtrans %}</button>
@@ -120,14 +120,14 @@
 		</div>
 		<hr>
 		<h2>{% trans %}Moderation log{% endtrans %}</h2>
-		{% if moderation_entries%}
+		{% if moderations %}
 		<table class="table">
 			<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Action{% endtrans %}</th><th>{% trans %}Executed by{% endtrans %}</th></tr>
-			{% for entry in moderation_entries %}
+			{% for moderation in moderations %}
 				<tr>
-					<td>{{entry.timestamp}}</td>
-					<td>{{entry.action}}{% if entry.from or entry.to %}: "{{entry.from}}" &rarr; "{{entry.to}}"{% endif %}</td>
-					<td>{% if entry.executor %}{% include 'functions/user.twig' with {'user' : entry.executor} %}{% else %}<em>{% trans %}Administrator{% endtrans %}</em>{% endif %}</td>
+					<td>{{moderation.timestamp|date(format_datetime)}}</td>
+					<td>{{moderation.action}}{% if moderation.originalValue or moderation.finalValue %}: "{{moderation.originalValue}}" &rarr; "{{moderation.finalValue}}"{% endif %}</td>
+					<td>{% if moderation.executor %}{% include 'functions/user.twig' with {'user' : moderation.executor} %}{% else %}<em>{% trans %}Administrator{% endtrans %}</em>{% endif %}</td>
 				</tr>
 			{% endfor %}
 		</table>

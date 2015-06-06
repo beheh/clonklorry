@@ -35,7 +35,7 @@
 			</nav>
 			<ul class="list-group">
 				{% for user in users %}
-					<a href="{{base}}/users/{{user.name}}" class="list-group-item">
+					<a href="{{base}}/users/{{user.username}}" class="list-group-item">
 						{% include "functions/user.twig" with {'user' : user, 'nolink' : true} %}
 					</a>
 				{% endfor %}

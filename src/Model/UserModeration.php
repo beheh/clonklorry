@@ -4,114 +4,106 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 
+/**
+ * @Entity
+ * @HasLifecycleCallbacks
+ */
 class UserModeration extends Model
 {
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="moderations", cascade={"all"}, fetch="EAGER")
+     * @JoinColumn(onDelete="CASCADE")
+     */
+    protected $user;
 
-    public function getTable()
-    {
-        return 'user_moderation';
-    }
+    /**
+     * @ManyToOne(targetEntity="User", fetch="EAGER")
+     * @JoinColumn(nullable=true, onDelete="SET NULL")
+     */
+    protected $executor;
 
-    public function getSchema()
-    {
-        return array(
-            'user' => 'int',
-            'action' => 'string',
-            'from' => 'string',
-            'to' => 'string',
-            'executor' => 'int',
-            'timestamp' => 'datetime');
-    }
+    /**
+     * @Column(type="datetime")
+     */
+    protected $timestamp;
 
-    public function onInsert()
-    {
-        $this->setValue('timestamp', time());
-    }
+    /**
+     * @Column(type="string")
+     */
+    protected $action;
 
-    public function byUser($user)
-    {
-        return $this->all()->byValue('user', $user);
-    }
+    /**
+     * @Column(type="string")
+     */
+    protected $originalValue;
+
+    /**
+     * @Column(type="string")
+     */
+    protected $finalValue;
 
     public function setUser($user)
     {
-        return $this->setValue('user', $user);
+        $this->user = $user;
     }
 
     public function getUser()
     {
-        return $this->getValue('user');
-    }
-
-    public function fetchUser()
-    {
-        return $this->fetch('User', 'user');
-    }
-
-    public function setAction($action)
-    {
-        return $this->setValue('action', $action);
-    }
-
-    public function getAction()
-    {
-        return $this->getValue('action');
-    }
-
-    public function setFrom($from)
-    {
-        return $this->setValue('from', $from);
-    }
-
-    public function getFrom()
-    {
-        return $this->getValue('from');
-    }
-
-    public function setTo($to)
-    {
-        return $this->setValue('to', $to);
-    }
-
-    public function getTo()
-    {
-        return $this->getValue('to');
+        return $this->user;
     }
 
     public function setExecutor($executor)
     {
-        return $this->setValue('executor', $executor);
+        $this->executor = $executor;
     }
 
     public function getExecutor()
     {
-        return $this->getValue('executor');
+        return $this->executor;
     }
 
-    public function fetchExecutor()
+    /**
+     * @PrePersist
+     */
+    public function execute() {
+        $this->setTimestamp(new \DateTime());
+    }
+
+    public function setTimestamp($timestamp)
     {
-        return $this->fetch('User', 'executor');
+        $this->timestamp = $timestamp;
     }
 
     public function getTimestamp()
     {
-        return $this->getValue('timestamp');
+        return $this->timestamp;
     }
 
-    public function forPresenter($dateFormat = null)
+    public function setAction($action) {
+        $this->action = $action;
+    }
+
+    public function getAction() {
+        return $this->action;
+    }
+
+    public function setOriginalValue($originalValue)
     {
-        $result = array();
-        $result['user'] = $this->fetchUser()->forPresenter();
-        $result['action'] = $this->getAction();
-        $result['from'] = $this->getFrom();
-        $result['to'] = $this->getTo();
-        if ($dateFormat !== null) {
-            $result['timestamp'] = date($dateFormat, $this->getTimestamp());
-        }
-        $executor = $this->fetchExecutor();
-        if ($executor) {
-            $result['executor'] = $executor->forPresenter();
-        }
-        return $result;
+        $this->originalValue = $originalValue;
+    }
+
+    public function getOriginalValue()
+    {
+        return $this->originalValue;
+    }
+
+    public function setFinalValue($finalValue)
+    {
+        $this->finalValue = $finalValue;
+    }
+
+    public function getFinalValue()
+    {
+        return $this->finalValue;
     }
 }

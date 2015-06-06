@@ -70,14 +70,26 @@ class User extends Model
 
     /**
      * @OneToMany(targetEntity="Addon", mappedBy="owner")
-     * */
+     */
     protected $ownedAddons;
 
     /**
      * @OneToMany(targetEntity="Comment", mappedBy="author")
      * @var Addon[]
-     * */
+     */
     protected $writtenComments;
+
+    /**
+     * @OneToMany(targetEntity="UserModeration", mappedBy="user")
+     * @var UserModeration[]
+     */
+    protected $moderations;
+
+    /**
+     * @OneToMany(targetEntity="UserModeration", mappedBy="executor")
+     * @var UserModeration[]
+     */
+    protected $executedModerations;
 
     /* Consts */
     const PERMISSION_READ = 1;
@@ -98,6 +110,8 @@ class User extends Model
     {
         $this->ownedAddons = new ArrayCollection();
         $this->writtenComments = new ArrayCollection();
+        $this->moderations = new ArrayCollection();
+        $this->executedModerations = new ArrayCollection();
     }
     /* Getters/Setters */
 
@@ -403,11 +417,6 @@ class User extends Model
         return $this->language;
     }
 
-    public function getProfileUrl()
-    {
-        return $this->config->get('base').'/users/'.$this->getUsername().'';
-    }
-
     public function getWrittenComments()
     {
         return $this->writtenComments;
@@ -420,6 +429,10 @@ class User extends Model
     public function getOwnedAddons()
     {
         return $this->ownedAddons;
+    }
+
+    public function getModerations() {
+        return $this->moderations;
     }
 
     public function __toString()

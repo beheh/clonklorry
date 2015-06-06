@@ -44,13 +44,7 @@ class ListX extends Presenter
         /*$this->context['lastPage'] = floor(count($users) / $width);
         echo $this->context['lastPage'];*/
 
-        foreach ($users as $user) {
-            $this->context['users'][] = array(
-                'name' => $user->getUsername(),
-                'administrator' => $user->isAdministrator(),
-                'moderator' => $user->isModerator()
-            );
-        }
+        $this->context['users'] = $users;
 
 
         $this->display('user/list.twig');

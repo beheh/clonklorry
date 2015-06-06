@@ -6,8 +6,10 @@ use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception;
+use Doctrine\Common\Persistence\ObjectManager;
 use \InvalidArgumentException;
 use Lorry\Model\User;
+use Lorry\Model\UserModeration;
 
 class SecurityService
 {
@@ -23,10 +25,17 @@ class SecurityService
      */
     protected $session;
 
-    public function __construct(ConfigService $config, SessionService $session)
+    /**
+     *
+     * @var \Doctrine\Common\Persistence\ObjectManager
+     */
+    protected $manager;
+
+    public function __construct(ConfigService $config, SessionService $session, ObjectManager $manager)
     {
         $this->config = $config;
         $this->session = $session;
+        $this->manager = $manager;
     }
 
     public function requireLogin()
@@ -135,14 +144,14 @@ class SecurityService
         return hash_hmac($algo, $data, $key);
     }
 
-    public function trackUserModeration($user, $action, $from, $to, $executor)
+    public function trackUserModeration(User $user, User $executor, $action, $originalValue, $finalValue)
     {
-        $entry = $this->persistence->build('UserModeration');
-        $entry->setUser($user->getId());
-        $entry->setAction($action);
-        $entry->setFrom($from);
-        $entry->setTo($to);
-        $entry->setExecutor($executor->getId());
-        return $entry->save();
+        $moderation = new UserModeration();
+        $moderation->setUser($user);
+        $moderation->setExecutor($executor);
+        $moderation->setAction($action);
+        $moderation->setOriginalValue($originalValue);
+        $moderation->setFinalValue($finalValue);
+        $this->manager->persist($moderation);
     }
 }

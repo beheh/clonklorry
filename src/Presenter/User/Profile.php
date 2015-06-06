@@ -21,7 +21,12 @@ class Profile extends Presenter
         $user = $this->manager->getRepository('Lorry\Model\User')->findOneBy(array('username' => $username));
 
         if (!$user) {
-            throw new FileNotFoundException('user '.$username);
+            throw new FileNotFoundException('unknown user "'.$username.'"');
+        }
+
+        if ($user->getUsername() !== $username) {
+            $this->redirect($this->config->get('base').'/users/'.$user->getUsername(), true);
+            return;
         }
 
         $this->context['username'] = $user->getUsername();
