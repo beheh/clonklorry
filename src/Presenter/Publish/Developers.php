@@ -3,8 +3,11 @@
 namespace Lorry\Presenter\Publish;
 
 use Lorry\Presenter;
-use Lorry\Exception\ModelValueInvalidException;
 use Lorry\Model\Addon;
+use Lorry\Model\AddonTranslation;
+use Lorry\Validator\AddonValidator;
+use Lorry\Validator\AddonTranslationValidator;
+use Lorry\Exception\ValidationException;
 
 class Developers extends Presenter
 {
@@ -36,11 +39,9 @@ class Developers extends Presenter
             gettext('%s rise from the bottom'));
 
         if (!rand(0, 5)) {
-            $example = sprintf($plural_phrases[array_rand($plural_phrases)],
-                $plural_objects[array_rand($plural_objects)]);
+            $example = sprintf($plural_phrases[array_rand($plural_phrases)], $plural_objects[array_rand($plural_objects)]);
         } else {
-            $example = sprintf($singular_phrases[array_rand($singular_phrases)],
-                $singular_objects[array_rand($singular_objects)]);
+            $example = sprintf($singular_phrases[array_rand($singular_phrases)], $singular_objects[array_rand($singular_objects)]);
         }
 
         $modifiers = array(gettext('%s Extreme'), gettext('Codename: %s'), gettext('%s Remake'),
@@ -63,45 +64,43 @@ class Developers extends Presenter
 
         $user = $this->session->getUser();
 
-        $errors = array();
+        $addonRepository = $this->manager->getRepository('Lorry\Model\Addon');
+        $addonValidator = new AddonValidator();
+        $translationValidator = new AddonTranslationValidator();
 
         $addon = new Addon();
+        $translation = new AddonTranslation();
 
         $addon->setOwner($user);
 
-        $title = filter_input(INPUT_POST, 'title');
-        try {
-            $this->context['addontitle'] = $title;
-            $addon->setTitle($title);
-            $this->context['focus_title'] = false;
-        } catch (ModelValueInvalidException $ex) {
-            $errors[] = sprintf(gettext('Title is %s.'), $ex->getMessage());
-            $this->context['focus_title'] = true;
+        $title = trim(filter_input(INPUT_POST, 'title'));
+
+        $this->context['addontitle'] = $title;
+
+        $translation->setTitle($title);
+        $translation->setLanguage($this->localisation->getDisplayLanguage());
+
+        $game = $this->manager->getRepository('Lorry\Model\Game')->findOneBy(array('short' => filter_input(INPUT_POST, 'game')));
+        if (!$game) {
+            $addonValidator->fail(gettext('Invalid game.'));
+        }
+        $this->context['selected_game'] = $game->getShort();
+        $addon->setGame($game);
+
+        if($addonRepository->getOwnedByTitleAndGame($user, $title, $game)) {
+            $addonValidator->fail(gettext('You have already created an addon with this title.'));
         }
 
         try {
-            $game = $this->manager->getRepository('Lorry\Model\Game')->findOneBy(array('short' => filter_input(INPUT_POST, 'game')));
-            if (!$game) {
-                throw new ModelValueInvalidException('invalid');
-            }
-            $this->context['selected_game'] = $game->getShort();
-            $addon->setGame($game);
-        } catch (ModelValueInvalidException $ex) {
-            $errors[] = sprintf(gettext('Game is %s.'), $ex->getMessage());
-        }
-
-        /*$existing = $this->manager->getRepository('Lorry\Model\Addon')->findBy
-        if (count($existing) > 0) {
-            $errors[] = gettext('You have already created an addon with this title for this game.');
-            $this->context['focus_title'] = true;
-        }*/
-
-        if (!empty($errors)) {
-            $this->error('creation', implode('<br>', $errors));
-        } else {
+            $translationValidator->validate($translation);
+            $addon->addTranslation($translation);
+            $addonValidator->validate($addon);
             $this->manager->persist($addon);
             $this->manager->flush();
             $this->redirect('/publish?created='.$addon->getId());
+            return;
+        } catch (ValidationException $ex) {
+            $this->error('creation', implode('<br>', $ex->getFails()));
         }
 
         $this->get();

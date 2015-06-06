@@ -5,6 +5,7 @@ namespace Lorry\Model;
 use Lorry\Model;
 use Lorry\ApiObjectInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Criteria;
 
 /**
  * @Entity(repositoryClass="Lorry\Repository\AddonRepository")
@@ -28,9 +29,6 @@ class Addon extends Model implements ApiObjectInterface
      */
     protected $game;
 
-    /** @Column(type="string") */
-    protected $title;
-
     /** @Column(type="string", nullable=true) */
     protected $website;
 
@@ -53,27 +51,17 @@ class Addon extends Model implements ApiObjectInterface
      */
     protected $releases;
 
+    /**
+     * @OneToMany(targetEntity="AddonTranslation", mappedBy="addon", cascade={"all"}))
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     */
+    protected $translations;
+
     public function __construct()
     {
         $this->releases = new ArrayCollection();
+        $this->translations = new ArrayCollection();
     }
-    /*    return array(
-      'owner' => 'string',
-      'short' => 'string',
-      'title_en' => 'string',
-      'title_de' => 'string',
-      'abbreviation' => 'string',
-      'game' => 'int',
-      'type' => 'int',
-      'introduction' => 'text',
-      'description' => 'text',
-      'website' => 'url',
-      'bugtracker' => 'url',
-      'forum' => 'url',
-      'proposed_short' => 'string',
-      'approval_submit' => 'datetime',
-      'approval_comment' => 'text');
-     */
 
     public function setOwner($owner)
     {
@@ -85,7 +73,6 @@ class Addon extends Model implements ApiObjectInterface
         return $this->owner;
     }
 
-
     public function setShort($short)
     {
         $this->short = $short;
@@ -96,14 +83,12 @@ class Addon extends Model implements ApiObjectInterface
         return $this->short;
     }
 
-    public function setTitle($title)
+    public function getTranslation($language)
     {
-        $this->title = $title;
-    }
-
-    public function getTitle()
-    {
-        return $this->title;
+        $criteria = Criteria::create()
+            ->where(Criteria::expr()->eq('language', str_replace('_', '-', $language)))
+            ->setMaxResults(1);
+        return $this->translations->matching($criteria)->first();
     }
 
     public function setGame($game)
@@ -115,6 +100,7 @@ class Addon extends Model implements ApiObjectInterface
     {
         return $this->game;
     }
+
     /**
      *
      * @return Release[]
@@ -138,6 +124,25 @@ class Addon extends Model implements ApiObjectInterface
     public function getLatestRelease()
     {
         return $this->latestRelease;
+    }
+
+    /**
+     *
+     * @param AddonTranslation $translation
+     */
+    public function addTranslation($translation)
+    {
+        $this->translations->add($translation);
+        $translation->setAddon($this);
+    }
+
+    /**
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getTranslations()
+    {
+        return $this->translations;
     }
 
     public function forApi()

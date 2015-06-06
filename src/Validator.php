@@ -24,6 +24,11 @@ abstract class Validator
         $this->fails = array();
     }
 
+    /**
+     *
+     * @param mixed $entity
+     * @throws ValidationException
+     */
     public function validate($entity)
     {
         $previousFails = $this->fails;
@@ -35,7 +40,6 @@ abstract class Validator
             $exception->setFails($this->fails);
             throw $exception;
         }
-        return $this->fails;
     }
 
     protected function validateNumber($number, $minimum, $maximum, $messages)

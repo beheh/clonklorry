@@ -12,8 +12,8 @@ class Banner extends Model
 {
     const VISIBILITY_HIDDEN = 0;
     const VISIBILITY_PUBLIC = 1;
-    // reserved for VISIBILITY_USERS
 
+    // reserved for VISIBILITY_USERS
     /**
      * @Column(type="integer")
      */
@@ -60,11 +60,13 @@ class Banner extends Model
         $this->translations = new ArrayCollection();
     }
 
-    public function setVisibility($visibility) {
+    public function setVisibility($visibility)
+    {
         $this->visibility = $visibility;
     }
 
-    public function getVisibility() {
+    public function getVisibility()
+    {
         return $this->visibility;
     }
 
@@ -86,6 +88,17 @@ class Banner extends Model
     public function getShowUntil()
     {
         return $this->showUntil;
+    }
+
+    public function isScheduled()
+    {
+        $now = new \DateTime();
+        return $this->visibility === self::VISIBILITY_PUBLIC && $now < $this->showFrom;
+    }
+
+    public function isActive() {
+        $now = new \DateTime();
+        return $this->visibility === self::VISIBILITY_PUBLIC && $now >= $this->showFrom && $now < $this->showUntil;
     }
 
     /**
