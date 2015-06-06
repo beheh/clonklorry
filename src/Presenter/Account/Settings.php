@@ -61,7 +61,7 @@ class Settings extends Presenter
         $this->context['username'] = $user->getUsername();
 
         if (!isset($this->context['clonkforge'])) {
-            $this->context['clonkforge'] = $user->getClonkforgeUrl();
+            $this->context['clonkforge'] = sprintf($this->config->get('clonkforge/url'), urlencode($user->getClonkforgeId()));
         }
         if (!isset($this->context['github'])) {
             $this->context['github'] = $user->getGithubName();

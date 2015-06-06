@@ -304,15 +304,6 @@ class User extends Model
         return $this->clonkforgeId;
     }
 
-    public function getClonkforgeUrl()
-    {
-        $id = $this->getClonkforgeId();
-        if ($id !== null) {
-            return sprintf($this->config->get('clonkforge/url'), $id());
-        }
-        return '';
-    }
-
     public function setGithubName($githubName)
     {
         if ($githubName != $this->githubName) {

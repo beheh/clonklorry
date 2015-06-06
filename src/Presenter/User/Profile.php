@@ -18,7 +18,7 @@ class Profile extends Presenter
     public function get($username)
     {
         /* @var $user \Lorry\Model\User */
-        $user = $this->manager->getRepository('Lorry\Model\User')-> findOneBy(array('username' => $username));
+        $user = $this->manager->getRepository('Lorry\Model\User')->findOneBy(array('username' => $username));
 
         if (!$user) {
             throw new FileNotFoundException('user '.$username);
@@ -44,43 +44,39 @@ class Profile extends Presenter
         }
 
         $this->context['profiles'] = array();
-        if ($user->getClonkforgeUrl()) {
+        if ($user->getClonkforgeId()) {
             $this->context['clonkforge'] = array(
-                'profile' => sprintf(gettext('%s on the ClonkForge'),
-                    $user->getUsername()),
-                'url' => sprintf($this->config->get('clonkforge/url'),
-                    urlencode($user->getClonkforge())));
+                'profile' => sprintf(gettext('%s on the Clonk Forge'), $user->getUsername()),
+                'url' => sprintf($this->config->get('clonkforge/url'), urlencode($user->getClonkforgeId())));
         }
         if ($user->getGithubName()) {
             $this->context['github'] = array(
-                'profile' => sprintf(gettext('%s on GitHub'), $user->getGithub()),
-                'url' => sprintf($this->config->get('github/url'),
-                    urlencode($user->getGithub())));
+                'profile' => sprintf(gettext('%s on GitHub'), $user->getGithubName()),
+                'url' => sprintf($this->config->get('github/url'), urlencode($user->getGithubName())));
         }
 
-        /*$releases = $this->persistence->build('Release')->all()->byOwner($user->getId());
-        $this->context['addons'] = array();
-        foreach ($releases as $release) {
-            $addon = $release->fetchAddon();
-            $user_addon = array(
-                'title' => $addon->getTitle(),
-                'short' => $addon->getShort(),
-                'introduction' => $addon->getIntroduction()
-            );
+        /* $releases = $this->persistence->build('Release')->all()->byOwner($user->getId());
+          $this->context['addons'] = array();
+          foreach ($releases as $release) {
+          $addon = $release->fetchAddon();
+          $user_addon = array(
+          'title' => $addon->getTitle(),
+          'short' => $addon->getShort(),
+          'introduction' => $addon->getIntroduction()
+          );
 
-            $game = $addon->fetchGame();
-            if ($game) {
-                $user_addon['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
-            }
+          $game = $addon->fetchGame();
+          if ($game) {
+          $user_addon['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
+          }
 
-            $this->context['addons'][] = $user_addon;
-        }*/
+          $this->context['addons'][] = $user_addon;
+          } */
 
         $this->context['comments'] = array();
         foreach ($user->getWrittenComments() as $comment) {
             $user_comment = array();
-            $user_comment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME),
-                $comment->getTimestamp());
+            $user_comment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $comment->getTimestamp());
             $user_comment['content'] = $comment->getContent();
             $user_comment['url'] = $this->config->get('base').'/comments/'.$comment->getId();
             $this->context['comments'][] = $user_comment;
