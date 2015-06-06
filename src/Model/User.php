@@ -2,7 +2,6 @@
 
 namespace Lorry\Model;
 
-use Lorry\Exception\ModelValueInvalidException;
 use Lorry\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
