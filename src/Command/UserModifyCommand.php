@@ -29,6 +29,7 @@ abstract class UserModifyCommand extends Command
         }
         $this->modifyUser($user, $input, $output);
         $this->manager->flush();
+        $this->manager->refresh($user);
         $this->checkResult($user, $input, $output);
     }
 }
