@@ -168,7 +168,7 @@ class Settings extends Presenter
 
         if (isset($_POST['language-form'])) {
             $language = filter_input(INPUT_POST, 'language');
-            $languageObject = $this->localisation->getLanguage($language);
+            $languageObject = $this->localisation->parseLanguage($language);
             if ($languageObject) {
                 $user->setLanguage($languageObject);
             } else {

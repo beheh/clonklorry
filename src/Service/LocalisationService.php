@@ -5,6 +5,7 @@ namespace Lorry\Service;
 use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Lorry\Model\Language;
 
 class LocalisationService extends Service
 {
@@ -59,10 +60,10 @@ class LocalisationService extends Service
         return false;
     }
 
-    final public function getLanguage($language) {
+    final public function parseLanguage($language)
+    {
         return $this->manager->getRepository('Lorry\Model\Language')->findOneBy(array('key' => $language));
-    } 
-
+    }
     /**
      * @var Language
      */
@@ -70,7 +71,7 @@ class LocalisationService extends Service
 
     /**
      *
-     * @return string
+     * @return \Lorry\Model\Language
      */
     public function getDisplayLanguage()
     {
@@ -96,7 +97,7 @@ class LocalisationService extends Service
         }
 
         if (isset($_COOKIE['lorry_language'])) {
-            $language = $_COOKIE['lorry_language'];
+            $language = $this->parseLanguage($_COOKIE['lorry_language']);
             if ($this->setDisplayLanguage($language)) {
                 return $language;
             } else {
@@ -104,50 +105,51 @@ class LocalisationService extends Service
             }
         }
 
-        if (function_exists('http_negotiate_language')) {
-            $language = http_negotiate_language($available);
-        } else {
-            $language = $available[0];
-            if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-                $accept = str_replace(' ', '', explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']));
-                // sort by quality
-                $priorities = array();
-                foreach ($accept as $part) {
-                    $q = 1;
-                    if (substr_count($part, ';q=') == 1) {
-                        $parts = explode(';q=', $part);
-                        $part = $parts[0];
-                        $q = floatval($parts[1]);
-                    }
-                    $priorities[$part] = $q;
+        $language = $available[0];
+        if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+            $accept = str_replace(' ', '', explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']));
+            // sort by quality
+            $priorities = array();
+            foreach ($accept as $part) {
+                $q = 1;
+                if (substr_count($part, ';q=') == 1) {
+                    $parts = explode(';q=', $part);
+                    $part = $parts[0];
+                    $q = floatval($parts[1]);
                 }
-                arsort($priorities);
-                foreach ($priorities as $current => $val) {
-                    $found = false;
-                    foreach ($available as $j => $offered) {
-                        if (strpos($offered, $current) === 0) {
-                            $language = $offered;
-                            $found = true;
-                            break;
-                        }
-                    }
-                    if ($found) {
+                $priorities[$part] = $q;
+            }
+            arsort($priorities);
+            foreach ($priorities as $current => $val) {
+                $found = false;
+                foreach ($available as $j => $offered) {
+                    if (strpos($offered, $current) === 0) {
+                        $language = trim($offered);
+                        $found = true;
                         break;
                     }
+                }
+                if ($found) {
+                    break;
                 }
             }
         }
 
-        $this->setDisplayLanguage($language);
+        $languageObject = $this->parseLanguage($language);
+        if(!$languageObject) {
+            $languageObject = $this->manager->getRepository('Lorry\Model\Language')->find(1);
+        }
+
+        $this->setDisplayLanguage($languageObject);
         return $this->displayLanguage;
     }
 
     /**
      *
-     * @param string $language
+     * @param \Lorry\Model\Language $language
      * @return bool
      */
-    final public function setDisplayLanguage($language)
+    final public function setDisplayLanguage(Language $language)
     {
         if ($this->verifyLanguage($language)) {
             $this->displayLanguage = $language;

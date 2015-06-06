@@ -29,8 +29,7 @@
 		"beheh/flaps": "~0.1.0"
     },
 	"suggest": {
-		"ext-gettext": "Localisation",
-		"ext-http": "More reliable language negotiation"
+		"ext-gettext": "Localisation"
 	},
 	"autoload": {
 		"psr-4": {
