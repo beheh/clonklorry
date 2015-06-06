@@ -224,6 +224,11 @@ class Settings extends Presenter
                 $this->context['focus_password'] = true;
             }
 
+            if (strlen($password_new) < 6) {
+                $userValidator->fail(gettext('New password too short.'));
+                $this->context['focus_password'] = true;
+            }
+
             $user->setPassword($password_new);
 
             try {
