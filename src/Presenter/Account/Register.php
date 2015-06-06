@@ -80,7 +80,7 @@ class Register extends Presenter
         }
 
         $user->setEmail($email);
-        if ($email && count($userRepository->findOneBy(array('email' => $email))) > 0) {
+        if ($email && count($userRepository->findBy(array('email' => $email))) > 0) {
             $userValidator->fail(gettext('Email address is already in use'));
         }
 
