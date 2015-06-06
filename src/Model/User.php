@@ -121,7 +121,7 @@ class User extends Model
         } else {
             $hash = null;
         }
-        $this->_onPropertyChanged('password', $this->passwordHash, $hash);
+        $this->_onPropertyChanged('passwordHash', $this->passwordHash, $hash);
         $this->incrementCounter();
         $this->passwordHash = $hash;
     }
@@ -339,37 +339,64 @@ class User extends Model
         return false;
     }
 
-    public function setOauth($provider, $uid)
+    public function getOauthCount()
     {
-        if (!$uid && !$this->hasPassword() && !$this->hasRemainingOauth($provider)) {
-            // do not allow last oauth to be removed without a password
-            throw new ModelValueInvalidException(gettext('the last remaining login method'));
-        }
-        switch ($provider) {
-            case self::PROVIDER_GITHUB:
-                $this->oauthGithub = $uid;
-                break;
-            case self::PROVIDER_GOOGLE:
-                $this->oauthGoogle = $uid;
-                break;
-            case self::PROVIDER_FACEBOOK:
-                $this->oauthFacebook = $uid;
-                break;
+        return count($this->getOauthArray());
+    }
+
+    public function getLoginMethodCount()
+    {
+        return $this->getOauthCount() + ($this->hasPassword() ? 1 : 0);
+    }
+
+    public function parseOauth($oauth)
+    {
+        switch ($oauth) {
+            case 'github':
+                return self::PROVIDER_GITHUB;
+            case 'google':
+                return self::PROVIDER_GOOGLE;
+            case 'facebook':
+                return self::PROVIDER_FACEBOOK;
             default:
-                throw new \RuntimeException('unknown provider');
+                throw new \InvalidArgumentException('unknown provider');
         }
     }
 
-    protected function hasRemainingOauth($exclude)
+    public function getOauthArray()
     {
-        $providers = array(self::PROVIDER_GITHUB, self::PROVIDER_GOOGLE, self::PROVIDER_FACEBOOK);
-        $provider_count = 0;
-        foreach ($providers as $provider) {
-            if ($provider != $exclude && hasOauth($provider)) {
-                $provider_count++;
-            }
+        $result = array();
+        if ($this->hasOauth(self::PROVIDER_GITHUB)) {
+            $result['github'] = $this->oauthGithub;
         }
-        return $provider_count > 0;
+        if ($this->hasOauth(self::PROVIDER_GOOGLE)) {
+            $result['google'] = $this->oauthGoogle;
+        }
+        if ($this->hasOauth(self::PROVIDER_FACEBOOK)) {
+            $result['facebook'] = $this->oauthFacebook;
+        }
+        return $result;
+    }
+
+    public function setOauth($provider, $uid)
+    {
+        $previous = $this->getOauthArray();
+        switch ($provider) {
+            case self::PROVIDER_GITHUB:
+                $this->_onPropertyChanged('oauthGithub', $this->oauthFacebook, $uid);
+                $this->oauthGithub = $uid;
+                break;
+            case self::PROVIDER_GOOGLE:
+                $this->_onPropertyChanged('oauthGoogle', $this->oauthFacebook, $uid);
+                $this->oauthGoogle = $uid;
+                break;
+            case self::PROVIDER_FACEBOOK:
+                $this->_onPropertyChanged('oauthFacebook', $this->oauthFacebook, $uid);
+                $this->oauthFacebook = $uid;
+                break;
+            default:
+                throw new \InvalidArgumentException('unknown provider');
+        }
     }
 
     public function setLanguage($language)

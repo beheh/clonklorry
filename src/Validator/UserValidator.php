@@ -14,7 +14,13 @@ class UserValidator extends Validator
     public function performValidation($entity)
     {
         $this->validateUsername($entity->getUsername());
-        $this->validateEmailAddress($entity->getEmail(), gettext('Email address is invalid'));
+        $this->validateEmailAddress($entity->getEmail(), gettext('Email address is invalid.'));
+
+        $this->validateNumber($entity->getLoginMethodCount(), 1, null, array(
+            'noInt' => gettext('Login methods must a number.'),
+            'tooSmall' => gettext('Last login method cannot be removed.'),
+            'tooLarge' => gettext('Too many login methods.')
+        ));
 
         $this->validateClonkforgeId($entity->getClonkforgeId());
         $this->validateGitHubName($entity->getGithubName());

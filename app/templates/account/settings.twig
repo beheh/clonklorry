@@ -28,7 +28,7 @@
 					<div class="col-md-12 col-sm-6">
 						<h3 id="profiles">{% trans "Links" %}</h3>
 						{% include 'functions/alert.twig' with {'selector' : 'profiles'} %}
-						<form role=form" method="post">
+						<form role=form" action="{{filename}}" method="post">
 							<input type="hidden" name="profiles-form">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
@@ -53,7 +53,7 @@
 					<div class="col-md-12 col-sm-6">
 						<h3 id="contact">{% trans "Contact details" %}</h3>
 						{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-						<form role=form" method="post">
+						<form role=form" action="{{filename}}" method="post">
 							<input type="hidden" name="contact-form">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
@@ -74,7 +74,7 @@
 					<div class="col-md-12 col-sm-6">
 						<h3 id="language">{% trans "Language" %}</h3>
 						{% include 'functions/alert.twig' with {'selector' : 'language'} %}
-                        <form role=form" method="post">
+                        <form role=form" action="{{filename}}" method="post">
 							<input type="hidden" name="language-form">
 							<input type="hidden" name="state" value="{{state}}">
 							<div class="form-group">
@@ -95,7 +95,7 @@
 				<h3 id="remove-account">{% trans "Remove account" %}</h3>
 				{% if not show_remove_account %}<p id="remove-confirm-prompt" class="visible-js"><a href="#remove-account" data-toggle="collapse" data-target="#remove-account-confirm">{% trans %}Would you like to remove your account?{% endtrans %}</a></p>{% endif %}
 				<div id="remove-account-confirm" class="collapse in">
-					<form role="form" method="post">
+					<form role="form" action="{{filename}}" method="post">
 						<input type="hidden" name="remove-account-form">
 						<input type="hidden" name="state" value="{{state}}">
 						<div class="alert alert-danger">
@@ -126,7 +126,7 @@
 					<div class="col-md-12 col-sm-6">
 						<h3 id="password">{% trans "Password" %}</h3>
 						{% include 'functions/alert.twig' with {'selector' : 'password'} %}
-						<form role=form" method="post" id="form-password">
+						<form role="form" action="{{filename}}" method="post" id="form-password">
 							<input type="hidden" name="password-form">
 							<input type="hidden" name="state" value="{{state}}">
 							{% if password_exists and not can_reset_password %}
@@ -154,7 +154,7 @@
 						{% include 'functions/alert.twig' with {'selector' : 'remote-logout'} %}
 						<p id="remote-logout-prompt"><a href="#remote-logout" data-toggle="collapse" data-target="#remote-logout-confirm">{% trans %}Would you like to log out of all other devices?{% endtrans %}</a></p>
 						<div class="collapse in" id="remote-logout-confirm">
-							<form method="post" role=form">
+							<form method="post" action="{{filename}}" role=form">
 								<input type="hidden" name="remote-logout-form">
 								<input type="hidden" name="state" value="{{state}}">
 								<button type="submit" class="btn btn-warning">{% trans "Log out all other devices" %}</button>

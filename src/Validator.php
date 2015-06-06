@@ -40,7 +40,7 @@ abstract class Validator
 
     protected function validateNumber($number, $minimum, $maximum, $messages)
     {
-        if (!is_int($minimum) || !is_int($maximum)) {
+        if ($minimum !== null && (!is_int($minimum)) || ($maximum !== null && !is_int($maximum))) {
             throw new InvalidArgumentException('minimum and maximum must be valid integers');
         }
         if (!is_int($number)) {
@@ -51,7 +51,7 @@ abstract class Validator
                 $message = isset($messages['tooSmall']) ? $messages['tooSmall'] : $messages;
                 $this->fail($message);
             }
-            if ($minimum !== null && $number < $minimum) {
+            if ($maximum !== null && $number > $maximum) {
                 $message = isset($messages['tooLarge']) ? $messages['tooLarge'] : $messages;
                 $this->fail($message);
             }

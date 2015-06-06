@@ -138,7 +138,7 @@ class Callback extends Presenter
             $user->setOauth($provider, $uid);
 
             // we might be able to add the users github profile
-            if ($provider == 'github' && !$user->getGithubName()) {
+            if ($provider == User::PROVIDER_GITHUB && !$user->getGithubName()) {
                 $user->setGithubName($profile->nickname);
             }
 

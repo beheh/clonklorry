@@ -37,17 +37,23 @@ class Settings extends Presenter
 
         if (isset($_GET['remove-oauth'])) {
             $this->security->requireValidState();
+            $modificationListener = new ModificationListener($user);
+            $userValidator = new UserValidator();
             $provider = filter_input(INPUT_GET, 'remove-oauth');
 
             if ($provider) {
+
+                $user->setOauth($user->parseOauth($provider), null);
+
                 try {
-                    $user->setOauth($provider, null);
-                    if ($user->modified()) {
-                        $this->success('oauth', gettext('Removed login service.'));
+                    $userValidator->validate($user);
+                    if ($modificationListener->isNotified()) {
                         $this->manager->flush();
+                        $this->success('oauth', gettext('Removed login service.'));
                     }
-                } catch (ModelValueInvalidException $ex) {
-                    $this->error('oauth', sprintf(gettext('%s is %s.'), ucfirst($provider), $ex->getMessage()));
+                } catch (ValidationException $ex) {
+                    $this->manager->refresh($user);
+                    $this->error('oauth', implode('<br>', $ex->getFails()));
                 }
             }
         }
@@ -79,11 +85,7 @@ class Settings extends Presenter
 
         $this->context['can_reset_password'] = $this->session->canResetPassword();
 
-        $oauth = array('github' => User::PROVIDER_GITHUB, 'google' => User::PROVIDER_GOOGLE, 'facebook' => User::PROVIDER_FACEBOOK);
-        $this->context['oauth'] = array();
-        foreach ($oauth as $name => $provider) {
-            $this->context['oauth'][$name] = $user->hasOauth($provider);
-        }
+        $this->context['oauth'] = $user->getOauthArray();
 
         $this->display('account/settings.twig');
     }
