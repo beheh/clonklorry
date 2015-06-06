@@ -120,7 +120,7 @@
 		</div>
 		<hr>
 		<h2>{% trans %}Moderation log{% endtrans %}</h2>
-		{% if moderations %}
+		{% if moderations|length > 0 %}
 		<table class="table">
 			<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Action{% endtrans %}</th><th>{% trans %}Executed by{% endtrans %}</th></tr>
 			{% for moderation in moderations %}
