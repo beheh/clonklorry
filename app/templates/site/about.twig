@@ -39,7 +39,7 @@
 		<hr>
 		<p class="lead">{% trans %}This project was only made possible by a number of technologies, libraries and resources:{% endtrans %}</p>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 				<h3 id="technologies">{% trans "Technologies" %}</h3>
 				<dl>
 					<dt><a href="http://php.net/">PHP</a></dt>
@@ -64,7 +64,7 @@
 					<dd>by <a href="http://lukemcdonald.com/">Luke McDonald</a> via <a href="http://subtlepatterns.com/">Subtle Patterns</a>.</dd>
 				</dl>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 				<h3 id="libraries">{% trans "Libraries" %}</h3>
 				<dl>
 					<dt><a href="http://twig.sensiolabs.org/">Twig</a>, <a href="http://swiftmailer.org/">Swift Mailer</a> & <a href="http://symfony.com/components">various Symfony components</a></dt>
@@ -87,26 +87,31 @@
 					<dd>by <a href="http://seld.be/">Jordi Boggiano</a>.</dd>
 				</dl>
 			</div>
-			<div class="col-md-4">
-				<h3 id="development">{% trans "Development" %}</h3>
-				<div class="head">
-					<dt><img src="{{resources}}/lorry/img/benedict.png" class="img-circle">
-					<a href="https://beheh.de/">Benedict Etzel</a> <span class="text-muted">/ <a href="{{base}}/users/B_E" class="text-muted">B_E</a></span></dt>
-					<dd>founder & developer.</dd>
-				</div>
-				<hr class="hidden-xs hidden-sm">
-				<h3 id="credits">{% trans "Credits" %}</h3>
-				<dl>
-					<dt><span class="text-muted">thanking the</span> <a href="http://clonkspot.org/">Clonkspot community</a>
-					<dd>for much-needed feedback and thoughts,</dd>
-					<dt><span class="text-muted">thanking the</span> <a href="http://forum.openclonk.org/">OpenClonk community</a></dt>
-					<dd>for inspiration and for creating OpenClonk,</dd>
-					<dt><span class="text-muted">thanking all</span> content creators</dt>
-					<dd>for making Clonk an immortal game,</dd>
-					<dt><span class="text-muted">and thanking</span> Matthes Bender</dt>
-					<dd>for imagining and creating Clonk.</dd>
-				</dl>
-			</div>
+			<div class="col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-6">
+                        <h3 id="development">{% trans "Development" %}</h3>
+                        <div class="head">
+                            <dt><img src="{{resources}}/lorry/img/benedict.png" class="img-circle">
+                            <a href="https://beheh.de/">Benedict Etzel</a> <span class="text-muted">/ <a href="{{base}}/users/B_E" class="text-muted">B_E</a></span></dt>
+                            <dd>founder & developer.</dd>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6">
+                        <h3 id="credits">{% trans "Credits" %}</h3>
+                        <dl>
+                            <dt><span class="text-muted">thanking the</span> <a href="http://clonkspot.org/">Clonkspot community</a>
+                            <dd>for much-needed feedback and thoughts,</dd>
+                            <dt><span class="text-muted">thanking the</span> <a href="http://forum.openclonk.org/">OpenClonk community</a></dt>
+                            <dd>for inspiration and for creating OpenClonk,</dd>
+                            <dt><span class="text-muted">thanking all</span> content creators</dt>
+                            <dd>for making Clonk an immortal game,</dd>
+                            <dt><span class="text-muted">and thanking</span> Matthes Bender</dt>
+                            <dd>for imagining and creating Clonk.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
 {% endblock %}
