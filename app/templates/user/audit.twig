@@ -1,6 +1,6 @@
 {% extends 'root.twig' %}
 
-{% set title %}{% trans %}Audit {{username}}{% endtrans %}{% endset %}
+{% set title %}{% trans %}{{username}}'s moderations{% endtrans %}{% endset %}
 
 {% block content %}
     <div class="page-header">
@@ -10,7 +10,6 @@
         </div>
     </div>
     <div class="container">
-        <h2 id="moderator">{% trans %}Moderation log{% endtrans %}</h2>
         {% if moderations|length > 0 %}
             {% include 'functions/moderations.twig' %}
         {% else %}
