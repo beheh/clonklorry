@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="page-header">
-        <div class="breakout"><a href="{{base}}/users"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+        {% if user_login %}<div class="breakout"><a href="{{base}}/users"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>{% endif %}
         <div class="container">
             <h1><a href="{{filename}}">{{ username }}</a>
                 <small>
