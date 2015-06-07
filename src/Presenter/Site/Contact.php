@@ -15,6 +15,8 @@ class Contact extends Presenter
             $user = $this->session->getUser();
         }
 
+        $this->context['user'] = $user;
+
         $this->context['hide_greeter'] = true;
         $this->context['address'] = $this->config->get('contact/address');
         $this->context['legal_address'] = $this->config->get('contact/legal');
@@ -40,8 +42,7 @@ class Contact extends Presenter
             $ticket->setUser($user->getId());
         }
 
-        $message = htmlspecialchars(filter_input(INPUT_POST, 'message',
-                FILTER_SANITIZE_STRING));
+        $message = htmlspecialchars(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING));
 
         try {
             $ticket->setMessage($message);
@@ -58,8 +59,7 @@ class Contact extends Presenter
 
         if (empty($errors)) {
             $ticket->save();
-            $this->success('contact',
-                    gettext('Thank you for your message, we\'ll take a look at it.'));
+            $this->success('contact', gettext('Thank you for your message, we\'ll take a look at it.'));
             $this->context['hide_form'] = true;
         } else {
             $this->context['message'] = $message;
