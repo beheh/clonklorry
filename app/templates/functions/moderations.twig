@@ -1,0 +1,16 @@
+<table class="table">
+    <tr>
+        <th>{% trans %}User{% endtrans %}</th>
+        <th>{% trans %}Action{% endtrans %}</th>
+        <th>{% trans %}Executed by{% endtrans %}</th>
+        <th>{% trans %}Timestamp{% endtrans %}</th>
+    </tr>
+    {% for moderation in moderations %}
+        <tr>
+            <td>{% if moderation.user %}{% include 'functions/user.twig' with {'user' : moderation.user} %}{% else %}<em>{% trans %}Unknown user{% endtrans %}</em>{% endif %}</td>
+            <td>{{moderation.action}}{% if moderation.originalValue or moderation.finalValue %}: "{{moderation.originalValue}}" &rarr; "{{moderation.finalValue}}"{% endif %}</td>
+            <td>{% if moderation.executor %}{% include 'functions/user.twig' with {'user' : moderation.executor} %}{% else %}<em>{% trans %}Administrator{% endtrans %}</em>{% endif %}</td>
+            <td>{{moderation.timestamp|date(format_datetime)}}</td>
+        </tr>
+    {% endfor %}
+</table>

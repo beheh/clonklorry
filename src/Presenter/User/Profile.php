@@ -60,34 +60,7 @@ class Profile extends Presenter
                 'url' => sprintf($this->config->get('github/url'), urlencode($user->getGithubName())));
         }
 
-        /* $releases = $this->persistence->build('Release')->all()->byOwner($user->getId());
-          $this->context['addons'] = array();
-          foreach ($releases as $release) {
-          $addon = $release->fetchAddon();
-          $user_addon = array(
-          'title' => $addon->getTitle(),
-          'short' => $addon->getShort(),
-          'introduction' => $addon->getIntroduction()
-          );
-
-          $game = $addon->fetchGame();
-          if ($game) {
-          $user_addon['game'] = array('title' => $game->getTitle(), 'short' => $game->getShort());
-          }
-
-          $this->context['addons'][] = $user_addon;
-          } */
-
-        $this->context['comments'] = array();
-        foreach ($user->getWrittenComments() as $comment) {
-            $user_comment = array();
-            $user_comment['timestamp'] = date($this->localisation->getFormat(LocalisationService::FORMAT_DATETIME), $comment->getTimestamp());
-            $user_comment['content'] = $comment->getContent();
-            $user_comment['url'] = $this->config->get('base').'/comments/'.$comment->getId();
-            $this->context['comments'][] = $user_comment;
-        }
-
-        $this->context['moderations'] = $user->getExecutedModerations();
+        $this->context['addons'] = $this->manager->getRepository('Lorry\Model\Addon')->getPublishedByOwner($user);
 
         $this->display('user/profile.twig');
     }

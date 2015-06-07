@@ -41,7 +41,6 @@ class Edit extends Presenter
             $this->success('username', gettext('Username was changed.'));
         }
 
-        $this->context['format_datetime'] = $this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME);
         $this->context['moderations'] = $user->getModerations();
 
         $this->context['email'] = isset($_POST['email']) ? filter_input(INPUT_POST, 'email') : $user->getEmail();
@@ -103,7 +102,7 @@ class Edit extends Presenter
             }
         }
 
-        if (isset($_POST['change-contact-submit'])) {
+        if (isset($_POST['change-contact-submit']) && !$self) {
             $oldEmail = $user->getEmail();
             $newEmail = trim(filter_input(INPUT_POST, 'email'));
 
@@ -173,7 +172,7 @@ class Edit extends Presenter
             }
         }
 
-        if (isset($_POST['password-reset-submit'])) {
+        if (isset($_POST['password-reset-submit']) && !$self) {
             if ($this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true))) {
                 $this->security->trackUserModeration($user, 'password_reset', null, null, $self);
 

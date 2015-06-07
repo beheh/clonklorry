@@ -3,153 +3,146 @@
 {% set title %}{% trans %}Edit {{username}}{% endtrans %}{% endset %}
 
 {% block content %}
-	<div class="page-header">
-		<div class="breakout"><a href="{{base}}/users/{{username}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
-		<div class="container">
+    <div class="page-header">
+        <div class="breakout"><a href="{{base}}/users/{{username}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+        <div class="container">
             <h1><a href="{{filename}}">{{title}}</a></h1>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h2>{% trans "Profile" %}</h2>
-				<div class="row">
-					<div class="col-md-12 col-sm-6">
-						<h3>{% trans "Appearance" %}</h3>
-						{% include 'functions/alert.twig' with {'selector' : 'username'} %}
-						<form role=form" action="{{filename}}" method="post">
-							<input type="hidden" name="state" value="{{state}}">
-							<div class="form-group">
-								<div class="form-group">
-									<label for="username">{% trans "Username" %}</label>
-									<input type="text" class="form-control" name="username" id="username" value="{{username_edit}}" required>
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-primary" name="change-username-submit">{% trans "Change username" %}</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<hr class="visible-xs visible-sm">
-				<h2>{% trans "Account" %}</h2>
-				<div class="row">
-					<div class="col-md-12 col-sm-6">
-						<h3>{% trans "Contact details" %}</h3>
-						{% include 'functions/alert.twig' with {'selector' : 'contact'} %}
-						<form role=form" action="{{filename}}" method="post">
-							<input type="hidden" name="state" value="{{state}}">
-							<div class="form-group">
-								<label for="email">{% trans "Email address" %}</label>
-								<input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary" name="change-contact-submit">{% trans "Change email address" %}</button>
-							</div>
-						</form>
-					</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>{% trans "Profile" %}</h2>
+                <div class="row">
+                    <div class="col-md-12 col-sm-6">
+                        <h3>{% trans "Appearance" %}</h3>
+                        {% include 'functions/alert.twig' with {'selector' : 'username'} %}
+                        <form role=form" action="{{filename}}" method="post">
+                            <input type="hidden" name="state" value="{{state}}">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="username">{% trans "Username" %}</label>
+                                    <input type="text" class="form-control" name="username" id="username" value="{{username_edit}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary" name="change-username-submit">{% trans "Change username" %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <hr class="visible-xs visible-sm">
+                <h2>{% trans "Account" %}</h2>
+                <div class="row">
+                    {% if not self %}
+                    <div class="col-md-12 col-sm-6">
+                        <h3>{% trans "Contact details" %}</h3>
+                        {% include 'functions/alert.twig' with {'selector' : 'contact'} %}
+                        <form role=form" action="{{filename}}" method="post">
+                            <input type="hidden" name="state" value="{{state}}">
+                            <div class="form-group">
+                                <label for="email">{% trans "Email address" %}</label>
+                                <input type="email" class="form-control" name="email" id="email" value="{{email}}" required{% if focus_email %} autofocus{% endif %}>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" name="change-contact-submit">{% trans "Change email address" %}</button>
+                            </div>
+                        </form>
+                    </div>
+                    {% endif %}
 
-					{% if user_administrator %}
-						<div class="col-md-12 col-sm-6">
-							<h3>{% trans "Permissions" %}</h3>
-							{% include 'functions/alert.twig' with {'selector' : 'permissions'} %}
-							<form role=form" action="{{filename}}" method="post">
-								<input type="hidden" name="state" value="{{state}}">
-								<div class="radio">
-									<label>
-										<input type="radio" name="permissions" value="user"{% if not (moderator or administrator) %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="permissions" value="moderator"{% if moderator and not administrator %} checked{% endif %}> {% trans %}Moderator{% endtrans %}
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="permissions" value="administrator"{% if administrator %} checked{% endif %}> {% trans %}Administrator{% endtrans %}
-									</label>
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-primary{% if self %} lorry-js-warn" data-warning="{% trans %}Warning: You are editing your own permissions. If you modify your own permissions you may not be able to access this page anymore.{% endtrans %}\n\n{% trans %}Are you sure you want to continue?{% endtrans %}"{% else %}"{% endif%} name="permissions-submit">{% trans "Change permissions" %}</button>
-								</div>
-							</form>
-						</div>
-					{% endif %}
-				</div>
-			</div>
-			{% if not self %}
-				<div class="col-md-4">
-					<hr class="visible-xs visible-sm">
-					<h2 id="support">{% trans "Support" %}</h2>
-					<div class="row">
-						<div class="col-md-12 col-sm-6">
-							<h3>{% trans %}Reset{% endtrans%}</h3>
-							{% include 'functions/alert.twig' with {'selector' : 'reset'} %}
-							<form role="form" action="{{filename}}" method="post">
-								<input type="hidden" name="state" value="{{state}}">
-								<div class="form-group">
-									<button type="submit" class="btn btn-warning btn-block support-button" name="password-reset-submit">{% trans %}Reset password{% endtrans %}</button>
-								</div>
-								<p class="help-block">{% trans %}We'll send the user an email to reset their password.{% endtrans %}</p>
-							</form>
-						</div>
-						{% if user_administrator %}
-							<div class="col-md-12 col-sm-6">
-								<h3>{% trans %}Disable{% endtrans%}</h3>
-								<form method="post">
-									<input type="hidden" name="state" value="{{state}}">
-									<div class="form-group">
-										<label for="remove-confirm">{% trans %}Please type the username to confirm:{% endtrans %}</label>
-										<input class="form-control" id="remove-confirm" type="text" required>
-										<p class="help-block">{% trans %}The account &quot;{{username}}&quot; will be <strong>permanently disabled</strong>.{% endtrans %}</p>
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-danger btn-block remove-button">{% trans %}Disable account permamently{% endtrans %}</button>
-									</div>
-								</form>
-							</div>
-						{% endif %}
-					</div>
-				</div>
-			{% endif %}			
-		</div>
-		<hr>
-		<h2 id="moderations">{% trans %}Moderation log{% endtrans %}</h2>
-		{% if moderations|length > 0 %}
-		<table class="table">
-			<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Action{% endtrans %}</th><th>{% trans %}Executed by{% endtrans %}</th></tr>
-			{% for moderation in moderations %}
-				<tr>
-					<td>{{moderation.timestamp|date(format_datetime)}}</td>
-					<td>{{moderation.action}}{% if moderation.originalValue or moderation.finalValue %}: "{{moderation.originalValue}}" &rarr; "{{moderation.finalValue}}"{% endif %}</td>
-					<td>{% if moderation.executor %}{% include 'functions/user.twig' with {'user' : moderation.executor} %}{% else %}<em>{% trans %}Administrator{% endtrans %}</em>{% endif %}</td>
-				</tr>
-			{% endfor %}
-		</table>
-		{% else %}
-		<div class="alert alert-info">{% trans %}This account has not been moderated in the past.{% endtrans %}</div>
-		{% endif %}
-	</div>
+                    {% if user_administrator %}
+                        <div class="col-md-12 col-sm-6">
+                            <h3>{% trans "Permissions" %}</h3>
+                            {% include 'functions/alert.twig' with {'selector' : 'permissions'} %}
+                            <form role=form" action="{{filename}}" method="post">
+                                <input type="hidden" name="state" value="{{state}}">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="permissions" value="user"{% if not (moderator or administrator) %} checked{% endif %}> {% trans %}Normal user{% endtrans %}
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="permissions" value="moderator"{% if moderator and not administrator %} checked{% endif %}> {% trans %}Moderator{% endtrans %}
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="permissions" value="administrator"{% if administrator %} checked{% endif %}> {% trans %}Administrator{% endtrans %}
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary{% if self %} lorry-js-warn" data-warning="{% trans %}Warning: You are editing your own permissions. If you modify your own permissions you may not be able to access this page anymore.{% endtrans %}\n\n{% trans %}Are you sure you want to continue?{% endtrans %}"{% else %}"{% endif%} name="permissions-submit">{% trans "Change permissions" %}</button>
+                                </div>
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if not self %}
+                <div class="col-md-4">
+                    <hr class="visible-xs visible-sm">
+                    <h2 id="support">{% trans "Support" %}</h2>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6">
+                            <h3>{% trans %}Reset{% endtrans%}</h3>
+                            {% include 'functions/alert.twig' with {'selector' : 'reset'} %}
+                            <form role="form" action="{{filename}}" method="post">
+                                <input type="hidden" name="state" value="{{state}}">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-warning btn-block support-button" name="password-reset-submit">{% trans %}Reset password{% endtrans %}</button>
+                                </div>
+                                <p class="help-block">{% trans %}We'll send the user an email to reset their password.{% endtrans %}</p>
+                            </form>
+                        </div>
+                        {% if user_administrator %}
+                            <div class="col-md-12 col-sm-6">
+                                <h3>{% trans %}Disable{% endtrans%}</h3>
+                                <form method="post">
+                                    <input type="hidden" name="state" value="{{state}}">
+                                    <div class="form-group">
+                                        <label for="remove-confirm">{% trans %}Please type the username to confirm:{% endtrans %}</label>
+                                        <input class="form-control" id="remove-confirm" type="text" required>
+                                        <p class="help-block">{% trans %}The account &quot;{{username}}&quot; will be <strong>permanently disabled</strong>.{% endtrans %}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger btn-block remove-button">{% trans %}Disable account permamently{% endtrans %}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}			
+        </div>
+        <hr>
+        <h2 id="moderations">{% trans %}Moderation log{% endtrans %}</h2>
+        {% if moderations|length > 0 %}
+            {% include 'functions/moderations.twig' %}
+        {% else %}
+            <div class="alert alert-info">{% trans %}This account has not been moderated in the past.{% endtrans %}</div>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}
 
 {% block javascript %}
-	{{ parent() }}
+    {{ parent() }}
 
-	var username = "{{username}}";
+    var username = "{{username}}";
 
-	$('.remove-button').attr('disabled', true);
-	$('#remove-confirm').on("change keyup paste", function() {
-	if($(this).val().toLowerCase() == username.toLowerCase()) {
-	$('.remove-button').removeAttr('disabled');
-	$('#remove-confirm').attr('disabled', true).off();
-	$(this).val(username);
-	} else {
-	$('.remove-button').attr('disabled', true);
-	}
-	});
+    $('.remove-button').attr('disabled', true);
+    $('#remove-confirm').on("change keyup paste", function() {
+    if($(this).val().toLowerCase() == username.toLowerCase()) {
+    $('.remove-button').removeAttr('disabled');
+    $('#remove-confirm').attr('disabled', true).off();
+    $(this).val(username);
+    } else {
+    $('.remove-button').attr('disabled', true);
+    }
+    });
 {% endblock %}

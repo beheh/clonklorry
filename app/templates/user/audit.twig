@@ -1,0 +1,39 @@
+{% extends 'root.twig' %}
+
+{% set title %}{% trans %}Audit {{username}}{% endtrans %}{% endset %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="breakout"><a href="{{base}}/users/{{username}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+        <div class="container">
+            <h1><a href="{{filename}}">{{title}}</a></h1>
+        </div>
+    </div>
+    <div class="container">
+        <h2 id="moderator">{% trans %}Moderation log{% endtrans %}</h2>
+        {% if moderations|length > 0 %}
+            {% include 'functions/moderations.twig' %}
+        {% else %}
+            <div class="alert alert-info">{% trans %}This user has not moderated any other users yet.{% endtrans %}</div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+
+    var username = "{{username}}";
+
+    $('.remove-button').attr('disabled', true);
+    $('#remove-confirm').on("change keyup paste", function() {
+    if($(this).val().toLowerCase() == username.toLowerCase()) {
+    $('.remove-button').removeAttr('disabled');
+    $('#remove-confirm').attr('disabled', true).off();
+    $(this).val(username);
+    } else {
+    $('.remove-button').attr('disabled', true);
+    }
+    });
+{% endblock %}

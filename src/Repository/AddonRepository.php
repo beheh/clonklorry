@@ -18,7 +18,20 @@ class AddonRepository extends EntityRepository
             ->andWhere(':now >= r.published')
             ->setParameter('now', new \DateTime())
             ->setParameter('game', $game);
-        return $qb->getQuery()->getScalarResult();
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getPublishedByOwner($owner)
+    {
+        $qb = $this->_em->createQueryBuilder()
+            ->select('a')
+            ->from('Lorry\Model\Addon', 'a')
+            ->leftJoin('a.latestRelease', 'r')
+            ->where('a.owner = :owner')
+            ->andWhere(':now >= r.published')
+            ->setParameter('now', new \DateTime())
+            ->setParameter('owner', $owner);
+        return $qb->getQuery()->getResult();
     }
 
     public function getOwnedByTitleAndGame($owner, $title, $game)
@@ -35,6 +48,6 @@ class AddonRepository extends EntityRepository
             ->setParameter('owner', $owner)
             ->setParameter('title', $title)
             ->setParameter('game', $game);
-        return $qb->getQuery()->getScalarResult();
+        return $qb->getQuery()->getResult();
     }
 }

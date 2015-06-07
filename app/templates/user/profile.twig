@@ -3,97 +3,77 @@
 {% set title %}{{username}}{% endset%}
 
 {% block content %}
-	<div class="page-header">
-		<div class="breakout"><a href="{{base}}/users"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
-		<div class="container">
-			<h1><a href="{{filename}}">{{ username }}</a>
-					<small>
-						{% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
-						{% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
-						{% else %}<span class="label label-default">{% trans %}User{% endtrans %}</span>
-						{% endif %}
-						{% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
-						{% endif %}
-					</small>
-			</h1>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h2>{% trans %}User{% endtrans %}</h2>
-				<ul class="list-group">
-						{% if flags.founder %}
-						<li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><a href="{{base}}/about#development" class="text"><span class="glyphicon glyphicon-king"></span> {% trans %}Founder of Lorry{% endtrans %}</a></li>
-						{% elseif flags.alpha %}
-						<li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-knight"></span> {% trans %}Took part in Lorry Alpha{% endtrans %}</li>
-						{% elseif flags.beta %}
-						<li class="list-group-item" title="{% trans %}Registered on the beta site{% endtrans %}"><span class="glyphicon glyphicon-pawn"></span> {% trans %}Took part in Lorry Beta{% endtrans %}</li>
-						{% endif %}
-						{% if flags.vip %}
-						<li class="list-group-item" title="{% trans %}Built something awesome for the Clonk community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
-						{% endif %}
-						{% if flags.coder %}
-						<li class="list-group-item" title="{% trans %}Knows Google-fu{% endtrans %}"><a href="https://github.com/beheh/clonklorry/graphs/contributors" class="text"><span class="glyphicon glyphicon-cog"></span> {% trans %}Lorry developer{% endtrans %}</a></li>
-						{% endif %}
-						{% if flags.reporter %}
-						<li class="list-group-item" title="{% trans %}&quot;Hey, what's that button do?&quot;{% endtrans %}"><a href="https://github.com/beheh/clonklorry/issues" class="text"><span class="glyphicon glyphicon-flag"></span> {% trans %}Bugreporter{% endtrans %}</a></li>
-						{% endif %}
-						{% if registration %}
-						<li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-user"></span> {% trans %}Registered since {{registration}}{% endtrans %}</li>
-						{% endif %}
-				</ul>
-				{% if (user_moderator and moderator == false) or user_administrator %}
-					<p>
-						<a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
-					</p>
-				{% endif %}
-				{% if clonkforge or github %}
-					<h3>{% trans %}Links{% endtrans %}</h3>
-					<ul class="list-group">
-						{% if clonkforge %}<li class="list-group-item"><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
-						{% if github %}<li class="list-group-item"><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
-					</ul>
-				{% endif %}
-			</div>
-			<div class="col-md-8">
-				<h2 id="activity">{% trans %}Activity{% endtrans %}</h2>
-				{% set developer_portal %}<a href="{{base}}/developers">{% trans %}developer portal{% endtrans %}</a>{% endset %}
-				{% if addons %}
-					<ul class="media-list">
-						{% for addon in addons %}
-							{% include "functions/addon.twig" %}
-						{% endfor %}
-					</ul>
-				{% elseif self %}
-					<div class="alert alert-info">{% trans %}You have not released any addons yet.{% endtrans %}</a></div>
-					<p class="help-block">{% trans %}Visit the {{developer_portal}} to get started.{% endtrans %}</p>
-				{% else %}
-					<div class="alert alert-info">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
-					<p class="help-block">{% trans %}Learn more at the {{developer_portal}}.{% endtrans %}</p>
-				{% endif %}
-                {% if user_administrator and (moderator or moderations|length > 0) %}
-                <h2 id="moderator">{% trans %}Moderator log{% endtrans %} <small><span class="glyphicon glyphicon-lock" title="{% trans %}Can only seen by administrators{% endtrans %}" aria-hidden="true"></span></small></h2>
-                {% if moderations|length > 0 %}
-                <table class="table">
-                    <tr>
-                        <th>{% trans %}User{% endtrans %}</th>
-                        <th>{% trans %}Action{% endtrans %}</th>
-                        <th>{% trans %}Timestamp{% endtrans %}</th>
-                    </tr>
-                    {% for moderation in moderations %}
-                        <tr>
-                            <td>{% if moderation.user %}{% include 'functions/user.twig' with {'user' : moderation.user, 'link' : base ~ '/users/' ~ moderation.user.username ~ '/edit#moderations'} %}{% else %}<em>{% trans %}Unknown user{% endtrans %}</em>{% endif %}</td>
-                            <td>{{moderation.action}}{% if moderation.originalValue or moderation.finalValue %}: "{{moderation.originalValue}}" &rarr; "{{moderation.finalValue}}"{% endif %}</td>
-                            <td>{{moderation.timestamp|date(format_datetime)}}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
+    <div class="page-header">
+        <div class="breakout"><a href="{{base}}/users"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+        <div class="container">
+            <h1><a href="{{filename}}">{{ username }}</a>
+                <small>
+                    {% if administrator %}<span class="label label-success">{% trans %}Administrator{% endtrans %}</span>
+                    {% elseif moderator %}<span class="label label-primary">{% trans %}Moderator{% endtrans %}</span>
+                    {% else %}<span class="label label-default">{% trans %}User{% endtrans %}</span>
+                    {% endif %}
+                    {% if banned %}<span class="label label-danger">{% trans %}Banned{% endtrans %}</span>
+                    {% endif %}
+                </small>
+            </h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>{% trans %}User{% endtrans %}</h2>
+                <ul class="list-group">
+                    {% if flags.founder %}
+                        <li class="list-group-item" title="{% trans %}Well that took a bit longer than expected{% endtrans %}"><a href="{{base}}/about#development" class="text"><span class="glyphicon glyphicon-king"></span> {% trans %}Founder of Lorry{% endtrans %}</a></li>
+                        {% elseif flags.alpha %}
+                        <li class="list-group-item" title="{% trans %}Registered on the alpha site{% endtrans %}"><span class="glyphicon glyphicon-knight"></span> {% trans %}Took part in Lorry Alpha{% endtrans %}</li>
+                        {% elseif flags.beta %}
+                        <li class="list-group-item" title="{% trans %}Registered on the beta site{% endtrans %}"><span class="glyphicon glyphicon-pawn"></span> {% trans %}Took part in Lorry Beta{% endtrans %}</li>
+                        {% endif %}
+                        {% if flags.vip %}
+                        <li class="list-group-item" title="{% trans %}Built something awesome for the Clonk community{% endtrans %}"><span class="glyphicon glyphicon-globe"></span> {% trans %}Valuable community member{% endtrans %}</li>
+                        {% endif %}
+                        {% if flags.coder %}
+                        <li class="list-group-item" title="{% trans %}Knows Google-fu{% endtrans %}"><a href="https://github.com/beheh/clonklorry/graphs/contributors" class="text"><span class="glyphicon glyphicon-cog"></span> {% trans %}Lorry developer{% endtrans %}</a></li>
+                        {% endif %}
+                        {% if flags.reporter %}
+                        <li class="list-group-item" title="{% trans %}&quot;Hey, what's that button do?&quot;{% endtrans %}"><a href="https://github.com/beheh/clonklorry/issues" class="text"><span class="glyphicon glyphicon-flag"></span> {% trans %}Bugreporter{% endtrans %}</a></li>
+                        {% endif %}
+                        {% if registration %}
+                        <li class="list-group-item" title="{% trans %}Welcome to Lorry!{% endtrans %}"><span class="glyphicon glyphicon-user"></span> {% trans %}Registered since {{registration}}{% endtrans %}</li>
+                        {% endif %}
+                </ul>
+                {% if (user_moderator and moderator == false) or user_administrator %}
+                    <p>
+                        <a href="{{username}}/edit" class="btn btn-default">{% trans %}Edit user{% endtrans %}</a>
+                        {% if user_administrator %}<a href="{{username}}/audit" class="btn btn-info">{% trans %}Moderator audit{% endtrans %}</a>{% endif %}
+                    </p>
+                {% endif %}
+                {% if clonkforge or github %}
+                    <h3>{% trans %}Links{% endtrans %}</h3>
+                    <ul class="list-group">
+                        {% if clonkforge %}<li class="list-group-item"><a href="{{clonkforge.url}}">{{clonkforge.profile}}</a></li>{% endif %}
+                        {% if github %}<li class="list-group-item"><a href="{{github.url}}">{{github.profile}}</a></li>{% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <h2 id="activity">{% trans %}Activity{% endtrans %}</h2>
+                {% set developer_portal %}<a href="{{base}}/developers">{% trans %}developer portal{% endtrans %}</a>{% endset %}
+                {% if addons %}
+                    <ul class="media-list">
+                        {% for addon in addons %}
+                            {% include "functions/addon.twig" %}
+                        {% endfor %}
+                    </ul>
+                {% elseif self %}
+                    <div class="alert alert-info">{% trans %}You have not released any addons yet.{% endtrans %}</a></div>
+                    <p class="help-block">{% trans %}Visit the {{developer_portal}} to get started.{% endtrans %}</p>
                 {% else %}
-                <div class="alert alert-info">{% trans %}This user has not moderated any other users yet.{% endtrans %}</div>
+                    <div class="alert alert-info">{% trans %}This user has not released any addons yet.{% endtrans %}</div>
+                    <p class="help-block">{% trans %}Learn more at the {{developer_portal}}.{% endtrans %}</p>
                 {% endif %}
-                {% endif %}
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

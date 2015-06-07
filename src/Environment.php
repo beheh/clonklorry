@@ -165,10 +165,12 @@ class Environment
             $twig->addGlobal('filename',
                 htmlspecialchars(rtrim(parse_url($_SERVER['REQUEST_URI'],
                             PHP_URL_PATH), '/')));
+
             $displayLanguage = $localisation->getDisplayLanguage();
             $twig->addGlobal('locale', str_replace('-', '_', $displayLanguage));
             $twig->addGlobal('display_language', $displayLanguage);
-            $languages = $localisation->getAvailableLanguages();
+            $twig->addGlobal('format_datetime', $localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME));
+
             $twig->addGlobal('fbid', $config->get('oauth/facebook/id'));
 
             $session = $this->container->get('session');
@@ -204,6 +206,7 @@ class Environment
                     '/users' => 'User\ListX',
                     '/users/:alpha' => 'User\Profile',
                     '/users/:alpha/edit' => 'User\Edit',
+                    '/users/:alpha/audit' => 'User\Audit',
                     '/users/:alpha/activate' => 'Account\Activate',
                     '/administrator' => 'Manage\Administrator\Portal',
                     '/administrator/logs' => 'Manage\Administrator\Logs',
