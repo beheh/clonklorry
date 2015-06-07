@@ -75,19 +75,19 @@ a:active.text,
 }
 .page-footer {
   border-top: 1px solid #EEE;
-  margin-top: 15px;
+  margin-top: 20px;
   padding-top: 9px;
+}
+.page-footer svg {
+  height: 12px;
+  width: 16px;
+  position: relative;
+  top: 1px;
 }
 footer span,
 footer span a,
 footer svg {
   display: inline;
-}
-.page-footer footer svg {
-  height: 12px;
-  width: 16px;
-  position: relative;
-  top: 1px;
 }
 .jumbotron {
   padding: 30px 0 50px 0;
