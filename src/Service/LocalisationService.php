@@ -149,7 +149,7 @@ class LocalisationService extends Service
      * @param \Lorry\Model\Language $language
      * @return bool
      */
-    final public function setDisplayLanguage(Language $language)
+    final public function setDisplayLanguage($language)
     {
         if ($this->verifyLanguage($language)) {
             $this->displayLanguage = $language;
