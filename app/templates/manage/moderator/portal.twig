@@ -11,8 +11,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<h2>{% trans %}Users{% endtrans %}</h2>
-				<a href="{{base}}/users" class="btn btn-default">{% trans %}User list{% endtrans %}</a>
+                <h2>{% trans %}Management{% endtrans %}</h2>
+				<h3>{% trans %}Users{% endtrans %}</h3>
+				<a href="{{base}}/users" class="btn btn-default">{% trans %}Users{% endtrans %}</a>
+				<a href="{{base}}/users?filter=moderators" class="btn btn-primary">{% trans "Moderators" %}</a>
+				<a href="{{base}}/users?filter=administrators" class="btn btn-success">{% trans "Administrators" %}</a>
 			</div>
 			<div class="col-md-8">
 				<h2>{% trans %}Queues{% endtrans %}</h2>
