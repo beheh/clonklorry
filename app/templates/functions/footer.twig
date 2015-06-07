@@ -1,6 +1,8 @@
-<div class="container">
-	<footer class="footer">
-		<p class="visible-xs hidden-print">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
-		<p><a class="text" href="{{base}}">{{brand}}</a> {{site_copyright}}{% if site_enabled %} &middot; <a class="text" href="{{base}}/about">{% trans "About" %}</a> &middot; <a class="text" href="{{base}}/about/api">{% trans "API" %}</a> &middot; <a class="text" href="{{base}}/contact">{% trans "Contact" %}</a>{% endif %}</p>
-	</footer>
+<div class="page-footer">
+    <div class="container">
+        <footer class="footer">
+            <p class="visible-xs hidden-print">&uarr; <a href="#">{% trans %}Back to top{% endtrans %}</a></p>
+            <p><a class="text" href="{{base}}">{% include 'functions/logo.svg' %} {{brand}}</a>{% if site_enabled %} &middot; <a class="text" href="{{base}}/about">{% trans "About" %}</a> &middot; <a class="text" href="{{base}}/about/api">{% trans "API" %}</a> &middot; <a class="text" href="{{base}}/contact">{% trans "Contact" %}</a> &middot; <a class="text" href="{{base}}/privacy">{% trans "Privacy" %}</a>{% endif %}</p>
+        </footer>
+    </div>
 </div>

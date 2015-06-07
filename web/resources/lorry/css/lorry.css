@@ -73,12 +73,21 @@ a:active.text,
 .navbar-inverse a:disabled svg rect {
   fill: #444444;
 }
-footer {
-  margin-top: 20px;
+.page-footer {
+  border-top: 1px solid #EEE;
+  margin-top: 15px;
+  padding-top: 9px;
 }
 footer span,
-footer span a {
+footer span a,
+footer svg {
   display: inline;
+}
+.page-footer footer svg {
+  height: 12px;
+  width: 16px;
+  position: relative;
+  top: 1px;
 }
 .jumbotron {
   padding: 30px 0 50px 0;
