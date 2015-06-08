@@ -4,135 +4,122 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 
+/**
+ * @Entity(repositoryClass="Lorry\Repository\TicketRepository")
+ * @HasLifecycleCallbacks
+ */
 class Ticket extends Model
 {
+    /**
+     * @ManyToOne(targetEntity="User", fetch="EAGER")
+     * @JoinColumn(name="associated_user_id", nullable=true)
+     */
+    protected $associatedUser;
 
-    public function getTable()
+    /**
+     * @Column(type="string", name="response_email_address")
+     */
+    protected $responseEmailAddress;
+
+    /**
+     * @Column(type="datetime")
+     * @var \DateTime
+     */
+    protected $submitted;
+
+    /**
+     * @Column(type="string")
+     */
+    protected $subject;
+
+    /**
+     * @Column(type="string")
+     */
+    protected $message;
+
+    /**
+     * @Column(type="datetime")
+     * @var \DateTime
+     */
+    protected $assigned;
+
+    /**
+     * @ManyToOne(targetEntity="User", fetch="EAGER")
+     * @JoinColumn(name="assigned_to_id")
+     */
+    protected $assignedTo;
+
+    public function setResponseEmail($responseEmailAddress)
     {
-        return 'ticket';
+        $this->responseEmailAddress = $responseEmailAddress;
     }
 
-    public function getSchema()
+    public function getResponseEmailAddress()
     {
-        return array(
-            'message' => 'text',
-            'hash' => 'varchar',
-            'user' => 'int',
-            'submitted' => 'datetime',
-            'escalated' => 'datetime',
-            'staff' => 'int',
-            'acknowledged' => 'datetime'
-        );
+        return $this->responseEmailAddress;
     }
 
-    protected function onInsert()
+    /**
+     * @PrePersist
+     */
+    public function submit()
     {
-        $this->setValue('submitted', time());
+        $this->setSubmitted(new \DateTime());
     }
 
-    public function byNew()
+    public function setAssociatedUser($user)
     {
-        $constraints = array();
-        $constraints['acknowledged'] = null;
-        $constraints['escalated'] = null;
-        $this->all()->order('submitted');
-        return $this->byValues($constraints);
+        $this->associatedUser = $user;
+    }
+
+    public function getAssociatedUser($user)
+    {
+        return $this->associatedUser;
+    }
+
+    public function assign($user)
+    {
+        $this->setAssigned(new \DateTime());
+        $this->setAssignedTo($user);
+    }
+
+    protected function setAssignedTo($user)
+    {
+        $this->assignedTo = $user;
+    }
+
+    public function getAssignedTo()
+    {
+        return $this->assignedTo;
+    }
+
+    public function setAssigned($assigned)
+    {
+        $this->assigned = $assigned;
+    }
+
+    public function getAssigned()
+    {
+        return $this->assigned;
+    }
+
+    public function setSubject($subject)
+    {
+        $this->subject = $subject;
+    }
+
+    public function getSubject()
+    {
+        return $this->subject;
     }
 
     public function setMessage($message)
     {
-        $this->validateString($message, 10, 2048);
-        $this->setValue('message', $message);
-        $this->setValue('hash', sha1($message));
+        $this->message = $message;
     }
 
     public function getMessage()
     {
-        return $this->getValue('message');
-    }
-
-    public function getHash()
-    {
-        return $this->getValue('hash');
-    }
-
-    public function byHash($hash)
-    {
-        return $this->byValue('hash', $hash);
-    }
-
-    public function setUser($user)
-    {
-        $this->setValue('user', $user);
-    }
-
-    public function getUser()
-    {
-        return $this->getValue('user');
-    }
-
-    public function fetchUser()
-    {
-        return $this->fetch('User', 'user');
-    }
-
-    public function getSubmitted()
-    {
-        return $this->getValue('submitted');
-    }
-
-    public function escalate()
-    {
-        $this->setValue('escalated', time());
-    }
-
-    public function isEscalated()
-    {
-        return $this->getValue('escalated') !== null;
-    }
-
-    public function acknowledge()
-    {
-        $this->setValue('acknowledged', time());
-    }
-
-    public function isAcknowledged()
-    {
-        return $this->getValue('acknowledged') !== null;
-    }
-
-    public function dispute()
-    {
-        $this->setValue('acknowledged', null);
-    }
-
-    public function setStaff($staff)
-    {
-        $this->setValue('staff', $staff);
-    }
-
-    public function getStaff()
-    {
-        return $this->getValue('staff');
-    }
-
-    public function fetchStaff()
-    {
-        return $this->fetch('User', 'staff');
-    }
-
-    public function forPresenter($dateFormat = null)
-    {
-        $result = array('id' => $this->getId(),
-            'message' => $this->getMessage()
-        );
-        if ($dateFormat !== null) {
-            $result['submitted'] = date($dateFormat, $this->getSubmitted());
-        }
-        $user = $this->fetchUser();
-        if ($user) {
-            $result['user'] = $user->forPresenter();
-        }
-        return $result;
+        return $this->message;
     }
 }
