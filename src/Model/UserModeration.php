@@ -17,7 +17,7 @@ class UserModeration extends Model
     protected $user;
 
     /**
-     * @ManyToOne(targetEntity="User", fetch="EAGER")
+     * @ManyToOne(targetEntity="User", inversedBy="executedModerations", fetch="EAGER")
      * @JoinColumn(nullable=true, onDelete="SET NULL")
      */
     protected $executor;

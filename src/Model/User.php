@@ -174,8 +174,15 @@ class User extends Model
     public function register()
     {
         $now = new \DateTime();
-        $this->_onPropertyChanged('registration', null, $now);
-        $this->registration = $now;
+        $this->setRegistration(new \DateTime());
+    }
+
+    protected function setRegistration($registration)
+    {
+        if ($registration != $this->registration) {
+            $this->_onPropertyChanged('registration', $this->registration, $registration);
+            $this->registration = $registration;
+        }
     }
 
     /**
