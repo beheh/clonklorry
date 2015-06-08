@@ -9,7 +9,6 @@ class Activate extends Email
 
     public function write()
     {
-        $this->context['email'] = $this->getRecipent();
         $this->render('activate.twig');
     }
 

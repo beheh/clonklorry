@@ -78,7 +78,8 @@ abstract class Email
     }
     protected $context = array();
 
-    abstract public function write();
+    abstract protected function write();
+    
     private $subject;
 
     public function getSubject()
@@ -86,18 +87,30 @@ abstract class Email
         return $this->subject;
     }
     private $message;
+    private $plain;
+
+    public function getPlainMessage() {
+        $this->plain = true;
+        $this->write();
+    }
 
     public function getMessage()
     {
-        return $this->message;
+        $this->plain = false;
+        $this->write();
     }
 
     protected function render($name)
     {
         $template = $this->twig->loadTemplate('email/'.$name);
+        $context = array();
+        if($this->plain) {
+            $context = array('email_plain' => true);
+        }
+        $context = array_merge(array('brand' => $this->config->get('brand')),
+                $context, $this->context);
         $this->subject = $template->renderBlock('subject',
-            array_merge(array('brand' => $this->config->get('brand')),
-                $this->context));
+            $context);
         $this->message = $template->render($this->context);
     }
 }

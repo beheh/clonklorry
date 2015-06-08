@@ -1,8 +1,33 @@
-<p>{% if username %}{% trans %}Hi there {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}</p>
+{% set username = user.username%}
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="margin:0;padding:0">
+	<div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857">
+        {% if not email_plain %}
+        <div style="width:100%; background-color:#222;height:49px;border:1px solid transparent;border-color:#080808;margin-bottom:0px">
+            <a href="{{base}}" style="color:#777;text-decoration:none;font-size:18px;line-height:20px;padding:15px;margin:0;float:left">
+                <span style="display:inline-block;vertical-align:text-top;margin-right:2px"><table style="width:24px;height:18px;border-collapse:collapse">
+                    <tr><td colspan="8" style="background-color:#777"></td></tr>
+                    <tr><td style="background-color:#777"></td><td colspan="6"></td><td style="background-color:#777"></td></tr>
+                    <tr><td></td><td style="background-color:#777"></td><td colspan="4"></td><td style="background-color:#777"></td></tr>
+                    <tr><td colspan="2"></td><td style="background-color:#777"></td><td colspan="2"></td><td style="background-color:#777"></td></tr>
+                    <tr><td></td><td style="background-color:#777"></td><td></td><td style="background-color:#777"></td><td style="background-color:#777"></td><td></td><td style="background-color:#777"></td></tr>
+                    <tr><td colspan="2"></td><td style="background-color:#777"></td><td colspan="2"></td><td style="background-color:#777"></td></tr>
+                </table></span>
+                <strong style="display:inline-block">{{brand}}</strong>
+            </a>
+        </div>
+        {% endif %}
 
-{% block body %}
-<p>{% trans %}No content available.{% endtrans %}</p>
-{% endblock %}
---
-<p>{{brand}}<br>
-<a href="{{base}}">{{base}}</a></p>
+        <div style="padding: 20px 15px">
+            {% block greetings %}<p style="margin:0px 0px 10px">{% if username %}{% trans %}Hi {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}</p>{% endblock %}
+
+            {% block body %}{% endblock %}
+        </div>
+	</div>
+    </body>
+</html>

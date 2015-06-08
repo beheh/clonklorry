@@ -2,23 +2,26 @@
 
 {% block subject %}{% trans %}Welcome to {{brand}}{% endtrans %}{% endblock %}
 
-{% set contact_page %}<a href="{{contact_url|raw}}">{% trans %}contact page{% endtrans%}</a>{% endset %}
-{% set this_link %}<a href="{{activation_url|raw}}">{% trans %}this link{% endtrans %}</a>{% endset %}
+{% set username %}{{user.username}}{% endset %}
 
+{% block greetings %}<p style="margin:0px 0px 10px">{% trans %}Hi {{username}} and welcome to {{brand}}!{% endtrans %}</p><br>{% endblock %}
+    
 {% block body %}
-<p>{% trans %}Welcome to {{brand}}!{% endtrans %}</p>
+<p style="margin:0px 0px 10px">{% trans %}Thank you for your registration and your help with testing the platform.{% endtrans %}</p>
 
-<p>{% trans %}First things first: Please activate your account by opening {{this_link}}; or paste the following url into your browser:{% endtrans %}</p>
+<p style="margin:0px 0px 10px">{% trans %}If you'd like to learn more about Clonk or the project simply visit the about pages at the bottom of Lorry.</p>
 
-<p><strong>{{activation_url|raw}}</strong></p>
+<p style="margin:0px 0px 10px">{% trans %}You can send us feedback anytime on the contact page. Let's make Lorry a useful and great site.{% endtrans %}</p><br>
 
-<p>{% trans %}Now that thats out of the way, thank you for helping us test the platform. If you'd like to learn more about the project or Clonk visit the about pages at the bottom of the site.{% endtrans %}</p>
+<p style="margin:0px 0px 10px">{% trans %}Finally we would like to ask you to activate your account.{% endtrans %}</p>
 
-<p>{% trans %}{{brand}} works a bit differently compared to other download sites. In order to publish a scenario or pack you first need to create a corresponding addon. The addons tracks general information, like the title, an introduction and which game it belongs to. You can then create a release for the addon, which has a version number, a detailed description and tracks the actual files. Once you have created a release you can publish it. When players search for your addon, they will always be pointed to the latest release.{% endtrans %}</p>
+{% if not email_plain %}
+<p style="margin:0px 0px 10px">{% include 'email/functions/buttons/success.twig' with {'url' : activation_url, 'message' : 'Activate account'|trans } %}</p>
+{% else %}
+{% trans %}Just paste the following url into your browser:{% endtrans %}
 
-<p>{% trans %}You can send us any feedback you have on the {{contact_page}}. Let's make {{brand}} a useful and awesome site.{% endtrans %}</p>
+{{activation_url|raw}}
+{% endif %}
 
-<p>{% trans %}Once again, thank you for testing {{brand}}!{% endtrans %}</p>
-
-<p>B_E</p>
+<br><p style="margin:0px 0px 10px">{% trans %}Thanks and have lots of fun,{% endtrans %}<br>B_E</p>
 {% endblock %}

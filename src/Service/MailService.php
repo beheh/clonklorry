@@ -34,9 +34,7 @@ class MailService extends Service
      */
     protected $templating;
 
-    public function __construct(LoggerFactoryInterface $loggerFactory,
-        ConfigService $config, LocalisationService $localisation,
-        SecurityService $security, TemplateEngineInterface $templating)
+    public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, LocalisationService $localisation, SecurityService $security, TemplateEngineInterface $templating)
     {
         parent::__construct($loggerFactory);
         $this->config = $config;
@@ -55,9 +53,7 @@ class MailService extends Service
         if ($this->mailer) {
             return true;
         }
-        $transport = Swift_SmtpTransport::newInstance($this->config->get('mail/smtp-host'),
-                $this->config->get('mail/smtp-port'),
-                $this->config->get('mail/smtp-encryption'))
+        $transport = Swift_SmtpTransport::newInstance($this->config->get('mail/smtp-host'), $this->config->get('mail/smtp-port'), $this->config->get('mail/smtp-encryption'))
             ->setUsername($this->config->get('mail/username'))
             ->setPassword($this->config->get('mail/password'));
         $this->mailer = new Swift_Mailer($transport);
@@ -87,16 +83,12 @@ class MailService extends Service
     {
         $this->ensureMailer();
 
-        $email->write();
-
-        $body = $email->getMessage();
-
         $message = Swift_Message::newInstance()
             ->setFrom(array($this->config->get('mail/from') => $this->config->get('brand')))
             ->setTo($email->getRecipent())
             ->setSubject($email->getSubject())
-            ->setBody(strip_tags($body))
-            ->addPart($body, 'text/html');
+            ->setBody($email->getPlainMessage())
+            ->addPart($email->getMessage(), 'text/html');
 
         $replyto = $email->getReplyTo();
         if ($replyto) {
