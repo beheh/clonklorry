@@ -267,7 +267,10 @@ class User extends Model
 
     public function setFlags($flags)
     {
-        $this->flags = $flags;
+        if($this->flags != $flags) {
+            $this->_onPropertyChanged('flags', $this->flags, $flags);
+            $this->flags = $flags;
+        }
     }
 
     public function getFlags()
@@ -463,14 +466,5 @@ class User extends Model
     {
         return array('name' => $this->getUsername(), 'administrator' => $this->isAdministrator(),
             'moderator' => $this->isModerator());
-    }
-
-    /**
-     *
-     * @return array
-     */
-    public function forPresenter()
-    {
-        return $this->forApi();
     }
 }
