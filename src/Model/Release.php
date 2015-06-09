@@ -4,7 +4,6 @@ namespace Lorry\Model;
 
 use Lorry\Model;
 use Lorry\ApiObjectInterface;
-use Doctrine\ORM\EntityRepository;
 
 /**
  * @Entity(repositoryClass="Lorry\Repository\ReleaseRepository")

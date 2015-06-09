@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
-use Lorry\Model\User;
 use Lorry\Validator\UserValidator;
 use Lorry\Exception\ValidationException;
 use Lorry\ModificationListener;
@@ -78,7 +77,7 @@ class Settings extends Presenter
         $this->context['language'] = $this->localisation->getDisplayLanguage();
 
         $this->context['password_exists'] = $user->hasPassword();
-        $this->context['identified'] = $identified = $this->session->identified();
+        $this->context['identified'] = $this->session->identified();
         if ((isset($_GET['add-password']) && !$user->hasPassword()) || (($this->session->canResetPassword()) && isset($_GET['change-password']))) {
             $this->context['focus_password_new'] = true;
         }

@@ -35,7 +35,6 @@ class Portal extends Presenter
         $this->context['addons'] = $addons;
 
         $tickets = array();
-        $format = $this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME);
         /*foreach ($this->manager->getRepository('Lorry\Model\Ticket')->getAllNewTickets() as $ticket) {
             $tickets[] = $ticket->forPresenter($format);
         }*/

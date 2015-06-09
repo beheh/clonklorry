@@ -93,7 +93,7 @@ class Callback extends Presenter
 
                 $code = filter_input(INPUT_GET, 'code');
                 try {
-                    $token = $oauth_provider->getAccessToken($grant = 'authorization_code', array('code' => $code));
+                    $token = $oauth_provider->getAccessToken('authorization_code', array('code' => $code));
                 } catch (\Exception $ex) {
                     $this->logger->debug('error getting acces token with authorization code "'.$code.'"');
                     $this->logger->debug($ex);

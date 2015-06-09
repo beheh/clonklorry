@@ -2,7 +2,6 @@
 
 namespace Lorry\Presenter\Auth;
 
-use ErrorException;
 use Lorry\Presenter;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;

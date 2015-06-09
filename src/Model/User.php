@@ -173,7 +173,6 @@ class User extends Model
      */
     public function register()
     {
-        $now = new \DateTime();
         $this->setRegistration(new \DateTime());
     }
 
@@ -396,7 +395,6 @@ class User extends Model
 
     public function setOauth($provider, $uid)
     {
-        $previous = $this->getOauthArray();
         switch ($provider) {
             case self::PROVIDER_GITHUB:
                 $this->_onPropertyChanged('oauthGithub', $this->oauthFacebook, $uid);

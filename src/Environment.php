@@ -3,6 +3,7 @@
 namespace Lorry;
 
 use Lorry\Exception\NotImplementedException;
+use Lorry\Exception\FileNotFoundException;
 use Lorry\Router;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
