@@ -3,7 +3,10 @@
 namespace Lorry\Presenter\Site;
 
 use Lorry\Presenter;
-use Lorry\Exception\ModelValueInvalidException;
+use Lorry\Model\Ticket;
+use Lorry\Validator\TicketValidator;
+use Lorry\Exception\ValidationException;
+
 
 class Contact extends Presenter
 {
@@ -29,28 +32,29 @@ class Contact extends Presenter
 
     public function post()
     {
+        $ticketValidator = new TicketValidator();
+        $ticketRepository = $this->manager->getRepository('Lorry\Model\Ticket');
+
         $user = false;
         if ($this->session->authenticated()) {
             $user = $this->session->getUser();
         }
 
-        $ticket = $this->persistence->build('Ticket');
-
-        $errors = array();
+        $ticket = new Ticket();
 
         if ($user) {
-            $ticket->setUser($user->getId());
+            $ticket->setAssociatedUser($user);
         }
 
-        $message = htmlspecialchars(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING));
+        $subject = trim(filter_input(INPUT_POST, 'subject'));
+        $this->context['subject'] = $subject;
+        $ticket->setSubject($subject);
 
-        try {
-            $ticket->setMessage($message);
-        } catch (ModelValueInvalidException $e) {
-            $errors[] = sprintf(gettext('Message text is %s.'), $e->getMessage());
-        }
+        $message = trim(filter_input(INPUT_POST, 'message'));
+        $this->context['message'] = $message;
+        $ticket->setMessage($message);
 
-        if (empty($errors)) {
+        /*if (empty($errors)) {
             $existing = $this->persistence->build('Ticket')->byHash($ticket->getHash());
             if ($existing) {
                 $errors[] = gettext('This message has already been sent.');
@@ -64,7 +68,7 @@ class Contact extends Presenter
         } else {
             $this->context['message'] = $message;
             $this->error('contact', implode('<br>', $errors));
-        }
+        }*/
 
         $this->get();
     }

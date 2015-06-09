@@ -33,7 +33,7 @@ class Ticket extends Model
     protected $subject;
 
     /**
-     * @Column(type="string")
+     * @Column(type="text")
      */
     protected $message;
 
