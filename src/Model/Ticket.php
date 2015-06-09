@@ -67,12 +67,20 @@ class Ticket extends Model
         $this->setSubmitted(new \DateTime());
     }
 
+    protected function setSubmitted($submitted) {
+        $this->submitted = $submitted;
+    }
+
+    public function getSubmitted() {
+        return $this->submitted;
+    }
+
     public function setAssociatedUser($user)
     {
         $this->associatedUser = $user;
     }
 
-    public function getAssociatedUser($user)
+    public function getAssociatedUser()
     {
         return $this->associatedUser;
     }
@@ -93,7 +101,7 @@ class Ticket extends Model
         return $this->assignedTo;
     }
 
-    public function setAssigned($assigned)
+    protected function setAssigned($assigned)
     {
         $this->assigned = $assigned;
     }
