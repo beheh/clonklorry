@@ -17,7 +17,7 @@
 		"monolog/monolog": "~1.13.1",
 		"symfony/yaml": "~2.7.0",
 		"symfony/console": "~2.7.0",
-        "vend/resque": "~2.1.1",
+		"vend/resque": "~2.1.1",
 		"predis/predis": "~1.0.1",
 		"aws/aws-sdk-php": "~3.0.3",
 		"league/flysystem": "~1.0.4",
@@ -26,7 +26,10 @@
 		"symfony/http-foundation": "~2.7.0",
 		"doctrine/orm": "~2.5.0",
 		"beheh/flaps": "~0.1.0"
-    },
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.7.2"
+	},
 	"suggest": {
 		"ext-gettext": "Localisation"
 	},
