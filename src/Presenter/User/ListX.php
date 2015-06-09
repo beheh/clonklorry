@@ -4,7 +4,6 @@ namespace Lorry\Presenter\User;
 
 use Lorry\Presenter;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\Model\User;
 
 class ListX extends Presenter
 {
