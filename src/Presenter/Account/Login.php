@@ -32,6 +32,7 @@ class Login extends Presenter
 
         if (isset($_GET['hash'])) {
             $this->attemptTokenLogin();
+            return;
         }
 
         if (isset($_GET['returnto'])) {
@@ -199,5 +200,6 @@ class Login extends Presenter
         }
 
         $this->redirect('/');
+        return;
     }
 }
