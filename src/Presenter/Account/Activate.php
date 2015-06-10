@@ -12,7 +12,7 @@ class Activate extends Presenter
 
     public function get($username)
     {
-        $user = $this->persistence->build('User')->byUsername($username);
+        $user = $this->manager->getRepository('Lorry\Model\User')->findOneBy(array('username' => $username));
         if (!$user) {
             throw new FileNotFoundException('user '.$username);
         }
