@@ -32,22 +32,24 @@ class Activate extends Presenter
             throw new BadRequestException();
         }
 
-        if (hash_equals($expected, $hash) !== true) {
-            throw new ForbiddenException('hash does not match expected value');
+        if(!$user->isActivated()) {
+            if (hash_equals($expected, $hash) !== true) {
+                throw new ForbiddenException('hash does not match expected value');
+            }
+
+            if ($expires < time()) {
+                throw new ForbiddenException('token expired');
+            }
+
+            if ($address != $user->getEmail()) {
+                throw new ForbiddenException('token is for another email address');
+            }
+
+            $user->activate();
+            $this->manager->flush();
         }
 
-        if ($expires < time()) {
-            throw new ForbiddenException('token expired');
-        }
-
-        if ($address != $user->getEmail()) {
-            throw new ForbiddenException('token is for another email address');
-        }
-
-        $user->activate();
-        $this->manager->flush();
-
-        if ($this->session->authenticated()) {
+        if ($this->session->authenticated()) {            
             $this->redirect('/settings?activated#contact');
         } else {
             $this->redirect('/login?returnto='.urlencode('/settings?activated#contact'));
