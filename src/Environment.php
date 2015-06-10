@@ -82,9 +82,20 @@ class Environment
             
         $container->set('Doctrine\Common\Persistence\ObjectManager',
             \DI\factory(function() use ($config, $container) {
-                $doctrine_config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(array(self::PROJECT_ROOT.'/src/Model'), $config->get('debug'));
-                $connectionParams = array('pdo' => $container->get('PDO'));
-                return \Doctrine\ORM\EntityManager::create($connectionParams, $doctrine_config);
+                $doctrineConfig = new \Doctrine\ORM\Configuration();
+                
+                $cache = new \Doctrine\Common\Cache\ArrayCache();
+                $doctrineConfig->setMetadataCacheImpl($cache);
+                $doctrineConfig->setQueryCacheImpl($cache);
+                $doctrineConfig->setResultCacheImpl($cache);
+
+                $doctrineConfig->setProxyDir(self::PROJECT_ROOT.'/cache/doctrine');
+                $doctrineConfig->setProxyNamespace('Lorry\ORM\Proxy');
+                $doctrineConfig->setAutoGenerateProxyClasses(!!$config->get('debug'));
+
+                $doctrineConfig->setMetadataDriverImpl($doctrineConfig->newDefaultAnnotationDriver(self::PROJECT_ROOT.'/src/Model'));
+
+                return \Doctrine\ORM\EntityManager::create(array('pdo' => $container->get('PDO')), $doctrineConfig);
             }));
         $container->set('manager', \DI\link('Doctrine\Common\Persistence\ObjectManager'));
 

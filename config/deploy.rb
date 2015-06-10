@@ -33,5 +33,6 @@ set :composer_install_flags, '--no-dev --prefer-dist --no-interaction --optimize
 # Transfer config files to server
 before 'deploy:check:linked_files', 'config:push'
 
-# Setup console
+# Setup consoles
 set :lorry_console_path, "app/console"
+set :doctrine_console_path, "vendor/bin/doctrine"
