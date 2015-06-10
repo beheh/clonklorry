@@ -106,7 +106,7 @@ class Login extends Presenter
                     }
                 }
                 catch(TooManyRequestsException $ex) {
-                    $this->error('email', gettext('You requested an email to reset your password a short while ago.'));
+                    $this->error('email', gettext('You already requested an email a short while ago.'));
                 }
             } else {
                 // email is unknown
