@@ -3,6 +3,7 @@
 namespace Lorry\Service;
 
 use Lorry\Service;
+use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
@@ -32,8 +33,9 @@ class SecurityService extends Service
      */
     protected $manager;
 
-    public function __construct(ConfigService $config, SessionService $session, ObjectManager $manager)
+    public function __construct(LoggerFactoryInterface $loggerFactory, ConfigService $config, SessionService $session, ObjectManager $manager)
     {
+        parent::__construct($loggerFactory);
         $this->config = $config;
         $this->session = $session;
         $this->manager = $manager;
