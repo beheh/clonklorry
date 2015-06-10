@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 20:20+0100\n"
-"PO-Revision-Date: 2015-06-10 20:23+0100\n"
+"POT-Creation-Date: 2015-06-10 20:30+0100\n"
+"PO-Revision-Date: 2015-06-10 20:30+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2480,13 +2480,13 @@ msgstr "Duplikat"
 msgid "&quot;Clonk&quot; is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: src/Presenter.php:162 src/Presenter/Account/Login.php:145
+#: src/Presenter.php:162 src/Presenter/Account/Login.php:157
 #: src/Presenter/Account/Settings.php:206
 #: src/Presenter/Account/Settings.php:220
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: src/Presenter/Account/Login.php:60
+#: src/Presenter/Account/Login.php:61
 msgid ""
 "Registration successful! We'll send you an email for you to activate your "
 "account."
@@ -2494,27 +2494,33 @@ msgstr ""
 "Registrierung erfolgreich! Wir werden dir eine E-Mail zur Aktivierung deines "
 "Kontos senden."
 
-#: src/Presenter/Account/Login.php:66
+#: src/Presenter/Account/Login.php:67
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: src/Presenter/Account/Login.php:71
+#: src/Presenter/Account/Login.php:72
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: src/Presenter/Account/Login.php:96
+#: src/Presenter/Account/Login.php:104
+msgid "You requested an email to reset your password a short while ago."
+msgstr ""
+"Du hast bereits vor Kurzem eine E-Mail zum Zurücksetzen deines Passworts "
+"angefordert."
+
+#: src/Presenter/Account/Login.php:108
 msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
-#: src/Presenter/Account/Login.php:98 src/Presenter/User/Edit.php:181
+#: src/Presenter/Account/Login.php:110 src/Presenter/User/Edit.php:181
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
-#: src/Presenter/Account/Login.php:102
+#: src/Presenter/Account/Login.php:114
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: src/Presenter/Account/Login.php:150
+#: src/Presenter/Account/Login.php:162
 msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
@@ -3239,6 +3245,11 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "You have just requested an email to reset your password."
+#~ msgstr ""
+#~ "Du hast bereits vor Kurzen eine E-Mail zum Zurücksetzen deines Passworts "
+#~ "angefordert."
 
 #~ msgid ""
 #~ "Javascript needs to be activated in order to edit addons and releases."

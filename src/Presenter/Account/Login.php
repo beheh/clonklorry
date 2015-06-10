@@ -6,6 +6,7 @@ use Lorry\Presenter;
 use Lorry\Exception;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\BadRequestException;
+use Lorry\Exception\TooManyRequestsException;
 
 class Login extends Presenter
 {
@@ -92,6 +93,17 @@ class Login extends Presenter
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $user = $userRepository->findOneBy(array('email' => $email));
             if ($user) {
+                
+                $resetFlap = $flaps->getFlap('resetPassword');
+                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(1, '60s'));
+                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(5, '1h'));
+                try {
+                    $flap->limit($user->getId());
+                }
+                catch(TooManyRequestsException $ex) {
+                    $this->error('email', gettext('You requested an email to reset your password a short while ago.'));
+                }
+
                 if ($this->job->submit('ResetPassword', array('user_id' => $user->getId()))) {
                     $this->success('email', gettext('You should receive an email shortly.'));
                 } else {
