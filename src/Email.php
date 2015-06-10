@@ -79,20 +79,24 @@ abstract class Email
     protected $context = array();
 
     abstract protected function write();
-    
     private $subject;
 
     public function getSubject()
     {
+        $this->plain = true;
+        $this->write();
         return $this->subject;
     }
     private $message;
     private $plain;
 
-    public function getPlainMessage() {
+    public function getPlainMessage()
+    {
         $this->plain = true;
         $this->write();
-        return strip_tags($this->message);
+        $stripped = strip_tags($this->message);
+        $plain = implode(PHP_EOL, array_map('trim', explode(PHP_EOL, $stripped)));
+        return $plain;
     }
 
     public function getMessage()
