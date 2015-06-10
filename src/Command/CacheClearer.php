@@ -23,7 +23,12 @@ class CacheClearer extends Command
         $lorry = new Environment();
         $lorry->setup();
         $container = $lorry->getContainer();
-        $container->get('Lorry\TemplateEngineInterface')->clearCacheFiles();
+        try {
+            $container->get('Lorry\TemplateEngineInterface')->clearCacheFiles();
+        }
+        catch(\UnexpectedValueException $ex) {
+            $output->write('<warning>Non-critical error clearing Twig cache: '.$ex->getMessage().'</warning>');
+        }
         $container->get('Doctrine\Common\Cache\Cache')->deleteAll();
         $output->writeln('Cleared cache');
     }
