@@ -99,15 +99,15 @@ class Login extends Presenter
                 $resetFlap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(5, '1h'));
                 try {
                     $resetFlap->limit($user->getId());
+
+                    if ($this->job->submit('ResetPassword', array('user_id' => $user->getId()))) {
+                        $this->success('email', gettext('You should receive an email shortly.'));
+                    } else {
+                        $this->error('email', gettext('Error sending the email.'));
+                    }
                 }
                 catch(TooManyRequestsException $ex) {
                     $this->error('email', gettext('You requested an email to reset your password a short while ago.'));
-                }
-
-                if ($this->job->submit('ResetPassword', array('user_id' => $user->getId()))) {
-                    $this->success('email', gettext('You should receive an email shortly.'));
-                } else {
-                    $this->error('email', gettext('Error sending the email.'));
                 }
             } else {
                 // email is unknown
