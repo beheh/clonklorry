@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 12:15+0100\n"
-"PO-Revision-Date: 2015-06-10 12:16+0100\n"
+"POT-Creation-Date: 2015-06-10 20:20+0100\n"
+"PO-Revision-Date: 2015-06-10 20:21+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -17,68 +17,53 @@ msgstr ""
 "X-Poedit-SearchPath-1: cache\n"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:26
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:34
 msgid "Ticket #%number%"
 msgstr "Ticket #%number%"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:73
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:81
 msgid "Originally sent by %username%."
 msgstr "Ursprünglich von %username% gesendet."
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:79
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:87
 msgid "Originally sent by an anonymous visitor."
 msgstr "Ursprünglich von einem anonymen Besucher gesendet."
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:94
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:102
 msgid "Ticket acknowledged"
 msgstr "Ticket erledigt"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:117
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:125
 msgid "The following ticket was acknowledged by <strong>%staffname%</strong>:"
 msgstr "Das folgende Ticket wurde von <strong>%staffname%</strong> erledigt:"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:132
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:179
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:140
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:187
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:89
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:115
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:97
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:123
 msgid "Return to moderation portal"
 msgstr "Zurück zum Moderatorportal"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:136
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:144
 msgid "Dispute"
 msgstr "Widersprechen"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:150
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:158
 msgid "Ticket escalated"
 msgstr "Ticket eskaliert"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:165
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:173
 msgid "The following ticket was escalated by %staffname%:"
 msgstr "Das folgende Ticket wurde von %staffname% eskaliert:"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:192
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:200
 msgid "%username% has sent the following message:"
 msgstr "%username% hat die folgende Nachricht gesendet:"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:198
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:206
 msgid "An anonymous visitor has sent the following message:"
 msgstr "Ein anonymer Besucher hat die folgende Nachricht gesendet:"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:219
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:227
 msgid ""
 "Please escalate this ticket if there is any technical problem, error message "
 "or complaint."
@@ -87,380 +72,276 @@ msgstr ""
 "eine Fehlermeldung oder eine Beschwerde handelt."
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:224
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:232
 msgid "Acknowledge"
 msgstr "Erledigt"
 
 #: cache/twig/0/1/010bbbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:228
-#: cache/twig/01/0b/bbee4dc8003a9c311357a543a9a86a179a22d5041204267c680449f1eb50.php:236
 msgid "Escalate"
 msgstr "Eskalieren"
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:25
 #: cache/twig/0/8/08971b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:25
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:25
-#: cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:25
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:138
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:140
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:138
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:140
 msgid "My addons"
 msgstr "Meine Erweiterungen"
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:120
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:120
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:231
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:239
 msgid "Edit addon"
 msgstr "Erweiterung bearbeiten"
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:128
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:128
 msgid "Manage releases"
 msgstr "Releases verwalten"
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:154
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:154
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:249
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:249
 msgid "developer portal"
 msgstr "Entwicklerportal"
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:159
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:159
 msgid "You can create new addons at the %developer_portal%."
 msgstr "Du kannst neue Erweiterungen im %developer_portal% anlegen."
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:169
 #: cache/twig/0/8/08971b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:46
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:169
-#: cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:46
 msgid "Your addons will appear here"
 msgstr "Hier werden deine Erweiterungen erscheinen"
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:173
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:173
 msgid "Visit the developer portal to get started."
 msgstr "Besuche das Entwicklerportal, um loszulegen."
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:179
-#: cache/twig/04/03/206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:179
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:26
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:26
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:278
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:146
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:278
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:146
 msgid "Developer portal"
 msgstr "Entwicklerportal"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:25
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:25
 msgid "Moderator portal"
 msgstr "Moderatorportal"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:47
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:47
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:47
-#: cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:47
 msgid "Management"
 msgstr "Verwaltung"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:51
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:57
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:51
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:57
-#: cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:25
 #: cache/twig/5/6/56e40b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:25
-#: cache/twig/56/e4/0b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:25
 msgid "Users"
 msgstr "Benutzer"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:63
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:63
 #: src/Presenter/User/ListX.php:30
 msgid "Moderators"
 msgstr "Moderatoren"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:69
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:69
 #: src/Presenter/User/ListX.php:26
 msgid "Administrators"
 msgstr "Administratoren"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:75
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:75
 msgid "Queues"
 msgstr "Warteschlangen"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:79
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:79
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:70
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:102
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:70
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:102
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:241
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:241
 msgid "Addons"
 msgstr "Erweiterungen"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:88
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:88
 #: cache/twig/1/2/12ceac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:56
-#: cache/twig/12/ce/ac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:64
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:231
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:239
 msgid "Addon"
 msgstr "Erweiterung"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:90
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:90
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:267
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:275
 msgid "Requested namespace"
 msgstr "Gewünschte Kennung"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:92
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:171
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:58
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:92
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:171
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:66
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:290
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:298
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:69
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:91
 #: cache/twig/d/a/dab6cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:23
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:69
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:91
-#: cache/twig/da/b6/cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:23
 msgid "User"
 msgstr "Benutzer"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:152
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:152
 msgid "There are no addons in the approval queue."
 msgstr "Es sind keine Erweiterungen in der Bestätigungswarteschlange."
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:158
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:158
 msgid "Contact form"
 msgstr "Kontaktformular"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:167
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:54
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:167
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:62
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:298
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:306
 #: cache/twig/d/a/dab6cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:31
-#: cache/twig/da/b6/cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:31
 msgid "Timestamp"
 msgstr "Zeitstempel"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:169
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:56
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:169
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:64
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:91
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:88
 msgid "Message"
 msgstr "Nachricht"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:211
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:98
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:211
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:106
 msgid "Anonymous visitor"
 msgstr "Anonymer Besucher"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:235
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:235
 msgid "There are no new messages in the support queue."
 msgstr "Es sind keine neuen Nachrichten in der Support-Warteschlange."
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:245
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:245
 msgid "completed tickets"
 msgstr "erledigten Tickets"
 
 #: cache/twig/0/5/05b772837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:250
-#: cache/twig/05/b7/72837e58f08c4d0709fad95bcca42f8935370fa4d8fc0d8dd330ecdfc111.php:250
 msgid "Review the %completed_tickets%."
 msgstr "Betrache die %completed_tickets%."
 
 #: cache/twig/0/8/08971b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:50
-#: cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:50
 msgid "You can manage all your addons here after you've logged in."
 msgstr ""
 "Du kannst alle deine Erweiterungen nach deiner Anmeldung hier verwalten."
 
 #: cache/twig/0/8/08971b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:59
-#: cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:59
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:186
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:186
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:191
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:191
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:43
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:106
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:43
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:106
 msgid "Login"
 msgstr "Anmelden"
 
 #: cache/twig/0/8/08971b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:67
-#: cache/twig/08/97/1b39b3fc3716724d688ab0f46818eb12f0099ade383258c88f8104b22ff8.php:67
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:192
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:192
 msgid "Not registered yet?"
 msgstr "Noch nicht registriert?"
 
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:25
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:33
 msgid "Tickets"
 msgstr "Tickets"
 
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:126
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:134
 msgid "No tickets"
 msgstr "Keine Tickets"
 
 #: cache/twig/0/9/0955b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:130
-#: cache/twig/09/55/b526910f3a382ebc93f7043d55ddbdf0d116382cf74d94cc4d6d067110d7.php:138
 msgid "There have been no submitted tickets yet."
 msgstr "Es wurden noch keine Tickets eingereicht."
 
 #: cache/twig/1/2/12ceac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:50
 #: cache/twig/2/c/2c8926a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:101
-#: cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:109
 msgid "Javascript needs to be enabled in order to edit addons and releases."
 msgstr ""
 "Javascript muss aktiviert sein, um Erweiterungen und Releases zu bearbeiten."
 
 #: cache/twig/1/2/12ceac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:60
-#: cache/twig/12/ce/ac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:68
 msgid "Presentation"
 msgstr "Präsentation"
 
 #: cache/twig/1/2/12ceac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:64
-#: cache/twig/12/ce/ac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:72
 #: cache/twig/3/e/3e77091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:65
-#: cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:65
 msgid "Releases"
 msgstr "Releases"
 
 #: cache/twig/1/2/12f40c8b6aee788678e9d38f0b7ed937e8e19529efff2aac5bda188bfb022f7d.php:29
-#: cache/twig/12/f4/0c8b6aee788678e9d38f0b7ed937e8e19529efff2aac5bda188bfb022f7d.php:29
 msgid "Supported player counts"
 msgstr "Unterstützte Spielerzahlen"
 
 #: cache/twig/1/2/12f40c8b6aee788678e9d38f0b7ed937e8e19529efff2aac5bda188bfb022f7d.php:47
-#: cache/twig/12/f4/0c8b6aee788678e9d38f0b7ed937e8e19529efff2aac5bda188bfb022f7d.php:47
 msgid "Goal"
 msgstr "Spielziel"
 
 #: cache/twig/1/2/12f40c8b6aee788678e9d38f0b7ed937e8e19529efff2aac5bda188bfb022f7d.php:52
-#: cache/twig/12/f4/0c8b6aee788678e9d38f0b7ed937e8e19529efff2aac5bda188bfb022f7d.php:52
 msgid "Choose&hellip;"
 msgstr "Auswählen&hellip;"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:36
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:38
 #: cache/twig/3/e/3e77091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:23
 #: cache/twig/3/e/3e77091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:41
-#: cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:23
-#: cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:41
 msgid "Version"
 msgstr "Version"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:54
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:75
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:86
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:71
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:71
 msgid "Remove"
 msgstr "Entfernen"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:58
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:79
 msgid "Would you like to remove this release?"
 msgstr "Möchtest du diesen Release entfernen?"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:64
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:85
 msgid "All uploaded files will be deleted."
 msgstr "Alle hochgeladenen Dateien werden gelöscht."
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:69
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:90
 msgid "Remove release"
 msgstr "Release entfernen"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:87
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:52
 #, fuzzy
 msgid "This release was already published somewhere else"
 msgstr "Dieser Release wurde bereits woanders veröffentlicht"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:98
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:63
 msgid "Original publishing date"
 msgstr "Ursprüngliches Veröffentlichungsdatum"
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:122
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:390
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:390
 msgid "These settings cannot be changed anymore."
 msgstr "Diese Einstellungen können nicht mehr geändert werden."
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:130
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:99
 msgid "These settings cannot be changed once the release has been published."
 msgstr ""
 "Diese Einstellungen können nach der Veröffentlichung nicht mehr geändert "
 "werden."
 
 #: cache/twig/1/b/1ba300663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:134
-#: cache/twig/1b/a3/00663a3a6a1d5a668775a8d2481566c900810a5c960b2e31493e551f8b4e.php:103
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:365
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:365
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:132
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:113
 #: cache/twig/8/6/86bc6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:64
-#: cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:64
 msgid "Save"
 msgstr "Speichern"
 
-#: cache/twig/12/ce/ac17b6614edb8198f81042206b2a0859db0bb7f5f93ca744eb60504b9e54.php:58
-msgid "Javascript needs to be activated in order to edit addons and releases."
-msgstr ""
-"Javascript muss aktiviert sein, um Erweiterungen und Releases zu bearbeiten."
-
 #: cache/twig/2/0/209ae95e8bf1811df30a88fafa116bcc4757dd69a86862ce39b1d0b924069862.php:60
-#: cache/twig/20/9a/e95e8bf1811df30a88fafa116bcc4757dd69a86862ce39b1d0b924069862.php:60
 msgid "Publishing release&hellip;"
 msgstr "Release wird veröffentlicht&hellip;"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:26
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:26
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:258
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:258
 msgid "API portal"
 msgstr "API-Portal"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:47
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:47
 msgid "Introduction"
 msgstr "Einführung"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:51
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:51
 #, php-format
 msgid "%brand% offers a read-only REST API for data about addons and releases."
 msgstr "%brand% bietet eine REST-API für Daten zu Erweiterungen und Releases."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:55
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:55
 msgid ""
 "<strong>Please note:</strong> The lorry api is not yet final and can change "
 "at any time."
@@ -469,43 +350,34 @@ msgstr ""
 "und kann jederzeit geändert werden."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:59
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:59
 msgid "Endpoints"
 msgstr "Endpunkte"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:64
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:64
 msgid "Url"
 msgstr "URL"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:66
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:66
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:63
 msgid "Description"
 msgstr "Beschreibung"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:68
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:68
 msgid "Typical result"
 msgstr "Typisches Ergebnis"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:72
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:72
 msgid "Returns a list of games."
 msgstr "Gibt eine Liste von Spielen zurück."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:76
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:76
 msgid "Returns a list of addons for the queried game."
 msgstr "Gibt eine Liste von Erweiterungen für das Spiel zurück."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:80
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:80
 msgid "Returns details about the queried addon."
 msgstr "Gibt Details über die Erweiterung zurück."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:85
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:85
 msgid ""
 "<strong>Please note:</strong> The Lorry platform itself uses various "
 "internal endpoints under <code>/api/internal/...</code>. Do not use these "
@@ -519,27 +391,22 @@ msgstr ""
 "ändern können."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:89
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:89
 msgid "Objects"
 msgstr "Objekte"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:94
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:94
 msgid "Type"
 msgstr "Typ"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:96
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:96
 msgid "Structure"
 msgstr "Struktur"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:103
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:103
 msgid "Error handling"
 msgstr "Fehlerbehandlung"
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:107
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:107
 msgid ""
 "You can handle errors by checking for the <code>error</code> field in the "
 "response."
@@ -548,7 +415,6 @@ msgstr ""
 "Feld überprüft wird."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:109
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:109
 msgid ""
 "Additionally, a human-readable message may be given in a <code>message</"
 "code> field."
@@ -557,202 +423,146 @@ msgstr ""
 "Feld gegeben sein."
 
 #: cache/twig/2/4/2416b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:113
-#: cache/twig/24/16/b75dae226e696ce15c8a03493ba43d9e0abfa2f31fd5aa18a1e58ffc2563.php:113
 msgid "Examples"
 msgstr "Beispiele"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:57
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:57
 msgid "by date"
 msgstr "nach Datum"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:76
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:76
 msgid "by name"
 msgstr "nach Name"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:95
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:95
 msgid "by rating"
 msgstr "nach Bewertung"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:117
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:117
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:275
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:275
 msgid "create a new addon"
 msgstr "erstelle eine neue Erweiterung"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:123
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:123
 #, php-format
 msgid "Sort by %columns% or %createaddon% for this game."
 msgstr "Sortieren nach %columns% oder %createaddon% für dieses Spiel."
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:175
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:175
 msgid "%game% logo"
 msgstr "%game%-Logo"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:179
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:179
 msgid "No addons available"
 msgstr "Keine Erweiterungen verfügbar"
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:183
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:183
 msgid "There are no addons available for this game yet."
 msgstr "Es sind noch keine Erweiterungen für dieses Spiel verfügbar."
 
 #: cache/twig/2/9/29603bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:196
-#: cache/twig/29/60/3bdf26e9d7c75c3d8ff1542516094a598cb61bbecdcb39de33103c0e0d30.php:196
 msgid "New %game% addon"
 msgstr "Neue %game%-Erweiterung"
 
 #: cache/twig/2/c/2c8926a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:113
-#: cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:121
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:222
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:230
 msgid "Release"
 msgstr "Release"
 
 #: cache/twig/2/c/2c8926a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:121
-#: cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:129
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:22
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:22
 msgid "Files"
 msgstr "Dateien"
 
 #: cache/twig/2/c/2c8926a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:133
-#: cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:141
 #: cache/twig/f/6/f6bd65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:22
-#: cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:22
 msgid "Dependencies"
 msgstr "Abhängigkeiten"
 
 #: cache/twig/2/c/2c8926a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:145
-#: cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:153
 msgid "Changes"
 msgstr "Änderungen"
 
 #: cache/twig/2/c/2c8926a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:153
-#: cache/twig/2c/89/26a6e25426aa5735527af884a158a8e8913f6e4079b018c5a706d71bd1f8.php:161
 msgid "Publish"
 msgstr "Veröffentlichen"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:27
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:27
 msgid "Edit %username%"
 msgstr "%username% bearbeiten"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:58
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:58
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:48
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:48
 msgid "Profile"
 msgstr "Profil"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:64
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:64
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:54
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:54
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:81
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:81
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:59
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:59
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:88
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:92
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:88
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:92
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:58
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:58
 msgid "Username"
 msgstr "Benutzername"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:91
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:91
 msgid "Change username"
 msgstr "Benutzernamen ändern"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:103
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:103
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:145
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:145
 msgid "Account"
 msgstr "Konto"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:113
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:113
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:151
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:151
 msgid "Contact details"
 msgstr "Kontaktdaten"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:129
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:129
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:64
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:168
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:64
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:168
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:110
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:114
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:110
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:114
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:60
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:134
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:144
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:60
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:134
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:144
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:143
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:143
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:182
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:182
 msgid "Change email address"
 msgstr "E-Mail-Adresse ändern"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:159
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:159
 msgid "Permissions"
 msgstr "Berechtigungen"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:180
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:180
 msgid "Normal user"
 msgstr "Normaler Benutzer"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:192
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:192
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:98
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:98
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:63
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:63
 #: cache/twig/e/1/e1c487997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:47
-#: cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:47
 msgid "Moderator"
 msgstr "Moderator"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:204
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:204
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:111
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:111
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:57
 #: cache/twig/d/a/dab6cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:89
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:57
-#: cache/twig/da/b6/cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:89
 #: cache/twig/e/1/e1c487997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:41
-#: cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:41
 msgid "Administrator"
 msgstr "Administrator"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:213
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:213
 msgid ""
 "Warning: You are editing your own permissions. If you modify your own "
 "permissions you may not be able to access this page anymore."
@@ -762,215 +572,170 @@ msgstr ""
 "mehr zugreifen."
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:215
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:215
 msgid "Are you sure you want to continue?"
 msgstr "Möchtest du wirklich fortfahren?"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:221
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:221
 msgid "Change permissions"
 msgstr "Berechtigungen ändern"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:239
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:239
 msgid "Support"
 msgstr "Support"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:245
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:245
 msgid "Reset"
 msgstr "Zurücksetzen"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:261
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:261
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:52
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:124
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:153
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:124
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:153
 msgid "Reset password"
 msgstr "Password zurücksetzen"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:266
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:266
 msgid "We'll send the user an email to reset their password."
 msgstr "Wir senden dem Benutzer eine E-Mail zum Zurücksetzen des Passworts."
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:277
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:277
 msgid "Disable"
 msgstr "Deaktivieren"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:287
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:287
 msgid "Please type the username to confirm:"
 msgstr "Bitte gib den Benutzernamen zur Bestätigung ein:"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:292
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:292
 msgid ""
 "The account &quot;%username%&quot; will be <strong>permanently disabled</"
 "strong>."
 msgstr "Das Konto „%username%“ wird <strong>dauerhaft deaktiviert</strong>."
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:298
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:298
 msgid "Disable account permamently"
 msgstr "Konto dauerhaft deaktivieren"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:316
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:316
 msgid "Moderation log"
 msgstr "Moderationsprotokoll"
 
 #: cache/twig/2/c/2cf43d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:329
-#: cache/twig/2c/f4/3d6f9632e4220ee086d330df8badf0d6cf212d002fa1312653cb12596e6c.php:329
 msgid "This account has not been moderated in the past."
 msgstr "Dieses Konto wurde noch nicht moderiert."
 
 #: cache/twig/2/f/2f19d93da3d78d90ea897259bb4db57a0686dabb29f5d03866668247769a10ed.php:58
-#: cache/twig/2f/19/d93da3d78d90ea897259bb4db57a0686dabb29f5d03866668247769a10ed.php:58
 msgid "Return to home"
 msgstr "Zurück zur Startseite"
 
 #: cache/twig/3/2/32e73a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:25
-#: cache/twig/32/e7/3a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:25
 msgid "Choose your game"
 msgstr "Wähle dein Spiel"
 
 #: cache/twig/3/2/32e73a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:73
-#: cache/twig/32/e7/3a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:73
 msgid "View the addons"
 msgstr "Betrachte die Erweiterungen"
 
 #: cache/twig/3/2/32e73a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:98
-#: cache/twig/32/e7/3a943fc95e59a49734f70421b0c8f612d212f168f084d3daa2ba3b2fb99b.php:98
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:128
 msgid "No games available"
 msgstr "Keine Spiele verfügbar"
 
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:25
-#: cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:25
 msgid "Administrator portal"
 msgstr "Administratorportal"
 
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:51
-#: cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:51
 msgid "Platform"
 msgstr "Plattform"
 
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:57
-#: cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:57
 #: cache/twig/c/e/ce9cfab31e305ca8acaa0362e2d2df49890a65b8f304e2b8afa01c3989ab39bb.php:25
-#: cache/twig/ce/9c/fab31e305ca8acaa0362e2d2df49890a65b8f304e2b8afa01c3989ab39bb.php:25
 msgid "Logs"
 msgstr "Protokolle"
 
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:65
-#: cache/twig/33/d6/6240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:65
 msgid "Statistics"
 msgstr "Statistiken"
 
 #: cache/twig/3/7/37f48a5a11048734ba86c70f5faebbb658b1a2b8f251923c3a0f3ab7955dd5bc.php:37
-#: cache/twig/37/f4/8a5a11048734ba86c70f5faebbb658b1a2b8f251923c3a0f3ab7955dd5bc.php:45
 msgid "Current version"
 msgstr "Aktuelle Version"
 
 #: cache/twig/3/a/3adf22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:21
-#: cache/twig/3a/df/22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:21
 msgid "Are you sure you want to remove this login service from your account?"
 msgstr "Möchtest du diesen Anmeldedienst wirklich von deinem Konto entfernen?"
 
 #: cache/twig/3/a/3adf22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:51
-#: cache/twig/3a/df/22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:51
 msgid "GitHub"
 msgstr "GitHub"
 
 #: cache/twig/3/a/3adf22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:81
-#: cache/twig/3a/df/22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:81
 msgid "Google"
 msgstr "Google"
 
 #: cache/twig/3/a/3adf22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:111
-#: cache/twig/3a/df/22ec01e1dcb7c9ed9c6d1788cd3369763daebe3e2c2b56b58299cfd7935d.php:111
 msgid "Facebook"
 msgstr "Facebook"
 
 #: cache/twig/3/d/3df9ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:24
-#: cache/twig/3d/f9/ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:24
 msgid "Back to top"
 msgstr "Nach oben"
 
 #: cache/twig/3/d/3df9ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:38
-#: cache/twig/3d/f9/ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:38
 msgid "About"
 msgstr "Info"
 
 #: cache/twig/3/d/3df9ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:42
-#: cache/twig/3d/f9/ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:42
 msgid "API"
 msgstr "API"
 
 #: cache/twig/3/d/3df9ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:46
-#: cache/twig/3d/f9/ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:46
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:25
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:25
 msgid "Contact"
 msgstr "Kontakt"
 
 #: cache/twig/3/d/3df9ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:50
-#: cache/twig/3d/f9/ee0366e4638f1c5f7a2e362b28f0db392bb2cfcd785e1e922a6808678093.php:50
 msgid "Privacy"
 msgstr "Datenschutz"
 
 #: cache/twig/3/e/3e77091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:54
-#: cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:54
 msgid "Plan release"
 msgstr "Release planen"
 
 #: cache/twig/3/e/3e77091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:58
-#: cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:58
 msgid "Releases are invisible until you publish them."
 msgstr "Releases sind unsichtbar, bis du sie veröffentlichst."
 
 #: cache/twig/3/e/3e77091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:160
-#: cache/twig/3e/77/091d498065dfa51db84680b8ecbaf78ac685479c96f66758ef936a2a391b.php:160
 msgid "No release planned"
 msgstr "Kein Release geplant"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:25
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:25
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:56
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:64
 msgid "Comment:"
 msgstr "Kommentar:"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:31
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:31
 msgid "No comment."
 msgstr "Kein Kommentar."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:54
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:54
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:75
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:83
 msgid "Addon approved"
 msgstr "Erweiterung bestätigt"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:59
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:59
 msgid "This addon was approved. Releases can now be published at any time."
 msgstr ""
 "Diese Erweiterung wurde bestätigt. Releases können nun jederzeit "
 "veröffentlicht werden."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:74
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:74
 msgid "Waiting for approval&hellip;"
 msgstr "Warte auf Bestätigung&hellip;"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:79
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:79
 msgid ""
 "This addon was submitted for approval. A moderator will check this addon "
 "shortly."
@@ -979,31 +744,25 @@ msgstr ""
 "diese Erweiterung in Kürze überprüfen."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:83
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:83
 msgid "Withdraw addon"
 msgstr "Erweiterung zurückziehen"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:94
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:94
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:101
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:109
 msgid "Addon rejected"
 msgstr "Erweiterung abgelehnt"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:99
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:99
 msgid "This addon was rejected. You can possibly improve and submit it again."
 msgstr ""
 "Diese Erweiterung wurde abgelehnt. Du kannst sie möglicherweise verbessern "
 "und erneut einreichen."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:113
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:113
 msgid "Approval required"
 msgstr "Bestätigung erforderlich"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:118
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:118
 msgid ""
 "This addon needs to be approved by a moderator before releases can be "
 "published."
@@ -1012,33 +771,27 @@ msgstr ""
 "veröffentlicht werden können."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:133
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:133
 msgid "English title"
 msgstr "Englischer Titel"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:149
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:149
 msgid "German title"
 msgstr "Deutscher Titel"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:166
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:166
 msgid "The title will be shown in many various places around the site."
 msgstr ""
 "Der Titel wird an vielen verschiedenen Stellen auf der Seite angezeigt."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:175
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:175
 msgid "Namespace"
 msgstr "Kennung"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:204
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:204
 msgid "The addon will be published at %url%."
 msgstr "Die Erweiterung wird unter %url% veröffentlicht."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:210
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:210
 msgid ""
 "The namespace will be used as a unique identifier for your addon and its "
 "releases. It will appear in various urls. Please choose a short namespace, "
@@ -1049,19 +802,15 @@ msgstr ""
 "eine kurze Kennung, idealerweise der Dateiname der Erweiterung."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:222
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:222
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:84
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:84
 msgid "Game"
 msgstr "Spiel"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:265
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:265
 msgid "The addon is playable with <strong>%gametitle%</strong>."
 msgstr "Die Erweiterung ist unter <strong>%gametitle%</strong> spielbar."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:280
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:280
 msgid ""
 "The addon must be for a specific Clonk game. Consider choosing a different "
 "title if you create a version for a different game so players don't get "
@@ -1072,52 +821,42 @@ msgstr ""
 "erstellst um Spieler nicht zu verwirren und %create_a_new_addon%."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:292
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:292
 msgid "Abbreviation"
 msgstr "Abkürzung"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:294
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:294
 msgid "(optional)"
 msgstr "(optional)"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:302
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:302
 msgid "Not set"
 msgstr "Nicht gesetzt"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:320
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:320
 msgid ""
 "Players will be able to search for your addon by using the abbreviation."
 msgstr "Spieler werden deine Erweiterung mithilfe der Abkürzung suchen können."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:330
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:330
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:107
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:107
 msgid "Contact us"
 msgstr "Kontaktiere uns"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:335
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:335
 msgid "%Contact_us% to add an abbreviation."
 msgstr "%Contact_us%, um eine Abkürzung hinzuzufügen."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:344
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:344
 msgid "Please only enter an abbreviation if it is (to some extent) well known."
 msgstr ""
 "Bitte gib nur dann eine Abkürzung ein falls sie (einigermaßen) bekannt ist."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:356
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:356
 msgid "These settings cannot be changed after approval."
 msgstr ""
 "Diese Einstellungen können nach der Bestätigung nicht mehr geändert werden."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:369
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:369
 msgid ""
 "The details on this page cannot be changed anymore once the addon has been "
 "submitted and approved."
@@ -1126,52 +865,42 @@ msgstr ""
 "nachdem die Erweiterung eingereicht und bestätigt wurde."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:371
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:371
 msgid "All other settings can still be changed."
 msgstr "Alle anderen Einstellungen können noch geändert werden."
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:373
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:373
 msgid "Are you sure you want to submit this addon?"
 msgstr "Möchtest du diese Erweiterung wirklich einreichen?"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:379
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:379
 msgid "Submit for approval"
 msgstr "Zur Bestätigung einreichen"
 
 #: cache/twig/3/e/3e88ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:383
-#: cache/twig/3e/88/ed08f887a8cf6cd0525833c22deb6fab923e7e11abbafe62b6f144b7b269.php:383
 msgid "Would you like to remove this addon?"
 msgstr "Möchtest du diese Erweiterung entfernen?"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:25
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:25
 msgid "About Lorry"
 msgstr "Über Lorry"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:46
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:46
 msgid "Clonk"
 msgstr "Clonk"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:51
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:51
 msgid "The Lorry project is a fan site for the video game %Clonk%."
 msgstr "Das Lorry-Projekt ist eine Fanseite für das Computerspiel %Clonk%."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:58
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:58
 msgid "The project was created from three basic ideas:"
 msgstr "Das Projekt entstand aus drei grundlegenden Ideen:"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:64
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:64
 msgid "Fan page"
 msgstr "Fanseite"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:68
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:68
 msgid ""
 "We're here as the fans of Clonk. We built this site as members of the "
 "community for &quot;our&quot; game."
@@ -1180,7 +909,6 @@ msgstr ""
 "Community für „unser“ Spiel gebaut."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:72
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:72
 msgid ""
 "This site is for new players to learn all about Clonk, to discover the huge "
 "database of addons and to help them get right into the game."
@@ -1189,17 +917,14 @@ msgstr ""
 "Auswahl an Erweiterungen finden und einfach in das Spiel einsteigen."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:78
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:78
 msgid "Learn about Clonk"
 msgstr "Lerne Clonk kennen"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:84
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:84
 msgid "Distribution platform"
 msgstr "Downloadplattform"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:88
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:88
 msgid ""
 "We want to provide Clonk players with a simple, clean interface to find and "
 "download the best addons and keep them up-to-date as they progress."
@@ -1209,7 +934,6 @@ msgstr ""
 "während der Entwicklung immer auf dem neuesten Stand sind."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:92
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:92
 msgid ""
 "It should also serve as an archive, to enable players to go back and find "
 "forgotten gems of the past."
@@ -1218,17 +942,14 @@ msgstr ""
 "gemachte Erweiterungen wiederfinden können."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:98
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:98
 msgid "Discover the addons"
 msgstr "Alle Erweiterungen"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:104
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:104
 msgid "Online community"
 msgstr "Online-Community"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:108
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:108
 msgid ""
 "The official Clonk site is not really up to date anymore and fails to "
 "highlight one of the best features of Clonk: the awesome Community and its "
@@ -1239,7 +960,6 @@ msgstr ""
 "ihren Kreationen."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:112
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:112
 msgid ""
 "We want to share our own creations easily and give the addon developers our "
 "important feedback."
@@ -1248,23 +968,17 @@ msgstr ""
 "Erweiterungen unser wichtiges Feedback geben."
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:121
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:121
 msgid "View your profile"
 msgstr "Betrachte dein Profil"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:129
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:129
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:183
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:183
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:307
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:307
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:207
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:207
 msgid "Register now"
 msgstr "Jetzt registrieren"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:139
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:139
 msgid ""
 "This project was only made possible by a number of technologies, libraries "
 "and resources:"
@@ -1273,12 +987,10 @@ msgstr ""
 "Ressourcen möglich geworden:"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:145
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:145
 msgid "Technologies"
 msgstr "Technologien"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:158
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:160
 msgid "Resources"
 msgstr "Ressourcen"
 
@@ -1286,44 +998,33 @@ msgstr "Ressourcen"
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:171
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:26
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:30
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:167
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:171
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:26
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:30
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:74
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:74
 msgid "en"
 msgstr "de"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:182
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:182
 msgid "Libraries"
 msgstr "Bibliotheken"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:208
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:210
 msgid "Development"
 msgstr "Entwicklung"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:225
-#: cache/twig/48/5e/1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:227
 msgid "Credits"
 msgstr "Danksagungen"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:26
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:34
 msgid "Approve %addon%"
 msgstr "%addon% bestätigen"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:79
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:87
 msgid ""
 "This addon has been assigned the namespace <strong>%namespace%</strong>."
 msgstr ""
 "Dieser Erweiterung wurde die Kennung <strong>%namespace%</strong> zugeteilt."
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:105
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:113
 msgid ""
 "This addon was rejected. It's requested namespace was <em>%namespace%</em>."
 msgstr ""
@@ -1331,7 +1032,6 @@ msgstr ""
 "%namespace%</em>."
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:136
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:144
 msgid ""
 "<strong>%username%</strong> would like to reserve the namespace <strong>"
 "%namespace%</strong> for an addon."
@@ -1340,14 +1040,12 @@ msgstr ""
 "für eine Erweiterung reservieren."
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:156
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:164
 #: src/Presenter/Manage/Moderator/Approve.php:114
 msgid "The requested namespace has already been reserved for another addon."
 msgstr ""
 "Die gewünschte Kennung wurde bereits für eine andere Erweiterung reserviert."
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:165
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:173
 msgid ""
 "Approving this addon will trigger a public release. The user can publish "
 "further releases of this addon without approval."
@@ -1357,7 +1055,6 @@ msgstr ""
 "veröffentlichen."
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:171
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:179
 msgid ""
 "The user will be able to freely publish releases of this addon after "
 "approval."
@@ -1366,62 +1063,50 @@ msgstr ""
 "selbstständig veröffentlichen können."
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:188
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:196
 msgid "Comment"
 msgstr "Kommentar"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:210
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:218
 msgid "Are you sure you want to approve this addon?"
 msgstr "Möchtest du diese Erweiterung wirklich bestätigen?"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:216
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:224
 msgid "Approve"
 msgstr "Bestätigen"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:220
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:228
 msgid "Are you sure you want to reject this addon?"
 msgstr "Möchtest du diese Erweiterung wirklich ablehnen?"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:222
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:230
 msgid "Reject"
 msgstr "Ablehnen"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:243
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:251
 msgid "Title (English)"
 msgstr "Titel (Englisch)"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:255
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:263
 msgid "Title (German)"
 msgstr "Titel (Deutsch)"
 
 #: cache/twig/4/b/4b12771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:278
-#: cache/twig/4b/12/771636a91e776fdd6a8f7d10bd2f966d95dfddc74a8839c925e9f88aea7e.php:286
 msgid "Example url"
 msgstr "Beispiel-URL"
 
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:129
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:129
 msgid "You have unsaved changes."
 msgstr "Du hast ungespeicherte Änderungen."
 
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:131
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:131
 msgid "Preparing upload"
 msgstr "Hochladen wird vorbereitet"
 
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:133
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:133
 msgid "You are still uploading files."
 msgstr "Du lädst noch Dateien hoch."
 
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:223
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:223
 msgid ""
 "Lorry is a fan site for Clonk, a unique game series with hundreds of worlds "
 "created by other players."
@@ -1430,117 +1115,79 @@ msgstr ""
 "hunderten von spielererstellten Welten."
 
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:228
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:228
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
 #: cache/twig/4/c/4c05347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:236
-#: cache/twig/4c/05/347205ee0b963247e30ca8526c266248f4e55ba2a67096de361c1c1a5a10.php:236
 msgid "Hide"
 msgstr "Verstecken"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:25
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:25
 msgid "Toggle navigation"
 msgstr "Navigation umschalten"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:66
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:66
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:55
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:55
 msgid "Clonk Rage"
 msgstr "Clonk Rage"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:76
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:76
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:87
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:87
 msgid "OpenClonk"
 msgstr "OpenClonk"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:86
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:86
 msgid "Developers"
 msgstr "Entwickler"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:150
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:152
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:150
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:152
 #: cache/twig/5/e/5e31429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:55
-#: cache/twig/5e/31/429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:63
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:26
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:88
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:26
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:88
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:162
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:164
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:162
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:164
 msgid "Log out"
 msgstr "Abmelden"
 
 #: cache/twig/4/d/4d43819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:176
-#: cache/twig/4d/43/819b683ede68b793453add51d69d902457d61f94fd6e3a4a4ecf78a413b7.php:176
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:70
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:171
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:70
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:171
 msgid "Register"
 msgstr "Registrieren"
 
 #: cache/twig/4/f/4f020945fb53e066b3c43c5e248386b15d48c4258b7410ffdbb1c4bb296a01a7.php:37
-#: cache/twig/4f/02/0945fb53e066b3c43c5e248386b15d48c4258b7410ffdbb1c4bb296a01a7.php:45
 msgid "Draft"
 msgstr "Entwurf"
 
-#: cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:118
-#: cache/twig/5/6/56e40b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:186
-#: cache/twig/56/e4/0b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:186
-msgid "No matching users"
-msgstr "Keine passenden Benutzer"
-
-#: cache/twig/46/66/7cb10208a7d992e7954f7b07cd96c477c344df9d9016066289818d0785a5.php:122
-#: cache/twig/5/6/56e40b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:190
-#: cache/twig/56/e4/0b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:190
-msgid "No user currently matches your filtering critera."
-msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
-
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:64
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:64
 msgid "Title"
 msgstr "Titel"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:151
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:151
 msgid "Create addon"
 msgstr "Erweiterung anlegen"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:159
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:159
 msgid "You have an awesome idea?"
 msgstr "Du hast eine tolle Idee?"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:163
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:163
 msgid "You can create new addons here after you've registered."
 msgstr "Du kannst neue Erweiterungen nach deiner Registrierung hier anlegen."
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:174
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:174
 msgid "How about %exampletitle%?"
 msgstr "Wie wäre es mit %exampletitle%?"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:207
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:207
 msgid "Let's get started!"
 msgstr "Lass uns loslegen!"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:211
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:211
 msgid ""
 "Whether it's magic caves or exploding Wipfs, %brand% is the place to publish "
 "all your best addons."
@@ -1549,27 +1196,22 @@ msgstr ""
 "du all deine besten Erweiterungen veröffentlichen."
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:216
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:216
 msgid "Clonk Rage documentation"
 msgstr "Clonk Rage-Dokumentation"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:220
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:220
 msgid "OpenClonk documentation"
 msgstr "OpenClonk-Dokumentation"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:225
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:225
 msgid "Please don't <em>actually</em> blast Wipfs into oblivion."
 msgstr "Bitte sprenge Wipfe nicht <em>wirklich</em> in die Luft."
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:234
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:234
 msgid "Getting started"
 msgstr "Aller Anfang ist schwer"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:238
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:238
 msgid ""
 "We know it's not always easy to build something awesome. With the "
 "introduction on Clonkspot you should at least have a rough idea how "
@@ -1580,17 +1222,14 @@ msgstr ""
 "alles funktioniert."
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:242
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:242
 msgid "Introduction on Clonkspot"
 msgstr "Einführung auf Clonkspot"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:248
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:248
 msgid "Integrating %brand%"
 msgstr "%brand% integrieren"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:252
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:252
 msgid ""
 "Would you like to integrate %brand% into your project? The Lorry platform "
 "offers an API for you to request information about addons and releases."
@@ -1600,86 +1239,77 @@ msgstr ""
 "Releases abfragen kannst."
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:83
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:91
 msgid "Download"
 msgstr "Download"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:125
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:133
 msgid "Published on the %releaseday%"
 msgstr "Veröffentlicht am %releaseday%"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:131
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:139
 msgid "Not published yet"
 msgstr "Noch nicht veröffentlicht"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:151
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:159
 msgid "Developed by %linked_developer%"
 msgstr "Entwickelt von %linked_developer%"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:168
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:176
 msgid "This addon has no description."
 msgstr "Diese Erweiterung hat keine Beschreibung."
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:183
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:191
 msgid "Categories"
 msgstr "Kategorien"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:190
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:198
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:206
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:214
 msgid "Rounds and Addons"
 msgstr "Runden und Erweiterungen"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:213
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:221
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:319
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:319
 msgid "Comments"
 msgstr "Kommentare"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:241
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:249
 msgid "Edit release"
 msgstr "Release bearbeiten"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:248
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:256
 msgid "Community"
 msgstr "Community"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:257
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:265
 msgid "Project page"
 msgstr "Projektseite"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:266
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:274
 msgid "Report a bug"
 msgstr "Einen Fehler melden"
 
 #: cache/twig/5/0/50c0bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:271
-#: cache/twig/50/c0/bba44e99c0833d37c2bbeb9422487073101ba69420ae86e01184b4480a64.php:279
 msgid "Interested in an update?"
 msgstr "An einem Update interessiert?"
 
 #: cache/twig/5/5/552a6c4fe604e49e518ce96e75042cc34a01893f002cac09bfe33ee8fb1e8de2.php:28
-#: cache/twig/55/2a/6c4fe604e49e518ce96e75042cc34a01893f002cac09bfe33ee8fb1e8de2.php:36
 msgid "Connect with %brand%"
 msgstr "Mit %brand% verbinden"
 
 #: cache/twig/5/5/552a6c4fe604e49e518ce96e75042cc34a01893f002cac09bfe33ee8fb1e8de2.php:42
-#: cache/twig/55/2a/6c4fe604e49e518ce96e75042cc34a01893f002cac09bfe33ee8fb1e8de2.php:50
 msgid "Connect"
 msgstr "Verbinden"
+
+#: cache/twig/5/6/56e40b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:186
+msgid "No matching users"
+msgstr "Keine passenden Benutzer"
+
+#: cache/twig/5/6/56e40b84a00080590d9da5f8c844384ad8ca199d53461046198b80ddaa820705.php:190
+msgid "No user currently matches your filtering critera."
+msgstr "Der aktuelle Filter trifft auf keinen Benutzer zu."
 
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:36
 #, fuzzy
@@ -1708,75 +1338,39 @@ msgstr "Titelbild (%x%&times;%y%)"
 
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:80
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:117
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:117
 msgid "Select file&hellip;"
 msgstr "Datei auswählen&hellip;"
 
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:96
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:77
 msgid "Website"
 msgstr "Webseite"
 
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:106
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:87
 msgid "Bugtracker"
 msgstr "Bugtracker"
 
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:116
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:97
 msgid "Forum"
 msgstr "Forum"
 
 #: cache/twig/5/9/5983e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:127
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:108
 msgid "The presentation can be changed anytime and affects all releases."
 msgstr ""
 "Die Präsentation kann jederzeit geändert werden und betrifft alle Releases."
 
 #: cache/twig/5/e/5e31429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:25
-#: cache/twig/5e/31/429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:33
 msgid "Activation required"
 msgstr "Aktivierung erforderlich"
 
 #: cache/twig/5/e/5e31429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:42
-#: cache/twig/5e/31/429da2d7e9379c6f03fcae4fd7ecf29a39dc1dd0259a1a522ef418b230e5.php:50
 msgid "Please activate your account by confirming your email address."
 msgstr "Bitte aktiviere dein Konto, indem du deine E-Mail-Adresse bestätigst."
 
-#: cache/twig/50/32/f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:128
-#, fuzzy
-msgid "There are no games available"
-msgstr "Keine Spiele verfügbar"
-
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:37
-msgid "Title image"
-msgstr "Titelbild"
-
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:42
-msgid "Select"
-msgstr "Auswählen"
-
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:50
-msgid "Sitewide intro"
-msgstr "Vorstellungstext"
-
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:54
-msgid ""
-"Short intro text, will be used around the site alongside the title image."
-msgstr ""
-"Kurzer Vorstellungstext, wird auf der Seite neben dem Titelbild genutzt."
-
-#: cache/twig/59/83/e383f4d5c96d168064856dc8870e1e3b37cdabaa7985f8ea4a521ae177fd.php:67
-msgid "Explain the general idea behind this addon."
-msgstr "Erkläre die grundlegende Idee dieser Erweiterung."
-
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:25
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:25
 msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:45
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:45
 msgid ""
 "All data is kept exclusivly under our and our hosters control and not passed "
 "on to any other third party."
@@ -1785,7 +1379,6 @@ msgstr ""
 "gehalten und an keine Dritten weitergegeben."
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:49
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:49
 msgid ""
 "Files you upload may be transferred to a content delivery network to make "
 "them publicly available. You are responsible for files you upload."
@@ -1795,17 +1388,14 @@ msgstr ""
 "verantwortlich, die du hochlädst."
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:53
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:53
 msgid "User data"
 msgstr "Benutzerdaten"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:57
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:57
 msgid "We save the following data directly related to your account:"
 msgstr "Wir speichern die folgenden Daten über dein Benutzerkonto:"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:62
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:62
 msgid ""
 "<strong>Basic account information</strong> (username, email address and "
 "encrypted password)"
@@ -1814,7 +1404,6 @@ msgstr ""
 "Adresse und verschlüsseltes Passwort)"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:66
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:66
 msgid ""
 "<strong>Settings and profile information</strong> (for example: language, "
 "when you registered, and details you submitted on the settings page)"
@@ -1824,12 +1413,10 @@ msgstr ""
 "angegeben hast)"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:70
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:70
 msgid "<strong>Login services</strong> (only if you added a linked account)"
 msgstr "<strong>Anmeldedienste</strong> (nur, falls du Konten verknüpft hast)"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:75
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:75
 msgid ""
 "The following data is linked to you and will remain after you delete your "
 "account, but will be unlinked if you decide to delete your account:"
@@ -1838,7 +1425,6 @@ msgstr ""
 "dein Konto löschst, aber werden nicht mehr verknüpft falls du Konto löschst:"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:80
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:80
 msgid ""
 "<strong>Addons</strong> and <strong>releases</strong> you created (and the "
 "corresponding files you uploaded)"
@@ -1847,17 +1433,14 @@ msgstr ""
 "erstellst (und alle zugehörigen Dateien, die du hochlädst)"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:85
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:85
 msgid "Transparency"
 msgstr "Transparenz"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:91
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:91
 msgid "public"
 msgstr "öffentlich"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:96
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:96
 msgid ""
 "Lorry's source code is %public%, so you can check all of this yourself. If "
 "you have further questions concerning your privacy, please do not hesitate "
@@ -1868,7 +1451,6 @@ msgstr ""
 "kontaktieren.\t"
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:100
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:100
 msgid ""
 "Our systems are hosted by Uberspace, a hoster with an (in our opinion) "
 "excellent privacy policy."
@@ -1877,114 +1459,46 @@ msgstr ""
 "unseren Augen) exzellenten Datenschutzerklärung."
 
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:111
-#: cache/twig/6b/a9/ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:111
 msgid "Uberspace privacy policy"
 msgstr "Datenschutzerklärung von Uberspace"
 
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:25
-msgid "Banners"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:51
-msgid "New banner"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:68
-msgid "Default url"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:78
-msgid "Link to a specific release"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:100
-msgid "Select image&hellip;"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:104
-msgid "Create banner"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:112
-msgid "Existing banners"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:116
-msgid "Active"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:144
-msgid "No banners are currently active."
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:153
-msgid "Scheduled"
-msgstr ""
-
-#: cache/twig/60/ca/cc93d01ffe497ce16701ec1d7d4f3cd1aa1fc4f7f76ac37d951aca05396a.php:175
-msgid "Disabled"
-msgstr ""
-
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:31
-#: cache/twig/77/58/d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:39
-msgid "%brand%: Password reset"
-msgstr "%brand%: Password zurücksetzen"
+msgid "Forgot %brand% password"
+msgstr "%brand%-Passwort vergessen"
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:39
-msgid "You (or somebody else) requested a password reset for this account."
+msgid "You or someone else requested an email to reset your %brand% password."
 msgstr ""
-"Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dieses Konto "
-"angefordert."
+"Du oder jemand anders hat eine E-Mail zum Zurücksetzen deines %brand%-"
+"Passworts angefordert."
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:44
 msgid ""
-"If you didn't request your password to be reset, simply ignore this email."
+"If you requested this email you can login without a password for a single "
+"time:"
 msgstr ""
+"Falls du diese E-Mail angefordert hast, kannst du dich einmalig ohne "
+"Passwort anmelden:"
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:57
 #: cache/twig/8/d/8de1420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:52
 msgid "Just paste the following url into your browser:"
 msgstr "Füge dazu einfach die folgende URL in deinen Browser ein:"
 
+#: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:70
+msgid "Otherwise simply ignore this email."
+msgstr "Andernfalls ignoriere einfach diese E-Mail."
+
 #: cache/twig/7/d/7d68b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:27
-#: cache/twig/7d/68/b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:27
 msgid "%username%'s moderations"
 msgstr ""
 
 #: cache/twig/7/d/7d68b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:65
-#: cache/twig/7d/68/b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:65
 #, fuzzy
 msgid "This user has not moderated any other users yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
-#: cache/twig/77/58/d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:47
-msgid "You (or somebody else) requested a password reset for your account."
-msgstr ""
-"Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dein Konto "
-"angefordert."
-
-#: cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:39
-msgid "%brand%: Escalated ticket"
-msgstr "%brand%: Eskaliertes Ticket"
-
-#: cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:52
-msgid "ticket"
-msgstr "Ticket"
-
-#: cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:67
-msgid "The following %ticket% was escalated by %staffname%:"
-msgstr "Das folgende %ticket% wurde von %staffname% eskaliert:"
-
-#: cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:91
-msgid "The message was originally sent by %username%."
-msgstr "Die Nachricht wurde ursprünglich von %username% gesendet."
-
-#: cache/twig/7d/d6/2a9b58a893f0b7211e135734784c5efa7c46dafb7b9355ac63540cf62db0.php:97
-msgid "The message was originally sent by an anonymous user."
-msgstr "Die Nachricht wurde ursprünglich von einem anonymen Benutzer gesendet."
-
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:42
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:42
 msgid ""
 "We're here as fans of Clonk. Send us a message if you have any problems with "
 "the site."
@@ -1993,27 +1507,22 @@ msgstr ""
 "irgendwelche Probleme mit dieser Seite hast."
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:51
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:51
 msgid "Ticket"
 msgstr "Ticket"
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:81
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:81
 msgid "Subject"
 msgstr "Betreff"
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:100
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:97
 msgid "Send message"
 msgstr "Nachricht senden"
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:111
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:108
 msgid "Legal"
 msgstr "Rechtliches"
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:118
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:115
 msgid ""
 "If you have any legal issues please do not hesitate to contact us either via "
 "our feedback form or via %legalmail%. That way we are able to quickly "
@@ -2026,17 +1535,14 @@ msgstr ""
 "verstoßen."
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:134
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:131
 msgid "Site owner"
 msgstr "Seitenbetreiber"
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:146
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:143
 msgid "Disclaimer"
 msgstr "Haftungsausschluss"
 
 #: cache/twig/8/0/800844953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:150
-#: cache/twig/80/08/44953f2752d47c2f7fc27c59adcd5862a10a6968c325ee01273febb5408f.php:147
 msgid ""
 "We are not responsible for the content of outgoing links or user generated "
 "content. User generated content does not necessarily reflect the view of the "
@@ -2047,98 +1553,79 @@ msgstr ""
 "der Seitenbetreiber entsprechen."
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:67
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:67
 msgid "Contact us to change your username."
 msgstr "Kontaktiere uns zur Änderung des Nutzernamens."
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:83
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:83
 msgid "Edit own user"
 msgstr "Eigenen Benutzer bearbeiten"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:93
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:93
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:202
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:202
 msgid "Links"
 msgstr "Links"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:110
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:110
 msgid "Clonk Forge profile"
 msgstr "Clonk Forge-Profil"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:122
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:122
 msgid "GitHub name"
 msgstr "GitHub-Name"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:134
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:134
 msgid "Change links"
 msgstr "Links ändern"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:189
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:189
 msgid "Resend confirmation"
 msgstr "Erneut senden"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:200
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:200
 msgid "Your account still needs to be activated."
 msgstr "Dein Konto muss noch aktiviert werden."
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:210
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:210
 msgid "Language"
 msgstr "Sprache"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:227
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:227
 msgid "View site in"
 msgstr "Betrachte Seite auf"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:236
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:236
 #: src/Service/LocalisationService.php:257
 msgid "English"
 msgstr "Englisch"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:244
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:244
 #: src/Service/LocalisationService.php:260
 msgid "German"
 msgstr "Deutsch"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:252
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:252
 msgid "Change language"
 msgstr "Sprache ändern"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:261
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:261
 msgid "Remove account"
 msgstr "Konto entfernen"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:267
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:267
 msgid "Would you like to remove your account?"
 msgstr "Möchtest du dein Konto entfernen?"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:284
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:284
 msgid "Removing your account is final."
 msgstr "Die Entfernung deines Kontos ist endgültig."
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:286
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:286
 msgid "You will permanently loose control of all your addons and releases."
 msgstr ""
 "Du wirst permanent die Kontrolle über deine Erweiterungen und Releases "
 "verlieren."
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:293
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:293
 msgid "I have read and understood the warning."
 msgstr "Ich habe den Hinweis gelesen und verstanden."
 
@@ -2146,146 +1633,110 @@ msgstr "Ich habe den Hinweis gelesen und verstanden."
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:338
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:66
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:70
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:304
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:338
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:66
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:70
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:131
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:135
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:131
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:135
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:81
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:85
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:81
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:85
 msgid "Password"
 msgstr "Passwort"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:315
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:315
 msgid "Send confirmation email"
 msgstr "Bestätigungs-E-Mail senden"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:317
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:317
 msgid "Permanently remove account"
 msgstr "Konto permanent entfernen"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:332
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:332
 msgid "Security"
 msgstr "Sicherheit"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:362
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:362
 msgid "Old password"
 msgstr "Altes Passwort"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:377
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:377
 msgid "New password"
 msgstr "Neues Passwort"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:389
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:389
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:143
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:147
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:143
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:147
 msgid "Confirm password"
 msgstr "Passwort bestätigen"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:397
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:397
 msgid "Change password"
 msgstr "Passwort ändern"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:399
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:399
 msgid "Set password"
 msgstr "Passwort setzen"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:408
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:408
 msgid "Session"
 msgstr "Anmeldung"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:415
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:415
 msgid "Would you like to log out of all other devices?"
 msgstr "Möchtest du dich von allen anderen Geräten abmelden?"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:429
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:429
 msgid "Log out all other devices"
 msgstr "Alle anderen Geräte abmelden"
 
 #: cache/twig/8/1/817fb309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:435
-#: cache/twig/81/7f/b309699b55ed822f178986f4895779e76c9bc00cf54c25ba25eeb4e88c59.php:435
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:212
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:212
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:161
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:161
 msgid "Login services"
 msgstr "Anmeldedienste"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:40
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:40
 msgid "Your browser does not support uploading files to Lorry."
 msgstr "Dein Browser unterstützt das Hochladen von Dateien zu Lorry nicht."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:48
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:48
 msgid "File upload is disabled."
 msgstr "Das Hochladen von Dateien ist deaktiviert."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:59
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:59
 msgid "Select file to continue upload"
 msgstr "Datei zum Fortsetzen des Uploads auswählen"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:63
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:63
 msgid "Ready to publish"
 msgstr "Bereit zur Veröffentlichung"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:67
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:67
 msgid "Can be continued"
 msgstr "Kann fortgesetzt werden"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:75
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:75
 msgid "Are you sure you want to remove this file?"
 msgstr "Möchtest du diese Datei wirklich entfernen?"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:79
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:79
 msgid "File could not be removed."
 msgstr "Datei konnte nicht entfernt werden."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:83
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:83
 msgid "File already exists."
 msgstr "Datei existiert bereits."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:89
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:89
 msgid "Loading files&hellip;"
 msgstr "Lade Dateien&hellip;"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:94
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:94
 msgid "Error loading file list."
 msgstr "Fehler beim Laden der Dateiliste."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:99
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:99
 msgid "No files uploaded."
 msgstr "Keine Dateien hochgeladen."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:108
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:108
 msgid ""
 "The files will be made freely availabe and archived after publishing this "
 "release. They cannot be changed afterwards."
@@ -2294,38 +1745,31 @@ msgstr ""
 "gemacht und archiviert. Sie können danach nicht mehr geändert werden."
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:121
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:121
 msgid "Upload"
 msgstr "Hochladen"
 
 #: cache/twig/8/1/81b402239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:125
-#: cache/twig/81/b4/02239b36d8056361249f93d696597ea7500d155860b5da0d48d1d0657250.php:125
 msgid "Pause"
 msgstr "Pausieren"
 
 #: cache/twig/8/6/86bc6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:35
-#: cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:35
 #: src/Presenter/Publish/Release.php:169
 msgid "What's new?"
 msgstr "Was ist neu?"
 
 #: cache/twig/8/6/86bc6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:39
-#: cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:39
 msgid "Briefly explain why this release is better than the previous one."
 msgstr "Erkläre kurz weshalb dieser Release besser als der Vorherige ist."
 
 #: cache/twig/8/6/86bc6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:47
-#: cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:47
 msgid "Detailed changelog"
 msgstr "Detailliertes Änderungsprotokoll"
 
 #: cache/twig/8/6/86bc6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:51
-#: cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:51
 msgid "+ Added a new feature..."
 msgstr "+ Neues Feature hinzugefügt..."
 
 #: cache/twig/8/6/86bc6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:59
-#: cache/twig/86/bc/6b5090956cdf79838abaf8e63c5758596feb09458a6d66488926aabbc876.php:59
 msgid ""
 "The changelogs can still be changed after the release has been published."
 msgstr ""
@@ -2333,22 +1777,18 @@ msgstr ""
 "geändert werden."
 
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:26
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:26
 msgid "Identification required"
 msgstr "Identifikation erforderlich"
 
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:46
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:46
 msgid "Please enter your password to confirm your identity:"
 msgstr "Bitte gib dein Passwort ein, um deine Identität zu bestätigen:"
 
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:75
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:75
 msgid "Confirm"
 msgstr "Bestätigen"
 
 #: cache/twig/8/c/8cdf6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:82
-#: cache/twig/8c/df/6a8c69a1cd22f328784dac801d1280e0ddfd0caa8afceb81cd7534315322.php:82
 msgid ""
 "We would like to verify your identity independent of your login service in "
 "future. Please add a secure password to continue."
@@ -2373,61 +1813,27 @@ msgstr ""
 msgid "Activate account"
 msgstr "Konto aktivieren"
 
-#: cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:38
-#: cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:38
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:46
-msgid "this link"
-msgstr "diesen Link"
-
-#: cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:48
-msgid "%brand%: Confirm your (new) email address"
-msgstr "%brand%: Bestätige deine (neue) E-Mail-Adresse"
-
-#: cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:56
-msgid "You set your email address to %email%."
-msgstr "Du hast deine E-Mail-Adresse zu %email% geändert."
-
-#: cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:61
-msgid "To use all features of %brand% you need to activate this new address."
-msgstr ""
-"Um alle Features von %brand% vollständig nutzen zu können, musst du diese "
-"neue E-Mail-Adresse aktivieren."
-
-#: cache/twig/8d/e1/420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:65
-msgid ""
-"Please open %this_link% to activate your address; or paste the following url "
-"into your browser:"
-msgstr ""
-"Bitte öffne %this_link% um deine Addresse zu aktivieren; oder füge die "
-"folgende URL in deinen Browser ein:"
-
 #: cache/twig/9/a/9a9f863086124cd81abfa41283d5c93bb6bc602837baf56357458f6c6e52e897.php:37
-#: cache/twig/9a/9f/863086124cd81abfa41283d5c93bb6bc602837baf56357458f6c6e52e897.php:45
 msgid "Outdated"
 msgstr "Veraltet"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:29
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:29
 msgid "Register at %brand%"
 msgstr "Bei %brand% registrieren"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:46
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:46
 msgid "Registration disabled"
 msgstr "Registrierung deaktiviert"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:50
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:50
 msgid "New Registrations are disabled."
 msgstr "Neue Registrierungen sind deaktiviert."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:64
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:64
 msgid "Complete registration"
 msgstr "Registrierung abschließen"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:94
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:94
 msgid ""
 "Your username may contain letters, numbers and underscores and must be "
 "between 3 and 16 characters long."
@@ -2436,7 +1842,6 @@ msgstr ""
 "muss zwischen 3 und 16 Zeichen lang sein."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:116
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:116
 msgid ""
 "We require your email address so that we can verify you if you should forget "
 "your login details."
@@ -2445,7 +1850,6 @@ msgstr ""
 "du deine Anmeldedaten vergisst."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:137
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:137
 msgid ""
 "You password is stored securely. We require at least 8 characters for your "
 "security and are unable to send you this password if you should forget it."
@@ -2455,42 +1859,34 @@ msgstr ""
 "es vergessen solltest."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:162
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:162
 msgid "privacy policy"
 msgstr "Datenschutzerklärung"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:167
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:167
 msgid "Because we think it's important: our %policy%."
 msgstr "Weil wir das für wichtig halten: unsere %policy%."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:180
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:180
 msgid "Cancel"
 msgstr "Abbrechen"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:188
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:188
 msgid "Already registered?"
 msgstr "Bereits registriert?"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:202
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:202
 msgid "Linked to %provider%"
 msgstr "Mit %provider% verbunden"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:206
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:206
 msgid "You can log in using %provider% in future."
 msgstr "Du kannst dich in Zukunft via %provider% anmelden."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:230
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:230
 msgid "Nearly done&hellip;"
 msgstr "Fast fertig&hellip;"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:234
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:234
 msgid ""
 "You still need to choose your username and enter or verify your email "
 "address."
@@ -2499,12 +1895,10 @@ msgstr ""
 "oder überprüfen."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:240
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:240
 msgid "This is Lorry."
 msgstr "Das hier ist Lorry."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:244
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:244
 msgid ""
 "Lorry is a fan page, distribution platform and online community for players "
 "and fans of the Clonk series."
@@ -2513,17 +1907,14 @@ msgstr ""
 "und Fans der Clonk-Serie."
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:248
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:248
 msgid "Learn more&hellip;"
 msgstr "Erfahre mehr&hellip;"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:253
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:253
 msgid "Why should you register?"
 msgstr "Warum solltest du dich registrieren?"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:258
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:258
 msgid ""
 "Publish your own addons, so they are instantly available to all Clonk players"
 msgstr ""
@@ -2531,7 +1922,6 @@ msgstr ""
 "Spieler verfügbar sind"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:262
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:262
 msgid ""
 "Support Lorry with feedback and help shape the future of the Clonk community"
 msgstr ""
@@ -2539,39 +1929,32 @@ msgstr ""
 "Community bei"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:267
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:267
 msgid "Upcoming features"
 msgstr "Zukünftige Features"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:272
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:272
 msgid "Comment and discuss addons or send feedback to the developer(s)"
 msgstr ""
 "Kommentiere und diskutiere Erweiterungen oder sende Feedback an den "
 "Entwickler"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:276
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:276
 msgid "Vote on addons to support them and save your favourite ones"
 msgstr "Bewerte Erweiterungen und speichere deine Favoriten"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:280
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:280
 msgid "Tag addons by type, genre, player counts&hellip;"
 msgstr "Tagge Addons nach Typ, Genre, Spielerzahlen&hellip;"
 
 #: cache/twig/a/3/a37cb1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:284
-#: cache/twig/a3/7c/b1e12c0f827ce787c450431326a7b784ec32fa61da57f8d63c7c33a26073.php:284
 msgid "Search addons by name, game, tags&hellip;"
 msgstr "Suche Erweiterungen nach Name, Spiel, Tags&hellip;"
 
 #: cache/twig/a/b/abcebdaa43c3eb1769a3d5545eb538b9f7bc6b569e948ec1616d82da56cf90fd.php:37
-#: cache/twig/ab/ce/bdaa43c3eb1769a3d5545eb538b9f7bc6b569e948ec1616d82da56cf90fd.php:45
 msgid "Release scheduled"
 msgstr "Veröffentlichung geplant"
 
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:32
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:64
 msgid "Welcome to %brand%!"
 msgstr "Willkommen bei %brand%!"
 
@@ -2613,95 +1996,15 @@ msgstr "Füge dazu einfach die folgende URL in deinen Browser ein."
 msgid "Thanks and have lots of fun,"
 msgstr "Danke und viel Spaß,"
 
-#: cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:48
-msgid "%brand%: One-time login"
-msgstr "%brand%: Einmalige Anmeldung"
-
-#: cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:56
-msgid "You (or somebody else) requested a one-time login for your account."
-msgstr ""
-"Du (oder jemand anderes) hat eine Einmal-Anmeldung für dein Konto "
-"angefordert."
-
-#: cache/twig/a9/e2/1d5d2d5292039f836ec23e6458af23060c21de8852e6a7d3c54a89e91dda.php:60
-msgid ""
-"Please open %this_link% access your account; or paste the following url into "
-"your browser:"
-msgstr ""
-"Bitte öffne %this_link% um auf dein Konto zuzugreifen; oder füge die "
-"folgende URL in deinen Browser ein:"
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:38
-msgid "contact page"
-msgstr "Kontaktseite"
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:56
-msgid "Welcome to %brand%"
-msgstr "Willkommen bei %brand%"
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:69
-msgid ""
-"First things first: Please activate your account by opening %this_link%; or "
-"paste the following url into your browser:"
-msgstr ""
-"Das Wichtigste zuerst: Bitte aktivieren dein Konto indem du %this_link% "
-"öffnest; oder füge die folgende URL in deinen  Browser ein:"
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:79
-msgid ""
-"Now that thats out of the way, thank you for helping us test the platform. "
-"If you'd like to learn more about the project or Clonk visit the about pages "
-"at the bottom of the site."
-msgstr ""
-"Jetzt wo das erledigt ist, danke für deine Hilfe beim Testen der Plattform. "
-"Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche einfach "
-"die Infoseiten am unteren Rand der Seite."
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:84
-msgid ""
-"%brand% works a bit differently compared to other download sites. In order "
-"to publish a scenario or pack you first need to create a corresponding "
-"addon. The addons tracks general information, like the title, an "
-"introduction and which game it belongs to. You can then create a release for "
-"the addon, which has a version number, a detailed description and tracks the "
-"actual files. Once you have created a release you can publish it. When "
-"players search for your addon, they will always be pointed to the latest "
-"release."
-msgstr ""
-"%brand% funktioniert etwas anders als andere Downloadseiten. Um ein Szenario "
-"oder Pack zu veröffentlichen, musst du zuerst eine zugehörige Erweiterung "
-"erstellen. Die Erweiterung speichert grundlegende Informationen, wie den "
-"Titel, eine Einführung und zu welchem Spiel sie gehört. Du kannst dann einen "
-"Release für die Erweiterung erstellen, welcher die Versionsnummer, eine "
-"ausführliche Beschreibung und die eigentlichen Dateien speichert. Nachdem du "
-"einen Release erstellt hast, kannst du ihn veröffentlichen. Wenn Spieler "
-"nach deiner Erweiterung suchen, werden sie immer zum neuesten Release "
-"gebracht."
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:89
-msgid ""
-"You can send us any feedback you have on the %contact_page%. Let's make "
-"%brand% a useful and awesome site."
-msgstr ""
-"Du kannst uns jederzeit Feedback auf der %contact_page% zusenden. Lass uns "
-"%brand% eine nützliche und tolle Seite machen."
-
-#: cache/twig/ae/48/c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:94
-msgid "Once again, thank you for testing %brand%!"
-msgstr "Noch einmal, vielen Dank für das Testen von %brand%!"
-
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:187
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:187
 msgid "Latest releases"
 msgstr "Neue Veröffentlichungen"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:243
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:243
 msgid "Hey %user_name%!"
 msgstr "Hey %user_name%!"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:247
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:247
 msgid ""
 "Welcome to %brand%. On this site you can find addons by other players and "
 "publish your own. Here are some links to get you started:"
@@ -2711,22 +2014,18 @@ msgstr ""
 "gleich loslegen kannst:"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:254
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:254
 msgid "For players"
 msgstr "Für Spieler"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:260
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:260
 msgid "For developers"
 msgstr "Für Entwickler"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:267
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:267
 msgid "Welcome back."
 msgstr "Willkommen zurück."
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:271
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:271
 msgid ""
 "%brand% lives from community creations. Why not start developing a new addon "
 "today?"
@@ -2735,33 +2034,27 @@ msgstr ""
 "mit einer neuen Erweiterung an?"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:288
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:288
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:290
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:290
 msgid "Welcome"
 msgstr "Willkommen"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:294
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:294
 msgid "%brand% is the site for the best addons for the game series Clonk."
 msgstr ""
 "%brand% ist die Seite für die besten Erweiterungen zur Spieleserie Clonk."
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:301
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:301
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:318
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:318
 msgid "New: Multiple languages"
 msgstr "Neu: Mehrere Sprachen"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:322
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:322
 msgid ""
 "%brand% is now available in German and English. You can add titles and "
 "descriptions in these languages for all your addons and releases."
@@ -2771,17 +2064,14 @@ msgstr ""
 "hinzufügen."
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:326
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:326
 msgid "Announcements"
 msgstr "Ankündigungen"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:332
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:332
 msgid "In development"
 msgstr "In Entwicklung"
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:336
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:336
 msgid ""
 "The platform behind %brand% is still in development. You can join and try "
 "out what works so far, and we will continue to add many features."
@@ -2791,17 +2081,14 @@ msgstr ""
 "weitere Features hinzufügen."
 
 #: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:342
-#: cache/twig/c1/6b/6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:342
 msgid "About the project"
 msgstr "Über das Projekt"
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:25
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:25
 msgid "Welcome to Clonk!"
 msgstr "Willkommen bei Clonk!"
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:42
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:42
 msgid ""
 "Clonk is a unique two-dimensional game and often referred to as a mix of "
 "&quot;The Settlers&quot; and &quot;Lemmings&quot;."
@@ -2810,7 +2097,6 @@ msgstr ""
 "Siedler“ und „Lemmings“ bezeichnet."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:59
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:59
 msgid ""
 "The classic game with hundreds of community-built, high-quality addons. "
 "Magical wars, strategic shooters and futuristic settling: Clonk Rage has it "
@@ -2821,7 +2107,6 @@ msgstr ""
 "Siedeln: das alles hat Clonk Rage."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:63
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:63
 msgid ""
 "Often the sheer selection is overwelming, so be sure to spread the word and "
 "vote for the addons you like."
@@ -2831,13 +2116,10 @@ msgstr ""
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:76
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:106
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:76
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:106
 msgid "Official website"
 msgstr "Offizielle Webseite"
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:91
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:91
 msgid ""
 "The opensource successor to the Clonk series, built by players and "
 "developers of the previous Clonk titles."
@@ -2846,7 +2128,6 @@ msgstr ""
 "Entwicklern der vorherigen Clonk-Titel."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:95
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:95
 msgid ""
 "Although the addon selection is still limited, OpenClonk completely "
 "reimaginges a great part of the game and greatly refines the technology, now "
@@ -2858,12 +2139,10 @@ msgstr ""
 "unterstützt."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:114
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:114
 msgid "&hellip;only just the beginning"
 msgstr "&hellip;alles nur der Anfang"
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:118
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:118
 msgid ""
 "Clonk lives from its fans, with dedicated players creating high-quality "
 "addons."
@@ -2872,7 +2151,6 @@ msgstr ""
 "passionierten Spielern."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:122
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:122
 msgid ""
 "The series appeals to all ages alike and has been around for many years. "
 "Addons exist in a huge variety of gameplay and genre, and Lorry offers a "
@@ -2883,12 +2161,10 @@ msgstr ""
 "und Lorry bietet eine zentrale Plattform für die besten Erweiterungen."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:131
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:131
 msgid "Create new content for Clonk"
 msgstr "Erschaffe neue Inhalte für Clonk"
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:135
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:135
 msgid ""
 "The official development of Clonk Rage has halted, therefore the community "
 "is creating an open source succesor - OpenClonk."
@@ -2897,7 +2173,6 @@ msgstr ""
 "die Community einen Open-Source-Nachfolger - OpenClonk."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:139
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:139
 msgid ""
 "Both games are different and alike, but the majority of all addons have been "
 "created for Clonk Rage. Once you've created something awesome you can "
@@ -2910,12 +2185,10 @@ msgstr ""
 "Spieler sofort verfügbar zu machen."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:153
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:153
 msgid "Build the next Clonk"
 msgstr "Baue das nächste Clonk"
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:157
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:157
 msgid ""
 "The OpenClonk project is constantly looking for developers to help out with "
 "the next iteration of Clonk. If you have moderate or even advanced C++-"
@@ -2927,27 +2200,22 @@ msgstr ""
 "Fall willkommen sein."
 
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:162
-#: cache/twig/c2/ea/1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:162
 msgid "OpenClonk wiki"
 msgstr "OpenClonk-Wiki"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:46
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:46
 msgid "Before publishing&hellip;"
 msgstr "Vor der Veröffentlichung&hellip;"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:58
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:58
 msgid "Quick release"
 msgstr "Schnell veröffentlichen"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:65
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:65
 msgid "The release will be instantly available to all players."
 msgstr "Der Release wird sofort für alle Spieler verfügbar sein."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:69
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:69
 msgid ""
 "Publishing a release is <strong>final</strong>. Any changes after releasing "
 "require a new release."
@@ -2956,54 +2224,44 @@ msgstr ""
 "Veröffentlichung erfordert einen neuen Release."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:75
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:75
 msgid "The release will be published as soon as the addon has been approved."
 msgstr "Der Release wird nach der Bestätigung veröffentlicht. "
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:82
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:82
 msgid "The release will not be published if the addon is rejected."
 msgstr ""
 "Der Release wird nicht veröffentlicht, falls die Erweiterung abgelehnt wird."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:94
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:94
 msgid "needs to be submitted"
 msgstr "muss eingereicht werden"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:99
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:99
 msgid "The addon %needs_to_be_submitted% in order to be quickly released."
 msgstr ""
 "Die Erweiterung %needs_to_be_submitted%, um eine schnelle Veröffentlichung "
 "durchzuführen."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:127
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:127
 msgid "Confirm quick release"
 msgstr "Schnelle Veröffentlichung bestätigen"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:135
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:135
 msgid "Release now"
 msgstr "Jetzt veröffentlichen"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:142
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:218
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:142
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:218
 msgid "Schedule release"
 msgstr "Veröffentlichung planen"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:155
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:155
 msgid "The release will be available to players after the specified timestamp."
 msgstr ""
 "Der Release wird ab dem angegebenen Zeitpunkt für alle Spieler verfügbar "
 "sein."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:162
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:162
 msgid ""
 "A scheduled release can be cancelled at any time before the automated "
 "release."
@@ -3012,24 +2270,20 @@ msgstr ""
 "Veröffentlichung abbrechen."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:174
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:174
 msgid "needs to be approved"
 msgstr "muss bestätigt werden"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:179
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:179
 msgid "The addon %needs_to_be_approved% in order to schedule a release."
 msgstr ""
 "Die Erweiterung %needs_to_be_approved%, damit eine Veröffentlichung geplant "
 "werden kann."
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:187
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:187
 msgid "Date and time"
 msgstr "Datum und Zeit"
 
 #: cache/twig/c/3/c360ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:208
-#: cache/twig/c3/60/ba5e0af6bbc5b09f664ab90f740f6a92ee3c67ad866b336f6abbe0d88a3c.php:208
 msgid "Publicly announce release date and time"
 msgstr "Veröffentlichsdatum und -zeit öffentlich ankündigen"
 
@@ -3038,46 +2292,37 @@ msgid "Hi %username%,"
 msgstr "Hallo %username%,"
 
 #: cache/twig/d/5/d537b55c0f0c1a91085c308a67f8141c225a090d57e96784555d714fcb377e32.php:84
-#: cache/twig/d5/37/b55c0f0c1a91085c308a67f8141c225a090d57e96784555d714fcb377e32.php:24
 msgid "Hi there,"
 msgstr "Hallo,"
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:29
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:29
 msgid "Login to %brand%"
 msgstr "Bei %brand% anmelden"
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:62
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:66
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:62
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:66
 msgid "Username / Email address"
 msgstr "Benutzername / E-Mail-Adresse"
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:100
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:100
 msgid "Remember on this device"
 msgstr "Auf diesem Gerät merken"
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:113
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:113
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:182
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:182
 msgid "Nearly there&hellip;"
 msgstr "Fast fertig&hellip;"
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:186
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:186
 msgid "You can now sign in with your username or email address and password."
 msgstr ""
 "Du kannst dich jetzt mit deinem Benutzernamen oder deiner E-Mail-Adresse und "
 "deinem Passwort anmelden."
 
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:196
-#: cache/twig/d9/47/7f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:196
 msgid ""
 "Registering only takes a few moments. A Clonk registration key is not "
 "required."
@@ -3086,178 +2331,137 @@ msgstr ""
 "Registrierungsschlüssel wird nicht benötigt."
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:77
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:77
 msgid "Banned"
 msgstr "Gebannt"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:101
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:101
 msgid "Well that took a bit longer than expected"
 msgstr "Das hat ein bisschen länger gedauert als erwartet"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:105
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:105
 msgid "Founder of Lorry"
 msgstr "Gründer von Lorry"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:112
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:112
 msgid "Registered on the alpha site"
 msgstr "War auf der Alpha-Seite registriert"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:114
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:114
 msgid "Took part in Lorry Alpha"
 msgstr "Teilnehmer in der Lorry-Alpha"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:121
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:121
 msgid "Registered on the beta site"
 msgstr "War auf der Beta-Seite registriert"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:123
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:123
 msgid "Took part in Lorry Beta"
 msgstr "Teilnehmer in der Lorry-Beta"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:132
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:132
 msgid "Built something awesome for the Clonk community"
 msgstr "Hat etwas tolles für die Clonk-Community gebaut"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:134
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:134
 msgid "Valuable community member"
 msgstr "Wertvolles Communitymitglied"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:143
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:143
 msgid "Knows Google-fu"
 msgstr "Kann Google-fu"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:145
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:145
 msgid "Lorry developer"
 msgstr "Lorry-Entwickler"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:154
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:154
 msgid "&quot;Hey, what's that button do?&quot;"
 msgstr "&quot;Hey, was macht der Knopf da?&quot;"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:156
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:156
 msgid "Bugreporter"
 msgstr "Bugreporter"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:165
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:165
 msgid "Welcome to Lorry!"
 msgstr "Willkommen bei Lorry!"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:167
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:167
 msgid "Registered since %registration%"
 msgstr "Registriert seit %registration%"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:182
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:182
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:190
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:190
 #, fuzzy
 msgid "Moderator audit"
 msgstr "Moderator"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:235
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:235
 msgid "Activity"
 msgstr "Aktivität"
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:299
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:299
 msgid "You have not released any addons yet."
 msgstr "Du hast noch keine Erweiterungen veröffentlicht."
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:303
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:303
 msgid "Visit the %developer_portal% to get started."
 msgstr "Besuche das %developer_portal%, um loszulegen."
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:309
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:309
 msgid "This user has not released any addons yet."
 msgstr "Dieser Benutzer hat noch keine Erweiterungen veröffentlicht."
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:313
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:313
 msgid "Learn more at the %developer_portal%."
 msgstr "Erfahre mehr im %developer_portal%."
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:329
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:329
 #, fuzzy
 msgid "You have not written any comment yet."
 msgstr "Du hast noch keine Erweiterungen veröffentlicht."
 
 #: cache/twig/d/9/d9ecf20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:335
-#: cache/twig/d9/ec/f20ff189a0ed772b86614960adb9c4da377a43683e364719653403c84d62.php:335
 #, fuzzy
 msgid "This user has not written any comments yet."
 msgstr "Dieser Benutzer hat noch nichts kommentiert."
 
 #: cache/twig/d/a/dab6cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:27
-#: cache/twig/da/b6/cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:27
 msgid "Action"
 msgstr "Aktion"
 
 #: cache/twig/d/a/dab6cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:35
-#: cache/twig/da/b6/cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:35
 msgid "Executed by"
 msgstr "Ausgeführt von"
 
 #: cache/twig/d/a/dab6cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:64
-#: cache/twig/da/b6/cd87951bea66e865887d40e301366cce5bb3b50d225e347492de9dd696ac.php:64
 msgid "Unknown user"
 msgstr "Unbekannter Benutzer"
 
-#: cache/twig/d5/37/b55c0f0c1a91085c308a67f8141c225a090d57e96784555d714fcb377e32.php:22
-msgid "Hi there %username%,"
-msgstr "Hallo %username%,"
-
-#: cache/twig/d5/37/b55c0f0c1a91085c308a67f8141c225a090d57e96784555d714fcb377e32.php:51
-msgid "No content available."
-msgstr "Kein Inhalt verfügbar"
-
 #: cache/twig/e/1/e1c487997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:52
-#: cache/twig/e1/c4/87997a0d0d310fb9caa27e722f24c793eda3024b2036871fed76b4bfce79.php:52
 msgid "Invalid user"
 msgstr "Ungültiger Benutzer"
 
 #: cache/twig/e/3/e3604afc89825edb449b159a2e43da973de48c5b5c0b7d1a50d1b2468f44ba06.php:37
-#: cache/twig/e3/60/4afc89825edb449b159a2e43da973de48c5b5c0b7d1a50d1b2468f44ba06.php:45
 msgid "Published"
 msgstr "Veröffentlicht"
 
 #: cache/twig/f/6/f6bd65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:31
-#: cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:31
 msgid "Loading dependencies&hellip;"
 msgstr "Lade Abhängigkeiten&hellip;"
 
 #: cache/twig/f/6/f6bd65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:36
-#: cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:36
 msgid "Error loading dependency list."
 msgstr "Fehler beim Laden der Abhängigkeitsliste."
 
 #: cache/twig/f/6/f6bd65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:41
-#: cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:41
 msgid "No dependencies added."
 msgstr "Keine Abhängigkeiten hinzugefügt."
 
 #: cache/twig/f/6/f6bd65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:47
-#: cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:47
 msgid ""
 "Help new players by specifying any other addons required for this release."
 msgstr ""
@@ -3265,26 +2469,24 @@ msgstr ""
 "diesem Release benötigt werden."
 
 #: cache/twig/f/6/f6bd65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:56
-#: cache/twig/f6/bd/65d37861d0221ba84c7233de6b9ee8fd6be2bc7c38c2876444c52f44f14c.php:56
 msgid "Add"
 msgstr "Hinzufügen"
 
 #: cache/twig/f/7/f7f5f4ff8bcdce65e9a04321346f8a82e266bd52097781136a02b5d65c92b13d.php:37
-#: cache/twig/f7/f5/f4ff8bcdce65e9a04321346f8a82e266bd52097781136a02b5d65c92b13d.php:45
 msgid "Duplicate"
 msgstr "Duplikat"
 
-#: src/Environment.php:136
+#: src/Environment.php:151
 msgid "&quot;Clonk&quot; is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: src/Presenter.php:162 src/Presenter/Account/Login.php:142
+#: src/Presenter.php:162 src/Presenter/Account/Login.php:145
 #: src/Presenter/Account/Settings.php:206
 #: src/Presenter/Account/Settings.php:220
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: src/Presenter/Account/Login.php:59
+#: src/Presenter/Account/Login.php:60
 msgid ""
 "Registration successful! We'll send you an email for you to activate your "
 "account."
@@ -3292,27 +2494,27 @@ msgstr ""
 "Registrierung erfolgreich! Wir werden dir eine E-Mail zur Aktivierung deines "
 "Kontos senden."
 
-#: src/Presenter/Account/Login.php:65
+#: src/Presenter/Account/Login.php:66
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: src/Presenter/Account/Login.php:70
+#: src/Presenter/Account/Login.php:71
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: src/Presenter/Account/Login.php:93
+#: src/Presenter/Account/Login.php:96
 msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
-#: src/Presenter/Account/Login.php:95 src/Presenter/User/Edit.php:181
+#: src/Presenter/Account/Login.php:98 src/Presenter/User/Edit.php:181
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
-#: src/Presenter/Account/Login.php:99
+#: src/Presenter/Account/Login.php:102
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: src/Presenter/Account/Login.php:147
+#: src/Presenter/Account/Login.php:150
 msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
@@ -3954,11 +3156,11 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
-#: src/Service/SecurityService.php:111
+#: src/Service/SecurityService.php:114
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: src/Service/SecurityService.php:114
+#: src/Service/SecurityService.php:117
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
@@ -4037,6 +3239,157 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid ""
+#~ "Javascript needs to be activated in order to edit addons and releases."
+#~ msgstr ""
+#~ "Javascript muss aktiviert sein, um Erweiterungen und Releases zu "
+#~ "bearbeiten."
+
+#, fuzzy
+#~ msgid "There are no games available"
+#~ msgstr "Keine Spiele verfügbar"
+
+#~ msgid "Title image"
+#~ msgstr "Titelbild"
+
+#~ msgid "Select"
+#~ msgstr "Auswählen"
+
+#~ msgid "Sitewide intro"
+#~ msgstr "Vorstellungstext"
+
+#~ msgid ""
+#~ "Short intro text, will be used around the site alongside the title image."
+#~ msgstr ""
+#~ "Kurzer Vorstellungstext, wird auf der Seite neben dem Titelbild genutzt."
+
+#~ msgid "Explain the general idea behind this addon."
+#~ msgstr "Erkläre die grundlegende Idee dieser Erweiterung."
+
+#~ msgid "%brand%: Password reset"
+#~ msgstr "%brand%: Password zurücksetzen"
+
+#~ msgid "You (or somebody else) requested a password reset for this account."
+#~ msgstr ""
+#~ "Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dieses Konto "
+#~ "angefordert."
+
+#~ msgid "You (or somebody else) requested a password reset for your account."
+#~ msgstr ""
+#~ "Du (oder jemand anderes) hat eine Passwort-Rücksetzung für dein Konto "
+#~ "angefordert."
+
+#~ msgid "%brand%: Escalated ticket"
+#~ msgstr "%brand%: Eskaliertes Ticket"
+
+#~ msgid "ticket"
+#~ msgstr "Ticket"
+
+#~ msgid "The following %ticket% was escalated by %staffname%:"
+#~ msgstr "Das folgende %ticket% wurde von %staffname% eskaliert:"
+
+#~ msgid "The message was originally sent by %username%."
+#~ msgstr "Die Nachricht wurde ursprünglich von %username% gesendet."
+
+#~ msgid "The message was originally sent by an anonymous user."
+#~ msgstr ""
+#~ "Die Nachricht wurde ursprünglich von einem anonymen Benutzer gesendet."
+
+#~ msgid "this link"
+#~ msgstr "diesen Link"
+
+#~ msgid "%brand%: Confirm your (new) email address"
+#~ msgstr "%brand%: Bestätige deine (neue) E-Mail-Adresse"
+
+#~ msgid "You set your email address to %email%."
+#~ msgstr "Du hast deine E-Mail-Adresse zu %email% geändert."
+
+#~ msgid ""
+#~ "To use all features of %brand% you need to activate this new address."
+#~ msgstr ""
+#~ "Um alle Features von %brand% vollständig nutzen zu können, musst du diese "
+#~ "neue E-Mail-Adresse aktivieren."
+
+#~ msgid ""
+#~ "Please open %this_link% to activate your address; or paste the following "
+#~ "url into your browser:"
+#~ msgstr ""
+#~ "Bitte öffne %this_link% um deine Addresse zu aktivieren; oder füge die "
+#~ "folgende URL in deinen Browser ein:"
+
+#~ msgid "%brand%: One-time login"
+#~ msgstr "%brand%: Einmalige Anmeldung"
+
+#~ msgid "You (or somebody else) requested a one-time login for your account."
+#~ msgstr ""
+#~ "Du (oder jemand anderes) hat eine Einmal-Anmeldung für dein Konto "
+#~ "angefordert."
+
+#~ msgid ""
+#~ "Please open %this_link% access your account; or paste the following url "
+#~ "into your browser:"
+#~ msgstr ""
+#~ "Bitte öffne %this_link% um auf dein Konto zuzugreifen; oder füge die "
+#~ "folgende URL in deinen Browser ein:"
+
+#~ msgid "contact page"
+#~ msgstr "Kontaktseite"
+
+#~ msgid "Welcome to %brand%"
+#~ msgstr "Willkommen bei %brand%"
+
+#~ msgid ""
+#~ "First things first: Please activate your account by opening %this_link%; "
+#~ "or paste the following url into your browser:"
+#~ msgstr ""
+#~ "Das Wichtigste zuerst: Bitte aktivieren dein Konto indem du %this_link% "
+#~ "öffnest; oder füge die folgende URL in deinen  Browser ein:"
+
+#~ msgid ""
+#~ "Now that thats out of the way, thank you for helping us test the "
+#~ "platform. If you'd like to learn more about the project or Clonk visit "
+#~ "the about pages at the bottom of the site."
+#~ msgstr ""
+#~ "Jetzt wo das erledigt ist, danke für deine Hilfe beim Testen der "
+#~ "Plattform. Falls du mehr über das Projekt oder Clonk erfahren möchtest, "
+#~ "besuche einfach die Infoseiten am unteren Rand der Seite."
+
+#~ msgid ""
+#~ "%brand% works a bit differently compared to other download sites. In "
+#~ "order to publish a scenario or pack you first need to create a "
+#~ "corresponding addon. The addons tracks general information, like the "
+#~ "title, an introduction and which game it belongs to. You can then create "
+#~ "a release for the addon, which has a version number, a detailed "
+#~ "description and tracks the actual files. Once you have created a release "
+#~ "you can publish it. When players search for your addon, they will always "
+#~ "be pointed to the latest release."
+#~ msgstr ""
+#~ "%brand% funktioniert etwas anders als andere Downloadseiten. Um ein "
+#~ "Szenario oder Pack zu veröffentlichen, musst du zuerst eine zugehörige "
+#~ "Erweiterung erstellen. Die Erweiterung speichert grundlegende "
+#~ "Informationen, wie den Titel, eine Einführung und zu welchem Spiel sie "
+#~ "gehört. Du kannst dann einen Release für die Erweiterung erstellen, "
+#~ "welcher die Versionsnummer, eine ausführliche Beschreibung und die "
+#~ "eigentlichen Dateien speichert. Nachdem du einen Release erstellt hast, "
+#~ "kannst du ihn veröffentlichen. Wenn Spieler nach deiner Erweiterung "
+#~ "suchen, werden sie immer zum neuesten Release gebracht."
+
+#~ msgid ""
+#~ "You can send us any feedback you have on the %contact_page%. Let's make "
+#~ "%brand% a useful and awesome site."
+#~ msgstr ""
+#~ "Du kannst uns jederzeit Feedback auf der %contact_page% zusenden. Lass "
+#~ "uns %brand% eine nützliche und tolle Seite machen."
+
+#~ msgid "Once again, thank you for testing %brand%!"
+#~ msgstr "Noch einmal, vielen Dank für das Testen von %brand%!"
+
+#~ msgid "Hi there %username%,"
+#~ msgstr "Hallo %username%,"
+
+#~ msgid "No content available."
+#~ msgstr "Kein Inhalt verfügbar"
 
 #~ msgid "Finally we would like to ask you to activate your account."
 #~ msgstr "Zuletzt würden wir dich bitten, dein Konto zu aktivieren."
