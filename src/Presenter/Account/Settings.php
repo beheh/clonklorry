@@ -181,7 +181,7 @@ class Settings extends Presenter
                     try {
                         $flap->limit($user->getId());
 
-                        $args = array('user_id' => $user->getId(), 'address' => $user->getEmail());
+                        $args = array('user_id' => $user->getId());
                         $this->job->submit('Activate', $args);
                         $this->success('contact', gettext('You should receive an email shortly.'));
                     }

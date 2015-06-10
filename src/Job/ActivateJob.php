@@ -12,14 +12,6 @@ class ActivateJob extends UserEmailJob
         return 'Activate';
     }
 
-    public function beforePerform()
-    {
-        if (isset($this->payload['address']) && $this->payload['address'] != $this->getRecipent()) {
-            // user has since changed his address, no need to execute
-            throw new \Exception('job does not need to executed anymore');
-        }
-    }
-
     public function prepareEmail(Email $email, $payload)
     {
         parent::prepareEmail($email, $payload);
@@ -31,8 +23,8 @@ class ActivateJob extends UserEmailJob
         $user = $this->user;
         $expires = time() + 7 * 24 * 60 * 60;
         $address = $this->getRecipent();
-        $hash = $this->security->signActivation($user, $expires, $address);
-        $url = $this->config->get('base').'/users/'.$user->getUsername().'/activate?address='.urlencode($address).'&expires='.$expires.'&hash='.$hash;
+        $hash = $this->security->signActivation($user, $expires);
+        $url = $this->config->get('base').'/users/'.$user->getUsername().'/activate?expires='.$expires.'&hash='.$hash;
         return $url;
     }
 }

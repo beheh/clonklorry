@@ -32,7 +32,6 @@ class Activate extends Presenter
 
         if(!$user->isActivated()) {
             $expires = filter_input(INPUT_GET, 'expires');
-            $address = filter_input(INPUT_GET, 'address');
 
             $hash = filter_input(INPUT_GET, 'hash');
             if (empty($hash)) {
@@ -40,8 +39,7 @@ class Activate extends Presenter
             }
 
             try {
-                $expected = $this->security->signActivation($user, $expires,
-                    $address);
+                $expected = $this->security->signActivation($user, $expires);
             } catch (\InvalidArgumentException $ex) {
                 throw new BadRequestException();
             }
@@ -52,10 +50,6 @@ class Activate extends Presenter
 
             if ($expires < time()) {
                 throw new ForbiddenException('token expired');
-            }
-
-            if ($address != $user->getEmail()) {
-                throw new ForbiddenException('token is for another email address');
             }
 
             $user->activate();

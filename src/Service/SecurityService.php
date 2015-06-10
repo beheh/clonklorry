@@ -121,13 +121,13 @@ class SecurityService extends Service
           } */
     }
 
-    public function signActivation(User $user, $expires, $address)
+    public function signActivation(User $user, $expires)
     {
-        $this->logger->info('attempting to sign activation for user '.$user->getUsername().', expiring at '.date(DATE_W3C,$expires).' with email address "'.$address.'"');
-        if (!$user || !$expires || !$address) {
+        $this->logger->info('attempting to sign activation for user '.$user->getUsername().', expiring at '.date(DATE_W3C,$expires));
+        if (!$user || !$expires) {
             throw new InvalidArgumentException('incomplete activation signing request');
         }
-        return $this->sign($user->getId().':'.intval($expires).':'.$address);
+        return $this->sign($user->getId().':'.intval($expires));
     }
 
     public function signLogin(User $user, $expires, $counter = null, $reset = false)
