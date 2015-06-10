@@ -7,16 +7,16 @@
 {% block body %}
 <p style="margin:0px 0px 10px">{% trans %}Thank you for your registration and your help with testing the platform.{% endtrans %}</p>
 
-<p style="margin:0px 0px 10px">{% trans %}If you'd like to learn more about Clonk or the project simply visit the about pages at the bottom of Lorry.{% endtrans %}</p>
+<p style="margin:0px 0px 10px">{% trans %}If you'd like to learn more about Clonk or the project simply visit the about pages at the bottom of {{brand}}.{% endtrans %}</p>
 
-<p style="margin:0px 0px 10px">{% trans %}You can send us feedback anytime on the contact page. Let's make Lorry a useful and great site.{% endtrans %}</p><br>
+<p style="margin:0px 0px 10px">{% trans %}You can send us feedback anytime on the contact page. Let's make {{brand}} a useful and great site.{% endtrans %}</p><br>
 
-<p style="margin:0px 0px 10px">{% trans %}Finally we would like to ask you to activate your account.{% endtrans %}</p>
+<p style="margin:0px 0px 10px">{% trans %}Finally we would like to ask you to activate your account:{% endtrans %}</p>
 
 {% if not email_plain %}
 <p style="margin:0px 0px 10px">{% include 'email/functions/buttons/success.twig' with {'url' : activation_url, 'message' : 'Activate account'|trans } %}</p>
 {% else %}
-{% trans %}Just paste the following url into your browser:{% endtrans %}
+{% trans %}Just paste the following url into your browser.{% endtrans %}
 
 {{activation_url|raw}}
 {% endif %}

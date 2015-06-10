@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 12:11+0100\n"
-"PO-Revision-Date: 2015-06-10 12:11+0100\n"
+"POT-Creation-Date: 2015-06-10 12:15+0100\n"
+"PO-Revision-Date: 2015-06-10 12:15+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1943,9 +1943,8 @@ msgstr ""
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:57
 #: cache/twig/8/d/8de1420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:52
-#: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:76
 msgid "Just paste the following url into your browser:"
-msgstr "Füge einfach die folgende URL in deinen Browser ein:"
+msgstr "Füge dazu einfach die folgende URL in deinen Browser ein:"
 
 #: cache/twig/7/d/7d68b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:27
 #: cache/twig/7d/68/b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:27
@@ -2589,22 +2588,26 @@ msgstr ""
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:53
 msgid ""
 "If you'd like to learn more about Clonk or the project simply visit the "
-"about pages at the bottom of Lorry."
+"about pages at the bottom of %brand%."
 msgstr ""
-"Falls du mehr über das Projekt oder Clonk erfahren möchtest besuche einfach "
-"die Info-Seiten am unteren Rand der Seite."
+"Falls du mehr über das Projekt oder Clonk erfahren möchtest, besuche einfach "
+"die Info-Seiten am unteren Rand von %brand%."
 
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:58
 msgid ""
-"You can send us feedback anytime on the contact page. Let's make Lorry a "
+"You can send us feedback anytime on the contact page. Let's make %brand% a "
 "useful and great site."
 msgstr ""
 "Du kannst uns jederzeit Feedback auf der Kontaktseite zusenden. Lass uns "
-"Lorry eine nützliche und tolle Seite machen."
+"%brand% eine nützliche und tolle Seite machen."
 
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:63
-msgid "Finally we would like to ask you to activate your account."
-msgstr "Zuletzt würden wir dich bitten, dein Konto zu aktivieren."
+msgid "Finally we would like to ask you to activate your account:"
+msgstr "Zuletzt würden wir dich bitten, dein Konto zu aktivieren:"
+
+#: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:76
+msgid "Just paste the following url into your browser."
+msgstr "Füge dazu einfach die folgende URL in deinen Browser ein."
 
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:89
 msgid "Thanks and have lots of fun,"
@@ -4034,6 +4037,23 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "Finally we would like to ask you to activate your account."
+#~ msgstr "Zuletzt würden wir dich bitten, dein Konto zu aktivieren."
+
+#~ msgid ""
+#~ "If you'd like to learn more about Clonk or the project simply visit the "
+#~ "about pages at the bottom of Lorry."
+#~ msgstr ""
+#~ "Falls du mehr über das Projekt oder Clonk erfahren möchtest besuche "
+#~ "einfach die Info-Seiten am unteren Rand von Lorry."
+
+#~ msgid ""
+#~ "You can send us feedback anytime on the contact page. Let's make Lorry a "
+#~ "useful and great site."
+#~ msgstr ""
+#~ "Du kannst uns jederzeit Feedback auf der Kontaktseite zusenden. Lass uns "
+#~ "Lorry eine nützliche und tolle Seite machen."
 
 #~ msgid "User list"
 #~ msgstr "Benutzerliste"
