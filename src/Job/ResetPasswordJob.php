@@ -22,8 +22,7 @@ class ResetPasswordJob extends UserEmailJob
     {
         $user = $this->user;
         $expires = time() + 10 * 60;
-        $hash = $this->security->signLogin($user, $expires, $user->getCounter(),
-            true);
+        $hash = $this->security->signLogin($user, $expires, $user->getCounter(), true);
         $url = $this->config->get('base').'/login?username='.$user->getUsername().'&expires='.$expires.'&counter='.$user->getCounter().'&reset=1&hash='.$hash;
         return $url;
     }

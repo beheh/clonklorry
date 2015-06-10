@@ -102,7 +102,7 @@ class Register extends Presenter
             $this->manager->persist($user);
             $this->manager->flush();
             $this->session->setFlag('new_user', false);
-            $this->job->submit('Welcome', array('user' => $user->getId()));
+            $this->job->submit('Welcome', array('user_id' => $user->getId()));
             // return user to previous page
             $returnto = filter_input(INPUT_GET, 'returnto');
             if ($oauth) {

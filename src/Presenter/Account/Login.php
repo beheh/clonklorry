@@ -91,7 +91,7 @@ class Login extends Presenter
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $user = $userRepository->findOneBy(array('email' => $email));
             if ($user) {
-                if ($this->job->submit('ResetPassword', array('user' => $user->getId()))) {
+                if ($this->job->submit('ResetPassword', array('user_id' => $user->getId()))) {
                     $this->success('email', gettext('You should receive an email shortly.'));
                 } else {
                     $this->error('email', gettext('Error sending the email.'));
