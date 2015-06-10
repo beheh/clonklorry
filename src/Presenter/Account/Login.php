@@ -190,7 +190,7 @@ class Login extends Presenter
         }
 
         $user->incrementCounter();
-        $user->save();
+        $this->manager->flush();
 
         $this->session->start($user, false, false);
 
