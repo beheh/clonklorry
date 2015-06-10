@@ -3,12 +3,18 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
+use Lorry\ModificationListener;
 use Lorry\Validator\UserValidator;
 use Lorry\Exception\ValidationException;
-use Lorry\ModificationListener;
+use Lorry\Exception\TooManyRequestsException;
 
 class Settings extends Presenter
 {
+    /**
+     * @Inject
+     * @var \BehEh\Flaps\Flaps
+     */
+    private $flaps;
 
     public function get()
     {
@@ -147,17 +153,43 @@ class Settings extends Presenter
             if ($email && $email !== $previousEmail && count($userRepository->findBy(array('email' => $email))) > 0) {
                 $userValidator->fail('Email address is already in use.');
             }
+            
+            $resend = !!isset($_POST['resend']);
 
             try {
                 $userValidator->validate($user);
+                $changed = false;
                 if ($modificationListener->isNotified()) {
+                    $changed = true;
                     $this->manager->flush();
-                    if ($user->isActivated()) {
-                        $this->success('contact', gettext('Contact details were changed.'));
-                    } else {
-                        $this->warning('contact', gettext('Contact details were changed. Please still activate your account.'));
-                        // @todo send activation email if not activated
+                    if(!$resend) {
+                        if ($user->isActivated()) {
+                            $this->success('contact', gettext('Contact details were changed.'));
+                        } else {
+                            $resend = true;
+                        }
                     }
+                }
+
+                if($resend && !$user->isActivated()) {
+                    $flap = $this->flaps->getFlap('activation');
+                    $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(2, '60s'));
+                    try {
+                        $flap->limit($user->getId());
+
+                        $args = array('user_id' => $user->getId(), 'address' => $user->getEmail());
+                        $this->job->submit('Activate', $args);
+                        $this->success('contact', gettext('You should receive an email shortly.'));
+                    }
+                    catch(TooManyRequestsException $ex) {
+                        if($changed) {
+                            $this->warning('contact', gettext('Your contact details were changed, but you already requested an email a short while ago.'));
+                        }
+                        else {
+                            $this->error('contact', gettext('You already requested an email a short while ago.'));
+                        }
+                    }
+
                 }
             } catch (ValidationException $ex) {
                 $this->manager->refresh($user);

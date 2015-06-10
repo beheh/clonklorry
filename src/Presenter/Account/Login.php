@@ -3,7 +3,6 @@
 namespace Lorry\Presenter\Account;
 
 use Lorry\Presenter;
-use Lorry\Exception;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\BadRequestException;
 use Lorry\Exception\TooManyRequestsException;

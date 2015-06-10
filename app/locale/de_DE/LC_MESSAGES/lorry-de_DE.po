@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 20:37+0100\n"
-"PO-Revision-Date: 2015-06-10 20:39+0100\n"
+"POT-Creation-Date: 2015-06-10 20:52+0100\n"
+"PO-Revision-Date: 2015-06-10 20:52+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2479,13 +2479,13 @@ msgstr "Duplikat"
 msgid "&quot;Clonk&quot; is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: src/Presenter.php:162 src/Presenter/Account/Login.php:157
-#: src/Presenter/Account/Settings.php:206
-#: src/Presenter/Account/Settings.php:220
+#: src/Presenter.php:162 src/Presenter/Account/Login.php:156
+#: src/Presenter/Account/Settings.php:238
+#: src/Presenter/Account/Settings.php:252
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
-#: src/Presenter/Account/Login.php:61
+#: src/Presenter/Account/Login.php:60
 msgid ""
 "Registration successful! We'll send you an email for you to activate your "
 "account."
@@ -2493,33 +2493,33 @@ msgstr ""
 "Registrierung erfolgreich! Wir werden dir eine E-Mail zur Aktivierung deines "
 "Kontos senden."
 
-#: src/Presenter/Account/Login.php:67
+#: src/Presenter/Account/Login.php:66
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: src/Presenter/Account/Login.php:72
+#: src/Presenter/Account/Login.php:71
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: src/Presenter/Account/Login.php:104
+#: src/Presenter/Account/Login.php:103 src/Presenter/Account/Settings.php:182
 msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
-#: src/Presenter/Account/Login.php:106 src/Presenter/User/Edit.php:181
+#: src/Presenter/Account/Login.php:105 src/Presenter/User/Edit.php:181
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
-#: src/Presenter/Account/Login.php:110
+#: src/Presenter/Account/Login.php:109
 msgid "You requested an email to reset your password a short while ago."
 msgstr ""
 "Du hast bereits vor Kurzem eine E-Mail zum Zurücksetzen deines Passworts "
 "angefordert."
 
-#: src/Presenter/Account/Login.php:114
+#: src/Presenter/Account/Login.php:113
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: src/Presenter/Account/Login.php:162
+#: src/Presenter/Account/Login.php:161
 msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
@@ -2539,68 +2539,76 @@ msgstr "Passwörter stimmen nicht überein."
 msgid "Password too short."
 msgstr "Passwort zu kurz."
 
-#: src/Presenter/Account/Settings.php:26
+#: src/Presenter/Account/Settings.php:32
 msgid "Connected with login service."
 msgstr "Mit Anmeldedienst verbunden."
 
-#: src/Presenter/Account/Settings.php:29
+#: src/Presenter/Account/Settings.php:35
 msgid "Login service is already linked to another account."
 msgstr "Anmeldedienst bereits mit anderem Konto verknüpft."
 
-#: src/Presenter/Account/Settings.php:32
+#: src/Presenter/Account/Settings.php:38
 msgid "Authentification with login service failed."
 msgstr "Authentifizierung mit Anmeldedienst ist fehlgeschlagen."
 
-#: src/Presenter/Account/Settings.php:51
+#: src/Presenter/Account/Settings.php:57
 msgid "Removed login service."
 msgstr "Anmeldedienst entfernt."
 
-#: src/Presenter/Account/Settings.php:112
+#: src/Presenter/Account/Settings.php:118
 msgid "Clonk Forge profile url invalid."
 msgstr "Clonk Forge Profil-URL ungültig."
 
-#: src/Presenter/Account/Settings.php:134
+#: src/Presenter/Account/Settings.php:140
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: src/Presenter/Account/Settings.php:156 src/Presenter/User/Edit.php:123
+#: src/Presenter/Account/Settings.php:167 src/Presenter/User/Edit.php:123
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: src/Presenter/Account/Settings.php:158
-msgid "Contact details were changed. Please still activate your account."
-msgstr "Kontaktdaten wurden geändert. Bitte aktiviere dein Konto."
+#: src/Presenter/Account/Settings.php:186
+msgid ""
+"Your contact details were changed, but you already requested an email a "
+"short while ago."
+msgstr ""
+"Deine Kontaktdaten wurden geändert, du hast jedoch bereits vor Kurzem eine E-"
+"Mail angefordert."
 
-#: src/Presenter/Account/Settings.php:174
+#: src/Presenter/Account/Settings.php:189
+msgid "You already requested an email a short while ago."
+msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
+
+#: src/Presenter/Account/Settings.php:206
 msgid "Language is invalid."
 msgstr "Sprache ist ungültig."
 
-#: src/Presenter/Account/Settings.php:195
+#: src/Presenter/Account/Settings.php:227
 msgid "Okay. We'll send you one final email to confirm."
 msgstr "In Ordnung. Wir senden dir eine letzte E-Mail zur Bestätigung."
 
-#: src/Presenter/Account/Settings.php:209
+#: src/Presenter/Account/Settings.php:241
 #: src/Presenter/Publish/Release.php:199
 msgid "Confirmation required."
 msgstr "Bestätigung erforderlich."
 
-#: src/Presenter/Account/Settings.php:225
+#: src/Presenter/Account/Settings.php:257
 msgid "New passwords do not match."
 msgstr "Neue Passwörter stimmen nicht überein."
 
-#: src/Presenter/Account/Settings.php:230
+#: src/Presenter/Account/Settings.php:262
 msgid "New password too short."
 msgstr "Neues Passwort zu kurz."
 
-#: src/Presenter/Account/Settings.php:245
+#: src/Presenter/Account/Settings.php:277
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: src/Presenter/Account/Settings.php:247
+#: src/Presenter/Account/Settings.php:279
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: src/Presenter/Account/Settings.php:262
+#: src/Presenter/Account/Settings.php:294
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 
@@ -3244,6 +3252,17 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid ""
+#~ "Your contact details were changed, but you already requested an "
+#~ "activation email a short while ago."
+#~ msgstr "Deine Kontaktdaten wurden geändert, du hast jedoch vor Kruzem b"
+
+#~ msgid "You should receive a new activation email shortly."
+#~ msgstr "Du solltest in Kürze eine neue E-Mail erhalten."
+
+#~ msgid "Contact details were changed. Please still activate your account."
+#~ msgstr "Kontaktdaten wurden geändert. Bitte aktiviere dein Konto."
 
 #~ msgid "%brand%: Activate your account"
 #~ msgstr "%brand%: Aktiviere dein Konto"
