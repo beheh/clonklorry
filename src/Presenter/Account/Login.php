@@ -95,10 +95,10 @@ class Login extends Presenter
             if ($user) {
                 
                 $resetFlap = $flaps->getFlap('resetPassword');
-                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(1, '60s'));
-                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(5, '1h'));
+                $resetFlap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(1, '60s'));
+                $resetFlap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(5, '1h'));
                 try {
-                    $flap->limit($user->getId());
+                    $resetFlap->limit($user->getId());
                 }
                 catch(TooManyRequestsException $ex) {
                     $this->error('email', gettext('You requested an email to reset your password a short while ago.'));
