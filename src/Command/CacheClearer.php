@@ -29,7 +29,7 @@ class CacheClearer extends Command
         catch(\UnexpectedValueException $ex) {
             $output->write('<warning>Non-critical error clearing Twig cache: '.$ex->getMessage().'</warning>');
         }
-        $container->get('Doctrine\Common\Cache\Cache')->deleteAll();
+        $container->get('Doctrine\Common\Cache\Cache')->flushAll();
         $output->writeln('Cleared cache');
     }
 }
