@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 20:52+0100\n"
-"PO-Revision-Date: 2015-06-10 20:52+0100\n"
+"POT-Creation-Date: 2015-06-10 21:01+0100\n"
+"PO-Revision-Date: 2015-06-10 21:01+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1489,6 +1489,10 @@ msgstr "Füge dazu einfach die folgende URL in deinen Browser ein:"
 msgid "Otherwise simply ignore this email."
 msgstr "Andernfalls ignoriere diese E-Mail einfach."
 
+#: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:72
+msgid "Please note: this link is only valid for a short period of time."
+msgstr "Bitte beachte: Dieser Link ist nur für eine kurze Zeit gültig."
+
 #: cache/twig/7/d/7d68b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:27
 msgid "%username%'s moderations"
 msgstr ""
@@ -2509,11 +2513,9 @@ msgstr "Du solltest in Kürze eine E-Mail erhalten."
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
-#: src/Presenter/Account/Login.php:109
-msgid "You requested an email to reset your password a short while ago."
-msgstr ""
-"Du hast bereits vor Kurzem eine E-Mail zum Zurücksetzen deines Passworts "
-"angefordert."
+#: src/Presenter/Account/Login.php:109 src/Presenter/Account/Settings.php:189
+msgid "You already requested an email a short while ago."
+msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
 
 #: src/Presenter/Account/Login.php:113
 msgid "Email address unknown."
@@ -2574,10 +2576,6 @@ msgid ""
 msgstr ""
 "Deine Kontaktdaten wurden geändert, du hast jedoch bereits vor Kurzem eine E-"
 "Mail angefordert."
-
-#: src/Presenter/Account/Settings.php:189
-msgid "You already requested an email a short while ago."
-msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
 
 #: src/Presenter/Account/Settings.php:206
 msgid "Language is invalid."
@@ -3252,6 +3250,11 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "You requested an email to reset your password a short while ago."
+#~ msgstr ""
+#~ "Du hast bereits vor Kurzem eine E-Mail zum Zurücksetzen deines Passworts "
+#~ "angefordert."
 
 #~ msgid ""
 #~ "Your contact details were changed, but you already requested an "
