@@ -9,6 +9,7 @@ use Twig_Environment;
 
 abstract class Email
 {
+
     /**
      *
      * @var \Lorry\Service\ConfigService
@@ -19,6 +20,7 @@ abstract class Email
     {
         $this->config = $config;
     }
+
     /**
      *
      * @var \Lorry\Service\LocalisationService
@@ -29,6 +31,7 @@ abstract class Email
     {
         $this->localisation = $localisation;
     }
+
     /**
      *
      * @var \Lorry\Service\SecurityService
@@ -39,6 +42,7 @@ abstract class Email
     {
         $this->security = $security;
     }
+
     /**
      *
      * @var \Twig_Environment;
@@ -49,6 +53,7 @@ abstract class Email
     {
         $this->twig = $twig;
     }
+
     private $recipent;
 
     public function setRecipent($recipent)
@@ -60,6 +65,7 @@ abstract class Email
     {
         return $this->recipent;
     }
+
     private $replyto;
 
     public function setReplyTo($replyto)
@@ -76,41 +82,46 @@ abstract class Email
     {
         $this->context['username'] = $username;
     }
+
     protected $context = array();
 
     abstract protected function write();
-    
+
     private $subject;
 
     public function getSubject()
     {
+        $this->write();
         return $this->subject;
     }
+
     private $message;
     private $plain;
 
-    public function getPlainMessage() {
+    public function getPlainMessage()
+    {
         $this->plain = true;
         $this->write();
+        return $this->message;
     }
 
     public function getMessage()
     {
         $this->plain = false;
         $this->write();
+        return $this->message;
     }
 
     protected function render($name)
     {
         $template = $this->twig->loadTemplate('email/'.$name);
         $context = array();
-        if($this->plain) {
+        if ($this->plain) {
             $context = array('email_plain' => true);
         }
-        $context = array_merge(array('brand' => $this->config->get('brand')),
-                $context, $this->context);
-        $this->subject = $template->renderBlock('subject',
-            $context);
+        $context = array_merge(array('brand' => $this->config->get('brand')), $context, $this->context);
+        $this->subject = $template->renderBlock('subject', $context);
         $this->message = $template->render($this->context);
     }
+
 }
