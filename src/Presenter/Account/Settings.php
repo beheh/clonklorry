@@ -109,7 +109,7 @@ class Settings extends Presenter
 
                 $scanned = sscanf($clonkforgeUrl, $this->config->get('clonkforge/url'));
                 if (count($scanned) != 1 || empty($scanned[0])) {
-                    $userValidator->fail(gettext('Clonk Forge profile url is invalid.'));
+                    $userValidator->fail(gettext('Clonk Forge profile url invalid.'));
                 } else {
                     $user->setClonkforgeId($scanned[0]);
                 }
