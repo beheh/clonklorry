@@ -155,7 +155,7 @@ class Login extends Presenter
     public function attemptTokenLogin()
     {
         $username = filter_input(INPUT_GET, 'username');
-        $user = $this->persistence->build('User')->byUsername($username);
+        $user = $this->manager->getRepository('Lorry\Model\User')->findOneBy(array('username' => $username));
         if (!$user) {
             throw new FileNotFoundException('user '.$username);
         }
