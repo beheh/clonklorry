@@ -16,7 +16,7 @@ class ActivateJob extends UserEmailJob
     {
         if (isset($this->payload['address']) && $this->payload['address'] != $this->getRecipent()) {
             // user has since changed his address, no need to execute
-            throw new \Resque_Job_DontPerform;
+            throw new \Exception('job does not need to executed anymore');
         }
     }
 

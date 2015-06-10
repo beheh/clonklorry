@@ -4,12 +4,12 @@ namespace Lorry\Job;
 
 use Lorry\Email;
 
-class LoginByEmailJob extends UserEmailJob
+class ResetPasswordJob extends UserEmailJob
 {
 
     public function getEmail()
     {
-        return 'Login';
+        return 'Password';
     }
 
     public function prepareEmail(Email $email, $args)

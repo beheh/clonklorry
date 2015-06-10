@@ -83,13 +83,15 @@ class Login extends Presenter
             '60s'));
         $flap->limit($_SERVER['REMOTE_ADDR']);
 
+        $userRepository = $this->manager->getRepository('Lorry\Model\User');
+
         if (isset($_POST['email-submit'])) {
             // login by email token
             $this->context['email_focus'] = true;
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $user = $this->persistence->build('User')->byEmail($email);
+            $user = $userRepository->findOneBy(array('email' => $email));
             if ($user) {
-                if ($this->job->submit('LoginByEmail', array('user' => $user->getId(), 'reset' => true))) {
+                if ($this->job->submit('ResetPassword', array('user' => $user->getId()))) {
                     $this->success('email', gettext('You should receive an email shortly.'));
                 } else {
                     $this->error('email', gettext('Error sending the email.'));
@@ -108,11 +110,11 @@ class Login extends Presenter
             $this->context['username'] = $username;
             // set remember checkmark to persist after post
             $this->context['remember'] = $remember;
-            $users = $this->manager->getRepository('Lorry\Model\User');
-            $user = $users->findOneBy(array('username' => $username));
+
+            $user = $userRepository->findOneBy(array('username' => $username));
             if (!$user) {
                 // try email address instead
-               $user = $users->findOneBy(array('email' => $username));
+               $user = $userRepository->findOneBy(array('email' => $username));
                 if ($user) {
                     $this->context['email'] = $username;
                 }
