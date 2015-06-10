@@ -20,16 +20,16 @@ class TicketValidator extends Validator
     public function validateSubject($subject)
     {
         $this->validateStringLength($subject, 3, 72, array(
-            'tooShort' => gettext('Subject is too short.'),
-            'tooLong' => gettext('Subject is too long.')
+            'tooShort' => gettext('Subject too short.'),
+            'tooLong' => gettext('Subject too long.')
         ));
     }
 
     public function validateMessage($message)
     {
         $this->validateStringLength($message, 10, 2048, array(
-            'tooShort' => gettext('Subject is too short.'),
-            'tooLong' => gettext('Subject is too long.')
+            'tooShort' => gettext('Message too short.'),
+            'tooLong' => gettext('Message too long.')
         ));
     }
 }

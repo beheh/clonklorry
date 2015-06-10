@@ -6,7 +6,6 @@ use Resque\AbstractJob;
 
 /**
  * @property \Lorry\Service\ConfigService $config
- * @property \Lorry\Service\PersistenceService $persistence
  * @property \Lorry\Service\LocalisationService $localisation
  * @property \Lorry\Service\MailService $mail
  * @property \Lorry\Service\JobService $job
@@ -15,7 +14,7 @@ use Resque\AbstractJob;
  * @property \Lorry\Service\FileService $file
  * @property \Lorry\Router $router
  * @property \Lorry\TemplateEngineInterface $twig
- *
+ * @property \Doctrine\Common\Persistence\ObjectManager $manager
  */
 abstract class Job extends AbstractJob
 {

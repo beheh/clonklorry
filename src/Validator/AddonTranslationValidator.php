@@ -19,9 +19,9 @@ class AddonTranslationValidator extends Validator
     protected function validateTitle($title)
     {
         $this->validateStringLength($title, 4, 64, array(
-            'tooShort' => gettext('Title is too short.'),
-            'tooLong' => gettext('Title is too long.'),
+            'tooShort' => gettext('Title too short.'),
+            'tooLong' => gettext('Title too long.'),
         ));
-        $this->validateStringPattern($title, '/^[\w\s:.]*$/', gettext('Title is invalid.'));
+        $this->validateStringPattern($title, '/^[\w\s:.]*$/', gettext('Title invalid.'));
     }
 }

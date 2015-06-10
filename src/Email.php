@@ -79,6 +79,7 @@ abstract class Email
     protected $context = array();
 
     abstract protected function write();
+    
     private $subject;
 
     public function getSubject()
@@ -88,16 +89,17 @@ abstract class Email
     private $message;
     private $plain;
 
-    public function getPlainMessage()
-    {
+    public function getPlainMessage() {
         $this->plain = true;
         $this->write();
+        return $this->message;
     }
 
     public function getMessage()
     {
         $this->plain = false;
         $this->write();
+        return $this->message;
     }
 
     protected function render($name)

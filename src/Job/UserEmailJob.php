@@ -18,10 +18,9 @@ abstract class UserEmailJob extends EmailJob
 
     public function prepareEmail(Email $email, $args)
     {
-        $user = $this->persistence->build('User')->byId($args['user']);
-        $this->user = $user;
-        $this->localisation->silentLocalize($user->getLanguage());
-        $email->setUser($user);
+        $this->user = $this->manager->getRepository('Lorry\Model\User')->find($args['user']);
+        $this->localisation->silentLocalize($this->user->getLanguage());
+        $email->setUser($this->user);
         parent::prepareEmail($email, $args);
     }
 }
