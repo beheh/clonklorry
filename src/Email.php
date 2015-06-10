@@ -92,7 +92,7 @@ abstract class Email
     public function getPlainMessage() {
         $this->plain = true;
         $this->write();
-        return $this->message;
+        return strip_tags($this->message);
     }
 
     public function getMessage()
