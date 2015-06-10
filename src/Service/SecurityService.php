@@ -2,6 +2,7 @@
 
 namespace Lorry\Service;
 
+use Lorry\Service;
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
@@ -11,7 +12,7 @@ use \InvalidArgumentException;
 use Lorry\Model\User;
 use Lorry\Model\UserModeration;
 
-class SecurityService
+class SecurityService extends Service
 {
     /**
      *
@@ -120,15 +121,17 @@ class SecurityService
 
     public function signActivation(User $user, $expires, $address)
     {
+        $this->logger->info('attempting to sign activation for user '.$user->getUsername().', expiring at '.date(DATE_W3C,$expires).' with email address "'.$address.'"');
         if (!$user || !$expires || !$address) {
             throw new InvalidArgumentException('incomplete activation signing request');
         }
         return $this->sign($user->getId().':'.intval($expires).':'.$address);
     }
 
-    public function signLogin(User $user, $expires, $counter, $reset = false)
+    public function signLogin(User $user, $expires, $counter = null, $reset = false)
     {
-        if (!$user || !$expires || !$counter) {
+        $this->logger->info('attempting to sign login for user '.$user->getUsername().', expiring at '.date(DATE_W3C, $expires).' with counter '.$counter);
+        if (!$user || !$expires || $counter === null) {
             throw new InvalidArgumentException('incomplete login signing request');
         }
         return $this->sign($user->getId().':'.intval($expires).':'.intval($counter).':'.intval($reset));
