@@ -45,7 +45,7 @@ class Activate extends Presenter
         }
 
         $user->activate();
-        $user->save();
+        $this->manager->flush();
 
         if ($this->session->authenticated()) {
             $this->redirect('/settings');
