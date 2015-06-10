@@ -10,7 +10,7 @@ try {
     header('HTTP/1.1 500 Internal Server Error');
     header('Content-Type: text/plain');
 
-    echo 'An internal error occured: '.get_class($e).PHP_EOL.PHP_EOL;
+    echo 'A critical internal error occured: '.get_class($e).PHP_EOL.PHP_EOL;
     if ($e->getMessage()) {
         echo 'Message: '.$e->getMessage().PHP_EOL.PHP_EOL;
     }
