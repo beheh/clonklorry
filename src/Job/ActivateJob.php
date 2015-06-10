@@ -29,7 +29,7 @@ class ActivateJob extends UserEmailJob
     public function getActivationUrl()
     {
         $user = $this->user;
-        $expires = time() + 10 * 60;
+        $expires = time() + 7 * 24 * 60 * 60;
         $address = $this->getRecipent();
         $hash = $this->security->signActivation($user, $expires, $address);
         $url = $this->config->get('base').'/users/'.$user->getUsername().'/activate?address='.urlencode($address).'&expires='.$expires.'&hash='.$hash;
