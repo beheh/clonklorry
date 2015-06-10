@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2015-06-10 20:20+0100\n"
-"PO-Revision-Date: 2015-06-10 20:21+0100\n"
+"PO-Revision-Date: 2015-06-10 20:23+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1487,7 +1487,7 @@ msgstr "Füge dazu einfach die folgende URL in deinen Browser ein:"
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:70
 msgid "Otherwise simply ignore this email."
-msgstr "Andernfalls ignoriere einfach diese E-Mail."
+msgstr "Andernfalls ignoriere diese E-Mail einfach."
 
 #: cache/twig/7/d/7d68b69c6a205fb964bdffaa222c7be2cd0b571cc26f2cdf227a41762f3f27ae.php:27
 msgid "%username%'s moderations"
