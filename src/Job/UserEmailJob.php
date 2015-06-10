@@ -21,7 +21,7 @@ abstract class UserEmailJob extends EmailJob
         $user = $this->persistence->build('User')->byId($args['user']);
         $this->user = $user;
         $this->localisation->silentLocalize($user->getLanguage());
-        $email->setUsername($user->getUsername());
+        $email->setUser($user);
         parent::prepareEmail($email, $args);
     }
 }

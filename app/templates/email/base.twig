@@ -1,4 +1,5 @@
 {% set username = user.username%}
+{% if not email_plain %}
 <!doctype html>
 <html>
     <head>
@@ -7,7 +8,6 @@
     </head>
     <body style="margin:0;padding:0">
 	<div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857">
-        {% if not email_plain %}
         <div style="width:100%; background-color:#222;height:49px;border:1px solid transparent;border-color:#080808;margin-bottom:0px">
             <a href="{{base}}" style="color:#777;text-decoration:none;font-size:18px;line-height:20px;padding:15px;margin:0;float:left">
                 <span style="display:inline-block;vertical-align:text-top;margin-right:2px"><table style="width:24px;height:18px;border-collapse:collapse">
@@ -21,13 +21,15 @@
                 <strong style="display:inline-block">{{brand}}</strong>
             </a>
         </div>
-        {% endif %}
 
         <div style="padding: 20px 15px">
-            {% block greetings %}<p style="margin:0px 0px 10px">{% if username %}{% trans %}Hi {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}</p>{% endblock %}
+{% endif %}
+            {% block greetings %}{% if not email_plain %}<p style="margin:0px 0px 10px">{% endif %}{% if username %}{% trans %}Hi {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}{% if not email_plain %}</p>{% endif %}{% endblock %}
 
             {% block body %}{% endblock %}
+{% if not email_plain %}
         </div>
 	</div>
     </body>
 </html>
+{% endif %}

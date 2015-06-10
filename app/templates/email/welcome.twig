@@ -1,8 +1,6 @@
 {% extends 'email/base.twig' %}
 
-{% block subject %}{% trans %}Welcome to {{brand}}{% endtrans %}{% endblock %}
-
-{% set username %}{{user.username}}{% endset %}
+{% block subject %}{% trans %}Welcome to {{brand}}!{% endtrans %}{% endblock %}
 
 {% block greetings %}<p style="margin:0px 0px 10px">{% trans %}Hi {{username}} and welcome to {{brand}}!{% endtrans %}</p><br>{% endblock %}
     
