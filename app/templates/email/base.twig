@@ -24,7 +24,7 @@
 
         <div style="padding: 20px 15px">
 {% endif %}
-            {% block greetings %}{% if not email_plain %}<p style="margin:0px 0px 10px">{% endif %}{% if username %}{% trans %}Hi {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}{% if not email_plain %}</p>{% endif %}{% endblock %}
+            {% block greetings %}{% if not email_plain %}<p style="margin:0px 0px 10px">{% endif %}{% if username %}{% trans %}Hi {{username}},{% endtrans %}{% else %}{% trans %}Hi there,{% endtrans %}{% endif %}{% if not email_plain %}</p>{% endif %}<br>{% endblock %}
 
             {% block body %}{% endblock %}
 {% if not email_plain %}

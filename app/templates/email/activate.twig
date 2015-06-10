@@ -1,9 +1,9 @@
 {% extends 'email/base.twig' %}
 
-{% block subject %}{% trans %}{{brand}}: Activate your account{% endtrans %}{% endblock %}
+{% block subject %}{% trans %}Activate your {{brand}} account{% endtrans %}{% endblock %}
 
 {% block body %}
-<p style="margin:0px 0px 10px">{% trans %}In order to use all features of {{brand}} you need to activate this new account.{% endtrans %}<br>
+<p style="margin:0px 0px 10px">{% trans %}In order to use all features of {{brand}} you need to activate your account.{% endtrans %}<br>
 
 {% if not email_plain %}
 <p style="margin:0px 0px 10px">{% include 'email/functions/buttons/success.twig' with {'url' : activation_url, 'message' : 'Activate account'|trans } %}</p>

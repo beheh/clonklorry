@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 20:30+0100\n"
-"PO-Revision-Date: 2015-06-10 20:30+0100\n"
+"POT-Creation-Date: 2015-06-10 20:37+0100\n"
+"PO-Revision-Date: 2015-06-10 20:39+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -1797,16 +1797,15 @@ msgstr ""
 "verifizieren. Bitte füge ein sicheres Passwort hinzu, um fortzufahren."
 
 #: cache/twig/8/d/8de1420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:31
-msgid "%brand%: Activate your account"
-msgstr "%brand%: Aktiviere dein Konto"
+msgid "Activate your %brand% account"
+msgstr "Aktiviere dein %brand%-Konto"
 
 #: cache/twig/8/d/8de1420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:39
 msgid ""
-"In order to use all features of %brand% you need to activate this new "
-"account."
+"In order to use all features of %brand% you need to activate your account."
 msgstr ""
-"Um alle Features von %brand% vollständig nutzen zu können musst du dieses "
-"neue Konto aktivieren."
+"Um alle Features von %brand% nutzen zu können, musst du dein Konto "
+"aktivieren."
 
 #: cache/twig/8/d/8de1420976cfabbd5fdffdb0db9f0b9af07b82d87b4deaaf61fdfa044074ece2.php:47
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:71
@@ -2503,18 +2502,18 @@ msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
 #: src/Presenter/Account/Login.php:104
+msgid "You should receive an email shortly."
+msgstr "Du solltest in Kürze eine E-Mail erhalten."
+
+#: src/Presenter/Account/Login.php:106 src/Presenter/User/Edit.php:181
+msgid "Error sending the email."
+msgstr "Fehler beim Senden der E-Mail."
+
+#: src/Presenter/Account/Login.php:110
 msgid "You requested an email to reset your password a short while ago."
 msgstr ""
 "Du hast bereits vor Kurzem eine E-Mail zum Zurücksetzen deines Passworts "
 "angefordert."
-
-#: src/Presenter/Account/Login.php:108
-msgid "You should receive an email shortly."
-msgstr "Du solltest in Kürze eine E-Mail erhalten."
-
-#: src/Presenter/Account/Login.php:110 src/Presenter/User/Edit.php:181
-msgid "Error sending the email."
-msgstr "Fehler beim Senden der E-Mail."
 
 #: src/Presenter/Account/Login.php:114
 msgid "Email address unknown."
@@ -3245,6 +3244,16 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "%brand%: Activate your account"
+#~ msgstr "%brand%: Aktiviere dein Konto"
+
+#~ msgid ""
+#~ "In order to use all features of %brand% you need to activate this new "
+#~ "account."
+#~ msgstr ""
+#~ "Um alle Features von %brand% vollständig nutzen zu können musst du dieses "
+#~ "neue Konto aktivieren."
 
 #~ msgid "You have just requested an email to reset your password."
 #~ msgstr ""
