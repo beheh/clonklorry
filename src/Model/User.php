@@ -299,7 +299,7 @@ class User extends Model
 
     public function getCounter()
     {
-        $this->counter;
+        return $this->counter;
     }
 
     public function incrementCounter()
