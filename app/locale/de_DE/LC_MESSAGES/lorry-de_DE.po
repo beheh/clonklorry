@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
 "POT-Creation-Date: 2015-06-10 12:15+0100\n"
-"PO-Revision-Date: 2015-06-10 12:15+0100\n"
+"PO-Revision-Date: 2015-06-10 12:16+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2603,7 +2603,7 @@ msgstr ""
 
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:63
 msgid "Finally we would like to ask you to activate your account:"
-msgstr "Zuletzt würden wir dich bitten, dein Konto zu aktivieren:"
+msgstr "Zuletzt würden wir dich noch bitten, dein Konto zu aktivieren:"
 
 #: cache/twig/a/e/ae48c06fdac73aa8cf4793cd3f8463c866b7204904f744cbeb3f521cabd42483.php:76
 msgid "Just paste the following url into your browser."
