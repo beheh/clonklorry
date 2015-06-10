@@ -48,9 +48,9 @@ class Activate extends Presenter
         $this->manager->flush();
 
         if ($this->session->authenticated()) {
-            $this->redirect('/settings');
+            $this->redirect('/settings?activated#contact');
         } else {
-            $this->redirect('/login?returnto=/settings');
+            $this->redirect('/login?returnto='.urlencode('/settings?activated#contact'));
         }
     }
 }

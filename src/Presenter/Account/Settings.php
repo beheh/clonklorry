@@ -79,6 +79,10 @@ class Settings extends Presenter
             $this->context['email'] = $user->getEmail();
         }
         $this->context['activated'] = $user->isActivated();
+        
+        if(isset($_GET['activated']) && !$this->hasAlert('contact') && $user->isActivated()) {
+            $this->success('contact', gettext('Your account was activated.'));
+        }
 
         $this->context['language'] = $this->localisation->getDisplayLanguage();
 

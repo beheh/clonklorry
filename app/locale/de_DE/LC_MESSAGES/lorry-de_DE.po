@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 21:01+0100\n"
-"PO-Revision-Date: 2015-06-10 21:01+0100\n"
+"POT-Creation-Date: 2015-06-10 22:43+0100\n"
+"PO-Revision-Date: 2015-06-10 22:43+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2484,8 +2484,8 @@ msgid "&quot;Clonk&quot; is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
 #: src/Presenter.php:162 src/Presenter/Account/Login.php:156
-#: src/Presenter/Account/Settings.php:238
-#: src/Presenter/Account/Settings.php:252
+#: src/Presenter/Account/Settings.php:242
+#: src/Presenter/Account/Settings.php:256
 msgid "Password wrong."
 msgstr "Passwort falsch."
 
@@ -2505,7 +2505,7 @@ msgstr "Melde dich an, um diesen Dienst zu verwenden."
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: src/Presenter/Account/Login.php:103 src/Presenter/Account/Settings.php:182
+#: src/Presenter/Account/Login.php:103 src/Presenter/Account/Settings.php:186
 msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
@@ -2513,7 +2513,7 @@ msgstr "Du solltest in Kürze eine E-Mail erhalten."
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
-#: src/Presenter/Account/Login.php:109 src/Presenter/Account/Settings.php:189
+#: src/Presenter/Account/Login.php:109 src/Presenter/Account/Settings.php:193
 msgid "You already requested an email a short while ago."
 msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
 
@@ -2557,19 +2557,23 @@ msgstr "Authentifizierung mit Anmeldedienst ist fehlgeschlagen."
 msgid "Removed login service."
 msgstr "Anmeldedienst entfernt."
 
-#: src/Presenter/Account/Settings.php:118
+#: src/Presenter/Account/Settings.php:84
+msgid "Your account was activated."
+msgstr "Dein Konto wurde aktiviert."
+
+#: src/Presenter/Account/Settings.php:122
 msgid "Clonk Forge profile url invalid."
 msgstr "Clonk Forge Profil-URL ungültig."
 
-#: src/Presenter/Account/Settings.php:140
+#: src/Presenter/Account/Settings.php:144
 msgid "Your links were saved."
 msgstr "Deine Links wurden gespeichert."
 
-#: src/Presenter/Account/Settings.php:167 src/Presenter/User/Edit.php:123
+#: src/Presenter/Account/Settings.php:171 src/Presenter/User/Edit.php:123
 msgid "Contact details were changed."
 msgstr "Kontaktdaten wurden geändert."
 
-#: src/Presenter/Account/Settings.php:186
+#: src/Presenter/Account/Settings.php:190
 msgid ""
 "Your contact details were changed, but you already requested an email a "
 "short while ago."
@@ -2577,36 +2581,36 @@ msgstr ""
 "Deine Kontaktdaten wurden geändert, du hast jedoch bereits vor Kurzem eine E-"
 "Mail angefordert."
 
-#: src/Presenter/Account/Settings.php:206
+#: src/Presenter/Account/Settings.php:210
 msgid "Language is invalid."
 msgstr "Sprache ist ungültig."
 
-#: src/Presenter/Account/Settings.php:227
+#: src/Presenter/Account/Settings.php:231
 msgid "Okay. We'll send you one final email to confirm."
 msgstr "In Ordnung. Wir senden dir eine letzte E-Mail zur Bestätigung."
 
-#: src/Presenter/Account/Settings.php:241
+#: src/Presenter/Account/Settings.php:245
 #: src/Presenter/Publish/Release.php:199
 msgid "Confirmation required."
 msgstr "Bestätigung erforderlich."
 
-#: src/Presenter/Account/Settings.php:257
+#: src/Presenter/Account/Settings.php:261
 msgid "New passwords do not match."
 msgstr "Neue Passwörter stimmen nicht überein."
 
-#: src/Presenter/Account/Settings.php:262
+#: src/Presenter/Account/Settings.php:266
 msgid "New password too short."
 msgstr "Neues Passwort zu kurz."
 
-#: src/Presenter/Account/Settings.php:277
+#: src/Presenter/Account/Settings.php:281
 msgid "Your password was changed."
 msgstr "Dein Passwort wurde geändert."
 
-#: src/Presenter/Account/Settings.php:279
+#: src/Presenter/Account/Settings.php:283
 msgid "Your password was set."
 msgstr "Dein Passwort wurde gesetzt."
 
-#: src/Presenter/Account/Settings.php:294
+#: src/Presenter/Account/Settings.php:298
 msgid "All other devices were logged out."
 msgstr "Alle anderen Geräte wurden abgemeldet."
 

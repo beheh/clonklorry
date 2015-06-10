@@ -146,8 +146,8 @@ class Login extends Presenter
                     }
                     $url = '/';
                     $returnto = filter_input(INPUT_GET, 'returnto');
-                    if ($returnto) {
-                        $url = $returnto;
+                    if (!empty($returnto)) {
+                        $url = urldecode($returnto);
                     }
                     $this->redirect($url);
                     return;
