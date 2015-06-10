@@ -13,7 +13,7 @@ namespace :doctrine do
 	end
 
 	namespace :orm do
-		task :generate-proxies do
+		task :generate_proxies do
 		  invoke "doctrine:console", "orm:generate-proxies"
 		end
 	end

@@ -5,7 +5,7 @@ end
 
 namespace :deploy do
   task :updated do
-    invoke "doctrine:generate-proxies"
+    invoke "doctrine:generate_proxies"
     invoke "lorry:cache:warmup"
   end
   task :published do
