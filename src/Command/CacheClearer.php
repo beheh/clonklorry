@@ -22,7 +22,9 @@ class CacheClearer extends Command
     {
         $lorry = new Environment();
         $lorry->setup();
-        $lorry->getContainer()->get('Lorry\TemplateEngineInterface')->clearCacheFiles();
+        $container = $lorry->getContainer();
+        $container->get('Lorry\TemplateEngineInterface')->clearCacheFiles();
+        $container->get('Doctrine\Common\Cache\Cache')->deleteAll();
         $output->writeln('Cleared cache');
     }
 }

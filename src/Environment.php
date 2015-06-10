@@ -7,6 +7,8 @@ use Lorry\Exception\FileNotFoundException;
 use Lorry\Router;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
+use Doctrine\Common\Cache\ArrayCache;
+use Doctrine\Common\Cache\ApcCache;
 use RuntimeException;
 
 class Environment
@@ -39,13 +41,16 @@ class Environment
         $builder = new \DI\ContainerBuilder();
         $builder->useAnnotations(true);
 
-        if (!$config->get('debug') && function_exists('apc_store')) {
+        $cache = ($config->get('debug') || !function_exists('apc_store')) ? new ArrayCache() : new ApcCache();
+
+        if (!$config->get('debug')) {
             $cache = new \Doctrine\Common\Cache\ApcCache();
             $cache->setNamespace($config->get('brand'));
             $builder->setDefinitionCache($cache);
         }
 
         $container = $builder->build();
+        $container->set('Doctrine\Common\Cache\Cache', $cache);
         $container->set('Lorry\Service\ConfigService', $config);
         $this->container = $container;
 
@@ -83,8 +88,7 @@ class Environment
         $container->set('Doctrine\Common\Persistence\ObjectManager',
             \DI\factory(function() use ($config, $container) {
                 $doctrineConfig = new \Doctrine\ORM\Configuration();
-                
-                $cache = new \Doctrine\Common\Cache\ArrayCache();
+                $cache = $container->get('Doctrine\Common\Cache\Cache');
                 $doctrineConfig->setMetadataCacheImpl($cache);
                 $doctrineConfig->setQueryCacheImpl($cache);
                 $doctrineConfig->setResultCacheImpl($cache);
