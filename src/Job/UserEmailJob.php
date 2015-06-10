@@ -20,8 +20,8 @@ abstract class UserEmailJob extends EmailJob
     public function prepareEmail(Email $email, $args)
     {
         $this->user = $this->manager->getRepository('Lorry\Model\User')->find($args['user']);
-        $this->localisation->silentLocalize($user->getLanguage());
-        $email->setUsername($user->getUsername());
+        $this->localisation->silentLocalize($this->user->getLanguage());
+        $email->setUsername($this->user->getUsername());
         parent::prepareEmail($email, $args);
     }
 
