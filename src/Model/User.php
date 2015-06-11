@@ -149,7 +149,7 @@ class User extends Model
 
     public function matchPassword($password)
     {
-        if (empty($password)) {
+        if (empty($password) || empty($this->passwordHash)) {
             return false;
         }
         return password_verify($password, $this->passwordHash) === true;
