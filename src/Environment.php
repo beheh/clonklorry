@@ -50,27 +50,27 @@ class Environment
         }
 
         $container = $builder->build();
-        $container->set('Doctrine\Common\Cache\Cache', $cache);
-        $container->set('Lorry\Service\ConfigService', $config);
+        $container->set(\Doctrine\Common\Cache\Cache::class, $cache);
+        $container->set(\Lorry\Service\ConfigService::class, $config);
         $this->container = $container;
 
         error_reporting(E_ALL ^ E_STRICT);
 
-        $container->set('Interop\Container\ContainerInterface', $container);
-        $container->set('Lorry\Logger\LoggerFactoryInterface', $loggerFactory);
+        $container->set(\Interop\Container\ContainerInterface::class, $container);
+        $container->set(\Lorry\Logger\LoggerFactoryInterface::class, $loggerFactory);
 
-        $container->set('Psr\Log\LoggerInterface',
-            \DI\factory(function () use ($loggerFactory) {
+        $container->set(\Psr\Log\LoggerInterface::class,
+            function () use ($loggerFactory) {
                 return $loggerFactory->build('default');
-            }));
+            });
         $container->set('loggerFactory',
-            \DI\link('Lorry\Logger\LoggerFactoryInterface'));
-        $container->set('logger', \DI\link('Psr\Log\LoggerInterface'));
+            \DI\get(\Lorry\Logger\LoggerFactoryInterface::class));
+        $container->set('logger', \DI\get(\Psr\Log\LoggerInterface::class));
 
-        $container->set('config', \DI\link('Lorry\Service\ConfigService'));
+        $container->set('config', \DI\get(\Lorry\Service\ConfigService::class));
 
-        $container->set('PDO',
-            \DI\factory(function() use ($config) {
+        $container->set(\PDO::class,
+            function() use ($config) {
                 try {
                     $dsn = $config->get('persistence/dsn');
                     $dbh = new \PDO($dsn,
@@ -83,12 +83,12 @@ class Environment
                     // catch the pdo exception to prevent credential leaking (either logs or debug frontend)
                     throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
                 }
-            }));
+            });
             
-        $container->set('Doctrine\Common\Persistence\ObjectManager',
-            \DI\factory(function() use ($config, $container) {
+        $container->set(\Doctrine\Common\Persistence\ObjectManager::class,
+            function() use ($config, $container) {
                 $doctrineConfig = new \Doctrine\ORM\Configuration();
-                $cache = $container->get('Doctrine\Common\Cache\Cache');
+                $cache = $container->get(\Doctrine\Common\Cache\Cache::class);
                 $doctrineConfig->setMetadataCacheImpl($cache);
                 $doctrineConfig->setQueryCacheImpl($cache);
                 $doctrineConfig->setResultCacheImpl($cache);
@@ -100,47 +100,47 @@ class Environment
                 $doctrineConfig->setMetadataDriverImpl($doctrineConfig->newDefaultAnnotationDriver(self::PROJECT_ROOT.'/src/Model'));
 
                 return \Doctrine\ORM\EntityManager::create(array('pdo' => $container->get('PDO')), $doctrineConfig);
-            }));
-        $container->set('manager', \DI\link('Doctrine\Common\Persistence\ObjectManager'));
+            });
+        $container->set('manager', \DI\get(\Doctrine\Common\Persistence\ObjectManager::class));
 
         $container->set('localisation',
-            \DI\link('Lorry\Service\LocalisationService'));
-        $container->set('mail', \DI\link('Lorry\Service\MailService'));
-        $container->set('job', \DI\link('Lorry\Service\JobService'));
-        $container->set('session', \DI\link('Lorry\Service\SessionService'));
-        $container->set('security', \DI\link('Lorry\Service\SecurityService'));
-        $container->set('file', \DI\link('Lorry\Service\FileService'));
+            \DI\get(\Lorry\Service\LocalisationService::class));
+        $container->set('mail', \DI\get(\Lorry\Service\MailService::class));
+        $container->set('job', \DI\get(\Lorry\Service\JobService::class));
+        $container->set('session', \DI\get(\Lorry\Service\SessionService::class));
+        $container->set('security', \DI\get(\Lorry\Service\SecurityService::class));
+        $container->set('file', \DI\get(\Lorry\Service\FileService::class));
         $container->set('router',
             new Router($loggerFactory->build('router'), $container));
-        $container->set('twig', \DI\link('Lorry\TemplateEngineInterface'));
+        $container->set('twig', \DI\get(\Lorry\TemplateEngineInterface::class));
 
-        $container->set('Predis\Client',
-            \DI\factory(function () use ($config) {
+        $container->set(\Predis\Client::class,
+            function () use ($config) {
                 return new \Predis\Client($config->get('job/dsn'));
-            }));
+            });
 
-        $container->set('BehEh\Flaps\Flaps',
-            \DI\factory(function () use ($container) {
+        $container->set(\BehEh\Flaps\Flaps::class,
+            function () use ($container) {
                 $adapter = new \BehEh\Flaps\Storage\PredisStorage($container->get('Predis\Client'),
                     array('prefix' => 'clonklorry:'));
                 $flaps = new \BehEh\Flaps\Flaps($adapter);
                 $flaps->setDefaultViolationHandler(new Adapter\LorryViolationHandler);
                 return $flaps;
-            }));
+            });
 
-        $container->set('Lorry\TemplateEngineInterface',
-            \DI\factory(function () use ($config) {
+        $container->set(\Lorry\TemplateEngineInterface::class,
+            function () use ($config) {
                 $loader = new \Twig_Loader_Filesystem(__DIR__.'/../app/templates');
                 $twig = new Adapter\TwigTemplatingEngineAdapter($loader,
                     array('cache' => __DIR__.'/../cache/twig', 'debug' => $config->get('debug')));
                 $twig->addExtension(new \Twig_Extension_Escaper(true));
                 $twig->addExtension(new \Twig_Extensions_Extension_I18n());
                 return $twig;
-            }));
+            });
 
         \Monolog\ErrorHandler::register($loggerFactory->build('errorHandler'));
 
-        $templating = $container->get('Lorry\TemplateEngineInterface');
+        $templating = $container->get(\Lorry\TemplateEngineInterface::class);
         $templating->addGlobal('brand', htmlspecialchars($config->get('brand')));
         $templating->addGlobal('base', htmlspecialchars($config->get('base')));
         $templating->addGlobal('resources',
@@ -174,7 +174,7 @@ class Environment
 
             $config = $this->container->get('config');
 
-            $twig = $this->container->get('Lorry\TemplateEngineInterface');
+            $twig = $this->container->get(\Lorry\TemplateEngineInterface::class);
             $twig->addGlobal('path',
                 explode('/', trim($request->getPathInfo(), '/')));
             $twig->addGlobal('origpath', trim($request->getPathInfo()));
@@ -299,11 +299,10 @@ class Environment
         } catch (\Exception $exception) {
             if (false) {
                 // @todo: PDO connection failed
-                $this->container->get('Lorry\TemplateEngineInterface')->addGlobal('site_enabled',
-                    false);
+                $this->container->get(\Lorry\TemplateEngineInterface::class)->addGlobal('site_enabled', false);
                 $this->logger->alert('cannot reach database');
             }
-            $this->container->get('Lorry\Presenter\Error')->get($exception);
+            $this->container->get(\Lorry\Presenter\Error::class)->get($exception);
         }
     }
 
