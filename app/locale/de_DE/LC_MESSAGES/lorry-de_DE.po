@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-11 12:51+0100\n"
-"PO-Revision-Date: 2015-06-11 12:52+0100\n"
+"POT-Creation-Date: 2015-06-11 13:39+0100\n"
+"PO-Revision-Date: 2015-06-11 13:40+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -2483,7 +2483,7 @@ msgstr "Duplikat"
 msgid "&quot;Clonk&quot; is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: src/Presenter.php:162 src/Presenter/Account/Login.php:156
+#: src/Presenter.php:162 src/Presenter/Account/Login.php:169
 #: src/Presenter/Account/Settings.php:242
 #: src/Presenter/Account/Settings.php:256
 msgid "Password wrong."
@@ -2497,31 +2497,35 @@ msgstr ""
 "Registrierung erfolgreich! Wir werden dir eine E-Mail zur Aktivierung deines "
 "Kontos senden."
 
-#: src/Presenter/Account/Login.php:66
+#: src/Presenter/Account/Login.php:73
+msgid "Sign in to activate your account."
+msgstr "Melde dich an, um dein Konto zu aktivieren."
+
+#: src/Presenter/Account/Login.php:79
 msgid "Sign in to use this service."
 msgstr "Melde dich an, um diesen Dienst zu verwenden."
 
-#: src/Presenter/Account/Login.php:71
+#: src/Presenter/Account/Login.php:84
 msgid "Sign in to link this login service to your account."
 msgstr "Melde dich an, um diesen Anmeldedienst mit deinem Konto zu verknüpfen."
 
-#: src/Presenter/Account/Login.php:103 src/Presenter/Account/Settings.php:186
+#: src/Presenter/Account/Login.php:116 src/Presenter/Account/Settings.php:186
 msgid "You should receive an email shortly."
 msgstr "Du solltest in Kürze eine E-Mail erhalten."
 
-#: src/Presenter/Account/Login.php:105 src/Presenter/User/Edit.php:181
+#: src/Presenter/Account/Login.php:118 src/Presenter/User/Edit.php:181
 msgid "Error sending the email."
 msgstr "Fehler beim Senden der E-Mail."
 
-#: src/Presenter/Account/Login.php:109 src/Presenter/Account/Settings.php:193
+#: src/Presenter/Account/Login.php:122 src/Presenter/Account/Settings.php:193
 msgid "You already requested an email a short while ago."
 msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
 
-#: src/Presenter/Account/Login.php:113
+#: src/Presenter/Account/Login.php:126
 msgid "Email address unknown."
 msgstr "E-Mail-Adresse unbekannt."
 
-#: src/Presenter/Account/Login.php:161
+#: src/Presenter/Account/Login.php:174
 msgid "Username or email address unknown."
 msgstr "Benutzername oder E-Mail-Adresse unbekannt."
 
@@ -3294,9 +3298,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "Contact details were changed. Please still activate your account."
 #~ msgstr "Kontaktdaten wurden geändert. Bitte aktiviere dein Konto."
-
-#~ msgid "%brand%: Activate your account"
-#~ msgstr "%brand%: Aktiviere dein Konto"
 
 #~ msgid ""
 #~ "In order to use all features of %brand% you need to activate this new "
