@@ -18,7 +18,7 @@
                     <form method="post">
                         <div class="form-group">
                             <label for="email">{% trans "Email address" %}</label>
-                            <input type="text" class="form-control" name="email" id="email" value="{% if email %}{% elseif user_login %}{{user.email}}{% endif %}"{% if user_login %} disabled{% endif %}>
+                            <input type="email" class="form-control" name="email" id="email" value="{% if email %}{% elseif user_login %}{{user.email}}{% endif %}"{% if user_login %} disabled{% endif %}>
                         </div>
                         <div class="form-group">
                             <label for="subject">{% trans "Subject" %}</label>

@@ -38,7 +38,7 @@ class Ticket extends Model
     protected $message;
 
     /**
-     * @Column(type="datetime")
+     * @Column(type="datetime", nullable=true)
      * @var \DateTime
      */
     protected $assigned;

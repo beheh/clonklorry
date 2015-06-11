@@ -6,10 +6,15 @@ use Lorry\Presenter;
 use Lorry\Model\Ticket;
 use Lorry\Validator\TicketValidator;
 use Lorry\Exception\ValidationException;
-
+use Lorry\Exception\TooManyRequestsException;
 
 class Contact extends Presenter
 {
+    /**
+     * @Inject
+     * @var \BehEh\Flaps\Flaps
+     */
+    private $flaps;
 
     public function get()
     {
@@ -42,9 +47,17 @@ class Contact extends Presenter
 
         $ticket = new Ticket();
 
+        $email = null;
         if ($user) {
             $ticket->setAssociatedUser($user);
+            $email = $user->getEmail();
         }
+        else {
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $this->context['email'] = $email;
+        }
+
+        $ticket->setResponseEmail($email);
 
         $subject = trim(filter_input(INPUT_POST, 'subject'));
         $this->context['subject'] = $subject;
@@ -54,21 +67,34 @@ class Contact extends Presenter
         $this->context['message'] = $message;
         $ticket->setMessage($message);
 
-        /*if (empty($errors)) {
-            $existing = $this->persistence->build('Ticket')->byHash($ticket->getHash());
-            if ($existing) {
-                $errors[] = gettext('This message has already been sent.');
-            }
+        if($ticketRepository->findOneBy(array('message' => $message)) != null) {
+            $ticketValidator->fail(gettext('This message has already been sent.'));
         }
 
-        if (empty($errors)) {
-            $ticket->save();
-            $this->success('contact', gettext('Thank you for your message, we\'ll take a look at it.'));
-            $this->context['hide_form'] = true;
-        } else {
-            $this->context['message'] = $message;
-            $this->error('contact', implode('<br>', $errors));
-        }*/
+        try {
+            $ticketValidator->validate($ticket);
+
+            try {
+                $flap = $this->flaps->getFlap('ticket');
+                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(2,
+                    '60s'));
+                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(5,
+                    '1h'));
+                $flap->pushThrottlingStrategy(new \BehEh\Flaps\Throttling\LeakyBucketStrategy(10,
+                    '24h'));
+                $flap->limit($_SERVER['REMOTE_ADDR']);
+
+                $this->manager->persist($ticket);
+                $this->manager->flush();
+                $this->success('contact', str_replace('%number%', $ticket->getId(), gettext('Thank you for your message.')));
+                $this->context['hide_form'] = true;
+            }
+            catch(TooManyRequestsException $ex) {
+                $this->error('contact', gettext('You already sent a message a short while ago.'));
+            }
+        } catch (ValidationException $ex) {
+            $this->error('contact', implode('<br>', $ex->getFails()));
+        }
 
         $this->get();
     }

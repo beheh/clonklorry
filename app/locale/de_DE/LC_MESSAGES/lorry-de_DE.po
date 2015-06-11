@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-10 22:43+0100\n"
-"PO-Revision-Date: 2015-06-10 22:43+0100\n"
+"POT-Creation-Date: 2015-06-11 12:51+0100\n"
+"PO-Revision-Date: 2015-06-11 12:52+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -3061,6 +3061,19 @@ msgstr "Änderungsprotokoll ist %s."
 msgid "Changes saved."
 msgstr "Änderungen gespeichert."
 
+#: src/Presenter/Site/Contact.php:71
+msgid "This message has already been sent."
+msgstr "Diese Nachricht wurde bereits gesendet."
+
+#: src/Presenter/Site/Contact.php:89
+msgid "Thank you for your message."
+msgstr "Danke für deine Nachricht."
+
+#: src/Presenter/Site/Contact.php:93
+#, fuzzy
+msgid "You already sent a message a short while ago."
+msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
+
 #: src/Presenter/User/Edit.php:41
 msgid "Username was changed."
 msgstr "Benutzername wurde geändert."
@@ -3195,19 +3208,23 @@ msgstr "Titel ungültig."
 msgid "Addon must have at least one translation."
 msgstr "Erweiterung muss mindestens eine Übersetzung haben."
 
-#: src/Validator/TicketValidator.php:23
+#: src/Validator/TicketValidator.php:18
+msgid "Response email address invalid"
+msgstr "Antwort-E-Mail-Adresse ungültig."
+
+#: src/Validator/TicketValidator.php:24
 msgid "Subject too short."
 msgstr "Betreff zu kurz."
 
-#: src/Validator/TicketValidator.php:24
+#: src/Validator/TicketValidator.php:25
 msgid "Subject too long."
 msgstr "Betreff zu lang."
 
-#: src/Validator/TicketValidator.php:31
+#: src/Validator/TicketValidator.php:32
 msgid "Message too short."
 msgstr "Nachricht zu kurz."
 
-#: src/Validator/TicketValidator.php:32
+#: src/Validator/TicketValidator.php:33
 msgid "Message too long."
 msgstr "Nachricht zu lang."
 
@@ -3254,6 +3271,13 @@ msgstr ""
 #: src/Validator/UserValidator.php:54
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "Submit ticket"
+#~ msgstr "Ticket einreichen"
+
+#, fuzzy
+#~ msgid "You already created a ticket a short while ago."
+#~ msgstr "Du hast bereits vor Kurzem eine E-Mail angefordert."
 
 #~ msgid "You requested an email to reset your password a short while ago."
 #~ msgstr ""
@@ -3328,9 +3352,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "%brand%: Escalated ticket"
 #~ msgstr "%brand%: Eskaliertes Ticket"
-
-#~ msgid "ticket"
-#~ msgstr "Ticket"
 
 #~ msgid "The following %ticket% was escalated by %staffname%:"
 #~ msgstr "Das folgende %ticket% wurde von %staffname% eskaliert:"
@@ -3540,9 +3561,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "Message text is %s."
 #~ msgstr "Nachrichtentext ist %s."
-
-#~ msgid "This message has already been sent."
-#~ msgstr "Diese Nachricht wurde bereits gesendet."
 
 #~ msgid "Thank you for your message, we'll take a look at it."
 #~ msgstr "Danke für deine Nachricht, wir kümmern uns darum."
@@ -4151,9 +4169,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "Sorry, your feedback couldn't be saved."
 #~ msgstr "Entschuldigung, dein "
-
-#~ msgid "Thank you for your message."
-#~ msgstr "Danke für deine Nachricht."
 
 #~ msgid ""
 #~ "Please don't hesitate to escalate this message if there is any problem."
@@ -5031,9 +5046,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "Username invalid."
 #~ msgstr "Benutzername ungültig."
-
-#~ msgid "Email address invalid."
-#~ msgstr "E-Mail-Adresse ungültig."
 
 #~ msgid "Password too long."
 #~ msgstr "Passwort zu lang."

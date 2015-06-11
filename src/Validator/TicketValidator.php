@@ -15,6 +15,7 @@ class TicketValidator extends Validator
     {
         $this->validateSubject($entity->getSubject());
         $this->validateMessage($entity->getMessage());
+        $this->validateEmailAddress($entity->getResponseEmailAddress(), gettext('Response email address invalid'));
     }
 
     public function validateSubject($subject)
