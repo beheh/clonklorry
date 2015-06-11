@@ -3,8 +3,6 @@
 	<head lang="{% trans "en" %}">
 		<meta charset="utf-8">
 		<title>{{title|default(brand)}}</title>
-		<link href="{{resources}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="{{resources}}/lorry/css/lorry.css?4" rel="stylesheet">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="{{base}}/favicon.ico" type="image/x-icon">
@@ -27,7 +25,9 @@
 		{% endblock %}
 		<script>var base = '{{base}}', state = '{{state}}';</script>
 	</head>
-	<body>
+	<body
+        <link href="{{resources}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{resources}}/lorry/css/lorry.css" rel="stylesheet">
 		<noscript><style>.visible-js { display: none; }</style></noscript>
 		{% block body %}
 		{% include 'functions/navbar.twig' %}
