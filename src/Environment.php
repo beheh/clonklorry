@@ -46,7 +46,7 @@ class Environment
         if (!$config->get('debug')) {
             $cache = new \Doctrine\Common\Cache\ApcCache();
             $cache->setNamespace($config->get('brand'));
-            $builder->setDefinitionCache($cache);
+            //$builder->setDefinitionCache($cache); @todo fix dynamic caching
         }
 
         $container = $builder->build();
