@@ -18,7 +18,7 @@ class Activate extends Presenter
         }
 
         if(!$this->session->authenticated()) {
-            $this->redirect('/login?returnto='.urlencode('/users/'.$username.'/activate?'.implode('&', array_map(function($a, $b) {
+            $this->redirect('/login?activate='.$user->getUsername().'&returnto='.urlencode('/users/'.$username.'/activate?'.implode('&', array_map(function($a, $b) {
                 return $a.'='.$b;
             }, array_keys($_GET), $_GET))));
             return;

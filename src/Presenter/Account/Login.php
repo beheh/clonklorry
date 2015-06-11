@@ -60,6 +60,19 @@ class Login extends Presenter
                     gettext('Registration successful! We\'ll send you an email for you to activate your account.'));
             }
         }
+        if (isset($_GET['activate'])) {
+            if (!isset($this->context['username'])) {
+                $username = filter_input(INPUT_GET, 'activate');
+                if (!empty($username)) {
+                    $this->context['username_exists'] = true;
+                }
+                $this->context['username'] = $username;
+            }
+            if (!$this->hasAlert('login')) {
+                $this->warning('login',
+                    gettext('Sign in to activate your account.'));
+            }
+        }
         if (isset($_GET['connect'])) {
             $this->context['connect'] = true;
             if (!$this->hasAlert('login')) {
