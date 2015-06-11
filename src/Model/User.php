@@ -216,6 +216,10 @@ class User extends Model
         }
     }
 
+    public function getActivation() {
+        return $this->activation;
+    }
+
     public function regenerateSecret()
     {
         $secret = base64_encode(openssl_random_pseudo_bytes(64));
