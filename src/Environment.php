@@ -4,12 +4,10 @@ namespace Lorry;
 
 use Lorry\Exception\NotImplementedException;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\Router;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Cache\ApcCache;
-use RuntimeException;
 
 class Environment
 {
@@ -39,14 +37,15 @@ class Environment
         $config = new ConfigService($loggerFactory);
 
         $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions(self::PROJECT_ROOT.'/app/definitions.php');
         $builder->useAnnotations(true);
 
         $cache = ($config->get('debug') || !function_exists('apc_store')) ? new ArrayCache() : new ApcCache();
 
         if (!$config->get('debug')) {
-            $cache = new \Doctrine\Common\Cache\ApcCache();
+            $cache = new \Doctrine\Common\Cache\ArrayCache();
             $cache->setNamespace($config->get('brand'));
-            //$builder->setDefinitionCache($cache); @todo fix dynamic caching
+            $builder->setDefinitionCache($cache); //@todo fix dynamic caching
         }
 
         $container = $builder->build();
@@ -57,86 +56,6 @@ class Environment
         error_reporting(E_ALL ^ E_STRICT);
 
         $container->set(\Interop\Container\ContainerInterface::class, $container);
-        $container->set(\Lorry\Logger\LoggerFactoryInterface::class, $loggerFactory);
-
-        $container->set(\Psr\Log\LoggerInterface::class,
-            function () use ($loggerFactory) {
-                return $loggerFactory->build('default');
-            });
-        $container->set('loggerFactory',
-            \DI\get(\Lorry\Logger\LoggerFactoryInterface::class));
-        $container->set('logger', \DI\get(\Psr\Log\LoggerInterface::class));
-
-        $container->set('config', \DI\get(\Lorry\Service\ConfigService::class));
-
-        $container->set(\PDO::class,
-            function() use ($config) {
-                try {
-                    $dsn = $config->get('persistence/dsn');
-                    $dbh = new \PDO($dsn,
-                        $config->get('persistence/username'),
-                        $config->get('persistence/password'));
-                    $dbh->setAttribute(\PDO::ATTR_ERRMODE,
-                        \PDO::ERRMODE_EXCEPTION);
-                    return $dbh;
-                } catch (\PDOException $ex) {
-                    // catch the pdo exception to prevent credential leaking (either logs or debug frontend)
-                    throw new RuntimeException('could not connect to database ('.$ex->getMessage().')');
-                }
-            });
-            
-        $container->set(\Doctrine\Common\Persistence\ObjectManager::class,
-            function() use ($config, $container) {
-                $doctrineConfig = new \Doctrine\ORM\Configuration();
-                $cache = $container->get(\Doctrine\Common\Cache\Cache::class);
-                $doctrineConfig->setMetadataCacheImpl($cache);
-                $doctrineConfig->setQueryCacheImpl($cache);
-                $doctrineConfig->setResultCacheImpl($cache);
-
-                $doctrineConfig->setProxyDir(self::PROJECT_ROOT.'/cache/doctrine');
-                $doctrineConfig->setProxyNamespace('Lorry\ORM\Proxy');
-                $doctrineConfig->setAutoGenerateProxyClasses(!!$config->get('debug'));
-
-                $doctrineConfig->setMetadataDriverImpl($doctrineConfig->newDefaultAnnotationDriver(self::PROJECT_ROOT.'/src/Model'));
-
-                return \Doctrine\ORM\EntityManager::create(array('pdo' => $container->get('PDO')), $doctrineConfig);
-            });
-        $container->set('manager', \DI\get(\Doctrine\Common\Persistence\ObjectManager::class));
-
-        $container->set('localisation',
-            \DI\get(\Lorry\Service\LocalisationService::class));
-        $container->set('mail', \DI\get(\Lorry\Service\MailService::class));
-        $container->set('job', \DI\get(\Lorry\Service\JobService::class));
-        $container->set('session', \DI\get(\Lorry\Service\SessionService::class));
-        $container->set('security', \DI\get(\Lorry\Service\SecurityService::class));
-        $container->set('file', \DI\get(\Lorry\Service\FileService::class));
-        $container->set('router',
-            new Router($loggerFactory->build('router'), $container));
-        $container->set('twig', \DI\get(\Lorry\TemplateEngineInterface::class));
-
-        $container->set(\Predis\Client::class,
-            function () use ($config) {
-                return new \Predis\Client($config->get('job/dsn'));
-            });
-
-        $container->set(\BehEh\Flaps\Flaps::class,
-            function () use ($container) {
-                $adapter = new \BehEh\Flaps\Storage\PredisStorage($container->get('Predis\Client'),
-                    array('prefix' => 'clonklorry:'));
-                $flaps = new \BehEh\Flaps\Flaps($adapter);
-                $flaps->setDefaultViolationHandler(new Adapter\LorryViolationHandler);
-                return $flaps;
-            });
-
-        $container->set(\Lorry\TemplateEngineInterface::class,
-            function () use ($config) {
-                $loader = new \Twig_Loader_Filesystem(__DIR__.'/../app/templates');
-                $twig = new Adapter\TwigTemplatingEngineAdapter($loader,
-                    array('cache' => __DIR__.'/../cache/twig', 'debug' => $config->get('debug')));
-                $twig->addExtension(new \Twig_Extension_Escaper(true));
-                $twig->addExtension(new \Twig_Extensions_Extension_I18n());
-                return $twig;
-            });
 
         \Monolog\ErrorHandler::register($loggerFactory->build('errorHandler'));
 
@@ -304,6 +223,10 @@ class Environment
             }
             $this->container->get(\Lorry\Presenter\Error::class)->get($exception);
         }
+    }
+
+    public function getProjectRoot() {
+        return self::PROJECT_ROOT;
     }
 
     /**
