@@ -41,10 +41,9 @@ class Environment
         $builder->useAnnotations(true);
 
         $cache = ($config->get('debug') || !function_exists('apc_store')) ? new ArrayCache() : new ApcCache();
+        $cache->setNamespace($config->get('brand'));
 
         if (!$config->get('debug')) {
-            $cache = new \Doctrine\Common\Cache\ApcCache();
-            $cache->setNamespace($config->get('brand'));
             $builder->setDefinitionCache($cache); //@todo fix dynamic caching
         }
 
