@@ -43,7 +43,7 @@ class Environment
         $cache = ($config->get('debug') || !function_exists('apc_store')) ? new ArrayCache() : new ApcCache();
 
         if (!$config->get('debug')) {
-            $cache = new \Doctrine\Common\Cache\ArrayCache();
+            $cache = new \Doctrine\Common\Cache\ApcCache();
             $cache->setNamespace($config->get('brand'));
             $builder->setDefinitionCache($cache); //@todo fix dynamic caching
         }
