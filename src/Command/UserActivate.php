@@ -21,12 +21,12 @@ class UserActivate extends UserModifyCommand
         ;
     }
 
-    function modifyUser(User $user, InputInterface $input, OutputInterface $output)
+    protected function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
         $user->activate();
     }
 
-    function checkResult(User $user, InputInterface $input, OutputInterface $output)
+    protected function checkResult(User $user, InputInterface $input, OutputInterface $output)
     {
         if($user->isActivated()) {
             $output->writeln('<info>'.$user->getUsername().'\'s account is now activated</info>');

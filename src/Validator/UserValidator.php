@@ -9,7 +9,7 @@ class UserValidator extends AbstractValidator
      *
      * @param \Lorry\Model\User $entity
      */
-    public function performValidation($entity)
+    protected function performValidation($entity)
     {
         $this->validateUsername($entity->getUsername());
         $this->validateEmailAddress($entity->getEmail(), gettext('Email address is invalid.'));

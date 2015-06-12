@@ -13,8 +13,8 @@ abstract class UserModifyCommand extends Command
 
     protected $manager;
 
-    abstract function modifyUser(User $user, InputInterface $input, OutputInterface $output);
-    abstract function checkResult(User $user, InputInterface $input, OutputInterface $output);
+    abstract protected function modifyUser(User $user, InputInterface $input, OutputInterface $output);
+    abstract protected function checkResult(User $user, InputInterface $input, OutputInterface $output);
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {

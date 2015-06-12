@@ -21,12 +21,12 @@ class UserMod extends UserModifyCommand
         ;
     }
 
-    function modifyUser(User $user, InputInterface $input, OutputInterface $output)
+    protected function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
         $user->setPermissions(User::PERMISSION_MODERATE);
     }
 
-    function checkResult(User $user, InputInterface $input, OutputInterface $output)
+    protected function checkResult(User $user, InputInterface $input, OutputInterface $output)
     {
         if ($user->isModerator()) {
             $output->writeln('<info>'.$user->getUsername().' is now a moderator</info>');

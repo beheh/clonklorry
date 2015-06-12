@@ -8,7 +8,7 @@ use \InvalidArgumentException;
 abstract class AbstractValidator implements Validator
 {
 
-    abstract function performValidation($entity);
+    abstract protected function performValidation($entity);
     protected $fails = array();
 
     public function fail($message)

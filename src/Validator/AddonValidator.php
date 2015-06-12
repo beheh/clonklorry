@@ -9,7 +9,7 @@ class AddonValidator extends AbstractValidator
      *
      * @param \Lorry\Model\Addon $entity
      */
-    public function performValidation($entity)
+    protected function performValidation($entity)
     {
         $this->validateTranslations($entity->getTranslations());
     }

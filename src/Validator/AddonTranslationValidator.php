@@ -9,7 +9,7 @@ class AddonTranslationValidator extends AbstractValidator
      *
      * @param \Lorry\Model\AddonTranslation $entity
      */
-    public function performValidation($entity)
+    protected function performValidation($entity)
     {
         $this->validateTitle($entity->getTitle());
     }

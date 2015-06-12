@@ -21,12 +21,12 @@ class UserAdmin extends UserModifyCommand
         ;
     }
 
-    function modifyUser(User $user, InputInterface $input, OutputInterface $output)
+    protected function modifyUser(User $user, InputInterface $input, OutputInterface $output)
     {
         $user->setPermissions(User::PERMISSION_ADMINISTRATE);
     }
 
-    function checkResult(User $user, InputInterface $input, OutputInterface $output)
+    protected function checkResult(User $user, InputInterface $input, OutputInterface $output)
     {
         if ($user->isAdministrator()) {
             $output->writeln('<info>'.$user->getUsername().' is now an administrator</info>');

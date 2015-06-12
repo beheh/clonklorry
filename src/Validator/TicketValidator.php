@@ -9,7 +9,7 @@ class TicketValidator extends AbstractValidator
      *
      * @param \Lorry\Model\Ticket $entity
      */
-    public function performValidation($entity)
+    protected function performValidation($entity)
     {
         $this->validateSubject($entity->getSubject());
         $this->validateMessage($entity->getMessage());
