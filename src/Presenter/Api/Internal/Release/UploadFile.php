@@ -3,7 +3,7 @@
 namespace Lorry\Presenter\Api\Internal\Release;
 
 use Lorry\Presenter\Api\Presenter;
-use Lorry\Exception\Exception;
+use Lorry\Exception\ConcreteException;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
@@ -118,7 +118,7 @@ class UploadFile extends Presenter
         $file = $_FILES['file'];
 
         if ($file['error'] != 0) {
-            throw new Exception(gettext('error receiving file chunk'));
+            throw new ConcreteException(gettext('error receiving file chunk'));
         }
 
         $target_directory = \Lorry\Environment::PROJECT_ROOT.'/upload/'.QueryFile::getFilePath($addon,
@@ -129,7 +129,7 @@ class UploadFile extends Presenter
         }
 
         if (is_file($target_directory.'/'.$file_name)) {
-            throw new Exception(gettext('file already exists'));
+            throw new ConcreteException(gettext('file already exists'));
         }
 
         $identifier = QueryFile::sanitizePath(filter_input(INPUT_POST,
@@ -142,7 +142,7 @@ class UploadFile extends Presenter
 
         // final check
         if (!is_dir($chunk_directory)) {
-            throw new Exception(gettext('could not create upload directory'));
+            throw new ConcreteException(gettext('could not create upload directory'));
         }
 
         $chunk_number = filter_input(INPUT_POST, 'resumableChunkNumber',
@@ -153,28 +153,28 @@ class UploadFile extends Presenter
             FILTER_SANITIZE_NUMBER_INT);
 
         if ($total_size > $this->config->getSize('upload/datasize')) {
-            throw new Exception(gettext('file too big'));
+            throw new ConcreteException(gettext('file too big'));
         }
         if ($chunk_number > 1000) {
-            throw new Exception(gettext('file chunk count too big'));
+            throw new ConcreteException(gettext('file chunk count too big'));
         }
         if ($chunk_size < 1 || $total_size < 1) {
-            throw new Exception(gettext('invalid file chunk size'));
+            throw new ConcreteException(gettext('invalid file chunk size'));
         }
         if (($chunk_number * $chunk_size) > ($total_size + $chunk_size)) {
-            throw new Exception(gettext('file chunk exceeds total size'));
+            throw new ConcreteException(gettext('file chunk exceeds total size'));
         }
 
         $part_file = $chunk_directory.'/'.$file_name.'.part'.$chunk_number;
 
         if (!move_uploaded_file($file['tmp_name'], $part_file)) {
-            throw new Exception(gettext('error saving file chunk'));
+            throw new ConcreteException(gettext('error saving file chunk'));
         }
 
 
         if (!$this->attemptAssembleFile($user, $addon, $release,
                 $chunk_directory, $file_name, $chunk_size, $total_size)) {
-            throw new Exception(gettext('error assembling file'));
+            throw new ConcreteException(gettext('error assembling file'));
         }
 
         $this->display(array('chunk' => 'received'));

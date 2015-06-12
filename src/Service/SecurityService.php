@@ -6,7 +6,6 @@ use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
-use Lorry\Exception\Exception;
 use Doctrine\Common\Persistence\ObjectManager;
 use \InvalidArgumentException;
 use Lorry\Model\User;
@@ -143,7 +142,7 @@ class SecurityService extends AbstractService
         $algo = $this->config->get('tokens/algorithm');
         $key = $this->config->get('tokens/key');
         if (!$algo || !$key || !$data) {
-            throw new Exception('missing token signature algorithm or key');
+            throw new InvalidArgumentException('missing token signature algorithm or key');
         }
         return hash_hmac($algo, $data, $key);
     }

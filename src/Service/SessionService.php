@@ -7,8 +7,8 @@ use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\UnitOfWork;
-use InvalidArgumentException;
-use Exception;
+use \InvalidArgumentException;
+use Lorry\Exception\ConcreteException;
 
 class SessionService extends AbstractService
 {
@@ -46,7 +46,7 @@ class SessionService extends AbstractService
      * @param \Lorry\Model\User $user
      * @param bool $remember
      * @param bool $identify
-     * @throws Exception
+     * @throws \Lorry\Exception\Exception
      */
     final public function start(User $user, $remember = false, $identify = false)
     {
@@ -226,7 +226,7 @@ class SessionService extends AbstractService
     final public function getUser()
     {
         if (!$this->authenticated()) {
-            throw new Exception('session is not authenticated');
+            throw new ConcreteException('session is not authenticated');
         }
         $this->ensureUser();
         return $this->user;

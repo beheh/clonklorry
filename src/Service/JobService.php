@@ -5,7 +5,7 @@ namespace Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Resque\Resque;
 use Predis\Client;
-use Lorry\Exception\Exception;
+use \InvalidArgumentException;
 
 class JobService extends AbstractService
 {
@@ -26,10 +26,10 @@ class JobService extends AbstractService
     {
         $class_name = '\\Lorry\\Job\\'.$job_name.'Job';
         if (!class_exists($class_name)) {
-            throw new Exception('unknown job');
+            throw new InvalidArgumentException('unknown job');
         }
         if (!is_subclass_of($class_name, '\\Lorry\\Job')) {
-            throw new Exception('job does not implement base class');
+            throw new InvalidArgumentException('job does not implement base class');
         }
         return $class_name;
     }
@@ -42,7 +42,7 @@ class JobService extends AbstractService
     public function submit($job_name, $args)
     {
         if (!is_array($args)) {
-            throw new Exception('invalid arguments (not an array)');
+            throw new InvalidArgumentException('invalid arguments (not an array)');
         }
         $class_name = $this->build($job_name);
         $this->logger->notice('queuing "'.$job_name.'" in queue "'.$this->getQueue($class_name).'"');
@@ -60,7 +60,7 @@ class JobService extends AbstractService
     public function remove($job_name, $args)
     {
         if (!is_array($args)) {
-            throw new Exception('invalid arguments (not an array)');
+            throw new InvalidArgumentException('invalid arguments (not an array)');
         }
         //@todo implement dequeuing
         $class_name = $this->build($job_name);

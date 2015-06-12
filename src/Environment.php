@@ -9,6 +9,7 @@ use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Cache\ApcCache;
+use \Exception as PHPException;
 
 class Environment
 {
@@ -213,9 +214,9 @@ class Environment
             if ($this->container->has($presenterClass)) {
                 $this->container->get($presenterClass)->get($exception);
             } elseif (!empty($presenterClass)) {
-                throw new \Exception('failed to get error presenter "'.$presenterClass.'"');
+                throw new PHPException('failed to get error presenter "'.$presenterClass.'"');
             }
-        } catch (\Exception $exception) {
+        } catch (PHPException $exception) {
             if (false) {
                 // @todo: PDO connection failed
                 $this->container->get(\Lorry\TemplateEngineInterface::class)->addGlobal('site_enabled', false);
