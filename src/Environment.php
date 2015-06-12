@@ -217,12 +217,16 @@ class Environment
                 throw new PHPException('failed to get error presenter "'.$presenterClass.'"');
             }
         } catch (PHPException $exception) {
-            if (false) {
-                // @todo: PDO connection failed
+            try {
+                $this->container->get(\PDO::class); // attempt to instantiate PDO
+            }
+            catch(\RuntimeException $exception) {
                 $this->container->get(\Lorry\TemplateEngineInterface::class)->addGlobal('site_enabled', false);
-                $this->logger->alert('cannot reach database');
+                $this->container->get(\Lorry\Presenter\Error\DatabaseDown::class)->get($exception);
+                return;
             }
             $this->container->get(\Lorry\Presenter\Error\InternalError::class)->get($exception);
+            return;
         }
     }
 
