@@ -130,14 +130,6 @@ abstract class AbstractPresenter implements Presenter
     }
 
     /**
-     * Sends a 301 Moved Permanently redirect to the current url.
-     */
-    final protected function reload()
-    {
-        return $this->redirect(Router::getPath());
-    }
-
-    /**
      * Offers the user to identify his session.
      */
     final protected function offerIdentification()
