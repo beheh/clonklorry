@@ -102,13 +102,18 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function testActivation()
     {
-        $this->assertNull($this->user->getActivation());
-        $this->assertFalse($this->user->isActivated());
+        $this->user->deactivate();
         $this->user->activate();
         $this->assertEquals(new DateTime, $this->user->getActivation());
         $this->assertTrue($this->user->isActivated());
         $this->user->deactivate();
         $this->assertNull($this->user->getActivation());
+        $this->assertFalse($this->user->isActivated());
+    }
+
+    public function testDefaultActivation() {
+        $defaultUser = new User();
+        $this->assertNull($defaultUser->getActivation());
         $this->assertFalse($this->user->isActivated());
     }
 
@@ -142,38 +147,46 @@ class UserTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Lorry\Model\User::setPermissions
      * @covers Lorry\Model\User::getPermissions
-     * @todo   Implement testPermissions().
      */
     public function testPermissions()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $expected = User::PERMISSION_READ;
+        $this->user->setPermissions(User::PERMISSION_READ);
+        $this->assertEquals($expected, $this->user->getPermissions());
+    }
+
+    public function testDefaultPermissions()
+    {
+        $defaultUser = new User();
+        $this->assertEquals(User::PERMISSION_READ, $defaultUser->getPermissions());
+        $this->assertFalse($defaultUser->isModerator());
+        $this->assertFalse($defaultUser->isAdministrator());
     }
 
     /**
      * @covers Lorry\Model\User::isAdministrator
-     * @todo   Implement testIsAdministrator().
      */
     public function testIsAdministrator()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->user->setPermissions(User::PERMISSION_READ);
+        $this->assertFalse($this->user->isAdministrator());
+        $this->user->setPermissions(User::PERMISSION_MODERATE);
+        $this->assertFalse($this->user->isAdministrator());
+        $this->user->setPermissions(User::PERMISSION_ADMINISTRATE);
+        $this->assertTrue($this->user->isAdministrator());
     }
 
     /**
      * @covers Lorry\Model\User::isModerator
-     * @todo   Implement testIsModerator().
      */
     public function testIsModerator()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->user->setPermissions(User::PERMISSION_READ);
+        $this->assertFalse($this->user->isModerator());
+        $this->user->setPermissions(User::PERMISSION_MODERATE);
+        $this->assertTrue($this->user->isModerator());
+        $this->user->setPermissions(User::PERMISSION_ADMINISTRATE);
+        $this->assertTrue($this->user->isModerator());
     }
 
     /**
