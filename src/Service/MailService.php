@@ -14,22 +14,22 @@ use RuntimeException;
 class MailService extends AbstractService
 {
     /**
-     * @var Lorry\Service\Config
+     * @var \Lorry\Service\ConfigService
      */
     protected $config;
 
     /**
-     * @var Lorry\Service\LocalisationService
+     * @var \Lorry\Service\LocalisationService
      */
     protected $localisation;
 
     /**
-     * @var Lorry\Service\SecurityService
+     * @var \Lorry\Service\SecurityService
      */
     protected $security;
 
     /**
-     * @var Lorry\TemplateEngineInterface
+     * @var \Lorry\TemplateEngineInterface
      */
     protected $templating;
 
