@@ -2,8 +2,7 @@
 
 namespace Lorry\Job;
 
-use Lorry\Job;
-use Lorry\Email;
+use Lorry\Email\Email;
 
 abstract class EmailJob extends AbstractJob
 {

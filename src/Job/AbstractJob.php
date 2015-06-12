@@ -1,6 +1,6 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Job;
 
 use Resque\AbstractJob as ResqueAbstractJob;
 

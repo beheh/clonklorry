@@ -2,6 +2,8 @@
 
 namespace Lorry\Job;
 
+use Lorry\Email\Email;
+
 class ActivateJob extends UserEmailJob
 {
 
@@ -10,6 +12,11 @@ class ActivateJob extends UserEmailJob
         return 'Activate';
     }
 
+    /**
+     *
+     * @param \Lorry\Email\Activate $email
+     * @param array $payload
+     */
     public function prepareEmail(Email $email, $payload)
     {
         parent::prepareEmail($email, $payload);
