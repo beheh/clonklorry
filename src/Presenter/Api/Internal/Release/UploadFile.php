@@ -3,7 +3,7 @@
 namespace Lorry\Presenter\Api\Internal\Release;
 
 use Lorry\Presenter\Api\Presenter;
-use Lorry\Exception;
+use Lorry\Exception\LorryException;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;
