@@ -6,7 +6,7 @@ use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
 use Lorry\Exception\ForbiddenException;
-use Lorry\Exception\LorryException;
+use Lorry\Exception\Exception;
 use Doctrine\Common\Persistence\ObjectManager;
 use \InvalidArgumentException;
 use Lorry\Model\User;

@@ -3,7 +3,7 @@
 namespace Lorry\Presenter\Api;
 
 use Lorry\Presenter\AbstractPresenter as LorryPresenter;
-use Lorry\Exception\LorryException;
+use Lorry\Exception\Exception;
 
 class Presenter extends LorryPresenter
 {
@@ -12,7 +12,7 @@ class Presenter extends LorryPresenter
     {
         try {
             return call_user_func_array(array($this, $method), $parameters);
-        } catch (LorryException $ex) {
+        } catch (Exception $ex) {
             $httpcode = $ex->getHttpCode();
             if (!$httpcode) {
                 $httpcode = 500;

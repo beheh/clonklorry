@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-class AuthentificationFailedException extends LorryException
+class AuthentificationFailedException extends ConcreteException
 {
 
     public function getPresenter()

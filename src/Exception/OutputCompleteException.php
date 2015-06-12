@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-class OutputCompleteException extends LorryException
+class OutputCompleteException extends ConcreteException
 {
 
     public function getPresenter()

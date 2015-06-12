@@ -4,7 +4,7 @@ namespace Lorry;
 
 use Lorry\Exception\NotImplementedException;
 use Lorry\Exception\FileNotFoundException;
-use Lorry\Exception\LorryException;
+use Lorry\Exception\Exception;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
 use Doctrine\Common\Cache\ArrayCache;
@@ -207,7 +207,7 @@ class Environment
             $presenter->setRequest($request);
             $presenter->handle($method, $router->getMatches());
             $this->logger->debug('successfully handled request');
-        } catch (LorryException $exception) {
+        } catch (Exception $exception) {
             $presenterClass = $exception->getPresenter();
 
             if ($this->container->has($presenterClass)) {

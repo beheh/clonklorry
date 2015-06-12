@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-class NotImplementedException extends LorryException
+class NotImplementedException extends ConcreteException
 {
 
     public function getPresenter()

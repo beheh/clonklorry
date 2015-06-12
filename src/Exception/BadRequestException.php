@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-class BadRequestException extends LorryException
+class BadRequestException extends ConcreteException
 {
 
     public function getPresenter()

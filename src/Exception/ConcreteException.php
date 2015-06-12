@@ -2,9 +2,9 @@
 
 namespace Lorry\Exception;
 
-use Exception as PHPException;
+use \Exception as PHPException;
 
-class LorryException extends PHPException
+class ConcreteException extends PHPException implements Exception
 {
 
     public function getPresenter()

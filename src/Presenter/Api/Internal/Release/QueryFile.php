@@ -4,7 +4,7 @@ namespace Lorry\Presenter\Api\Internal\Release;
 
 use RuntimeException;
 use Lorry\Presenter\Api\Presenter;
-use Lorry\Exception\LorryException;
+use Lorry\Exception\Exception;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Model\Addon;
 use Lorry\Model\Release;

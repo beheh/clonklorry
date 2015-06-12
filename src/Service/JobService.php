@@ -5,7 +5,7 @@ namespace Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Resque\Resque;
 use Predis\Client;
-use Lorry\Exception\LorryException;
+use Lorry\Exception\Exception;
 
 class JobService extends AbstractService
 {

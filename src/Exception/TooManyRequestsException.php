@@ -2,7 +2,7 @@
 
 namespace Lorry\Exception;
 
-class TooManyRequestsException extends LorryException
+class TooManyRequestsException extends ConcreteException
 {
 
     public function getPresenter()
