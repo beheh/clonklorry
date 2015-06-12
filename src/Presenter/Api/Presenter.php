@@ -12,7 +12,7 @@ class Presenter extends LorryPresenter
     {
         try {
             return call_user_func_array(array($this, $method), $parameters);
-        } catch (Exception $ex) {
+        } catch (LorryException $ex) {
             $httpcode = $ex->getHttpCode();
             if (!$httpcode) {
                 $httpcode = 500;
