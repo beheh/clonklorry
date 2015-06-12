@@ -69,7 +69,7 @@ class MailService extends AbstractService
         $instance->setConfigService($this->config);
         $instance->setLocalisationService($this->localisation);
         $instance->setSecurityService($this->security);
-        $instance->setTwig($this->templating);
+        $instance->setTemplating($this->templating);
         return $instance;
     }
 

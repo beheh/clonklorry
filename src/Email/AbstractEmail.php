@@ -41,13 +41,13 @@ abstract class AbstractEmail implements Email
     }
     /**
      *
-     * @var \Twig_Environment;
+     * @var \Lorry\TemplateEngineInterface;
      */
-    private $twig;
+    private $templating;
 
-    public function setTwig(Twig_Environment $twig)
+    public function setTemplating(TemplateEngineInterface $templating)
     {
-        $this->twig = $twig;
+        $this->templating = $templating;
     }
     private $recipent;
 
@@ -108,7 +108,7 @@ abstract class AbstractEmail implements Email
 
     protected function render($name)
     {
-        $template = $this->twig->loadTemplate('email/'.$name);
+        $template = $this->templating->loadTemplate('email/'.$name);
         $context = array_merge(array('brand' => $this->config->get('brand'), 'email_plain' => $this->plain), $this->context);
         $this->subject = $template->renderBlock('subject', $context);
         $this->message = $template->render($context);
