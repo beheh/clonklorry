@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Account;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Identify extends Presenter
+class Identify extends AbstractPresenter
 {
 
     public function get()

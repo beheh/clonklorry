@@ -2,8 +2,6 @@
 
 namespace Lorry\Job;
 
-use Lorry\Email;
-
 class ActivateJob extends UserEmailJob
 {
 

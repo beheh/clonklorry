@@ -2,9 +2,7 @@
 
 namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
-
-class AuthFailed extends Presenter\Error
+class AuthFailed extends InternalError
 {
 
     protected function getCode()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Presenter;
 
 use Psr\Log\LoggerInterface;
 use Interop\Container\ContainerInterface;
@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @property \Lorry\TemplateEngineInterface $twig
  * @property \Doctrine\Common\Persistence\ObjectManager $manager
  */
-abstract class Presenter
+abstract class AbstractPresenter implements Presenter
 {
     /**
      *

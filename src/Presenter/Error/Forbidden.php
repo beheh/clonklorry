@@ -2,9 +2,7 @@
 
 namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
-
-class Forbidden extends Presenter\Error
+class Forbidden extends InternalError
 {
 
     protected function getCode()

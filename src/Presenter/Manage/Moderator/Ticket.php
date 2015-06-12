@@ -2,11 +2,11 @@
 
 namespace Lorry\Presenter\Manage\Moderator;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\EmailFactory;
 
-class Ticket extends Presenter
+class Ticket extends AbstractPresenter
 {
 
     public static function getTicket($persistence, $id)

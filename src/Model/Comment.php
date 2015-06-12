@@ -2,14 +2,13 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
 use Lorry\ApiObjectInterface;
 
 /**
  * @Entity
  * @HasLifecycleCallbacks
  */
-class Comment extends Model implements ApiObjectInterface
+class Comment extends AbstractModel implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="User", inversedBy="writtenComments", fetch="EAGER")

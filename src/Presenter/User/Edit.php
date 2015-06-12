@@ -2,14 +2,14 @@
 
 namespace Lorry\Presenter\User;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Validator\UserValidator;
 use Lorry\ModificationListener;
 use Lorry\Exception\ValidationException;
 
-class Edit extends Presenter
+class Edit extends AbstractPresenter
 {
 
     public function get($username)

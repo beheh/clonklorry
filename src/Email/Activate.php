@@ -2,9 +2,7 @@
 
 namespace Lorry\Email;
 
-use Lorry\Email;
-
-class Activate extends Email
+class Activate extends AbstractEmail
 {
 
     public function write()

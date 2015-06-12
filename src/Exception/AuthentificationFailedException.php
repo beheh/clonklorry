@@ -2,9 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Lorry\Exception;
-
-class AuthentificationFailedException extends Exception
+class AuthentificationFailedException extends LorryException
 {
 
     public function getPresenter()

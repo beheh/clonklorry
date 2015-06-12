@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-abstract class Redirect extends Presenter
+abstract class Redirect extends AbstractPresenter
 {
 
     abstract public function getLocation();

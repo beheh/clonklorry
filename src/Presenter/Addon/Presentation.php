@@ -2,10 +2,10 @@
 
 namespace Lorry\Presenter\Addon;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 
-class Presentation extends Presenter
+class Presentation extends AbstractPresenter
 {
 
     public function get($gamename, $addonname, $version = 'latest')

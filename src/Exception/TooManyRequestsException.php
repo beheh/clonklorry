@@ -2,9 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Lorry\Exception;
-
-class TooManyRequestsException extends Exception
+class TooManyRequestsException extends LorryException
 {
 
     public function getPresenter()

@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Manage\Moderator;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Portal extends Presenter
+class Portal extends AbstractPresenter
 {
 
     public function get()

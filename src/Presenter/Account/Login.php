@@ -2,12 +2,12 @@
 
 namespace Lorry\Presenter\Account;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\BadRequestException;
 use Lorry\Exception\TooManyRequestsException;
 
-class Login extends Presenter
+class Login extends AbstractPresenter
 {
     /**
      * @Inject

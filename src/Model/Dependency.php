@@ -2,9 +2,7 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
-
-class Dependency extends Model
+class Dependency extends AbstractModel
 {
 
     public function getTable()

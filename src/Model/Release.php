@@ -2,7 +2,6 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
 use Lorry\ApiObjectInterface;
 
 /**
@@ -10,7 +9,7 @@ use Lorry\ApiObjectInterface;
  * @HasLifecycleCallbacks
  * @Table(name="`Release`",uniqueConstraints={@UniqueConstraint(name="addon_version", columns={"addon_id", "version"})})
  */
-class Release extends Model implements ApiObjectInterface
+class Release extends AbstractModel implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="Addon", inversedBy="releases", fetch="EAGER")

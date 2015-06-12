@@ -2,7 +2,6 @@
 
 namespace Lorry\Service;
 
-use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
@@ -11,7 +10,7 @@ use Doctrine\ORM\UnitOfWork;
 use InvalidArgumentException;
 use Exception;
 
-class SessionService extends Service
+class SessionService extends AbstractService
 {
     /**
      *

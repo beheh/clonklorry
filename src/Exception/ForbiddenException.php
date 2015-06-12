@@ -2,9 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Lorry\Exception;
-
-class ForbiddenException extends Exception
+class ForbiddenException extends LorryException
 {
 
     public function getPresenter()

@@ -1,11 +1,11 @@
 <?php
 
-namespace Lorry\Presenter;
+namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Exception;
 
-class Error extends Presenter
+class InternalError extends AbstractPresenter implements ErrorPresenter
 {
 
     protected function getCode()

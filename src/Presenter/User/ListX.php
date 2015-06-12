@@ -2,10 +2,10 @@
 
 namespace Lorry\Presenter\User;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 
-class ListX extends Presenter
+class ListX extends AbstractPresenter
 {
 
     public function get()

@@ -4,7 +4,7 @@ namespace Lorry\Job;
 
 use Lorry\Job;
 
-class ReleaseJob extends Job
+class ReleaseJob extends AbstractJob
 {
 
     public function getQueue()

@@ -5,7 +5,7 @@ namespace Lorry\Job;
 use Lorry\Job;
 use Lorry\Email;
 
-abstract class EmailJob extends Job
+abstract class EmailJob extends AbstractJob
 {
 
     abstract public function getEmail();

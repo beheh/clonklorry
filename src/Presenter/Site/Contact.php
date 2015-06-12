@@ -2,13 +2,13 @@
 
 namespace Lorry\Presenter\Site;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Model\Ticket;
 use Lorry\Validator\TicketValidator;
 use Lorry\Exception\ValidationException;
 use Lorry\Exception\TooManyRequestsException;
 
-class Contact extends Presenter
+class Contact extends AbstractPresenter
 {
     /**
      * @Inject

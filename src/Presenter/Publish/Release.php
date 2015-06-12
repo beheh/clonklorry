@@ -3,12 +3,12 @@
 namespace Lorry\Presenter\Publish;
 
 use DateTime;
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ModelValueInvalidException;
 use Lorry\Exception\ForbiddenException;
 
-class Release extends Presenter
+class Release extends AbstractPresenter
 {
 
     public static function getRelease($persistence, $id, $version)

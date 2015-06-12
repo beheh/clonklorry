@@ -2,13 +2,13 @@
 
 namespace Lorry\Presenter\Account;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\ModificationListener;
 use Lorry\Validator\UserValidator;
 use Lorry\Exception\ValidationException;
 use Lorry\Exception\TooManyRequestsException;
 
-class Settings extends Presenter
+class Settings extends AbstractPresenter
 {
     /**
      * @Inject

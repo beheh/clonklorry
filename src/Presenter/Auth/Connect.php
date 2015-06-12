@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Auth;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Connect extends Presenter
+class Connect extends AbstractPresenter
 {
 
     public function get()

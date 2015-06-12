@@ -2,14 +2,13 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
 use Lorry\ApiObjectInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Entity(readOnly=true)
  */
-class Game extends Model implements ApiObjectInterface
+class Game extends AbstractModel implements ApiObjectInterface
 {
     /**
      * @Column(type="string", length=16, unique=true)

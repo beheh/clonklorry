@@ -1,10 +1,10 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Exception;
 
 use Exception as PHPException;
 
-class Exception extends PHPException
+class LorryException extends PHPException
 {
 
     public function getPresenter()

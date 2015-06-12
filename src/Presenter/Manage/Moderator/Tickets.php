@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Manage\Moderator;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Tickets extends Presenter
+class Tickets extends AbstractPresenter
 {
 
     public function get()

@@ -2,9 +2,7 @@
 
 namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
-
-class BadRequest extends Presenter\Error
+class BadRequest extends InternalError
 {
 
     protected function getCode()

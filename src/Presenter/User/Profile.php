@@ -2,12 +2,12 @@
 
 namespace Lorry\Presenter\User;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Service\LocalisationService;
 
-class Profile extends Presenter
+class Profile extends AbstractPresenter
 {
 
     /**

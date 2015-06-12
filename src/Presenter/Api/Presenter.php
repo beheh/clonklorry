@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Api;
 
-use Lorry\Presenter as LorryPresenter;
+use Lorry\Presenter\AbstractPresenter as LorryPresenter;
 use Lorry\Exception;
 
 class Presenter extends LorryPresenter

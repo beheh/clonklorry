@@ -2,7 +2,7 @@
 
 namespace Lorry;
 
-use Resque\AbstractJob;
+use Resque\AbstractJob as ResqueAbstractJob;
 
 /**
  * @property \Lorry\Service\ConfigService $config
@@ -16,7 +16,7 @@ use Resque\AbstractJob;
  * @property \Lorry\TemplateEngineInterface $twig
  * @property \Doctrine\Common\Persistence\ObjectManager $manager
  */
-abstract class Job extends AbstractJob
+abstract class AbstractJob extends ResqueAbstractJob
 {
 
     abstract public function execute();

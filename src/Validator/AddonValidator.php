@@ -2,9 +2,7 @@
 
 namespace Lorry\Validator;
 
-use Lorry\Validator;
-
-class AddonValidator extends Validator
+class AddonValidator extends AbstractValidator
 {
 
     /**

@@ -2,13 +2,11 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
-
 /**
  * @Entity
  * @HasLifecycleCallbacks
  */
-class UserModeration extends Model
+class UserModeration extends AbstractModel
 {
     /**
      * @ManyToOne(targetEntity="User", inversedBy="moderations", cascade={"all"}, fetch="EAGER")

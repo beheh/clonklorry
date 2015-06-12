@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Account;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Logout extends Presenter
+class Logout extends AbstractPresenter
 {
 
     public function get()

@@ -2,13 +2,13 @@
 
 namespace Lorry\Presenter\Account;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Model\User;
 use Lorry\Validator\UserValidator;
 use Lorry\Exception\ValidationException;
 
-class Register extends Presenter
+class Register extends AbstractPresenter
 {
 
     public function get()

@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Site;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Community extends Presenter
+class Community extends AbstractPresenter
 {
 
     public function get()

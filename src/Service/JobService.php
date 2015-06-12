@@ -2,13 +2,12 @@
 
 namespace Lorry\Service;
 
-use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Resque\Resque;
 use Predis\Client;
 use Lorry\Exception;
 
-class JobService extends Service
+class JobService extends AbstractService
 {
     /**
      *

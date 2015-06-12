@@ -3,9 +3,9 @@
 namespace Lorry\Presenter\Manage\Administrator;
 
 use Lorry\Environment;
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Logs extends Presenter
+class Logs extends AbstractPresenter
 {
 
     public function get()

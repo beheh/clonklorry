@@ -2,7 +2,6 @@
 
 namespace Lorry\Service;
 
-use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Email;
 use Lorry\TemplateEngineInterface;
@@ -12,7 +11,7 @@ use Swift_SmtpTransport;
 use Exception;
 use RuntimeException;
 
-class MailService extends Service
+class MailService extends AbstractService
 {
     /**
      * @var Lorry\Service\Config

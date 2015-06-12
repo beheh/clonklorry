@@ -2,9 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Lorry\Exception;
-
-class BadRequestException extends Exception
+class BadRequestException extends LorryException
 {
 
     public function getPresenter()

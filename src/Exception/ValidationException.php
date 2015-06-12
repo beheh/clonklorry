@@ -2,9 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Lorry\Exception;
-
-class ValidationException extends Exception
+class ValidationException extends LorryException
 {
     private $fails = array();
 

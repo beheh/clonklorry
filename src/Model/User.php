@@ -2,7 +2,6 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -10,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @HasLifecycleCallbacks
  * @ChangeTrackingPolicy("NOTIFY")
  */
-class User extends Model
+class User extends AbstractModel
 {
     /** @Column(type="string", length=16, unique=true) */
     protected $username;

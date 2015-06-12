@@ -1,11 +1,11 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Validator;
 
 use Lorry\Exception\ValidationException;
 use \InvalidArgumentException;
 
-abstract class Validator
+abstract class AbstractValidator implements Validator
 {
 
     abstract function performValidation($entity);

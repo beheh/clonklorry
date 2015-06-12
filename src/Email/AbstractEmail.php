@@ -1,13 +1,13 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Email;
 
 use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
 use Twig_Environment;
 
-abstract class Email
+abstract class AbstractEmail implements Email
 {
     /**
      *

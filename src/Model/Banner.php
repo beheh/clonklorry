@@ -2,13 +2,12 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Entity(repositoryClass="Lorry\Repository\BannerRepository")
  */
-class Banner extends Model
+class Banner extends AbstractModel
 {
     const VISIBILITY_HIDDEN = 0;
     const VISIBILITY_PUBLIC = 1;

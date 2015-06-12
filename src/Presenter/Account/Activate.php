@@ -2,12 +2,12 @@
 
 namespace Lorry\Presenter\Account;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\BadRequestException;
 
-class Activate extends Presenter
+class Activate extends AbstractPresenter
 {
 
     public function get($username)

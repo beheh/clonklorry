@@ -2,14 +2,14 @@
 
 namespace Lorry\Presenter\Publish;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Model\Addon;
 use Lorry\Model\AddonTranslation;
 use Lorry\Validator\AddonValidator;
 use Lorry\Validator\AddonTranslationValidator;
 use Lorry\Exception\ValidationException;
 
-class Developers extends Presenter
+class Developers extends AbstractPresenter
 {
 
     public function get()

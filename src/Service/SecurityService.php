@@ -2,7 +2,6 @@
 
 namespace Lorry\Service;
 
-use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Service\ConfigService;
 use Lorry\Service\SessionService;
@@ -13,7 +12,7 @@ use \InvalidArgumentException;
 use Lorry\Model\User;
 use Lorry\Model\UserModeration;
 
-class SecurityService extends Service
+class SecurityService extends AbstractService
 {
     /**
      *

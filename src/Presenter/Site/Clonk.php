@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Site;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Clonk extends Presenter
+class Clonk extends AbstractPresenter
 {
 
     public function get()

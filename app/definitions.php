@@ -60,7 +60,7 @@ return [
         function ($container) {
             $adapter = new \BehEh\Flaps\Storage\PredisStorage($container->get('Predis\Client'), array('prefix' => 'clonklorry:'));
             $flaps = new \BehEh\Flaps\Flaps($adapter);
-            $flaps->setDefaultViolationHandler(new \Lorry\Adapter\LorryViolationHandler);
+            $flaps->setDefaultViolationHandler(new \Lorry\RateLimitViolationHandler);
             return $flaps;
         },
     \Lorry\TemplateEngineInterface::class =>

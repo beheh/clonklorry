@@ -2,7 +2,6 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
 use Lorry\ApiObjectInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
@@ -11,7 +10,7 @@ use Doctrine\Common\Collections\Criteria;
  * @Entity(repositoryClass="Lorry\Repository\AddonRepository")
  * @HasLifecycleCallbacks
  */
-class Addon extends Model implements ApiObjectInterface
+class Addon extends AbstractModel implements ApiObjectInterface
 {
     /**
      * @ManyToOne(targetEntity="User", inversedBy="ownedAddons")

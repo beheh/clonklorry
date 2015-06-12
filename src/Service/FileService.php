@@ -8,7 +8,7 @@ use Lorry\Model\Release;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local as LocalAdapter;
 
-class FileService
+class FileService extends AbstractService
 {
 
     public function getBaseUpload(Addon $addon, Release $release)

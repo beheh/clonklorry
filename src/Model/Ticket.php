@@ -2,13 +2,11 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
-
 /**
  * @Entity(repositoryClass="Lorry\Repository\TicketRepository")
  * @HasLifecycleCallbacks
  */
-class Ticket extends Model
+class Ticket extends AbstractModel
 {
     /**
      * @ManyToOne(targetEntity="User", fetch="EAGER")

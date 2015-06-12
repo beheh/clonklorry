@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Site;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Disabled extends Presenter
+class Disabled extends AbstractPresenter
 {
 
     public function get()

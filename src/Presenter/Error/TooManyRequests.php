@@ -2,9 +2,7 @@
 
 namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
-
-class TooManyRequests extends Presenter\Error
+class TooManyRequests extends InternalError
 {
 
     protected function getCode()

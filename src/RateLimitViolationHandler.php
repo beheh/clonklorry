@@ -1,11 +1,11 @@
 <?php
 
-namespace Lorry\Adapter;
+namespace Lorry;
 
 use Lorry\Exception\TooManyRequestsException;
 use BehEh\Flaps\ViolationHandlerInterface;
 
-class LorryViolationHandler implements ViolationHandlerInterface
+class RateLimitViolationHandler implements ViolationHandlerInterface
 {
 
     public function handleViolation()

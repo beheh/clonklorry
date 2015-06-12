@@ -2,10 +2,10 @@
 
 namespace Lorry\Presenter\User;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 
-class Audit extends Presenter
+class Audit extends AbstractPresenter
 {
 
     /**

@@ -2,9 +2,7 @@
 
 namespace Lorry\Email;
 
-use Lorry\Email;
-
-class Password extends Email
+class Password extends AbstractEmail
 {
 
     public function write()

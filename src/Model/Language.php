@@ -2,12 +2,10 @@
 
 namespace Lorry\Model;
 
-use Lorry\Model;
-
 /**
  * @Entity(readOnly=true)
  */
-class Language extends Model
+class Language extends AbstractModel
 {
     /**
      * @Column(type="string", length=10, unique=true)

@@ -2,8 +2,9 @@
 
 namespace Lorry\Adapter;
 
-use Twig_Environment;
 use Lorry\TemplateEngineInterface;
+
+use Twig_Environment;
 
 class TwigTemplatingEngineAdapter extends Twig_Environment implements TemplateEngineInterface
 {

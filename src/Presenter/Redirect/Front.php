@@ -2,7 +2,7 @@
 
 namespace Lorry\Presenter\Redirect;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
 class Front extends Presenter\Redirect
 {

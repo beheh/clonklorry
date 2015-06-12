@@ -1,11 +1,11 @@
 <?php
 
-namespace Lorry;
+namespace Lorry\Model;
 
 use Doctrine\Common\NotifyPropertyChanged;
 use Doctrine\Common\PropertyChangedListener;
 
-abstract class Model implements NotifyPropertyChanged
+abstract class AbstractModel implements NotifyPropertyChanged, Model
 {
     /**
      * @Id @Column(type="integer")

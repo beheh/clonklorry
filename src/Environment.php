@@ -4,6 +4,7 @@ namespace Lorry;
 
 use Lorry\Exception\NotImplementedException;
 use Lorry\Exception\FileNotFoundException;
+use Lorry\Exception\LorryException;
 use Lorry\Service\ConfigService;
 use Lorry\Logger\MonologLoggerFactory;
 use Doctrine\Common\Cache\ArrayCache;
@@ -206,7 +207,7 @@ class Environment
             $presenter->setRequest($request);
             $presenter->handle($method, $router->getMatches());
             $this->logger->debug('successfully handled request');
-        } catch (Exception $exception) {
+        } catch (LorryException $exception) {
             $presenterClass = $exception->getPresenter();
 
             if ($this->container->has($presenterClass)) {
@@ -220,7 +221,7 @@ class Environment
                 $this->container->get(\Lorry\TemplateEngineInterface::class)->addGlobal('site_enabled', false);
                 $this->logger->alert('cannot reach database');
             }
-            $this->container->get(\Lorry\Presenter\Error::class)->get($exception);
+            $this->container->get(\Lorry\Presenter\Error\InternalError::class)->get($exception);
         }
     }
 

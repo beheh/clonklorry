@@ -2,9 +2,7 @@
 
 namespace Lorry\Exception;
 
-use Lorry\Exception;
-
-class FileNotFoundException extends Exception
+class FileNotFoundException extends LorryException
 {
 
     public function getPresenter()

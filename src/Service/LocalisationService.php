@@ -2,12 +2,11 @@
 
 namespace Lorry\Service;
 
-use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Lorry\Model\Language;
 
-class LocalisationService extends Service
+class LocalisationService extends AbstractService
 {
     /**
      *

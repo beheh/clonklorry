@@ -2,13 +2,13 @@
 
 namespace Lorry\Presenter\Manage\Moderator;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Service\LocalisationService;
 use Lorry\Exception\ModelValueInvalidException;
 
-class Approve extends Presenter
+class Approve extends AbstractPresenter
 {
 
     /**

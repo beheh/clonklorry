@@ -2,9 +2,7 @@
 
 namespace Lorry\Presenter\Error;
 
-use Lorry\Presenter;
-
-class FileNotFound extends Presenter\Error
+class FileNotFound extends InternalError
 {
 
     protected function getCode()

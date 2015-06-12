@@ -2,12 +2,12 @@
 
 namespace Lorry\Presenter\Auth;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\AuthentificationFailedException;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Model\User;
 
-class Gateway extends Presenter
+class Gateway extends AbstractPresenter
 {
 
     public function get($providerName)

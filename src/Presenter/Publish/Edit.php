@@ -2,14 +2,14 @@
 
 namespace Lorry\Presenter\Publish;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Model\User;
 use Lorry\Model\Addon;
 use Lorry\Exception\FileNotFoundException;
 use Lorry\Exception\ForbiddenException;
 use Lorry\Exception\ModelValueInvalidException;
 
-class Edit extends Presenter
+class Edit extends AbstractPresenter
 {
 
     public static function getAddon($persistence, $id, User $user)

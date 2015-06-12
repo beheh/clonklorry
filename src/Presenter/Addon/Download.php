@@ -2,9 +2,9 @@
 
 namespace Lorry\Presenter\Addon;
 
-use Lorry\Presenter;
+use Lorry\Presenter\AbstractPresenter;
 
-class Download extends Presenter
+class Download extends AbstractPresenter
 {
 
     public function get($gamename, $addonname, $version = 'latest')

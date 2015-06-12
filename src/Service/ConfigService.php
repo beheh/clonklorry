@@ -5,10 +5,9 @@ namespace Lorry\Service;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
 use Lorry\Environment;
-use Lorry\Service;
 use Lorry\Logger\LoggerFactoryInterface;
 
-class ConfigService extends Service
+class ConfigService extends AbstractService
 {
     private $configuration;
 
