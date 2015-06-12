@@ -291,7 +291,7 @@ class User extends AbstractModel
     public function unsetFlag($flag)
     {
         $flags = $this->getFlags();
-        $flags = $flags xor $flag;
+        $flags = $flags ^ $flag; //xor
         $this->setFlags($flags);
     }
 
