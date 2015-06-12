@@ -6,7 +6,6 @@ use Lorry\Logger\LoggerFactoryInterface;
 use Lorry\Model\User;
 use Lorry\Exception\FileNotFoundException;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\UnitOfWork;
 use \InvalidArgumentException;
 use Lorry\Exception\ConcreteException;
 
