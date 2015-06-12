@@ -26,10 +26,8 @@ abstract class AbstractModel implements NotifyPropertyChanged, Model
 
     final protected function _onPropertyChanged($propName, $oldValue, $newValue)
     {
-        if ($this->_listeners) {
-            foreach ($this->_listeners as $listener) {
-                $listener->propertyChanged($this, $propName, $oldValue, $newValue);
-            }
+        foreach ($this->_listeners as $listener) {
+            $listener->propertyChanged($this, $propName, $oldValue, $newValue);
         }
     }
 }
