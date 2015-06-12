@@ -33,7 +33,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->user->getUsername());
         $expected = 'Wipf';
         $this->user->setUsername($expected);
-        $this->assertEquals($expected, $this->user->getUsername());
+        $this->assertSame($expected, $this->user->getUsername());
     }
 
     /**
@@ -80,7 +80,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->user->getEmail());
         $expected = 'wipf@example.com';
         $this->user->setEmail($expected);
-        $this->assertEquals($expected, $this->user->getEmail());
+        $this->assertSame($expected, $this->user->getEmail());
     }
 
     /**
@@ -152,13 +152,13 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $expected = User::PERMISSION_READ;
         $this->user->setPermissions(User::PERMISSION_READ);
-        $this->assertEquals($expected, $this->user->getPermissions());
+        $this->assertSame($expected, $this->user->getPermissions());
     }
 
     public function testDefaultPermissions()
     {
         $defaultUser = new User();
-        $this->assertEquals(User::PERMISSION_READ, $defaultUser->getPermissions());
+        $this->assertSame(User::PERMISSION_READ, $defaultUser->getPermissions());
         $this->assertFalse($defaultUser->isModerator());
         $this->assertFalse($defaultUser->isAdministrator());
     }
@@ -484,7 +484,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $expected = 'Wipf';
         $this->user->setUsername($expected);
-        $this->assertEquals((string) $this->user, $expected);
+        $this->assertSame((string) $this->user, $expected);
     }
 
     /**

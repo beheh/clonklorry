@@ -30,7 +30,7 @@ class TicketTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->ticket->getResponseEmailAddress());
         $expected = 'response@example.com';
         $this->ticket->setResponseEmail($expected);
-        $this->assertEquals($expected, $this->ticket->getResponseEmailAddress());
+        $this->assertSame($expected, $this->ticket->getResponseEmailAddress());
     }
 
     /**
@@ -53,7 +53,7 @@ class TicketTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->ticket->getAssociatedUser());
         $expected = new User();
         $this->ticket->setAssociatedUser($expected);
-        $this->assertEquals($expected, $this->ticket->getAssociatedUser());
+        $this->assertSame($expected, $this->ticket->getAssociatedUser());
     }
 
     /**
@@ -68,7 +68,7 @@ class TicketTest extends \PHPUnit_Framework_TestCase
         $expected = new User();
         $this->ticket->assign($expected);
         $this->assertEquals(new \DateTime(), $this->ticket->getAssigned());
-        $this->assertEquals($expected, $this->ticket->getAssignedTo());
+        $this->assertSame($expected, $this->ticket->getAssignedTo());
     }
 
     /**
@@ -80,7 +80,7 @@ class TicketTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->ticket->getSubject());
         $expected = 'Hi there!';
         $this->ticket->setSubject($expected);
-        $this->assertEquals($expected, $this->ticket->getSubject());
+        $this->assertSame($expected, $this->ticket->getSubject());
     }
 
     /**
@@ -92,7 +92,7 @@ class TicketTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->ticket->getMessage());
         $expected = 'Hi there, I have some problem. Can you help me?';
         $this->ticket->setMessage($expected);
-        $this->assertEquals($expected, $this->ticket->getMessage());
+        $this->assertSame($expected, $this->ticket->getMessage());
     }
 
 }
