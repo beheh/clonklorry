@@ -11,7 +11,7 @@ class GameTest extends \PHPUnit_Framework_TestCase
     /**
      * @var Game
      */
-    protected $object;
+    protected $game;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -19,64 +19,29 @@ class GameTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new Game;
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-
+        $this->game = new Game;
     }
 
     /**
      * @covers Lorry\Model\Game::setShort
-     * @todo   Implement testSetShort().
-     */
-    public function testSetShort()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers Lorry\Model\Game::getShort
-     * @todo   Implement testGetShort().
      */
-    public function testGetShort()
+    public function testShort()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $expected = 'gwe';
+        $this->game->setShort($expected);
+        $this->assertSame($expected, $this->game->getShort());
     }
-
+    
     /**
      * @covers Lorry\Model\Game::setTitle
-     * @todo   Implement testSetTitle().
-     */
-    public function testSetTitle()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers Lorry\Model\Game::getTitle
-     * @todo   Implement testGetTitle().
      */
-    public function testGetTitle()
+    public function testTitle()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $expected = 'Clonk Planet';
+        $this->game->setTitle($expected);
+        $this->assertSame($expected, $this->game->getTitle());
     }
 
     /**
@@ -93,38 +58,30 @@ class GameTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers Lorry\Model\Game::__toString
-     * @todo   Implement test__toString().
      */
     public function test__toString()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $expected = 'Clonk Endeavour';
+        $this->game->setTitle($expected);
+        $this->assertEquals($expected, $this->game);
+        $this->assertSame($expected, (string) $this->game);
     }
 
     /**
      * @covers Lorry\Model\Game::forApi
-     * @todo   Implement testForApi().
      */
     public function testForApi()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
+        $apiGame = new Game();
+        $expectedTitle = 'Clonk Extreme';
+        $expectedId = 'extreme';
 
-    /**
-     * @covers Lorry\Model\Game::forPresenter
-     * @todo   Implement testForPresenter().
-     */
-    public function testForPresenter()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $apiGame->setTitle($expectedTitle);
+        $apiGame->setShort($expectedId);
+        
+        $this->assertSame(array(
+            'id' => $expectedId,
+            'title' => $expectedTitle
+        ), $apiGame->forApi());
     }
-
 }

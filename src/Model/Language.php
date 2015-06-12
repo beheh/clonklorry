@@ -12,6 +12,10 @@ class Language extends AbstractModel
      */
     protected $key;
 
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
     public function getKey() {
         return $this->key;
     }

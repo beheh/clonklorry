@@ -85,9 +85,4 @@ class Game extends AbstractModel implements ApiObjectInterface
     {
         return array('id' => $this->getShort(), 'title' => $this->getTitle());
     }
-
-    public function forPresenter()
-    {
-        return array('short' => $this->getShort(), 'title' => $this->getTitle());
-    }
 }
