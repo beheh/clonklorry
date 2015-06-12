@@ -54,7 +54,7 @@ class LocalisationService extends AbstractService
     final public function verifyLanguage($language)
     {
         if (in_array($language, $this->getAvailableLanguages())) {
-            return $language;
+            return true;
         }
         return false;
     }
@@ -182,7 +182,8 @@ class LocalisationService extends AbstractService
 
         $this->silentLocalize($requested);
     }
-    private $current_language = false;
+
+    private $current_language = null;
 
     /**
      *
