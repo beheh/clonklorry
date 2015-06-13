@@ -40,7 +40,7 @@ class Contact extends AbstractPresenter
         $ticketValidator = new TicketValidator();
         $ticketRepository = $this->manager->getRepository('Lorry\Model\Ticket');
 
-        $user = false;
+        $user = null;
         if ($this->session->authenticated()) {
             $user = $this->session->getUser();
         }
@@ -48,7 +48,7 @@ class Contact extends AbstractPresenter
         $ticket = new Ticket();
 
         $email = null;
-        if ($user) {
+        if ($user !== null) {
             $ticket->setAssociatedUser($user);
             $email = $user->getEmail();
         }
@@ -67,7 +67,7 @@ class Contact extends AbstractPresenter
         $this->context['message'] = $message;
         $ticket->setMessage($message);
 
-        if($ticketRepository->findOneBy(array('message' => $message)) != null) {
+        if($ticketRepository->findOneBy(array('message' => $message)) !== null) {
             $ticketValidator->fail(gettext('This message has already been sent.'));
         }
 
