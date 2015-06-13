@@ -5,7 +5,7 @@ namespace Lorry\Email;
 use Lorry\Service\ConfigService;
 use Lorry\Service\LocalisationService;
 use Lorry\Service\SecurityService;
-use Twig_Environment;
+use Lorry\TemplateEngineInterface;
 
 abstract class AbstractEmail implements Email
 {
