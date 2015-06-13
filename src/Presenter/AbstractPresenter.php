@@ -5,7 +5,6 @@ namespace Lorry\Presenter;
 use Psr\Log\LoggerInterface;
 use Interop\Container\ContainerInterface;
 use Lorry\Exception\OutputCompleteException;
-use Lorry\Router;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
