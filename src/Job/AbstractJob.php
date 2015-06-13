@@ -2,6 +2,7 @@
 
 namespace Lorry\Job;
 
+use Lorry\Environment;
 use Resque\AbstractJob as ResqueAbstractJob;
 
 /**
