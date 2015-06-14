@@ -1,4 +1,4 @@
-{% set _release_url %}{{base}}/addons/{{release.addon.game.short}}/{{release.addon.short}}/{{release.version}}{% endset %}
+{% set _release_url %}{{base}}/addons/{{release.addon.game.namespace}}/{{release.addon.namespace}}/{{release.version}}{% endset %}
 {% set _addon_translation = attribute(release.addon, 'getTranslation', [display_language]) %}
 <li class="media media-addon">
 	<a href="{{_release_url}}" class="pull-left">

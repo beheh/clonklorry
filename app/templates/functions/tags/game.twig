@@ -1,5 +1,5 @@
 {% extends 'functions/tags/tag.twig' %}
 
-{% block class %}badge-{{game.short}}{% endblock %}
+{% block class %}badge-{{game.namespace}}{% endblock %}
 {% block title %}{{game.title}}{% endblock %}
-{% block url %}{{base}}/addons/{{game.short}}{% endblock %}
+{% block url %}{{base}}/addons/{{game.namespace}}{% endblock %}
