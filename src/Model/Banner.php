@@ -12,7 +12,7 @@ class Banner extends AbstractModel
     const VISIBILITY_HIDDEN = 0;
     const VISIBILITY_PUBLIC = 1;
 
-    // reserved for VISIBILITY_USERS
+    // reserve VISIBILITY_USERS = 2
     /**
      * @Column(type="integer")
      */
