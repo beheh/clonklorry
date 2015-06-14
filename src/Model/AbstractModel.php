@@ -8,16 +8,24 @@ use Doctrine\Common\PropertyChangedListener;
 abstract class AbstractModel implements NotifyPropertyChanged, Model
 {
     /**
-     * @Id @Column(type="integer")
+     * @Id
+     * @Column(type="integer")
      * @GeneratedValue
      */
-    protected $id;
+    protected $id = null;
 
+    /**
+     * @var array
+     */
+    private $_listeners = array();
+
+    /**
+     * @return integer
+     */
     final public function getId()
     {
         return $this->id;
     }
-    private $_listeners = array();
 
     final public function addPropertyChangedListener(PropertyChangedListener $listener)
     {
