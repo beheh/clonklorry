@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use \DateTime;
 
 /**
  * @Entity(repositoryClass="Lorry\Repository\BannerRepository")
@@ -16,43 +17,43 @@ class Banner extends AbstractModel
     /**
      * @Column(type="integer")
      */
-    protected $visibility;
+    protected $visibility = self::VISIBILITY_HIDDEN;
 
     /**
      * @Column(type="datetime", name="show_from", nullable=true)
      * @var \DateTime
      */
-    protected $showFrom;
+    protected $showFrom = null;
 
     /**
      * @Column(type="datetime", name="show_until", nullable=true)
      * @var \DateTime
      */
-    protected $showUntil;
+    protected $showUntil = null;
 
     /**
      * @ManyToOne(targetEntity="Release")
-     * @JoinColumn(onDelete="CASCADE")
+     * @JoinColumn(onDelete="CASCADE", nullable=true)
      */
-    protected $release;
+    protected $release = null;
 
     /**
      * @OneToMany(targetEntity="BannerTranslation", mappedBy="banner", cascade={"all"})
      * @var ArrayCollection
      */
-    protected $translations;
+    protected $translations = null;
 
     /**
      * @Column(type="string", nullable=true)
      * @var string
      */
-    protected $defaultUrl;
+    protected $defaultUrl = null;
 
     /**
      * @Column(type="string")
      * @var string
      */
-    protected $defaultImageUrl;
+    protected $defaultImageUrl = null;
 
     public function __construct()
     {
@@ -91,12 +92,12 @@ class Banner extends AbstractModel
 
     public function isScheduled()
     {
-        $now = new \DateTime();
+        $now = new DateTime();
         return $this->visibility === self::VISIBILITY_PUBLIC && $now < $this->showFrom;
     }
 
     public function isActive() {
-        $now = new \DateTime();
+        $now = new DateTime();
         return $this->visibility === self::VISIBILITY_PUBLIC && $now >= $this->showFrom && $now < $this->showUntil;
     }
 
