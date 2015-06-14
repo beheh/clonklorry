@@ -44,16 +44,17 @@ class Banner extends AbstractModel
     protected $translations = null;
 
     /**
-     * @Column(type="string", nullable=true)
+     * @Column(name="default_url", type="string", nullable=true)
      * @var string
      */
     protected $defaultUrl = null;
 
     /**
-     * @Column(type="string")
-     * @var string
+     * @ManyToOne(targetEntity="Image")
+     * @JoinColumn(name="default_image_id", nullable=true, onDelete="SET NULL")
+     * @var Image
      */
-    protected $defaultImageUrl = null;
+    protected $defaultImage = null;
 
     public function __construct()
     {

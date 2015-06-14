@@ -26,12 +26,13 @@ class BannerTranslation extends AbstractModel
      * @var string
      */
     protected $url;
-
+    
     /**
-     * @Column(type="string", nullable=true)
-     * @var string
+     * @ManyToOne(targetEntity="Image")
+     * @JoinColumn(nullable=true, onDelete="SET NULL")
+     * @var Image
      */
-    protected $imageUrl;
+    protected $image;
 
     /**
      * @Column(type="string", nullable=true)
