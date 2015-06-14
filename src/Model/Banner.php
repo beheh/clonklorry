@@ -147,9 +147,14 @@ class Banner extends AbstractModel
         return $this->translations;
     }
 
-    public function getTranslation()
+    public function getTranslation($language_key)
     {
-
+        foreach($this->translations as $translation) {
+            if($translation->getLanguage() !== null && $translation->getLanguage()->getKey() == $language_key) {
+                return $translation;
+            }
+        }
+        return null;
     }
 
     public function setDefaultUrl($defaultUrl)
@@ -160,5 +165,14 @@ class Banner extends AbstractModel
     public function getDefaultUrl()
     {
         return $this->defaultUrl;
+    }
+
+    public function setDefaultImage($image)
+    {
+        $this->defaultImage = $image;
+    }
+
+    public function getDefaultImage() {
+        return $this->defaultImage;
     }
 }
