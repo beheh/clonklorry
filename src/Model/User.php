@@ -3,6 +3,7 @@
 namespace Lorry\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use \RuntimeException;
 
 /**
  * @Entity(repositoryClass="Lorry\Repository\UserRepository")
@@ -223,6 +224,9 @@ class User extends AbstractModel
     {
         $secret = base64_encode(openssl_random_pseudo_bytes(64));
         $this->secret = $secret;
+        if(empty($this->secret)) {
+            throw new RuntimeException('could not generate secret');
+        }
         $this->_onPropertyChanged('secret', $this->secret, $secret);
         $this->incrementCounter();
     }
