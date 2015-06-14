@@ -51,7 +51,7 @@ class Approve extends AbstractPresenter
         $duplicate = array();
         if ($addon->isApproved()) {
             $this->context['approved'] = true;
-            $this->context['namespace'] = $addon->getShort();
+            $this->context['namespace'] = $addon->getNamespace();
         } else {
             $this->context['namespace'] = $addon->getProposedShort();
             $duplicate['namespace'] = ($this->persistence->build('Addon')->byShort($addon->getProposedShort())
