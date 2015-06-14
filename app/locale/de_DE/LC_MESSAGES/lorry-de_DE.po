@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-11 13:39+0100\n"
-"PO-Revision-Date: 2015-06-11 13:40+0100\n"
+"POT-Creation-Date: 2015-06-14 18:02+0100\n"
+"PO-Revision-Date: 2015-06-14 18:03+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -115,7 +115,7 @@ msgstr "Besuche das Entwicklerportal, um loszulegen."
 
 #: cache/twig/0/4/0403206e00549be5c9d5ce22722bd18b1c931df2acf2c1e9bfa30c6c70987ac1.php:179
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:26
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:278
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:280
 #: cache/twig/c/2/c2ea1bc0806da01de80eab537a4fc8ddae85bba7e841c78f58fff6f8343c9875.php:146
 msgid "Developer portal"
 msgstr "Entwicklerportal"
@@ -646,17 +646,43 @@ msgid "Administrator portal"
 msgstr "Administratorportal"
 
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:51
+msgid "Front page"
+msgstr "Startseite"
+
+#: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:57
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:60
+msgid "Banner"
+msgstr "Banner"
+
+#: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:61
 msgid "Platform"
 msgstr "Plattform"
 
-#: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:57
+#: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:67
 #: cache/twig/c/e/ce9cfab31e305ca8acaa0362e2d2df49890a65b8f304e2b8afa01c3989ab39bb.php:25
 msgid "Logs"
 msgstr "Protokolle"
 
-#: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:65
+#: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:75
 msgid "Statistics"
 msgstr "Statistiken"
+
+#: cache/twig/3/7/37bfb1a42b7df53c45717a2de7829604bbc348a3b37026e3eed203146a27d8ef.php:30
+msgid "Translate banner #%banner_number%"
+msgstr "Banner #%banner_number% übersetzen"
+
+#: cache/twig/3/7/37bfb1a42b7df53c45717a2de7829604bbc348a3b37026e3eed203146a27d8ef.php:63
+#: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:64
+msgid "Title"
+msgstr "Titel"
+
+#: cache/twig/3/7/37bfb1a42b7df53c45717a2de7829604bbc348a3b37026e3eed203146a27d8ef.php:74
+msgid "Subtitle"
+msgstr "Untertitel"
+
+#: cache/twig/3/7/37bfb1a42b7df53c45717a2de7829604bbc348a3b37026e3eed203146a27d8ef.php:85
+msgid "Url (overrides default url)"
+msgstr "URL (überschreibt Standard-URL)"
 
 #: cache/twig/3/7/37f48a5a11048734ba86c70f5faebbb658b1a2b8f251923c3a0f3ab7955dd5bc.php:37
 msgid "Current version"
@@ -973,7 +999,7 @@ msgstr "Betrachte dein Profil"
 
 #: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:129
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:183
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:307
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:309
 #: cache/twig/d/9/d9477f224a407cc0b72dcd6fd76b2ee4fee7d6fbec822b49243127cebca25cfa.php:207
 msgid "Register now"
 msgstr "Jetzt registrieren"
@@ -1162,10 +1188,6 @@ msgstr "Registrieren"
 #: cache/twig/4/f/4f020945fb53e066b3c43c5e248386b15d48c4258b7410ffdbb1c4bb296a01a7.php:37
 msgid "Draft"
 msgstr "Entwurf"
-
-#: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:64
-msgid "Title"
-msgstr "Titel"
 
 #: cache/twig/5/0/5032f7a87f4e684b513f02f5fe7b1678df50344e0f8c67800fea6b2af55cd2e0.php:151
 msgid "Create addon"
@@ -1461,6 +1483,87 @@ msgstr ""
 #: cache/twig/6/b/6ba9ce0a8a54557ffd1f8bc2acc365b3e1781d80b14f25c611c8df02c9647a08.php:111
 msgid "Uberspace privacy policy"
 msgstr "Datenschutzerklärung von Uberspace"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:30
+msgid "Edit banner #%banner_number%"
+msgstr "Banner #%banner_number% bearbeiten"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:67
+msgid "General"
+msgstr "Allgemein"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:73
+#, fuzzy
+msgid "Name"
+msgstr "Kennung"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:83
+msgid "Defaults"
+msgstr "Vorgaben"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:89
+msgid "Default url (if not set by translation)"
+msgstr "Standard-URL (falls nicht durch Übersetzung gesetzt)"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:100
+msgid "Default image (if not set by translation)"
+msgstr "Standard-Bild (falls nicht durch Übersetzung gesetzt)"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:112
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:118
+msgid "Show from"
+msgstr ""
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:133
+msgid "Now"
+msgstr "Jetzt"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:142
+msgid "Show until"
+msgstr ""
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:157
+msgid "Forever"
+msgstr "Dauerhaft"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:174
+msgid "Enable banner"
+msgstr "Banner aktivieren"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:182
+msgid "The banner won't be shown to users without a corresponding translation."
+msgstr ""
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:188
+msgid "Save banner"
+msgstr "Banner speichern"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:195
+msgid "Target groups"
+msgstr "Zielgruppen"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:202
+msgid "Translations"
+msgstr "Übersetzungen"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:227
+msgid "No translations yet"
+msgstr "Noch keine Übersetzungen"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:260
+msgid "Select language&hellip;"
+msgstr "Sprache auswählen&hellip;"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:284
+msgid "No language available"
+msgstr "Keine Sprache verfügbar"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:292
+msgid "Add translation"
+msgstr "Übersetzung hinzufügen"
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:31
 msgid "Forgot %brand% password"
@@ -1953,6 +2056,23 @@ msgstr "Tagge Addons nach Typ, Genre, Spielerzahlen&hellip;"
 msgid "Search addons by name, game, tags&hellip;"
 msgstr "Suche Erweiterungen nach Name, Spiel, Tags&hellip;"
 
+#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:26
+msgid "Banners"
+msgstr "Banner"
+
+#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:69
+#, fuzzy
+msgid "Banner #%banner_number%"
+msgstr "Banner #%banner_number% bearbeiten"
+
+#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:79
+msgid "No banners yet"
+msgstr "Noch keine Banner"
+
+#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:93
+msgid "Add banner"
+msgstr "Banner hinzufügen"
+
 #: cache/twig/a/b/abcebdaa43c3eb1769a3d5545eb538b9f7bc6b569e948ec1616d82da56cf90fd.php:37
 msgid "Release scheduled"
 msgstr "Veröffentlichung geplant"
@@ -1999,15 +2119,15 @@ msgstr "Füge dazu einfach die folgende URL in deinen Browser ein."
 msgid "Thanks and have lots of fun,"
 msgstr "Danke und viel Spaß,"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:187
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:189
 msgid "Latest releases"
 msgstr "Neue Veröffentlichungen"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:243
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:245
 msgid "Hey %user_name%!"
 msgstr "Hey %user_name%!"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:247
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:249
 msgid ""
 "Welcome to %brand%. On this site you can find addons by other players and "
 "publish your own. Here are some links to get you started:"
@@ -2016,19 +2136,19 @@ msgstr ""
 "Spielern finden und deine veröffentlichen. Hier sind einige Links, damit du "
 "gleich loslegen kannst:"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:254
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:256
 msgid "For players"
 msgstr "Für Spieler"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:260
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:262
 msgid "For developers"
 msgstr "Für Entwickler"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:267
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:269
 msgid "Welcome back."
 msgstr "Willkommen zurück."
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:271
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:273
 msgid ""
 "%brand% lives from community creations. Why not start developing a new addon "
 "today?"
@@ -2036,28 +2156,28 @@ msgstr ""
 "%brand% lebt von Community-Kreationen. Warum fängst du nicht gleich heute "
 "mit einer neuen Erweiterung an?"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:288
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:290
 msgid "Welcome to Lorry."
 msgstr "Willkommen bei Lorry."
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:290
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:292
 msgid "Welcome"
 msgstr "Willkommen"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:294
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:296
 msgid "%brand% is the site for the best addons for the game series Clonk."
 msgstr ""
 "%brand% ist die Seite für die besten Erweiterungen zur Spieleserie Clonk."
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:301
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:303
 msgid "New to Clonk?"
 msgstr "Neu bei Clonk?"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:318
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:320
 msgid "New: Multiple languages"
 msgstr "Neu: Mehrere Sprachen"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:322
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:324
 msgid ""
 "%brand% is now available in German and English. You can add titles and "
 "descriptions in these languages for all your addons and releases."
@@ -2066,15 +2186,15 @@ msgstr ""
 "Beschreibungen in diesen Sprachen für alle deine Erweiterungen und Releases "
 "hinzufügen."
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:326
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:328
 msgid "Announcements"
 msgstr "Ankündigungen"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:332
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:334
 msgid "In development"
 msgstr "In Entwicklung"
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:336
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:338
 msgid ""
 "The platform behind %brand% is still in development. You can join and try "
 "out what works so far, and we will continue to add many features."
@@ -2083,7 +2203,7 @@ msgstr ""
 "ausprobieren, was bisher funktioniert, und wir werden in Zukunft viele "
 "weitere Features hinzufügen."
 
-#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:342
+#: cache/twig/c/1/c16b6649b8ad9878a22960ac8ea298fc52feaabc8557f30cfe49ecf73c836326.php:344
 msgid "About the project"
 msgstr "Über das Projekt"
 
@@ -2479,11 +2599,11 @@ msgstr "Hinzufügen"
 msgid "Duplicate"
 msgstr "Duplikat"
 
-#: src/Environment.php:151
+#: src/Environment.php:72
 msgid "&quot;Clonk&quot; is a registered trademark of Matthes Bender"
 msgstr "„Clonk“ ist ein eingetragenes Warenzeichen von Matthes Bender"
 
-#: src/Presenter.php:162 src/Presenter/Account/Login.php:169
+#: src/Presenter/AbstractPresenter.php:153 src/Presenter/Account/Login.php:169
 #: src/Presenter/Account/Settings.php:242
 #: src/Presenter/Account/Settings.php:256
 msgid "Password wrong."
@@ -2696,64 +2816,77 @@ msgstr "Erweiterung existiert nicht."
 msgid "Release does not exist."
 msgstr "Release existiert nicht."
 
-#: src/Presenter/Error.php:23
-msgid "Internal server error"
-msgstr "Interner Serverfehler"
+#: src/Presenter/Banners/Banner.php:67
+msgid "Invalid language."
+msgstr "Ungültige Sprache."
 
-#: src/Presenter/Error.php:28
-msgid "The server encountered an internal error processing the request."
-msgstr "Bei der Verarbeitung der Anfrage trat ein interner Serverfehler auf."
-
-#: src/Presenter/Error/AuthFailed.php:22
+#: src/Presenter/Error/AuthFailed.php:20
 msgid "Authentification failed"
 msgstr "Authentifizierung fehlgeschlagen"
 
-#: src/Presenter/Error/AuthFailed.php:27
+#: src/Presenter/Error/AuthFailed.php:25
 msgid "The authentification with the login service failed."
 msgstr "Die Authentifizierung mit dem Anmeldedienst ist fehlgeschlagen."
 
-#: src/Presenter/Error/BadRequest.php:22
+#: src/Presenter/Error/BadRequest.php:20
 msgid "Bad Request"
 msgstr "Ungültige Anforderung"
 
-#: src/Presenter/Error/BadRequest.php:27
+#: src/Presenter/Error/BadRequest.php:25
 msgid ""
 "The request was invalid. It may be malformed or missing required parameters."
 msgstr ""
 "Die Anforderung war ungültig. Möglicherweise ist sie deformiert oder es "
 "fehlen erforderliche Parameter."
 
-#: src/Presenter/Error/FileNotFound.php:22
+#: src/Presenter/Error/DatabaseDown.php:15
+msgid "Database down"
+msgstr ""
+
+#: src/Presenter/Error/DatabaseDown.php:20
+#, fuzzy
+msgid "The site could not reach its database."
+msgstr "Das Ticket konnte nicht eskaliert werden."
+
+#: src/Presenter/Error/FileNotFound.php:20
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
-#: src/Presenter/Error/FileNotFound.php:27
+#: src/Presenter/Error/FileNotFound.php:25
 msgid "The file you requested could not be found."
 msgstr "Die von dir angeforderte Datei konnte nicht gefunden werden."
 
-#: src/Presenter/Error/Forbidden.php:22
+#: src/Presenter/Error/Forbidden.php:20
 msgid "Forbidden"
 msgstr "Zugriff verweigert"
 
-#: src/Presenter/Error/Forbidden.php:27
+#: src/Presenter/Error/Forbidden.php:25
 msgid "You do not have the permissions necessary to access this document."
 msgstr ""
 "Du verfügst nicht über die notwendigen Berechtigungen zum Zugriff auf dieses "
 "Dokument."
 
-#: src/Presenter/Error/NotImplemented.php:22
+#: src/Presenter/Error/InternalError.php:23
+msgid "Internal server error"
+msgstr "Interner Serverfehler"
+
+#: src/Presenter/Error/InternalError.php:28
+msgid "The server encountered an internal error processing the request."
+msgstr "Bei der Verarbeitung der Anfrage trat ein interner Serverfehler auf."
+
+#: src/Presenter/Error/NotImplemented.php:20
 msgid "Not implemented"
 msgstr "Nicht implementiert"
 
-#: src/Presenter/Error/NotImplemented.php:27
+#: src/Presenter/Error/NotImplemented.php:25
 msgid "The method you requested has not been implemented."
 msgstr "Die von dir angeforderte Methode wurde nicht implementiert."
 
-#: src/Presenter/Error/TooManyRequests.php:22
+#: src/Presenter/Error/TooManyRequests.php:20
 msgid "Too many requests"
 msgstr "Zu viele Anfragen"
 
-#: src/Presenter/Error/TooManyRequests.php:27
+#: src/Presenter/Error/TooManyRequests.php:25
 msgid "You have exceeded the allowed number of requests."
 msgstr "Du hast die erlaubte Anzahl an Anfragen überschritten."
 
@@ -3188,93 +3321,102 @@ msgstr "3."
 msgid "%n%th"
 msgstr "%n%."
 
-#: src/Service/SecurityService.php:114
+#: src/Service/SecurityService.php:112
 msgid "uploading files is disabled"
 msgstr "Hochladen von Dateien ist deaktiviert"
 
-#: src/Service/SecurityService.php:117
+#: src/Service/SecurityService.php:115
 msgid "activate your account to add files"
 msgstr "Aktiviere dein Konto, um Dateien hinzuzufügen"
 
-#: src/Validator/AddonTranslationValidator.php:22
+#: src/Validator/AddonTranslationValidator.php:20
 msgid "Title too short."
 msgstr "Titel zu kurz."
 
-#: src/Validator/AddonTranslationValidator.php:23
+#: src/Validator/AddonTranslationValidator.php:21
 msgid "Title too long."
 msgstr "Titel zu lang."
 
-#: src/Validator/AddonTranslationValidator.php:25
+#: src/Validator/AddonTranslationValidator.php:23
 msgid "Title invalid."
 msgstr "Titel ungültig."
 
-#: src/Validator/AddonValidator.php:22
+#: src/Validator/AddonValidator.php:20
 msgid "Addon must have at least one translation."
 msgstr "Erweiterung muss mindestens eine Übersetzung haben."
 
-#: src/Validator/TicketValidator.php:18
+#: src/Validator/TicketValidator.php:16
 msgid "Response email address invalid"
 msgstr "Antwort-E-Mail-Adresse ungültig."
 
-#: src/Validator/TicketValidator.php:24
+#: src/Validator/TicketValidator.php:22
 msgid "Subject too short."
 msgstr "Betreff zu kurz."
 
-#: src/Validator/TicketValidator.php:25
+#: src/Validator/TicketValidator.php:23
 msgid "Subject too long."
 msgstr "Betreff zu lang."
 
-#: src/Validator/TicketValidator.php:32
+#: src/Validator/TicketValidator.php:30
 msgid "Message too short."
 msgstr "Nachricht zu kurz."
 
-#: src/Validator/TicketValidator.php:33
+#: src/Validator/TicketValidator.php:31
 msgid "Message too long."
 msgstr "Nachricht zu lang."
 
-#: src/Validator/UserValidator.php:17
+#: src/Validator/UserValidator.php:15
 msgid "Email address is invalid."
 msgstr "E-Mail-Adresse ist ungültig."
 
-#: src/Validator/UserValidator.php:20
+#: src/Validator/UserValidator.php:18
 msgid "Login methods must a number."
 msgstr ""
 
-#: src/Validator/UserValidator.php:21
+#: src/Validator/UserValidator.php:19
 msgid "Last login method cannot be removed."
 msgstr "Letzte Anmeldemethode kann nicht entfernt werden."
 
-#: src/Validator/UserValidator.php:22
+#: src/Validator/UserValidator.php:20
 msgid "Too many login methods."
 msgstr "Zuviele Anmeldemethoden."
 
-#: src/Validator/UserValidator.php:32
+#: src/Validator/UserValidator.php:30
 msgid "Username too short."
 msgstr "Benutzername zu kurz."
 
-#: src/Validator/UserValidator.php:33
+#: src/Validator/UserValidator.php:31
 msgid "Username too long."
 msgstr "Benutzername zu lang."
 
-#: src/Validator/UserValidator.php:34
+#: src/Validator/UserValidator.php:32
 msgid "Username is invalid."
 msgstr "Benutzername ist ungültig."
 
-#: src/Validator/UserValidator.php:43
+#: src/Validator/UserValidator.php:41
 msgid "Clonkforge id is not a number."
 msgstr ""
 
-#: src/Validator/UserValidator.php:44
+#: src/Validator/UserValidator.php:42
 msgid "Clonkforge id too small."
 msgstr ""
 
-#: src/Validator/UserValidator.php:45
+#: src/Validator/UserValidator.php:43
 msgid "Clonkforge id too large."
 msgstr ""
 
-#: src/Validator/UserValidator.php:54
+#: src/Validator/UserValidator.php:52
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "Basic"
+#~ msgstr "Allgemein"
+
+#~ msgid "Global"
+#~ msgstr "Global"
+
+#~ msgid "Edit banner translation"
+#~ msgstr "Banner-Übersetzung bearbeiten"
 
 #~ msgid "Submit ticket"
 #~ msgstr "Ticket einreichen"
@@ -3486,9 +3628,6 @@ msgstr "GitHub-Name ist ungültig."
 #, fuzzy
 #~ msgid "Release was already published in the past"
 #~ msgstr "Release wurde in der Vergangenheit bereits veröffentlicht"
-
-#~ msgid "Front page"
-#~ msgstr "Startseite"
 
 #~ msgid "Featured addons"
 #~ msgstr "Vorgestellte Erweiterungen"
@@ -3884,9 +4023,6 @@ msgstr "GitHub-Name ist ungültig."
 #~ msgid "year(s)"
 #~ msgstr "Jahr(e)"
 
-#~ msgid "forever"
-#~ msgstr "dauerhaft"
-
 #~ msgid "Ban now"
 #~ msgstr "Jetzt bannen"
 
@@ -3895,9 +4031,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "Date"
 #~ msgstr "Datum"
-
-#~ msgid "No release created"
-#~ msgstr "Kein Release erstellt"
 
 #~ msgid ""
 #~ "Please open %this_link% to activate your address or paste the following "
@@ -4403,9 +4536,6 @@ msgstr "GitHub-Name ist ungültig."
 #~ msgid "feedback and thoughts"
 #~ msgstr "Feedback und Vorschläge"
 
-#~ msgid "inspiration"
-#~ msgstr "Inspiration"
-
 #~ msgid "concept & development"
 #~ msgstr "Konzept & Entwicklung"
 
@@ -4500,9 +4630,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "About Clonk"
 #~ msgstr "Über Clonk"
-
-#~ msgid "No account yet?"
-#~ msgstr "Noch kein Benutzerkonto?"
 
 #~ msgid "Publish release date and time in advance"
 #~ msgstr "Releasedatum und -zeit im Voraus veröffentlichen"
@@ -4753,9 +4880,6 @@ msgstr "GitHub-Name ist ungültig."
 #~ msgid "Trademarks"
 #~ msgstr "Warenzeichen"
 
-#~ msgid "General"
-#~ msgstr "Allgemein"
-
 #~ msgid "Legal issues"
 #~ msgstr "Rechtliches"
 
@@ -4805,9 +4929,6 @@ msgstr "GitHub-Name ist ungültig."
 
 #~ msgid "Change description"
 #~ msgstr "Beschreibung ändern"
-
-#~ msgid "Add version"
-#~ msgstr "Version hinzufügen"
 
 #~ msgid "You have not created a release yet."
 #~ msgstr "Du hast noch keinen Release erstellt."
@@ -4942,12 +5063,6 @@ msgstr "GitHub-Name ist ungültig."
 #~ msgid "View addon page"
 #~ msgstr "Erweiterungsseite betrachten"
 
-#~ msgid "Full title"
-#~ msgstr "Vollständiger Titel"
-
-#~ msgid "Select a game&hellip;"
-#~ msgstr "Wähle ein Spiel&hellip;"
-
 #~ msgid "You have not created a new addon yet."
 #~ msgstr "Du hast noch keine neue Erweiterung erstellt."
 
@@ -5041,9 +5156,6 @@ msgstr "GitHub-Name ist ungültig."
 #, fuzzy
 #~ msgid "There are no completed messages."
 #~ msgstr "Dieser Benutzer hat noch nichts kommentiert."
-
-#~ msgid "Basic"
-#~ msgstr "Allgemein"
 
 #~ msgid "Username invalid."
 #~ msgstr "Benutzername ungültig."

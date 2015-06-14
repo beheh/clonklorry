@@ -1,0 +1,125 @@
+{% extends 'root.twig' %}
+
+{% set banner_number %}{{banner.id}}{% endset %}
+
+{% set title %}{% trans %}Edit banner #{{banner_number}}{% endtrans %}{% endset %}
+
+{% block content %}
+	<div class="page-header">
+        <div class="breakout"><a href="{{base}}/banners"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+        <div class="container">
+            <h1><a href="{{filename}}">{{title}}</a></h1>
+        </div>
+    </div>
+    <div class="container">
+
+		<div class="row">
+			<div class="col-md-8">
+				<h2>{% trans "Banner" %}</h2>
+
+				<form role=form" action="{{filename}}" method="post">
+					<input type="hidden" name="banner-form">
+					<input type="hidden" name="state" value="{{state}}">
+					<div class="row">
+						<div class="col-md-6">
+							<h3>{% trans "General" %}</h3>
+
+							<div class="form-group">
+								<label for="name">{% trans %}Name{% endtrans %}</label>
+								<input type="name" class="form-control" name="name" id="name" value="{{name}}">
+							</div>
+
+							<h3>{% trans "Defaults" %}</h3>
+
+							<div class="form-group">
+								<label for="default-url">{% trans %}Default url (if not set by translation){% endtrans %}</label>
+								<input type="url" class="form-control" name="default_url" id="default-url" value="{{default_url}}">
+							</div>
+
+							<div class="form-group">
+								<label for="default-image-guid">{% trans %}Default image (if not set by translation){% endtrans %}</label>
+								<input type="text" class="form-control" name="default_image_guid" id="default-image-guid" value="{{default_image_guid}}">
+							</div>
+						</div>
+						<div class="col-md-6">
+
+							<h3>{% trans "Visibility" %}</h3>
+
+							<div class="form-group">
+								<label for="show-from">{% trans %}Show from{% endtrans %}</label>
+								<input type="datetime-local" class="form-control" name="show_from" id="show-from" value="{{show_from}}">
+
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="from-now" name="from_now" {% if from_now %} checked{% endif %}> {% trans %}Now{% endtrans %}
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="show-until">{% trans %}Show until{% endtrans %}</label>
+								<input type="datetime-local" class="form-control" name="show_until" id="show-until" value="{{show_until}}">
+
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="until-forever" name="until_forever" {% if until_forever %} checked{% endif %}> {% trans %}Forever{% endtrans %}
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" id="banner-enable" name="banner-enable" {% if enabled %} checked{% endif %}> {% trans %}Enable banner{% endtrans %}
+							</label>
+						</div>
+					</div>
+
+					<p class="help-block">{% trans %}The banner won't be shown to users without a corresponding translation.{% endtrans %}</p>
+
+					<p>
+						<input type="submit" class="btn btn-primary" value="{% trans "Save banner" %}">
+					</p>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<h2>{% trans "Target groups" %}</h2>
+
+				<div class="row">
+					<div class="col-md-12">
+						<h3>{% trans "Translations" %}</h3>
+						<div class="list-group">
+							{% for translation in translations %}
+								<a class="list-group-item" href="{{base}}/banners/{{banner.id}}/{{translation.language.key}}">{{translation.language}}</a>
+							{% else %}
+								<span class="list-group-item text-muted">{% trans %}No translations yet{% endtrans %}</span>
+							{% endfor%}
+						</div>
+
+						<form role=form" action="{{filename}}" method="post">
+							<input type="hidden" name="add-translation-form">
+							<input type="hidden" name="state" value="{{state}}">
+							<div class="form-group">
+								<select class="input btn-sm" name="language"{% if not further_languages %} disabled{% endif %}>
+								{% if further_languages %}
+									{% if further_languages|length > 1 %}<option disabled selected>{% trans %}Select language&hellip;{% endtrans %}</option>{% endif %}
+									{% for language in further_languages %}
+									<option value="{{language.key}}">{{language}}</option>
+									{% endfor %}
+								{% else %}
+									<option>{% trans %}No language available{% endtrans %}</option>
+								{% endif %}
+								</select>
+								<input type="submit" class="btn btn-sm btn-success" name="add-translation" value="{% trans "Add translation" %}"{% if not further_languages %} disabled{% endif %}>
+							</div>
+							{% include 'functions/alert.twig' with {'selector' : 'add-translation'} %}
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock%}

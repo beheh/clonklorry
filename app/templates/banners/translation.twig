@@ -1,0 +1,37 @@
+{% extends 'root.twig' %}
+
+{% set banner_number %}{{banner.id}}{% endset %}
+
+{% set title %}{% trans %}Translate banner #{{banner_number}}{% endtrans %}{% endset %}
+
+{% block content %}
+	<div class="page-header">
+        <div class="breakout"><a href="{{base}}/banners/{{banner.id}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></div>
+        <div class="container">
+            <h1><a href="{{filename}}">{{title}}</a></h1>
+        </div>
+    </div>
+    <div class="container">
+		<div class="row">
+			<div class="col-md-6">
+
+				<div class="form-group">
+					<label for="title">{% trans %}Title{% endtrans %}</label>
+					<input type="text" class="form-control" name="banner_title" id="title" value="{{banner_title}}">
+				</div>
+
+				<div class="form-group">
+					<label for="subtitle">{% trans %}Subtitle{% endtrans %}</label>
+					<input type="text" class="form-control" name="subtitle" id="subtitle" value="{{subtitle}}">
+				</div>
+
+				<div class="form-group">
+					<label for="url">{% trans %}Url (overrides default url){% endtrans %}</label>
+					<input type="url" class="form-control" name="url" id="url" value="{{url}}">
+				</div>
+
+				Image (overrides default image)
+			</div>
+		</div>
+	</div>
+{% endblock%}

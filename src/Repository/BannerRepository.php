@@ -12,7 +12,7 @@ class BannerRepository extends EntityRepository
     public function getTranslatedActiveBanners($language)
     {
         $qb = $this->_em->createQueryBuilder()
-            ->select('COALESCE(t.url, b.defaultUrl) as url, i.guid as image_guid, t.title, t.subtitle')
+            ->select('COALESCE(t.url, b.defaultUrl) as url, i.secret as image_filename, t.title, t.subtitle')
             ->from('Lorry\Model\Banner', 'b')
             ->leftJoin('b.translations', 't')
             ->leftJoin('b.release', 'r')

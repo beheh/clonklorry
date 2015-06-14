@@ -2,14 +2,9 @@
 
 namespace Lorry\Model;
 
-abstract class FileModel extends AbstractModel {
-    /**
-    * @Column(type="guid", unique=true)
-    * @GeneratedValue(strategy="UUID")
-    */
-    protected $guid = null;
+abstract class FileModel extends AbstractModel
+{
 
-    final public function getGuid() {
-        return $this->guid;
-    }
+    abstract function getFilename();
+    
 }

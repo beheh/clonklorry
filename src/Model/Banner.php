@@ -10,6 +10,11 @@ use \DateTime;
  */
 class Banner extends AbstractModel
 {
+    /**
+     * @Column(type="string", length=255, nullable=true)
+     */
+    protected $name = null;
+
     const VISIBILITY_HIDDEN = 0;
     const VISIBILITY_PUBLIC = 1;
 
@@ -59,6 +64,14 @@ class Banner extends AbstractModel
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
     }
 
     public function setVisibility($visibility)

@@ -63,6 +63,7 @@ class Environment
         $templating = $container->get(\Lorry\TemplateEngineInterface::class);
         $templating->addGlobal('brand', htmlspecialchars($config->get('brand')));
         $templating->addGlobal('base', htmlspecialchars($config->get('base')));
+        $templating->addGlobal('assets', htmlspecialchars($config->get('assets')));
         $templating->addGlobal('resources',
             htmlspecialchars($config->get('base').'/resources'));
         $templating->addGlobal('site_copyright',
@@ -117,7 +118,7 @@ class Environment
                 $twig->addGlobal('user_login', true);
                 $twig->addGlobal('user_name', $user->getUsername());
                 $twig->addGlobal('user_profile',
-                    $config->get('base').'/users/'.$user->getUsername());
+                $config->get('base').'/users/'.$user->getUsername());
                 $twig->addGlobal('user_administrator', $user->isAdministrator());
                 $twig->addGlobal('user_moderator', $user->isModerator());
                 $twig->addGlobal('state', $session->getState());
@@ -150,6 +151,9 @@ class Environment
                     '/moderator/approve/:number' => 'Manage\Moderator\Approve',
                     '/moderator/tickets' => 'Manage\Moderator\Tickets',
                     '/moderator/tickets/:number' => 'Manage\Moderator\Ticket',
+                    '/banners' => 'Banners\Portal',
+                    '/banners/:number' => 'Banners\Banner',
+                    '/banners/:number/:alpha' => 'Banners\Translation',
                     '/register' => 'Account\Register',
                     '/login' => 'Account\Login',
                     '/logout' => 'Account\Logout',

@@ -12,6 +12,8 @@
 		<div class="row">
 			<div class="col-md-4">
 				<h2>{% trans %}Management{% endtrans %}</h2>
+                <h3>{% trans %}Front page{% endtrans %}</h3>
+				<a href="{{base}}/banners" class="btn btn-default">{% trans "Banner" %}</a>
                 <h3>{% trans %}Platform{% endtrans %}</h3>
 				<a href="{{base}}/administrator/logs" class="btn btn-default">{% trans "Logs" %}</a>
 				{% if statistics %}<a href="{{statistics}}" class="btn btn-info">{% trans "Statistics" %}</a>{% endif %}
