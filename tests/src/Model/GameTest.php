@@ -23,14 +23,14 @@ class GameTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Lorry\Model\Game::setShort
-     * @covers Lorry\Model\Game::getShort
+     * @covers Lorry\Model\Game::setNamespace
+     * @covers Lorry\Model\Game::getNamespace
      */
-    public function testShort()
+    public function testNamespace()
     {
         $expected = 'gwe';
-        $this->game->setShort($expected);
-        $this->assertSame($expected, $this->game->getShort());
+        $this->game->setNamespace($expected);
+        $this->assertSame($expected, $this->game->getNamespace());
     }
     
     /**
@@ -73,14 +73,14 @@ class GameTest extends \PHPUnit_Framework_TestCase
     public function testForApi()
     {
         $apiGame = new Game();
+        $expectedNamespace = 'extreme';
         $expectedTitle = 'Clonk Extreme';
-        $expectedId = 'extreme';
 
+        $apiGame->setNamespace($expectedNamespace);
         $apiGame->setTitle($expectedTitle);
-        $apiGame->setShort($expectedId);
         
         $this->assertSame(array(
-            'id' => $expectedId,
+            'namespace' => $expectedNamespace,
             'title' => $expectedTitle
         ), $apiGame->forApi());
     }

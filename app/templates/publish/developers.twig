@@ -26,8 +26,8 @@
 							<div class="btn-group" data-toggle="buttons">
 								{% for game in games %}
 									<label class="btn btn-default">
-										<img src="{{resources}}/custom/game/{{game.short}}.png" alt="{{game.title}}" class="img-responsive">
-										<input type="radio" name="game" value="{{game.short}}" {% if selected_game == game.short %}checked {% endif %}required>
+										<img src="{{resources}}/custom/game/{{game.namespace}}.png" alt="{{game.title}}" class="img-responsive">
+										<input type="radio" name="game" value="{{game.namespace}}" {% if selected_game == game.namespace %}checked {% endif %}required>
 									</label>
 								{% endfor %}
 							</div>
@@ -38,7 +38,7 @@
 							{% endif %}
 						</div>
 						{% else %}
-							<input type="hidden" name="game" value="{{games.0.short}}">
+							<input type="hidden" name="game" value="{{games.0.namespace}}">
 						{% endif %}
 						<div class="form-group">
 							<button type="submit" class="btn btn-lg btn-success"{% if not games %} disabled{% endif %}>{% trans "Create addon" %}</button>

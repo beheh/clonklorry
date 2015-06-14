@@ -194,7 +194,7 @@ class Release extends AbstractModel implements ApiObjectInterface
     public function forApi()
     {
         return array(
-            'addon' => $this->addon->getShort()
+            'addon' => $this->addon->getNamespace()
         );
     }
 }

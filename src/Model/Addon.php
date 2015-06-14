@@ -19,8 +19,10 @@ class Addon extends AbstractModel implements ApiObjectInterface
      */
     protected $owner;
 
-    /** @Column(type="string", length=64, unique=true, nullable=true) */
-    protected $short;
+    /**
+     * @Column(type="string", length=64, unique=true, nullable=true)
+     */
+    protected $namespace;
 
     /**
      * @ManyToOne(targetEntity="Game", inversedBy="addons", fetch="EAGER")
@@ -79,14 +81,14 @@ class Addon extends AbstractModel implements ApiObjectInterface
         return $this->owner;
     }
 
-    public function setShort($short)
+    public function setNamespace($namespace)
     {
-        $this->short = $short;
+        $this->namespace = $namespace;
     }
 
-    public function getShort()
+    public function getNamespace()
     {
-        return $this->short;
+        return $this->namespace;
     }
 
     public function getTranslation($language)
@@ -160,6 +162,11 @@ class Addon extends AbstractModel implements ApiObjectInterface
     public function getDefaultTranslation()
     {
         return $this->translations;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getNamespace();
     }
 
     public function forApi()

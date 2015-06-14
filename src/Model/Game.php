@@ -13,18 +13,18 @@ class Game extends AbstractModel implements ApiObjectInterface
     /**
      * @Column(type="string", length=16, unique=true)
      */
-    protected $short;
+    protected $namespace = null;
 
     /**
      * @Column(type="string", unique=true)
      */
-    protected $title;
+    protected $title = null;
 
     /**
      * @OneToMany(targetEntity="Addon", mappedBy="game", fetch="EXTRA_LAZY", orphanRemoval=false)
      * @var Addon[]
      */
-    protected $addons;
+    protected $addons = null;
 
     public function __construct()
     {
@@ -33,20 +33,20 @@ class Game extends AbstractModel implements ApiObjectInterface
 
     /**
      *
-     * @param string $short
+     * @param string $namespace
      */
-    public function setShort($short)
+    public function setNamespace($namespace)
     {
-        $this->short = $short;
+        $this->namespace = $namespace;
     }
 
     /**
      *
      * @return string
      */
-    public function getShort()
+    public function getNamespace()
     {
-        return $this->short;
+        return $this->namespace;
     }
 
     /**
@@ -83,6 +83,6 @@ class Game extends AbstractModel implements ApiObjectInterface
 
     public function forApi()
     {
-        return array('id' => $this->getShort(), 'title' => $this->getTitle());
+        return array('namespace' => $this->getNamespace(), 'title' => $this->getTitle());
     }
 }

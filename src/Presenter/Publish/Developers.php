@@ -80,11 +80,11 @@ class Developers extends AbstractPresenter
         $translation->setTitle($title);
         $translation->setLanguage($this->localisation->getDisplayLanguage());
 
-        $game = $this->manager->getRepository('Lorry\Model\Game')->findOneBy(array('short' => filter_input(INPUT_POST, 'game')));
+        $game = $this->manager->getRepository('Lorry\Model\Game')->findOneBy(array('namespace' => filter_input(INPUT_POST, 'game')));
         if (!$game) {
             $addonValidator->fail(gettext('Invalid game.'));
         }
-        $this->context['selected_game'] = $game->getShort();
+        $this->context['selected_game'] = $game->getNamespace();
         $addon->setGame($game);
 
         if($addonRepository->getOwnedByTitleAndGame($user, $title, $game)) {
