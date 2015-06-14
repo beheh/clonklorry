@@ -118,30 +118,25 @@ class UserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Lorry\Model\User::regenerateSecret
-     * @todo   Implement testRegenerateSecret().
-     */
-    public function testRegenerateSecret()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers Lorry\Model\User::getSecret
      * @covers Lorry\Model\User::matchSecret
      * @covers Lorry\Model\User::regenerateSecret
      */
     public function testSecret()
     {
-        $this->assertNull($this->user->getSecret());
-        $this->assertFalse($this->user->matchSecret(null));
         $this->user->regenerateSecret();
         $expected = $this->user->getSecret();
         $this->assertNotNull($expected);
         $this->assertTrue($this->user->matchSecret($expected));
+        $this->assertFalse($this->user->matchSecret('incorrect_secret'));
+    }
+
+    public function testDefaultSecret()
+    {
+        $defaultUser = new User();
+        $this->assertNull($defaultUser->getSecret());
+        $this->assertFalse($defaultUser->matchSecret(null));
+        $this->assertFalse($defaultUser->matchSecret('incorrect_secret'));
     }
 
     /**
@@ -155,6 +150,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($expected, $this->user->getPermissions());
     }
 
+    /**
+     * @covers Lorry\Model\User::isModerator
+     * @covers Lorry\Model\User::isAdministrator
+     */
     public function testDefaultPermissions()
     {
         $defaultUser = new User();
@@ -164,29 +163,25 @@ class UserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers Lorry\Model\User::isModerator
      * @covers Lorry\Model\User::isAdministrator
      */
-    public function testIsAdministrator()
+    public function testModeratorPermissions()
     {
-        $this->user->setPermissions(User::PERMISSION_READ);
-        $this->assertFalse($this->user->isAdministrator());
         $this->user->setPermissions(User::PERMISSION_MODERATE);
+        $this->assertTrue($this->user->isModerator());
         $this->assertFalse($this->user->isAdministrator());
-        $this->user->setPermissions(User::PERMISSION_ADMINISTRATE);
-        $this->assertTrue($this->user->isAdministrator());
     }
 
     /**
      * @covers Lorry\Model\User::isModerator
+     * @covers Lorry\Model\User::isAdministrator
      */
-    public function testIsModerator()
+    public function testAdministratorPermissions()
     {
-        $this->user->setPermissions(User::PERMISSION_READ);
-        $this->assertFalse($this->user->isModerator());
-        $this->user->setPermissions(User::PERMISSION_MODERATE);
-        $this->assertTrue($this->user->isModerator());
         $this->user->setPermissions(User::PERMISSION_ADMINISTRATE);
         $this->assertTrue($this->user->isModerator());
+        $this->assertTrue($this->user->isAdministrator());
     }
 
     /**
