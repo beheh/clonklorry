@@ -31,6 +31,9 @@ abstract class AbstractValidator implements Validator
      */
     public function validate($entity)
     {
+        if(!is_object($entity)) {
+            throw new InvalidArgumentException('entity must be an object');
+        }
         $previousFails = $this->fails;
         $this->fails = array();
         $this->performValidation($entity); // actual validation
