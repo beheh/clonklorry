@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lorry\n"
-"POT-Creation-Date: 2015-06-14 18:02+0100\n"
-"PO-Revision-Date: 2015-06-14 18:03+0100\n"
+"POT-Creation-Date: 2015-06-15 00:20+0100\n"
+"PO-Revision-Date: 2015-06-15 00:21+0100\n"
 "Last-Translator: Benedict Etzel <developer@beheh.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -650,7 +650,7 @@ msgid "Front page"
 msgstr "Startseite"
 
 #: cache/twig/3/3/33d66240d6e012bc77dc0c5d5e7518c739dc2d077c77d254c1189fd0ec245bd3.php:57
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:60
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:61
 msgid "Banner"
 msgstr "Banner"
 
@@ -1036,7 +1036,7 @@ msgstr "Bibliotheken"
 msgid "Development"
 msgstr "Entwicklung"
 
-#: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:225
+#: cache/twig/4/8/485e1b91453f54c8d17dbfddb4e32717239824da11928642f26ff6e870c9bf31.php:226
 msgid "Credits"
 msgstr "Danksagungen"
 
@@ -1484,86 +1484,93 @@ msgstr ""
 msgid "Uberspace privacy policy"
 msgstr "Datenschutzerklärung von Uberspace"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:30
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:31
 msgid "Edit banner #%banner_number%"
 msgstr "Banner #%banner_number% bearbeiten"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:67
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:81
 msgid "General"
 msgstr "Allgemein"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:73
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:87
 #, fuzzy
 msgid "Name"
 msgstr "Kennung"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:83
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:107
 msgid "Defaults"
 msgstr "Vorgaben"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:89
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:113
 msgid "Default url (if not set by translation)"
 msgstr "Standard-URL (falls nicht durch Übersetzung gesetzt)"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:100
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:124
 msgid "Default image (if not set by translation)"
 msgstr "Standard-Bild (falls nicht durch Übersetzung gesetzt)"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:112
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:136
 msgid "Visibility"
 msgstr "Sichtbarkeit"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:118
-msgid "Show from"
-msgstr ""
-
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:133
-msgid "Now"
-msgstr "Jetzt"
-
 #: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:142
+msgid "Show from"
+msgstr "Anzeigen ab"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:165
 msgid "Show until"
-msgstr ""
+msgstr "Anzeigen bis"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:157
-msgid "Forever"
-msgstr "Dauerhaft"
-
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:174
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:196
 msgid "Enable banner"
 msgstr "Banner aktivieren"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:182
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:204
 msgid "The banner won't be shown to users without a corresponding translation."
 msgstr ""
+"Das Banner wird Nutzern ohne entsprechende Übersetzung nicht angezeigt."
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:188
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:210
 msgid "Save banner"
 msgstr "Banner speichern"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:195
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:218
 msgid "Target groups"
 msgstr "Zielgruppen"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:202
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:225
 msgid "Translations"
 msgstr "Übersetzungen"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:227
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:250
 msgid "No translations yet"
 msgstr "Noch keine Übersetzungen"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:260
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:283
 msgid "Select language&hellip;"
 msgstr "Sprache auswählen&hellip;"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:284
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:307
 msgid "No language available"
 msgstr "Keine Sprache verfügbar"
 
-#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:292
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:315
 msgid "Add translation"
 msgstr "Übersetzung hinzufügen"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:363
+#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:69
+#, fuzzy
+msgid "Banner #%banner_number%"
+msgstr "Banner #%banner_number% bearbeiten"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:367
+msgid "Immediately"
+msgstr "Sofort"
+
+#: cache/twig/7/3/7373ebd8f5acf9b509a02ec18a7e97945b7835814ae88a96cbe8150c12fc7938.php:371
+msgid "Forever"
+msgstr "Dauerhaft"
 
 #: cache/twig/7/7/7758d642ef09f43267c5d79209674cf94e0b5d1c127b03526bbdc876caf00a31.php:31
 msgid "Forgot %brand% password"
@@ -2060,16 +2067,11 @@ msgstr "Suche Erweiterungen nach Name, Spiel, Tags&hellip;"
 msgid "Banners"
 msgstr "Banner"
 
-#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:69
-#, fuzzy
-msgid "Banner #%banner_number%"
-msgstr "Banner #%banner_number% bearbeiten"
-
 #: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:79
 msgid "No banners yet"
 msgstr "Noch keine Banner"
 
-#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:93
+#: cache/twig/a/7/a7fd2356b40a77a7c2bba10d25fa85701e19c71e58792fbdaed34031aff04014.php:102
 msgid "Add banner"
 msgstr "Banner hinzufügen"
 
@@ -2816,7 +2818,19 @@ msgstr "Erweiterung existiert nicht."
 msgid "Release does not exist."
 msgstr "Release existiert nicht."
 
-#: src/Presenter/Banners/Banner.php:67
+#: src/Presenter/Banners/Banner.php:96
+msgid "Invalid Timestamp."
+msgstr "Ungültiger Zeitstempel."
+
+#: src/Presenter/Banners/Banner.php:109
+msgid "Timestamp is invalid."
+msgstr "Ungültiger Zeitstempel."
+
+#: src/Presenter/Banners/Banner.php:127
+msgid "Banner saved."
+msgstr "Banner gespeichert."
+
+#: src/Presenter/Banners/Banner.php:146
 msgid "Invalid language."
 msgstr "Ungültige Sprache."
 
@@ -3345,6 +3359,22 @@ msgstr "Titel ungültig."
 msgid "Addon must have at least one translation."
 msgstr "Erweiterung muss mindestens eine Übersetzung haben."
 
+#: src/Validator/BannerValidator.php:16
+msgid "Invalid name."
+msgstr "Ungültiger Name."
+
+#: src/Validator/BannerValidator.php:27
+msgid "Invalid visibility."
+msgstr "Ungültige Sichtbarkeit."
+
+#: src/Validator/BannerValidator.php:34
+msgid "Invalid timestamp."
+msgstr "Ungültiger Zeitstempel."
+
+#: src/Validator/BannerValidator.php:38
+msgid "Invalid time range."
+msgstr "Ungültiger Zeitraum."
+
 #: src/Validator/TicketValidator.php:16
 msgid "Response email address invalid"
 msgstr "Antwort-E-Mail-Adresse ungültig."
@@ -3408,6 +3438,9 @@ msgstr ""
 #: src/Validator/UserValidator.php:52
 msgid "GitHub name is invalid."
 msgstr "GitHub-Name ist ungültig."
+
+#~ msgid "Now"
+#~ msgstr "Jetzt"
 
 #~ msgid "Basic"
 #~ msgstr "Allgemein"

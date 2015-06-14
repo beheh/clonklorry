@@ -11,7 +11,7 @@ use \DateTime;
 class Banner extends AbstractModel
 {
     /**
-     * @Column(type="string", length=255, nullable=true)
+     * @Column(type="string", length=64, nullable=true)
      */
     protected $name = null;
 

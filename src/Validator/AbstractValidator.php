@@ -97,4 +97,10 @@ abstract class AbstractValidator implements Validator
             $this->fail($message);
         }
     }
+
+    protected function validateUrl($url, $message) {
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            $this->fail($message);
+        }
+    }
 }

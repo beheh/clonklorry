@@ -10,7 +10,7 @@
     </div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="list-group">
 					{% for banner in banners %}{% set banner_number %}{{banner.id}}{% endset %}
 						<a class="list-group-item" href="{{base}}/banners/{{banner.id}}">{% if banner.name%}{{banner.name}}{% else %}<em>{% trans %}Banner #{{banner_number}}{% endtrans %}</em>{% endif %}</a>
