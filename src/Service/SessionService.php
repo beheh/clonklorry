@@ -50,7 +50,7 @@ class SessionService extends AbstractService
     final public function start(User $user, $remember = false, $identify = false)
     {
         $this->ensureSession();
-        if ($this->manager->contains($user)) {
+        if (!$this->manager->contains($user)) {
             throw new InvalidArgumentException('user is not managed');
         }
         $this->authenticate($user);
