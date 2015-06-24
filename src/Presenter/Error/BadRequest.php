@@ -10,11 +10,6 @@ class BadRequest extends InternalError
         return 400;
     }
 
-    protected function getMessage()
-    {
-        return 'Bad Request';
-    }
-
     protected function getLocalizedMessage()
     {
         return gettext('Bad Request');

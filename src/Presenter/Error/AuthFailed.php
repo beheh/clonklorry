@@ -10,11 +10,6 @@ class AuthFailed extends InternalError
         return 500;
     }
 
-    protected function getMessage()
-    {
-        return 'Authentification failed';
-    }
-
     protected function getLocalizedMessage()
     {
         return gettext('Authentification failed');

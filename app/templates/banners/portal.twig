@@ -16,11 +16,11 @@
 						<a class="list-group-item" href="{{base}}/banners/{{banner.id}}">
 							<span class="banner-name">{% if banner.name %}{{banner.name}}{% else %}<em>{% trans %}Banner #{{banner_number}}{% endtrans %}</em>{% endif %}</span>
 							{% if banner.active %}
-								{% include "functions/labels/published.twig" %}
+								{% include "functions/labels/live.twig" %}
 							{% elseif banner.scheduled %}
 								{% include "functions/labels/scheduled.twig" %}
 							{% elseif banner.expired %}
-								{% include "functions/labels/expired.twig" %}
+								{% include "functions/labels/completed.twig" %}
 							{% else %}
 								{% include "functions/labels/draft.twig" %}
 							{% endif %}
@@ -46,7 +46,24 @@
 	$('.banner-remove').click(function(e) {
 		e.preventDefault();
 		if(confirm('{% trans %}Are you sure you want to remove %banner%?{% endtrans %}'.replace('%banner%', $(this).siblings('.banner-name').text()))) {
-			$.post('{{api}}/internal/banners/remove/' + $(this).data('id'), {state : '{{state}}'});
+			$.ajax('{{api}}/internal/banners/remove/' + $(this).data('id'), {
+                type: 'post',
+                data: {state : '{{state}}'},
+                error: function(xhr) {
+                    result = xhr.responseJSON;
+                    if(result.error && result.description) {
+                        alert(result.error + ': ' + result.description);
+                        location.reload();
+                    }
+                    else {
+                        alert('{% trans %}An unknown error occured.{% endtrans %}');
+                    }
+                },
+                success: function(result) {
+                    location.reload();
+                },
+                dataType: 'json'
+            });
 		}
 	});
 {% endblock %}

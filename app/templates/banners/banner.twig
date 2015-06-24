@@ -96,7 +96,10 @@
 						<h3>{% trans "Translations" %}</h3>
 						<div class="list-group">
 							{% for translation in translations %}
-								<a class="list-group-item" href="{{base}}/banners/{{banner.id}}/{{translation.language.key}}">{{translation.language}}</a>
+								<a class="list-group-item" href="{{base}}/banners/{{banner.id}}/{{translation.language.key}}">
+                                    {{translation.language}}
+                                    <button class="banner-remove close" data-id="{{banner.id}}"><span aria-hidden="true">&times;</span></button>
+                                </a>
 							{% else %}
 								<span class="list-group-item text-muted">{% trans %}No translations yet{% endtrans %}</span>
 							{% endfor%}

@@ -11,15 +11,16 @@
 	<div class="container">
 		<h2>{% trans %}Introduction{% endtrans %}</h2>
 		<p>{% trans %}{{brand}} offers a read-only REST API for data about addons and releases.{% endtrans %}</p>
-		<div class="alert alert-warning">{% trans %}<strong>Please note:</strong> The lorry api is not yet final and can change at any time.{% endtrans %}</div>
-		<h2>{% trans %}Endpoints{% endtrans %}</h2>
+		<div class="alert alert-warning">{% trans %}<strong>Important notice:</strong> The lorry api is not yet final and can change at any time.{% endtrans %}</div>
+		<h2>{% trans %}Available endpoints{% endtrans %}</h2>
 		<table class="table">
 			<tr><th>{% trans %}Url{% endtrans %}</th><th>{% trans %}Description{% endtrans %}</th><th>{% trans %}Typical result{% endtrans %}</th></tr>
 			<tr><td><pre>/api/v0/games.json</pre></td><td>{% trans %}Returns a list of games.{% endtrans %}</td><td><pre>{"games":[{"id":"rage", ...}, ...]}</pre></td></tr>
 			<tr><td><pre>/api/v0/addons/&lt;game&gt;.json</pre></td><td>{% trans %}Returns a list of addons for the queried game.{% endtrans %}</td><td><pre>{"addons":[{"id":"knights", ...}, ...]}</pre></td></tr>
 			<tr><td><pre>/api/v0/addons/&lt;game&gt/&lt;addon&gt.json</pre></td><td>{% trans %}Returns details about the queried addon.{% endtrans %}</td><td><pre>{"addon":{"id":"knights", ...}}</pre></td></tr>
 		</table>
-		<div class="alert alert-warning">{% trans %}<strong>Please note:</strong> The Lorry platform itself uses various internal endpoints under <code>/api/internal/...</code>. Do not use these endpoints, as they will require special authentification and can change without notice.{% endtrans %}</div>
+        {% set contact_us %}<a href="{{base}}/contact">{% trans %}contact us{% endtrans %}</a>{% endset %}
+		<div class="alert alert-warning">{% trans %}<strong>Please note:</strong> The Lorry itself uses various internal endpoints beneath <code>/api/internal/</code>. Do <strong>not</strong> use these endpoints, as they will require special authentification and can change without notice.{% endtrans %} {% trans %}Please {{contact_us}} if you're interested a new public endpoint.{% endtrans %}</div>
 		<h2>{% trans %}Objects{% endtrans %}</h2>
 		<table class="table">
 			<tr><th>{% trans %}Type{% endtrans %}</th><th>{% trans %}Structure{% endtrans %}</th></tr>
@@ -27,9 +28,9 @@
 			<tr><td>addon</td><td><pre>{"id":"knights","title_en":"Knights","title_de":"Ritter"}</pre></td></tr>
 		</table>
 		<h2>{% trans %}Error handling{% endtrans %}</h2>
-		<p>{% trans %}You can handle errors by checking for the <code>error</code> field in the response.{% endtrans %} {% trans %}Additionally, a human-readable message may be given in a <code>message</code> field.{% endtrans %}</p>
+		<p>{% trans %}You can handle errors by checking for the <code>error</code> field in the response.{% endtrans %} {% trans %}Additionally, a localised description may be given in a <code>description</code> field.{% endtrans %}</p>
 		<h3>{% trans %}Examples{% endtrans %}</h3>
-		<pre>{"error":"forbidden", "message":"you are not allowed to access this endpoint"}</pre>
-		<pre>{"error":"filenotfound", "message":"the queried game does not exist"}</pre>
+		<pre>{"error":"Forbidden", "description":"You do not have the permissions necessary to access this document."}</pre>
+		<pre>{"error":"File Not Found", "description":"The file you requested could not be found."}</pre>
 	</div>
 {% endblock %}
