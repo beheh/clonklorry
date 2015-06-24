@@ -93,11 +93,24 @@ class Banner extends AbstractPresenter
             
             $defaultUrl = trim(filter_input(INPUT_POST, 'default_url', FILTER_SANITIZE_STRING));
             if(!empty($defaultUrl)) {
-                var_dump($defaultUrl);
                 $banner->setDefaultUrl($defaultUrl);
             }
             else {
                 $banner->setDefaultUrl(null);
+            }
+
+            $imageRaw = trim(filter_input(INPUT_POST, 'default_image_secret', FILTER_SANITIZE_STRING));
+            if(!empty($imageRaw)) {
+                $image = $this->manager->getRepository('Lorry\Model\Image')->findOneBy(array('secret' => $imageRaw));
+                if($image !== null) {
+                    $banner->setDefaultImage($image);
+                }
+                else {
+                    $bannerValidator->fail('Invalid image.');
+                }
+            }
+            else {
+                $banner->setDefaultImage(null);
             }
 
             if (filter_input(INPUT_POST, 'show_from_specified', FILTER_VALIDATE_BOOLEAN)) {

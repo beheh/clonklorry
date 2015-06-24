@@ -2,10 +2,10 @@
 
 namespace Lorry\Presenter\Api;
 
-use Lorry\Presenter\AbstractPresenter as LorryPresenter;
+use Lorry\Presenter\AbstractPresenter;
 use Lorry\Exception\Exception;
 
-class Presenter extends LorryPresenter
+class Presenter extends AbstractPresenter
 {
 
     public function handle($method, $parameters)

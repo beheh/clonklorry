@@ -110,9 +110,17 @@ class Banner extends AbstractModel
         return $this->visibility === self::VISIBILITY_PUBLIC && $now < $this->showFrom;
     }
 
+    public function isExpired()
+    {
+        $now = new DateTime();
+        return $this->visibility === self::VISIBILITY_PUBLIC && $now > $this->showUntil;
+    }
+
     public function isActive() {
         $now = new DateTime();
-        return $this->visibility === self::VISIBILITY_PUBLIC && $now >= $this->showFrom && $now < $this->showUntil;
+        return $this->visibility === self::VISIBILITY_PUBLIC &&
+                ($this->showFrom === null || $now >= $this->showFrom) &&
+                ($this->showUntil === null || $now <= $this->showUntil);
     }
 
     /**

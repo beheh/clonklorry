@@ -103,4 +103,10 @@ abstract class AbstractValidator implements Validator
             $this->fail($message);
         }
     }
+
+    protected function validateObject($instanceof, $object, $message) {
+        if (!$object instanceof $instanceof) {
+            $this->fail($message);
+        }
+    }
 }

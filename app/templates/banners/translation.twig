@@ -13,25 +13,68 @@
     </div>
     <div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
+				<h2>{% trans %}Translation{% endtrans %}</h2>
 
-				<div class="form-group">
-					<label for="title">{% trans %}Title{% endtrans %}</label>
-					<input type="text" class="form-control" name="banner_title" id="title" value="{{banner_title}}">
+				<form role=form" action="{{filename}}" method="post">
+					<input type="hidden" name="state" value="{{state}}">
+					{% include 'functions/alert.twig' with {'selector' : 'translation-form'} %}
+
+					<div class="form-group">
+						<label for="title">{% trans %}Title{% endtrans %}</label>
+						<input type="text" class="form-control" name="title" id="title" value="{{translation_title}}">
+					</div>
+
+					<div class="form-group">
+						<label for="subtitle">{% trans %}Subtitle{% endtrans %}</label>
+						<input type="text" class="form-control" name="subtitle" id="subtitle" value="{{subtitle}}">
+					</div>
+
+					<div class="form-group">
+						<label for="url">{% trans %}Url (overrides default url){% endtrans %}</label>
+						<div class="input-group">
+							<input type="url" class="form-control" name="url" id="url" value="{{url}}">
+							<span class="input-group-addon">
+								<input type="checkbox" id="url-specified" name="url_specified"{% if url %} checked{% endif %}>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="image-btn">{% trans %}Image (overrides default image){% endtrans %}</label>
+						{% include "functions/upload-image.twig" with {name: "image_id", id: "image-id", btn: "image-btn"} %}
+					</div>
+
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="{% trans "Save translation" %}">
+					</div>
+				</form>
+			</div>
+			<div class="col-md-8">
+				<h2>{% trans %}Preview{% endtrans %}</h2>
+				<div class="carousel slide">
+					<div class="carousel-inner">
+						<div class="item active">
+							{% set _url = translation.url|default(banner.defaultUrl)%}
+                            {% if _url %}<a href="{{_url}}">{% endif %}
+								<img src="http://placehold.it/750x4	00" alt="{{translation.title}}">
+								{% if banner.url %}</a>{% endif %}
+							<div class="carousel-caption">
+								<h3>
+									{% if translation.title %}<strong>{{translation.title}}</strong>{% endif %}
+									{% if translation.subtitle %}<br>{{translation.subtitle}}{% endif %}
+								</h3>
+							</div>
+						</div>
+					</div>
 				</div>
-
-				<div class="form-group">
-					<label for="subtitle">{% trans %}Subtitle{% endtrans %}</label>
-					<input type="text" class="form-control" name="subtitle" id="subtitle" value="{{subtitle}}">
-				</div>
-
-				<div class="form-group">
-					<label for="url">{% trans %}Url (overrides default url){% endtrans %}</label>
-					<input type="url" class="form-control" name="url" id="url" value="{{url}}">
-				</div>
-
-				Image (overrides default image)
 			</div>
 		</div>
 	</div>
 {% endblock%}
+
+{% block javascript %}
+	$(document).ready(function() {
+	//		setupImageUpload($('#image-btn'), $('#image-id'));
+	setupNullField($('#url-specified'), $('#url'), '{{banner.defaultUrl}}');
+	});
+{% endblock %}

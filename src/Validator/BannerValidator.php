@@ -3,6 +3,7 @@
 namespace Lorry\Validator;
 
 use Lorry\Model\Banner;
+use Lorry\Model\Image;
 
 class BannerValidator extends AbstractValidator
 {
@@ -18,6 +19,9 @@ class BannerValidator extends AbstractValidator
         $this->validateTimeConstraint($entity->getShowFrom(), $entity->getShowUntil());
         if($entity->getDefaultUrl() !== null) {
             $this->validateUrl($entity->getDefaultUrl(), gettext('Default url is invalid.'));
+        }
+        if($entity->getDefaultImage() !== null) {
+            $this->validateObject(Image::class, $entity->getDefaultImage(), gettext('Default image is invalid.'));
         }
     }
 

@@ -13,7 +13,19 @@
 			<div class="col-md-12">
 				<div class="list-group">
 					{% for banner in banners %}{% set banner_number %}{{banner.id}}{% endset %}
-						<a class="list-group-item" href="{{base}}/banners/{{banner.id}}">{% if banner.name%}{{banner.name}}{% else %}<em>{% trans %}Banner #{{banner_number}}{% endtrans %}</em>{% endif %}</a>
+						<a class="list-group-item" href="{{base}}/banners/{{banner.id}}">
+							<span class="banner-name">{% if banner.name %}{{banner.name}}{% else %}<em>{% trans %}Banner #{{banner_number}}{% endtrans %}</em>{% endif %}</span>
+							{% if banner.active %}
+								{% include "functions/labels/published.twig" %}
+							{% elseif banner.scheduled %}
+								{% include "functions/labels/scheduled.twig" %}
+							{% elseif banner.expired %}
+								{% include "functions/labels/expired.twig" %}
+							{% else %}
+								{% include "functions/labels/draft.twig" %}
+							{% endif %}
+							<button class="banner-remove close" data-id="{{banner.id}}"><span aria-hidden="true">&times;</span></button>
+						</a>
 					{% else %}
 						<span class="list-group-item text-muted">{% trans %}No banners yet{% endtrans %}</span>
 					{% endfor%}
@@ -29,3 +41,12 @@
 		</form>
 	</div>
 {% endblock%}
+
+{% block javascript %}
+	$('.banner-remove').click(function(e) {
+		e.preventDefault();
+		if(confirm('{% trans %}Are you sure you want to remove %banner%?{% endtrans %}'.replace('%banner%', $(this).siblings('.banner-name').text()))) {
+			$.post('{{api}}/internal/banners/remove/' + $(this).data('id'), {state : '{{state}}'});
+		}
+	});
+{% endblock %}

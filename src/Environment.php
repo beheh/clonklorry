@@ -63,6 +63,7 @@ class Environment
         $templating = $container->get(\Lorry\TemplateEngineInterface::class);
         $templating->addGlobal('brand', htmlspecialchars($config->get('brand')));
         $templating->addGlobal('base', htmlspecialchars($config->get('base')));
+        $templating->addGlobal('api', htmlspecialchars($config->get('base')).'/api');
         $templating->addGlobal('assets', htmlspecialchars($config->get('assets')));
         $templating->addGlobal('resources',
             htmlspecialchars($config->get('base').'/resources'));
@@ -176,6 +177,8 @@ class Environment
                     '/api/internal/addons/:number/:version/remove' => 'Api\Internal\Release\RemoveFile',
                     '/api/internal/addons/:number/:version/upload' => 'Api\Internal\Release\UploadFile',
                     '/api/internal/addons/:number/:version/dependencies' => 'Api\Internal\Release\QueryDependencies',
+                    '/api/internal/images/upload' => 'Api\Internal\Image\UploadImage',
+                    '/api/internal/banners/remove/:number' => 'Api\Internal\Banners\RemoveBanner',
                 ));
                 // api routes
                 $router->addRoutes(array(
