@@ -11,6 +11,7 @@ use Lorry\Exception\ConcreteException;
 
 class SessionService extends AbstractService
 {
+
     /**
      *
      * @var \Lorry\Service\ConfigService
@@ -30,6 +31,7 @@ class SessionService extends AbstractService
         $this->manager = $manager;
         session_name('lorry_session');
     }
+
     /**
      * @var bool
      */
@@ -86,12 +88,14 @@ class SessionService extends AbstractService
         $_SESSION['secret'] = $user->getSecret();
         $_SESSION['identified'] = false; // whether the user has personally identifed via password, as opposed to login cookie
         $this->setFlag('knows_clonk', true);
+        $this->logger->debug('authenticated session as user '.$user->getId());
     }
 
     final public function identify()
     {
         $this->ensureSession();
         $_SESSION['identified'] = true;
+        $this->logger->debug('confirmed session identity as user '.$user->getId());
     }
 
     /**
@@ -244,6 +248,7 @@ class SessionService extends AbstractService
             $user = $this->manager->find('Lorry\Model\User', $_SESSION['user']);
             if ($user && $user->matchSecret($_SESSION['secret'])) {
                 $this->user = $user;
+                $this->logger->debug('picked up session for user '.$user->getId());
             } else {
                 $this->logout();
             }
@@ -303,6 +308,7 @@ class SessionService extends AbstractService
         }
         setcookie('lorry_session', '', 0, '/');
     }
+
     private static $OAUTH_PROVIDERS = array('github', 'google', 'facebook');
 
     final public function handleOauth($register = false)
@@ -352,6 +358,7 @@ class SessionService extends AbstractService
         $_SESSION['password_reset_token'] = 0;
         unset($_SESSION['password_reset_token']);
     }
+
     protected $flags = array();
 
     final protected function getFlagName($flag)
@@ -384,4 +391,5 @@ class SessionService extends AbstractService
         $name = $this->getFlagName($flag);
         return isset($_COOKIE[$name]) && filter_input(INPUT_COOKIE, $name) === '1';
     }
+
 }

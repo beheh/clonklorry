@@ -33,7 +33,7 @@ class Environment
     public function setup()
     {
         $loggerFactory = new MonologLoggerFactory();
-        $this->logger = $loggerFactory->build('environment');
+        $this->logger = $loggerFactory->build(get_class($this));
         $this->logger->info('starting up');
 
         $config = new ConfigService($loggerFactory);
@@ -177,7 +177,7 @@ class Environment
                     '/api/internal/addons/:number/:version/remove' => 'Api\Internal\Release\RemoveFile',
                     '/api/internal/addons/:number/:version/upload' => 'Api\Internal\Release\UploadFile',
                     '/api/internal/addons/:number/:version/dependencies' => 'Api\Internal\Release\QueryDependencies',
-                    '/api/internal/images/upload' => 'Api\Internal\Image\UploadImage',
+                    '/api/internal/upload' => 'Api\Internal\UploadFile',
                     '/api/internal/banners/remove/:number' => 'Api\Internal\Banners\RemoveBanner',
                 ));
                 // api routes

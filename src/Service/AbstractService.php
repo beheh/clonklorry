@@ -20,6 +20,6 @@ abstract class AbstractService implements Service
 
     public function getLogChannel()
     {
-        return 'service';
+        return get_class($this);
     }
 }
