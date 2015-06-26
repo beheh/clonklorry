@@ -95,7 +95,7 @@ class SessionService extends AbstractService
     {
         $this->ensureSession();
         $_SESSION['identified'] = true;
-        $this->logger->debug('confirmed session identity as user '.$user->getId());
+        $this->logger->debug('confirmed session identity');
     }
 
     /**
