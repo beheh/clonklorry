@@ -1,6 +1,6 @@
 <?php
 
-namespace Lorry\Job\Job;
+namespace Lorry\Job;
 
 interface Job
 {

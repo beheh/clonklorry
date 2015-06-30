@@ -28,7 +28,7 @@ class JobService extends AbstractService
         if (!class_exists($class_name)) {
             throw new InvalidArgumentException('unknown job');
         }
-        if (!is_subclass_of($class_name, '\\Lorry\\Job')) {
+        if (!is_subclass_of($class_name, '\\Lorry\\Job\\Job')) {
             throw new InvalidArgumentException('job does not implement base class');
         }
         return $class_name;

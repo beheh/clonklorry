@@ -17,7 +17,7 @@ use Resque\AbstractJob as ResqueAbstractJob;
  * @property \Lorry\TemplateEngineInterface $twig
  * @property \Doctrine\Common\Persistence\ObjectManager $manager
  */
-abstract class AbstractJob extends ResqueAbstractJob
+abstract class AbstractJob extends ResqueAbstractJob implements Job
 {
 
     abstract public function execute();
