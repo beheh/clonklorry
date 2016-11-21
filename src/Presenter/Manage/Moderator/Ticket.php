@@ -9,9 +9,9 @@ use Lorry\EmailFactory;
 class Ticket extends AbstractPresenter
 {
 
-    public static function getTicket($persistence, $id)
+    public static function getTicket($manager, $id)
     {
-        $ticket = $persistence->build('Ticket')->byId($id);
+        $ticket = $manager->getRepository('Lorry\Model\Ticket')->findOneBy(array('id' => $id));
         if (!$ticket) {
             throw new FileNotFoundException();
         }
@@ -24,19 +24,19 @@ class Ticket extends AbstractPresenter
         $this->offerIdentification();
         $this->security->requireIdentification();
 
-        $ticket = self::getTicket($this->persistence, $id);
+        $ticket = self::getTicket($this->manager, $id);
         $this->context['number'] = $ticket->getId();
         $this->context['message'] = $ticket->getMessage();
         $this->context['acknowledged'] = $ticket->isAcknowledged();
         $this->context['escalated'] = $ticket->isEscalated();
 
-        $user = $ticket->fetchUser();
+        $user = $ticket->getAssociatedUser();
         if ($user) {
-            $this->context['user'] = $user->forPresenter();
+            $this->context['user'] = $user;
         }
-        $staff = $ticket->fetchStaff();
+        $staff = $ticket->getAssignedTo();
         if ($staff) {
-            $this->context['staff'] = $staff->forPresenter();
+            $this->context['staff'] = $staff();
         }
 
         $this->display('manage/moderator/ticket.twig');

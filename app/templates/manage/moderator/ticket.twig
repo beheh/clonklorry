@@ -10,7 +10,7 @@
 		</div>
 	</div>
     {% if user %}
-      {% set username %}<strong><a href="{{base}}/users/{{user.name}}">{{user.name}}</a></strong>{% endset %}
+      {% set username %}<strong><a href="{{base}}/users/{{user.username}}">{{user.username}}</a></strong>{% endset %}
     {% endif %}
     {% set original_author %}
         {% if user %}

@@ -14,7 +14,7 @@ class Tickets extends AbstractPresenter
         $this->security->requireIdentification();
 
         $tickets = array();
-        foreach ($this->persistence->build('Ticket')->all()->byAnything() as $ticket) {
+        foreach ($this->manager->getRepository('Lorry\Model\Ticket')->getAll() as $ticket) {
             $tickets[] = $ticket->forPresenter($this->localisation->getFormat(\Lorry\Service\LocalisationService::FORMAT_DATETIME));
         }
 

@@ -47,6 +47,16 @@ class Ticket extends AbstractModel
      */
     protected $assignedTo;
 
+    /**
+     * @Column(type="boolean")
+     */
+    protected $acknowledged = false;
+
+    /**
+     * @Column(type="datetime", nullable=true)
+     */
+    protected $escalated;
+
     public function setResponseEmail($responseEmailAddress)
     {
         $this->responseEmailAddress = $responseEmailAddress;
@@ -127,5 +137,15 @@ class Ticket extends AbstractModel
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function isAcknowledged()
+    {
+        return $this->acknowledged;
+    }
+
+    public function isEscalated()
+    {
+        return $this->escalated !== null;
     }
 }

@@ -40,9 +40,9 @@
 						<tr><th>{% trans %}Timestamp{% endtrans %}</th><th>{% trans %}Message{% endtrans %}</th><th>{% trans %}User{% endtrans %}</th></tr>
 						{% for message in tickets %}
 						<tr>
-							<td>{{message.submitted}}</td>
+							<td>{{message.submitted|date(format_datetime)}}</td>
 							<td><a href="{{base}}/moderator/tickets/{{message.id}}" class="text">"{{ message.message|length > 50 ? message.message|slice(0, 50) ~ '…' : message.message }}"</a></td>
-							<td>{% if message.user %}{% include 'functions/user.twig' with {'user': message.user} %}{% else %}<em>{% trans "Anonymous visitor" %}</em>{% endif %}</td>
+							<td>{% if message.associatedUser %}{% include 'functions/user.twig' with {'user': message.associatedUser} %}{% else %}<em>{% trans "Anonymous visitor" %}</em>{% endif %}</td>
 						</tr>
 						{% endfor %}
 					</table>

@@ -16,7 +16,7 @@ class Portal extends AbstractPresenter
         $this->context['games'] = $this->manager->getRepository('Lorry\Model\Game')->findAll();
 
         $addons = array();
-        /*foreach ($this->persistence->build('Addon')->bySubmittedForApproval() as $addon) {
+        /*foreach ($this->manager->getRepository('Addon')->bySubmittedForApproval() as $addon) {
             $result = array(
                 'addon' =>
                 array('id' => $addon->getId(),
@@ -34,9 +34,9 @@ class Portal extends AbstractPresenter
         $this->context['addons'] = $addons;
 
         $tickets = array();
-        /*foreach ($this->manager->getRepository('Lorry\Model\Ticket')->getAllNewTickets() as $ticket) {
-            $tickets[] = $ticket->forPresenter($format);
-        }*/
+        foreach ($this->manager->getRepository('Lorry\Model\Ticket')->getNewTickets() as $ticket) {
+            $tickets[] = $ticket;
+        }
 
         $this->context['tickets'] = $tickets;
 
