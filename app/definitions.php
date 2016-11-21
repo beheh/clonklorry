@@ -54,7 +54,10 @@ return [
     \Predis\Client::class =>
         function ($container) {
             $config = $container->get('config');
-            return new \Predis\Client($config->get('job/dsn'));
+            return new \Predis\Client([
+                'scheme' => 'unix',
+	        'path' => $config->get('job/dsn'),
+	    ]);
         },
     \BehEh\Flaps\Flaps::class =>
         function ($container) {
