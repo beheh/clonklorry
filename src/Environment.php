@@ -30,6 +30,11 @@ class Environment
      */
     protected $container;
 
+    /**
+     * @var \Raven_Client
+     */
+    protected $raven;
+
     public function setup()
     {
         $loggerFactory = new MonologLoggerFactory();
@@ -59,6 +64,11 @@ class Environment
         $container->set(\Interop\Container\ContainerInterface::class, $container);
 
         \Monolog\ErrorHandler::register($loggerFactory->build('errorHandler'));
+
+        $this->raven = $container->get(\Raven_Client::class);
+        if ($this->raven) {
+            $this->raven->install();
+        }
 
         $templating = $container->get(\Lorry\TemplateEngineInterface::class);
         $templating->addGlobal('brand', htmlspecialchars($config->get('brand')));
@@ -122,6 +132,13 @@ class Environment
                 $twig->addGlobal('user_administrator', $user->isAdministrator());
                 $twig->addGlobal('user_moderator', $user->isModerator());
                 $twig->addGlobal('state', $session->getState());
+                if ($this->raven) {
+                    $this->raven->user_context(array(
+                        'id' => $user->getId(),
+                        'username' => $user->getUsername(),
+                        'email' => $user->getEmail(),
+                    ));
+                }
             }
 
             // routing
@@ -228,6 +245,9 @@ class Environment
                 $this->container->get(\Lorry\TemplateEngineInterface::class)->addGlobal('site_enabled', false);
                 $this->container->get(\Lorry\Presenter\Error\DatabaseDown::class)->get($exception);
                 return;
+            }
+            if($this->raven) {
+                $this->raven->captureException($exception);
             }
             $this->container->get(\Lorry\Presenter\Error\InternalError::class)->get($exception);
             return;

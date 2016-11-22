@@ -74,6 +74,16 @@ return [
             $twig->addExtension(new \Twig_Extension_Escaper(true));
             $twig->addExtension(new \Twig_Extensions_Extension_I18n());
             return $twig;
+         },
+    \Raven_Client::class =>
+         function ($container) {
+            $config = $container->get('config');
+            $dsn = $config->get('raven/dsn');
+            $client = null;
+            if ($dsn) {
+                $client = new \Raven_Client($dsn);
+            }
+            return $client;
          }
 
 ];

@@ -77,3 +77,7 @@ oauth:
     facebook:
         id:
         secret:
+
+# raven error loggig
+raven:
+	dsn:
